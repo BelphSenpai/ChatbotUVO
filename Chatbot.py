@@ -11,10 +11,14 @@ import json
 from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 import faiss
+from dotenv import load_dotenv
 
 # Inicialización del cliente de OpenAI
+
+load_dotenv()
+
 client = OpenAI(
-    api_key="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"
+    api_key=os.getenv("API_KEY")
 )
 
 # Inicialización del modelo de embeddings
