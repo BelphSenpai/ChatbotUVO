@@ -12,7 +12,7 @@ from openai import OpenAI
 
 # Inicialización del cliente de OpenAI
 client = OpenAI(
-    api_key="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"
+    api_key="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"
 )
 
 # Archivos

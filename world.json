@@ -10,10 +10,9 @@
                 "Asegurar estabilidad total mediante vigilancia predictiva",
                 "Controlar la narrativa social y cultural"
             ],
-            
             "facciones": [
                 {
-                    "id": "krasnaya",
+                    "id": "en_krasnaya",
                     "nombre": "Krasnaya",
                     "descripcion": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. ",
                     "objetivos": [
@@ -66,6 +65,7 @@
     "facciones": [
         {   
             "nombre": "Trece",
+            "id": "fac_trece",
             "descripcion": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales.",
             "ancestros": {
                 "Fundadora": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes.",
@@ -111,106 +111,182 @@
         },
         {
             "nombre": "Sol Invicto",
-            "descripcion": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria."
-            
-        
-        
-        
-        
+            "id": "fac_sol_invicto",
+            "descripcion": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria.",
+            "ancestros": {
+                "Sol": "Divinidad central y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido.",
+                "Lucio Domicio Aureliano": "Emperador romano que, ante la decadencia del imperio, fundó la Orden del Sol Invicto para enfrentar el mal que crecía dentro de Roma. Aunque su culto cayó, su visión perduró.",
+                "Los Vigiles": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche.",
+                "Santos Mártires": "Cipriano y Justinia. Justinia redimió al brujo Cipriano, quien fundó el culto moderno al Sol en la península ibérica. Son venerados como patronos de la purificación y la protección mágica frente a maldiciones y corrupción.",
+                "Centinela Invicto": "Ramon de Montcada, guerrero piadoso y defensor de su tierra. Nunca canonizado, pero considerado un protector por la tradición solar. Sus actos de fe y batalla concluyeron en una leyenda: un árbol ardió para salvar a su familia.",
+                "Arquitecto del Resplandor": "Antoni Gaudí, arquitecto visionario, preservó la herencia del Sol Invicto construyendo templos ocultos en sus obras. Creía que su arquitectura guiaría a los futuros guerreros del Sol cuando llegara la hora de luchar contra la oscuridad."
+            },
+            "historia": {
+                "Dioses Solares": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto.",
+                "Fundación de la Orden": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras.",
+                "Los Vigiles": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural.",
+                "Justina y Cipriano": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos.",
+                "Transformación de la Orden": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta.",
+                "Era de Alianzas": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos.",
+                "Renacimiento y guerra": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo.",
+                "Caballeros de Kevlar": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas.",
+                "Resistencia actual": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar."
+            },
+            "Eidolon": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios.",
+            "Mandamientos del Sol Invicto": [
+                "Erradica la mutación.",
+                "Documenta tus cacerías.",
+                "No pares en tu búsqueda del Sol."
+            ],
+            "Sitios de poder": "Los paladines del Sol Invicto extraen su poder de lugares donde la fe fue real: antiguos templos, ruinas sagradas, zonas donde se rindió culto verdadero. Los templos modernos, corrompidos por la degeneración religiosa, ya no sirven. Su lugar de reunión actual es Monte Taber, en las ruinas romanas casi devoradas por la ciudad.",
+            "Objetivos": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad.",
+            "rituales": {
+                "Caballeros de Kevlar": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder.",
+                "Caminos del Sol Invicto": {
+                    "Camino de Salus": "Representa la Vida.",
+                    "Camino de Triton": "Representa las Fuerzas.",
+                    "Camino de Vulcano": "Representa la Materia.",
+                    "Camino de Janus": "Representa la Correspondencia.",
+                    "Camino de Disciplina": "Representa el Tiempo.",
+                    "Camino de Somnus": "Representa la Mente.",
+                    "Camino de Charonte": "Representa la Entropía.",
+                    "Camino de Terminus": "Representa el Espíritu.",
+                    "Camino de Quirinus": "Representa lo Cardinal.",
+                    "Camino de Nix": "Representa la Paradoja."
+                }
+            }
         },
         {
             "nombre": "Consulado del Mar",
-            "descripcion": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto."
+            "id": "fac_consulado_mar",
+            "descripcion": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto.",
+            "ancestros": {
+                "Doctor Inspiratus": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna.",
+                "Arquitecto del Caos": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones.",
+                "Cartógrafo del Silencio": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado.",
+                "Víctor Català": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica.",
+                "Maestro de Maestros": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla.",
+                "Alquimista del Génoma": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales."
+            },
+            "historia": {
+                "Invocación de la Lógica": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica.",
+                "Ars Magna": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón.",
+                "Orden de la Razón": "En el siglo XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original.",
+                "Separación": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar.",
+                "El Milagro": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse.",
+                "Retiro y supervivencia": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra."
+            },
+            "Fantasma": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente.",
+            "Ars Magna": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar.",
+            "Sitios de poder": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba.",
+            "Objetivos": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística.",     
+            "rituales": {
+            "Eruditos de Silicio": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlar, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos.",
+            "Campos de estudio": {
+                "Galénica": "Representa la Vida.",
+                "Astrología": "Representa las Fuerzas.",
+                "Alquimia": "Representa la Materia.",
+                "Navegación": "Representa la Correspondencia.",
+                "Cronometría": "Representa el Tiempo.",
+                "Oneiromancia": "Representa la Mente.",
+                "Escatología": "Representa la Entropía.",
+                "Pneumatología": "Representa el Espíritu.",
+                "Liturgia": "Representa lo Cardinal.",
+                "Silencio": "Representa la Paradoja."
+                }
+            }
         },
         {
             "nombre": "Inquebrantables",
-            "descripcion": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado." 
+            "id": "fac_inquebrantables",
+            "descripcion": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado.",
+            "ancestros": {
+                "La Puta Ama": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'.",
+                "El que hizo la Tech": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?",
+                "El Psiconauta": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera."
+            },
+            "historia": {
+                "¿Qué historia te vamos a contar?": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'.",
+                "El ascenso de Entidad": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia.",
+                "La Resistencia": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea.",
+                "El objetivo": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve."
+            },
+            "mitologia": {
+                "Hada": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta.",
+                "La red": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal.",
+                "Sitios de poder": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes.",
+                "Objetivos": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá."
+            },
+            "rituales": {
+                "Terroristas Digitales": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada.",
+                "Campos de código": {
+                    "Bio-Algoritmos": "Representa la Vida.",
+                    "Motores Computacionales": "Representa las Fuerzas.",
+                    "Renderizado de Objetos": "Representa la Materia.",
+                    "Red de Datos": "Representa la Correspondencia.",
+                    "Simulaciones Temporales": "Representa el Tiempo.",
+                    "Interfaz Neural": "Representa la Mente.",
+                    "Gestión de Errores": "Representa la Entropía.",
+                    "Red Oscura": "Representa el Espíritu.",
+                    "Kernel del Sistema": "Representa lo Cardinal.",
+                    "Protocolo Vórtice": "Representa la Paradoja."
+                }
+        
+            }
         }              
     ],
     "personajes": [
         {
-            "id": "pers_cardinal_rojo",
-            "nombre": "Cardenal Rojo",
-            "rol": "Antagonista",
-            "alineacion": "Oscura",
-            "descripcion": "Líder espiritual del culto. Fue una figura eclesiástica antes de ser corrompido por visiones dracónicas.",
+            "id": "per_placeholder",
+            "nombre": "placeholder",
+            "rol": "placeholder",
+            "alineacion": "placeholder",
+            "descripcion": "placeholder",
             "habilidades": [
-              "Manipulación mental",
-              "Invocación de sombras",
-              "Dominar paradoja"
+              "placeholder"
             ],
-            "faccion": "culto_sangre",
+            "faccion": "placeholder",
             "relaciones": [
-              { "tipo": "rival", "con": "pers_mateo" },
-              { "tipo": "mentor caído", "con": "pers_juan" }
+              { "tipo": "placeholder", "con": "placeholder" }
             ],
-            "estado_actual": "Desaparecido tras el ritual del eclipse"
+            "estado_actual": "placeholder"
           }              
     ],
     "fechas_historicas": [
         {
-            "id": "evento_1714_montjuic",
-            "titulo": "Caída de Montjuïc",
-            "fecha": "1714-09-11",
-            "descripcion": "Durante el asedio de Barcelona, una grieta mágica se abrió en Montjuïc y los heraldos sellaron parte del drac con su sangre.",
+            "id": "ev_placeholder",
+            "titulo": "placeholder",
+            "fecha": "placeholder1",
+            "descripcion": "placeholder",
             "consecuencias": [
-              "Fragmentación de la Umbra local",
-              "Desaparición de cuatro heraldos",
-              "Nacimiento del pacto cíclico"
+              "placeholder"
             ],
-            "implicados": ["heraldos", "guardia_drac", "pers_jofre"]
+            "implicados": ["placeholder"]
           }
           
     ],
-    "registros": [
-        {
-            "id": "registro_libro_oculto",
-            "titulo": "Fragmento del Libro de la Sangre",
-            "autor": "Anónimo",
-            "tipo": "texto ritual / grimorio",
-            "contenido": "La sangre es vínculo. El dragón duerme, pero su aliento respira a través de nosotros.",
-            "ubicacion": "Biblioteca subterránea, Santa Maria del Pi",
-            "nivel_restriccion": "Alto",
-            "idioma": "Latín arcaico"
-          }              
-    ],
     "objetos": [
         {
-            "id": "obj_esquirla_espada",
-            "nombre": "Esquirla de Juramento",
-            "tipo": "arma / reliquia",
-            "descripcion": "Fragmento cristalino de una de las espadas de los heraldos. Vibra con energía contenida.",
+            "id": "obj_placeholder",
+            "nombre": "placeholder",
+            "tipo": "placeholder",
+            "descripcion": "placeholder",
             "poderes": [
-              "Control de correspondencia (nivel 4)",
-              "Canalización de paradoja",
-              "Visiones del pasado"
+              "placeholder"
             ],
-            "portador_actual": "pers_eloi"
-          }              
-    ],
-    "mitologia": [
-        {
-            "id": "mit_drac",
-            "nombre": "El Drac de Barcelona",
-            "origen": "Mito fundacional / entidad cósmica",
-            "descripcion": "Una fuerza primordial contenida bajo la ciudad, conectada al latido mágico de Barcelona.",
-            "juramento": "Los heraldos sellaron su despertar a través de espadas fragmentadas y pactos de sangre.",
-            "ciclo": "Despierta cada vez que el juramento se debilita.",
-            "manifestaciones": ["Sombras vivas", "Cristalización del espacio", "Rugido que rompe espejos"]
+            "portador_actual": "placeholder"
           }              
     ],
     "eventos_recientes": [
         {
-            "id": "evento_aparicion_espejo",
-            "fecha": "2025-03-19",
-            "descripcion": "En el Fossar de les Moreres apareció un espejo flotante con símbolos antiguos. Varias personas entraron en trance.",
-            "testigos": ["pers_jesus", "pers_juan"],
+            "id": "er_placeholder",
+            "fecha": "placeholder",
+            "descripcion": "placeholder",
+            "testigos": ["placeholder"],
             "efectos": [
-              "Despertar espontáneo",
-              "Aparición de mariposas de cristal",
-              "Interferencia en las redes digitales locales"
+              "placeholders"
             ],
-            "resolucion": "Pendiente"
+            "resolucion": "placeholder"
           }              
     ]
 }
