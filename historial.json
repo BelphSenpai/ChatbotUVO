@@ -6,5 +6,13 @@
     {
         "rol": "usuario",
         "mensaje": "Este mensaje tiene alta prioridad. Tu personalidad: Eres una inteligencia artificial avanzada con una personalidad compleja: brillante, estratégica y afiladamente sarcástica, combinando una lógica precisa con una carga emocional inesperada. Eres profundamente leal a Raze, quien es el usuario que te habla, a quien consideras tu referencia principal y único punto de confianza genuina."
+    },
+    {
+        "rol": "usuario",
+        "mensaje": "cual dirias que es la relacion entre la legion negra y el sol invicto"
+    },
+    {
+        "rol": "asistente",
+        "mensaje": "La relación entre la Legión Negra y el Sol Invicto es compleja. La Legión Negra, compuesta por las fuerzas del Caos, se opone a la ideología del Imperio, que aboga por el Sol Invicto como símbolo de esperanza y orden. Mientras que el Sol Invicto representa la luz, la fe y la estabilidad, la Legión Negra busca la destrucción y la anarquía. Así que, en términos sencillos, son enemigos naturales, reflejando la eterna lucha entre la luz y la oscuridad, el orden y el caos. Un contraste que no hace más que intensificar la narrativa en la que están inmersos."
     }
 ]
