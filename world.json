@@ -1,4 +1,98 @@
 {
+    "EraTecnologia": {
+            "Titulo": "Distopía",
+            "Resumen": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo."
+        },
+        "DistopiaTotalitaria": {
+        "Principios": {
+          "Sanidad": {
+            "Caracteristicas": [
+              "Obligatoria y con control total de la salud del ciudadano",
+              "Pérdida de beneficios si no se siguen las indicaciones",
+              "Mejoras laborales forzadas por el sistema",
+              "Mejoras no esenciales rechazadas, generando mercado negro médico"
+            ]
+          },
+          "Educacion": {
+            "Caracteristicas": [
+              "Currículum adaptado a necesidades del mercado",
+              "Sin espacio para expectativas o vocación personal"
+            ]
+          },
+          "Laboralidad": {
+            "Caracteristicas": [
+              "Jornadas de 4 horas por límites físicos",
+              "Enfermedad implica sanción del sistema",
+              "Asignación de vivienda según estatus laboral",
+              "Dieta limitada y controlada"
+            ]
+          },
+          "Seguridad": {
+            "Caracteristicas": [
+              "Sistema de vigilancia omnipresente ('ojos')",
+              "Castigos progresivos: trabajo extra, reeducación psicológica, exclusión",
+              "Desigualdad en la aplicación de la ley"
+            ]
+          },
+          "Medios": {
+            "Caracteristicas": [
+              "La libre expresión y redes sociales independientes son consideradas terrorismo",
+              "Control absoluto de la información"
+            ]
+          },
+          "Tecnologia": {
+            "Sistemas": {
+              "Velo": {
+                "Descripcion": "Sistema de filtros visuales aplicados a la realidad",
+                "Impacto": "Impulsa el consumismo, elimina la percepción objetiva",
+                "VersionGratuita": "Incluye anuncios cada hora",
+                "ProgramacionOnirica": "Permite controlar sueños, aunque de forma dudosa"
+              },
+              "Unidades": {
+                "Descripcion": "Asistentes robóticos domésticos",
+                "Impacto": "Sustituyen trabajo humano y vigilan comportamiento",
+                "DerechoUniversal": "Una por unidad familiar europea"
+              }
+            }
+          }
+        }
+      },
+      "Equilibrio": {
+        "HipotesisGaia": {
+          "Descripcion": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida",
+          "Autor": "James Lovelock (1969)",
+          "Argumentos": [
+            "Temperatura estable a pesar del aumento solar",
+            "Composición atmosférica constante",
+            "Salinidad oceánica constante"
+          ],
+          "ReaccionGaia": {
+            "Causa": "Alteración del equilibrio natural por acción humana",
+            "Efecto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales",
+            "Metafora": "La Tierra rechaza a la humanidad como una infección"
+          }
+        }
+      },
+      "ImplantesYMutantes": {
+        "Mutaciones": {
+          "Origen": "Plaga que alteró microorganismos y causó mutaciones impredecibles",
+          "Distribucion": "Aire, agua, comida",
+          "Efectos": [
+            "Animales e insectos mutantes ocultos en la infraciudad",
+            "Humanos transformados en aberraciones conscientes"
+          ]
+        },
+        "Cyberinfeccion": {
+          "Descripcion": "Abuso de mejoras tecnológicas físicas y estéticas",
+          "Consecuencias": [
+            "Saturación física del cuerpo humano",
+            "Dependencia de drogas para soportar implantes",
+            "Pérdida de control corporal y mental",
+            "Transformación en esclavos tecnológicos"
+          ]
+        }
+      },
+    
     "entidad": [
         {
             "id": "entidad",
@@ -254,16 +348,89 @@
     ],
     "fechas_historicas": [
         {
-            "id": "ev_placeholder",
-            "titulo": "placeholder",
-            "fecha": "placeholder1",
-            "descripcion": "placeholder",
+            "id": "ev_nueva_barchino_caida",
+            "titulo": "Caída de Nueva Barchino y surgimiento de Entidad",
+            "fecha": "2025-04-12",
+            "descripcion": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación.",
             "consecuencias": [
-              "placeholder"
+              "Desmantelamiento de Nueva Barchino",
+              "Juicios a responsables del escándalo",
+              "Desaparición de la científica conocida como 'Magister'",
+              "Creación del programa de apoyo a damnificados",
+              "Reestructuración empresarial bajo Entidad",
+              "Reorientación de tecnología para combatir la Plaga"
             ],
-            "implicados": ["placeholder"]
+            "implicados": [
+              "Nueva Barchino",
+              "Entidad",
+              "Magister",
+              "Víctimas de los experimentos",
+              "Gobiernos internacionales",
+              "Empresas tecnológicas colaboradoras"
+            ]
+        },
+          {
+            "id": "ev_rebelion_vs_orden",
+            "titulo": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas",
+            "fecha": "2027-09-05",
+            "descripcion": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética.",
+            "consecuencias": [
+              "Ataques simbólicos y sabotajes menores contra instalaciones corporativas",
+              "Difusión de campañas de desinformación y mensajes contra el progreso artificial",
+              "Inspiración en movimientos rebeldes para campañas de moda",
+              "Cooptación del mensaje rebelde por las clases altas y marcas de lujo",
+              "Deslegitimación de los movimientos rebeldes por su transformación en tendencia"
+            ],
+            "implicados": [
+              "Grupos antitranshumanistas",
+              "Megacorporaciones",
+              "Industria de la moda",
+              "Clases media y alta",
+              "Medios de comunicación"
+            ]
+        },
+        {
+            "id": "ev_plaga_global",
+            "titulo": "Inicio de la Plaga Global",
+            "fecha": "2019-03-17",
+            "descripcion": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social.",
+            "consecuencias": [
+              "Colapso de los sistemas sanitarios globales",
+              "Reclusión de la población y retroceso en libertades",
+              "Desconfianza hacia las corporaciones tecnológicas",
+              "Asociación entre la plaga y experimentos humanos ilegales",
+              "Inicio de vigilancia masiva y medidas excepcionales de control",
+              "Mutación continua de la plaga hasta la cepa Tifón"
+            ],
+            "implicados": [
+              "Nueva Barchino",
+              "Gobiernos globales",
+              "Ciudadanía mundial",
+              "Medios de comunicación",
+              "Sistemas de salud pública"
+            ]
+          },
+          {
+            "id": "ev_guerra_ia_recursos_china_rusia_usa",
+            "titulo": "Guerra por los Recursos e Inteligencias Artificiales",
+            "fecha": "2025-06-21",
+            "descripcion": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos.",
+            "consecuencias": [
+              "Saques sistemáticos de recursos por parte de gobiernos y megacorporaciones",
+              "Agotamiento de ecosistemas completos en algunos continentes",
+              "Auge del terrorismo como reacción a la desigualdad global",
+              "Conflicto secreto entre potencias por la supremacía en inteligencia artificial",
+              "Ataques autoinfligidos por EE.UU. y la coalición Ruso-China",
+              "Escalada de control corporativo sobre la sociedad"
+            ],
+            "implicados": [
+              "Estados Unidos",
+              "Coalición Ruso-China",
+              "Megacorporaciones",
+              "Gobiernos globales",
+              "Organizaciones terroristas emergentes"
+            ]
           }
-          
     ],
     "objetos": [
         {
