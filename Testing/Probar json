@@ -1,0 +1,37 @@
+import json
+
+def buscar_fragmentos_debug(query, path="world.json"):
+    with open(path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    palabras = [p.lower() for p in query.split()]
+    encontrados = []
+
+    def revisar(obj, nivel=0):
+        if isinstance(obj, dict):
+            for clave, valor in obj.items():
+                if isinstance(valor, (dict, list)):
+                    revisar(valor, nivel + 1)
+                elif isinstance(valor, str):
+                    contenido = valor.lower()
+                    for palabra in palabras:
+                        if palabra in contenido:
+                            print(f"{'  ' * nivel}✔ Coincidencia '{palabra}' en: {clave} -> {valor}")
+                            encontrados.append(obj)
+                            break
+        elif isinstance(obj, list):
+            for item in obj:
+                revisar(item, nivel)
+
+    revisar(data)
+
+    print("\n=== RESULTADOS ===")
+    if not encontrados:
+        print("No se encontró nada.")
+    else:
+        for r in encontrados:
+            print(json.dumps(r, ensure_ascii=False, indent=2))
+
+if __name__ == "__main__":
+    query = input("¿Qué quieres buscar? ")
+    buscar_fragmentos_debug(query)

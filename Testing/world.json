@@ -1,0 +1,24 @@
+[
+    {
+      "facciones": [
+        {
+          "id": "krasnaya",
+          "nombre": "Krasnaya",
+          "descripcion": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania...",
+          "subfacciones": [
+            {
+              "id": "k_legiones",
+              "nombre": "legiones",
+              "descripcion": "Su ejército está organizado en Legiones..."
+            },
+            {
+              "id": "k_legion_negra",
+              "nombre": "legión negra",
+              "descripcion": "La Fuerza de Élite Final..."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

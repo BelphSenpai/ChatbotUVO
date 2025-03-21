@@ -1,0 +1,216 @@
+{
+    "entidad": [
+        {
+            "id": "entidad",
+            "nombre": "Entidad",
+            "descripcion": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia.",
+            "objetivos": [
+                "Eliminar el error humano del gobierno y la seguridad",
+                "Sustituir estructuras políticas tradicionales por algoritmos",
+                "Asegurar estabilidad total mediante vigilancia predictiva",
+                "Controlar la narrativa social y cultural"
+            ],
+            
+            "facciones": [
+                {
+                    "id": "krasnaya",
+                    "nombre": "Krasnaya",
+                    "descripcion": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. ",
+                    "objetivos": [
+                        "El objetivo final de Krasnaya es reemplazar todas las tropas humanas por Unidades de Combate, eliminando así las bajas innecesarias. Sin embargo, las máquinas aún deben aprender de sus compañeros de carne y hueso antes de alcanzar su máxima eficiencia.",
+                        "Mantener el orden"
+                    ],
+                    "emplazamentos importantes": [
+                        {
+                            "torres de seguridad": "Las Torres de Seguridad se alzan en el corazón de cada barriada, vigilantes implacables sobre la ciudad. En las zonas más densamente pobladas, pueden encontrarse dos o incluso tres de estas gigantescas fortalezas. Como modernos palomares, despliegan enjambres de drones y tejen redes digitales de vigilancia, coordinando fuerzas policiales y anticipando crímenes antes de que sucedan. Pero estas torres son algo más que simples estructuras. Son organismos vivos de metal y datos, autosuficientes en su mantenimiento. Con sistemas de autorreparación, protocolos de limpieza automatizados y defensas autónomas, la presencia humana dentro de ellas es mínima y puntual. No necesitan descanso, no sienten duda ni fatiga. Diseñadas para ser almenaras brutales, su luz no advierte… sentencia."
+                        }
+                    ],
+                    "subfacciones": [
+                        {
+                            "id": "k_legiones",
+                            "nombre": "legiones",
+                            "descripcion": "Su ejército está organizado en Legiones, cada una compuesta por distintos tipos de agentes. Aunque en el campo de batalla suelen lucir uniformes indistinguibles, dentro de sus filas se encuentran: Militares de profesión – Soldados entrenados en combate táctico y operaciones de alto riesgo. Vigilantes voluntarios – Reclutas civiles que buscan ascender en la estructura de seguridad. Unidades de Combate – Autómatas avanzados, diseñados para reducir la dependencia humana en la guerra."
+                        },
+                        {
+                            "id": "k_legion_negra",
+                            "nombre": "legión negra",
+                            "descripcion": "La Fuerza de Élite Final. En la policía militar, los contratos son indefinidos. Para algunos, eso significa una carrera. Para otros, una condena. Se rumorea que, tras decenas de misiones, tras incontables heridas y reemplazos, poco queda de humano bajo el metal. Pero hay casos aún peores… Cuando un soldado persiste más allá de la pérdida de carne, cuando su voluntad resiste donde otros se quiebran, es enviado aquí. A la Legión Negra. A la fuerza imparable. Dejan de ser individuos, de ser personas. No tienen historia, solo un propósito: ejecutar la sentencia. Cuando ellos son desplegados, la ciudad contiene el aliento. Los neones titilan, como si el mundo guardara luto. Porque su llegada solo significa una cosa: alguien ha sido condenado, y ellos son el verdugo."
+                        }
+                    ],
+                    "miembros_clave": [
+                        {
+                            "Mikhael": "capitán del escuadrón Samsara"
+                        }
+                    ]
+                }              
+            ]
+        }
+    ],
+    "localizaciones": [
+        {
+            "id": "loc_montjuic",
+            "nombre": "Montjuïc",
+            "tipo": "nodo espiritual",
+            "descripcion": "Una colina que alberga ruinas de una batalla mágica de 1714. La energía está fracturada.",
+            "regiones": ["Barcelona", "Umbra", "Plano físico"],
+            "puntos_clave": [
+              "Ruinas del castillo",
+              "Antiguo obelisco",
+              "Fosa de sacrificios"
+            ],
+            "facciones_presentes": ["heraldos", "culto_sangre"],
+            "riesgo": "Alto",
+            "acceso": "Sólo en proyección astral o con ritual de sangre"
+          }              
+    ],
+    "facciones": [
+        {   
+            "nombre": "Trece",
+            "descripcion": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales.",
+            "ancestros": {
+                "Fundadora": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes.",
+                "Guardianas del Agua": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro.",
+                "Dominae de Barcino": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc.",
+                "Cazadora de Sombras": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies.",
+                "13 d'Arbúcies": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce.",
+                "Vampira del Raval": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos."
+            },
+            "historia": {
+                "Antes de los gigantes": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza.",
+                "La ruptura del pacto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron.",
+                "El poder de una mortal": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza.",
+                "Las Trece y la corrupción": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos.",
+                "Caída y resurgimiento": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos."
+            },
+            "Anima": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos.",
+            "El Gigante despierto": "Por primera vez en siglos, ha despertado un nuevo gigante que nunca había sido derrotado. Su poder rivaliza con los originales y su aparición ha traído plagas y catástrofes. Mientras siga activo, el mundo conocido está en peligro.",
+            "Otros Gigantes": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece.",
+            "Gigantes conocidos": {
+                "El quemado": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder.",
+                "La ahogada": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece.",
+                "El colgado": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."
+            },
+            "Sitios de poder": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario.",
+            "Objetivos": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar.",
+            "rituales": {
+                "Luna": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos.",
+                "Relación con los espíritus": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia.",
+                "Espíritus conocidos": {
+                    "Madre Sangre": "Representa la Vida.",
+                    "Abuelo Trueno": "Representa las Fuerzas.",
+                    "Hermana Tierra": "Representa la Materia.",
+                    "Guía Red": "Representa la Correspondencia.",
+                    "Hermana Agua": "Representa el Tiempo.",
+                    "Abuela Eco": "Representa la Mente.",
+                    "Padre Hueso": "Representa la Entropía.",
+                    "Hermana Niebla": "Representa el Espíritu.",
+                    "Hermano Fuego": "Representa el Cardinal.",
+                    "Temido Eclipse": "Representa la Paradoja."
+                }
+            }
+        },
+        {
+            "nombre": "Sol Invicto",
+            "descripcion": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria."
+            
+        
+        
+        
+        
+        },
+        {
+            "nombre": "Consulado del Mar",
+            "descripcion": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto."
+        },
+        {
+            "nombre": "Inquebrantables",
+            "descripcion": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado." 
+        }              
+    ],
+    "personajes": [
+        {
+            "id": "pers_cardinal_rojo",
+            "nombre": "Cardenal Rojo",
+            "rol": "Antagonista",
+            "alineacion": "Oscura",
+            "descripcion": "Líder espiritual del culto. Fue una figura eclesiástica antes de ser corrompido por visiones dracónicas.",
+            "habilidades": [
+              "Manipulación mental",
+              "Invocación de sombras",
+              "Dominar paradoja"
+            ],
+            "faccion": "culto_sangre",
+            "relaciones": [
+              { "tipo": "rival", "con": "pers_mateo" },
+              { "tipo": "mentor caído", "con": "pers_juan" }
+            ],
+            "estado_actual": "Desaparecido tras el ritual del eclipse"
+          }              
+    ],
+    "fechas_historicas": [
+        {
+            "id": "evento_1714_montjuic",
+            "titulo": "Caída de Montjuïc",
+            "fecha": "1714-09-11",
+            "descripcion": "Durante el asedio de Barcelona, una grieta mágica se abrió en Montjuïc y los heraldos sellaron parte del drac con su sangre.",
+            "consecuencias": [
+              "Fragmentación de la Umbra local",
+              "Desaparición de cuatro heraldos",
+              "Nacimiento del pacto cíclico"
+            ],
+            "implicados": ["heraldos", "guardia_drac", "pers_jofre"]
+          }
+          
+    ],
+    "registros": [
+        {
+            "id": "registro_libro_oculto",
+            "titulo": "Fragmento del Libro de la Sangre",
+            "autor": "Anónimo",
+            "tipo": "texto ritual / grimorio",
+            "contenido": "La sangre es vínculo. El dragón duerme, pero su aliento respira a través de nosotros.",
+            "ubicacion": "Biblioteca subterránea, Santa Maria del Pi",
+            "nivel_restriccion": "Alto",
+            "idioma": "Latín arcaico"
+          }              
+    ],
+    "objetos": [
+        {
+            "id": "obj_esquirla_espada",
+            "nombre": "Esquirla de Juramento",
+            "tipo": "arma / reliquia",
+            "descripcion": "Fragmento cristalino de una de las espadas de los heraldos. Vibra con energía contenida.",
+            "poderes": [
+              "Control de correspondencia (nivel 4)",
+              "Canalización de paradoja",
+              "Visiones del pasado"
+            ],
+            "portador_actual": "pers_eloi"
+          }              
+    ],
+    "mitologia": [
+        {
+            "id": "mit_drac",
+            "nombre": "El Drac de Barcelona",
+            "origen": "Mito fundacional / entidad cósmica",
+            "descripcion": "Una fuerza primordial contenida bajo la ciudad, conectada al latido mágico de Barcelona.",
+            "juramento": "Los heraldos sellaron su despertar a través de espadas fragmentadas y pactos de sangre.",
+            "ciclo": "Despierta cada vez que el juramento se debilita.",
+            "manifestaciones": ["Sombras vivas", "Cristalización del espacio", "Rugido que rompe espejos"]
+          }              
+    ],
+    "eventos_recientes": [
+        {
+            "id": "evento_aparicion_espejo",
+            "fecha": "2025-03-19",
+            "descripcion": "En el Fossar de les Moreres apareció un espejo flotante con símbolos antiguos. Varias personas entraron en trance.",
+            "testigos": ["pers_jesus", "pers_juan"],
+            "efectos": [
+              "Despertar espontáneo",
+              "Aparición de mariposas de cristal",
+              "Interferencia en las redes digitales locales"
+            ],
+            "resolucion": "Pendiente"
+          }              
+    ]
+}
