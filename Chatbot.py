@@ -62,7 +62,7 @@ def buscar_fragmentos_relevantes(query, path="world.json"):
     fragmentos = []
     metadatos = []
 
-    # Extrae todos los fragmentos de texto del JSON (puedes ajustar la lógica según tu estructura)
+    # Extrae todos los fragmentos de texto del JSON
     def extraer_texto(obj, contexto=""):
         if isinstance(obj, dict):
             texto = ""
