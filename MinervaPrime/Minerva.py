@@ -14,6 +14,7 @@ from dotenv import load_dotenv
 from colorama import init, Fore, Style
 import difflib
 from utils import cargar_json, guardar_json
+import re
 
 # Inicializar colorama (colores en terminal para  hacerlo bonito jaja salu2)
 init(autoreset=True)
@@ -213,9 +214,22 @@ def sugerir_aprendizaje(user_input, world_info_filtrado, respuesta):
         ruta_inferida = inferir_ruta_contenido(respuesta, world_data)
 
         # Intentar parsear respuesta como JSON si es posible
+        
+        def extraer_json_desde_bloque(texto):
+
+            # Elimina etiquetas markdown tipo ```json ... ```
+
+            bloque = re.search(r"```json\\s*(.*?)\\s*```", texto, re.DOTALL)
+            if bloque:
+                contenido = bloque.group(1)
+                try:
+                    return json.loads(contenido)
+                except Exception as e:
+                    print(Fore.RED + f"⚠️ Error al parsear el JSON embebido: {e}")
+                    return contenido
+            return texto
         try:
-            respuesta_json = json.loads(respuesta)
-            valor = respuesta_json
+            valor = extraer_json_desde_bloque(respuesta)
         except Exception:
             valor = respuesta.strip()
 
@@ -244,10 +258,10 @@ def revisar_historial_temp_para_aprendizaje():
         if mensaje["rol"] == "usuario":
             user_input = mensaje["mensaje"]
 
-            if len(user_input.strip()) < 6:
+            if len(user_input.strip()) < 20:
                 continue  # Ignora saludos o inputs muy cortos
 
-            prompt = f"Usuario: {user_input}\nAsistente: Devuélveme exclusivamente el nuevo conocimiento como JSON estructurado listo para insertar en world.json."
+            prompt = f"Usuario: {user_input}\n Haz un resumen narrativo corto del texto anterior remarcando los nombres/personajes o facciones más relevantes y conviértelo a JSON estructurado listo para insertar en world.json, a demás de apartados dentro del JSON con los nombres/personajes o facciones más relevantes y solo dame dicho json, sin ningúna otra frase adicional."
             respuesta = ask(prompt)
             world_info_filtrado = buscar_fragmentos_relevantes(user_input)
             sugerir_aprendizaje(user_input, world_info_filtrado, respuesta)

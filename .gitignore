@@ -1,2 +1,5 @@
-.env
-historial_temp.json
+MinervaPrime/.env
+MinervaPrime/historial_temp.json
+MinervaPrime/feedback_data.jsonl
+MinervaPrime/historial.json
+MinervaPrime/pending_suggestions.json

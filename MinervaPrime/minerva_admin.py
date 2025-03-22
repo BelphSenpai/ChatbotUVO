@@ -4,57 +4,83 @@ from utils import (
     aplicar_cambio_a_world,
     registrar_feedback
 )
+import os
+import json
+from colorama import Fore, Style, init
+from Minerva import revisar_historial_temp_para_aprendizaje
 
-WORLD_PATH = "world.json"
-SUGERENCIAS_PATH = "pending_suggestions.json"
-FEEDBACK_PATH = "feedback_data.jsonl"
+# Inicializar colorama
+init(autoreset=True)
+
+# Base directory relativa al script actual
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Rutas absolutas a los archivos
+WORLD_PATH = os.path.join(BASE_DIR, "world.json")
+SUGERENCIAS_PATH = os.path.join(BASE_DIR, "pending_suggestions.json")
+FEEDBACK_PATH = os.path.join(BASE_DIR, "feedback_data.jsonl")
 
 def revisar_sugerencias():
     sugerencias = cargar_json(SUGERENCIAS_PATH)
     nuevas_sugerencias = []
 
-    for sugerencia in sugerencias:
-        print("\n📌 Sugerencia:", sugerencia["id"])
-        print("Ruta:", " > ".join(sugerencia["ruta"]))
-        print("Valor propuesto:", sugerencia["valor"])
-        print("Contexto:", sugerencia.get("contexto", "Sin contexto"))
+    print(Fore.CYAN + f"\n📋 Revisión de {len(sugerencias)} sugerencias pendientes:\n")
 
-        decision = input("¿Aceptar (a), Rechazar (r), Editar (e), Saltar (s)? ").strip().lower()
+    for sugerencia in sugerencias:
+        print(Fore.YELLOW + "="*50)
+        print(Fore.BLUE + "📌 ID:", Fore.WHITE + sugerencia["id"])
+        print(Fore.BLUE + "📍 Ruta:", Fore.WHITE + " > ".join(sugerencia["ruta"]))
+        print(Fore.BLUE + "📄 Valor propuesto:")
+        if isinstance(sugerencia["valor"], str):
+            print(Fore.GREEN + sugerencia["valor"])
+        else:
+            print(Fore.GREEN + json.dumps(sugerencia["valor"], indent=2, ensure_ascii=False))
+
+        print(Fore.BLUE + "🧠 Contexto:", Fore.WHITE + sugerencia.get("contexto", "Sin contexto"))
+
+        decision = input(Fore.MAGENTA + "¿Aceptar (a), Rechazar (r), Editar (e), Saltar (s)? ").strip().lower()
 
         if decision == "a":
             success = aplicar_cambio_a_world(WORLD_PATH, sugerencia["ruta"], sugerencia["valor"])
             if success:
                 registrar_feedback(FEEDBACK_PATH, sugerencia, "aceptada")
+                print(Fore.GREEN + "✔ Sugerencia aceptada y aplicada.")
         elif decision == "r":
             registrar_feedback(FEEDBACK_PATH, sugerencia, "rechazada")
+            print(Fore.RED + "✘ Sugerencia rechazada.")
         elif decision == "e":
-            print("\n🔧 Editando sugerencia...")
-            nuevo_valor = input("✏️ Nuevo valor (deja vacío para mantener el actual): ").strip()
-            nueva_ruta_str = input("📍 Nueva ruta (usa punto como separador, deja vacío para mantener la actual): ").strip()
+            print(Fore.CYAN + "\n🔧 Editando sugerencia...")
+            nuevo_valor = input(Fore.YELLOW + "✏️ Nuevo valor (deja vacío para mantener el actual): ").strip()
+            nueva_ruta_str = input(Fore.YELLOW + "📍 Nueva ruta (usa punto como separador, deja vacío para mantener la actual): ").strip()
 
-        # Mantener valor actual si no se cambia
             if nuevo_valor:
                 try:
                     sugerencia["valor"] = json.loads(nuevo_valor)
                 except Exception:
                     sugerencia["valor"] = nuevo_valor
 
-            # Mantener ruta actual si no se cambia
             if nueva_ruta_str:
                 sugerencia["ruta"] = nueva_ruta_str.split(".")
 
-         # Aplicar el cambio con la nueva ruta/valor
             success = aplicar_cambio_a_world(WORLD_PATH, sugerencia["ruta"], sugerencia["valor"])
             if success:
                 registrar_feedback(FEEDBACK_PATH, sugerencia, "editada")
-            elif decision == "s":
-                nuevas_sugerencias.append(sugerencia)
-            else:
-                print("⛔ Opción no válida. Se omite esta sugerencia.")
-                nuevas_sugerencias.append(sugerencia)
+                print(Fore.GREEN + "✏ Sugerencia editada y aplicada.")
+        elif decision == "s":
+            nuevas_sugerencias.append(sugerencia)
+            print(Fore.YELLOW + "↪ Sugerencia saltada y mantenida en la cola.")
+        else:
+            nuevas_sugerencias.append(sugerencia)
+            print(Fore.RED + "⛔ Opción no válida. Se mantiene la sugerencia sin cambios.")
 
     guardar_json(SUGERENCIAS_PATH, nuevas_sugerencias)
-    print("\n✔️ Revisión finalizada.")
+    print(Fore.CYAN + "\n✔️ Revisión finalizada.")
 
 if __name__ == "__main__":
+    print(Fore.YELLOW + "⏳ Revisión automática del historial temporal antes de purgar...")
+    revisar_historial_temp_para_aprendizaje()
+    print(Fore.GREEN + "✅ Revisión completada. Continuando con la purga del historial temporal...")
+    if os.path.exists("historial_temp.json"):
+            os.remove("historial_temp.json")
+    print(Fore.GREEN + "Historial temporal anterior purgado.")
     revisar_sugerencias()
