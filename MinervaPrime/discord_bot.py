@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from config import DISCORD_TOKEN
-from Minerva import modo_aprendizaje, modo_consulta
+from Minerva import modo_aprendizaje, modo_consulta, iniciar_minerva
 from colorama import init, Fore, Style
 import os
 
@@ -83,7 +83,9 @@ async def on_message(message):
 if __name__ == "__main__":
     print("Iniciando Minerva...")
 
-    print("Purgando anterior historial temporal...")
+    iniciar_minerva()
+
+    print(Fore.YELLOW +"Purgando anterior historial temporal...")
 
     if os.path.exists("historial_temp.json"):
         os.remove("historial_temp.json")
