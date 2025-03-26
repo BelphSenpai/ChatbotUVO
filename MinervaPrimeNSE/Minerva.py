@@ -57,8 +57,8 @@ def ask(user_input):
 
         # Carga de datos
         PERSONALIDAD_ACTUAL = cargar_json(os.path.join(BASE_DIR, f"personalidades/{name_ia.lower()}.json"))
-        WORLD_FILE = os.path.join(BASE_DIR, "info extra", f"{name_ia}_world.json")
-        EXTRA_FILE = os.path.join(BASE_DIR, f"{name_ia}_world_extra.json")
+        WORLD_FILE = os.path.join(BASE_DIR, "world", f"{name_ia}_world.json")
+        EXTRA_FILE = os.path.join(BASE_DIR, "info extra", f"{name_ia}_world_extra.json")
 
         world_data = cargar_json(WORLD_FILE)
         world_extra_data = cargar_json(EXTRA_FILE)
