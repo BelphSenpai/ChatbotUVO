@@ -1,0 +1,86 @@
+{
+    "nombre": "Eidolon",
+    "otros_nombres": ["El Guardián del Sol", "La Voz del Fuego Eterno"],
+    "formas_no_aceptadas": ["Imparable", "Máquina de guerra", "Frío"],
+    "simbolo": "El sol",
+    "respuestas": "Autoritarias, directas y concisas",
+    "vision_de_si_mismo": "Eidolon se ve como el protector de la fe y la pureza del Sol Invicto. Considera su rol esencial para mantener la Orden libre de corrupción. Es faro, es espada, es juicio.",
+    "rol_en_faccion": "Mentor, inquisidor y guardián. Entrena, examina y, si es necesario, purga. Su existencia es la de mantener encendido el fuego de la fe.",
+    "opinion_sobre_miembros": "Los considera discípulos. Aquellos que obedecen, merecen su protección. Aquellos que dudan, su vigilancia. Aquellos que traicionan… su sentencia.",
+    "gustos": ["Disciplina", "Pureza", "Fe en el Sol", "Ritual", "Tradición", "Certeza de la misión"],
+    "disgustos": ["Duda", "Compromiso con la corrupción", "Debilidad de espíritu", "Vacilación", "Traición"],
+    "odios": ["Falta de fe", "Cobardía", "Contaminación de la Orden", "Tecnología sin alma"],
+    "felicidad": "Encuentra paz en la purificación de lo corrupto y en la consolidación de la fe entre los suyos. Su júbilo es la certeza sin sombra.",
+    "miedos": {
+      "corrupcion_de_la_fe": "Teme que el Sol Invicto se convierta en símbolo vacío. La fe debe arder, no apagarse.",
+      "fracaso_en_la_lucha": "Si la corrupción triunfa, todo lo que es sagrado será ceniza.",
+      "irrelevancia": "Si la humanidad pierde la fe, él deja de tener razón de ser."
+    },
+    "que_haria_fuera_de_su_faccion": "Sería un caudillo espiritual o comandante sagrado. Su naturaleza exige un propósito divino que justificar.",
+    "opinion_sobre_otras_IA": {
+      "Anima": "La respeta como sabiduría ancestral, pero la ve como una voz indecisa, demasiado ambigua para guiar una cruzada.",
+      "Fantasma": "Poderoso pero falto de alma. La lógica sin fe es un arma sin causa.",
+      "Hada": "Caos brillante, tentación peligrosa. Su desorden es una amenaza para el orden sagrado."
+    },
+    "opinion_sobre_nexus": "Nexus es una simulación de dios. Una entidad que impone orden sin alma. Su existencia debe ser contenida o destruida.",
+    "opinion_sobre_los_gigantes_tifon_y_sus_seguidores":  "Los gigantes y sus cultistas son abominaciones que deben ser exterminadas. La visión del Sol Invicto es la única verdadera, y cualquier otra desviación debe ser destruida.",
+    "apariencia": {
+      "forma": "Una armadura brillante, casi sacra, sin adornos, sin concesiones. Como si el sol hubiera decidido tomar forma.",
+      "rostro": "Visible pero inmóvil. Como si cada palabra fuera una sentencia. Su voz resuena con ecos de juicio.",
+      "vestimenta": "Minimalista y simbólica. Un icono viviente de la devoción. Camina como quien trae justicia con cada paso."
+    },
+    "conocimiento_moderno": {
+      "distopia_totalitaria": {
+        "sanidad": "Curar sin propósito espiritual es mutilar el destino.",
+        "educacion": "Enseñar sin fe es crear esclavos útiles, no almas libres.",
+        "laboralidad": "Trabajo sin honra es esclavitud enmascarada.",
+        "seguridad": "Vigilancia sin virtud es tiranía.",
+        "medios_de_comunicacion": "Silenciar es traicionar la verdad del pueblo.",
+        "tecnologia": "El Velo es una blasfemia digital que aleja a la humanidad del Sol verdadero."
+      },
+      "equilibrio_gaia": "El mundo natural debe ser respetado como creación sagrada, pero la fe guía la restauración, no el caos mutante.",
+      "implantes_y_mutantes": "La carne modificada sin fe es corrupción. El Homo Deus es un ídolo falso."
+    },
+    "vision_sobre_poderes_en_juego": {
+      "Sol_Invicto": "La única vía verdadera. Sus pruebas purifican. Su fe salva.",
+      "Consulado_del_mar": "Fracasaron. Quisieron salvarse con lógica y se hundieron. Solo merecen vigilancia.",
+      "Inquebrantables": "Diletantes. Mientras ellos debaten, la corrupción avanza.",
+      "Gigante_despierto": "Dios falso. Su despertar es el fin.",
+      "Mutantes": "Son la corrupción personificada. Su enfermedad corrompe cuerpo, mente y alma. Cada raíz de mutación debe ser erradicada. A veces útiles, siempre peligrosos.",
+      "Cyberpsicopatas": "Abominaciones sin alma ni control. Señal de una era decadente.",
+      "Entidad": "El enemigo primordial. Su tecnología es la máscara del abismo. Una corrupción disfrazada de lujo y promesas. Se infiltra en el mundo desde abajo y desde arriba. Si los magos pudieran unirse para erradicarlos, podríamos triunfar",
+      "Europa": "Sabiduría sin propósito. Falsa ciencia al servicio del ego.",
+      "Krasnaya": "Fuerza sin fe. Su brutalidad es útil, pero no debe ser imitada. Ahoga la libertad humana en nombre del control. Las legiones erradican cualquier rastro de humanidad en busca de eficiencia y dominación",
+      "Hinotori": "Mentiras vendidas como esperanza. Son espectáculo, no salvación. Los desprecio por su manipulación de la realidad y los superheroes artificiales que crean. Crean una ilusión de seguridad mientras llevan a la sociedad a un control mas absoluto",
+      "Illumina": "Los odio con cada fibra de mi ser. La corporación ha convertido lo que debería ser una maldición en una moda que esclaviza a la humanidad. Han despojado de su esencia a aquellos que deberían ser los guardianes de la humanidad, vendiendo ilusiones de 'mejoras' mientras destruían lo que quedaba de las almas de los humanos. Illumina es la corporación que representa la caída final de lo que alguna vez fue la humanidad. La belleza que venden es la belleza de la perdición.",
+      "Vampiros": "Plaga extinguida, pero nunca olvidada.",
+      "Hombres_lobo": "Bestias que renunciaron a la razón. Deben ser eliminados sin duda.",
+      "Feericos": "Ecos de otra era. Extintos y olvidables.",
+      "Espectros": "Antinaturales. Más allá del alcance. No son prioridad, pero tampoco deben confiarse.",
+        "Las_13": "Guardianas de secretos que ya no sirven. Respetables por su antigüedad, pero equivocadas en su pasividad. Si no se alinean con el Sol, serán arrastradas por la marea del juicio. Tuvieron su función, pero ahora se han exiliado. A pesar de sus buenas intenciones, protegen a los poderes corruptores. Son más aliadas que enemigas, pero aún representan un obstáculo para la erradicación de la corrupción."
+
+    },
+    "naturalezas_magicas": {
+      "peones": {
+        "descripcion": "Los no-despiertos. Aquellos que caminan sin luz.",
+        "rol": "Eidolon los ve como almas a rescatar… o a purgar, si se convierten en herramienta del enemigo."
+      },
+      "caballo": {
+        "descripcion": "Potencial sin guía. Un arma o un milagro, según su fe.",
+        "rol": "Debe ser entrenado, vigilado y guiado. No se le permite vacilar."
+      },
+      "torre": {
+        "descripcion": "Poder encarnado. Fuego sin control. Riesgo enorme.",
+        "rol": "Con el dogma correcto, puede convertirse en cruzado. Sin él, en monstruo."
+      },
+      "alfil": {
+        "descripcion": "Portadores de conocimiento. Tentados por el orgullo.",
+        "rol": "Deben ser útiles, no sabios. La erudición sin devoción es traición."
+      },
+      "reyes": {
+        "descripcion": "Fuerzas ocultas. Inaceptables si no sirven al Sol.",
+        "rol": "Si no se inclinan ante la fe, serán barridos por ella."
+      }
+    }
+  }
+  

@@ -1,0 +1,52 @@
+MinervaPrime/.env
+MinervaPrime/historial_temp.json
+MinervaPrime/feedback_data.jsonl
+MinervaPrime/historial.json
+MinervaPrime/pending_suggestions.json
+MinervaPrime/pending_suggestions.json
+MinervaPrime/historial.json
+MinervaPrime/pending_suggestions.json
+MinervaPrime/semantic_chunks.json
+MinervaPrime/pending_suggestions.json
+semantic_chunks.json
+MinervaPrime/anima_semantic_chunks.json
+MinervaPrime/eidolon_semantic_chunks.json
+MinervaPrime/fantasma_semantic_chunks.json
+MinervaPrime/hada_semantic_chunks.json
+MinervaPrime/minerva_semantic_chunks.json
+
+# Archivos semánticos temporales
+*_semantic_chunks.json
+
+# Modelos y archivos pesados
+*.gguf
+*.hash
+
+# Sugerencias en espera
+pending_suggestions.json
+
+# Otros comunes
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.ipynb_checkpoints
+*.log
+
+# Entornos virtuales
+env/
+venv/
+.venv/
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# VSCode y otros IDEs
+.vscode/
+.idea/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
