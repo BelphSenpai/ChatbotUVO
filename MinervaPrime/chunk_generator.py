@@ -10,7 +10,10 @@ from utils import cargar_json, get_name_ia
 # -----------------------------
 # Obtener nombre de la IA desde argumentos
 # -----------------------------
-name_ia = get_name_ia()
+if len(sys.argv) > 1:
+    name_ia = sys.argv[1].lower()
+else:
+    name_ia = get_name_ia()
 
 print(Fore.MAGENTA + f"💡 Procesando IA: {name_ia}")
 
@@ -105,10 +108,12 @@ def generar_chunks_por_seccion(json_data):
         recorrer(contenido)
     return chunks
 
-def transformar_chunks():
-    print("🔄 Transformando semantic_chunks.json a formato estructurado...")
+def transformar_chunks(path=CHUNKS_PATH, es_extra=False):
+    print(f"🔄 Transformando {os.path.basename(path)} a formato estructurado...")
 
-    with open(CHUNKS_PATH, "r", encoding="utf-8") as f:
+    is_extra = es_extra or ("extra" in os.path.basename(path))
+
+    with open(path, "r", encoding="utf-8") as f:
         lineas = json.load(f)
 
     chunks_transformados = []
@@ -118,64 +123,197 @@ def transformar_chunks():
             ruta_limpia = ruta_str.strip().replace(" ", "_").replace(":", ".").lower()
             ruta_lista = ruta_limpia.split(".")
             texto = texto.strip()
+        else:
+            ruta_lista = linea.get("ruta", [])
+            texto = linea.get("texto", "").strip()
+            if not ruta_lista or not texto:
+                continue
 
-            encabezado = ""
-            ruta_final = ruta_lista[-1] if ruta_lista else ""
-            if "gigantes_conocidos" in ruta_lista:
-                encabezado = f"🌋 {ruta_final.replace('_', ' ').title()}: "
-            elif "espíritus_conocidos" in ruta_lista:
-                encabezado = f"🌀 {ruta_final.replace('_', ' ').title()}: "
-            elif "personajes" in ruta_lista:
-                encabezado = f"👤 {ruta_final.replace('_', ' ').title()}: "
-            elif "facciones" in ruta_lista and "nombre" not in ruta_final:
-                encabezado = f"🏴 {ruta_final.replace('_', ' ').title()}: "
-            elif "eventos_recientes" in ruta_lista or "fechas_historicas" in ruta_lista:
-                encabezado = f"🕒 Evento: "
-            elif "objetos" in ruta_lista:
-                encabezado = f"📦 {ruta_final.replace('_', ' ').title()}: "
+        encabezado = ""
+        ruta_final = ruta_lista[-1] if ruta_lista else ""
+        if "gigantes_conocidos" in ruta_lista:
+            encabezado = f"🌋 {ruta_final.replace('_', ' ').title()}: "
+        elif "espíritus_conocidos" in ruta_lista:
+            encabezado = f"🌀 {ruta_final.replace('_', ' ').title()}: "
+        elif "personajes" in ruta_lista:
+            encabezado = f"👤 {ruta_final.replace('_', ' ').title()}: "
+        elif "facciones" in ruta_lista and "nombre" not in ruta_final:
+            encabezado = f"🏴 {ruta_final.replace('_', ' ').title()}: "
+        elif "eventos_recientes" in ruta_lista or "fechas_historicas" in ruta_lista:
+            encabezado = f"🕒 Evento: "
+        elif "objetos" in ruta_lista:
+            encabezado = f"📦 {ruta_final.replace('_', ' ').title()}: "
 
-            chunks_transformados.append({
-                "ruta": ruta_lista,
-                "texto": encabezado + texto
-            })
+        if is_extra:
+            texto = f"[PRIORIDAD EXTRA] {texto}"
+
+        chunks_transformados.append({
+            "ruta": ruta_lista,
+            "texto": encabezado + texto,
+            **({"es_extra": True} if is_extra else {})
+        })
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(chunks_transformados, f, ensure_ascii=False, indent=2)
+
+    print(f"✅ Chunks estructurados guardados en {path}")
 
     with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
         json.dump(chunks_transformados, f, ensure_ascii=False, indent=2)
 
     print("✅ Chunks estructurados correctamente para FAISS.")
 
+
+def generar_chunks_extraworld(nombre_ia, input_path=None, output_path=None, aplicar_transformacion=True):
+    """
+    Genera el archivo de chunks extra `{nombre_ia}_extra_semantic_chunks.json` desde un archivo extraworld JSON (estructurado o plano).
+    """
+    print(Fore.CYAN + f"📦 Generando chunks extra para {nombre_ia}...")
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    input_path = input_path or os.path.join(base_dir, f"extraworld_{nombre_ia}.json")
+    output_path = output_path or os.path.join(base_dir, f"{nombre_ia}_extra_semantic_chunks.json")
+
+    if not os.path.exists(input_path):
+        print(Fore.RED + f"❌ No se encontró el archivo de entrada: {input_path}")
+        return
+
+    with open(input_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    # Detectar si ya está chunkificado
+    if isinstance(data, list) and all("ruta" in c and "texto" in c for c in data):
+        chunks = data
+        print(Fore.GREEN + f"🧩 {len(chunks)} chunks ya formateados detectados.")
+    else:
+        print(Fore.YELLOW + "🔄 Formateando JSON a chunks planos...")
+        chunks = flatten_json_to_text(data)
+
+    # Marcar todos como extra
+    for chunk in chunks:
+        chunk["es_extra"] = True
+
+    if aplicar_transformacion:
+        print(Fore.BLUE + "🎨 Aplicando transformación estructural (encabezados)...")
+        chunks = transformar_chunks_en_memoria(chunks, aplicar_encabezado=False)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(chunks, f, ensure_ascii=False, indent=2)
+
+    print(Fore.GREEN + f"✅ Chunks extra guardados en {output_path} ({len(chunks)} entradas).")
+    return chunks  # Devuelve los chunks por si los quieres usar directamente
+
+def transformar_chunks_en_memoria(chunks, aplicar_encabezado=True):
+    chunks_transformados = []
+
+    for chunk in chunks:
+        ruta = chunk.get("ruta", [])
+        texto = chunk.get("texto", "").strip()
+        if not texto:
+            continue
+
+        encabezado = ""
+        ruta_final = ruta[-1] if ruta else ""
+
+        if aplicar_encabezado:
+            if "gigantes_conocidos" in ruta:
+                encabezado = f"🌋 {ruta_final.replace('_', ' ').title()}: "
+            elif "espíritus_conocidos" in ruta:
+                encabezado = f"🌀 {ruta_final.replace('_', ' ').title()}: "
+            elif "personajes" in ruta:
+                encabezado = f"👤 {ruta_final.replace('_', ' ').title()}: "
+            elif "facciones" in ruta and "nombre" not in ruta_final:
+                encabezado = f"🏴 {ruta_final.replace('_', ' ').title()}: "
+            elif "eventos_recientes" in ruta or "fechas_historicas" in ruta:
+                encabezado = f"🕒 Evento: "
+            elif "objetos" in ruta:
+                encabezado = f"📦 {ruta_final.replace('_', ' ').title()}: "
+
+        if chunk.get("es_extra", False):
+            texto = f"[PRIORIDAD EXTRA] {texto}"
+
+        chunks_transformados.append({
+            "ruta": ruta,
+            "texto": encabezado + texto,
+            **({"es_extra": True} if chunk.get("es_extra", False) else {})
+        })
+
+    return chunks_transformados
+
+
+
+
 # -----------------------------
 # Main
 # -----------------------------
 def main():
+    # --- WORLD ---
     if not os.path.exists(WORLD_PATH):
         print(Fore.RED + f"❌ No se encuentra {WORLD_PATH}")
-        return
+    else:
+        if not necesita_reindexar(WORLD_PATH, HASH_PATH):
+            print(Fore.GREEN + "✅ No hay cambios en world.json. No es necesario reindexar.")
+            if not os.path.exists(CHUNKS_PATH) or os.stat(CHUNKS_PATH).st_size == 0:
+                print(Fore.YELLOW + "📂 semantic_chunks.json no encontrado o vacío. Generando desde world.json (modo fallback)...")
+                world_data = cargar_json(WORLD_PATH)
+                semantic_chunks = flatten_json_to_text(world_data)
+                with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
+                    json.dump(semantic_chunks, f, ensure_ascii=False, indent=2)
+                print(Fore.GREEN + "✅ semantic_chunks.json generado desde world.json (fallback).")
+        else:
+            with open(WORLD_PATH, "r", encoding="utf-8") as f:
+                data = json.load(f)
 
-    if not necesita_reindexar():
-        print(Fore.GREEN + "✅ No hay cambios. No es necesario reindexar.")
-        if not os.path.exists(CHUNKS_PATH) or os.stat(CHUNKS_PATH).st_size == 0:
-            print(Fore.YELLOW + "📂 No se encontró semantic_chunks.json o está vacío. Generando desde world.json (modo fallback)...")
-            world_data = cargar_json(WORLD_PATH)
-            semantic_chunks = flatten_json_to_text(world_data)
+            print(Fore.YELLOW + "⏳ Generando chunks desde world.json...")
+            chunks = generar_chunks_por_seccion(data)
+
             with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
-                json.dump(semantic_chunks, f, ensure_ascii=False, indent=2)
-            print(Fore.GREEN + "✅ semantic_chunks.json generado desde world.json (modo fallback).")
-        return
+                json.dump(chunks, f, ensure_ascii=False, indent=2)
 
-    with open(WORLD_PATH, "r", encoding="utf-8") as f:
-        data = json.load(f)
+            guardar_hash_actual(WORLD_PATH, HASH_PATH)
+            print(Fore.GREEN + f"✅ {len(chunks)} chunks guardados en {CHUNKS_PATH} ({datetime.now().strftime('%H:%M:%S')})")
 
-    print(Fore.YELLOW + "⏳ Generando chunks por secciones...")
-    chunks = generar_chunks_por_seccion(data)
+            transformar_chunks()
 
-    with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
-        json.dump(chunks, f, ensure_ascii=False, indent=2)
+    # --- EXTRAWORLD ---
+    extra_path = os.path.join(BASE_DIR, "info extra", f"{name_ia}_extraworld.json")
+    extra_chunks_path = os.path.join(BASE_DIR, f"{name_ia}_extra_semantic_chunks.json")
+    extra_hash_path = os.path.join(BASE_DIR, f"{name_ia}_extra_chunks.hash")
 
-    guardar_hash_actual()
-    print(Fore.GREEN + f"✅ {len(chunks)} chunks guardados en {CHUNKS_PATH} ({datetime.now().strftime('%H:%M:%S')})")
+    if not os.path.exists(extra_path):
+        print(Fore.YELLOW + f"ℹ️ No se encontró extraworld_{name_ia}.json, se omite.")
+    else:
+        if not necesita_reindexar(extra_path, extra_hash_path):
+            print(Fore.GREEN + "✅ No hay cambios en extraworld. No es necesario reindexar.")
+            if not os.path.exists(extra_chunks_path) or os.stat(extra_chunks_path).st_size == 0:
+                print(Fore.YELLOW + "📂 extra_semantic_chunks.json no encontrado o vacío. Generando desde extraworld (fallback)...")
+                data = cargar_json(extra_path)
+                chunks = flatten_json_to_text(data)
+                for c in chunks:
+                    c["es_extra"] = True
+                with open(extra_chunks_path, "w", encoding="utf-8") as f:
+                    json.dump(chunks, f, ensure_ascii=False, indent=2)
+                print(Fore.GREEN + f"✅ {len(chunks)} chunks extra generados (fallback).")
+        else:
+            data = cargar_json(extra_path)
 
-    transformar_chunks()
+            if isinstance(data, list) and all("ruta" in c and "texto" in c for c in data):
+                chunks = data
+                print(Fore.GREEN + f"🧩 {len(chunks)} chunks ya formateados detectados en extraworld.")
+            else:
+                print(Fore.YELLOW + "🔄 Formateando extraworld en chunks planos...")
+                chunks = flatten_json_to_text(data)
+
+            for c in chunks:
+                c["es_extra"] = True
+
+            with open(extra_chunks_path, "w", encoding="utf-8") as f:
+                json.dump(chunks, f, ensure_ascii=False, indent=2)
+
+            guardar_hash_actual(extra_path, extra_hash_path)
+            print(Fore.GREEN + f"✅ {len(chunks)} chunks guardados en {extra_chunks_path} ({datetime.now().strftime('%H:%M:%S')})")
+
+            transformar_chunks(extra_chunks_path, es_extra=True)
 
 if __name__ == "__main__":
     main()

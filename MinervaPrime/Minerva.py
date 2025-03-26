@@ -89,49 +89,39 @@ semantic_textos = []
 
 from sklearn.preprocessing import normalize  # Asegúrate de tener este import
 
-def inicializar_chunks_semanticos(path=os.path.join(BASE_DIR, name_ia+"_semantic_chunks.json")):
+def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
     global semantic_chunks, semantic_index, semantic_textos
 
-    if not os.path.exists(path):
-        print(Fore.RED + "[ERROR] No se ha encontrado semantic_chunks.json, generant...")
-        semantic_chunks = []
-        semantic_textos = []
-        semantic_index = None
+    base = os.path.dirname(os.path.abspath(__file__))
+    path_normal = path_normal or os.path.join(base, f"{name_ia}_semantic_chunks.json")
+    path_extra = path_extra or os.path.join(base, f"{name_ia}_extra_semantic_chunks.json")
 
-        generar_chunks()
-        return
+    def cargar_chunks(path):
+        if not os.path.exists(path):
+            return []
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
 
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            contenido = json.load(f)
+    normal_chunks = cargar_chunks(path_normal)
+    extra_chunks = cargar_chunks(path_extra)
 
-            if isinstance(contenido, str):
-                semantic_chunks = json.loads(contenido)
-            elif isinstance(contenido, list):
-                semantic_chunks = contenido
-            else:
-                raise ValueError("El contenido del archivo no es una lista válida.")
+    for c in extra_chunks:
+        c["es_extra"] = True
 
-        if not all("texto" in chunk and "ruta" in chunk for chunk in semantic_chunks):
-            raise ValueError("Cada chunk debe tener 'texto' y 'ruta'.")
+    semantic_chunks = normal_chunks + extra_chunks
 
-        semantic_textos = [
-            f"{chunk['ruta']} - {chunk['texto']}" for chunk in semantic_chunks
-        ]
-        emb_chunks = modelo_embeddings.encode(semantic_textos, convert_to_numpy=True)
-        emb_chunks = normalize(emb_chunks)
+    semantic_textos = [
+        f"{chunk['ruta']} - {chunk['texto']}" for chunk in semantic_chunks
+    ]
+    emb_chunks = modelo_embeddings.encode(semantic_textos, convert_to_numpy=True)
+    emb_chunks = normalize(emb_chunks)
 
-        dimension = emb_chunks.shape[1]
-        semantic_index = faiss.IndexFlatIP(dimension)
-        semantic_index.add(emb_chunks)
+    dimension = emb_chunks.shape[1]
+    semantic_index = faiss.IndexFlatIP(dimension)
+    semantic_index.add(emb_chunks)
 
-        print(Fore.GREEN + f"✅ {len(semantic_chunks)} chunks cargados e indexados correctamente.")
+    print(Fore.GREEN + f"✅ {len(semantic_chunks)} chunks totales cargados e indexados (normales + extra).")
 
-    except Exception as e:
-        print(Fore.RED + f"❌ Error al cargar o procesar semantic_chunks.json: {e}")
-        semantic_chunks = []
-        semantic_textos = []
-        semantic_index = None
 
 def cargar_historial():
     """Carga el historial desde un archivo o lo inicia vacío."""
@@ -193,23 +183,40 @@ def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
     emb_query = modelo_embeddings.encode([query], convert_to_numpy=True)
     emb_query = normalize(emb_query)
 
-    distancias, indices = semantic_index.search(emb_query, k)
+    distancias, indices = semantic_index.search(emb_query, k * 3)  # buscamos más de lo normal
+
+    candidatos = []
+    for idx in indices[0]:
+        if idx >= len(semantic_chunks):
+            continue
+        chunk = semantic_chunks[idx]
+        score = distancias[0][list(indices[0]).index(idx)]
+        if chunk.get("es_extra", False):
+            score += 0.05  # boost para chunks extra
+        candidatos.append((score, chunk))
+
+    # Ordenamos por score descendente
+    candidatos.sort(reverse=True, key=lambda x: x[0])
 
     resultados = []
     rutas_vistas = set()
 
     world_data = cargar_json(WORLD_FILE)
 
-    for idx in indices[0]:
-        chunk = semantic_chunks[idx]
+    usados = 0
+    for score, chunk in candidatos:
+        if usados >= k:
+            break
         ruta = chunk["ruta"] if isinstance(chunk["ruta"], list) else chunk["ruta"].split(".")
         ruta_str = ">".join(ruta)
         if ruta_str in rutas_vistas:
             continue
+
         rutas_vistas.add(ruta_str)
+        resultados.append(f"[{ruta_str}]{' [EXTRA]' if chunk.get('es_extra') else ''}\n{chunk['texto']}")
+        usados += 1
 
-        resultados.append(f"[{ruta_str}]\n{chunk['texto']}")
-
+        # Añadir contexto de padres si es necesario
         if contexto_padre:
             for profundidad in [1, 2]:
                 if len(ruta) > profundidad:
@@ -225,6 +232,36 @@ def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
 
     return "\n\n".join(resultados)
 
+def ask_full(query, personalidad, world_extra, world, model="gpt-4o-mini"):
+    system_prompt = (
+        "Eres una inteligencia artificial especializada en un mundo de ficción. "
+        "Tu rol es responder consultas manteniendo coherencia interna y fidelidad a la personalidad y contexto proporcionados."
+    )
+
+    # Estructura jerárquica clara
+    full_prompt = (
+        "### PERSONALIDAD (máxima prioridad)\n"
+        f"{json.dumps(personalidad, indent=2, ensure_ascii=False)}\n\n"
+        "### CONTEXTO ADICIONAL DEL MUNDO (alta prioridad)\n"
+        f"{json.dumps(world_extra, indent=2, ensure_ascii=False)}\n\n"
+        "### CONTEXTO GENERAL DEL MUNDO\n"
+        f"{json.dumps(world, indent=2, ensure_ascii=False)}\n\n"
+        "### CONSULTA DEL USUARIO\n"
+        f"{query.strip()}\n"
+    )
+
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": full_prompt},
+        ],
+        temperature=0.7
+    )
+
+    return response.choices[0].message.content.strip()
+
+
 def ask(prompt):
     """Llama a la API de OpenAI y asegura que siempre devuelva una respuesta válida."""
     try:
@@ -233,6 +270,8 @@ def ask(prompt):
             instructions=instrucciones_globales,
             input=prompt
         )
+
+        print("🧠 Prompt a Fantasma:\n", prompt)
 
         if response and hasattr(response, 'output_text') and response.output_text:
             return response.output_text.strip()
@@ -480,7 +519,7 @@ def iniciar_minerva(nombre_ia=None):
         print(Fore.YELLOW + "ℹ️ No se encontró historial temporal para purgar.")
 
 if __name__ == "__main__":
-    print(f"Iniciando {name_ia}...")
+    '''print(f"Iniciando {name_ia}...")
     
     iniciar_minerva(name_ia)
 
@@ -499,4 +538,26 @@ if __name__ == "__main__":
             print(Fore.MAGENTA + f"\n🤖 {name_ia}: {respuesta}")
         except KeyboardInterrupt:
             print(Fore.RED + f"\n👋 Saliendo de {name_ia}...")
-            break
+            break'''
+    import time
+
+    print("⏳ Iniciando pregunta...")
+
+    start_time = time.time()  # Marca de inicio
+
+    respuesta = ask_full(
+        "¿Qué opinas sobre eidolon?",
+        PERSONALIDAD_ACTUAL,
+        cargar_json(BASE_DIR + "/fantasma_world_extra.json"),
+        cargar_json(BASE_DIR + "/fantasma_world.json")
+    )
+
+    end_time = time.time()  # Marca de fin
+
+    print("🧠 Respuesta recibida:")
+    print(respuesta)
+
+    # Cálculo del tiempo total
+    elapsed_time = end_time - start_time
+    print(f"⏱️ Tiempo de respuesta: {elapsed_time:.2f} segundos")
+
