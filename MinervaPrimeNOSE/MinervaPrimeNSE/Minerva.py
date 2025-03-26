@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from utils import cargar_json, get_name_ia
 
+name_ia = get_name_ia()
 
 init(autoreset=True)
 load_dotenv()
@@ -31,12 +32,23 @@ system_prompt = (
 
 import difflib
 
-def validar_respuesta_vs_contexto(respuesta, contexto_base, umbral=0.3):
-    texto_base = json.dumps(contexto_base, ensure_ascii=False).lower()
-    respuesta = respuesta.lower()
-    ratio = difflib.SequenceMatcher(None, respuesta, texto_base).ratio()
-    return ratio >= umbral
+def extraer_claves_relevantes(respuesta, world_data, extra_data):
+    claves_usadas = set()
 
+    def buscar(obj, path=""):
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                if isinstance(v, (dict, list)):
+                    buscar(v, f"{path}.{k}" if path else k)
+                elif isinstance(v, str) and v.lower() in respuesta.lower():
+                    claves_usadas.add(f"{path}.{k}" if path else k)
+        elif isinstance(obj, list):
+            for i, item in enumerate(obj):
+                buscar(item, f"{path}[{i}]")
+
+    buscar(world_data, "world")
+    buscar(extra_data, "extra")
+    return claves_usadas
 
 # Consulta directa con JSON completo
 def ask(user_input):
@@ -52,14 +64,22 @@ def ask(user_input):
         world_extra_data = cargar_json(EXTRA_FILE)
     
         full_prompt = (
-            "### PERSONALIDAD (prioridad m\u00e1xima):\n"
+            "### BLOQUE DE PERSONALIDAD (prioridad MÁXIMA)\n"
+            "[ORIGEN: personalidad.json. prioridad máxima]\n"
             f"{json.dumps(PERSONALIDAD_ACTUAL, indent=2, ensure_ascii=False)}\n\n"
-            "### CONTEXTO ADICIONAL DEL MUNDO (alta prioridad):\n"
+
+            "### BLOQUE DE CONTEXTO ADICIONAL DEL MUNDO (prioridad ALTA)\n"
+            "[ORIGEN: world_extra.json. prioridad alta]\n"
             f"{json.dumps(world_extra_data, indent=2, ensure_ascii=False)}\n\n"
-            "### CONTEXTO GENERAL DEL MUNDO:\n"
+
+            "### BLOQUE DE CONTEXTO GENERAL DEL MUNDO\n"
+            "[ORIGEN: world.json. prioridad baja]\n"
             f"{json.dumps(world_data, indent=2, ensure_ascii=False)}\n\n"
-            f"### CONSULTA DEL USUARIO:\n{user_input.strip()}\n"
+
+            "### CONSULTA DEL USUARIO:\n"
+            f"{user_input.strip()}\n"
         )
+
 
         start_time = time.time()
         response = client.chat.completions.create(
@@ -84,6 +104,15 @@ def ask(user_input):
             "personalidad": PERSONALIDAD_ACTUAL
         }
 
+        ##detector de info
+
+        fuentes = extraer_claves_relevantes(output, world_data, world_extra_data)
+        if fuentes:
+            print(Fore.CYAN + "\n📚 Coincidencias en datos utilizados:")
+        for f in sorted(fuentes):
+                print(Fore.LIGHTBLUE_EX + " - " + f)
+        else:
+            print(Fore.RED + "\n⚠️ No se detectaron coincidencias explícitas en los datos.")
 
         return output  # ⬅️⬅️⬅️ DEVUELVE la respuesta
 
