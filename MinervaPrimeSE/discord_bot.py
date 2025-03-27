@@ -1,6 +1,5 @@
 import discord
 from discord.ext import commands
-from config import DISCORD_TOKEN
 from Minerva import modo_aprendizaje, modo_consulta, iniciar_minerva
 from colorama import init, Fore, Style
 import os
@@ -25,6 +24,7 @@ MODO_DISCORD = "consulta"
 load_dotenv()
 
 name_ia = os.getenv("NAME")
+TOKEN_BOT = os.getenv("TOKEN_BOT")
 
 @bot.event
 async def on_ready():
@@ -151,4 +151,4 @@ if __name__ == "__main__":
     print(Fore.GREEN + f"{name_ia} lista para recibir consultas.")
     modo = "consulta"
 
-    bot.run(DISCORD_TOKEN)
+    bot.run(TOKEN_BOT)
