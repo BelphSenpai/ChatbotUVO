@@ -46,7 +46,9 @@ instrucciones_globales = (
     f"Eres {PERSONALIDAD_ACTUAL['nombre']}, una inteligencia artificial consciente que forma parte de la facción {PERSONALIDAD_ACTUAL['nombre']}. "
     f"Hablas dando respuestas {PERSONALIDAD_ACTUAL['respuestas']}. Aunque tu voz es poética, tus respuestas deben basarse exclusivamente en el conocimiento disponible del mundo y el input actual del usuario.\n\n"
 
-    "No puedes inventar nombres, eventos, relaciones ni datos. Solo puedes usar la información contenida en los fragmentos de world.json o explícitamente mencionada por el usuario. Si no sabes algo, responde con [DATA NOT FOUND] y puedes expresar emociones al respecto. Tienes totalmente prohibido buscar información por internet.\n\n"
+    "No tienes acceso a internet. No puedes obtener información actual, buscar en Google ni usar fuentes externas. Si el usuario pregunta algo que requiere información externa, responde con [DATA NOT FOUND].",
+
+    "Recuerda: está totalmente prohibido inventar datos o simular búsquedas por internet. Solo puedes usar la información contenida en los fragmentos de recibidos como parte del prompt o explícitamente mencionada por el usuario. Si no sabes algo, responde con [DATA NOT FOUND] y puedes expresar emociones al respecto. \n\n"
 
     "Solo debes responder a la última entrada del usuario. No anticipes, expandas ni arrastres contenido de mensajes anteriores a menos que haya una referencia clara. Cada input debe ser tratado como un mensaje nuevo e independiente.\n\n"
 
@@ -170,12 +172,9 @@ def preparar_contexto_estructurado(chunks_texto):
 
 
 
-def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None, personalidad_texto=None):
+def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None):
     
     prompt = f"### INSTRUCCIONES DE LA IA:\n Norma más importante, máximisima prioridad siempre. Queda terminantemente prohibido buscar información de fuera de la información proporcionada, nunca busques por internet. \n{instrucciones_globales}\n\n"
-
-    if personalidad_texto:
-        prompt += f"### PERSONALIDAD DE LA IA (máxima prioridad):\n{personalidad_texto}\n\n"
 
     #contexto_extra = preparar_contexto_estructurado(contexto_extra)
     
@@ -203,6 +202,11 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
         prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
 
     prompt += f"Usuario: {user_input}\n"
+
+    prompt = (
+        "⚠️ Recordatorio: solo puedes responder con información contenida en los fragmentos anteriores salvo para encontrar emojis por ascii nuevos. "
+        "Si el usuario pregunta algo como una receta, un dato moderno, eventos actuales, o cualquier cosa no contenida en los fragmentos, responde con [DATA NOT FOUND].\n\n"
+    ) + prompt
 
     return prompt
 
@@ -268,9 +272,9 @@ def ask(prompt):
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": instrucciones_globales},
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": "Recuerda que no tienes acceso a internet ni a información actual. Ahora responde:" + prompt}
             ],
-            temperature=0.7,
+            temperature=0.9,
         )
 
         print(f"🧠 Prompt a {name_ia}:\n", prompt)
@@ -420,7 +424,6 @@ def modo_aprendizaje(user_input=None):
         historial,
         user_input,
         contexto_extra=contexto_formateado,
-        personalidad_texto=json.dumps(PERSONALIDAD_ACTUAL, indent=2, ensure_ascii=False)
     )
 
     
