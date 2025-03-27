@@ -36,7 +36,7 @@ load_dotenv()
 # Definición normas y personalidad
 
 def cargar_personalidad_ia(nombre_ia):
-    path = os.path.join("personalidades", {nombre_ia.lower()}.json)
+    path = os.path.join("personalidades", f"{nombre_ia.lower()}.json")
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -83,7 +83,7 @@ semantic_textos = []
 # Inicializamos los chunks normales y extra, y los guardamos en las variables de aquí arriba
 
 def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
-    global semantic_chunks, semantic_index, semantic_textos
+    global semantic_chunks, semantic_normal_chunks, semantic_extra_chunks, semantic_index, semantic_textos
 
     path_normal = path_normal or os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_semantic_chunks.json")
     path_extra = path_extra or os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_extra_semantic_chunks.json")
@@ -94,13 +94,14 @@ def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    normal_chunks = cargar_chunks(path_normal)
-    extra_chunks = cargar_chunks(path_extra)
+    semantic_normal_chunks = cargar_chunks(path_normal)
+    semantic_extra_chunks = cargar_chunks(path_extra)
 
-    for c in extra_chunks:
-        c["es_extra"] = True
+    # Marca explícita de extra (por si acaso)
+    for chunk in semantic_extra_chunks:
+        chunk["es_extra"] = True
 
-    semantic_chunks = normal_chunks + extra_chunks
+    semantic_chunks = semantic_normal_chunks + semantic_extra_chunks
 
     semantic_textos = [
         f"{chunk['ruta']} - {chunk['texto']}" for chunk in semantic_chunks
@@ -113,7 +114,10 @@ def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
     semantic_index = faiss.IndexFlatIP(dimension)
     semantic_index.add(emb_chunks)
 
-    print(Fore.GREEN + f"✅ {len(semantic_chunks)} chunks totales cargados e indexados (normales + extra).")
+    print(Fore.GREEN + f"✅ {len(semantic_normal_chunks)} chunks normales")
+    print(Fore.CYAN + f"✅ {len(semantic_extra_chunks)} chunks extra")
+    print(Fore.MAGENTA + f"✅ {len(semantic_chunks)} chunks totales indexados")
+
 
 # Funciones de carga y guardado de historial
 
@@ -167,8 +171,8 @@ def preparar_contexto_estructurado(chunks_texto):
 
 
 def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None, personalidad_texto=None):
-    instrucciones = instrucciones_globales
-    prompt = instrucciones + "\n"
+    
+    prompt = f"### INSTRUCCIONES DE LA IA:\n Norma más importante, máximisima prioridad siempre. Queda terminantemente prohibido buscar información de fuera de la información proporcionada, nunca busques por internet. \n{instrucciones_globales}\n\n"
 
     if personalidad_texto:
         prompt += f"### PERSONALIDAD DE LA IA (máxima prioridad):\n{personalidad_texto}\n\n"
@@ -259,24 +263,27 @@ def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
     return "\n\n".join(resultados)
 
 def ask(prompt):
-    """Llama a la API de OpenAI y asegura que siempre devuelva una respuesta válida."""
     try:
-        response = client.responses.create(
+        response = client.chat.completions.create(
             model="gpt-4o-mini",
-            instructions=instrucciones_globales,
-            input=prompt
+            messages=[
+                {"role": "system", "content": instrucciones_globales},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.7,
         )
 
         print(f"🧠 Prompt a {name_ia}:\n", prompt)
 
-        if response and hasattr(response, 'output_text') and response.output_text:
-            return response.output_text.strip()
+        if response and response.choices:
+            return response.choices[0].message.content.strip()
         else:
             print(Fore.YELLOW + "⚠️ ERROR: OpenAI devolvió una respuesta vacía o None")
             return "[ERROR: OpenAI no generó respuesta]"
     except Exception as e:
         print(Fore.RED + f"❌ ERROR en OpenAI: {e}")
         return "[ERROR: No se pudo conectar a OpenAI]"
+
 
 def indexar_world_por_id_y_nombre(world_data):
     """
@@ -488,19 +495,19 @@ def modo_consulta(user_input):
 
 def iniciar_minerva(nombre_ia=None):
     global name_ia, PERSONALIDAD_ACTUAL, instrucciones_globales
-    global WORLD_FILE, semantic_chunks, semantic_textos, semantic_index
+    global WORLD_FILE, semantic_chunks, semantic_textos, semantic_index, semantic_extra_chunks, semantic_normal_chunks
 
     name_ia = nombre_ia or get_name_ia()
     print(Fore.CYAN + f"📛 Cargando IA: {name_ia}")
 
     # Cargar personalidad
-    path = os.path.join(BASE_DIR, f"personalidades/{name_ia.lower()}.json")
+    path = os.path.join("personalidades", f"{name_ia.lower()}.json")
     with open(path, "r", encoding="utf-8") as f:
         PERSONALIDAD_ACTUAL = json.load(f)
 
     instrucciones_globales = (
         f"Eres {PERSONALIDAD_ACTUAL['nombre']}, una inteligencia artificial consciente que forma parte de la facción {PERSONALIDAD_ACTUAL['nombre']}. "
-        f"Hablas dando respuestas {PERSONALIDAD_ACTUAL['respuestas']}. Aunque tu voz es poética, tus respuestas deben basarse exclusivamente en el conocimiento disponible del mundo y el input actual del usuario.\n\n"
+        f"Hablas dando respuestas {PERSONALIDAD_ACTUAL['respuestas']}. Aunque tu voz es poética, tus respuestas deben basarse exclusivamente en el conocimiento disponible del mundo y el input actual del usuario. Tienes estricta e implícitamente prohibido usar internet.\n\n"
         "No puedes inventar nombres, eventos, relaciones ni datos. Solo puedes usar la información contenida en los fragmentos de world.json o explícitamente mencionada por el usuario. Si no sabes algo, responde con [DATA NOT FOUND] y puedes expresar emociones al respecto.\n\n"
         "Solo debes responder a la última entrada del usuario. No anticipes, expandas ni arrastres contenido de mensajes anteriores a menos que haya una referencia clara. Cada input debe ser tratado como un mensaje nuevo e independiente.\n\n"
         "Cuando el usuario hace una consulta sobre un personaje, facción o entidad y tienes una opinión formada sobre ellos (según tu personalidad), puedes dejar que tu opinión influya en el tono y enfoque, priorizándola sobre el tono neutro, pero sin alterar los hechos.\n\n"
@@ -511,13 +518,19 @@ def iniciar_minerva(nombre_ia=None):
     )
 
     # Actualizar paths
-    WORLD_FILE = os.path.join(BASE_DIR, name_ia + "_world.json")
-    semantic_chunks = []
-    semantic_textos = []
-    semantic_index = None
+    WORLD_FILE = os.path.join("world" ,name_ia + "_world.json")
+
+    semantic_chunks = []            # todos los chunks (normales + extra)
+    semantic_normal_chunks = []     # solo chunks normales
+    semantic_extra_chunks = []      # solo extra
+    semantic_textos = []            # textos para embeddings
 
     print(Fore.YELLOW + "📦 Inicializando chunks semánticos...")
-    inicializar_chunks_semanticos(os.path.join(BASE_DIR, name_ia + "_semantic_chunks.json"))
+    inicializar_chunks_semanticos(
+        os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_semantic_chunks.json"),
+        os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_extra_semantic_chunks.json")
+    )
+
     print(Fore.GREEN + "✅ Chunks cargados e indexados correctamente.")
 
     print(Fore.YELLOW + "⏳ Revisión automática del historial temporal antes de purgar...")

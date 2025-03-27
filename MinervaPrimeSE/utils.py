@@ -121,7 +121,7 @@ def set_name_ia(nombre):
 
     print(Fore.CYAN + f"📛 Cambiando nombre de IA a: {name_ia}")
 
-    path = os.path.join(BASE_DIR, f"personalidades/{name_ia.lower()}.json")
+    path = os.path.join(f"personalidades", f"{name_ia.lower()}.json")
     with open(path, "r", encoding="utf-8") as f:
         PERSONALIDAD_ACTUAL = json.load(f)
 

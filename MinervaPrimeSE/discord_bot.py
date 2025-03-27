@@ -3,7 +3,6 @@ from discord.ext import commands
 from Minerva import modo_aprendizaje, modo_consulta, iniciar_minerva
 from colorama import init, Fore, Style
 import os
-from sklearn.preprocessing import normalize
 from dotenv import load_dotenv
 from utils import get_name_ia, set_name_ia
 
@@ -47,7 +46,7 @@ async def cambiar_ia_eidolon(ctx):
     set_name_ia("eidolon")
     nombre = get_name_ia()
     print(Fore.CYAN + f"🔄 Cambiando a {nombre.upper()}...")
-    await ctx.send(f"🔄 Cambia  ndo a **{nombre.capitalize()}**...")
+    await ctx.send(f"🔄 Cambiando a **{nombre.capitalize()}**...")
     iniciar_minerva(nombre)
     print(Fore.CYAN + f"🔄 Cambiado a {nombre.upper()}☀️")
     await ctx.send(f"🔄 Cambiado a **{nombre.capitalize()}**☀️.")
@@ -138,7 +137,7 @@ async def on_message(message):
     if len(respuesta) > 1900:
         respuesta = respuesta[:1900] + "…"
 
-    await message.channel.send(respuesta)
+    await message.channel.send(f"{respuesta}")
 
 if __name__ == "__main__":
     

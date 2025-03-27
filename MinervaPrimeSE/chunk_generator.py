@@ -172,11 +172,11 @@ def transformar_chunks(path=CHUNKS_PATH, es_extra=False):
 
     print(f"✅ Chunks estructurados guardados en {path}")
 
-    with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
-        json.dump(chunks_transformados, f, ensure_ascii=False, indent=2)
-
+    # Solo sobrescribe el archivo normal si no estamos procesando los extras
+    if not is_extra:
+        with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
+            json.dump(chunks_transformados, f, ensure_ascii=False, indent=2)
     print("✅ Chunks estructurados correctamente para FAISS.")
-
 
 def generar_chunks_extraworld(nombre_ia, input_path=None, output_path=None, aplicar_transformacion=True):
     """
