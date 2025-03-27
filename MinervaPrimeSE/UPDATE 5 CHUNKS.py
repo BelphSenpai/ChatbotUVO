@@ -1,16 +1,19 @@
 import subprocess
 import os
+import time
+
+inicio = time.time()
 
 ias = ["anima", "eidolon", "fantasma", "minerva", "hada"]
 
-SCRIPT_PATH = os.path.join("MinervaPrime", "chunk_generator.py")
-BASE_DIR = "MinervaPrime"
+SCRIPT_PATH = os.path.join("MinervaPrimeSE", "chunk_generator.py")
+BASE_DIR = "MinervaPrimeSE"
 
 for ia in ias:
     print(f"\n🔁 Generando chunks para {ia}...")
 
-    chunk_file = os.path.join(BASE_DIR, f"{ia}_semantic_chunks.json")
-    extra_chunk_file = os.path.join(BASE_DIR, f"{ia}_extra_semantic_chunks.json")
+    chunk_file = os.path.join(BASE_DIR, "semantic chunks", f"{ia}_semantic_chunks.json")
+    extra_chunk_file = os.path.join(BASE_DIR, "semantic chunks", f"{ia}_extra_semantic_chunks.json")
 
     # Borrar chunks normales y extra si existen
     for file_path in [chunk_file, extra_chunk_file]:
@@ -30,3 +33,10 @@ for ia in ias:
         print(f"❌ Error al generar chunks para {ia}")
     else:
         print(f"✅ Chunks (world + extra) generados correctamente para {ia}")
+
+fin = time.time()
+duracion = fin - inicio
+minutos = int(duracion // 60)
+segundos = int(duracion % 60)
+
+print(f"⏱️ Tiempo: {minutos} min {segundos} seg")

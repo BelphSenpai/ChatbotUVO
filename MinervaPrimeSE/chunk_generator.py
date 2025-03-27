@@ -7,6 +7,9 @@ from colorama import Fore
 from llama_cpp import Llama
 from utils import cargar_json, get_name_ia
 
+import time
+
+inicio = time.time()
 # -----------------------------
 # Obtener nombre de la IA desde argumentos
 # -----------------------------
@@ -22,9 +25,9 @@ print(Fore.MAGENTA + f"💡 Procesando IA: {name_ia}")
 # -----------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LLAMA_MODEL_PATH = os.path.join(BASE_DIR, "models/mistral-7b-instruct-v0.2.Q2_K.gguf")
-WORLD_PATH = os.path.join(BASE_DIR, f"{name_ia}_world.json")
-CHUNKS_PATH = os.path.join(BASE_DIR, f"{name_ia}_semantic_chunks.json")
-HASH_PATH = os.path.join(BASE_DIR, f"{name_ia}_chunks.hash")
+WORLD_PATH = os.path.join("world", f"{name_ia}_world.json")
+CHUNKS_PATH = os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_semantic_chunks.json")
+HASH_PATH = os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_chunks.hash")
 
 # -----------------------------
 # Inicializa LlamaCpp
@@ -131,18 +134,29 @@ def transformar_chunks(path=CHUNKS_PATH, es_extra=False):
 
         encabezado = ""
         ruta_final = ruta_lista[-1] if ruta_lista else ""
+
         if "gigantes_conocidos" in ruta_lista:
             encabezado = f"🌋 {ruta_final.replace('_', ' ').title()}: "
         elif "espíritus_conocidos" in ruta_lista:
             encabezado = f"🌀 {ruta_final.replace('_', ' ').title()}: "
         elif "personajes" in ruta_lista:
             encabezado = f"👤 {ruta_final.replace('_', ' ').title()}: "
-        elif "facciones" in ruta_lista and "nombre" not in ruta_final:
+        elif "facciones" in ruta_lista and "nombre" not in ruta_final.lower():
             encabezado = f"🏴 {ruta_final.replace('_', ' ').title()}: "
         elif "eventos_recientes" in ruta_lista or "fechas_historicas" in ruta_lista:
             encabezado = f"🕒 Evento: "
         elif "objetos" in ruta_lista:
             encabezado = f"📦 {ruta_final.replace('_', ' ').title()}: "
+        elif any(palabra in ruta_final.lower() for palabra in ["camino", "campo", "sendero"]):
+            encabezado = f"✨ {ruta_final.replace('_', ' ').title()}: "
+        elif "esteticas" in ruta_lista:
+            encabezado = f"🎭 {ruta_final.replace('_', ' ').title()}: "
+        elif "rituales" in ruta_lista:
+            encabezado = f"🪄 {ruta_final.replace('_', ' ').title()}: "
+        elif "historia" in ruta_lista:
+            encabezado = f"📖 {ruta_final.replace('_', ' ').title()}: "
+        elif "ancestros" in ruta_lista:
+            encabezado = f"👣 {ruta_final.replace('_', ' ').title()}: "
 
         if is_extra:
             texto = f"[PRIORIDAD EXTRA] {texto}"
@@ -276,9 +290,10 @@ def main():
             transformar_chunks()
 
     # --- EXTRAWORLD ---
-    extra_path = os.path.join(BASE_DIR, "info extra", f"{name_ia}_extraworld.json")
-    extra_chunks_path = os.path.join(BASE_DIR, f"{name_ia}_extra_semantic_chunks.json")
-    extra_hash_path = os.path.join(BASE_DIR, f"{name_ia}_extra_chunks.hash")
+
+    extra_path = os.path.join("info extra", f"{name_ia}_extraworld.json")
+    extra_chunks_path = os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_extra_semantic_chunks.json")
+    extra_hash_path = os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_extra_chunks.hash")
 
     if not os.path.exists(extra_path):
         print(Fore.YELLOW + f"ℹ️ No se encontró extraworld_{name_ia}.json, se omite.")
@@ -289,6 +304,7 @@ def main():
                 print(Fore.YELLOW + "📂 extra_semantic_chunks.json no encontrado o vacío. Generando desde extraworld (fallback)...")
                 data = cargar_json(extra_path)
                 chunks = flatten_json_to_text(data)
+                os.makedirs(os.path.dirname(extra_chunks_path), exist_ok=True)
                 for c in chunks:
                     c["es_extra"] = True
                 with open(extra_chunks_path, "w", encoding="utf-8") as f:
@@ -317,3 +333,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print(Fore.GREEN + f"🌟 Chunks generados correctamente para {name_ia}")
+    fin = time.time()
+    print(f"⏱️ Chunks de {name_ia} generados en: {fin - inicio:.2f} segundos")
+

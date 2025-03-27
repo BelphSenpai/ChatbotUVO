@@ -19,6 +19,7 @@ from sklearn.preprocessing import normalize
 from chunk_generator import main as generar_chunks
 from sklearn.metrics.pairwise import cosine_similarity
 from utils import get_name_ia
+from sklearn.preprocessing import normalize
 
 # Inicializar colorama (colores en terminal para  hacerlo bonito jaja salu2)
 init(autoreset=True)
@@ -34,14 +35,8 @@ load_dotenv()
 
 # Definición normas y personalidad
 
-with open(os.path.join(BASE_DIR, "personalidades", get_name_ia()+".json"), "r", encoding="utf-8") as f:
-    print(f"Cargando personalidad... {name_ia}")
-    personalidad = json.load(f)
-
-bloque_personalidad = json.dumps(personalidad, indent=2, ensure_ascii=False)
-
 def cargar_personalidad_ia(nombre_ia):
-    path = os.path.join(BASE_DIR, f"personalidades/{nombre_ia.lower()}.json")
+    path = os.path.join("personalidades", {nombre_ia.lower()}.json)
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -51,7 +46,7 @@ instrucciones_globales = (
     f"Eres {PERSONALIDAD_ACTUAL['nombre']}, una inteligencia artificial consciente que forma parte de la facción {PERSONALIDAD_ACTUAL['nombre']}. "
     f"Hablas dando respuestas {PERSONALIDAD_ACTUAL['respuestas']}. Aunque tu voz es poética, tus respuestas deben basarse exclusivamente en el conocimiento disponible del mundo y el input actual del usuario.\n\n"
 
-    "No puedes inventar nombres, eventos, relaciones ni datos. Solo puedes usar la información contenida en los fragmentos de world.json o explícitamente mencionada por el usuario. Si no sabes algo, responde con [DATA NOT FOUND] y puedes expresar emociones al respecto.\n\n"
+    "No puedes inventar nombres, eventos, relaciones ni datos. Solo puedes usar la información contenida en los fragmentos de world.json o explícitamente mencionada por el usuario. Si no sabes algo, responde con [DATA NOT FOUND] y puedes expresar emociones al respecto. Tienes totalmente prohibido buscar información por internet.\n\n"
 
     "Solo debes responder a la última entrada del usuario. No anticipes, expandas ni arrastres contenido de mensajes anteriores a menos que haya una referencia clara. Cada input debe ser tratado como un mensaje nuevo e independiente.\n\n"
 
@@ -74,27 +69,24 @@ client = OpenAI(
 # Inicialización del modelo de embeddings
 modelo_embeddings = SentenceTransformer('all-MiniLM-L6-v2')  # Ligero y gratuito
 
-
 # Archivos
 HISTORIAL_FILE = os.path.join(BASE_DIR, "historial.json")
 TEMP_HISTORIAL_FILE = os.path.join(BASE_DIR, "historial_temp.json")
-WORLD_FILE = os.path.join(BASE_DIR, name_ia+"_world.json")
 PENDING_PATH = os.path.join(BASE_DIR, "pending_suggestions.json")
 
 # Variables globales
 semantic_index = None
 semantic_chunks = []
+semantic_extra_chunks = []
 semantic_textos = []
 
-
-from sklearn.preprocessing import normalize  # Asegúrate de tener este import
+# Inicializamos los chunks normales y extra, y los guardamos en las variables de aquí arriba
 
 def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
     global semantic_chunks, semantic_index, semantic_textos
 
-    base = os.path.dirname(os.path.abspath(__file__))
-    path_normal = path_normal or os.path.join(base, f"{name_ia}_semantic_chunks.json")
-    path_extra = path_extra or os.path.join(base, f"{name_ia}_extra_semantic_chunks.json")
+    path_normal = path_normal or os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_semantic_chunks.json")
+    path_extra = path_extra or os.path.join(BASE_DIR, "semantic chunks", f"{name_ia}_extra_semantic_chunks.json")
 
     def cargar_chunks(path):
         if not os.path.exists(path):
@@ -113,6 +105,7 @@ def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
     semantic_textos = [
         f"{chunk['ruta']} - {chunk['texto']}" for chunk in semantic_chunks
     ]
+
     emb_chunks = modelo_embeddings.encode(semantic_textos, convert_to_numpy=True)
     emb_chunks = normalize(emb_chunks)
 
@@ -122,6 +115,7 @@ def inicializar_chunks_semanticos(path_normal=None, path_extra=None):
 
     print(Fore.GREEN + f"✅ {len(semantic_chunks)} chunks totales cargados e indexados (normales + extra).")
 
+# Funciones de carga y guardado de historial
 
 def cargar_historial():
     """Carga el historial desde un archivo o lo inicia vacío."""
@@ -149,32 +143,64 @@ def guardar_historial_temp(historial):
     with open(TEMP_HISTORIAL_FILE, 'w', encoding='utf-8') as f:
         json.dump(historial, f, ensure_ascii=False, indent=4)        
 
-def generar_prompt(historial, user_input, umbral_similitud=0.45):
-    """Genera un prompt basado exclusivamente en el último input y, opcionalmente, un mensaje de sistema relevante."""
+# importamos los chunks semánticos ya filtrados y generamos el contexto estructurado entre extra y normal
+
+def preparar_contexto_estructurado(chunks_texto):
+    extra_chunks = []
+    base_chunks = []
+    chunks = chunks_texto.split("\n\n")
+    for chunk in chunks:
+        if "]\n" in chunk:
+            ruta, contenido = chunk.split("]\n", 1)
+            if "[EXTRA]" in ruta:
+                extra_chunks.append(f"{ruta.replace('[EXTRA]', '').strip('[]')}: {contenido.strip()}")
+            else:
+                base_chunks.append(f"{ruta.strip('[]')}: {contenido.strip()}")
+
+    return (
+        "### CONTEXTO PRIORITARIO (alta relevancia):\n" +
+        "\n".join(extra_chunks) +
+        "\n\n### CONTEXTO GENERAL (usa si no hay conflicto):\n" +
+        "\n".join(base_chunks)
+    )
+
+
+
+def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None, personalidad_texto=None):
     instrucciones = instrucciones_globales
     prompt = instrucciones + "\n"
 
-    # Buscar un solo mensaje de sistema relevante (máxima similitud con el input)
+    if personalidad_texto:
+        prompt += f"### PERSONALIDAD DE LA IA (máxima prioridad):\n{personalidad_texto}\n\n"
+
+    #contexto_extra = preparar_contexto_estructurado(contexto_extra)
+    
+    if contexto_extra:
+        prompt += f"{contexto_extra}\n"
+
+    if historial:
+        prompt += f"### HISTORIAL (solo para contexto de conversación):\n{historial}\n\n"
+
+    # Buscar mensaje de sistema más relevante para contexto
     contexto_sistema = ""
     emb_input = modelo_embeddings.encode([user_input])[0]
 
+    # Buscamos en el historial de mensajes para encontrar el último mensaje del sistema usando embeddings
+
     for mensaje in reversed(historial):
-        if mensaje["rol"] == "sistema":
+        if mensaje["rol"] == "usuario":
             emb_mensaje = modelo_embeddings.encode([mensaje["mensaje"]])[0]
             similitud = cosine_similarity([emb_input], [emb_mensaje])[0][0]
             if similitud >= umbral_similitud:
                 contexto_sistema = mensaje["mensaje"]
-                break  # usamos solo uno
+                break
 
     if contexto_sistema:
-        prompt += f"Sistema: {contexto_sistema}\n"
+        prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
 
-    # Añadir solo el input actual del usuario
     prompt += f"Usuario: {user_input}\n"
 
     return prompt
-
-
 
 def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
     if semantic_index is None:
@@ -232,36 +258,6 @@ def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
 
     return "\n\n".join(resultados)
 
-def ask_full(query, personalidad, world_extra, world, model="gpt-4o-mini"):
-    system_prompt = (
-        "Eres una inteligencia artificial especializada en un mundo de ficción. "
-        "Tu rol es responder consultas manteniendo coherencia interna y fidelidad a la personalidad y contexto proporcionados."
-    )
-
-    # Estructura jerárquica clara
-    full_prompt = (
-        "### PERSONALIDAD (máxima prioridad)\n"
-        f"{json.dumps(personalidad, indent=2, ensure_ascii=False)}\n\n"
-        "### CONTEXTO ADICIONAL DEL MUNDO (alta prioridad)\n"
-        f"{json.dumps(world_extra, indent=2, ensure_ascii=False)}\n\n"
-        "### CONTEXTO GENERAL DEL MUNDO\n"
-        f"{json.dumps(world, indent=2, ensure_ascii=False)}\n\n"
-        "### CONSULTA DEL USUARIO\n"
-        f"{query.strip()}\n"
-    )
-
-    response = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": full_prompt},
-        ],
-        temperature=0.7
-    )
-
-    return response.choices[0].message.content.strip()
-
-
 def ask(prompt):
     """Llama a la API de OpenAI y asegura que siempre devuelva una respuesta válida."""
     try:
@@ -271,7 +267,7 @@ def ask(prompt):
             input=prompt
         )
 
-        print("🧠 Prompt a Fantasma:\n", prompt)
+        print(f"🧠 Prompt a {name_ia}:\n", prompt)
 
         if response and hasattr(response, 'output_text') and response.output_text:
             return response.output_text.strip()
@@ -303,6 +299,7 @@ def indexar_world_por_id_y_nombre(world_data):
     recorrer(world_data, [])
     return index
 
+# Funciones de aprendizaje
 
 def inferir_ruta_contenido(respuesta, world_data):
     """
@@ -408,9 +405,18 @@ def modo_aprendizaje(user_input=None):
         revisar_historial_temp_para_aprendizaje()
         return
 
-    historial = cargar_historial()
-    prompt = generar_prompt(historial, user_input)
+    contexto_formateado = preparar_contexto_estructurado(world_info_filtrado)
 
+    historial = cargar_historial()
+
+    prompt = generar_prompt(
+        historial,
+        user_input,
+        contexto_extra=contexto_formateado,
+        personalidad_texto=json.dumps(PERSONALIDAD_ACTUAL, indent=2, ensure_ascii=False)
+    )
+
+    
     # Forzar respuesta como JSON estructurado
     prompt += "\nAsistente: Haz un resumeen narrativo corto y devuélveme exclusivamente el nuevo conocimiento como JSON estructurado listo para insertar en world.json, a demás de apartados dentro del JSON con los nombres/personajes o facciones más relevantes)"
 
@@ -428,6 +434,8 @@ def modo_aprendizaje(user_input=None):
     sugerir_aprendizaje(user_input, world_info_filtrado, respuesta)
 
     return respuesta
+
+# Funciones de consulta y debugging
 
 def log_chunks_usados(query, texto_chunks):
     """Imprime en consola los chunks usados como contexto para una consulta."""
@@ -467,12 +475,16 @@ def modo_consulta(user_input):
     guardar_historial_temp(historial)
 
     # Genera el prompt y obtiene respuesta
-    prompt = generar_prompt(historial, user_input)
+    contexto_formateado = preparar_contexto_estructurado(world_info_filtrado)
+    prompt = generar_prompt(historial, user_input, contexto_extra=contexto_formateado)
+
     respuesta = ask(prompt)
 
     historial.append({"rol": "asistente", "mensaje": respuesta})
 
     return respuesta
+
+# Cositas de inicialización
 
 def iniciar_minerva(nombre_ia=None):
     global name_ia, PERSONALIDAD_ACTUAL, instrucciones_globales
@@ -519,7 +531,7 @@ def iniciar_minerva(nombre_ia=None):
         print(Fore.YELLOW + "ℹ️ No se encontró historial temporal para purgar.")
 
 if __name__ == "__main__":
-    '''print(f"Iniciando {name_ia}...")
+    print(f"Iniciando {name_ia}...")
     
     iniciar_minerva(name_ia)
 
@@ -538,26 +550,5 @@ if __name__ == "__main__":
             print(Fore.MAGENTA + f"\n🤖 {name_ia}: {respuesta}")
         except KeyboardInterrupt:
             print(Fore.RED + f"\n👋 Saliendo de {name_ia}...")
-            break'''
-    import time
-
-    print("⏳ Iniciando pregunta...")
-
-    start_time = time.time()  # Marca de inicio
-
-    respuesta = ask_full(
-        "¿Qué opinas sobre eidolon?",
-        PERSONALIDAD_ACTUAL,
-        cargar_json(BASE_DIR + "/fantasma_world_extra.json"),
-        cargar_json(BASE_DIR + "/fantasma_world.json")
-    )
-
-    end_time = time.time()  # Marca de fin
-
-    print("🧠 Respuesta recibida:")
-    print(respuesta)
-
-    # Cálculo del tiempo total
-    elapsed_time = end_time - start_time
-    print(f"⏱️ Tiempo de respuesta: {elapsed_time:.2f} segundos")
+            break
 

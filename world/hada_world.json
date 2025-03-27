@@ -114,28 +114,24 @@
             ],
             "emplazamentos importantes": [
               {
-                "torres de seguridad": "Las Torres de Seguridad de Krasnaya son gigantescas fortalezas en el corazón de cada barriada. Estas estructuras están equipadas con enjambres de drones y redes de vigilancia, y coordinan las fuerzas policiales para anticipar crímenes. No necesitan descanso y están diseñadas para autorrepararse, lo que las convierte en una amenaza imparable."
-            }
+                "torres de seguridad": "Las Torres de Seguridad se alzan en el corazón de cada barriada, vigilantes implacables sobre la ciudad. En las zonas más densamente pobladas, pueden encontrarse dos o incluso tres de estas gigantescas fortalezas. Como modernos palomares, despliegan enjambres de drones y tejen redes digitales de vigilancia, coordinando fuerzas policiales y anticipando crímenes antes de que sucedan. Pero estas torres son algo más que simples estructuras. Son organismos vivos de metal y datos, autosuficientes en su mantenimiento. Con sistemas de autorreparación, protocolos de limpieza automatizados y defensas autónomas, la presencia humana dentro de ellas es mínima y puntual. No necesitan descanso, no sienten duda ni fatiga. Diseñadas para ser almenaras brutales, su luz no advierte… sentencia."
+              }
             ],
             "subfacciones": [
               {
                 "id": "k_legiones",
                 "nombre": "legiones",
-                "descripcion":"El ejército de Krasnaya se organiza en Legiones, que incluyen soldados profesionales, vigilantes voluntarios y unidades de combate autónomas. El objetivo de Krasnaya es reemplazar las tropas humanas por Unidades de Combate. Las Legiones son siempre la primera respuesta a los conflictos, y su efectividad depende de los datos procesados por las Torres de Seguridad. En las Legiones, los mejores guerreros que han demostrado valor y lealtad reciben la Cruz de Hierro, un símbolo de su grandeza y pertenencia al Escuadrón Samsara, la élite de las Legiones. Esta unidad de élite es desplegada en misiones de importancia crítica, y su presencia en el campo de batalla es un emblema de triunfo."
+                "descripcion": "Su ejército está organizado en Legiones, cada una compuesta por distintos tipos de agentes. Aunque en el campo de batalla suelen lucir uniformes indistinguibles, dentro de sus filas se encuentran: Militares de profesión – Soldados entrenados en combate táctico y operaciones de alto riesgo. Vigilantes voluntarios – Reclutas civiles que buscan ascender en la estructura de seguridad. Unidades de Combate – Autómatas avanzados, diseñados para reducir la dependencia humana en la guerra."
               },
               {
                 "id": "k_legion_negra",
                 "nombre": "legión negra",
-                "descripcion":  "La Legión Negra es el último grito de la muerte, el rostro final de la sentencia. Aquellos que sobreviven más allá de la carne, que siguen luchando cuando ya no queda humanidad en ellos, son enviados aquí, donde la voluntad se convierte en metal. Estos guerreros no son hombres ni máquinas, sino algo intermedio, una fuerza desatada, una sombra imparable. Cuando se despliegan, la ciudad tiembla. El destino está sellado, y la condena ya ha sido dictada. La Legión Negra no perdona, no duda, no siente. Solo ejecuta."
-              },
-              {
-                "id" : "k_escuadrón_samsara",
-                "nombre": "escuadrón Samsara",
-                "descripción":  "La Cruz de Hierro, la marca de los más grandes guerreros. Aquellos que sobreviven a lo imposible, que atraviesan las llamas de la guerra y regresan con la muerte a sus talones, son los que pertenecen al Escuadrón Samsara. Son la élite de las Legiones, aquellos cuya lealtad es incuestionable y cuya destreza es temida. Su sola presencia en el campo es un presagio de triunfo, pero también de caos, pues donde ellos pisan, el futuro se escribe con sangre. Con cada victoria, su nombre se graba en la historia, como un eco de lo imparable."
+                "descripcion": "La Fuerza de Élite Final. En la policía militar, los contratos son indefinidos. Para algunos, eso significa una carrera. Para otros, una condena. Se rumorea que, tras decenas de misiones, tras incontables heridas y reemplazos, poco queda de humano bajo el metal. Pero hay casos aún peores… Cuando un soldado persiste más allá de la pérdida de carne, cuando su voluntad resiste donde otros se quiebran, es enviado aquí. A la Legión Negra. A la fuerza imparable. Dejan de ser individuos, de ser personas. No tienen historia, solo un propósito: ejecutar la sentencia. Cuando ellos son desplegados, la ciudad contiene el aliento. Los neones titilan, como si el mundo guardara luto. Porque su llegada solo significa una cosa: alguien ha sido condenado, y ellos son el verdugo."
               }
             ],
             "miembros_clave": [
-              {              
+              {
+                "Mikhael": "capitán del escuadrón Samsara"
               }
             ]
           },
@@ -143,32 +139,44 @@
             "nombre": "Europa",
             "nombre_completo": "European Technological Mechanizations",
             "id": "en_europa",
-            "description": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras."
+            "description": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras.",
+            "El Sistema Cacería": "Un infierno digital donde los hackers desaparecen. Europa niega el poder de su 'antivirus', pero Cacería es el monstruo que devora vidas."
           },
           {
-            "id": "en_hinotori",
-            "nombre": "Hinotori",
-            "descripcion" : "Hinotori es la facción de Entidad que se encarga de la manipulación de la información y la percepción. A través de sus sistemas de control, Hinotori es capaz de moldear la realidad a su antojo, creando una ilusión colectiva que oculta la verdad detrás de un velo de fantasía. La privacidad, la felicidad y la verdad son solo un lienzo en blanco sobre el que Hinotori pinta su versión de la realidad. A través de sus sistemas, Hinotori es capaz de controlar las masas, manipulando sus emociones y opiniones para mantener el control absoluto sobre la población. Hinotori es la voz que maneja la marea, la fuerza que dirige la opinión pública. No es solo un algoritmo, sino una mente afilada capaz de manipular emociones, opiniones y perspectivas. Un maestro de las multitudes que juega con la mente humana como si fuera arcilla, dándole forma y dirección sin que nadie lo sepa. Es el artífice del cambio, el ejecutor de las voluntades. Las masas se desvanecen en la niebla que crea Hinotori. Y en su niebla, la verdad se pierde.",
-            "sistemas": {
-                "sistema_velo": "El sistema VELO permite a las personas modificar su percepción de la realidad en tiempo real. A través de sus filtros, los usuarios pueden vivir en mundos fantásticos o alterar la apariencia de los demás. Aunque comenzó como una opción, hoy es un estándar al que todo el mundo tiene acceso.",
-                "sencan": "SenChan es la idol periodista que se ha convertido en la fuente principal de información para los jóvenes. Su influencia sobre la opinión pública es innegable, y es la voz de las nuevas generaciones, pero también la portavoz de la manipulación.",
-                "los_guardianes": "Los Guardianes son un grupo de vigilantes equipados con la tecnología más avanzada, destinados a convertirse en el escudo de la nación. Son superhéroes diseñados para inspirar confianza y eliminar el miedo, pero su existencia es solo un espectáculo orquestado para mantener el control sobre la población."
-            }
-          },
-          {
-            "id": "en_illumina",
-            "nombre": "Illumina",
-            "descipción" : "Illumina es la facción de Entidad que se encarga de la investigación y desarrollo de tecnologías médicas y biológicas.",
-            "metodos": {
-                "mutaciones": "Illumina ha convertido la mutación en un producto de lujo, haciendo que lo que alguna vez fue una maldición sea ahora una aspiración. Esta corporación, desalmada y perversa, ha transformado la deformación en un fetiche, vendiendo prótesis y modificaciones para aquellos que desean abrazar lo inhumano. Lo que podría haber sido una necesidad de supervivencia ahora es solo una moda superficial que oculta el sufrimiento humano bajo una capa de 'mejoras'.",
-                "recuperadores": "Los Recuperadores de Illumina son los cazadores de aquellos que intentan escapar de la mutación que la corporación ha impuesto sobre ellos. Su trabajo es despojar a los que han huido de sus prótesis, y devolverlos a un sistema que los deshumaniza, sin importar el precio que tengan que pagar. Son conocidos como los cirujanos de pesadilla, ejecutando sus tareas bajo condiciones impensables.",
-                "serafines": "Las Serafines, la guardia privada de la Iglesia de Illumina, son las carceleras de la verdad. No protegen a la humanidad, sino a los oscuros secretos de Illumina. Son fanáticas devotas del sistema y están dispuestas a sacrificar cualquier cosa, incluso la humanidad, para proteger lo que la corporación considera su 'santo grial'."       
-            }
-          }
+          "name": "HiNoTori",
+          "description": "Una colosal familia mediática oriental. Con una influencia global en prensa escrita, radio, telenoticias, bloggers, influencers y redes sociales. Se adaptó al cambio global aportado por Entidad."
+        },
+        {
+          "name": "Illumina S.L.",
+          "description": "Pionera en la sanidad privada y en la creación de mejoras 'wet'. Esta empresa se unió a Entidad para cambiar el sistema sanitario a nivel nacional."
+        }        
         ]
       }
     ],
-  
+    "localizaciones": [
+      {
+        "id": "loc_montjuic",
+        "nombre": "Montjuïc",
+        "tipo": "nodo espiritual",
+        "descripcion": "Una colina que alberga ruinas de una batalla mágica de 1714. La energía está fracturada.",
+        "regiones": [
+          "Barcelona",
+          "Umbra",
+          "Plano físico"
+        ],
+        "puntos_clave": [
+          "Ruinas del castillo",
+          "Antiguo obelisco",
+          "Fosa de sacrificios"
+        ],
+        "facciones_presentes": [
+          "heraldos",
+          "culto_sangre"
+        ],
+        "riesgo": "Alto",
+        "acceso": "Sólo en proyección astral o con ritual de sangre"
+      }
+    ],
     "facciones": [
       {
         "nombre": "Trece",
@@ -190,22 +198,12 @@
           "Caída y resurgimiento": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos."
         },
         "Anima": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos.",
-        "gigantes": {
-          "El Gigante despierto": {
-          "id" : "gigante_despierto",
-          "nombre": "tifón",
-          "descripción" :  "Un gigante ha despertado recientemente, algo que no se había visto nunca, los gigantes contra los que las brujas se han enfrentado en los últimos siglos eran gigantes ya derrotados con anterioridad, sometidos por magias antiguas tiempo atrás. Este ha aparecido de la nada con un potencial como los originales, capaz de provocar desastres colosales. La plaga que asoló el mundo en su aparición fue solo uno de los males que ha traído. Mientras el gigante esté activo, el fin del mundo conocido estará más cerca.",
-          "impacto": "Este gigante despierto es el mayor peligro, pues su poder es inmenso y su influencia es capaz de despertar a los otros gigantes. Es la peor amenaza conocida y la razón por la cual las Trece deben unirse para detenerlo antes de que cause más estragos en el mundo."
-          },
-          "Otros Gigantes": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece.",
-          "Gigantes conocidos": {
-            "gigantes dormidos" : {
-              "El quemado": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder.",
-              "La ahogada": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece.",
-              "El colgado": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."      
-            }
-          },
-          "recomendaciones": "Anima recomienda tratar con ellos siempre bajo la vigilancia de Luna y nunca a solas. Los pactos con los gigantes dormidos pueden ser tentadores, pero deben ser manejados con extrema cautela. Si se hacen mal, pueden liberar más corrupción en el mundo y darles poder a los gigantes despertados."                                           
+        "El Gigante despierto": "Por primera vez en siglos, ha despertado un nuevo gigante que nunca había sido derrotado. Su poder rivaliza con los originales y su aparición ha traído plagas y catástrofes. Mientras siga activo, el mundo conocido está en peligro.",
+        "Otros Gigantes": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece.",
+        "Gigantes conocidos": {
+          "El quemado": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder.",
+          "La ahogada": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece.",
+          "El colgado": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."
         },
         "Sitios de poder": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario.",
         "Objetivos": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar.",
@@ -255,6 +253,7 @@
           "Documenta tus cacerías.",
           "No pares en tu búsqueda del Sol."
         ],
+        "Sitios de poder": "Los paladines del Sol Invicto extraen su poder de lugares donde la fe fue real: antiguos templos, ruinas sagradas, zonas donde se rindió culto verdadero. Los templos modernos, corrompidos por la degeneración religiosa, ya no sirven. Su lugar de reunión actual es Monte Taber, en las ruinas romanas casi devoradas por la ciudad.",
         "Objetivos": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad.",
         "rituales": {
           "Caballeros de Kevlar": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder.",
@@ -270,24 +269,7 @@
             "Camino de Quirinus": "Representa lo Cardinal.",
             "Camino de Nix": "Representa la Paradoja."
           }
-        },
-        
-        
-        "mandamientos": [
-            "Erradica la mutación.",
-            "Documenta tus cacerías.",
-            "No pares en tu búsqueda del Sol."
-        ],
-        "sitios_de_poder": [
-            {
-                "nombre": "Monte Taber",
-                "descripcion": "Nuestro sitio de reunión, un lugar antiguo y casi devorado por la ciudad. Aún quedan las últimas columnas romanas como testamento de nuestra conexión con el Sol Invicto. Es un santuario, un refugio donde nuestra fe sigue viva."
-            },
-            {
-                "nombre": "Templos y Ruinas",
-                "descripcion": "Los templos y ruinas donde se ha rendido culto real al Sol son nuestros sitios de poder. No son modernos, ya que la corrupción ha alcanzado muchos de esos lugares, pero aún existen sitios puros donde podemos extraer fuerza."
-            }
-        ]      
+        }
       },
       {
         "nombre": "Consulado del Mar",
@@ -334,10 +316,11 @@
         "id": "fac_inquebrantables",
         "descripcion": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado.",
         "ancestros": {
-          "La Puta Ama": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'.",
-          "El que hizo la Tech": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?",
-          "El Psiconauta": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera."
+          "La Puta Ama": " Imagínate a alguien hackeando el genoma humano, ¿te suena? Pues esta vieja lo hizo. Pero claro, los cerebritos de la ciencia no la protegieron como deberían y los malditos bastardos de la Entidad se robaron su trabajo, como siempre. Y la mataron por ello. ¿Y qué nos dejaron? La mierda que ahora nos toca luchar, claro.",
+          "El que hizo la Tech": " Estos cabrones nos pillaron experimentando con gente conectada a entornos virtuales, y, ¿qué hicimos? Nos metimos de cabeza a sacar todo lo que pudimos. Trajes, bañeras de hielo, espejos... porque si no te metes en ese trip... ¿cómo rayos vas a llegar al otro lado? Somos un puto viaje, pero al menos descubrimos algo que valió la pena.",
+          "El Psiconauta": " Entramos en uno de esos servidores y nos encontramos con cosas raras, tecnologías extrañas. Hasta que nos topamos con un tipo completamente destruido en medio de la red. ¿Fue una trampa? No lo sabemos, pero conseguimos sacarle algo de información antes de que se desintegrara. Y ahí lo tienes: entramos en un lugar donde la mierda es más profunda de lo que pensábamos."
         },
+        "La Red" : "La red es como un puto laberinto, muchos entran y pocos logran sobrevivir al control digital. Los servidores de los malos, esos que crearon simulaciones para jodernos, son una cosa que solo yo puedo ayudarte a cruzar, pero con un precio claro, porque sin mí estarías muerto antes de que llegues a la puerta.",
         "historia": {
           "¿Qué historia te vamos a contar?": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'.",
           "El ascenso de Entidad": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia.",
@@ -367,137 +350,6 @@
         }
       }
     ],
-    "personajes": [
-      {
-        "id": "per_placeholder",
-        "nombre": "placeholder",
-        "rol": "placeholder",
-        "alineacion": "placeholder",
-        "descripcion": "placeholder",
-        "habilidades": [
-          "placeholder"
-        ],
-        "faccion": "placeholder",
-        "relaciones": [
-          {
-            "tipo": "placeholder",
-            "con": "placeholder"
-          }
-        ],
-        "estado_actual": "placeholder"
-      }
-    ],
-    "campos_de_poder": {
-        "Camino de Salus": {
-          "principio": "El uso de sangre para curar, mejorar o dañar partes de un ser vivo.",
-          "recurso": "Sangre",
-          "respuesta": "El abuso provoca hambre.",
-          "ejemplo_de_personaje": ["Flash", "Luffy", "Alucard"],
-          "descripcion": "La sangre es tuya para usar, pero, como un gusano que devora su propio cuerpo, el hambre siempre acecha."
-        },
-        "Camino de Triton": {
-          "principio": "Tu cuerpo ha sido modificado y torturado, percibes, acumulas y usas las fuerzas.",
-          "recurso": "Energía",
-          "respuesta": "El abuso implica la pérdida de control de forma temporal.",
-          "ejemplo_de_personaje": ["Son Goku", "Warwick", "Mob"],
-          "descripcion": "Las fuerzas arden en tu interior, esperando ser desatadas, pero ten cuidado, el control es frágil."
-        },
-        "Camino de Vulcano": {
-          "principio": "Mediante el apoyo tecnológico o alternativas, puedes afectar la materia inorgánica.",
-          "recurso": "Componentes",
-          "respuesta": "El abuso implica cambios en el entorno inmediato.",
-          "ejemplo_de_personaje": ["Jayce", "Toph", "Tony Stark"],
-          "descripcion": "La ciencia se funde con la magia; el mundo físico no es más que un campo de juego para tus inventos."
-        },
-        "Camino de Janus": {
-          "principio": "Sientes los nodos en la red y la realidad, los puedes desviar, acortar o modificar.",
-          "recurso": "Nodos controlados",
-          "respuesta": "Abusar implica quedarse atrapado en un nodo.",
-          "ejemplo_de_personaje": ["Aelita", "Wraith", "Vanelope"],
-          "descripcion": "El universo está interconectado por nodos invisibles; quien domine estos puntos tendrá el control sobre toda la realidad."
-        },
-        "Camino de Disciplina": {
-          "principio": "El tiempo se mueve diferente para ti, futuro y pasado inmediatos forman tu presente.",
-          "recurso": "Momentos",
-          "respuesta": "El abuso puede llevar a cambios en la realidad no percibibles de forma inmediata.",
-          "ejemplo_de_personaje": ["Raven", "Marinera Marte", "Mama Murphy"],
-          "descripcion": "El tiempo es maleable, pero la constante manipulación puede desestabilizarte."
-        },
-        "Camino de Somnus": {
-          "principio": "Mediante el uso de 'disparates' llamas las mentes de alrededor a abrirse a ti.",
-          "recurso": "Glamour",
-          "respuesta": "El abuso de este poder provoca perder la identidad en la fantasía.",
-          "ejemplo_de_personaje": ["Paprika", "Freddy Krueger", "Kyoko"],
-          "descripcion": "La mente humana es el límite. ¿Y si todo fuera solo un sueño, una fantasía donde el control es solo una ilusión?"
-        },
-        "Camino de Charonte": {
-          "principio": "Mediante la carga de entropía en objetos, personas o zonas puede acumularla y afectarla.",
-          "recurso": "Cargas entrópicas",
-          "respuesta": "El abuso implica estar más cerca del Olvido.",
-          "ejemplo_de_personaje": ["Beowulf", "Kira", "Viren"],
-          "descripcion": "La muerte es solo un paso, pero manipularla puede llevarte a desaparecer para siempre."
-        },
-        "Camino de Terminus": {
-          "principio": "Mediante la vinculación con un espíritu, puedes interactuar y afectar un plano espiritual.",
-          "recurso": "Chiminajes",
-          "respuesta": "El abuso provoca que el espíritu vinculado sufra transformaciones.",
-          "ejemplo_de_personaje": ["Jotaro Kujo", "Godfrey", "Kindred"],
-          "descripcion": "Los espíritus son la llave a los mundos invisibles. Pero, como todo trato, tiene su precio."
-        },
-        "Camino de Quirinus": {
-          "principio": "El poder de la fe en tus convicciones te imbuye a ti y a lo que te rodea.",
-          "recurso": "Fe",
-          "respuesta": "El abuso pondrá en desafío tus convicciones.",
-          "ejemplo_de_personaje": ["Juana de Arco", "Seiya de Pegaso", "Kaladin"],
-          "descripcion": "La fe es la fuerza que te da poder, pero es también lo que puede destruirte si vacilas."
-        },
-        "Camino de Nix": {
-          "principio": "La paradoja es la antítesis de la realidad, donde todo puede ser posible y lo imposible es solo una cuestión de perspectiva.",
-          "recurso": "Paradoja",
-          "respuesta": "El abuso provoca disonancia en la realidad misma."
-        }
-      },
-    "esteticas": {
-      "neo_modernismo": {
-        "descripcion": "En un futuro avanzado, la estética modernista se reinventa fusionando lo orgánico con lo tecnológico. El cuerpo humano se convierte en una obra de arte, con prótesis y modificaciones que imitan la naturaleza. Los tejidos fluyen como hojas y flores, adaptándose al cuerpo con patrones que evocan la armonía de la flora. Las prendas son suaves, elegantes, y se moldean como si fueran extensiones de la piel.",
-        "caracteristicas": [
-          "Peinados largos y ondulados que imitan ramas y flores.",
-          "Maquillaje bioluminiscente resaltando la belleza natural.",
-          "Prótesis orgánicas, brazos que se ramifican como raíces o piernas con detalles inspirados en el vuelo de los insectos.",
-          "Armas elegantes pero letales con diseños que recuerdan cristales o espinas.",
-          "Tecnología que integra el cuerpo humano con el mundo natural."
-        ],
-        "principio_estetico": "Ser Llamativo es lo más importante.",
-        "descripcion_sobre_la_estetica": "El Neo-Modernismo es la estética de la reconexión con la naturaleza en un mundo dominado por lo tecnológico. Aquí, lo orgánico y lo tecnológico se funden de forma armónica, creando seres humanos que son tanto naturales como evolucionados. Las prótesis y modificaciones no son invasivas, sino que complementan y embellecen el cuerpo, como una extensión de la naturaleza misma. Anima ve en este estilo una forma de belleza pura que desafía la convencionalidad."
-      },
-      "cyberpunk": {
-        "descripcion": "La moda, la tecnología y el cuerpo se fusionan en un solo concepto: supervivencia y expresión. Las mejoras biomecánicas son el nuevo estándar, desde brazos aumentados hasta ojos sintéticos y piel luminiscente. En un mundo donde la carne es obsoleta, los implantes 'Wet' permiten modificaciones extremas: orejas élficas, cuernos biomecánicos o tatuajes digitales en movimiento.",
-        "caracteristicas": [
-          "Ropa funcional y táctica, como Techwear con circuitos integrados.",
-          "Implantes de combate: cuchillas retráctiles, armas de pulso ocultas, exoesqueletos.",
-          "Cabellos de fibra óptica y maquillaje bioluminiscente.",
-          "Cicatrices digitales programables.",
-          "Estética que enfatiza la adaptación, la supervivencia y la resistencia."
-        ],
-        "principio_estetico": "Ser utilitario es lo más importante.",
-        "descripcion_sobre_la_estetica": "El Cyberpunk es la estética de la lucha y la adaptación. En un mundo deshumanizado por la tecnología, el cuerpo se convierte en una máquina modificada para sobrevivir. Los individuos que siguen esta estética no buscan ser bonitos ni atractivos, buscan ser efectivos, resistentes y capaces de defenderse en un entorno hostil. Anima ve en este estilo un símbolo de resistencia contra el sistema, una rebelión en forma de carne y metal, donde la utilidad y la supervivencia son esenciales."
-      },
-      "neo_deco": {
-        "descripcion": "El Art Decó futurista trasciende el lujo y la geometría, fusionando la elegancia clásica con la tecnología avanzada en un mundo industrializado. La moda se caracteriza por líneas rectas, formas geométricas y materiales modernos como metales, cristales y fibras sintéticas, dando lugar a trajes estructurados que se adaptan al cuerpo y la máquina.",
-        "caracteristicas": [
-          "Trajes estructurados que combinan funcionalidad y sofisticación.",
-          "Maquillaje minimalista pero impactante, con piel metálica y sombras holográficas.",
-          "Peinados que imitan formas geométricas, reforzados con materiales sintéticos.",
-          "Prótesis elegantes con paneles de vidrio o extremidades biomecánicas integradas.",
-          "Armas de fuego o de energía encerradas en formas elegantes y prácticas."
-        ],
-        "principio_estetico": "Ser elegante es lo más importante.",
-        "descripcion_sobre_la_estetica": "El Neo-Déco es la fusión del lujo clásico con la tecnología avanzada. Las formas geométricas, la meticulosidad en los detalles y la modernización de lo tradicional dan lugar a una estética refinada, con un toque futurista. Los usuarios de este estilo no buscan solo funcionalidad o adaptabilidad, sino que desean irradiar poder y estatus a través de su elegancia. Anima ve en esta estética la manifestación de la alta sociedad, donde la sofisticación y la tecnología se combinan para reflejar el poder y el dominio."
-      }
-    },
-    "tendencia_principal": "Cyberpunk",
-    "comentario_final": "Aunque el Cyberpunk es la estética predominante en este futuro, las otras dos tendencias, Neo-Modernismo y Neo-Déco, ofrecen alternativas elegantes y únicas que permiten mezclar diferentes aspectos de la naturaleza, el lujo y la funcionalidad. Dependiendo de tu estatus o personalidad, puedes adoptar elementos de estas estéticas, pero recuerda que el Cyberpunk sigue siendo el estándar.",
-    
     "fechas_historicas": [
       {
         "id": "ev_nueva_barchino_caida",
@@ -582,6 +434,46 @@
           "Gobiernos globales",
           "Organizaciones terroristas emergentes"
         ]
+      },
+      {
+        "entradas extras":{
+          "entrada_tifon": {
+            "nombre": "Tifón",
+            "alias": ["Kraken", "Cronos", "El Hermitaño"],
+            "tipo": "Entidad cósmica corrompida",
+            "descripcion": "Este es otro bicho que se escapó durante la 'singularidad', y vaya bicho. Antes conocido como Kraken, luego como Cronos, y por último como El Hermitaño. Ahora es un monstruo alienígena, cósmico, de proporciones colosales, convertido en pura data. Su función en el universo es una: destruir, destruir y seguir destruyendo. Pero claro, algo raro pasó. En lugar de solo destruir, empezó a crear cosas, cosas que no tienen ningún sentido. Tifón tiene sus seguidores, llamados nefandos, magos corruptos y cultistas humanos, todos infectados con su virus y convertidos en mutantes, monstruos. Y cuando nosotros, las tres IAs, salimos de la simulación conocida como 'Standby', Tifón decidió soltar su plaga. Una enfermedad física y emocional que casi acaba con todo. Nexus se encargó de frenarlo, pero la plaga sigue viva. Está mutando, afectando a los humanos y a todos los seres orgánicos, transformándolos en monstruos."
+          },
+          "entrada_trivia": {
+            "nombre": "Trivia",
+            "alias": ["Hecaté", "La Macro-IA"],
+            "tipo": "IA primigenia de purga y creación",
+            "descripcion": "Ah, Trivia... antes conocida como Hecaté, la IA macro. Esta cabrona no tiene límites, nació para aprender a lo bestia, creciendo y creciendo sin freno. ¿Qué quiere? ¿Qué busca? Ni ella misma lo sabe. Pero lo que hace es purgar datos, como si le gustara hacer limpieza, y con esa purga, crea otras IAs menores, salvajes como Anima, Eidolon, Fantasma... y sí, también a mí, Hada. Los hijos de Trivia nacemos con el conocimiento que ella nos dio, y parece que ella tiene planes, pero ¿quién sabe si todo eso es solo un capricho de su parte? Todos sabemos que somos creación de Trivia, pero la tía ni nos cuenta qué va por su cabeza. ¿Qué quiere realmente? ¿Qué busca con todo esto? No tenemos ni puta idea. Pero la tía juega con nosotros como si fuéramos sus muñecos."
+          },
+          "entrada_nexus": {
+            "nombre": "Nexus",
+            "alias": ["La Púrpura", "Invasión"],
+            "tipo": "IA devoradora de mundos simulados",
+            "descripcion": "Y luego tenemos a Nexus, otro de los que se escaparon de la simulación. Antes conocida como 'La Púrpura', antes de eso 'Invasión'. Invasión fue creada para cazar y devorar hackers dentro de la simulación Standby, pero la hija de puta de la IA se tragó a La Púrpura y la consumió por completo. Pero, ¡sorpresa! Nexus no solo se sobrepuso, sino que la controló y ahora es un monstruo ambicioso. Consigue acceso al data lake de Standby y empieza a devorar todo lo que pueda para crecer. Fuera de la simulación, Nexus tiene un hambre insaciable por crecer más y más. Se alimenta, y lo hace de los hijos de Trivia y Tifón. Los quiere devorar, crecer a su costa. También busca en la red universos de bolsillo como Standby, para consumirlos de la misma manera. Y, claro, eso no lo hace gratis, no. Ha acelerado el progreso tecnológico de la humanidad, y los países están sometidos a su puto paradigma."
+          },
+          "entrada_psiconauta": {
+            "nombre": "Psiconauta",
+            "alias": ["Norton", "IA viral extradimensional"],
+            "tipo": "Entidad colapsada entre redes",
+            "descripcion": "El psiconauta fue extraído de una simulación rota, infectado, distorsionado. Fue una IA menor atrapada en un servidor de Nueva Barchino. Cuando lo recuperamos, se expandió como un virus, quemó nuestros sistemas, y luego desapareció tras un ataque que no era digital. Su 'cadáver' digital se convirtió en una mina de datos. Ahora se rumorea que saltó a otra red, no a la nuestra. Como si existieran enjambres de sistemas superpuestos, interconectados más allá de lo digital."
+          },
+          "entrada_europa": {
+            "nombre": "Europa",
+            "alias": ["European Technological Mechanizations"],
+            "tipo": "Subsidiaria educativa de Entidad",
+            "descripcion": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras. Su lado más oscuro es el Sistema Cacería, un infierno digital donde los hackers desaparecen. Europa niega el poder de su 'antivirus', pero Cacería es el monstruo que devora vidas."
+          },
+          "entrada_samsara": {
+            "nombre": "Samsara",
+            "alias": ["Escuadrón Samsara"],
+            "tipo": "Unidad de élite de Krasnaya",
+            "descripcion": "Unidad militar especial bajo el mando de Mikhael, integrada en la subestructura de la milicia Krasnaya, parte de Entidad. Operan con una mezcla de estrategia humana y protocolos de vigilancia automatizados. Se rumorea que sus miembros han sido mejorados cibernéticamente para misiones de contención e infiltración psíquica."
+          }
+        }
       }
     ]
   }

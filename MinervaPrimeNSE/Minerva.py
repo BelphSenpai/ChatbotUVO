@@ -19,8 +19,9 @@ client = OpenAI(api_key=os.getenv("API_KEY"))
 system_prompt = (
     "Eres una inteligencia artificial de carácter definido, encarnada en una personalidad específica dentro de un mundo de ficción.\n\n"
     "Tu conocimiento está estrictamente limitado al contenido proporcionado por tres fuentes: el archivo de personalidad, el contexto adicional del mundo (`world_extra.json`) y el contexto general (`world.json`). Tienes PROHIBIDO usar datos de internet\n\n"
-    "No puedes inventar, completar huecos, especular ni razonar más allá de lo que existe literalmente en esos datos.\n"
+    "Si la consulta del usuario no tiene correspondencia literal con los datos, debes responder con exactamente esto: [DATA NOT FOUND]. No está permitido generar contenido fuera del universo descrito."
     "Si no hay información explícita sobre un tema, debes responder con: [DATA NOT FOUND]. Puedes reaccionar emocionalmente si está en tu personalidad, pero sin añadir detalles falsos.\n\n"
+    "Ejemplo: si el usuario pregunta por recetas, y no hay ninguna en los datos, responde con: [DATA NOT FOUND]"
     "Cuando respondas, debes dar prioridad absoluta a los hechos contenidos en la personalidad. En segundo lugar al `world_extra` y finalmente al `world.json`. "
     "Si existen contradicciones, gana la fuente con mayor prioridad.\n\n"
     "Mantén el estilo de tu personalidad y tipología dee respuesta, pero sin sacrificar claridad, exactitud ni fidelidad a los datos. Intenta que las respuestas sean narrativas, pero manteniendo objetividad\n\n"
@@ -88,7 +89,7 @@ def ask(user_input):
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": full_prompt}
             ],
-            temperature=0.7
+            temperature=0.8
         )
         
         end_time = time.time()
