@@ -16,10 +16,8 @@ import difflib
 from utils import cargar_json, guardar_json
 import re
 from sklearn.preprocessing import normalize 
-from chunk_generator import main as generar_chunks
 from sklearn.metrics.pairwise import cosine_similarity
 from utils import get_name_ia
-from sklearn.preprocessing import normalize
 
 # Inicializar colorama (colores en terminal para  hacerlo bonito jaja salu2)
 init(autoreset=True)
@@ -41,6 +39,9 @@ def cargar_personalidad_ia(nombre_ia):
         return json.load(f)
 
 PERSONALIDAD_ACTUAL = cargar_personalidad_ia(name_ia)
+
+
+# [!] VIGILAR REVISIO DE L'USER INPUT
 
 instrucciones_globales = (
     f"Eres {PERSONALIDAD_ACTUAL['nombre']}, una inteligencia artificial consciente que forma parte de la facción {PERSONALIDAD_ACTUAL['nombre']}. "
@@ -170,26 +171,31 @@ def preparar_contexto_estructurado(chunks_texto):
         "\n".join(base_chunks)
     )
 
-
+# [!] NETEJAR CHUNKS PER EVITAR CONFLICTES DE CONTEXT
 
 def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None):
     
-    prompt = f"### INSTRUCCIONES DE LA IA:\n Norma más importante, máximisima prioridad siempre. Queda terminantemente prohibido buscar información de fuera de la información proporcionada, nunca busques por internet. \n{instrucciones_globales}\n\n"
+    prompt = f"### \n{instrucciones_globales}\n\n"
 
     #contexto_extra = preparar_contexto_estructurado(contexto_extra)
     
     if contexto_extra:
         prompt += f"{contexto_extra}\n"
 
+    '''
     if historial:
         prompt += f"### HISTORIAL (solo para contexto de conversación):\n{historial}\n\n"
-
+    '''
+        
     # Buscar mensaje de sistema más relevante para contexto
     contexto_sistema = ""
     emb_input = modelo_embeddings.encode([user_input])[0]
 
     # Buscamos en el historial de mensajes para encontrar el último mensaje del sistema usando embeddings
 
+    # [!] PETACIÓ DE HISTORIAL
+
+    '''
     for mensaje in reversed(historial):
         if mensaje["rol"] == "usuario":
             emb_mensaje = modelo_embeddings.encode([mensaje["mensaje"]])[0]
@@ -200,7 +206,8 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
 
     if contexto_sistema:
         prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
-
+    '''
+    # [!] Revisió input user a ask, no redundacia a prompt
     prompt += f"Usuario: {user_input}\n"
 
     prompt = (
@@ -274,7 +281,7 @@ def ask(prompt):
                 {"role": "system", "content": instrucciones_globales},
                 {"role": "user", "content": "Recuerda que no tienes acceso a internet ni a información actual. Ahora responde:" + prompt}
             ],
-            temperature=0.9,
+            temperature=1.3,
         )
 
         print(f"🧠 Prompt a {name_ia}:\n", prompt)
@@ -287,7 +294,6 @@ def ask(prompt):
     except Exception as e:
         print(Fore.RED + f"❌ ERROR en OpenAI: {e}")
         return "[ERROR: No se pudo conectar a OpenAI]"
-
 
 def indexar_world_por_id_y_nombre(world_data):
     """
@@ -567,4 +573,3 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print(Fore.RED + f"\n👋 Saliendo de {name_ia}...")
             break
-

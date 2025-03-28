@@ -8,7 +8,6 @@ import os
 import json
 from colorama import Fore, Style, init
 from Minerva import revisar_historial_temp_para_aprendizaje
-from chunk_generator import main as regenerar_chunks
 
 # Inicializar colorama
 init(autoreset=True)
