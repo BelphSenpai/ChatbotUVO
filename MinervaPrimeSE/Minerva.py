@@ -204,6 +204,8 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
     if contexto_sistema:
         prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
     '''
+
+    prompt += f"### INPUT DEL USUARIO: {user_input}\n\n"
     
     prompt = (
         "⚠️ Recordatorio: solo puedes responder con información contenida en los fragmentos anteriores salvo para encontrar emojis por ascii nuevos. "
