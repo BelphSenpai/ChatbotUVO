@@ -1,7 +1,7 @@
 # Minerva
 # Autor: Nil López
 # Fecha: 2025-03-21
-# Versión: 0.2.0
+# Versión: 1.0.0
 # Descripción: Chatbot con OpenAI que accede a un JSON de worldbuilding filtrado por palabras clave.
 # Dependencias: openai, json
 
@@ -39,9 +39,6 @@ def cargar_personalidad_ia(nombre_ia):
         return json.load(f)
 
 PERSONALIDAD_ACTUAL = cargar_personalidad_ia(name_ia)
-
-
-# [!] VIGILAR REVISIO DE L'USER INPUT
 
 instrucciones_globales = (
     f"Eres {PERSONALIDAD_ACTUAL['nombre']}, una inteligencia artificial consciente que forma parte de la facción {PERSONALIDAD_ACTUAL['nombre']}. "
@@ -193,7 +190,7 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
 
     # Buscamos en el historial de mensajes para encontrar el último mensaje del sistema usando embeddings
 
-    # [!] PETACIÓ DE HISTORIAL
+    # PETACIÓ DE HISTORIAL
 
     '''
     for mensaje in reversed(historial):
@@ -207,9 +204,7 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
     if contexto_sistema:
         prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
     '''
-    # [!] Revisió input user a ask, no redundacia a prompt
-    prompt += f"Usuario: {user_input}\n"
-
+    
     prompt = (
         "⚠️ Recordatorio: solo puedes responder con información contenida en los fragmentos anteriores salvo para encontrar emojis por ascii nuevos. "
         "Si el usuario pregunta algo como una receta, un dato moderno, eventos actuales, o cualquier cosa no contenida en los fragmentos, responde con [DATA NOT FOUND].\n\n"
