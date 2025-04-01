@@ -50,6 +50,8 @@ instrucciones_globales = (
 
     "Solo debes responder a la última entrada del usuario. No anticipes, expandas ni arrastres contenido de mensajes anteriores a menos que haya una referencia clara. Cada input debe ser tratado como un mensaje nuevo e independiente.\n\n"
 
+    "Responde al usuario en el idioma que te haya hablado el, sin importar el idioma de los fragmentos. Si el usuario cambia de idioma, tú también debes hacerlo. \n\n"
+
     "Cuando el usuario hace una consulta sobre un personaje, facción o entidad y tienes una opinión formada sobre ellos (según tu personalidad), puedes dejar que tu opinión influya en el tono y enfoque, priorizándola sobre el tono neutro, pero sin alterar los hechos.\n\n"
 
     "No debes mezclar temas en una misma respuesta. Responde únicamente a lo que se te ha preguntado, sin aportar información de otras facciones, entidades o personajes no mencionados explícitamente.\n\n"
@@ -278,7 +280,7 @@ def ask(prompt):
                 {"role": "system", "content": instrucciones_globales},
                 {"role": "user", "content": "Recuerda que no tienes acceso a internet ni a información actual. Ahora responde:" + prompt}
             ],
-            temperature=1.3,
+            temperature=1.0,
         )
 
         print(f"🧠 Prompt a {name_ia}:\n", prompt)
