@@ -1,0 +1,274 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #0a0f1a;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.terminal-login {
+  background: rgba(0, 255, 255, 0.04);
+  border: 1px solid #00ffff33;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.08), 0 0 60px rgba(0, 255, 255, 0.03) inset;
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 40%;
+  text-align: center;
+  animation: glowFlicker 4s infinite ease-in-out;
+}
+
+.login-title {
+  font-size: 30px;
+  margin-bottom: 24px;
+  text-shadow: 0 0 6px #cee3e388;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.login-subtitle {
+  font-size: 40px;
+  color: #ff0000;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+/* Glitch layers */
+.login-subtitle::before,
+.login-subtitle::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  color: #ff0000;
+}
+
+.login-subtitle.glitching::before {
+  color: #0ff;
+  opacity: 0.7;
+  animation: glitch-anim 0.3s infinite;
+}
+
+.login-subtitle.glitching::after {
+  color: #f0f;
+  opacity: 0.7;
+  animation: glitch-anim 0.25s infinite;
+}
+
+.login-form input {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #00ffff44;
+  background-color: transparent;
+  color: #99ffff;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.login-form input:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 8px #00ffff44;
+}
+
+.login-form input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 8px #ff000051;
+  color: #ff0000;
+}
+
+.login-form button {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px;
+  background-color: #00ffff22;
+  border: 1px solid #00ffff88;
+  color: #00ffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.login-form button:hover{
+  border-color: #ff0000;
+  box-shadow: 0 0 8px #ff000051;
+  color: #ff0000;
+  background-color: #ff000051;
+}
+
+.error-msg {
+  margin-top: 12px;
+  color: #ff6666;
+  font-size: 12px;
+  text-shadow: 0 0 4px #ff3333aa;
+  animation: blinkError 1.5s infinite;
+}
+
+/* ANIMACIONES */
+@keyframes glowFlicker {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1),
+                0 0 30px rgba(0, 255, 255, 0.05) inset;
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(0, 255, 255, 0.2),
+                0 0 60px rgba(0, 255, 255, 0.1) inset;
+  }
+}
+
+@keyframes blinkError {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes flickerletter {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 3px #ff000088, 0 0 6px #ff000066;
+  }
+  50% {
+    opacity: 0.6;
+    text-shadow: 0 0 4px #ff000088, 2px 0 #0ff, -2px 0 #f0f;
+  }
+}
+
+@keyframes glitch-anim {
+  0%, 9%, 100% {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+  }
+  10%, 10.5% {
+    clip-path: inset(10% 0 80% 0);
+    transform: translate(-2px, -1px);
+  }
+  25%, 25.2% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(3px, 1px);
+  }
+  55%, 55.3% {
+    clip-path: inset(60% 0 20% 0);
+    transform: translate(-1px, 3px);
+  }
+  70%, 70.4% {
+    clip-path: inset(25% 0 40% 0);
+    transform: translate(2px, -1px);
+  }
+  85%, 85.1% {
+    clip-path: inset(0 0 70% 0);
+    transform: translate(-3px, 2px);
+  }
+}
+/* ===================== */
+/* MEDIA QUERIES REALES Y EFECTIVAS */
+/* ===================== */
+
+/* MÓVILES PEQUEÑOS (hasta 480px) */
+@media (max-width: 480px) {
+  .terminal-login {
+    font-size: 32px;
+    width: 90%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .login-title {
+    font-size: 26px;
+  }
+
+  .login-subtitle {
+    font-size: 32px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .error-msg {
+    font-size: 14px;
+  }
+}
+
+/* TABLETAS Y MÓVILES GRANDES (481px a 1024px) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .terminal-login {
+    width: 80%;
+    padding: 36px 28px;
+  }
+
+  .login-title {
+    font-size: 60px;
+  }
+
+  .login-subtitle {
+    font-size: 72px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 32px;
+    padding: 28px;
+  }
+}
+
+/* PANTALLAS GRANDES (≥ 1025px) */
+@media (min-width: 1025px) {
+  .terminal-login {
+    width: 40%;
+    padding: 40px 32px;
+  }
+
+  .login-title {
+    font-size: 32px;
+  }
+
+  .login-subtitle {
+    font-size: 42px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 17px;
+    padding: 14px;
+  }
+}
+
+/* MUY GRANDES (4K o ultra grandes ≥ 1440px) */
+@media (min-width: 1440px) {
+  .terminal-login {
+    width: 440px;
+    padding: 48px 36px;
+  }
+
+  .login-title {
+    font-size: 36px;
+  }
+
+  .login-subtitle {
+    font-size: 52px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 18px;
+    padding: 16px;
+  }
+}

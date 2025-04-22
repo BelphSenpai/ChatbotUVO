@@ -1,0 +1,11 @@
+.ficha-terminal {
+    width: 80%;
+    margin: 0 auto;
+    background: rgba(0, 255, 255, 0.03);
+    border: 1px solid #00ffff33;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.08), 0 0 60px rgba(0, 255, 255, 0.03) inset;
+    border-radius: 10px;
+    padding: 24px;
+    animation: glowFlicker 3s infinite ease-in-out;
+    line-height: 2;
+}

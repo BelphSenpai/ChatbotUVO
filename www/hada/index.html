@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hada Terminal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/hada/style.css">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+
+</head>
+
+<body>
+
+  <div class="nav-bar">
+    <a class="nav-item" id="ficha-link">FICHA</a>
+    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+  
+    <div class="nav-item dropdown">
+      IAs
+      <div class="dropdown-content">
+        <a href="#" id="hada-link">Hada</a>
+        <a href="#" id="eidolon-link">Eidolon</a>
+        <a href="#" id="fantasma-link">Fantasma</a>
+        <a href="#" id="anima-link">Anima</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const id = new URLSearchParams(window.location.search).get("id");
+    const path = window.location.pathname;
+  
+    if (id) {
+      document.getElementById("ficha-link")?.setAttribute("href", `/ficha?id=${id}`);
+      document.getElementById("conexiones-link")?.setAttribute("href", `/conexiones?id=${id}`);
+      document.getElementById("hada-link").href = `/hada?id=${id}`;
+      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
+      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
+      document.getElementById("anima-link").href = `/anima?id=${id}`;
+    }
+  
+    const ia = path.split('/')[1]; // extrae 'hada', 'eidolon', etc.
+  
+    const currentIA = document.getElementById(`${ia}-link`);
+    if (currentIA) {
+      currentIA.classList.add("active");
+    }
+  </script>
+
+  
+
+  <div class="button-borders">
+    <button class="primary-button" id="terminalBtn" onclick="mostrarTerminal()">
+      C0NNEC7: H@ada
+    </button>
+  </div>
+
+  <div class="cube-container">
+    <div class="cube">
+      <div class="face front"></div>
+      <div class="face back"></div>
+      <div class="face right"></div>
+      <div class="face left"></div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+
+
+  <div class="terminal-container" id="terminal">
+    <h2>Δ:HADA_TERM [sessió oberta]</h2>
+    <div class="chat-output" id="output"></div>
+    <div class="input-container">
+      <input type="text" id="input" placeholder=">>" class="input">
+      <button class="btn-glitch-fill" id="enviarBtn" onclick="enviar()">
+        <span class="text">// Enviar</span>
+        <span class="text-decoration"> _</span>
+        <span class="decoration">⇒</span>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById("input");
+const output = document.getElementById("output");
+
+// Obtener el usuario desde la URL (?id=nombre)
+const urlParams = new URLSearchParams(window.location.search);
+const usuario = urlParams.get("id") || "invitado";
+
+function mostrarTerminal() {
+  const terminal = document.getElementById("terminal");
+  const boto = document.querySelector(".primary-button");
+  const input = document.getElementById("input");
+
+  if (!terminal || !boto) return;
+
+  boto.style.display = "none";
+  terminal.classList.add("visible");
+
+  setTimeout(() => {
+    input?.focus();
+  }, 500);
+}
+
+input?.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") enviar();
+});
+
+async function enviar() {
+  const mensaje = input.value.trim();
+  if (mensaje === "") return;
+  output.innerHTML += `<div class="user-msg">>> ${mensaje}</div>`;
+  input.value = "";
+
+  // Mostrem l'indicador "Hada està escribint..."
+  const escribintDiv = document.createElement("div");
+  escribintDiv.classList.add("typing-indicator");
+  escribintDiv.innerText = "Hada està escribiendo...";
+  output.appendChild(escribintDiv);
+  output.scrollTop = output.scrollHeight;
+
+  try {
+    const res = await fetch("/query", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        mensaje: mensaje,
+        ia: "Hada",
+        id: usuario
+      })
+    });
+
+    const data = await res.json();
+
+    // Eliminem "Hada està escribint..." abans de mostrar la resposta
+    escribintDiv.remove();
+
+    // Escrivim la resposta a poc a poc
+    escriureLentament(data.respuesta, output, 5);
+  } catch (error) {
+    escribintDiv.innerText = "ERROR 404: NO SE PUEDE CONECTAR CON HADA";
+  }
+}
+
+function escriureLentament(texto, element, velocidad = 15) {
+  // Crear l'span per al text
+  const contenedor = document.createElement("div");
+  contenedor.className = "ai-msg";
+  const span = document.createElement("span");
+  contenedor.appendChild(span);
+  element.appendChild(contenedor);
+
+  // Text amb >> al principi
+  const mensaje = `>> ${texto}\n`;
+
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < mensaje.length) {
+      span.textContent += mensaje[i++];
+    } else {
+      clearInterval(interval);
+      span.classList.remove("writing");
+    }
+    element.scrollTop = element.scrollHeight;
+  }, velocidad);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdown && dropdownContent) {
+      // Mostrar/ocultar al hacer clic
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
+        dropdown.classList.toggle("active");
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Cierra el menú al hacer clic fuera
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+
+      // Cierra con la tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  </script>
+
+</body>
+
+</html>

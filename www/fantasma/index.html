@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terminal de Fantasma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/fantasma/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=UnifrakturCook&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="nav-bar">
+    <a class="nav-item" id="ficha-link">FICHA</a>
+    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+  
+    <div class="nav-item dropdown active">
+      IAs
+      <div class="dropdown-content">
+        <a href="#" id="hada-link">Hada</a>
+        <a href="#" id="eidolon-link">Eidolon</a>
+        <a href="#" id="fantasma-link">Fantasma</a>
+        <a href="#" id="anima-link">Anima</a>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const id = new URLSearchParams(window.location.search).get("id");
+    if (id) {
+      document.getElementById("ficha-link").href = `/ficha?id=${id}`;
+      document.getElementById("conexiones-link").href = `/conexiones?id=${id}`;
+      document.getElementById("hada-link").href = `/hada?id=${id}`;
+      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
+      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
+      document.getElementById("anima-link").href = `/anima?id=${id}`;
+    }
+  
+    const currentPath = window.location.pathname.replace("/", "");
+    const activeLink = document.getElementById(`${currentPath}-link`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+    }
+  </script>
+
+  <div class="fantasma-wrapper">
+
+    <div class="image-container">
+
+      <!-- Imatge de marc fons -->
+      <img src="/fantasma/background.png" alt="Estructura de Fantasma" class="fantasma-frame" />
+
+      <!-- Terminal col·locada sobre la imatge -->
+      <div class="terminal-overlay">
+        <div class="fantasma-terminal">
+
+          <div class="header">
+            <h1>FANTASMA</h1>
+            <p class="subtitle">Subdirector del Archivo Digital del Consulado</p>
+          </div>
+
+          <div class="terminal-output" id="output"></div>
+
+          <div class="input-container">
+            <input type="text" id="input" placeholder="consulta a FANTASMA..." />
+          </div>
+          <div class="scan-line"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("input");
+  const output = document.getElementById("output");
+
+  // 📦 Extraemos el nombre de usuario de la URL (?id=nombre)
+  const urlParams = new URLSearchParams(window.location.search);
+  const usuario = urlParams.get("id") || "invitado";
+
+  input.addEventListener("keydown", async (e) => {
+    if (e.key === "Enter") {
+      const mensaje = input.value.trim();
+      if (!mensaje) return;
+
+      // 🧼 Elimina glitch i pulse-line anteriors si existeixen
+      output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
+      output.querySelectorAll(".pulse-line").forEach(el => el.remove());
+
+      // Afegeix la línia de comanda de l’usuari
+      output.innerHTML += `<div>>> ${mensaje}</div>`;
+      input.value = "";
+
+      const escribint = document.createElement("div");
+      escribint.innerText = "⟪ FANTASMA està consultando sus arxivos... ⟫";
+      escribint.style.opacity = "0.5";
+      output.appendChild(escribint);
+
+      try {
+        const res = await fetch("/query", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            mensaje,
+            ia: "fantasma",
+            id: usuario
+          }),
+        });
+
+        const data = await res.json();
+        escribint.remove();
+
+        const respuestaDiv = document.createElement("div");
+        respuestaDiv.classList.add("glitch");
+        respuestaDiv.textContent = ">> "; // Prefix inicial
+
+        const pulse = document.createElement("span");
+        pulse.classList.add("pulse-line");
+        respuestaDiv.appendChild(pulse);
+        output.appendChild(respuestaDiv);
+
+        let i = 0;
+        const text = data.respuesta;
+        const velocidad = 5;
+
+        const escribir = () => {
+          if (i < text.length) {
+            respuestaDiv.textContent += text.charAt(i);
+            respuestaDiv.appendChild(pulse);
+            i++;
+            setTimeout(escribir, velocidad);
+          }
+        };
+        escribir();
+
+        output.scrollTop = output.scrollHeight;
+      } catch (error) {
+        escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
+      }
+    }
+  });
+});
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdown && dropdownContent) {
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que el click se propague
+        dropdown.classList.toggle("active");
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Cierra el dropdown si haces clic fuera
+      document.addEventListener("click", () => {
+        dropdown.classList.remove("active");
+        dropdownContent.classList.remove("show");
+      });
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdown && dropdownContent) {
+      // Mostrar/ocultar al hacer clic
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
+        dropdown.classList.toggle("active");
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Cierra el menú al hacer clic fuera
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+
+      // Cierra con la tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  </script>
+</body>
+
+</html>

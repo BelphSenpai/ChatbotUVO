@@ -1,0 +1,255 @@
+/* ==== ESTIL GLOBAL ==== */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #000103;
+    font-family: 'Source Code Pro', monospace;
+    color: #d0f0ff;
+    overflow: hidden;
+}
+
+/* ==== CONTENIDOR GENERAL ==== */
+.fantasma-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* ==== IMATGE DE FONS AMB EL MARC ==== */
+.fantasma-frame {
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    position: relative;
+    z-index: 4;
+    pointer-events: none;
+
+    /* Escalat responsive dins del contenidor */
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* ==== CONTENIDOR DE LA TERMINAL SOBREPOSADA ==== */
+.terminal-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* centrat vertical i horitzontal */
+    width: 40vw;
+    max-width: 500px;
+    aspect-ratio: 5 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+}
+
+
+/* ==== TERMINAL ==== */
+.fantasma-terminal {
+    width: 70%;
+    height: 120%;
+    padding: 20px;
+    background-color: #0e1315; /* ✅ fondo uniforme translúcido */
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+/* ==== CAPÇALERA ==== */
+.header h1 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #d0f0ff;
+    text-align: center;
+    text-shadow: 0 0 6px #5de0ff44;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.glitch {
+    animation: glitchPulse 2.5s steps(1, end) infinite;
+    position: relative;
+  }
+  
+  @keyframes glitchPulse {
+    0% { transform: translate(0); }
+    20% { transform: translate(-0.5px, -0.5px); }
+    40% { transform: translate(0.5px, 0.5px); }
+    60% { transform: translate(-0.3px, 0.3px); }
+    80% { transform: translate(0.3px, -0.3px); }
+    100% { transform: translate(0); }
+  }
+  
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #a9d6ff55;
+    animation: scanMove 4s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+    mix-blend-mode: screen;
+    opacity: 0.3;
+  }
+  
+  @keyframes scanMove {
+    0% { top: 0%; }
+    100% { top: 100%; }
+  }
+  
+
+
+/* ==== SORTIDA DE TEXT ==== */
+.terminal-output {
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    padding-right: 4px;
+    padding-left: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #a9d6ff transparent;
+}
+
+.terminal-output::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background-color: #0e1315;
+    border-radius: 10px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* ==== INPUT ==== */
+.input-container {
+    display: flex;
+}
+
+.input-container input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #d0f0ff;
+    color: #d0f0ff;
+    font-family: inherit;
+    padding: 6px;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+.input-container input::placeholder {
+    color: #d0f0ff5d;
+    font-style: italic;
+}
+
+.fantasma-terminal::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    z-index: -1;
+    border-radius: 12px;
+    background: #0e1315; /* ✅ fondo plano muy suave */
+    animation: none;
+}
+
+@keyframes pulseAura {
+
+    0%,
+    100% {
+        opacity: 0.08;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.15;
+        transform: scale(1.01);
+    }
+}
+
+.image-container {
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    z-index: 10;
+}
+
+.terminal-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 32.5%; /* AJUSTA AQUÍ */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44%;
+    aspect-ratio: 1.4 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .fantasma-terminal {
+    background: rgba(8, 12, 16, 0.45); /* 🔍 més transparent */
+    backdrop-filter: blur(4px);       /* 💫 menys intens per deixar passar més fons */
+  }
+  
+  .fantasma-terminal::before {
+    opacity: 0.4; /* 🌫️ més lleugera per no enfosquir el fons */
+  }
+  
+  .orbital {
+    z-index: 0; /* 🔽 assegurem que estigui per sota de la terminal però visible */
+  }
+
+  .subtitle,
+.input-container input,
+.terminal-output {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: #d0f0ff;
+}

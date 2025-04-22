@@ -126,4 +126,6 @@ def set_name_ia(nombre):
         PERSONALIDAD_ACTUAL = json.load(f)
 
 def get_name_ia():
+    if name_ia is None:
+        set_name_ia(os.getenv("NAME"))
     return name_ia

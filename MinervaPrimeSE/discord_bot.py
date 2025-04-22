@@ -145,8 +145,6 @@ if __name__ == "__main__":
 
     iniciar_minerva()
 
-    print(Fore.GREEN + "Historial temporal anterior purgado.")
-
     print(Fore.GREEN + f"{name_ia} lista para recibir consultas.")
     modo = "consulta"
 

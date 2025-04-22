@@ -1,0 +1,13 @@
+{
+    "nombre": "Victoria Serrano",
+    "estado": "Operativa",
+    "afiliacion": "Círculo de Observación Espectral",
+    "relaciones": ["Mateo (fragmento asociado)", "Eidolon (IA vigilancia)"],
+    "nivel_amenaza": "█ █ █ ░ ░",
+    "log": [
+      "[2025-04-20] Lectura estable de espejos internos // protocolo OK",
+      "[2025-04-16] Conexión fallida con nodo: ECHO-MIRROR",
+      "[2025-04-13] Aislamiento temporal exitoso en nodo SOMBRA-3"
+    ]
+  }
+  

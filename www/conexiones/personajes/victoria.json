@@ -1,0 +1,46 @@
+{
+    "elements": {
+      "nodes": [
+        { "data": { "id": "victoria", "label": "Victoria" } },
+        { "data": { "id": "mateo", "label": "Mateo" } },
+        { "data": { "id": "nerea", "label": "Nerea" } },
+        { "data": { "id": "lucien", "label": "Lucien" } },
+        { "data": { "id": "anima", "label": "Anima (IA)" } }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "e1",
+            "source": "victoria",
+            "target": "mateo",
+            "label": "Fragmentos compartidos"
+          }
+        },
+        {
+          "data": {
+            "id": "e2",
+            "source": "victoria",
+            "target": "nerea",
+            "label": "Lealtad emocional"
+          }
+        },
+        {
+          "data": {
+            "id": "e3",
+            "source": "victoria",
+            "target": "lucien",
+            "label": "Protección ambigua"
+          }
+        },
+        {
+          "data": {
+            "id": "e4",
+            "source": "victoria",
+            "target": "anima",
+            "label": "Interfaz espiritual"
+          }
+        }
+      ]
+    }
+  }
+  

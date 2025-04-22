@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mapa de relaciones</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/conexiones/style.css">
+  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+
+
+</head>
+
+<body>
+
+  <div class="nav-bar">
+    <a class="nav-item" id="ficha-link">FICHA</a>
+    <span class="nav-item active">CONEXIONES</span>
+  
+    <div class="nav-item dropdown">
+      IAs
+      <div class="dropdown-content">
+        <a href="#" id="hada-link">Hada</a>
+        <a href="#" id="eidolon-link">Eidolon</a>
+        <a href="#" id="fantasma-link">Fantasma</a>
+        <a href="#" id="anima-link">Anima</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+  <div class="terminal">
+    <div class="scanline"></div>
+    <div id="cy"></div>
+  </div>
+
+  <div id="popup"></div>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const id = new URLSearchParams(window.location.search).get("id");
+  
+      if (id) {
+        const setHref = (id, selector) => {
+          const el = document.getElementById(selector);
+          if (el) el.href = `/${selector.replace("-link", "")}?id=${id}`;
+        };
+  
+        setHref(id, "ficha-link");
+        setHref(id, "hada-link");
+        setHref(id, "eidolon-link");
+        setHref(id, "fantasma-link");
+        setHref(id, "anima-link");
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownContent = document.querySelector(".dropdown-content");
+
+    if (dropdown && dropdownContent) {
+      // Mostrar/ocultar al hacer clic
+      dropdown.addEventListener("click", (e) => {
+        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
+        dropdown.classList.toggle("active");
+        dropdownContent.classList.toggle("show");
+      });
+
+      // Cierra el menú al hacer clic fuera
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+
+      // Cierra con la tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dropdown.classList.remove("active");
+          dropdownContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  </script>
+  
+</body>
+<script src="/conexiones/script.js">
+</script>>
+
+</html>

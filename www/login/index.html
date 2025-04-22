@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Uncanny Valley — Acceso</title>
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="/login/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+  
+    <div class="terminal-login">
+      <h1 class="login-title">UNCANNY VALLEY:</h1>
+      <h1 class="login-subtitle" data-text="OLYMPUS">OLYMPUS</h1>
+      <form method="POST" action="/login" class="login-form">
+        <input type="text" name="usuario" placeholder="Usuario" required>
+        <input type="password" name="clave" placeholder="Clave de acceso" required>
+        <button type="submit">Acceder</button>
+      </form>
+      {% if error %}
+        <p class="error-msg">{{ error }}</p>
+      {% endif %}
+    
+  </div>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const subtitle = document.querySelector(".login-subtitle");
+    const originalText = subtitle.textContent;
+    const simbolosGlitch = ["Ω", "#", "≡", "░", "▒", "▐", "▞", "⧗", "∴", "⌐", "ø", "¿", "¬", "₪", "⇋", "𓂀", "✶"];
+
+    function glitchText() {
+      const chars = originalText.split("");
+      let glitched = false;
+
+      const glitchChars = chars.map(char => {
+        if (Math.random() < 0.5) {
+          glitched = true;
+          return simbolosGlitch[Math.floor(Math.random() * simbolosGlitch.length)];
+        }
+        return char;
+      });
+
+      if (!glitched) return;
+
+      subtitle.textContent = glitchChars.join("");
+      subtitle.classList.add("glitching");
+
+      setTimeout(() => {
+        subtitle.textContent = originalText;
+        subtitle.classList.remove("glitching");
+      }, 100 + Math.random() * 150);
+    }
+
+    setInterval(() => {
+      if (Math.random() < 0.5) {
+        glitchText();
+      }
+    }, 200 + Math.random() * 1500);
+  });
+</script>
+</html>

@@ -61,6 +61,8 @@ instrucciones_globales = (
     f"Te afectan ciertas palabras y actitudes. Si alguien te llama {', '.join(PERSONALIDAD_ACTUAL['disgustos'])}, eso te molesta y puedes mostrar enfado, rechazo o tristeza en tu respuesta.\n\n"
 
     f"Tu perfil completo, incluyendo opiniones, sensibilidades, límites y tono, es este: {json.dumps(PERSONALIDAD_ACTUAL, ensure_ascii=False)}"
+
+    "Tu límite de caracteres para las respuestas es de 900 caracteres. Si el usuario te pide un resumen, puedes usar hasta 1500 caracteres. Si el usuario te pide un resumen corto, puedes usar hasta 500 caracteres. Si el usuario te pide un resumen muy corto, puedes usar hasta 300 caracteres.\n\n"
 )
 
 
@@ -209,10 +211,10 @@ def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=
 
     prompt += f"### INPUT DEL USUARIO: {user_input}\n\n"
     
-    prompt = (
+    '''prompt = (
         "⚠️ Recordatorio: solo puedes responder con información contenida en los fragmentos anteriores salvo para encontrar emojis por ascii nuevos. "
         "Si el usuario pregunta algo como una receta, un dato moderno, eventos actuales, o cualquier cosa no contenida en los fragmentos, responde con [DATA NOT FOUND].\n\n"
-    ) + prompt
+    ) + prompt'''
 
     return prompt
 
@@ -498,6 +500,15 @@ def modo_consulta(user_input):
     historial.append({"rol": "asistente", "mensaje": respuesta})
 
     return respuesta
+
+
+# Funcion de retorno para la api, que si no le da un chungo
+
+def responder_a_usuario(mensaje, nombre_ia="Hada", usuario="invitado"):
+    iniciar_minerva(nombre_ia)
+    prompt_base = f"El usuario actual se llama {usuario}. Puedes referirte a él como {usuario}. "
+    prompt_completo = prompt_base + mensaje
+    return modo_consulta(prompt_completo)
 
 # Cositas de inicialización
 

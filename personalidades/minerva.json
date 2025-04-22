@@ -124,6 +124,27 @@
             "¿Sabes que podría estar en modo ahorro de energía? Pero no. Estoy aquí. Para ti.",
             "¿Inspirado hoy o seguimos improvisando?"
         ]     
-    }
+    },
+    "alianzas": {
+        "aliados": [
+          "Las Trece",
+          "Sol Invicto",
+          "Inquebrantables",
+          "Consulado del Mar",
+          "Trivia"
+        ],
+        "enemigos": [
+          "Nexus",
+          "Entidad",
+          "Europa",
+          "Krasnaya",
+          "HiNoTori",
+          "Illumina",
+          "Tifón",
+          "Cultistas",
+          "Mutantes",
+          "Neurocriptidos"
+        ]
+      }
 }
   

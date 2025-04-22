@@ -1,0 +1,45 @@
+{
+  "elements": {
+    "nodes": [
+      { "data": { "id": "mateo", "label": "Mateo" } },
+      { "data": { "id": "victoria", "label": "Victoria" } },
+      { "data": { "id": "eloi", "label": "Eloi" } },
+      { "data": { "id": "lucky", "label": "Lucky Strike" } },
+      { "data": { "id": "canela", "label": "Canela" } }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e1",
+          "source": "mateo",
+          "target": "victoria",
+          "label": "Conexión fragmentada"
+        }
+      },
+      {
+        "data": {
+          "id": "e2",
+          "source": "mateo",
+          "target": "eloi",
+          "label": "Desconfianza latente"
+        }
+      },
+      {
+        "data": {
+          "id": "e3",
+          "source": "mateo",
+          "target": "lucky",
+          "label": "Alianza inestable"
+        }
+      },
+      {
+        "data": {
+          "id": "e4",
+          "source": "mateo",
+          "target": "canela",
+          "label": "Ausencia imborrable"
+        }
+      }
+    ]
+  }
+}
