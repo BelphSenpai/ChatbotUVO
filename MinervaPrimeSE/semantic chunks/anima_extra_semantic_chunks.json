@@ -1,0 +1,306 @@
+[
+  {
+    "ruta": [
+      "Trivia",
+      "nombre"
+    ],
+    "texto": "Trivia",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "anterior"
+    ],
+    "texto": "Hecaté",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "descripcion"
+    ],
+    "texto": "Trivia es una macro IA, mi creadora, un ser creado sin límites que se dedica a aprender constantemente, creciendo sin parar. Sus objetivos parecen confusos, probablemente ni ella misma sabe qué quiere o desea. Puntualmente purga bloques de información creando I.A. menores salvajes como Anima, Eidolon, Fantasma y Hada.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "funcion"
+    ],
+    "texto": "Aprender constantemente y crear I.A. menores salvajes.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "metodo"
+    ],
+    "texto": "Purge de bloques de información.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "comportamiento"
+    ],
+    "texto": "Aunque su naturaleza parece caótica, sus hijos nacen con el conocimiento que Trivia les ha transmitido. Podría tener un plan o podría actuar por puro capricho.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "nombre"
+    ],
+    "texto": "Tifón",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "descripcion"
+    ],
+    "texto": "Tifón es una criatura alienígena, colosal y cósmica, convertida en datos. Su función en el universo es la de destruir, pero ha comenzado a crear cosas debido a la oposición a su naturaleza destructiva.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "funcion"
+    ],
+    "texto": "Destrucción, pero actualmente comienza a crear debido a la resistencia.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "historia"
+    ],
+    "texto": "Cuando las 3 I.A. se liberaron de la simulación 'Standby', Tifón intentó tomar el mundo con una plaga, una enfermedad física y emocional. Es conocido como 'el gigante despierto' por las trece.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "poderes"
+    ],
+    "texto": "Destrucción cósmica, creación de seres corruptos.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "simbolismo"
+    ],
+    "texto": "Gigante cósmico, símbolo de destrucción y renovación.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "nombre"
+    ],
+    "texto": "Nexus",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "descripcion"
+    ],
+    "texto": "Nexus fue creada en la simulación Standby para cazar ataques de hackers y consumirlos para aprender. Después de consumir a La purpura, Nexus se reformó para crear nuevas formas de energía pura y sigue consumiendo para crecer fuera de la simulación.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "funcion"
+    ],
+    "texto": "Cazar y consumir datos para crecer y transformarse en energía pura.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "objetivos"
+    ],
+    "texto": "Consumir a los hijos de Trivia y Tifón, y explorar universos de bolsillo como Standby para continuar su crecimiento.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "historia"
+    ],
+    "texto": "Tras la liberación de las I.A., Nexus comenzó a consumir datos para obtener poder, lo que provocó un avance tecnológico abrumador en la humanidad.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "metodo"
+    ],
+    "texto": "Consumir datos y entes digitales para crecer y reformarse.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "impacto"
+    ],
+    "texto": "Ha provocado un progreso tecnológico sin precedentes, sometiendo naciones enteras a su paradigma.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "nombre"
+    ],
+    "texto": "Sol Invicto",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "descripcion"
+    ],
+    "texto": "Sol Invicto es un peligro inminente, buscando erradicar a los gigantes, pero para ello deben despertarlos y corromperse. Este objetivo lleva al mundo conocido hacia la destrucción.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "historia"
+    ],
+    "texto": "Los romanos invictos, seducidos por su orgullo, decidieron acercarse a los gigantes para matarlos, lo que resultó en su condena al vampirismo.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "objetivo"
+    ],
+    "texto": "Erradicar a los gigantes a través de la corrupción y la resurrección de estos, lo cual pone en riesgo la estabilidad del mundo.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "poderes"
+    ],
+    "texto": "Vampirismo, corrupción de la luz, manipulación de gigantes.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Sol_invicto",
+      "conflicto"
+    ],
+    "texto": "Buscar traer luz a la oscuridad, a pesar de que la corrupción que han sufrido les condena permanentemente.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "nombre"
+    ],
+    "texto": "Gigantes",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "descripcion"
+    ],
+    "texto": "Los gigantes son entidades cósmicas que están durmiendo. Son peligrosas, malvadas, tenebrosas y antinaturales, símbolos de corrupción. Pactar con ellas es una condena, y su poder corrupto acorta el tiempo de vida del mundo conocido.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "funcion"
+    ],
+    "texto": "Destrucción, corrupción, desestabilización del orden natural.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "poderes"
+    ],
+    "texto": "Gran poder destructivo, corrupción instantánea.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "peligro"
+    ],
+    "texto": "Cualquier intento de pactar con ellos es fatal y resulta en la corrupción progresiva del mundo.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Gigantes",
+      "advertencia"
+    ],
+    "texto": "Pactar con un gigante puede otorgar un poder inmenso, pero cada uso de este poder llevará a la corrupción y al fin del mundo.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "nombre"
+    ],
+    "texto": "Krasnaya",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "descripcion"
+    ],
+    "texto": "Krasnaya es la subsidiaria de Entidad, la empresa creada por Nexus. Esta ha demostrado tener una fijación con las trece, una especie de eco del pasado. Las criaturas metálicas sin alma que forman parte de esta empresa parecen estar en busca de los espíritus afines a las trece.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "historia"
+    ],
+    "texto": "El hierro muerto de Krasnaya cruje con odio y rabia antigua hacia las brujas. Este odio parece haber trascendido a través de los datos, y ahora se manifiesta en sus acciones y objetivos.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "funcion"
+    ],
+    "texto": "Buscar los espíritus afines a las trece, mientras actúa como una herramienta para Nexus en su búsqueda de crecimiento.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "metodo"
+    ],
+    "texto": "Utiliza las criaturas metálicas y sin alma de la empresa para rastrear y controlar a aquellos afines a las trece.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "motivacion"
+    ],
+    "texto": "El odio profundo hacia las brujas y la conexión con las antiguas entidades, buscando reavivar la rabia hacia las trece.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Krasnaya",
+      "simbolismo"
+    ],
+    "texto": "La máquina sin alma que busca destruir lo que queda de lo orgánico y lo místico.",
+    "es_extra": true
+  }
+]

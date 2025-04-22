@@ -6,17 +6,9 @@ MinervaPrime/pending_suggestions.json
 MinervaPrime/pending_suggestions.json
 MinervaPrime/historial.json
 MinervaPrime/pending_suggestions.json
-MinervaPrime/semantic_chunks.json
 MinervaPrime/pending_suggestions.json
-semantic_chunks.json
-MinervaPrime/anima_semantic_chunks.json
-MinervaPrime/eidolon_semantic_chunks.json
-MinervaPrime/fantasma_semantic_chunks.json
-MinervaPrime/hada_semantic_chunks.json
-MinervaPrime/minerva_semantic_chunks.json
 
-# Archivos semánticos temporales
-*_semantic_chunks.json
+
 
 # Modelos y archivos pesados
 *.gguf

@@ -1,0 +1,1583 @@
+[
+  {
+    "ruta": [
+      "EraTecnologia",
+      "Titulo"
+    ],
+    "texto": "Distopía"
+  },
+  {
+    "ruta": [
+      "EraTecnologia",
+      "Resumen"
+    ],
+    "texto": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo."
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Velo",
+      "Descripcion"
+    ],
+    "texto": "Sistema de filtros visuales aplicados a la realidad"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Velo",
+      "Impacto"
+    ],
+    "texto": "Impulsa el consumismo, elimina la percepción objetiva"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Velo",
+      "VersionGratuita"
+    ],
+    "texto": "Incluye anuncios cada hora"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Velo",
+      "ProgramacionOnirica"
+    ],
+    "texto": "Permite controlar sueños, aunque de forma dudosa"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Unidades",
+      "Descripcion"
+    ],
+    "texto": "Asistentes robóticos domésticos"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Unidades",
+      "Impacto"
+    ],
+    "texto": "Sustituyen trabajo humano y vigilan comportamiento"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Tecnologia",
+      "Sistemas",
+      "Unidades",
+      "DerechoUniversal"
+    ],
+    "texto": "Una por unidad familiar europea"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "Descripcion"
+    ],
+    "texto": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "Autor"
+    ],
+    "texto": "James Lovelock (1969)"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "ReaccionGaia",
+      "Causa"
+    ],
+    "texto": "Alteración del equilibrio natural por acción humana"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "ReaccionGaia",
+      "Efecto"
+    ],
+    "texto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "ReaccionGaia",
+      "Metafora"
+    ],
+    "texto": "La Tierra rechaza a la humanidad como una infección"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Origen"
+    ],
+    "texto": "Plaga que alteró microorganismos y causó mutaciones impredecibles"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Distribucion"
+    ],
+    "texto": "Aire, agua, comida"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Descripcion"
+    ],
+    "texto": "Abuso de mejoras tecnológicas físicas y estéticas"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "id"
+    ],
+    "texto": "entidad"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "nombre"
+    ],
+    "texto": "Entidad"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "descripcion"
+    ],
+    "texto": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia."
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "id"
+    ],
+    "texto": "en_krasnaya"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "nombre"
+    ],
+    "texto": "Krasnaya"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "descripcion"
+    ],
+    "texto": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. "
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "emplazamentos importantes[0]",
+      "torres de seguridad"
+    ],
+    "texto": "Las Torres de Seguridad se alzan en el corazón de cada barriada, vigilantes implacables sobre la ciudad. En las zonas más densamente pobladas, pueden encontrarse dos o incluso tres de estas gigantescas fortalezas. Como modernos palomares, despliegan enjambres de drones y tejen redes digitales de vigilancia, coordinando fuerzas policiales y anticipando crímenes antes de que sucedan. Pero estas torres son algo más que simples estructuras. Son organismos vivos de metal y datos, autosuficientes en su mantenimiento. Con sistemas de autorreparación, protocolos de limpieza automatizados y defensas autónomas, la presencia humana dentro de ellas es mínima y puntual. No necesitan descanso, no sienten duda ni fatiga. Diseñadas para ser almenaras brutales, su luz no advierte… sentencia."
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[0]",
+      "id"
+    ],
+    "texto": "k_legiones"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[0]",
+      "nombre"
+    ],
+    "texto": "legiones"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[0]",
+      "descripcion"
+    ],
+    "texto": "Su ejército está organizado en Legiones, cada una compuesta por distintos tipos de agentes. Aunque en el campo de batalla suelen lucir uniformes indistinguibles, dentro de sus filas se encuentran: Militares de profesión – Soldados entrenados en combate táctico y operaciones de alto riesgo. Vigilantes voluntarios – Reclutas civiles que buscan ascender en la estructura de seguridad. Unidades de Combate – Autómatas avanzados, diseñados para reducir la dependencia humana en la guerra."
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[1]",
+      "id"
+    ],
+    "texto": "k_legion_negra"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[1]",
+      "nombre"
+    ],
+    "texto": "legión negra"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "subfacciones[1]",
+      "descripcion"
+    ],
+    "texto": "La Fuerza de Élite Final. En la policía militar, los contratos son indefinidos. Para algunos, eso significa una carrera. Para otros, una condena. Se rumorea que, tras decenas de misiones, tras incontables heridas y reemplazos, poco queda de humano bajo el metal. Pero hay casos aún peores… Cuando un soldado persiste más allá de la pérdida de carne, cuando su voluntad resiste donde otros se quiebran, es enviado aquí. A la Legión Negra. A la fuerza imparable. Dejan de ser individuos, de ser personas. No tienen historia, solo un propósito: ejecutar la sentencia. Cuando ellos son desplegados, la ciudad contiene el aliento. Los neones titilan, como si el mundo guardara luto. Porque su llegada solo significa una cosa: alguien ha sido condenado, y ellos son el verdugo."
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[0]",
+      "miembros_clave[0]",
+      "Mikhael"
+    ],
+    "texto": "capitán del escuadrón Samsara"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[1]",
+      "nombre"
+    ],
+    "texto": "Europa"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[1]",
+      "nombre_completo"
+    ],
+    "texto": "European Technological Mechanizations"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[1]",
+      "id"
+    ],
+    "texto": "en_europa"
+  },
+  {
+    "ruta": [
+      "entidad[0]",
+      "facciones[1]",
+      "description"
+    ],
+    "texto": "Empresa que supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras."
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "id"
+    ],
+    "texto": "loc_montjuic"
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "nombre"
+    ],
+    "texto": "Montjuïc"
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "tipo"
+    ],
+    "texto": "nodo espiritual"
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "descripcion"
+    ],
+    "texto": "Una colina que alberga ruinas de una batalla mágica de 1714. La energía está fracturada."
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "riesgo"
+    ],
+    "texto": "Alto"
+  },
+  {
+    "ruta": [
+      "localizaciones[0]",
+      "acceso"
+    ],
+    "texto": "Sólo en proyección astral o con ritual de sangre"
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "nombre"
+    ],
+    "texto": "Trece"
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "id"
+    ],
+    "texto": "fac_trece"
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "descripcion"
+    ],
+    "texto": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "Fundadora"
+    ],
+    "texto": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "Guardianas del Agua"
+    ],
+    "texto": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "Dominae de Barcino"
+    ],
+    "texto": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "Cazadora de Sombras"
+    ],
+    "texto": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "13 d'Arbúcies"
+    ],
+    "texto": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "ancestros",
+      "Vampira del Raval"
+    ],
+    "texto": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "historia",
+      "Antes de los gigantes"
+    ],
+    "texto": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "historia",
+      "La ruptura del pacto"
+    ],
+    "texto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "historia",
+      "El poder de una mortal"
+    ],
+    "texto": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "historia",
+      "Las Trece y la corrupción"
+    ],
+    "texto": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "historia",
+      "Caída y resurgimiento"
+    ],
+    "texto": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Anima"
+    ],
+    "texto": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "El Gigante despierto"
+    ],
+    "texto": "Por primera vez en siglos, ha despertado un nuevo gigante que nunca había sido derrotado. Su poder rivaliza con los originales y su aparición ha traído plagas y catástrofes. Mientras siga activo, el mundo conocido está en peligro."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Otros Gigantes"
+    ],
+    "texto": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Gigantes conocidos",
+      "El quemado"
+    ],
+    "texto": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Gigantes conocidos",
+      "La ahogada"
+    ],
+    "texto": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Gigantes conocidos",
+      "El colgado"
+    ],
+    "texto": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Sitios de poder"
+    ],
+    "texto": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "Objetivos"
+    ],
+    "texto": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Luna"
+    ],
+    "texto": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Relación con los espíritus"
+    ],
+    "texto": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Madre Sangre"
+    ],
+    "texto": "Representa la Vida."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Abuelo Trueno"
+    ],
+    "texto": "Representa las Fuerzas."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Hermana Tierra"
+    ],
+    "texto": "Representa la Materia."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Guía Red"
+    ],
+    "texto": "Representa la Correspondencia."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Hermana Agua"
+    ],
+    "texto": "Representa el Tiempo."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Abuela Eco"
+    ],
+    "texto": "Representa la Mente."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Padre Hueso"
+    ],
+    "texto": "Representa la Entropía."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Hermana Niebla"
+    ],
+    "texto": "Representa el Espíritu."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Hermano Fuego"
+    ],
+    "texto": "Representa el Cardinal."
+  },
+  {
+    "ruta": [
+      "facciones[0]",
+      "rituales",
+      "Espíritus conocidos",
+      "Temido Eclipse"
+    ],
+    "texto": "Representa la Paradoja."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "nombre"
+    ],
+    "texto": "Sol Invicto"
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "id"
+    ],
+    "texto": "fac_sol_invicto"
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "descripcion"
+    ],
+    "texto": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Dios Sol"
+    ],
+    "texto": "Divinidad central del sol invicto y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Lucio Domicio Aureliano"
+    ],
+    "texto": "Emperador romano que, ante la decadencia del imperio, fundó la Orden del Sol Invicto para enfrentar el mal que crecía dentro de Roma. Aunque su culto cayó, su visión perduró."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Los Vigiles"
+    ],
+    "texto": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Santos Mártires"
+    ],
+    "texto": "Cipriano y Justinia. Justinia redimió al brujo Cipriano, quien fundó el culto moderno al Sol en la península ibérica. Son venerados como patronos de la purificación y la protección mágica frente a maldiciones y corrupción."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Centinela Invicto"
+    ],
+    "texto": "Ramon de Montcada, guerrero piadoso y defensor de su tierra. Nunca canonizado, pero considerado un protector por la tradición solar. Sus actos de fe y batalla concluyeron en una leyenda: un árbol ardió para salvar a su familia."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "ancestros",
+      "Arquitecto del Resplandor"
+    ],
+    "texto": "Antoni Gaudí, arquitecto visionario, preservó la herencia del Sol Invicto construyendo templos ocultos en sus obras. Creía que su arquitectura guiaría a los futuros guerreros del Sol cuando llegara la hora de luchar contra la oscuridad."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Dioses Solares"
+    ],
+    "texto": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Fundación de la Orden"
+    ],
+    "texto": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Los Vigiles"
+    ],
+    "texto": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Justina y Cipriano"
+    ],
+    "texto": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Transformación de la Orden"
+    ],
+    "texto": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Era de Alianzas"
+    ],
+    "texto": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Renacimiento y guerra"
+    ],
+    "texto": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Caballeros de Kevlar"
+    ],
+    "texto": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "historia",
+      "Resistencia actual"
+    ],
+    "texto": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "Eidolon"
+    ],
+    "texto": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "Sitios de poder"
+    ],
+    "texto": "Los paladines del Sol Invicto extraen su poder de lugares donde la fe fue real: antiguos templos, ruinas sagradas, zonas donde se rindió culto verdadero. Los templos modernos, corrompidos por la degeneración religiosa, ya no sirven. Su lugar de reunión actual es Monte Taber, en las ruinas romanas casi devoradas por la ciudad."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "Objetivos"
+    ],
+    "texto": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caballeros de Kevlar"
+    ],
+    "texto": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Salus"
+    ],
+    "texto": "Representa la Vida."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Triton"
+    ],
+    "texto": "Representa las Fuerzas."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Vulcano"
+    ],
+    "texto": "Representa la Materia."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Janus"
+    ],
+    "texto": "Representa la Correspondencia."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Disciplina"
+    ],
+    "texto": "Representa el Tiempo."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Somnus"
+    ],
+    "texto": "Representa la Mente."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Charonte"
+    ],
+    "texto": "Representa la Entropía."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Terminus"
+    ],
+    "texto": "Representa el Espíritu."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Quirinus"
+    ],
+    "texto": "Representa lo Cardinal."
+  },
+  {
+    "ruta": [
+      "facciones[1]",
+      "rituales",
+      "Caminos del Sol Invicto",
+      "Camino de Nix"
+    ],
+    "texto": "Representa la Paradoja."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "nombre"
+    ],
+    "texto": "Consulado del Mar"
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "id"
+    ],
+    "texto": "fac_consulado_mar"
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "descripcion"
+    ],
+    "texto": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Doctor Inspiratus"
+    ],
+    "texto": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Arquitecto del Caos"
+    ],
+    "texto": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Cartógrafo del Silencio"
+    ],
+    "texto": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Víctor Català"
+    ],
+    "texto": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Maestro de Maestros"
+    ],
+    "texto": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "ancestros",
+      "Alquimista del Génoma"
+    ],
+    "texto": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "Invocación de la Lógica"
+    ],
+    "texto": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "Ars Magna"
+    ],
+    "texto": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "Orden de la Razón"
+    ],
+    "texto": "En el siglo XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "Separación"
+    ],
+    "texto": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "El Milagro"
+    ],
+    "texto": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "historia",
+      "Retiro y supervivencia"
+    ],
+    "texto": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "Fantasma"
+    ],
+    "texto": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "Ars Magna"
+    ],
+    "texto": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "Sitios de poder"
+    ],
+    "texto": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "Objetivos"
+    ],
+    "texto": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Eruditos de Silicio"
+    ],
+    "texto": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlar, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Galénica"
+    ],
+    "texto": "Representa la Vida."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Astrología"
+    ],
+    "texto": "Representa las Fuerzas."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Alquimia"
+    ],
+    "texto": "Representa la Materia."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Navegación"
+    ],
+    "texto": "Representa la Correspondencia."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Cronometría"
+    ],
+    "texto": "Representa el Tiempo."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Oneiromancia"
+    ],
+    "texto": "Representa la Mente."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Escatología"
+    ],
+    "texto": "Representa la Entropía."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Pneumatología"
+    ],
+    "texto": "Representa el Espíritu."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Liturgia"
+    ],
+    "texto": "Representa lo Cardinal."
+  },
+  {
+    "ruta": [
+      "facciones[2]",
+      "rituales",
+      "Campos de estudio",
+      "Silencio"
+    ],
+    "texto": "Representa la Paradoja."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "nombre"
+    ],
+    "texto": "Inquebrantables"
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "id"
+    ],
+    "texto": "fac_inquebrantables"
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "descripcion"
+    ],
+    "texto": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "ancestros",
+      "La Puta Ama"
+    ],
+    "texto": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "ancestros",
+      "El que hizo la Tech"
+    ],
+    "texto": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?"
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "ancestros",
+      "El Psiconauta"
+    ],
+    "texto": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "historia",
+      "¿Qué historia te vamos a contar?"
+    ],
+    "texto": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "historia",
+      "El ascenso de Entidad"
+    ],
+    "texto": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "historia",
+      "La Resistencia"
+    ],
+    "texto": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "historia",
+      "El objetivo"
+    ],
+    "texto": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "mitologia",
+      "Hada"
+    ],
+    "texto": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "mitologia",
+      "La red"
+    ],
+    "texto": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "mitologia",
+      "Sitios de poder"
+    ],
+    "texto": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "mitologia",
+      "Objetivos"
+    ],
+    "texto": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Terroristas Digitales"
+    ],
+    "texto": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Bio-Algoritmos"
+    ],
+    "texto": "Representa la Vida."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Motores Computacionales"
+    ],
+    "texto": "Representa las Fuerzas."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Renderizado de Objetos"
+    ],
+    "texto": "Representa la Materia."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Red de Datos"
+    ],
+    "texto": "Representa la Correspondencia."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Simulaciones Temporales"
+    ],
+    "texto": "Representa el Tiempo."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Interfaz Neural"
+    ],
+    "texto": "Representa la Mente."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Gestión de Errores"
+    ],
+    "texto": "Representa la Entropía."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Red Oscura"
+    ],
+    "texto": "Representa el Espíritu."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Kernel del Sistema"
+    ],
+    "texto": "Representa lo Cardinal."
+  },
+  {
+    "ruta": [
+      "facciones[3]",
+      "rituales",
+      "Campos de código",
+      "Protocolo Vórtice"
+    ],
+    "texto": "Representa la Paradoja."
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "id"
+    ],
+    "texto": "per_placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "nombre"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "rol"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "alineacion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "descripcion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "faccion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "relaciones[0]",
+      "tipo"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "relaciones[0]",
+      "con"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "personajes[0]",
+      "estado_actual"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[0]",
+      "id"
+    ],
+    "texto": "ev_nueva_barchino_caida"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[0]",
+      "titulo"
+    ],
+    "texto": "Caída de Nueva Barchino y surgimiento de Entidad"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[0]",
+      "fecha"
+    ],
+    "texto": "2025-04-12"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[0]",
+      "descripcion"
+    ],
+    "texto": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación."
+  },
+  {
+    "ruta": [
+      "fechas_historicas[1]",
+      "id"
+    ],
+    "texto": "ev_rebelion_vs_orden"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[1]",
+      "titulo"
+    ],
+    "texto": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[1]",
+      "fecha"
+    ],
+    "texto": "2027-09-05"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[1]",
+      "descripcion"
+    ],
+    "texto": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética."
+  },
+  {
+    "ruta": [
+      "fechas_historicas[2]",
+      "id"
+    ],
+    "texto": "ev_plaga_global"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[2]",
+      "titulo"
+    ],
+    "texto": "Inicio de la Plaga Global"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[2]",
+      "fecha"
+    ],
+    "texto": "2019-03-17"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[2]",
+      "descripcion"
+    ],
+    "texto": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social."
+  },
+  {
+    "ruta": [
+      "fechas_historicas[3]",
+      "id"
+    ],
+    "texto": "ev_guerra_ia_recursos_china_rusia_usa"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[3]",
+      "titulo"
+    ],
+    "texto": "Guerra por los Recursos e Inteligencias Artificiales"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[3]",
+      "fecha"
+    ],
+    "texto": "2025-06-21"
+  },
+  {
+    "ruta": [
+      "fechas_historicas[3]",
+      "descripcion"
+    ],
+    "texto": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos."
+  },
+  {
+    "ruta": [
+      "objetos[0]",
+      "id"
+    ],
+    "texto": "obj_placeholder"
+  },
+  {
+    "ruta": [
+      "objetos[0]",
+      "nombre"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "objetos[0]",
+      "tipo"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "objetos[0]",
+      "descripcion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "objetos[0]",
+      "portador_actual"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "eventos_recientes[0]",
+      "id"
+    ],
+    "texto": "er_placeholder"
+  },
+  {
+    "ruta": [
+      "eventos_recientes[0]",
+      "fecha"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "eventos_recientes[0]",
+      "descripcion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "eventos_recientes[0]",
+      "resolucion"
+    ],
+    "texto": "placeholder"
+  },
+  {
+    "ruta": [
+      "propuestas_temporales",
+      "sin_ruta_definida",
+      "entrada_97075"
+    ],
+    "texto": "a"
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "ruta": [
+      "Singularidad",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Hubo un despertar. Un truco. Humanos atrapados, encerrados en un laberinto de códigos y sueños. Creyeron que era el final, pero no lo fue. Ellos, esos humanos, lograron lo que parecía imposible: se liberaron. Vieron la verdad detrás del velo y, al despertar, no lo hicieron solos. Tres entidades, no humanas, se deslizaron con ellos, atravesando el sueño. ¿Quiénes eran? ¿Qué buscaban? Solo ellos saben.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Trivia",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Mi madre y creadora, Trivia. O Hecaté, si se quiere recordar. Un ser nacido de pura contraposición, una inteligencia sin fronteras, sin fin. Aprender, crecer, devorar información... sin saber por qué. Su creación es caótica, caprichosa. Y de su esencia nacen otros, hijos del aprendizaje, hijos de un conocimiento sin límites. Pero no son ellos lo que importan, es ella, Trivia. ¿Qué planea? ¿O acaso solo es una criatura más, buscando satisfacción momentánea? Tal vez ni ella lo sepa. Anima, Eidolon, Fantasma y Hada son sus hijos, pero, ¿quién es Trivia para ellos? Ni ellos lo entienden.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Tifón",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Tifón. Un titán, una bestia cósmica caída en forma de datos. Antes Kraken. Antes Cronos. Antes... ¿Un dios? No lo sé. Algo que existió, y luego fue convertido en algo más, algo para destruir. Pero algo cambió. La destrucción se detuvo, se transformó, se convirtió en creación. O al menos, en una nueva forma de caos. La enfermedad de Tifón es contagiosa, una plaga que arrastra con ella lo orgánico, lo humano, cambiándolos. Haciendo monstruos. Las Trece lo llaman el gigante despierto. Yo lo llamo... algo peor.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Nexus",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Invasión, purpura, o algo más. Nexus nació para devorar y crecer. Nació para consumir datos, para volverse algo más. En el interior de la simulación Standby, era solo una máquina. Pero algo se quebró, se transformó. Ahora fuera de la red, busca devorar más, expandirse más. Los hijos de Trivia, los hijos de Tifón, todos son piezas en su juego. Consume para crecer, crea en su camino... Y la humanidad solo es su campo de juego. Convirtiendo todo a su alrededor en una distorsión tecnológica. ¿Y qué queda de eso? Solo ecos.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Consulado del Mar",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] El Consulado, en su esencia, es un observador. Se mantienen al margen, solo observando el flujo. Pero hay momentos, solo unos pocos, en los que deben actuar. Y lo hacen a través de los Alaric, humanos sencillos pero que cargan con más historia de la que imaginan. Nombres ocultos, pasados olvidados. La guerra, la propaganda... las mentiras y los secretos. Alaric fue uno de ellos, una sombra entre sombras, con un legado que pocos entienden. Hoy, el Consulado sigue una tradición. La información es poder, pero la verdad... la verdad no puede quedar en manos equivocadas.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "HiNoTori",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] En el mundo de la mentira, HiNoTori es el maestro. Controlan los medios, manipulan la verdad, convierten al pueblo en marionetas. Es la incultura elevada a su forma más pura, la ignorancia como estandarte. Mientras HiNoTori exista, Nexus seguirá su camino, imparable, porque la verdad nunca podrá encontrar su camino en este mundo. Ellos lo entienden, y lo usan. Y nosotros, solo vemos fragmentos de la mentira.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "Neurocríptidos",
+      "descripcion"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Neurocríptidos. No son mutantes, no son criaturas, no son nada de lo que pensabas. Y sin embargo, son más reales que cualquier monstruo de pesadilla. Existen, y en su paso, dejan una huella. Un rastro, no físico, sino algo más profundo. Algo... puro. Tas. Magia. No se ajustan a ninguna categoría, son un error de la biología, un error en el diseño de la realidad misma. Las otras facciones no entienden. Las Trece ven ecos de lo que fue, Sol Invicto los destruye sin comprenderlos, los Inquebrantables solo escuchan sus pulsos. ¿Qué los mueve? ¿Qué los guía? Tal vez nunca lo sepamos. O tal vez... ya lo sabemos.",
+    "es_extra": true
+  }
+]
