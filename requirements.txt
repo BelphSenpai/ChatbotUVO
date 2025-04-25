@@ -1,4 +1,4 @@
-Flask==2.3.3
+flask
 openai
 faiss-cpu
 sentence-transformers

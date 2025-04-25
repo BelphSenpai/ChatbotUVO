@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="ca" class="low-power-auto">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,20 +9,35 @@
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/anima/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&display=swap" rel="stylesheet">
-
   <style>
-    .glyphs-side span {
-      display: inline-block;
-      opacity: 0.6;
-      transition: opacity 0.5s ease, transform 0.3s ease, color 0.3s ease;
+    html.low-power-mode .glyphs-side span,
+    html.low-power-mode .decoracion-eterea,
+    html.low-power-mode .spinner,
+    html.low-power-mode .code,
+    html.low-power-mode .tree-image,
+    html.low-power-mode h1,
+    html.low-power-mode .glyphs {
+      animation: none !important;
+      filter: none !important;
+      text-shadow: none !important;
+      backdrop-filter: none !important;
     }
 
-    .glyphs-side span.flicker {
-      opacity: 1;
-      transform: scale(1.2);
-      color: #b4fff1;
+    html.low-power-mode .spinner {
+      display: none !important;
     }
   </style>
+  <script>
+    const pocaPotencia = navigator.hardwareConcurrency <= 4 || window.innerWidth < 600;
+    if (pocaPotencia) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "/anima/style-lite.css";
+      document.head.appendChild(link);
+      document.documentElement.classList.add("low-power-mode");
+    }
+  </script>
+
 </head>
 
 <body>
@@ -33,7 +48,6 @@
   <div class="nav-bar">
     <a class="nav-item" id="ficha-link">FICHA</a>
     <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-  
     <div class="nav-item dropdown active">
       IAs
       <div class="dropdown-content">
@@ -44,25 +58,6 @@
       </div>
     </div>
   </div>
-  
-  <script>
-    const id = new URLSearchParams(window.location.search).get("id");
-    if (id) {
-      document.getElementById("ficha-link").href = `/ficha?id=${id}`;
-      document.getElementById("conexiones-link").href = `/conexiones?id=${id}`;
-      document.getElementById("hada-link").href = `/hada?id=${id}`;
-      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
-      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
-      document.getElementById("anima-link").href = `/anima?id=${id}`;
-    }
-  
-    const currentPath = window.location.pathname.replace("/", "");
-    const activeLink = document.getElementById(`${currentPath}-link`);
-    if (activeLink) {
-      activeLink.classList.add("active");
-    }
-  </script>
-  
 
   <div class="terminal-container">
     <img src="/anima/decoracion-anima.png" alt="Decoració etèria" class="decoracion-eterea">
@@ -81,9 +76,7 @@
           <div class="column center-column">
             <h1>ANIMA</h1>
             <p class="glyphs">ᚠ ᛉ ᛞ · ᚺ ᛟ ᚾ : ᛁ ᚲ ᚷ</p>
-
             <pre class="code"></pre>
-
             <div class="runic-input-container">
               <input type="text" class="runic-input" placeholder="consulta y pulsa Enter">
               <div class="runic-glow"></div>
@@ -100,132 +93,119 @@
   </div>
 
   <script>
+    const id = new URLSearchParams(window.location.search).get("id");
+    if (id) {
+      document.getElementById("ficha-link").href = `/ficha?id=${id}`;
+      document.getElementById("conexiones-link").href = `/conexiones?id=${id}`;
+      document.getElementById("hada-link").href = `/hada?id=${id}`;
+      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
+      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
+      document.getElementById("anima-link").href = `/anima?id=${id}`;
+    }
+
+    const currentPath = window.location.pathname.replace("/", "");
+    const activeLink = document.getElementById(`${currentPath}-link`);
+    if (activeLink) {
+      activeLink.classList.add("active");
+    }
+
+    // Modo bajo consumo automático
+    const pocosHilos = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
+    const pantallaPequena = window.innerWidth < 600;
+    if (pocosHilos || pantallaPequena) {
+      document.documentElement.classList.add("low-power-mode");
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
-  const input = document.querySelector(".runic-input");
-  const codeBlock = document.querySelector(".code");
-  const glyphsLeft = document.getElementById("runes-left");
-  const glyphsRight = document.getElementById("runes-right");
-  const runes = "ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉᛋᛏᛒᛖᛗᛚᛝᛟᛞᛠᛡᛥᛦ";
+      const input = document.querySelector(".runic-input");
+      const codeBlock = document.querySelector(".code");
+      const glyphsLeft = document.getElementById("runes-left");
+      const glyphsRight = document.getElementById("runes-right");
+      const runes = "ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉᛋᛏᛒᛖᛗᛚᛝᛟᛞᛠᛡᛥᛦ";
 
-  // ✅ Extraemos el id del usuario de la URL (?id=nombre)
-  const urlParams = new URLSearchParams(window.location.search);
-  const usuario = urlParams.get("id") || "invitado";
+      const usuario = new URLSearchParams(window.location.search).get("id") || "invitado";
 
-  function crearSpansRunics(element) {
-    for (let i = 0; i < 60; i++) {
-      const span = document.createElement("span");
-      span.textContent = runes[Math.floor(Math.random() * runes.length)];
-      element.appendChild(span);
-    }
-  }
-
-  function animarRunes(element) {
-    const spans = element.querySelectorAll("span");
-    spans.forEach((span, i) => {
-      setTimeout(() => {
-        span.textContent = runes[Math.floor(Math.random() * runes.length)];
-        span.classList.add("flicker");
-        setTimeout(() => span.classList.remove("flicker"), 300);
-      }, Math.random() * 1500);
-    });
-  }
-
-  crearSpansRunics(glyphsLeft);
-  crearSpansRunics(glyphsRight);
-  setInterval(() => {
-    animarRunes(glyphsLeft);
-    animarRunes(glyphsRight);
-  }, 2000);
-
-  input?.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") enviar();
-  });
-
-  async function enviar() {
-    const mensaje = input.value.trim();
-    if (mensaje === "") return;
-
-    const userLine = document.createElement("div");
-    userLine.textContent = `>> ${mensaje}`;
-    codeBlock.appendChild(userLine);
-    input.value = "";
-
-    const escribint = document.createElement("div");
-    escribint.classList.add("glyphs");
-    escribint.style.marginTop = "10px";
-    codeBlock.appendChild(escribint);
-    codeBlock.scrollTop = codeBlock.scrollHeight;
-
-    const spinner = document.querySelector(".spinner");
-    if (spinner) spinner.classList.add("thinking");
-
-    try {
-      const res = await fetch("/query", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          mensaje: mensaje,
-          ia: "anima",
-          id: usuario // 👈 aquí enviamos el nombre
-        })
-      });
-
-      const data = await res.json();
-      escribint.remove();
-      escriureLentament(data.respuesta, codeBlock, 4);
-    } catch (error) {
-      escribint.textContent = "⚠️ ERROR: No es pot connectar amb ANIMA.";
-    } finally {
-      if (spinner) spinner.classList.remove("thinking");
-    }
-  }
-
-  function escriureLentament(text, container, velocitat = 5) {
-    const resposta = `>> ${text}`;
-    const respostaDiv = document.createElement("div");
-    container.appendChild(respostaDiv);
-
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < resposta.length) {
-        respostaDiv.textContent += resposta[i++];
-        container.scrollTop = container.scrollHeight;
-      } else {
-        clearInterval(interval);
+      function crearSpansRunics(element) {
+        for (let i = 0; i < 50; i++) {
+          const span = document.createElement("span");
+          span.textContent = runes[Math.floor(Math.random() * runes.length)];
+          element.appendChild(span);
+        }
       }
-    }, velocitat);
-  }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
+      function animarRunes(element) {
+        const spans = element.querySelectorAll("span");
+        const aleatorios = [...spans].sort(() => 0.5 - Math.random()).slice(0, 8);
+        aleatorios.forEach((span) => {
+          span.textContent = runes[Math.floor(Math.random() * runes.length)];
+          span.classList.add("flicker");
+          setTimeout(() => span.classList.remove("flicker"), 300);
+        });
+      }
 
-    if (dropdown && dropdownContent) {
-      // Mostrar/ocultar al hacer clic
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
-        dropdown.classList.toggle("active");
-        dropdownContent.classList.toggle("show");
+      crearSpansRunics(glyphsLeft);
+      crearSpansRunics(glyphsRight);
+      setInterval(() => {
+        animarRunes(glyphsLeft);
+        animarRunes(glyphsRight);
+      }, 3000);
+
+      input?.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") enviar();
       });
 
-      // Cierra el menú al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
+      async function enviar() {
+        const mensaje = input.value.trim();
+        if (mensaje === "") return;
+
+        const userLine = document.createElement("div");
+        userLine.textContent = `>> ${mensaje}`;
+        codeBlock.appendChild(userLine);
+        input.value = "";
+
+        const escribint = document.createElement("div");
+        escribint.classList.add("glyphs");
+        escribint.style.marginTop = "10px";
+        codeBlock.appendChild(escribint);
+        codeBlock.scrollTop = codeBlock.scrollHeight;
+
+        const spinner = document.querySelector(".spinner");
+        if (spinner) spinner.classList.add("thinking");
+
+        try {
+          const res = await fetch("/query", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ mensaje, ia: "anima", id: usuario })
+          });
+
+          const data = await res.json();
+          escribint.remove();
+          escriureLentament(data.respuesta, codeBlock, 4);
+        } catch (error) {
+          escribint.textContent = "⚠️ ERROR: No es pot connectar amb ANIMA.";
+        } finally {
+          if (spinner) spinner.classList.remove("thinking");
         }
-      });
+      }
 
-      // Cierra con la tecla Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
-        }
-      });
-    }
-  });
+      function escriureLentament(text, container, velocitat = 5) {
+        const resposta = `>> ${text}`;
+        const respostaDiv = document.createElement("div");
+        container.appendChild(respostaDiv);
+
+        let i = 0;
+        const interval = setInterval(() => {
+          if (i < resposta.length) {
+            respostaDiv.textContent += resposta[i];
+            if (i % 5 === 0) container.scrollTop = container.scrollHeight;
+            i++;
+          } else {
+            clearInterval(interval);
+          }
+        }, velocitat);
+      }
+    });
   </script>
 </body>
 
