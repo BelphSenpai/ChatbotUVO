@@ -1,19 +1,20 @@
 const popup = document.getElementById('popup');
 
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-const linkFicha = document.getElementById("ficha-link");
-if (linkFicha && id) {
-  linkFicha.href = `/ficha?id=${id}`;
-}
-const archivo = id ? `/conexiones/personajes/${id}.json` : '/conexiones/personajes/default.json';
+async function iniciarGrafoConexiones() {
+  try {
+    const resSesion = await fetch('/session-info');
+    const { usuario: id } = await resSesion.json();
 
-fetch(archivo)
-  .then(res => {
+    // Enlace a la ficha (sin parámetros)
+    const linkFicha = document.getElementById("ficha-link");
+    if (linkFicha) {
+      linkFicha.href = "/ficha";
+    }
+
+    const res = await fetch(`/conexiones/personajes/${id}.json`);
     if (!res.ok) throw new Error("Archivo no encontrado");
-    return res.json();
-  })
-  .then(data => {
+    const data = await res.json();
+
     const cy = cytoscape({
       container: document.getElementById('cy'),
       elements: [...data.elements.nodes, ...data.elements.edges],
@@ -61,19 +62,16 @@ fetch(archivo)
       }
     });
 
-    // 🔧 Redibujado tras montar
     setTimeout(() => {
       cy.resize();
       cy.fit();
     }, 300);
 
-    // 🔧 También redibuja al redimensionar ventana
     window.addEventListener("resize", () => {
       cy.resize();
       cy.fit();
     });
 
-    // 🎯 Detección de clics cortos para mostrar relaciones
     const canvas = document.querySelector('canvas');
     let lastMouseDownTime = 0;
 
@@ -111,11 +109,14 @@ fetch(archivo)
         popup.style.display = 'none';
       }
     });
-  })
-  .catch(err => {
-    console.error("Error al cargar el JSON dinámico:", err);
-    popup.innerHTML = `[ERROR] No se pudo cargar el archivo <strong>${archivo}</strong>`;
+
+  } catch (err) {
+    console.error("Error al cargar el grafo de conexiones:", err);
+    popup.innerHTML = `[ERROR] No se pudo cargar el archivo de conexiones`;
     popup.style.display = 'block';
     popup.style.left = '20px';
     popup.style.top = '20px';
-  });
+  }
+}
+
+window.addEventListener("DOMContentLoaded", iniciarGrafoConexiones);

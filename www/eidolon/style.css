@@ -1,70 +1,143 @@
-body {
-  background-color: #000b1a;
-  color: #d0d0d0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* RESET */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND GENERAL */
+body {
+  background-color: #F8F0E3; /* Ivory */
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Share Tech Mono', monospace; /* Para cuerpo y comandos */
-  height: 100vh;
+  font-family: 'Share Tech Mono', monospace;
 }
 
-.gold-border {
-  background-color: #e3ae00;
-  padding: 1px;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+/* OUTER FRAME */
+.outer-frame {
+  width: 80%; /* Adjust for desired width */
+  max-width: 600px; /* Maximum width */
+  background-color: transparent; /* Make the frame background transparent */
+  padding: 20px; /* Spacing inside the border */
+  position: relative;
 }
 
-.transparent-border {
-  background-color: #0b1a2f;
-  padding: 3px;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+/* Gold Border with Diagonal Corners */
+.outer-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 4px solid #FFD700; /* Gold */
+  clip-path: polygon(
+      20px 0%,
+      calc(100% - 20px) 0%,
+      100% 20px,
+      100% calc(100% - 20px),
+      calc(100% - 20px) 100%,
+      20px 100%,
+      0% calc(100% - 20px),
+      0% 20px
+  );
+  z-index: -1; /* Ensure it's behind the content */
 }
 
-.terminal {
-  background: #000b1a;
-  padding: 2rem;
-  width: 500px;
-  height: 600px;
+/* INNER CONTENT CONTAINER */
+.inner-content {
+  background-color: #F8F0E3; /* Ivory background for the content */
+  padding: 30px; /* Spacing around header and terminal */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center header and terminal */
+}
+
+/* HEADER */
+.terminal-header {
   text-align: center;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+  margin-bottom: 30px;
 }
 
-img{
-  height: 100px;
-}
-
-h1,
-h2 {
-  margin: 0.5rem 0;
-  color: #003887;
-  font-style: bold;
+.terminal-header h1 {
   font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: #C89F23; /* Gold color for the title */
+  letter-spacing: 2px;
+  margin-bottom: 5px;
 }
 
-h1{
-  font-size: 4rem;
+.terminal-header h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #A99874; /* Slightly lighter gold for subtitle */
+  letter-spacing: 1px;
 }
 
-.blue-border {
-  background-color: #001462;
-  padding: 1px;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
+.decorative-lines {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.button {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  background-color: #e3ae00;
-  color: #0b1a2f;
-  font-weight: bold;
+.decor-line {
+  width: 30px;
+  height: 2px;
+  background-color: #FFD700; /* Gold */
+}
+
+/* TERMINAL WINDOW (Command Panel) */
+.terminal-window {
+  background-color: #191970; /* Deep Navy Blue */
+  border: 2px solid #FFD700; /* Single Gold Border */
+  width: 80%; /* Adjust width of the command panel */
+  max-width: 400px; /* Maximum width of the command panel */
+  padding: 15px;
+  border-radius: 0; /* No rounded corners */
+}
+
+/* OUTPUT AREA (If you have previous commands/output) */
+.terminal-output {
+  color: #F8F0E3; /* Ivory text color */
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.system-message {
+  color: #FFD700; /* Gold for system messages */
+}
+
+/* INPUT FORM */
+.terminal-form {
+  width: 100%;
+}
+
+.input-area {
+  display: flex;
+  align-items: center;
+}
+
+.prompt-symbol {
+  color: #FFD700; /* Gold prompt */
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+#terminal-input {
+  flex-grow: 1;
+  background-color: transparent;
   border: none;
-  cursor: pointer;
-  clip-path: polygon(10% 0%, 90% 0%, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
-  transition: all 0.3s ease;
+  color: #F8F0E3; /* Ivory input text */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem;
+  padding: 8px 0;
+  outline: none;
 }
 
-.button:hover {
-  background-color: #e3ae00;
+#terminal-input::placeholder {
+  color: #aaa; /* Light gray placeholder */
 }

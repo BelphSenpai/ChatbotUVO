@@ -1,26 +1,59 @@
-# Archivo: www/app.py
-
 import sys
 import os
 import json
-from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template
+from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
+from datetime import datetime
+import bcrypt
 
-# ========== FLASK PRINCIPAL ==========
 app = Flask(__name__)
 app.secret_key = 'clave-super-secreta'
 
-# Rutas base
+# ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PERSONAJES_PATH = os.path.join(BASE_DIR, 'personajes.json')
+PREGUNTAS_PATH = os.path.join(BASE_DIR, 'preguntas.json')
 
-# Cargar usuarios
-with open(PERSONAJES_PATH, 'r') as f:
+with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
     PERSONAJES = json.load(f)
 
-# ========== LOGIN / SESSION ==========
+if os.path.exists(PREGUNTAS_PATH):
+    with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
+        preguntas_restantes = json.load(f)
+else:
+    preguntas_restantes = {}
 
-from flask import render_template_string
+# ========== UTILIDADES ==========
+def cargar_preguntas():
+    global preguntas_restantes
+    if os.path.exists(PREGUNTAS_PATH):
+        with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
+            preguntas_restantes = json.load(f)
+    else:
+        preguntas_restantes = {}
 
+def guardar_preguntas():
+    with open(PREGUNTAS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(preguntas_restantes, f, indent=2, ensure_ascii=False)
+
+def obtener_nombre_objetivo():
+    if session.get('usuario') == 'narrador':
+        return request.args.get('id')
+    return session.get('usuario')
+
+# ========== MIDDLEWARE DE SESIÓN ==========
+@app.before_request
+def validar_sesion():
+    rutas_publicas = ['/', '/login', '/logout', '/favicon.ico', '/session-info', '/usos']
+    if (
+        any(request.path.startswith(ruta) for ruta in rutas_publicas)
+        or request.path.endswith(('.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.woff', '.woff2', '.ttf', '.eot'))
+        or request.path.startswith('/static')
+    ):
+        return
+    if 'usuario' not in session:
+        return redirect('/')
+
+# ========== LOGIN Y LOGOUT ==========
 @app.route('/')
 def login():
     error = request.args.get('error')
@@ -29,15 +62,30 @@ def login():
         template = f.read()
     return render_template_string(template, error=error)
 
-
 @app.route('/login', methods=['POST'])
 def do_login():
-    user = request.form.get('usuario', '').lower()
-    clave = request.form.get('clave', '')
+    cargar_preguntas()
+    user = request.form.get('usuario', '').strip().lower()
+    clave = request.form.get('clave', '').encode('utf-8')
     datos = PERSONAJES.get(user)
-    if datos and datos['clave'] == clave:
-        session['usuario'] = user
-        return redirect('/panel' if user == 'narrador' else f'/ficha?id={user}')
+
+    if datos:
+        clave_guardada = datos['clave'].encode('utf-8')
+        if bcrypt.checkpw(clave, clave_guardada):
+            session['usuario'] = user
+            session['rol'] = datos.get('rol', 'jugador')
+
+            if user not in preguntas_restantes:
+                preguntas_restantes[user] = {
+                    "anima": 3,
+                    "eidolon": 3,
+                    "hada": 3,
+                    "fantasma": 3
+                }
+                guardar_preguntas()
+
+            return redirect('/panel' if user == 'narrador' else '/ficha')
+
     return redirect('/?error=Credenciales incorrectas')
 
 @app.route('/logout')
@@ -45,26 +93,38 @@ def logout():
     session.clear()
     return redirect('/')
 
-# ========== FICHA ==========
+@app.route('/session-info')
+def session_info():
+    return jsonify({
+        "usuario": session.get("usuario", None),
+        "rol": session.get("rol", None)
+    })
 
+# ========== FICHA ==========
 @app.route('/ficha')
 def acceder_ficha():
-    if 'usuario' not in session or session['usuario'] == 'narrador':
-        return redirect('/')
     path = os.path.join(BASE_DIR, 'ficha')
     return send_from_directory(path, 'index.html')
 
-@app.route('/ficha/personajes/<nombre>.json')
-def obtener_personaje_json(nombre):
-    path = os.path.join(BASE_DIR, 'ficha', 'personajes')
-    return send_from_directory(path, f'{nombre}.json')
+@app.route('/ficha/personaje.json')
+def obtener_json_seguro():
+    nombre = obtener_nombre_objetivo()
+    if not nombre:
+        return jsonify({"error": "Falta parámetro 'id'"}), 400
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+    if not os.path.exists(ruta):
+        return jsonify({"error": "No encontrado"}), 404
+
+    with open(ruta, 'r', encoding='utf-8') as f:
+        datos = json.load(f)
+
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {session['usuario']} accede a ficha de {nombre}", flush=True)
+    return jsonify(datos)
 
 # ========== CONEXIONES ==========
-
 @app.route('/conexiones')
 def ver_conexiones():
-    if 'usuario' not in session or session['usuario'] == 'narrador':
-        return redirect('/')
     path = os.path.join(BASE_DIR, 'conexiones')
     return send_from_directory(path, 'index.html')
 
@@ -73,24 +133,38 @@ def static_conexiones(archivo):
     path = os.path.join(BASE_DIR, 'conexiones')
     return send_from_directory(path, archivo)
 
-@app.route('/conexiones/personajes/<nombre>.json')
-def obtener_conexiones_json(nombre):
-    path = os.path.join(BASE_DIR, 'conexiones', 'personajes')
-    return send_from_directory(path, f'{nombre}.json')
+@app.route('/conexiones/personajes/<nombre>.json', methods=['GET', 'POST'])
+def manejar_conexiones(nombre):
+    ruta = os.path.join(BASE_DIR, 'conexiones', 'personajes', f'{nombre}.json')
+
+    if request.method == 'GET':
+        if os.path.exists(ruta):
+            with open(ruta, 'r', encoding='utf-8') as f:
+                return jsonify(json.load(f))
+        else:
+            return jsonify({"elements": {"nodes": [], "edges": []}}), 404
+
+    if request.method == 'POST':
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No se recibió data válida."}), 400
+
+        os.makedirs(os.path.dirname(ruta), exist_ok=True)
+
+        with open(ruta, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+        return jsonify({"mensaje": f"Archivo {nombre}.json guardado correctamente."})
 
 # ========== PANEL ==========
-
 @app.route('/panel')
 def panel():
-    if 'usuario' not in session or session['usuario'] != 'narrador':
+    if session.get('usuario') != 'narrador':
         return redirect('/')
     path = os.path.join(BASE_DIR, 'narrador')
-    archivo = os.path.join(path, 'index.html')
-    return send_from_directory(path, 'index.html') if os.path.exists(archivo) else "<h1>Panel del narrador</h1>"
+    return send_from_directory(path, 'index.html')
 
-# ========== IA (MinervaPrimeSE embebido) ==========
-
-# IMPORTAR DEPENDENCIAS IA
+# ========== IA ==========
 IA_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'MinervaPrimeSE'))
 if IA_DIR not in sys.path:
     sys.path.insert(0, IA_DIR)
@@ -99,50 +173,293 @@ from utils import get_name_ia
 from Minerva import responder_a_usuario
 
 name_ia = get_name_ia()
-IA_WEB_DIR = os.path.join(BASE_DIR, name_ia)  # 📍 importante: las IAs están en /www/{name_ia}
 
-# Ruta: /<ia> → devuelve su HTML
 @app.route('/<ia>')
 def ia_home(ia):
     ia_dir = os.path.join(BASE_DIR, ia)
-    html_path = os.path.join(ia_dir, 'index.html')
-    if os.path.exists(html_path):
-        return send_from_directory(ia_dir, 'index.html')
-    return f"Interfaz para IA '{ia}' no encontrada", 404
+    return send_from_directory(ia_dir, 'index.html')
 
-# Ruta: /<ia>/<archivo> → sirve assets estáticos como CSS o JS
 @app.route('/<ia>/<path:archivo>')
 def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
-# Ruta: /<ia>/query → llama a la IA correspondiente
-# Ruta: /<ia>/query → llama a la IA correspondiente
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
+    cargar_preguntas()
     data = request.json
     mensaje_original = data.get("mensaje", "")
-    usuario = data.get("id", "invitado")
-    
+    usuario = data.get("id", "").strip().lower()
+    ia = ia.strip().lower()
+
+    if session.get('usuario', '').lower() != usuario:
+        return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
+
+    restantes = preguntas_restantes.get(usuario, {}).get(ia, 0)
+    print(f"PREGUNTAS DISPONIBLES - usuario: {usuario}, ia: {ia}, restantes: {restantes}", flush=True)
+
+    if restantes != -1 and restantes <= 0:
+        return jsonify({"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."})
+
     respuesta = responder_a_usuario(mensaje_original, ia, usuario)
+
+    if restantes != -1:
+        preguntas_restantes[usuario][ia] -= 1
+        guardar_preguntas()
+
     return jsonify({"respuesta": respuesta})
 
-
-
-# Ruta genérica: /query
 @app.route('/query', methods=['POST'])
 def ia_query():
+    cargar_preguntas()
     data = request.json
     mensaje_original = data.get("mensaje", "")
-    ia = data.get("ia", name_ia)
-    usuario = data.get("id", "invitado")
+    ia = data.get("ia", name_ia).strip().lower()
+    usuario = data.get("id", "").strip().lower()
+
+    if session.get('usuario', '').lower() != usuario:
+        return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
+
+    restantes = preguntas_restantes.get(usuario, {}).get(ia, 0)
+    print(f"PREGUNTAS DISPONIBLES - usuario: {usuario}, ia: {ia}, restantes: {restantes}", flush=True)
+
+    if restantes != -1 and restantes <= 0:
+        return jsonify({"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."})
 
     respuesta = responder_a_usuario(mensaje_original, ia, usuario)
+
+    if restantes != -1:
+        preguntas_restantes[usuario][ia] -= 1
+        guardar_preguntas()
+
     return jsonify({"respuesta": respuesta})
 
+# ========== ADMINISTRACIÓN ==========
+@app.route('/admin')
+def admin_panel():
+    if session.get('rol') != 'admin':
+        abort(403)
+    path = os.path.join(BASE_DIR, 'admin')
+    return send_from_directory(path, 'index.html')
 
+@app.route('/admin/personajes', methods=['GET', 'POST', 'DELETE'])
+def admin_personajes():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    cargar_preguntas()
+
+    if request.method == 'GET':
+        lista = []
+        for nombre in PERSONAJES.keys():
+            user_preguntas = preguntas_restantes.get(nombre, {
+                "anima": 0,
+                "eidolon": 0,
+                "hada": 0,
+                "fantasma": 0
+            })
+            lista.append({
+                "nombre": nombre,
+                "preguntas": user_preguntas
+            })
+        return jsonify(lista)
+
+    if request.method == 'POST':
+        datos = request.json
+        nombre = datos.get('nombre')
+        clave = datos.get('clave')
+        rol = datos.get('rol', 'jugador')
+
+        if not nombre or not clave:
+            return jsonify({"error": "Faltan datos"}), 400
+
+        nombre_lower = nombre.strip().lower()
+        clave_hash = bcrypt.hashpw(clave.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+        PERSONAJES[nombre_lower] = {"clave": clave_hash, "rol": rol}
+
+        if nombre_lower not in preguntas_restantes:
+            preguntas_restantes[nombre_lower] = {
+                "anima": 3,
+                "eidolon": 3,
+                "hada": 3,
+                "fantasma": 3
+            }
+
+        with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
+            json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
+
+        guardar_preguntas()
+
+        return jsonify({"mensaje": "Personaje creado o actualizado"})
+
+    if request.method == 'DELETE':
+        datos = request.json
+        nombre = datos.get('nombre')
+
+        if not nombre or nombre.lower() not in PERSONAJES:
+            return jsonify({"error": "Personaje no encontrado"}), 404
+
+        nombre_lower = nombre.strip().lower()
+
+        del PERSONAJES[nombre_lower]
+        if nombre_lower in preguntas_restantes:
+            del preguntas_restantes[nombre_lower]
+
+        with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
+            json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
+
+        guardar_preguntas()
+
+        return jsonify({"mensaje": "Personaje eliminado"})
+
+@app.route('/admin/personaje/<nombre>')
+def obtener_personaje(nombre):
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    cargar_preguntas()
+
+    nombre = nombre.strip().lower()
+    if nombre not in PERSONAJES:
+        return jsonify({"error": "Personaje no encontrado"}), 404
+
+    datos_personaje = PERSONAJES[nombre].copy()
+    datos_personaje['preguntas'] = preguntas_restantes.get(nombre, {
+        "anima": 0,
+        "eidolon": 0,
+        "hada": 0,
+        "fantasma": 0
+    })
+
+    return jsonify(datos_personaje)
+
+@app.route('/admin/resetear-preguntas', methods=['POST'])
+def resetear_preguntas():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    datos = request.json
+    nombre = datos.get('nombre')
+
+    if not nombre or nombre.lower() not in PERSONAJES:
+        return jsonify({"error": "Personaje no encontrado"}), 404
+
+    nombre_lower = nombre.strip().lower()
+
+    preguntas_restantes[nombre_lower] = {
+        "anima": 3,
+        "eidolon": 3,
+        "hada": 3,
+        "fantasma": 3
+    }
+    guardar_preguntas()
+
+    return jsonify({"mensaje": f"Preguntas de {nombre} reseteadas."})
+
+@app.route('/admin/guardar-preguntas', methods=['POST'])
+def guardar_preguntas_admin():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    datos = request.json
+    cambios = datos.get('cambios', {})
+
+    for nombre, preguntas in cambios.items():
+        nombre_lower = nombre.strip().lower()
+        if nombre_lower not in preguntas_restantes:
+            preguntas_restantes[nombre_lower] = {}
+        for ia, valor in preguntas.items():
+            preguntas_restantes[nombre_lower][ia] = valor
+
+    guardar_preguntas()
+
+    return jsonify({"mensaje": "Preguntas actualizadas correctamente."})
+
+
+# ========== NOTAS PERSONALES ==========
+@app.route('/notas')
+def ver_notas():
+    if 'usuario' not in session:
+        return redirect('/')
+    path = os.path.join(BASE_DIR, 'notas')
+    return send_from_directory(path, 'index.html')
+
+@app.route('/notas/contenido', methods=['GET', 'POST'])
+def gestionar_notas():
+    if 'usuario' not in session:
+        return jsonify({"error": "No autorizado"}), 403
+
+    usuario = session['usuario'].lower()
+    ruta_nota = os.path.join(BASE_DIR, 'notas', 'usuarios', f'{usuario}.txt')
+
+    if request.method == 'GET':
+        if os.path.exists(ruta_nota):
+            with open(ruta_nota, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+            return jsonify({"contenido": contenido})
+        else:
+            return jsonify({"contenido": ""})
+
+    if request.method == 'POST':
+        datos = request.json
+        contenido = datos.get('contenido', '')
+
+        os.makedirs(os.path.dirname(ruta_nota), exist_ok=True)
+        with open(ruta_nota, 'w', encoding='utf-8') as f:
+            f.write(contenido)
+
+        return jsonify({"mensaje": "Notas guardadas correctamente."})
+
+# ========== USOS ==========
+@app.route('/usos')
+def usos_actuales():
+    if 'usuario' not in session:
+        return jsonify({})
+    cargar_preguntas()
+    usuario = session['usuario'].lower()
+    usos = preguntas_restantes.get(usuario, {})
+    usos_normalizados = {k.lower(): v for k, v in usos.items()}
+    return jsonify(usos_normalizados)
+
+# ========== LOG DE EVENTOS ==========
+LOGS_DIR = os.path.join(BASE_DIR, 'admin', 'logs')
+os.makedirs(LOGS_DIR, exist_ok=True)
+
+@app.route('/log-evento', methods=['POST'])
+def log_evento():
+    if 'usuario' not in session:
+        return jsonify({"error": "No autorizado"}), 403
+
+    usuario = session['usuario'].lower()
+    datos = request.json
+    tipo = datos.get('tipo')
+    contenido = datos.get('contenido')
+
+    if not tipo or not contenido:
+        return jsonify({"error": "Faltan datos"}), 400
+
+    evento = {
+        "timestamp": datetime.now().isoformat(),
+        "tipo": tipo,
+        "contenido": contenido
+    }
+
+    ruta_log = os.path.join(LOGS_DIR, f"{usuario}.json")
+
+    if os.path.exists(ruta_log):
+        with open(ruta_log, 'r', encoding='utf-8') as f:
+            eventos = json.load(f)
+    else:
+        eventos = []
+
+    eventos.append(evento)
+
+    with open(ruta_log, 'w', encoding='utf-8') as f:
+        json.dump(eventos, f, indent=2, ensure_ascii=False)
+
+    return jsonify({"mensaje": "Evento registrado"})
 
 # ========== RUN ==========
 if __name__ == '__main__':
-    import os
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=True)

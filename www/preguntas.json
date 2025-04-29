@@ -1,0 +1,14 @@
+{
+  "admin": {
+    "anima": -1,
+    "eidolon": -1,
+    "hada": -1,
+    "fantasma": -1
+  },
+  "mateo": {
+    "anima": 3,
+    "eidolon": 3,
+    "hada": 3,
+    "fantasma": 3
+  }
+}

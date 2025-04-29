@@ -1,0 +1,50 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "Mateo",
+          "label": "Mateo"
+        }
+      },
+      {
+        "data": {
+          "id": "Victoria",
+          "label": "Victoria"
+        }
+      },
+      {
+        "data": {
+          "id": "lucky",
+          "label": "Lucky"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e1745908689837",
+          "label": "Amiguis",
+          "source": "Victoria",
+          "target": "Mateo"
+        }
+      },
+      {
+        "data": {
+          "id": "e1745909759430",
+          "label": "pito",
+          "source": "Victoria",
+          "target": "lucky"
+        }
+      },
+      {
+        "data": {
+          "id": "e1745909765732",
+          "label": "poyo",
+          "source": "Mateo",
+          "target": "lucky"
+        }
+      }
+    ]
+  }
+}

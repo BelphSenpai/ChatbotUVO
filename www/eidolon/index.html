@@ -5,38 +5,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/eidolon/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
   <title>Terminal Eidolon</title>
   <link rel="icon" href="/static/favicon.png" type="image/png" />
 </head>
 
 <body>
-  <div class="blue-border">
-    <div class="transparent-border">
-      <div class="gold-border">
-        <div class="transparent-border">
-          <div class="blue-border">
-            <div class="terminal">
-              <h1>EIDOLON</h1>
-              <img src="/eidolon/sun.png" alt="Eidolon Logo" class="logo" />
-              <h2>PURITAS EST VIRTUS</h2>
-              <p>terminal de eidolon blablabla</p>
-              <div class="blue-border">
-                <div class="transparent-border">
-                  <div class="blue-border">
-                    <div class="transparent-border">
-                      <p>terminal de eidolon blablabla</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="button">– PROCEDERE –</button>
-            </div>
-          </div>
+  <body>
+    <div class="nav-bar">
+      <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+      <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+      <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+    
+      <div id="admin-link-container" style="display:none;">
+        <a class="nav-item" href="/admin">ADMIN</a>
+      </div>
+    
+      <div class="nav-item dropdown">
+        IAs
+        <div class="dropdown-content" id="ia-dropdown">
+          <!-- Links dinámicos -->
         </div>
       </div>
     </div>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const sessionRes = await fetch("/session-info");
+          const sessionData = await sessionRes.json();
+          const id = sessionData.usuario;
+          const rol = sessionData.rol;
+    
+          if (id) {
+            document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+    
+            // Mostrar Admin si es rol admin
+            if (rol === "admin") {
+              document.getElementById("admin-link-container").style.display = "inline-block";
+            }
+    
+            // Ahora pedimos los usos reales
+            const usosRes = await fetch("/usos");
+            if (usosRes.ok) {
+              const usos = await usosRes.json();
+              const iaDropdown = document.getElementById("ia-dropdown");
+    
+              const ias = ["hada", "eidolon", "fantasma", "anima"];
+    
+              ias.forEach(ia => {
+                const cantidad = usos[ia];
+                if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                  const link = document.createElement("a");
+                  link.href = `/${ia}`;
+                  link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                  iaDropdown.appendChild(link);
+                }
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Error cargando sesión o usos:", error);
+        }
+      });
+    </script>
 
+  <div class="container">
+    <img src="/eidolon/interface.png" alt="Eidolon interface" class="interfaceimg" />
+    <div class="terminal">
+      <h1>EIDOLON</h1>
+      <img src="/eidolon/sun.png" alt="Eidolon Logo" class="logo" />
+      <h2>PURITAS EST VIRTUS</h2>
+      <div class="terminal-text">
+        <p>Welcome to the Eidolon terminal.</p>
+        <p>We are currently in the process of updating our systems.</p>
+        <p>Please wait while we prepare your experience.</p>
+        <p>Loading...</p>
+      </div>
+
+      <div class="form-control">  
+        <input class="input input-alt" placeholder="Type something intelligent" required="" type="text">
+        <button class="button">– PROCEDERE –</button>
+      </div>
+    </div>
   </div>
 </body>
 

@@ -1,0 +1,118 @@
+/* === NOTAS AJUSTADO === */
+body {
+    margin: 0;
+    background: #0a0f1a;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+  
+  /* Contenedor de notas */
+  .notas-container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(0, 255, 255, 0.04);
+    border: 1px solid #00ffff33;
+    padding: 4%;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  /* Área de texto */
+  .notas-container textarea {
+    width: 100%;
+    min-height: 50vh;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid #00ffff55;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    resize: vertical;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.1) inset;
+  }
+  
+  /* Botones */
+  .botones-notas {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .botones-notas button {
+    background: transparent;
+    border: 1px solid #00ffff88;
+    color: #00ffff;
+    padding: 10px 24px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 6px;
+    flex: 1 1 30%;
+    min-width: 100px;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  .botones-notas button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 8px #00ffff88;
+  }
+  
+  /* Scanline */
+  .scanline {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 8px 2px rgba(0, 255, 255, 0.4);
+    z-index: 1;
+    pointer-events: none;
+    animation: scanmove 4s linear infinite;
+  }
+  
+  @keyframes scanmove {
+    0% { top: -10%; opacity: 0; }
+    5% { opacity: 0.4; }
+    50% { opacity: 1; }
+    95% { opacity: 0.2; }
+    100% { top: 110%; opacity: 0; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .notas-container {
+      padding: 6%;
+    }
+  
+    .botones-notas {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .botones-notas button {
+      width: 100%;
+    }
+  }
+  

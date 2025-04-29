@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terminal d'ANIMA</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/anima/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&display=swap" rel="stylesheet">
@@ -46,18 +47,63 @@
   </div>
 
   <div class="nav-bar">
-    <a class="nav-item" id="ficha-link">FICHA</a>
+    <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
     <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-    <div class="nav-item dropdown active">
+    <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+  
+    <div id="admin-link-container" style="display:none;">
+      <a class="nav-item" href="/admin">ADMIN</a>
+    </div>
+  
+    <div class="nav-item dropdown">
       IAs
-      <div class="dropdown-content">
-        <a href="#" id="hada-link">Hada</a>
-        <a href="#" id="eidolon-link">Eidolon</a>
-        <a href="#" id="fantasma-link">Fantasma</a>
-        <a href="#" id="anima-link">Anima</a>
+      <div class="dropdown-content" id="ia-dropdown">
+        <!-- Links dinámicos -->
       </div>
     </div>
   </div>
+  
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const sessionRes = await fetch("/session-info");
+        const sessionData = await sessionRes.json();
+        const id = sessionData.usuario;
+        const rol = sessionData.rol;
+  
+        if (id) {
+          document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+  
+          // Mostrar Admin si es rol admin
+          if (rol === "admin") {
+            document.getElementById("admin-link-container").style.display = "inline-block";
+          }
+  
+          // Ahora pedimos los usos reales
+          const usosRes = await fetch("/usos");
+          if (usosRes.ok) {
+            const usos = await usosRes.json();
+            const iaDropdown = document.getElementById("ia-dropdown");
+  
+            const ias = ["hada", "eidolon", "fantasma", "anima"];
+  
+            ias.forEach(ia => {
+              const cantidad = usos[ia];
+              if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                const link = document.createElement("a");
+                link.href = `/${ia}`;
+                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                iaDropdown.appendChild(link);
+              }
+            });
+          }
+        }
+      } catch (error) {
+        console.error("Error cargando sesión o usos:", error);
+      }
+    });
+  </script>
+  
 
   <div class="terminal-container">
     <img src="/anima/decoracion-anima.png" alt="Decoració etèria" class="decoracion-eterea">
@@ -93,38 +139,40 @@
   </div>
 
   <script>
-    const id = new URLSearchParams(window.location.search).get("id");
-    if (id) {
-      document.getElementById("ficha-link").href = `/ficha?id=${id}`;
-      document.getElementById("conexiones-link").href = `/conexiones?id=${id}`;
-      document.getElementById("hada-link").href = `/hada?id=${id}`;
-      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
-      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
-      document.getElementById("anima-link").href = `/anima?id=${id}`;
-    }
-
-    const currentPath = window.location.pathname.replace("/", "");
-    const activeLink = document.getElementById(`${currentPath}-link`);
-    if (activeLink) {
-      activeLink.classList.add("active");
-    }
-
-    // Modo bajo consumo automático
-    const pocosHilos = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-    const pantallaPequena = window.innerWidth < 600;
-    if (pocosHilos || pantallaPequena) {
-      document.documentElement.classList.add("low-power-mode");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
+      const path = window.location.pathname;
+      const ia = path.split('/')[1]; // ej: 'anima'
+    
+      let usuario = "invitado";
+      try {
+        const res = await fetch("/session-info");
+        const data = await res.json();
+        usuario = data.usuario || "invitado";
+    
+        const setHref = (selector) => {
+          const el = document.getElementById(selector);
+          if (el) el.href = `/${selector.replace("-link", "")}`;
+        };
+    
+        setHref("ficha-link");
+        setHref("conexiones-link");
+        setHref("hada-link");
+        setHref("eidolon-link");
+        setHref("fantasma-link");
+        setHref("anima-link");
+    
+        const currentIA = document.getElementById(`${ia}-link`);
+        if (currentIA) currentIA.classList.add("active");
+      } catch (e) {
+        console.warn("No se pudo recuperar sesión:", e);
+      }
+    
       const input = document.querySelector(".runic-input");
       const codeBlock = document.querySelector(".code");
       const glyphsLeft = document.getElementById("runes-left");
       const glyphsRight = document.getElementById("runes-right");
       const runes = "ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚾᛁᛃᛇᛈᛉᛋᛏᛒᛖᛗᛚᛝᛟᛞᛠᛡᛥᛦ";
-
-      const usuario = new URLSearchParams(window.location.search).get("id") || "invitado";
-
+    
       function crearSpansRunics(element) {
         for (let i = 0; i < 50; i++) {
           const span = document.createElement("span");
@@ -132,7 +180,7 @@
           element.appendChild(span);
         }
       }
-
+    
       function animarRunes(element) {
         const spans = element.querySelectorAll("span");
         const aleatorios = [...spans].sort(() => 0.5 - Math.random()).slice(0, 8);
@@ -142,71 +190,90 @@
           setTimeout(() => span.classList.remove("flicker"), 300);
         });
       }
-
+    
       crearSpansRunics(glyphsLeft);
       crearSpansRunics(glyphsRight);
       setInterval(() => {
         animarRunes(glyphsLeft);
         animarRunes(glyphsRight);
       }, 3000);
-
+    
       input?.addEventListener("keydown", function (e) {
         if (e.key === "Enter") enviar();
       });
-
+    
       async function enviar() {
         const mensaje = input.value.trim();
         if (mensaje === "") return;
-
+    
         const userLine = document.createElement("div");
         userLine.textContent = `>> ${mensaje}`;
         codeBlock.appendChild(userLine);
         input.value = "";
-
+    
+        registrarEvento(`pregunta_${ia}`, mensaje); // Registramos la pregunta
+    
         const escribint = document.createElement("div");
         escribint.classList.add("glyphs");
         escribint.style.marginTop = "10px";
         codeBlock.appendChild(escribint);
         codeBlock.scrollTop = codeBlock.scrollHeight;
-
+    
         const spinner = document.querySelector(".spinner");
         if (spinner) spinner.classList.add("thinking");
-
+    
         try {
           const res = await fetch("/query", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ mensaje, ia: "anima", id: usuario })
+            body: JSON.stringify({ mensaje, ia: ia, id: usuario })
           });
-
+    
           const data = await res.json();
           escribint.remove();
           escriureLentament(data.respuesta, codeBlock, 4);
+    
+          registrarEvento(`respuesta_${ia}`, data.respuesta); // Registramos la respuesta
+    
         } catch (error) {
-          escribint.textContent = "⚠️ ERROR: No es pot connectar amb ANIMA.";
+          escribint.textContent = "⚠️ ERROR: No se pudo conectar con la IA.";
         } finally {
           if (spinner) spinner.classList.remove("thinking");
         }
       }
-
-      function escriureLentament(text, container, velocitat = 5) {
-        const resposta = `>> ${text}`;
-        const respostaDiv = document.createElement("div");
-        container.appendChild(respostaDiv);
-
+    
+      function escriureLentament(text, container, velocidad = 5) {
+        const respuesta = `>> ${text}`;
+        const respuestaDiv = document.createElement("div");
+        container.appendChild(respuestaDiv);
+    
         let i = 0;
         const interval = setInterval(() => {
-          if (i < resposta.length) {
-            respostaDiv.textContent += resposta[i];
+          if (i < respuesta.length) {
+            respuestaDiv.textContent += respuesta[i];
             if (i % 5 === 0) container.scrollTop = container.scrollHeight;
             i++;
           } else {
             clearInterval(interval);
           }
-        }, velocitat);
+        }, velocidad);
+      }
+    
+      async function registrarEvento(tipo, contenido) {
+        try {
+          await fetch("/log-evento", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ tipo, contenido })
+          });
+        } catch (error) {
+          console.error("Error registrando evento:", error);
+        }
       }
     });
-  </script>
+    </script>
+    
+  
 </body>
 
 </html>

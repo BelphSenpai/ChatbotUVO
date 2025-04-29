@@ -1,11 +1,10 @@
 {
+  "admin": {
+    "clave": "$2b$12$4f1hOnhEzRhJOU7SyaUireuJ6d8MmTST6MMwZLaYt4b1jishmANna",
+    "rol": "admin"
+  },
   "mateo": {
-    "clave": "mariposas"
-  },
-  "victoria": {
-    "clave": "espejos"
-  },
-  "narrador": {
-    "clave": "drac"
+    "clave": "$2b$12$6PqOCMsVri2M947u7.0Mb.WmiYATO2QPMXkEKR6xFo.4Wq/uC5F9m",
+    "rol": "jugador"
   }
 }

@@ -178,7 +178,8 @@ body {
 
 /* === EFECTO ESCANEO === */
 .scanline {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   top: -10%;
   left: 0;
   width: 100%;
@@ -303,3 +304,4 @@ body {
     font-size: 11px;
   }
 }
+

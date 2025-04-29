@@ -14,41 +14,64 @@
 
 <body>
 
-  <div class="nav-bar">
-    <a class="nav-item" id="ficha-link">FICHA</a>
-    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-  
-    <div class="nav-item dropdown">
-      IAs
-      <div class="dropdown-content">
-        <a href="#" id="hada-link">Hada</a>
-        <a href="#" id="eidolon-link">Eidolon</a>
-        <a href="#" id="fantasma-link">Fantasma</a>
-        <a href="#" id="anima-link">Anima</a>
+  <body>
+    <div class="nav-bar">
+      <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+      <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+      <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+    
+      <div id="admin-link-container" style="display:none;">
+        <a class="nav-item" href="/admin">ADMIN</a>
+      </div>
+    
+      <div class="nav-item dropdown">
+        IAs
+        <div class="dropdown-content" id="ia-dropdown">
+          <!-- Links dinámicos -->
+        </div>
       </div>
     </div>
-  </div>
-  
-  <script>
-    const id = new URLSearchParams(window.location.search).get("id");
-    const path = window.location.pathname;
-  
-    if (id) {
-      document.getElementById("ficha-link")?.setAttribute("href", `/ficha?id=${id}`);
-      document.getElementById("conexiones-link")?.setAttribute("href", `/conexiones?id=${id}`);
-      document.getElementById("hada-link").href = `/hada?id=${id}`;
-      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
-      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
-      document.getElementById("anima-link").href = `/anima?id=${id}`;
-    }
-  
-    const ia = path.split('/')[1]; // extrae 'hada', 'eidolon', etc.
-  
-    const currentIA = document.getElementById(`${ia}-link`);
-    if (currentIA) {
-      currentIA.classList.add("active");
-    }
-  </script>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const sessionRes = await fetch("/session-info");
+          const sessionData = await sessionRes.json();
+          const id = sessionData.usuario;
+          const rol = sessionData.rol;
+    
+          if (id) {
+            document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+    
+            // Mostrar Admin si es rol admin
+            if (rol === "admin") {
+              document.getElementById("admin-link-container").style.display = "inline-block";
+            }
+    
+            // Ahora pedimos los usos reales
+            const usosRes = await fetch("/usos");
+            if (usosRes.ok) {
+              const usos = await usosRes.json();
+              const iaDropdown = document.getElementById("ia-dropdown");
+    
+              const ias = ["hada", "eidolon", "fantasma", "anima"];
+    
+              ias.forEach(ia => {
+                const cantidad = usos[ia];
+                if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                  const link = document.createElement("a");
+                  link.href = `/${ia}`;
+                  link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                  iaDropdown.appendChild(link);
+                }
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Error cargando sesión o usos:", error);
+        }
+      });
+    </script>
 
   
 
@@ -84,121 +107,161 @@
   </div>
 
   <script>
-    const input = document.getElementById("input");
-const output = document.getElementById("output");
-
-// Obtener el usuario desde la URL (?id=nombre)
-const urlParams = new URLSearchParams(window.location.search);
-const usuario = urlParams.get("id") || "invitado";
-
-function mostrarTerminal() {
-  const terminal = document.getElementById("terminal");
-  const boto = document.querySelector(".primary-button");
-  const input = document.getElementById("input");
-
-  if (!terminal || !boto) return;
-
-  boto.style.display = "none";
-  terminal.classList.add("visible");
-
-  setTimeout(() => {
-    input?.focus();
-  }, 500);
-}
-
-input?.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") enviar();
-});
-
-async function enviar() {
-  const mensaje = input.value.trim();
-  if (mensaje === "") return;
-  output.innerHTML += `<div class="user-msg">>> ${mensaje}</div>`;
-  input.value = "";
-
-  // Mostrem l'indicador "Hada està escribint..."
-  const escribintDiv = document.createElement("div");
-  escribintDiv.classList.add("typing-indicator");
-  escribintDiv.innerText = "Hada està escribiendo...";
-  output.appendChild(escribintDiv);
-  output.scrollTop = output.scrollHeight;
-
-  try {
-    const res = await fetch("/query", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        mensaje: mensaje,
-        ia: "Hada",
-        id: usuario
-      })
+    document.addEventListener("DOMContentLoaded", async () => {
+      const path = window.location.pathname;
+      const ia = path.split('/')[1]; // extrae 'hada', 'eidolon', etc.
+  
+      // Marca la IA actual como activa
+      const currentIA = document.getElementById(`${ia}-link`);
+      if (currentIA) currentIA.classList.add("active");
+  
+      // Obtener el usuario desde la sesión
+      let usuario = "invitado";
+      try {
+        const res = await fetch("/session-info");
+        const data = await res.json();
+        usuario = data.usuario || "invitado";
+  
+        const setHref = (id, selector) => {
+          const el = document.getElementById(selector);
+          if (el) el.href = `/${selector.replace("-link", "")}`;
+        };
+  
+        setHref(usuario, "ficha-link");
+        setHref(usuario, "conexiones-link");
+        setHref(usuario, "hada-link");
+        setHref(usuario, "eidolon-link");
+        setHref(usuario, "fantasma-link");
+        setHref(usuario, "anima-link");
+  
+      } catch (e) {
+        console.warn("No se pudo obtener el usuario de sesión:", e);
+      }
+  
+      // ========= Terminal ==========
+  
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+  
+      function mostrarTerminal() {
+        const terminal = document.getElementById("terminal");
+        const boto = document.querySelector(".primary-button");
+  
+        if (!terminal || !boto) return;
+  
+        boto.style.display = "none";
+        terminal.classList.add("visible");
+  
+        setTimeout(() => {
+          input?.focus();
+        }, 500);
+      }
+  
+      input?.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") enviar();
+      });
+  
+      async function enviar() {
+        const mensaje = input.value.trim();
+        if (mensaje === "") return;
+  
+        output.innerHTML += `<div class="user-msg">>> ${mensaje}</div>`;
+        input.value = "";
+  
+        await registrarEvento("pregunta_hada", mensaje);
+  
+        const escribintDiv = document.createElement("div");
+        escribintDiv.classList.add("typing-indicator");
+        escribintDiv.innerText = "Hada está escribiendo...";
+        output.appendChild(escribintDiv);
+        output.scrollTop = output.scrollHeight;
+  
+        try {
+          const res = await fetch("/query", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              mensaje: mensaje,
+              ia: "Hada",
+              id: usuario
+            })
+          });
+  
+          const data = await res.json();
+          escribintDiv.remove();
+          await escriureLentament(data.respuesta, output, 5);
+  
+        } catch (error) {
+          escribintDiv.innerText = "ERROR 404: NO SE PUEDE CONECTAR CON HADA";
+          console.error("Error enviando mensaje a Hada:", error);
+        }
+      }
+  
+      async function escriureLentament(texto, element, velocidad = 15) {
+        const contenedor = document.createElement("div");
+        contenedor.className = "ai-msg";
+        const span = document.createElement("span");
+        contenedor.appendChild(span);
+        element.appendChild(contenedor);
+  
+        const mensaje = `>> ${texto}\n`;
+  
+        await registrarEvento("respuesta_hada", texto);
+  
+        let i = 0;
+        const interval = setInterval(() => {
+          if (i < mensaje.length) {
+            span.textContent += mensaje[i++];
+          } else {
+            clearInterval(interval);
+            span.classList.remove("writing");
+          }
+          element.scrollTop = element.scrollHeight;
+        }, velocidad);
+      }
+  
+      async function registrarEvento(tipo, contenido) {
+        try {
+          await fetch("/log-evento", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ tipo, contenido })
+          });
+        } catch (error) {
+          console.warn("No se pudo registrar el evento:", error);
+        }
+      }
+  
+      window.mostrarTerminal = mostrarTerminal;
+  
+      // ========= Dropdown ==========
+      const dropdown = document.querySelector(".dropdown");
+      const dropdownContent = document.querySelector(".dropdown-content");
+  
+      if (dropdown && dropdownContent) {
+        dropdown.addEventListener("click", (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
+        });
+  
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+  
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      }
     });
+  </script>  
 
-    const data = await res.json();
-
-    // Eliminem "Hada està escribint..." abans de mostrar la resposta
-    escribintDiv.remove();
-
-    // Escrivim la resposta a poc a poc
-    escriureLentament(data.respuesta, output, 5);
-  } catch (error) {
-    escribintDiv.innerText = "ERROR 404: NO SE PUEDE CONECTAR CON HADA";
-  }
-}
-
-function escriureLentament(texto, element, velocidad = 15) {
-  // Crear l'span per al text
-  const contenedor = document.createElement("div");
-  contenedor.className = "ai-msg";
-  const span = document.createElement("span");
-  contenedor.appendChild(span);
-  element.appendChild(contenedor);
-
-  // Text amb >> al principi
-  const mensaje = `>> ${texto}\n`;
-
-  let i = 0;
-  const interval = setInterval(() => {
-    if (i < mensaje.length) {
-      span.textContent += mensaje[i++];
-    } else {
-      clearInterval(interval);
-      span.classList.remove("writing");
-    }
-    element.scrollTop = element.scrollHeight;
-  }, velocidad);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
-
-    if (dropdown && dropdownContent) {
-      // Mostrar/ocultar al hacer clic
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
-        dropdown.classList.toggle("active");
-        dropdownContent.classList.toggle("show");
-      });
-
-      // Cierra el menú al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
-        }
-      });
-
-      // Cierra con la tecla Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
-        }
-      });
-    }
-  });
-  </script>
 
 </body>
 

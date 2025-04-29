@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notas Personales</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/notas/style.css"> <!-- Estilos específicos de notas -->
+    <link rel="icon" href="/static/favicon.png" type="image/png" />
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+        <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+        <a class="nav-item active" id="notas-link">NOTAS</a>
+
+        <div id="admin-link-container" style="display:none;">
+            <a class="nav-item" href="/admin">ADMIN</a>
+        </div>
+
+        <div class="nav-item dropdown" id="ia-dropdown-container" style="display:none;">
+            IAs
+            <div class="dropdown-content" id="ia-dropdown">
+                <!-- Links dinámicos a IAs -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const sessionRes = await fetch("/session-info");
+                const sessionData = await sessionRes.json();
+                const id = sessionData.usuario;
+                const rol = sessionData.rol;
+
+                if (id) {
+                    document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+
+                    // Mostrar Admin si es rol admin
+                    if (rol === "admin") {
+                        document.getElementById("admin-link-container").style.display = "inline-block";
+                    }
+
+                    // Pedimos los usos reales
+                    const usosRes = await fetch("/usos");
+                    if (usosRes.ok) {
+                        const usos = await usosRes.json();
+                        const iaDropdown = document.getElementById("ia-dropdown");
+                        const iaDropdownContainer = document.getElementById("ia-dropdown-container");
+
+                        const ias = ["hada", "eidolon", "fantasma", "anima"];
+                        let tieneIAsDisponibles = false;
+
+                        ias.forEach(ia => {
+                            const cantidad = usos[ia];
+                            if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                                const link = document.createElement("a");
+                                link.href = `/${ia}`;
+                                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                                iaDropdown.appendChild(link);
+                                tieneIAsDisponibles = true;
+                            }
+                        });
+
+                        // Mostrar el botón de IAs solo si hay al menos una IA disponible
+                        if (tieneIAsDisponibles) {
+                            iaDropdownContainer.style.display = "inline-block";
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error("Error cargando sesión o usos:", error);
+            }
+        });
+    </script>
+
+
+    <div class="notas-container">
+        <div class="scanline"></div>
+        <textarea id="notas" placeholder="Escribe tus notas aquí..."></textarea>
+        <div class="botones-notas">
+            <button id="guardar-notas">Guardar</button>
+            <button id="cargar-notas">Cargar</button>
+            <button id="borrar-notas">Borrar</button>
+        </div>
+    </div>
+
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("notas");
+        
+            async function guardarNotas() {
+                const texto = textarea.value;
+                try {
+                    await fetch("/notas/contenido", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ contenido: texto })
+                    });
+                    alert("Notas guardadas en el servidor.");
+                } catch (error) {
+                    console.error("Error guardando notas:", error);
+                    alert("Error guardando notas.");
+                }
+            }
+        
+            async function cargarNotas() {
+                try {
+                    const res = await fetch("/notas/contenido");
+                    if (res.ok) {
+                        const data = await res.json();
+                        textarea.value = data.contenido || "";
+                    } else {
+                        console.error("No se pudo cargar las notas.");
+                    }
+                } catch (error) {
+                    console.error("Error cargando notas:", error);
+                }
+            }
+        
+            async function borrarNotas() {
+                if (confirm("¿Seguro que quieres borrar todas tus notas?")) {
+                    textarea.value = "";
+                    await guardarNotas();
+                    alert("Notas borradas.");
+                }
+            }
+        
+            // Botones
+            document.getElementById("guardar-notas").addEventListener("click", guardarNotas);
+            document.getElementById("cargar-notas").addEventListener("click", cargarNotas);
+            document.getElementById("borrar-notas").addEventListener("click", borrarNotas);
+        
+            // Cargar automáticamente al abrir
+            cargarNotas();
+        
+            // Autosave automático cada 5 segundos
+            setInterval(() => {
+                fetch("/notas/contenido", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ contenido: textarea.value })
+                }).catch(err => console.error("Error autosave:", err));
+            }, 5000);
+        });
+        </script>        
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+  <link href="/static/style.css" rel="stylesheet" type="text/css">
+  <link href="/admin/style.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+</head>
+<body>
+
+  <div class="nav-bar">
+    <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+    <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+  
+    <div id="admin-link-container" style="display:none;">
+      <a class="nav-item active" href="/admin">ADMIN</a>
+    </div>
+  
+    <div class="nav-item dropdown" id="ia-dropdown-container" style="display:none;">
+      IAs
+      <div class="dropdown-content" id="ia-dropdown">
+        <!-- Links dinámicos a IAs -->
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const sessionRes = await fetch("/session-info");
+        const sessionData = await sessionRes.json();
+        const id = sessionData.usuario;
+        const rol = sessionData.rol;
+  
+        if (id) {
+          document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+  
+          // Mostrar Admin si es rol admin
+          if (rol === "admin") {
+            document.getElementById("admin-link-container").style.display = "inline-block";
+          }
+  
+          // Pedimos los usos reales
+          const usosRes = await fetch("/usos");
+          if (usosRes.ok) {
+            const usos = await usosRes.json();
+            const iaDropdown = document.getElementById("ia-dropdown");
+            const iaDropdownContainer = document.getElementById("ia-dropdown-container");
+  
+            const ias = ["hada", "eidolon", "fantasma", "anima"];
+            let tieneIAsDisponibles = false;
+  
+            ias.forEach(ia => {
+              const cantidad = usos[ia];
+              if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                const link = document.createElement("a");
+                link.href = `/${ia}`;
+                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                iaDropdown.appendChild(link);
+                tieneIAsDisponibles = true;
+              }
+            });
+  
+            // Mostrar el botón de IAs solo si hay al menos una IA disponible
+            if (tieneIAsDisponibles) {
+              iaDropdownContainer.style.display = "inline-block";
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Error cargando sesión o usos:", error);
+      }
+    });
+  </script>
+  
+
+  <div class="admin-container">
+    <h1>Panel de Administración</h1>
+
+    <section class="admin-section">
+      <h2>Gestión de Personajes</h2>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px;">
+        <button id="ver-personajes">Ver Personajes</button>
+        <button id="crear-personaje">Añadir Personaje</button>
+      </div>
+      <div id="lista-personajes" style="display: none;"></div>
+    </section>
+
+  </div>
+
+  <!-- Modal para Crear/Editar Personaje -->
+<div id="personaje-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <h2 id="modal-title">Crear Personaje</h2>
+      <input type="text" id="nombre-input" placeholder="Nombre" />
+      <input type="password" id="clave-input" placeholder="Clave" />
+      <select id="rol-input">
+        <option value="jugador">Jugador</option>
+        <option value="admin">Admin</option>
+      </select>
+      <div class="modal-buttons">
+        <button id="guardar-personaje">Guardar</button>
+        <button id="cancelar-personaje">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal de Log -->
+<div id="modal-log" class="modal" style="display: none;">
+  <div class="modal-content-log">
+    <span id="cerrar-modal-log" style="cursor: pointer; float: right;">✖</span>
+    <h2 id="titulo-log" style="margin-top: 0;">Historial de Personaje</h2>
+    <div id="contenido-log" style="max-height: 400px; overflow-y: auto; margin-top: 10px;"></div>
+  </div>
+</div>
+
+<!-- Modal de Conexiones -->
+<!-- Modal de Conexiones -->
+<div id="conexiones-modal" class="modal" style="display: none;">
+  <div class="modal-content-log">
+    <span id="cerrar-modal-conexiones" style="cursor: pointer; float: right;">✖</span>
+    <h2 id="titulo-conexiones" style="margin-top: 0;">Conexiones de [Personaje]</h2>
+
+    <!-- 🚀 AÑADIR NUEVO NODO MANUAL -->
+    <div style="margin-bottom: 20px;">
+      <h3>Añadir nuevo nodo</h3>
+      <input type="text" id="nuevo-nodo-id" placeholder="ID del nodo" style="margin-right: 6px; margin-bottom: 6px;">
+      <input type="text" id="nuevo-nodo-label" placeholder="Nombre visible" style="margin-right: 6px; margin-bottom: 6px;">
+      <button id="crear-nodo">Crear Nodo</button>
+    </div>
+
+    <!-- 🚀 AÑADIR NUEVA CONEXIÓN -->
+    <div style="margin-bottom: 20px;">
+      <h3>Añadir nueva conexión</h3>
+      <select id="source-nodo" style="margin-right: 6px;"></select>
+      <select id="target-nodo" style="margin-right: 6px;"></select>
+      <input type="text" id="label-conexion" placeholder="Descripción de la conexión" style="margin-right: 6px;">
+      <button id="añadir-conexion">Añadir Conexión</button>
+    </div>
+
+    <!-- 🚀 LISTADO CONEXIONES -->
+    <div id="lista-conexiones" style="max-height: 300px; overflow-y: auto; margin-top: 10px;"></div>
+
+    <h3 style="margin-top: 20px;">Nodos Existentes</h3>
+    <div id="lista-nodos" style="max-height: 200px; overflow-y: auto; margin-top: 10px;"></div>
+
+    
+
+    <!-- 🚀 BOTÓN GUARDAR -->
+    <div style="margin-top: 20px; text-align: center;">
+      <button id="guardar-conexiones">Guardar Cambios</button>
+    </div>
+  </div>
+  <div id="cy-mini" style="width: 30%; height: 500px;border: 1px solid #00ffff55; background: #111; margin-top: 20px;"></div>
+</div>
+
+<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+<script src="/admin/admin.js"></script> <!-- Este es tu JavaScript de gestión -->
+</body>
+</html>

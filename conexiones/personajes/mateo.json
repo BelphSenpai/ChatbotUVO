@@ -1,0 +1,28 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "Victoria",
+          "label": "Victoria"
+        }
+      },
+      {
+        "data": {
+          "id": "Mateo",
+          "label": "Mateo"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e1745908186483",
+          "label": "Amiguis",
+          "source": "Victoria",
+          "target": "Mateo"
+        }
+      }
+    ]
+  }
+}

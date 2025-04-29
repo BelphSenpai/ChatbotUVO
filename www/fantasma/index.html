@@ -8,44 +8,70 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/fantasma/style.css">
-
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=UnifrakturCook&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="nav-bar">
-    <a class="nav-item" id="ficha-link">FICHA</a>
-    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-  
-    <div class="nav-item dropdown active">
-      IAs
-      <div class="dropdown-content">
-        <a href="#" id="hada-link">Hada</a>
-        <a href="#" id="eidolon-link">Eidolon</a>
-        <a href="#" id="fantasma-link">Fantasma</a>
-        <a href="#" id="anima-link">Anima</a>
+  <body>
+    <div class="nav-bar">
+      <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+      <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+      <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+    
+      <div id="admin-link-container" style="display:none;">
+        <a class="nav-item" href="/admin">ADMIN</a>
+      </div>
+    
+      <div class="nav-item dropdown">
+        IAs
+        <div class="dropdown-content" id="ia-dropdown">
+          <!-- Links dinámicos -->
+        </div>
       </div>
     </div>
-  </div>
-  
-  <script>
-    const id = new URLSearchParams(window.location.search).get("id");
-    if (id) {
-      document.getElementById("ficha-link").href = `/ficha?id=${id}`;
-      document.getElementById("conexiones-link").href = `/conexiones?id=${id}`;
-      document.getElementById("hada-link").href = `/hada?id=${id}`;
-      document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
-      document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
-      document.getElementById("anima-link").href = `/anima?id=${id}`;
-    }
-  
-    const currentPath = window.location.pathname.replace("/", "");
-    const activeLink = document.getElementById(`${currentPath}-link`);
-    if (activeLink) {
-      activeLink.classList.add("active");
-    }
-  </script>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const sessionRes = await fetch("/session-info");
+          const sessionData = await sessionRes.json();
+          const id = sessionData.usuario;
+          const rol = sessionData.rol;
+    
+          if (id) {
+            document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+    
+            // Mostrar Admin si es rol admin
+            if (rol === "admin") {
+              document.getElementById("admin-link-container").style.display = "inline-block";
+            }
+    
+            // Ahora pedimos los usos reales
+            const usosRes = await fetch("/usos");
+            if (usosRes.ok) {
+              const usos = await usosRes.json();
+              const iaDropdown = document.getElementById("ia-dropdown");
+    
+              const ias = ["hada", "eidolon", "fantasma", "anima"];
+    
+              ias.forEach(ia => {
+                const cantidad = usos[ia];
+                if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                  const link = document.createElement("a");
+                  link.href = `/${ia}`;
+                  link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                  iaDropdown.appendChild(link);
+                }
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Error cargando sesión o usos:", error);
+        }
+      });
+    </script>
 
   <div class="fantasma-wrapper">
 
@@ -77,126 +103,143 @@
   </div>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("input");
-  const output = document.getElementById("output");
-
-  // 📦 Extraemos el nombre de usuario de la URL (?id=nombre)
-  const urlParams = new URLSearchParams(window.location.search);
-  const usuario = urlParams.get("id") || "invitado";
-
-  input.addEventListener("keydown", async (e) => {
-    if (e.key === "Enter") {
-      const mensaje = input.value.trim();
-      if (!mensaje) return;
-
-      // 🧼 Elimina glitch i pulse-line anteriors si existeixen
-      output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
-      output.querySelectorAll(".pulse-line").forEach(el => el.remove());
-
-      // Afegeix la línia de comanda de l’usuari
-      output.innerHTML += `<div>>> ${mensaje}</div>`;
-      input.value = "";
-
-      const escribint = document.createElement("div");
-      escribint.innerText = "⟪ FANTASMA està consultando sus arxivos... ⟫";
-      escribint.style.opacity = "0.5";
-      output.appendChild(escribint);
-
+    document.addEventListener("DOMContentLoaded", async () => {
+      const path = window.location.pathname;
+      const ia = path.split('/')[1]; // 'fantasma'
+  
+      let usuario = "invitado";
       try {
-        const res = await fetch("/query", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            mensaje,
-            ia: "fantasma",
-            id: usuario
-          }),
-        });
-
+        const res = await fetch("/session-info");
         const data = await res.json();
-        escribint.remove();
-
-        const respuestaDiv = document.createElement("div");
-        respuestaDiv.classList.add("glitch");
-        respuestaDiv.textContent = ">> "; // Prefix inicial
-
-        const pulse = document.createElement("span");
-        pulse.classList.add("pulse-line");
-        respuestaDiv.appendChild(pulse);
-        output.appendChild(respuestaDiv);
-
-        let i = 0;
-        const text = data.respuesta;
-        const velocidad = 5;
-
-        const escribir = () => {
-          if (i < text.length) {
-            respuestaDiv.textContent += text.charAt(i);
-            respuestaDiv.appendChild(pulse);
-            i++;
-            setTimeout(escribir, velocidad);
-          }
+        usuario = data.usuario || "invitado";
+  
+        const setHref = (selector) => {
+          const el = document.getElementById(selector);
+          if (el) el.href = `/${selector.replace("-link", "")}`;
         };
-        escribir();
-
-        output.scrollTop = output.scrollHeight;
-      } catch (error) {
-        escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
+  
+        setHref("ficha-link");
+        setHref("conexiones-link");
+        setHref("hada-link");
+        setHref("eidolon-link");
+        setHref("fantasma-link");
+        setHref("anima-link");
+  
+        const currentIA = document.getElementById(`${ia}-link`);
+        if (currentIA) currentIA.classList.add("active");
+      } catch (e) {
+        console.warn("No se pudo recuperar sesión:", e);
       }
-    }
-  });
-});
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
-
-    if (dropdown && dropdownContent) {
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que el click se propague
-        dropdown.classList.toggle("active");
-        dropdownContent.classList.toggle("show");
-      });
-
-      // Cierra el dropdown si haces clic fuera
-      document.addEventListener("click", () => {
-        dropdown.classList.remove("active");
-        dropdownContent.classList.remove("show");
-      });
-    }
-  });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
-
-    if (dropdown && dropdownContent) {
-      // Mostrar/ocultar al hacer clic
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
-        dropdown.classList.toggle("active");
-        dropdownContent.classList.toggle("show");
-      });
-
-      // Cierra el menú al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
+  
+      const input = document.getElementById("input");
+      const output = document.getElementById("output");
+  
+      input.addEventListener("keydown", async (e) => {
+        if (e.key === "Enter") {
+          const mensaje = input.value.trim();
+          if (!mensaje) return;
+  
+          output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
+          output.querySelectorAll(".pulse-line").forEach(el => el.remove());
+  
+          output.innerHTML += `<div>>> ${mensaje}</div>`;
+          input.value = "";
+  
+          await registrarEvento("pregunta_fantasma", mensaje); // 🔥 LOG: guardamos la pregunta
+  
+          const escribint = document.createElement("div");
+          escribint.innerText = "⟪ FANTASMA está consultando sus archivos... ⟫";
+          escribint.style.opacity = "0.5";
+          output.appendChild(escribint);
+  
+          try {
+            const res = await fetch("/query", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                mensaje,
+                ia: "fantasma",
+                id: usuario
+              }),
+            });
+  
+            const data = await res.json();
+            escribint.remove();
+  
+            const respuestaDiv = document.createElement("div");
+            respuestaDiv.classList.add("glitch");
+            respuestaDiv.textContent = ">> ";
+  
+            const pulse = document.createElement("span");
+            pulse.classList.add("pulse-line");
+            respuestaDiv.appendChild(pulse);
+            output.appendChild(respuestaDiv);
+  
+            await registrarEvento("respuesta_fantasma", data.respuesta); // 🔥 LOG: guardamos la respuesta
+  
+            let i = 0;
+            const text = data.respuesta;
+            const velocidad = 5;
+  
+            const escribir = () => {
+              if (i < text.length) {
+                respuestaDiv.textContent += text.charAt(i);
+                respuestaDiv.appendChild(pulse);
+                i++;
+                setTimeout(escribir, velocidad);
+              }
+            };
+            escribir();
+  
+            output.scrollTop = output.scrollHeight;
+          } catch (error) {
+            escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
+            console.error("Error enviando a Fantasma:", error);
+          }
         }
       });
-
-      // Cierra con la tecla Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
+  
+      async function registrarEvento(tipo, contenido) {
+        try {
+          await fetch("/log-evento", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ tipo, contenido })
+          });
+        } catch (error) {
+          console.warn("No se pudo registrar evento:", error);
         }
-      });
-    }
-  });
+      }
+  
+      // Dropdown navbar
+      const dropdown = document.querySelector(".dropdown");
+      const dropdownContent = document.querySelector(".dropdown-content");
+  
+      if (dropdown && dropdownContent) {
+        dropdown.addEventListener("click", (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
+        });
+  
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+  
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      }
+    });
   </script>
+  
+  
 </body>
 
 </html>

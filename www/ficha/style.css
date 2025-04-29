@@ -9,3 +9,47 @@
     animation: glowFlicker 3s infinite ease-in-out;
     line-height: 2;
 }
+
+/* === TERMINAL BASE === */
+.terminal {
+    position: relative; /* 🔥 Limita los efectos hijos */
+    overflow: hidden;   /* 🔥 Recorta efectos que sobresalgan */
+    width: 90vw;
+    height: 75vh;
+    background: #0a0f1a;
+    border: 1px solid #00ffff22;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+    margin-top: 60px; /* Para no chocar con la navbar */
+  }
+  
+  /* === EFECTO SCANLINE CRT === */
+  .scanline {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 255, 255, 0.03) 0px,
+      rgba(0, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.2;
+    z-index: 10;
+    animation: scanmove 6s linear infinite;
+  }
+  
+  /* Movimiento de la scanline */
+  @keyframes scanmove {
+    0% { transform: translateY(-10%); opacity: 0; }
+    10% { opacity: 0.3; }
+    40% { opacity: 0.5; }
+    60% { opacity: 0.4; }
+    80% { opacity: 0.2; }
+    100% { transform: translateY(110%); opacity: 0; }
+  }
+  

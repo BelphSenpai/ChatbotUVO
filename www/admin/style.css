@@ -1,0 +1,314 @@
+/* === ESTILOS BASE === */
+body {
+  margin: 0;
+  background: #0a0f1a;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 60px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff #00ffc855;
+
+}
+
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00ffc855;
+  border-radius: 10px;
+  opacity: 0.2;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.admin-container {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* === SECCIONES === */
+.admin-section {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff33;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* === CABECERAS === */
+h2 {
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* === BOTONES === */
+button {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid #00ffff55;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  margin: 5px;
+}
+
+button:hover {
+  background: rgba(0, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* === ELEMENTOS DE PERSONAJES === */
+.personaje-item {
+  background: rgba(0, 255, 255, 0.02);
+  border: 1px solid #00ffff33;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.personaje-item:hover {
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.personaje-item strong {
+  flex-grow: 1;
+  font-size: 1.1em;
+  color: #00ffff;
+}
+
+/* === SESIONES ACTIVAS === */
+#sesiones-activas {
+  margin-top: 10px;
+  background: rgba(0, 255, 255, 0.02);
+  border: 1px solid #00ffff33;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #00ffff55;
+  border-radius: 3px;
+}
+
+/* === MODAL === */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.modal-content input,
+.modal-content select {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff33;
+  padding: 16px;
+  border-radius: 5px;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+  margin: 0 5px;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff55;
+  color: #00ffff;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: 'Share Tech Mono', monospace;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.modal-buttons button:hover {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content-log {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 90vw;
+  max-height: 80%;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  overflow: scroll;
+
+}
+
+.modal-content-log h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#contenido-log div {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff33;
+  padding: 6px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+input{
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  overflow: scroll;
+  width: 90%;
+  padding: 8px;
+}
+
+select {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff55;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  width: 100%;
+  padding: 8px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2300ffff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 6px;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #00ffffaa;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+}
+
+select option {
+  background-color: #0a0a0a; /* fondo oscuro */
+  color: #00ffff;            /* texto cian */
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+}
+
+.input-cero {
+  background: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+}
+
+
+select option:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #ffffff;
+}

@@ -2,68 +2,103 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ficha de Personaje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/ficha/style.css">
-    <link rel="icon" href="/static/favicon.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ficha de Personaje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/ficha/style.css">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
 
 </head>
 
 <body>
-    <div class="nav-bar">
-        <span class="nav-item active">FICHA</span>
-        <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-
-        <div class="nav-item dropdown">
-            IAs
-            <div class="dropdown-content">
-                <a href="#" id="hada-link">Hada</a>
-                <a href="#" id="eidolon-link">Eidolon</a>
-                <a href="#" id="fantasma-link">Fantasma</a>
-                <a href="#" id="anima-link">Anima</a>
-            </div>
-        </div>
+  <div class="nav-bar">
+    <a class="nav-item active">FICHA</a>
+    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+    <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+  
+    <div id="admin-link-container" style="display:none;">
+      <a class="nav-item" href="/admin">ADMIN</a>
     </div>
-
-    <script>
-        const id = new URLSearchParams(window.location.search).get("id");
+  
+    <div class="nav-item dropdown">
+      IAs
+      <div class="dropdown-content" id="ia-dropdown">
+        <!-- Links dinámicos -->
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        const sessionRes = await fetch("/session-info");
+        const sessionData = await sessionRes.json();
+        const id = sessionData.usuario;
+        const rol = sessionData.rol;
+  
         if (id) {
-            document.getElementById("conexiones-link")?.setAttribute("href", `/conexiones?id=${id}`);
-            document.getElementById("hada-link").href = `/hada?id=${id}`;
-            document.getElementById("eidolon-link").href = `/eidolon?id=${id}`;
-            document.getElementById("fantasma-link").href = `/fantasma?id=${id}`;
-            document.getElementById("anima-link").href = `/anima?id=${id}`;
+          document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+  
+          // Mostrar Admin si es rol admin
+          if (rol === "admin") {
+            document.getElementById("admin-link-container").style.display = "inline-block";
+          }
+  
+          // Ahora pedimos los usos reales
+          const usosRes = await fetch("/usos");
+          if (usosRes.ok) {
+            const usos = await usosRes.json();
+            const iaDropdown = document.getElementById("ia-dropdown");
+  
+            const ias = ["hada", "eidolon", "fantasma", "anima"];
+  
+            ias.forEach(ia => {
+              const cantidad = usos[ia];
+              if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                const link = document.createElement("a");
+                link.href = `/${ia}`;
+                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                iaDropdown.appendChild(link);
+              }
+            });
+          }
         }
-    </script>
+      } catch (error) {
+        console.error("Error cargando sesión o usos:", error);
+      }
+    });
+  </script>
+  
 
-
-
-    <div class="ficha-terminal">
-        <div class="scanline"></div>
-        <div class="ficha-header">
-            ▶ FICHA DE PERSONAJE // ID: <span class="char-id" id="char-id">Cargando...</span>
-        </div>
-        <div class="ficha-body" id="ficha-contenido">
-            Cargando datos...
-        </div>
+  <div class="ficha-terminal">
+    <div class="scanline"></div>
+    <div class="ficha-header">
+      ▶ FICHA DE PERSONAJE // ID: <span class="char-id" id="char-id">Cargando...</span>
     </div>
+    <div class="ficha-body" id="ficha-contenido">
+      Cargando datos...
+    </div>
+  </div>
 
-    <script>
-        window.addEventListener("DOMContentLoaded", async () => {
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get("id") || "desconocido";
-            document.getElementById("char-id").textContent = id.toUpperCase();
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      try {
+        // Obtenemos el usuario real desde la sesión del backend
+        const resInfo = await fetch("/session-info");
+        const sessionData = await resInfo.json();
+        const id = sessionData.usuario || "desconocido";
 
-            try {
-                const res = await fetch(`/ficha/personajes/${id}.json`)
+        // Mostrar el ID real en pantalla
+        document.getElementById("char-id").textContent = id.toUpperCase();
 
-                const data = await res.json();
+        // Cargar la ficha del personaje real
+        const resFicha = await fetch(`/ficha/personaje.json`);
+        const data = await resFicha.json();
 
-                const contenido = document.getElementById("ficha-contenido");
-                contenido.innerHTML = `
+        const contenido = document.getElementById("ficha-contenido");
+        contenido.innerHTML = `
       <div class="ficha-line"><span class="label">Nombre:</span> ${data.nombre}</div>
       <div class="ficha-line"><span class="label">Estado:</span> ${data.estado}</div>
       <div class="ficha-line"><span class="label">Afiliación:</span> ${data.afiliacion}</div>
@@ -74,44 +109,40 @@
         ${data.log.map(l => `<li>${l}</li>`).join('')}
       </ul>
     `;
-            } catch (e) {
-                document.getElementById("ficha-contenido").textContent = "Error al cargar los datos.";
-                console.error("Error al cargar el JSON:", e);
-            }
+      } catch (e) {
+        document.getElementById("ficha-contenido").textContent = "Error al cargar los datos.";
+        console.error("Error al cargar la ficha:", e);
+      }
+    });
+
+    // Dropdown funcionalidad
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdown = document.querySelector(".dropdown");
+      const dropdownContent = document.querySelector(".dropdown-content");
+
+      if (dropdown && dropdownContent) {
+        dropdown.addEventListener("click", (e) => {
+          e.stopPropagation();
+          dropdown.classList.toggle("active");
+          dropdownContent.classList.toggle("show");
         });
 
-        document.addEventListener("DOMContentLoaded", () => {
-    const dropdown = document.querySelector(".dropdown");
-    const dropdownContent = document.querySelector(".dropdown-content");
+        document.addEventListener("click", (e) => {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
 
-    if (dropdown && dropdownContent) {
-      // Mostrar/ocultar al hacer clic
-      dropdown.addEventListener("click", (e) => {
-        e.stopPropagation(); // Evita que se cierre al hacer clic dentro
-        dropdown.classList.toggle("active");
-        dropdownContent.classList.toggle("show");
-      });
-
-      // Cierra el menú al hacer clic fuera
-      document.addEventListener("click", (e) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
-        }
-      });
-
-      // Cierra con la tecla Escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          dropdown.classList.remove("active");
-          dropdownContent.classList.remove("show");
-        }
-      });
-    }
-  });
-
-
-    </script>
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            dropdown.classList.remove("active");
+            dropdownContent.classList.remove("show");
+          }
+        });
+      }
+    })
+  </script>
 </body>
 
 </html>
