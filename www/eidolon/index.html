@@ -2,18 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/eidolon/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Share+Tech+Mono&display=swap"
-    rel="stylesheet">
-  <title>Terminal Eidolon</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eidolon Dataslate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/style.css">
   <link rel="icon" href="/static/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="/eidolon/style.css" rel="stylesheet">
+  <script src="/eidolon/script.js" defer></script>
 </head>
 
 <body>
-  <body>
-    <div class="nav-bar">
+  <div class="nav-bar">
       <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
       <a class="nav-item" id="conexiones-link">CONEXIONES</a>
       <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
@@ -70,24 +73,65 @@
         }
       });
     </script>
+  <!-- From Uiverse.io by NlghtM4re -->
+  <div class="outer-frame">
+    <div class="dataslate">
+      <div class="dataslate-content">
 
-  <div class="container">
-    <img src="/eidolon/interface.png" alt="Eidolon interface" class="interfaceimg" />
-    <div class="terminal">
-      <h1>EIDOLON</h1>
-      <img src="/eidolon/sun.png" alt="Eidolon Logo" class="logo" />
-      <h2>PURITAS EST VIRTUS</h2>
-      <div class="terminal-text">
-        <p>Welcome to the Eidolon terminal.</p>
-        <p>We are currently in the process of updating our systems.</p>
-        <p>Please wait while we prepare your experience.</p>
-        <p>Loading...</p>
-      </div>
+        <div class="container" id="loader-container">
+          <div class="item" style="--i:0;"></div>
+          <div class="item" style="--i:1;"></div>
+          <div class="item" style="--i:2;"></div>
+          <div class="item" style="--i:3;"></div>
+          <div class="item" style="--i:4;"></div>
+          <div class="item" style="--i:5;"></div>
+          <div class="item" style="--i:6;"></div>
+          <div class="item" style="--i:7;"></div>
+          <div class="item" style="--i:8;"></div>
+          <div class="item" style="--i:9;"></div>
+          <div class="item" style="--i:10;"></div>
+          <div class="item" style="--i:11;"></div>
+          <div class="item" style="--i:12;"></div>
+          <div class="item" style="--i:13;"></div>
+          <div class="item" style="--i:14;"></div>
+          <div class="item" style="--i:15;"></div>
+          <div class="item" style="--i:16;"></div>
+          <div class="item" style="--i:17;"></div>
+          <div class="item" style="--i:18;"></div>
+          <div class="item" style="--i:19;"></div>
+          <div class="item" style="--i:20;"></div>
+        </div>
+        <!-- Columna izquierda: terminal -->
+        <div class="terminal-column">
+          <h1>EIDOLON</h1>
+          <div class="screen" id="terminal-screen"></div>
+        </div>
+        <!-- Columna derecha: imagen -->
+        <div class="image-column">
+          <div class="image-content">
+            <!-- En lugar de <img src="sun.svg"> -->
+            <img src="/eidolon/sun.svg" alt="Seal of Eidolon" />
 
-      <div class="form-control">  
-        <input class="input input-alt" placeholder="Type something intelligent" required="" type="text">
-        <button class="button">– PROCEDERE –</button>
+            <div class="latin-inscription">
+              <p>Mutationem exstirpa.</p>
+              <p>Venationes tuas documenta.</p>
+              <p>Ne desinas Solem quaerere.</p>
+            </div>
+          </div>
+        </div>
+
+
       </div>
+      <div class="terminal"></div>
+      <div class="center">
+        <input type="text" class="terminal-input" placeholder="> Escribe aquí..." />
+      </div>
+    </div>
+    <div class="frame-bottom">
+      <div class="btn">1</div>
+      <div class="btn">2</div>
+      <div class="btn">3</div>
+      <div class="btn">4</div>
     </div>
   </div>
 </body>

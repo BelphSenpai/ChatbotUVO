@@ -122,6 +122,43 @@ def obtener_json_seguro():
     print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] {session['usuario']} accede a ficha de {nombre}", flush=True)
     return jsonify(datos)
 
+@app.route('/ficha/personajes/personaje.json')
+def obtener_ficha_personaje():
+    nombre = session.get('usuario', '').strip().lower()
+    if not nombre:
+        return jsonify({"error": "Usuario no autenticado"}), 403
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+    if not os.path.exists(ruta):
+        return jsonify({"error": "Ficha no encontrada"}), 404
+
+    with open(ruta, 'r', encoding='utf-8') as f:
+        return jsonify(json.load(f))
+
+@app.route("/ficha/guardar", methods=["POST"])
+def guardar_ficha():
+    try:
+        nombre = session.get('usuario', '').strip().lower()
+        if not nombre:
+            return jsonify({"error": "Usuario no autenticado"}), 403
+
+        path = os.path.join(BASE_DIR, "ficha", "personajes", f"{nombre}.json")
+        if not os.path.exists(path):
+            return jsonify({"error": "Archivo no encontrado"}), 404
+
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        nuevos = request.json
+        data.update(nuevos)
+
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+        return jsonify({"mensaje": "Guardado con éxito."})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 # ========== CONEXIONES ==========
 @app.route('/conexiones')
 def ver_conexiones():
@@ -447,8 +484,11 @@ def log_evento():
     ruta_log = os.path.join(LOGS_DIR, f"{usuario}.json")
 
     if os.path.exists(ruta_log):
-        with open(ruta_log, 'r', encoding='utf-8') as f:
-            eventos = json.load(f)
+        try:
+            with open(ruta_log, 'r', encoding='utf-8') as f:
+                eventos = json.load(f)
+        except Exception:
+            eventos = []
     else:
         eventos = []
 
@@ -458,6 +498,107 @@ def log_evento():
         json.dump(eventos, f, indent=2, ensure_ascii=False)
 
     return jsonify({"mensaje": "Evento registrado"})
+
+@app.route('/admin/logs/<nombre>.json', methods=['DELETE'])
+def borrar_log_personaje(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    ruta_log = os.path.join(LOGS_DIR, f"{nombre}.json")
+
+    try:
+        if os.path.exists(ruta_log):
+            os.remove(ruta_log)
+            return jsonify({"mensaje": "Log eliminado correctamente."})
+        else:
+            return jsonify({"mensaje": "No hay log que eliminar."})
+    except Exception as e:
+        return jsonify({"error": f"Error al borrar el log: {str(e)}"}), 500
+
+@app.route('/admin/ficha/<nombre>.json', methods=['GET'])
+def admin_obtener_ficha_json(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+    if not os.path.exists(ruta):
+        return jsonify({"error": "Ficha no encontrada"}), 404
+
+    with open(ruta, 'r', encoding='utf-8') as f:
+        return jsonify(json.load(f))
+    
+@app.route('/admin/ficha/<nombre>.json', methods=['POST'])
+def admin_guardar_ficha_json(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+    os.makedirs(os.path.dirname(ruta), exist_ok=True)  # Asegura que la carpeta exista
+
+    try:
+        nuevo_contenido = request.get_json()
+        with open(ruta, 'w', encoding='utf-8') as f:
+            json.dump(nuevo_contenido, f, indent=2, ensure_ascii=False)
+        return jsonify({"mensaje": "Ficha creada o actualizada correctamente."})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    
+@app.route('/admin/ficha/<nombre>.json', methods=['GET', 'POST'])
+def admin_editar_ficha(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+
+    if request.method == 'GET':
+        if not os.path.exists(ruta):
+            return jsonify({"error": "Ficha no encontrada"}), 404
+        with open(ruta, 'r', encoding='utf-8') as f:
+            return jsonify(json.load(f))
+
+    if request.method == 'POST':
+        try:
+            datos = request.get_json()
+            with open(ruta, 'w', encoding='utf-8') as f:
+                json.dump(datos, f, ensure_ascii=False, indent=2)
+            return jsonify({"mensaje": "Ficha guardada correctamente."})
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+        
+@app.route('/admin/ficha/<nombre>.json', methods=['PATCH'])
+def admin_actualizar_ficha_parcial(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
+
+    if not os.path.exists(ruta):
+        return jsonify({"error": "Ficha no encontrada"}), 404
+
+    try:
+        with open(ruta, 'r', encoding='utf-8') as f:
+            datos_actuales = json.load(f)
+
+        nuevos_datos = request.get_json()
+
+        def actualizar_recursivo(destino, fuente):
+            for clave, valor in fuente.items():
+                if isinstance(valor, dict) and clave in destino and isinstance(destino[clave], dict):
+                    actualizar_recursivo(destino[clave], valor)
+                else:
+                    destino[clave] = valor
+
+        actualizar_recursivo(datos_actuales, nuevos_datos)
+
+        with open(ruta, 'w', encoding='utf-8') as f:
+            json.dump(datos_actuales, f, ensure_ascii=False, indent=2)
+
+        return jsonify({"mensaje": "Campo actualizado correctamente."})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 # ========== RUN ==========
 if __name__ == '__main__':

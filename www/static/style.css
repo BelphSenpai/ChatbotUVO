@@ -80,6 +80,9 @@ body {
   z-index: 1000;
   font-family: 'Share Tech Mono', monospace;
   backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-bar a,
@@ -179,26 +182,40 @@ body {
 /* === EFECTO ESCANEO === */
 .scanline {
   position: relative;
-  overflow: hidden;
-  top: -10%;
   left: 0;
   width: 100%;
   height: 2px;
-  background: rgba(0, 255, 255, 0.3);
-  box-shadow: 0 0 8px 2px rgba(0, 255, 255, 0.4);
-  z-index: 1;
+  background: linear-gradient(to right, transparent 0%, #00ffff99 50%, transparent 100%);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
   pointer-events: none;
-  animation: scanmove 3s linear infinite;
+  z-index: 100000;
+  animation: scanmove 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 @keyframes scanmove {
-  0% { top: -10%; opacity: 0; }
-  5% { opacity: 0.3; }
-  40% { opacity: 0.8; }
-  50% { opacity: 1; }
-  95% { opacity: 0.1; }
-  100% { top: 110%; opacity: 0; }
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
 }
+
 
 @keyframes glowFlicker {
   0% { box-shadow: 0 0 5px rgba(0, 255, 255, 0.1), 0 0 20px rgba(0, 255, 255, 0.05) inset; }

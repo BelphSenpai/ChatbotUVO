@@ -1,0 +1,122 @@
+{
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "id": "vaquilla",
+          "label": "Vaquilla"
+        }
+      },
+      {
+        "data": {
+          "id": "Osborne",
+          "label": "Osborne"
+        }
+      },
+      {
+        "data": {
+          "id": "Chayanne",
+          "label": "Chayanne"
+        }
+      },
+      {
+        "data": {
+          "id": "Toro",
+          "label": "Toro"
+        }
+      },
+      {
+        "data": {
+          "id": "Gran Prix",
+          "label": "Gran Prix"
+        }
+      },
+      {
+        "data": {
+          "id": "Ramón García",
+          "label": "Ramón García"
+        }
+      },
+      {
+        "data": {
+          "id": "Torero",
+          "label": "Torero"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "id": "e1746706625447",
+          "source": "vaquilla",
+          "target": "Gran Prix",
+          "label": "Participa"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706632741",
+          "source": "vaquilla",
+          "target": "Osborne",
+          "label": "Se parece"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706643967",
+          "source": "Chayanne",
+          "target": "Torero",
+          "label": "Canta"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706654117",
+          "source": "Chayanne",
+          "target": "vaquilla",
+          "label": "Idolatra"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706666788",
+          "source": "Toro",
+          "target": "vaquilla",
+          "label": "Versión chikita"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706679055",
+          "source": "Torero",
+          "target": "Toro",
+          "label": "Torea"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706687102",
+          "source": "vaquilla",
+          "target": "Torero",
+          "label": "Pincha"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706697785",
+          "source": "Ramón García",
+          "target": "Gran Prix",
+          "label": "Presenta"
+        }
+      },
+      {
+        "data": {
+          "id": "e1746706709676",
+          "source": "Ramón García",
+          "target": "Toro",
+          "label": "Mira"
+        }
+      }
+    ]
+  }
+}

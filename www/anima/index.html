@@ -48,61 +48,90 @@
 
   <div class="nav-bar">
     <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
-    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+    <a class="nav-item" id="conexiones-link" href="/conexiones">CONEXIONES</a>
     <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
-  
+
     <div id="admin-link-container" style="display:none;">
-      <a class="nav-item" href="/admin">ADMIN</a>
+        <a class="nav-item" href="/admin">ADMIN</a>
     </div>
-  
-    <div class="nav-item dropdown">
-      IAs
-      <div class="dropdown-content" id="ia-dropdown">
-        <!-- Links dinámicos -->
-      </div>
+
+    <div class="nav-item dropdown" id="ia-dropdown-container" style="display:none;">
+        IAs
+        <div class="dropdown-content" id="ia-dropdown">
+            <!-- Links dinámicos a IAs -->
+        </div>
     </div>
-  </div>
-  
-  <script>
+</div>
+
+<script>
     window.addEventListener("DOMContentLoaded", async () => {
-      try {
-        const sessionRes = await fetch("/session-info");
-        const sessionData = await sessionRes.json();
-        const id = sessionData.usuario;
-        const rol = sessionData.rol;
-  
-        if (id) {
-          document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
-  
-          // Mostrar Admin si es rol admin
-          if (rol === "admin") {
-            document.getElementById("admin-link-container").style.display = "inline-block";
-          }
-  
-          // Ahora pedimos los usos reales
-          const usosRes = await fetch("/usos");
-          if (usosRes.ok) {
-            const usos = await usosRes.json();
-            const iaDropdown = document.getElementById("ia-dropdown");
-  
-            const ias = ["hada", "eidolon", "fantasma", "anima"];
-  
-            ias.forEach(ia => {
-              const cantidad = usos[ia];
-              if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
-                const link = document.createElement("a");
-                link.href = `/${ia}`;
-                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
-                iaDropdown.appendChild(link);
-              }
-            });
-          }
+        try {
+            const sessionRes = await fetch("/session-info");
+            const sessionData = await sessionRes.json();
+            const id = sessionData.usuario;
+            const rol = sessionData.rol;
+
+            if (id) {
+                document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+
+                if (rol === "admin") {
+                    document.getElementById("admin-link-container").style.display = "inline-block";
+                }
+
+                const usosRes = await fetch("/usos");
+                if (usosRes.ok) {
+                    const usos = await usosRes.json();
+                    const iaDropdown = document.getElementById("ia-dropdown");
+                    const iaDropdownContainer = document.getElementById("ia-dropdown-container");
+
+                    const ias = ["hada", "eidolon", "fantasma", "anima"];
+                    let tieneIAsDisponibles = false;
+
+                    ias.forEach(ia => {
+                        const cantidad = usos[ia];
+                        if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                            const link = document.createElement("a");
+                            link.href = `/${ia}`;
+                            link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                            iaDropdown.appendChild(link);
+                            tieneIAsDisponibles = true;
+                        }
+                    });
+
+                    if (tieneIAsDisponibles) {
+                        iaDropdownContainer.style.display = "inline-block";
+                    }
+                }
+            }
+
+            // Dropdown toggle al hacer clic
+            const dropdown = document.getElementById("ia-dropdown-container");
+            const dropdownContent = document.getElementById("ia-dropdown");
+
+            if (dropdown && dropdownContent) {
+                dropdown.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    dropdown.classList.toggle("active");
+                });
+
+                document.addEventListener("click", (e) => {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove("active");
+                    }
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    if (e.key === "Escape") {
+                        dropdown.classList.remove("active");
+                    }
+                });
+            }
+
+        } catch (error) {
+            console.error("Error cargando sesión o usos:", error);
         }
-      } catch (error) {
-        console.error("Error cargando sesión o usos:", error);
-      }
     });
-  </script>
+</script>
   
 
   <div class="terminal-container">

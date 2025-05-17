@@ -80,17 +80,6 @@ async function cargarPersonajes() {
       });
       botonesDiv.appendChild(btnEditar);
 
-      // Botón Eliminar (solo si no es admin)
-      if (personaje.nombre !== "admin") {
-        const btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "Eliminar";
-        btnEliminar.addEventListener("click", (e) => {
-          e.stopPropagation();
-          eliminarPersonaje(personaje.nombre);
-        });
-        botonesDiv.appendChild(btnEliminar);
-      }
-
       // Botón Conexiones
       const btnConexiones = document.createElement("button");
       btnConexiones.textContent = "Conexiones";
@@ -99,6 +88,43 @@ async function cargarPersonajes() {
         abrirEditorConexiones(personaje.nombre);
       });
       botonesDiv.appendChild(btnConexiones);
+
+      // Botón Borrar Log
+      const btnBorrarLog = document.createElement("button");
+      btnBorrarLog.textContent = "🗑️ Borrar Log";
+      btnBorrarLog.addEventListener("click", (e) => {
+        e.stopPropagation();
+        borrarLogPersonaje(personaje.nombre);
+      });
+      botonesDiv.appendChild(btnBorrarLog);
+
+      // Botón Ficha
+      const btnFicha = document.createElement("button");
+      btnFicha.textContent = "Ficha";
+      btnFicha.addEventListener("click", (e) => {
+        e.stopPropagation();
+        abrirModalFicha(personaje.nombre);
+      });
+      botonesDiv.appendChild(btnFicha);
+
+      // Botón Eliminar (solo si no es admin)
+      if (personaje.nombre !== "admin") {
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "Eliminar";
+        btnEliminar.style.backgroundColor = "#ff000044"; // 🔴 fondo rojo
+        btnEliminar.style.color = "#ff0000";
+        btnEliminar.style.border = "1px solid #ff0000aa";
+        btnEliminar.style.padding = "4px 8px";
+        btnEliminar.style.borderRadius = "4px";
+        btnEliminar.style.cursor = "pointer";
+
+        btnEliminar.addEventListener("click", (e) => {
+          e.stopPropagation();
+          eliminarPersonaje(personaje.nombre);
+        });
+
+        botonesDiv.appendChild(btnEliminar);
+      }
 
       // ====== Inputs de preguntas ======
       const preguntasDiv = document.createElement("div");
@@ -112,12 +138,12 @@ async function cargarPersonajes() {
         container.style.display = "flex";
         container.style.flexDirection = "column";
         container.style.alignItems = "center";
-      
+
         const label = document.createElement("label");
         label.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
         label.style.fontSize = "10px";
         label.style.color = "#00ffff";
-      
+
         const input = document.createElement("input");
         input.type = "number";
         input.min = -1;
@@ -133,12 +159,12 @@ async function cargarPersonajes() {
             input.classList.remove("input-cero");
           }
         });
-      
+
         container.appendChild(label);
         container.appendChild(input);
         preguntasDiv.appendChild(container);
       });
-      
+
 
       const btnReset = document.createElement("button");
       btnReset.textContent = "Resetear";
@@ -645,4 +671,148 @@ async function editarPersonaje(nombre) {
   }
 }
 
+async function borrarLogPersonaje(nombre) {
+  if (!confirm(`¿Seguro que quieres eliminar el historial de ${nombre}? Esta acción no se puede deshacer.`)) return;
+
+  try {
+    const res = await fetch(`/admin/logs/${nombre}.json`, {
+      method: "DELETE"
+    });
+
+    if (res.ok) {
+      alert(`Historial de ${nombre} eliminado correctamente.`);
+    } else {
+      alert("No se pudo eliminar el log.");
+    }
+  } catch (error) {
+    console.error("Error borrando log:", error);
+  }
+}
+
+document.getElementById("cerrar-modal-ficha").addEventListener("click", () => {
+  document.getElementById("modal-ficha").style.display = "none";
+});
+
+document.getElementById("guardar-ficha").addEventListener("click", async () => {
+  const editor = document.getElementById("editor-ficha");
+  const jsonValido = recopilarDatosEditorFicha(editor);
+
+  try {
+    const res = await fetch(`/admin/ficha/${personajeActual}.json`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(jsonValido)
+    });
+
+    const data = await res.json();
+    alert(data.mensaje || "Ficha guardada.");
+    document.getElementById("modal-ficha").style.display = "none";
+  } catch (error) {
+    alert("⚠️ Error guardando la ficha.");
+    console.error(error);
+  }
+});
+
+
+
+async function abrirModalFicha(nombre = null) {
+  // Si no se pasa nombre, lo pedimos al backend
+  if (!nombre) {
+    try {
+      const session = await fetch("/session-info");
+      const datos = await session.json();
+      if (!datos.usuario) {
+        alert("⚠️ Sesión no válida.");
+        return;
+      }
+      nombre = datos.usuario;
+    } catch (error) {
+      console.error("Error obteniendo usuario:", error);
+      alert("⚠️ Error de sesión.");
+      return;
+    }
+  }
+
+  personajeActual = nombre;
+  const ruta = `/admin/ficha/${nombre}.json`;
+
+  try {
+    let res = await fetch(ruta);
+
+    // Si no existe, la creamos automáticamente
+    if (res.status === 404) {
+      console.warn(`Ficha de ${nombre} no encontrada. Creando una nueva...`);
+
+      const fichaBase = {
+        nombre_personaje: nombre === "admin" ? "Administrador" : nombre,
+        nombre_jugador: nombre === "admin" ? "Narrador" : "",
+        cabala: "",
+        naturaleza: "",
+        senda: "",
+        arquetipo: "",
+        sec_1: "",
+        sec_2: "",
+        sec_3: "",
+        sec_4: "",
+        daño: 0,
+        rotura: 0,
+        mutacion: 0,
+        cyber: 0
+      };
+
+      const crear = await fetch(ruta, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fichaBase)
+      });
+
+      if (!crear.ok) throw new Error("No se pudo crear la ficha.");
+      res = await fetch(ruta);
+    }
+
+    const datos = await res.json();
+    document.getElementById("titulo-ficha").textContent = `Ficha de ${nombre}`;
+
+    const editor = document.getElementById("editor-ficha");
+    generarEditorFicha(datos, editor);
+
+    document.getElementById("modal-ficha").style.display = "flex";
+
+  } catch (err) {
+    alert("⚠️ Error cargando la ficha.");
+    console.error(err);
+  }
+}
+
+
+// === NUEVO GENERADOR DE FICHA CON GUARDADO POR CAMPO ===
+function generarEditorFicha(datos, parent, prefix = '') {
+  const inputs = document.querySelectorAll("#modal-ficha input[data-id]");
+  inputs.forEach(input => {
+    const key = input.dataset.id;
+    if (datos.hasOwnProperty(key)) {
+      input.value = datos[key];
+    }
+  });
+}
+
+// === CERRAR MODAL FICHA ===
+document.getElementById("cerrar-modal-ficha").addEventListener("click", () => {
+  document.getElementById("modal-ficha").style.display = "none";
+});
+
+
+function recopilarDatosEditorFicha() {
+  const inputs = document.querySelectorAll("#modal-ficha input[data-id]");
+  const resultado = {};
+
+  inputs.forEach(input => {
+    const key = input.dataset.id;
+    let valor = input.value;
+    if (input.type === "number") valor = parseInt(valor, 10);
+    resultado[key] = valor;
+  });
+
+  return resultado;
+}
 

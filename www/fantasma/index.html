@@ -19,11 +19,11 @@
       <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
       <a class="nav-item" id="conexiones-link">CONEXIONES</a>
       <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
-    
+
       <div id="admin-link-container" style="display:none;">
         <a class="nav-item" href="/admin">ADMIN</a>
       </div>
-    
+
       <div class="nav-item dropdown">
         IAs
         <div class="dropdown-content" id="ia-dropdown">
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    
+
     <script>
       window.addEventListener("DOMContentLoaded", async () => {
         try {
@@ -39,23 +39,23 @@
           const sessionData = await sessionRes.json();
           const id = sessionData.usuario;
           const rol = sessionData.rol;
-    
+
           if (id) {
             document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
-    
+
             // Mostrar Admin si es rol admin
             if (rol === "admin") {
               document.getElementById("admin-link-container").style.display = "inline-block";
             }
-    
+
             // Ahora pedimos los usos reales
             const usosRes = await fetch("/usos");
             if (usosRes.ok) {
               const usos = await usosRes.json();
               const iaDropdown = document.getElementById("ia-dropdown");
-    
+
               const ias = ["hada", "eidolon", "fantasma", "anima"];
-    
+
               ias.forEach(ia => {
                 const cantidad = usos[ia];
                 if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
@@ -72,174 +72,187 @@
         }
       });
     </script>
-
-  <div class="fantasma-wrapper">
-
-    <div class="image-container">
-
-      <!-- Imatge de marc fons -->
-      <img src="/fantasma/background.png" alt="Estructura de Fantasma" class="fantasma-frame" />
-
-      <!-- Terminal col·locada sobre la imatge -->
-      <div class="terminal-overlay">
-        <div class="fantasma-terminal">
-
-          <div class="header">
-            <h1>FANTASMA</h1>
-            <p class="subtitle">Subdirector del Archivo Digital del Consulado</p>
-          </div>
-
-          <div class="terminal-output" id="output"></div>
-
-          <div class="input-container">
-            <input type="text" id="input" placeholder="consulta a FANTASMA..." />
-          </div>
-          <div class="scan-line"></div>
-
-        </div>
-      </div>
-
+    <div class="hole">
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
+      <i></i>
     </div>
-  </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      const path = window.location.pathname;
-      const ia = path.split('/')[1]; // 'fantasma'
-  
-      let usuario = "invitado";
-      try {
-        const res = await fetch("/session-info");
-        const data = await res.json();
-        usuario = data.usuario || "invitado";
-  
-        const setHref = (selector) => {
-          const el = document.getElementById(selector);
-          if (el) el.href = `/${selector.replace("-link", "")}`;
-        };
-  
-        setHref("ficha-link");
-        setHref("conexiones-link");
-        setHref("hada-link");
-        setHref("eidolon-link");
-        setHref("fantasma-link");
-        setHref("anima-link");
-  
-        const currentIA = document.getElementById(`${ia}-link`);
-        if (currentIA) currentIA.classList.add("active");
-      } catch (e) {
-        console.warn("No se pudo recuperar sesión:", e);
-      }
-  
-      const input = document.getElementById("input");
-      const output = document.getElementById("output");
-  
-      input.addEventListener("keydown", async (e) => {
-        if (e.key === "Enter") {
-          const mensaje = input.value.trim();
-          if (!mensaje) return;
-  
-          output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
-          output.querySelectorAll(".pulse-line").forEach(el => el.remove());
-  
-          output.innerHTML += `<div>>> ${mensaje}</div>`;
-          input.value = "";
-  
-          await registrarEvento("pregunta_fantasma", mensaje); // 🔥 LOG: guardamos la pregunta
-  
-          const escribint = document.createElement("div");
-          escribint.innerText = "⟪ FANTASMA está consultando sus archivos... ⟫";
-          escribint.style.opacity = "0.5";
-          output.appendChild(escribint);
-  
+    <div class="fantasma-wrapper">
+
+      <div class="image-container">
+
+        <!-- Imatge de marc fons -->
+        <img src="/fantasma/background.png" alt="Estructura de Fantasma" class="fantasma-frame" />
+
+        <!-- Terminal col·locada sobre la imatge -->
+        <div class="terminal-overlay">
+          <div class="code-rain"></div>
+          <div class="fantasma-terminal">
+
+            <div class="header">
+              <h1>FANTASMA</h1>
+              <p class="subtitle">Subdirector del Archivo Digital del Consulado</p>
+            </div>
+
+            <div class="terminal-output" id="output"></div>
+
+            <div class="input-container">
+              <input type="text" id="input" placeholder="consulta a FANTASMA..." />
+            </div>
+            <div class="scan-line"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const path = window.location.pathname;
+        const ia = path.split('/')[1]; // 'fantasma'
+
+        let usuario = "invitado";
+        try {
+          const res = await fetch("/session-info");
+          const data = await res.json();
+          usuario = data.usuario || "invitado";
+
+          const setHref = (selector) => {
+            const el = document.getElementById(selector);
+            if (el) el.href = `/${selector.replace("-link", "")}`;
+          };
+
+          setHref("ficha-link");
+          setHref("conexiones-link");
+          setHref("hada-link");
+          setHref("eidolon-link");
+          setHref("fantasma-link");
+          setHref("anima-link");
+
+          const currentIA = document.getElementById(`${ia}-link`);
+          if (currentIA) currentIA.classList.add("active");
+        } catch (e) {
+          console.warn("No se pudo recuperar sesión:", e);
+        }
+
+        const input = document.getElementById("input");
+        const output = document.getElementById("output");
+
+        input.addEventListener("keydown", async (e) => {
+          if (e.key === "Enter") {
+            const mensaje = input.value.trim();
+            if (!mensaje) return;
+
+            output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
+            output.querySelectorAll(".pulse-line").forEach(el => el.remove());
+
+            output.innerHTML += `<div>>> ${mensaje}</div>`;
+            input.value = "";
+
+            await registrarEvento("pregunta_fantasma", mensaje); // 🔥 LOG: guardamos la pregunta
+
+            const escribint = document.createElement("div");
+            escribint.innerText = "⟪ FANTASMA está consultando sus archivos... ⟫";
+            escribint.style.opacity = "0.5";
+            output.appendChild(escribint);
+
+            try {
+              const res = await fetch("/query", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                  mensaje,
+                  ia: "fantasma",
+                  id: usuario
+                }),
+              });
+
+              const data = await res.json();
+              escribint.remove();
+
+              const respuestaDiv = document.createElement("div");
+              respuestaDiv.classList.add("glitch");
+              respuestaDiv.textContent = ">> ";
+
+              const pulse = document.createElement("span");
+              pulse.classList.add("pulse-line");
+              respuestaDiv.appendChild(pulse);
+              output.appendChild(respuestaDiv);
+
+              await registrarEvento("respuesta_fantasma", data.respuesta); // 🔥 LOG: guardamos la respuesta
+
+              let i = 0;
+              const text = data.respuesta;
+              const velocidad = 5;
+
+              const escribir = () => {
+                if (i < text.length) {
+                  respuestaDiv.textContent += text.charAt(i);
+                  respuestaDiv.appendChild(pulse);
+                  i++;
+                  setTimeout(escribir, velocidad);
+                }
+              };
+              escribir();
+
+              output.scrollTop = output.scrollHeight;
+            } catch (error) {
+              escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
+              console.error("Error enviando a Fantasma:", error);
+            }
+          }
+        });
+
+        async function registrarEvento(tipo, contenido) {
           try {
-            const res = await fetch("/query", {
+            await fetch("/log-evento", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                mensaje,
-                ia: "fantasma",
-                id: usuario
-              }),
+              body: JSON.stringify({ tipo, contenido })
             });
-  
-            const data = await res.json();
-            escribint.remove();
-  
-            const respuestaDiv = document.createElement("div");
-            respuestaDiv.classList.add("glitch");
-            respuestaDiv.textContent = ">> ";
-  
-            const pulse = document.createElement("span");
-            pulse.classList.add("pulse-line");
-            respuestaDiv.appendChild(pulse);
-            output.appendChild(respuestaDiv);
-  
-            await registrarEvento("respuesta_fantasma", data.respuesta); // 🔥 LOG: guardamos la respuesta
-  
-            let i = 0;
-            const text = data.respuesta;
-            const velocidad = 5;
-  
-            const escribir = () => {
-              if (i < text.length) {
-                respuestaDiv.textContent += text.charAt(i);
-                respuestaDiv.appendChild(pulse);
-                i++;
-                setTimeout(escribir, velocidad);
-              }
-            };
-            escribir();
-  
-            output.scrollTop = output.scrollHeight;
           } catch (error) {
-            escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
-            console.error("Error enviando a Fantasma:", error);
+            console.warn("No se pudo registrar evento:", error);
           }
+        }
+
+        // Dropdown navbar
+        const dropdown = document.querySelector(".dropdown");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (dropdown && dropdownContent) {
+          dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("active");
+            dropdownContent.classList.toggle("show");
+          });
+
+          document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove("active");
+              dropdownContent.classList.remove("show");
+            }
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              dropdown.classList.remove("active");
+              dropdownContent.classList.remove("show");
+            }
+          });
         }
       });
-  
-      async function registrarEvento(tipo, contenido) {
-        try {
-          await fetch("/log-evento", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ tipo, contenido })
-          });
-        } catch (error) {
-          console.warn("No se pudo registrar evento:", error);
-        }
-      }
-  
-      // Dropdown navbar
-      const dropdown = document.querySelector(".dropdown");
-      const dropdownContent = document.querySelector(".dropdown-content");
-  
-      if (dropdown && dropdownContent) {
-        dropdown.addEventListener("click", (e) => {
-          e.stopPropagation();
-          dropdown.classList.toggle("active");
-          dropdownContent.classList.toggle("show");
-        });
-  
-        document.addEventListener("click", (e) => {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove("active");
-            dropdownContent.classList.remove("show");
-          }
-        });
-  
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            dropdown.classList.remove("active");
-            dropdownContent.classList.remove("show");
-          }
-        });
-      }
-    });
-  </script>
-  
-  
-</body>
+    </script>
+
+
+  </body>
 
 </html>

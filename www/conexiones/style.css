@@ -2,7 +2,6 @@
 body {
     background-color: #0a0f1a;
     color: #00ffff;
-    font-family: 'Share Tech Mono', monospace;
     font-size: 14px;
     line-height: 1.5;
     user-select: none;
@@ -11,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     min-height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
 }
 
 .terminal {

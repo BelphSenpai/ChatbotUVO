@@ -486,3 +486,41 @@ body::after {
 .dropdown-content a:hover {
   background: rgba(0, 255, 200, 0.08);
 }
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 120px;
+  padding: 6px 0;
+  background-color: rgba(0, 255, 200, 0.07);
+  border: 1px solid #00ffc833;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #00ffc822;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 6px 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  color: #b4fff1;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+  background: rgba(0, 255, 200, 0.12);
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}

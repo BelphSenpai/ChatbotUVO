@@ -5,7 +5,6 @@ async function iniciarGrafoConexiones() {
     const resSesion = await fetch('/session-info');
     const { usuario: id } = await resSesion.json();
 
-    // Enlace a la ficha (sin parámetros)
     const linkFicha = document.getElementById("ficha-link");
     if (linkFicha) {
       linkFicha.href = "/ficha";
@@ -72,40 +71,29 @@ async function iniciarGrafoConexiones() {
       cy.fit();
     });
 
-    const canvas = document.querySelector('canvas');
-    let lastMouseDownTime = 0;
+    // Evento TAP compatible con touch + click
+    cy.on('tap', 'node', (event) => {
+      const node = event.target;
+      const pos = event.renderedPosition || node.renderedPosition();
 
-    canvas.addEventListener('mousedown', () => {
-      lastMouseDownTime = Date.now();
-    });
-
-    canvas.addEventListener('mouseup', (e) => {
-      const elapsed = Date.now() - lastMouseDownTime;
-      if (elapsed > 250) return;
-
-      const rect = canvas.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const clickY = e.clientY - rect.top;
-
-      let clickedNode = null;
-
-      cy.nodes().forEach(node => {
-        const pos = node.renderedPosition();
-        const dist = Math.hypot(pos.x - clickX, pos.y - clickY);
-        if (dist < 30) clickedNode = node;
+      const edges = node.connectedEdges().map(edge => {
+        const other = edge.source().id() === node.id() ? edge.target() : edge.source();
+        return `<li>${edge.data('label')} con <strong>${other.data('label')}</strong></li>`;
       });
 
-      if (clickedNode) {
-        const edges = clickedNode.connectedEdges().map(edge => {
-          const other = edge.source().id() === clickedNode.id() ? edge.target() : edge.source();
-          return `<li>${edge.data('label')} con <strong>${other.data('label')}</strong></li>`;
-        });
+      popup.innerHTML = `<strong>${node.data('label')}</strong><ul>${edges.join('')}</ul>`;
 
-        popup.innerHTML = `<strong>${clickedNode.data('label')}</strong><ul>${edges.join('')}</ul>`;
-        popup.style.left = (clickX + 20) + 'px';
-        popup.style.top = (clickY + 20) + 'px';
-        popup.style.display = 'block';
-      } else {
+      // Calculamos la posición asegurando que no se salga de la pantalla
+      const x = Math.min(pos.x + 20, window.innerWidth - 200);
+      const y = Math.min(pos.y + 20, window.innerHeight - 100);
+      popup.style.left = `${x}px`;
+      popup.style.top = `${y}px`;
+      popup.style.display = 'block';
+    });
+
+    // Ocultar popup si se toca fuera de nodos
+    cy.on('tap', (event) => {
+      if (event.target === cy) {
         popup.style.display = 'none';
       }
     });

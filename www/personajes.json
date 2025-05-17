@@ -6,5 +6,9 @@
   "mateo": {
     "clave": "$2b$12$6PqOCMsVri2M947u7.0Mb.WmiYATO2QPMXkEKR6xFo.4Wq/uC5F9m",
     "rol": "jugador"
+  },
+  "vaquilla": {
+    "clave": "$2b$12$cEct4eQsd.OgVG0YLUuGQuol2B9FxsVpsUNsjHiP9TWYucp2Gp07q",
+    "rol": "jugador"
   }
 }

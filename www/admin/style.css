@@ -312,3 +312,211 @@ select option:hover {
   background-color: rgba(0, 255, 255, 0.1);
   color: #ffffff;
 }
+
+/* === MODAL FICHA CON ESTILO DE CONEXIONES === */
+
+#modal-ficha {
+  position: fixed;
+  inset: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 255, 255, 0.07);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Contenedor del modal */
+.modal-content.esquema-ficha {
+  background: rgba(0, 255, 255, 0.03);
+  border: 1px solid #00ffff44;
+  border-radius: 12px;
+  padding: 10px;
+  width: 95%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.2);
+  color: #00ffff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  padding: 0.5em;
+  z-index: 100;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+/* Título principal */
+#titulo-ficha {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffffaa;
+}
+
+/* Secciones */
+.titulo-seccion {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: #66ffff;
+  text-shadow: 0 0 4px #66ffff88;
+  border-bottom: 1px solid #00ffff33;
+  padding-bottom: 4px;
+}
+
+/* Contenedores de filas */
+.bloque {
+  display: grid;
+  margin-bottom: 16px;
+  background: rgba(0, 255, 255, 0.02);
+  padding: 12px;
+  border: 1px solid #00ffff22;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.05);
+}
+
+/* Grids con columnas predefinidas */
+.encabezado {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.fila-eidos,
+.fila-vida,
+.fila-chimera {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* Campos */
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 11px;
+  color: #00ffffcc;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.campo input {
+  background: rgba(0, 255, 255, 0.04);
+  color: #00ffff;
+  border: 1px solid #00ffff33;
+  border-left: 4px solid #00ffff66;
+  border-radius: 6px;
+  padding: 6px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.1);
+  transition: border-color 0.2s ease-in-out;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 6px #00ffffaa;
+}
+
+/* Botones del modal */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-actions button {
+  background-color: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff55;
+  color: #00ffff;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+}
+
+.modal-actions button:hover {
+  background-color: rgba(0, 255, 255, 0.15);
+  border-color: #00ffffaa;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  .admin-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .admin-section {
+    padding: 16px;
+  }
+
+  .personaje-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .personaje-item strong {
+    text-align: center;
+  }
+
+  .personaje-item button,
+  .personaje-item input,
+  .personaje-item select {
+    width: 90%;
+    margin: 4px 0;
+  }
+
+  .personaje-item input{
+    max-width: 90%;
+  }
+
+  .modal-content {
+    width: 95% !important;
+    max-height: 90%;
+    font-size: 13px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  input[type="number"] {
+    min-width: 40px;
+  }
+  #conexiones-modal {
+    flex-direction: column-reverse; /* Canvas arriba, panel abajo */
+    align-items: center;
+  }
+
+  #cy-mini {
+    width: 95% !important;
+    height: 300px !important;
+    margin-bottom: 16px;
+    border: 1px solid #00ffff66;
+  }
+
+  .modal-content-log {
+    width: 95%;
+    max-height: none;
+  }
+}

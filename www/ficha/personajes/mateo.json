@@ -1,13 +1,16 @@
 {
-    "nombre": "Mateo Ruiz",
-    "estado": "Inestable",
-    "afiliacion": "Fragmento Residual de Red Hiperconsciente",
-    "relaciones": ["Victoria (eco espejo)", "Lucky (nexo perdido)"],
-    "nivel_amenaza": "█ █ ░ ░ ░",
-    "log": [
-      "[2025-04-20] Sincronización parcial con protocolo CRYSTAL-WING",
-      "[2025-04-18] Anomalía perceptiva: mariposas detectadas en plano interno",
-      "[2025-04-14] Contacto visual con nodo VICTORIA-DRONE // reflejo inestable"
-    ]
-  }
-  
+  "nombre_personaje": "Mateo",
+  "nombre_jugador": "Nil López",
+  "cabala": "Ordo Arkanum",
+  "naturaleza": "Visionario",
+  "senda": "Camino del Vacío",
+  "arquetipo": "El Testigo",
+  "sec_1": "El Mártir",
+  "sec_2": "El Sabio",
+  "sec_3": "El Hereje",
+  "sec_4": "El Sombra",
+  "daño": 0,
+  "rotura": 0,
+  "mutacion": 0,
+  "cyber": 0
+}

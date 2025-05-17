@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta charset="UTF-8">
   <title>Panel de Administración</title>
   <link href="/static/style.css" rel="stylesheet" type="text/css">
   <link href="/admin/style.css" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <link rel="icon" href="/static/favicon.png" type="image/png" />
 </head>
+
 <body>
 
   <div class="nav-bar">
     <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
-    <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+    <a class="nav-item" id="conexiones-link" href="/conexiones">CONEXIONES</a>
     <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
   
     <div id="admin-link-container" style="display:none;">
@@ -37,12 +42,10 @@
         if (id) {
           document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
   
-          // Mostrar Admin si es rol admin
           if (rol === "admin") {
             document.getElementById("admin-link-container").style.display = "inline-block";
           }
   
-          // Pedimos los usos reales
           const usosRes = await fetch("/usos");
           if (usosRes.ok) {
             const usos = await usosRes.json();
@@ -63,18 +66,40 @@
               }
             });
   
-            // Mostrar el botón de IAs solo si hay al menos una IA disponible
             if (tieneIAsDisponibles) {
               iaDropdownContainer.style.display = "inline-block";
             }
           }
         }
+  
+        // Dropdown toggle al hacer clic
+        const dropdown = document.getElementById("ia-dropdown-container");
+        const dropdownContent = document.getElementById("ia-dropdown");
+  
+        if (dropdown && dropdownContent) {
+          dropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+            dropdown.classList.toggle("active");
+          });
+  
+          document.addEventListener("click", (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove("active");
+            }
+          });
+  
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+              dropdown.classList.remove("active");
+            }
+          });
+        }
+  
       } catch (error) {
         console.error("Error cargando sesión o usos:", error);
       }
     });
   </script>
-  
 
   <div class="admin-container">
     <h1>Panel de Administración</h1>
@@ -91,7 +116,7 @@
   </div>
 
   <!-- Modal para Crear/Editar Personaje -->
-<div id="personaje-modal" class="modal" style="display: none;">
+  <div id="personaje-modal" class="modal" style="display: none;">
     <div class="modal-content">
       <h2 id="modal-title">Crear Personaje</h2>
       <input type="text" id="nombre-input" placeholder="Nombre" />
@@ -107,56 +132,111 @@
     </div>
   </div>
 
-<!-- Modal de Log -->
-<div id="modal-log" class="modal" style="display: none;">
-  <div class="modal-content-log">
-    <span id="cerrar-modal-log" style="cursor: pointer; float: right;">✖</span>
-    <h2 id="titulo-log" style="margin-top: 0;">Historial de Personaje</h2>
-    <div id="contenido-log" style="max-height: 400px; overflow-y: auto; margin-top: 10px;"></div>
-  </div>
-</div>
-
-<!-- Modal de Conexiones -->
-<!-- Modal de Conexiones -->
-<div id="conexiones-modal" class="modal" style="display: none;">
-  <div class="modal-content-log">
-    <span id="cerrar-modal-conexiones" style="cursor: pointer; float: right;">✖</span>
-    <h2 id="titulo-conexiones" style="margin-top: 0;">Conexiones de [Personaje]</h2>
-
-    <!-- 🚀 AÑADIR NUEVO NODO MANUAL -->
-    <div style="margin-bottom: 20px;">
-      <h3>Añadir nuevo nodo</h3>
-      <input type="text" id="nuevo-nodo-id" placeholder="ID del nodo" style="margin-right: 6px; margin-bottom: 6px;">
-      <input type="text" id="nuevo-nodo-label" placeholder="Nombre visible" style="margin-right: 6px; margin-bottom: 6px;">
-      <button id="crear-nodo">Crear Nodo</button>
-    </div>
-
-    <!-- 🚀 AÑADIR NUEVA CONEXIÓN -->
-    <div style="margin-bottom: 20px;">
-      <h3>Añadir nueva conexión</h3>
-      <select id="source-nodo" style="margin-right: 6px;"></select>
-      <select id="target-nodo" style="margin-right: 6px;"></select>
-      <input type="text" id="label-conexion" placeholder="Descripción de la conexión" style="margin-right: 6px;">
-      <button id="añadir-conexion">Añadir Conexión</button>
-    </div>
-
-    <!-- 🚀 LISTADO CONEXIONES -->
-    <div id="lista-conexiones" style="max-height: 300px; overflow-y: auto; margin-top: 10px;"></div>
-
-    <h3 style="margin-top: 20px;">Nodos Existentes</h3>
-    <div id="lista-nodos" style="max-height: 200px; overflow-y: auto; margin-top: 10px;"></div>
-
-    
-
-    <!-- 🚀 BOTÓN GUARDAR -->
-    <div style="margin-top: 20px; text-align: center;">
-      <button id="guardar-conexiones">Guardar Cambios</button>
+  <!-- Modal de Log -->
+  <div id="modal-log" class="modal" style="display: none;">
+    <div class="modal-content-log">
+      <span id="cerrar-modal-log" style="cursor: pointer; float: right;">✖</span>
+      <h2 id="titulo-log" style="margin-top: 0;">Historial de Personaje</h2>
+      <div id="contenido-log" style="max-height: 400px; overflow-y: auto; margin-top: 10px;"></div>
     </div>
   </div>
-  <div id="cy-mini" style="width: 30%; height: 500px;border: 1px solid #00ffff55; background: #111; margin-top: 20px;"></div>
-</div>
 
-<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
-<script src="/admin/admin.js"></script> <!-- Este es tu JavaScript de gestión -->
+  <!-- Modal de Conexiones -->
+  <!-- Modal de Conexiones -->
+  <div id="conexiones-modal" class="modal" style="display: none;">
+    <div class="modal-content-log">
+      <span id="cerrar-modal-conexiones" style="cursor: pointer; float: right;">✖</span>
+      <h2 id="titulo-conexiones" style="margin-top: 0;">Conexiones de [Personaje]</h2>
+
+      <!-- 🚀 AÑADIR NUEVO NODO MANUAL -->
+      <div style="margin-bottom: 20px;">
+        <h3>Añadir nuevo nodo</h3>
+        <input type="text" id="nuevo-nodo-id" placeholder="ID del nodo" style="margin-right: 6px; margin-bottom: 6px;">
+        <input type="text" id="nuevo-nodo-label" placeholder="Nombre visible"
+          style="margin-right: 6px; margin-bottom: 6px;">
+        <button id="crear-nodo">Crear Nodo</button>
+      </div>
+
+      <!-- 🚀 AÑADIR NUEVA CONEXIÓN -->
+      <div style="margin-bottom: 20px;">
+        <h3>Añadir nueva conexión</h3>
+        <select id="source-nodo" style="margin-right: 6px;"></select>
+        <select id="target-nodo" style="margin-right: 6px;"></select>
+        <input type="text" id="label-conexion" placeholder="Descripción de la conexión" style="margin-right: 6px;">
+        <button id="añadir-conexion">Añadir Conexión</button>
+      </div>
+
+      <!-- 🚀 LISTADO CONEXIONES -->
+      <div id="lista-conexiones" style="max-height: 300px; overflow-y: auto; margin-top: 10px;"></div>
+
+      <h3 style="margin-top: 20px;">Nodos Existentes</h3>
+      <div id="lista-nodos" style="max-height: 200px; overflow-y: auto; margin-top: 10px;"></div>
+
+
+
+      <!-- 🚀 BOTÓN GUARDAR -->
+      <div style="margin-top: 20px; text-align: center;">
+        <button id="guardar-conexiones">Guardar Cambios</button>
+      </div>
+    </div>
+    <div id="cy-mini"
+      style="width: 30%; height: 500px;border: 1px solid #00ffff55; background: #111; margin-top: 20px;"></div>
+  </div>
+
+  <div id="modal-ficha" class="modal" style="display: none;">
+    <div class="modal-content esquema-ficha">
+      <h2 id="titulo-ficha">Ficha de Personaje</h2>
+  
+      <!-- ENCABEZADO -->
+      <div class="bloque encabezado">
+        <div class="campo">
+          <label>Nombre de Personaje</label>
+          <input type="text" data-id="nombre_personaje">
+        </div>
+        <div class="campo">
+          <label>Nombre del Jugador</label>
+          <input type="text" data-id="nombre_jugador">
+        </div>
+      </div>
+  
+      <!-- EIDOS -->
+      <div class="bloque titulo-seccion">Eidos</div>
+      <div class="bloque fila-eidos">
+        <div class="campo"><label>Cábala</label><input type="text" data-id="cabala"></div>
+        <div class="campo"><label>Naturaleza</label><input type="text" data-id="naturaleza"></div>
+        <div class="campo"><label>Senda</label><input type="text" data-id="senda"></div>
+        <div class="campo"><label>Arquetipo</label><input type="text" data-id="arquetipo"></div>
+      </div>
+      <div class="bloque fila-eidos">
+        <div class="campo"><label>Arquetipo secundario</label><input type="text" data-id="sec_1"></div>
+        <div class="campo"><label>Arquetipo secundario</label><input type="text" data-id="sec_2"></div>
+        <div class="campo"><label>Arquetipo secundario</label><input type="text" data-id="sec_3"></div>
+        <div class="campo"><label>Arquetipo secundario</label><input type="text" data-id="sec_4"></div>
+      </div>
+  
+      <!-- VIDA -->
+      <div class="bloque titulo-seccion">Vida</div>
+      <div class="bloque fila-vida">
+        <div class="campo"><label>Daño</label><input type="number" min="0" max="3" data-id="daño"></div>
+        <div class="campo"><label>Rotura</label><input type="number" min="0" max="3" data-id="rotura"></div>
+      </div>
+  
+      <!-- CHIMERA -->
+      <div class="bloque titulo-seccion">Chimera</div>
+      <div class="bloque fila-chimera">
+        <div class="campo"><label>Mutación Arcana</label><input type="number" min="0" max="3" data-id="mutacion"></div>
+        <div class="campo"><label>Cyber-Infección</label><input type="number" min="0" max="3" data-id="cyber"></div>
+      </div>
+  
+      <div class="modal-actions">
+        <button id="guardar-ficha">Guardar</button>
+        <button id="cerrar-modal-ficha">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+  <script src="/admin/admin.js"></script> <!-- Este es tu JavaScript de gestión -->
 </body>
+
 </html>

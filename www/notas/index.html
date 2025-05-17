@@ -14,9 +14,9 @@
 
     <div class="nav-bar">
         <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
-        <a class="nav-item" id="conexiones-link">CONEXIONES</a>
-        <a class="nav-item active" id="notas-link">NOTAS</a>
-
+        <a class="nav-item" id="conexiones-link" href="/conexiones">CONEXIONES</a>
+        <a class="nav-item active" id="notas-link" href="/notas">NOTAS</a>
+        <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
         <div id="admin-link-container" style="display:none;">
             <a class="nav-item" href="/admin">ADMIN</a>
         </div>
@@ -40,12 +40,10 @@
                 if (id) {
                     document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
 
-                    // Mostrar Admin si es rol admin
                     if (rol === "admin") {
                         document.getElementById("admin-link-container").style.display = "inline-block";
                     }
 
-                    // Pedimos los usos reales
                     const usosRes = await fetch("/usos");
                     if (usosRes.ok) {
                         const usos = await usosRes.json();
@@ -66,18 +64,40 @@
                             }
                         });
 
-                        // Mostrar el botón de IAs solo si hay al menos una IA disponible
                         if (tieneIAsDisponibles) {
                             iaDropdownContainer.style.display = "inline-block";
                         }
                     }
                 }
+
+                // Dropdown toggle al hacer clic
+                const dropdown = document.getElementById("ia-dropdown-container");
+                const dropdownContent = document.getElementById("ia-dropdown");
+
+                if (dropdown && dropdownContent) {
+                    dropdown.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        dropdown.classList.toggle("active");
+                    });
+
+                    document.addEventListener("click", (e) => {
+                        if (!dropdown.contains(e.target)) {
+                            dropdown.classList.remove("active");
+                        }
+                    });
+
+                    document.addEventListener("keydown", (e) => {
+                        if (e.key === "Escape") {
+                            dropdown.classList.remove("active");
+                        }
+                    });
+                }
+
             } catch (error) {
                 console.error("Error cargando sesión o usos:", error);
             }
         });
     </script>
-
 
     <div class="notas-container">
         <div class="scanline"></div>
@@ -89,12 +109,12 @@
         </div>
     </div>
 
-    
+
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const textarea = document.getElementById("notas");
-        
+
             async function guardarNotas() {
                 const texto = textarea.value;
                 try {
@@ -111,7 +131,7 @@
                     alert("Error guardando notas.");
                 }
             }
-        
+
             async function cargarNotas() {
                 try {
                     const res = await fetch("/notas/contenido");
@@ -125,7 +145,7 @@
                     console.error("Error cargando notas:", error);
                 }
             }
-        
+
             async function borrarNotas() {
                 if (confirm("¿Seguro que quieres borrar todas tus notas?")) {
                     textarea.value = "";
@@ -133,15 +153,15 @@
                     alert("Notas borradas.");
                 }
             }
-        
+
             // Botones
             document.getElementById("guardar-notas").addEventListener("click", guardarNotas);
             document.getElementById("cargar-notas").addEventListener("click", cargarNotas);
             document.getElementById("borrar-notas").addEventListener("click", borrarNotas);
-        
+
             // Cargar automáticamente al abrir
             cargarNotas();
-        
+
             // Autosave automático cada 5 segundos
             setInterval(() => {
                 fetch("/notas/contenido", {
@@ -151,7 +171,7 @@
                 }).catch(err => console.error("Error autosave:", err));
             }, 5000);
         });
-        </script>        
+    </script>
 </body>
 
 </html>
