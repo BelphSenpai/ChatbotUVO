@@ -60,7 +60,7 @@ async function cargarPersonajes() {
 
     personajes.forEach(personaje => {
       const div = document.createElement("div");
-      div.className = "personaje-item";
+      div.classList.add("personaje-item", "personaje-bloque");
 
       const nombreElem = document.createElement("strong");
       nombreElem.textContent = personaje.nombre;

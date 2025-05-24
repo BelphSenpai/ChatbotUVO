@@ -48,73 +48,73 @@
       {
         "data": {
           "id": "e1746706625447",
+          "label": "Participa",
           "source": "vaquilla",
-          "target": "Gran Prix",
-          "label": "Participa"
+          "target": "Gran Prix"
         }
       },
       {
         "data": {
           "id": "e1746706632741",
+          "label": "Se parece",
           "source": "vaquilla",
-          "target": "Osborne",
-          "label": "Se parece"
+          "target": "Osborne"
         }
       },
       {
         "data": {
           "id": "e1746706643967",
+          "label": "Canta",
           "source": "Chayanne",
-          "target": "Torero",
-          "label": "Canta"
+          "target": "Torero"
         }
       },
       {
         "data": {
           "id": "e1746706654117",
+          "label": "Idolatra",
           "source": "Chayanne",
-          "target": "vaquilla",
-          "label": "Idolatra"
+          "target": "vaquilla"
         }
       },
       {
         "data": {
           "id": "e1746706666788",
+          "label": "Versión chikita",
           "source": "Toro",
-          "target": "vaquilla",
-          "label": "Versión chikita"
+          "target": "vaquilla"
         }
       },
       {
         "data": {
           "id": "e1746706679055",
+          "label": "Torea",
           "source": "Torero",
-          "target": "Toro",
-          "label": "Torea"
+          "target": "Toro"
         }
       },
       {
         "data": {
           "id": "e1746706687102",
+          "label": "Pincha",
           "source": "vaquilla",
-          "target": "Torero",
-          "label": "Pincha"
+          "target": "Torero"
         }
       },
       {
         "data": {
           "id": "e1746706697785",
+          "label": "Presenta",
           "source": "Ramón García",
-          "target": "Gran Prix",
-          "label": "Presenta"
+          "target": "Gran Prix"
         }
       },
       {
         "data": {
           "id": "e1746706709676",
+          "label": "Mira",
           "source": "Ramón García",
-          "target": "Toro",
-          "label": "Mira"
+          "target": "Toro"
         }
       }
     ]

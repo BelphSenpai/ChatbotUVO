@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const inputBox = document.querySelector('.terminal-input');
   const terminalBoot = document.getElementById('terminal-screen');
-  const terminalOutput = document.querySelector('.terminal');
+  const terminalOutput = document.querySelector('.terminal1');
   const loaderContainer = document.querySelector('.container');
 
   const lines = [
@@ -14,16 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let currentLine = 0;
-
-  function updateCursor(container) {
-    const existing = container.querySelector('.cursor');
-    if (existing) existing.remove();
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    cursor.textContent = '▮';
-    container.appendChild(cursor);
-    container.scrollTop = container.scrollHeight;
-  }
 
   function removeCursor(container) {
     const existing = container.querySelector('.cursor');
@@ -47,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       const res = await fetch('/session-info');
       const data = await res.json();
-      return data.usuario?.toUpperCase() || 'DESCONOCIDO';
+      return typeof data.usuario === 'string' ? data.usuario.toUpperCase() : 'DESCONOCIDO';
     } catch (err) {
       return 'DESCONOCIDO';
     }
@@ -186,17 +176,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const sessionInfo = await fetch('/session-info').then(res => res.json());
-        const usuario = sessionInfo.usuario;
-        const ia = 'eidolon';
+        const usuario = typeof sessionInfo.usuario === 'string' ? sessionInfo.usuario : '';
 
-        const res = await fetch(`/${ia}/query`, {
+        // console.log('Enviando a la IA:', { mensaje, id: usuario });
+
+        const res = await fetch('/eidolon/query', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ mensaje, id: usuario })
         });
 
         const data = await res.json();
-        appendToTerminal(data.respuesta);
+        appendToTerminal(data.respuesta || '⚠️ Sin respuesta de la IA.');
       } catch (err) {
         appendToTerminal('⚠️ Error al conectar con la IA.');
         console.error(err);

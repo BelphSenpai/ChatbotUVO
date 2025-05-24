@@ -519,4 +519,8 @@ select option:hover {
     width: 95%;
     max-height: none;
   }
+
+  .personaje-bloque{
+    display: column !important;
+}
 }
