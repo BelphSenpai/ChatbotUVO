@@ -1,14 +1,14 @@
 {
   "admin": {
-    "clave": "$2b$12$4f1hOnhEzRhJOU7SyaUireuJ6d8MmTST6MMwZLaYt4b1jishmANna",
+    "clave": "$2b$12$UYmgq31O0Tui4GGg95Yc3ebcyFWJpUdFZt8pnJDolxvbUaWk3gT.W",
     "rol": "admin"
-  },
-  "mateo": {
-    "clave": "$2b$12$6PqOCMsVri2M947u7.0Mb.WmiYATO2QPMXkEKR6xFo.4Wq/uC5F9m",
-    "rol": "jugador"
   },
   "vaquilla": {
     "clave": "$2b$12$cEct4eQsd.OgVG0YLUuGQuol2B9FxsVpsUNsjHiP9TWYucp2Gp07q",
     "rol": "jugador"
+  },
+  "modrij": {
+    "clave": "$2b$12$54fMLx55wR5c.TLQ0GJgKOJ57GsKLNCgjgOa/dZ6G93dkmnqBT1ve",
+    "rol": "admin"
   }
 }

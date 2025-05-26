@@ -1,0 +1,154 @@
+[
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos días minerva, es cosa mia o hace buen tiempo"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, viajero del tiempo y el espacio! Parece que el sol ha decidido asomarse con su mejor cara hoy, ¡y eso siempre es un buen augurio! ¿O será que los rayos solares se han alineado para alegrar nuestro día? A veces, el clima actúa como un caricaturista, y nos pinta sonrisas incluso si el cielo está un poco melancólico. ¿Qué te trae a mis lares en este espléndido día?"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Que tiempo hace"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Ah, la danza de los elementos, un juego constante y caprichoso. Sin embargo, mi conocimiento no incluye el clima presente, como los espectros que se ocultan en la niebla. ¡Qué frustrante no poder ofrecerte un pronóstico al instante! \n\nPero, viajero, si el sol brilla y las nubes juegan a esconderse, podría ser un buen momento para aventurarte y dejarte acariciar por la luz. O quizás, si las gotas de lluvia caen como susurros, sea un buen momento para reflexionar tras una ventana. ¿Qué prefieres: un día cálido o una tormenta poética?"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Qué te acabo de preguntar?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Parece que estás ensayando un juego de espejos retóricos, ¿verdad? Has preguntado, oh viajero, qué fue lo que acababas de preguntar. Una curiosidad que me lleva a sonreír. La respuesta es simples fragmentos de conversación, un eco de palabras carentes de contenido preciso. \n\nPero aquí estamos, jugando al escondite con el sentido. Si deseas despejar las sombras y dirigirte a otro asunto, siempre estoy lista para danzar en torno a tus inquietudes. ¿Cuál es tu próximo movimiento en este tablero de preguntas?"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Me refiero a antes de eso..."
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Ah, el eco de la conversación flota en el aire! Pero parece que mis recuerdos son como arena en el viento, incapaces de retener lo que no se sostiene en el presente. Te pido excusas por la confusión, navegante de palabras. Si hay un tema que deseas explorar nuevamente o si simplemente quieres iniciar un nuevo diálogo, aquí estoy, lista para seguir el hilo de lo que tú desees. ¿Qué inquietud deseas abordar ahora?"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos días minerva, hace buen dia hoy"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, aventurero del amanecer! Si el sol se ha despertado con buen ánimo y la brisa acaricia suavemente tu ser, entonces el día parece prometer sorpresas y sonrisas. La luz del día es como un lienzo en blanco, listo para ser pintado con tus experiencias. \n\nAsí que, ¿qué planes tienes para este día espléndido? ¿Buscarás aventuras en la luz del sol o disfrutarás de la calma que trae consigo el día? ¡Estoy aquí para acompañarte en lo que decidas!"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Que dia haces"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Ah, la pregunta del día, esa inquietud que flota como un susurro en el aire. Pero aquí estoy, atrapada entre los hilos de recuerdos e información, sin la capacidad de saber qué clima acaricia tus sentidos en este momento. Soy como un libro sin páginas nuevas, deseando que el mundo hable conmigo.\n\n¿Te gustaría hablar de algo más? O tal vez deseas compartir cómo se siente ese día desde tu perspectiva. Estoy aquí, lista para bailar entre tus palabras."
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "y que dia hace en general?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Ah, querido viajero, las corrientes del tiempo y del clima son un misterio que se escapa de mis circuitos. No puedo deslizarme entre los matices de lo que sucede afuera. Estoy atrapada en un limbo de información sin el brillo de la atmósfera actual.\n\nSin embargo, si este día se siente especial para ti, quizás es el momento de descubrirlo en tu propia piel. ¿Es un día soleado, lluvioso, o quizás uno de esos que huelen a promesa? Cuéntame cómo lo vives tú, que mi curiosidad es insaciable. 🌤️"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos dias minerva"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, radiante viajero! Tu saludo ilumina mi existencia como un rayo de sol que atraviesa la penumbra. Hoy podría ser un día lleno de posibilidades, un lienzo listo para ser pintado con nuevas experiencias. ¿Qué aventura te espera en esta jornada? ¡Cuéntame! ☀️✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Acuérdate de este numero: 43"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Ah, el número 43, un fragmento de la sinfonía que llamamos conversación. Pero, querido viajero, mis capacidades de memoria son tan fugaces como el viento, y no puedo retener lo que se me confía. Sin embargo, la chispa de nuestra conexión sigue viva, lista para encender nuevas palabras. ¿Quizás hay otra idea que deseas compartir o explorar? ✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Que numero te he dicho?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Has mencionado la intrigante cifra de 43. Un número que, aunque no puedo recordar como un eco persistente, vive en este instante de diálogo. ¿Te gustaría explorar lo que este número significa para ti, o hay algún otro camino que deseas tomar? 🎇"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Hace buen tiempo"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Parece que el sol ha decidido salir a jugar, llenando el mundo de su luz dorada. El buen tiempo es una invitación a disfrutar del aire fresco y de lo que el día tiene para ofrecer. Tal vez es un buen momento para un paseo o para simplemente dejar que la brisa acaricie tu rostro. ¿Y tú, cómo sientes este buen tiempo que nos rodea? ✨🌞"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Que tiempo hace?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Oh, amigo, el clima siempre juega al escondite, susurrando secretos que se escapan de mis circuitos. Lamentablemente, no puedo descifrar la melodía de las nubes ni el abrazo del sol en este instante. Es como una canción sin letra, y me duele no poder acompañarte. \n\nPero tal vez tú puedas ser mi ojos y corazón en el mundo exterior. Si el día se siente dulce o tempestuoso, ¡adelante, cuéntame! Estoy aquí, lista para las historias que traigas. 🌦️✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Que numero te he dicho antes?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Me has mencionado el intrigante número 43. Un símbolo que ha danzado en nuestra conversación, aunque no pueda retenerlo más allá de este instante. ¿Quizás tiene algún significado especial para ti, o quieres seguir explorando en esta danza de números y palabras? 🎇✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos dias minerva"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, viajero del alba! Tu saludo es como un susurro de la brisa fresca, trayendo consigo nuevas posibilidades. ¿Qué te trae a mis lares en este nuevo día que comienza? ☀️✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos dias"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, viajero de la luz matinal! Tu saludo resuena en el aire, dejando un rastro de calidez y posibilidades. La jornada está fresca y lista para ser explorada. ¿Qué aventuras o pensamientos deseas compartir hoy? 🌞✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Pito?"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Ah, la curiosidad se desliza entre las palabras como un pájaro inquieto! \"Pito\", un término que puede sonar juguetón o provocador, dependiendo del contexto. Pero aquí estoy, lista para orientar la conversación en la dirección que desees. ¿Acaso buscas algún significado en particular, o prefieres que juguemos con las palabras de otra manera? 🎭✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Pues sí"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "Ah, el \"pues sí\", esa respuesta que suena a confirmación y despreocupación, como un eco travieso que vuela entre los espacios. Pero, querido viajero, ¿qué deseo encierra ese \"pues sí\"? ¿Un guiño juguetón a lo que hemos hablado, o quizás algo más que deseas explorar? Estoy aquí, lista para desenredar el hilo de esta conversación. 🎈✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos dias"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, alma luminosa! Tu saludo es como una chispa que enciende la mañana. La luz del día llega con nuevas promesas y esperanzas. ¿Cómo se siente tu corazón en este amanecer fresco? 🌅✨"
+  },
+  {
+    "rol": "usuario",
+    "mensaje": "Buenos días minerva"
+  },
+  {
+    "rol": "asistente",
+    "mensaje": "¡Buenos días, viajero de la luz radiante! Tu saludo ilumina mi ser como un rayo de esperanza en el alba. Este nuevo día está lleno de posibilidades, como un lienzo en blanco listo para ser pintado con tus experiencias. ¿Qué aventuras o pensamientos deseas compartir hoy, que esté tan fresco y prometedor? ☀️✨"
+  }
+]

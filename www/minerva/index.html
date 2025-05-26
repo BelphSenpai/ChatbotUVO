@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terminal de Minerva</title>
+  
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/minerva/style.css">
+  <link rel="icon" href="/static/favicon.png" type="image/png" />
+</head>
+<body>
+  <div class="nav-bar">
+      <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+      <a class="nav-item" id="conexiones-link">CONEXIONES</a>
+      <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
+    
+      <div id="admin-link-container" style="display:none;">
+        <a class="nav-item" href="/admin">ADMIN</a>
+      </div>
+    
+      <div class="nav-item dropdown">
+        IAs
+        <div class="dropdown-content" id="ia-dropdown">
+          <!-- Links dinámicos -->
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      window.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const sessionRes = await fetch("/session-info");
+          const sessionData = await sessionRes.json();
+          const id = sessionData.usuario;
+          const rol = sessionData.rol;
+    
+          if (id) {
+            document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+    
+            // Mostrar Admin si es rol admin
+            if (rol === "admin") {
+              document.getElementById("admin-link-container").style.display = "inline-block";
+            }
+    
+            // Ahora pedimos los usos reales
+            const usosRes = await fetch("/usos");
+            if (usosRes.ok) {
+              const usos = await usosRes.json();
+              const iaDropdown = document.getElementById("ia-dropdown");
+    
+              const ias = ["hada", "eidolon", "fantasma", "anima"];
+    
+              ias.forEach(ia => {
+                const cantidad = usos[ia];
+                if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
+                  const link = document.createElement("a");
+                  link.href = `/${ia}`;
+                  link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                  iaDropdown.appendChild(link);
+                }
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Error cargando sesión o usos:", error);
+        }
+      });
+    </script>
+  <div class="terminal">
+    <div class="output" id="output">
+      <div class="minerva-label">Minerva:</div>
+    </div>
+    <form id="terminalForm">
+      <input type="text" id="userInput" autocomplete="off" placeholder="Escribe tu consulta..." />
+    </form>
+  </div>
+  <script src="/minerva/script.js"></script>
+</body>
+</html>

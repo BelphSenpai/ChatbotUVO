@@ -174,49 +174,35 @@ def preparar_contexto_estructurado(chunks_texto):
 
 # [!] NETEJAR CHUNKS PER EVITAR CONFLICTES DE CONTEXT
 
-def generar_prompt(historial, user_input, umbral_similitud=0.45, contexto_extra=None):
-    
-    prompt = f"### \n{instrucciones_globales}\n\n"
+def generar_prompt(historial, user_input, contexto_extra=None):
+    prompt = f"{instrucciones_globales}\n\n"
 
-    #contexto_extra = preparar_contexto_estructurado(contexto_extra)
-    
     if contexto_extra:
-        prompt += f"{contexto_extra}\n"
+        prompt += f"{contexto_extra}\n\n"
 
-    '''
-    if historial:
-        prompt += f"### HISTORIAL (solo para contexto de conversación):\n{historial}\n\n"
-    '''
-        
-    # Buscar mensaje de sistema más relevante para contexto
-    contexto_sistema = ""
-    emb_input = modelo_embeddings.encode([user_input])[0]
+    if name_ia.strip().lower() == "minerva" and historial:
+        historial_texto = ""
+        for mensaje in historial:
+            rol = mensaje.get("rol")
+            contenido = mensaje.get("mensaje", "").strip()
+            if contenido:
+                if rol == "usuario":
+                    historial_texto += f"Usuario: {contenido}\n"
+                elif rol == "asistente":
+                    historial_texto += f"Asistente: {contenido}\n"
 
-    # Buscamos en el historial de mensajes para encontrar el último mensaje del sistema usando embeddings
+        if historial_texto.strip():
+            prompt += (
+                "### HISTORIAL GENERAL DE CONVERSACIÓN CON EL USUARIO\n"
+                "Este historial no debe influir directamente en los hechos. Úsalo solo como guía emocional, de tono o coherencia relacional.\n"
+                f"{historial_texto}\n\n"
+            )
 
-    # PETACIÓ DE HISTORIAL
-
-    '''
-    for mensaje in reversed(historial):
-        if mensaje["rol"] == "usuario":
-            emb_mensaje = modelo_embeddings.encode([mensaje["mensaje"]])[0]
-            similitud = cosine_similarity([emb_input], [emb_mensaje])[0][0]
-            if similitud >= umbral_similitud:
-                contexto_sistema = mensaje["mensaje"]
-                break
-
-    if contexto_sistema:
-        prompt += f"### contexto del usuario mas relevante: {contexto_sistema}\n"
-    '''
-
-    prompt += f"### INPUT DEL USUARIO: {user_input}\n\n"
-    
-    '''prompt = (
-        "⚠️ Recordatorio: solo puedes responder con información contenida en los fragmentos anteriores salvo para encontrar emojis por ascii nuevos. "
-        "Si el usuario pregunta algo como una receta, un dato moderno, eventos actuales, o cualquier cosa no contenida en los fragmentos, responde con [DATA NOT FOUND].\n\n"
-    ) + prompt'''
+    prompt += f"### INPUT ACTUAL DEL USUARIO\nUsuario: {user_input}\n"
 
     return prompt
+
+
 
 def buscar_fragmentos_relevantes_con_padres(query, k=5, contexto_padre=True):
     if semantic_index is None:
@@ -507,8 +493,47 @@ def modo_consulta(user_input):
 def responder_a_usuario(mensaje, nombre_ia="Hada", usuario="invitado"):
     iniciar_minerva(nombre_ia)
     prompt_base = f"El usuario actual se llama {usuario}. Puedes referirte a él como {usuario}. "
-    prompt_completo = prompt_base + mensaje
-    return modo_consulta(prompt_completo)
+
+    # === Solo si es Minerva, aplicamos uso de historial ===
+    historial = []
+    if nombre_ia.lower() == "minerva":
+        import os
+        import json
+
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        historial_dir = os.path.join(base_dir, "historiales")
+        os.makedirs(historial_dir, exist_ok=True)
+        historial_path = os.path.join(historial_dir, f"{usuario}_historial.json")
+
+        # Cargar historial previo si existe
+        if os.path.exists(historial_path):
+            with open(historial_path, "r", encoding="utf-8") as f:
+                try:
+                    historial = json.load(f)
+                except Exception:
+                    historial = []
+
+        # Añadir nuevo mensaje del usuario
+        historial.append({"rol": "usuario", "mensaje": mensaje})
+
+    # Buscar contexto world.json
+    world_info_filtrado = buscar_fragmentos_relevantes_con_padres(mensaje, k=5, contexto_padre=True)
+    contexto_formateado = preparar_contexto_estructurado(world_info_filtrado)
+
+    # Generar prompt incluyendo historial si aplica
+    prompt = generar_prompt(historial if nombre_ia.lower() == "minerva" else [], mensaje, contexto_extra=contexto_formateado)
+
+    respuesta = ask(prompt)
+
+    # Añadir respuesta al historial (solo Minerva)
+    if nombre_ia.lower() == "minerva":
+        historial.append({"rol": "asistente", "mensaje": respuesta})
+        with open(historial_path, "w", encoding="utf-8") as f:
+            json.dump(historial, f, ensure_ascii=False, indent=2)
+
+    return respuesta
+
+
 
 # Cositas de inicialización
 

@@ -3,18 +3,20 @@
     "anima": -1,
     "eidolon": -1,
     "hada": -1,
-    "fantasma": -1
-  },
-  "mateo": {
-    "anima": 3,
-    "eidolon": 3,
-    "hada": 3,
-    "fantasma": 3
+    "fantasma": -1,
+    "minerva": -1
   },
   "vaquilla": {
     "anima": 3,
     "eidolon": 3,
     "hada": 3,
     "fantasma": 3
+  },
+  "modrij": {
+    "anima": 3,
+    "eidolon": 3,
+    "hada": 0,
+    "fantasma": 3,
+    "minerva": -1
   }
 }
