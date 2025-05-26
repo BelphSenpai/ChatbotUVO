@@ -170,8 +170,6 @@ async def ia_query(request: Request):
         guardar_preguntas()
     return JSONResponse({"respuesta": respuesta})
 
-[...] # El código anterior permanece igual hasta el final del endpoint /query
-
 # ADMINISTRACIÓN
 
 @app.get("/admin")
