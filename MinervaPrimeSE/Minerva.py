@@ -13,11 +13,10 @@ import faiss
 from dotenv import load_dotenv
 from colorama import init, Fore, Style
 import difflib
-from utils import cargar_json, guardar_json
+from MinervaPrimeSE.utils import cargar_json, guardar_json, get_name_ia
 import re
 from sklearn.preprocessing import normalize 
 from sklearn.metrics.pairwise import cosine_similarity
-from utils import get_name_ia
 
 # Inicializar colorama (colores en terminal para  hacerlo bonito jaja salu2)
 init(autoreset=True)
