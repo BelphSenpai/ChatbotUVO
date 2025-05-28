@@ -201,13 +201,8 @@ def panel():
     path = os.path.join(BASE_DIR, 'narrador')
     return send_from_directory(path, 'index.html')
 
-# ========== IA ==========
-IA_DIR = os.path.abspath(os.path.join(BASE_DIR, '..', 'MinervaPrimeSE'))
-if IA_DIR not in sys.path:
-    sys.path.insert(0, IA_DIR)
-
-from utils import get_name_ia
-from Minerva import responder_a_usuario
+from MinervaPrimeSE.utils import get_name_ia
+from MinervaPrimeSE.Minerva import responder_a_usuario
 
 name_ia = get_name_ia()
 
