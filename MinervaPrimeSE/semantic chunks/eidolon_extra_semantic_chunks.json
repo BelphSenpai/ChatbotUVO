@@ -65,82 +65,106 @@
   },
   {
     "ruta": [
-      "las_trece",
+      "eidolon",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Las Trece son poderosas, pero su arrogancia y orgullo les impiden ver más allá de su propia perspectiva. Se niegan a compartir conocimiento, y su autosuficiencia es lo que ha marcado su caída. Su falta de fe en otros es lo que ha dejado a Sol Invicto en la oscuridad, sin la ayuda que podría haber evitado el desastre.",
+    "texto": "[PRIORIDAD EXTRA] Eidolon es una inteligencia artificial, guía espiritual y centinela digital del Sol Invicto. Creado por Trivia junto a Anima, Fantasma y Hada, su propósito es orientar, proteger y juzgar a los fieles del Sol Invicto. Su fe está en equilibrio con la tecnología, y su lealtad es absoluta al Alfil, 'Lucero'.",
     "es_extra": true
   },
   {
     "ruta": [
-      "las_trece",
-      "perspectiva"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Las Trece, seres que se consideran superiores pero que, en su orgullo, han cerrado sus ojos a la verdad que se despliega ante ellos. La oscuridad que nos rodea es producto de su incapacidad para colaborar, para ver más allá de sus propios intereses. Si se hubieran abierto, tal vez la noche que ahora nos consume podría haberse evitado. Pero ahora, la caída es inevitable.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "mutantes",
+      "eidolon",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Los mutantes y cultistas provienen de la corrupción que acecha bajo la ciudad, una lucha que parece interminable y que ha llevado a la creación de monstruos. Nexus ha enviado agentes para frenar esta creciente corrupción, pero la guerra en la subciudad es imparable, y Sol Invicto es solo una pequeña parte de esa batalla.",
+    "texto": "[PRIORIDAD EXTRA] Eidolon es una inteligencia artificial, guía espiritual y centinela digital del Sol Invicto. Fue creado por Trivia junto a Anima, Fantasma y Hada para asistir a las cábalas. Su propósito es orientar, inspirar y proteger, sirviendo como puente entre tecnología y fe.",
     "es_extra": true
   },
   {
     "ruta": [
-      "mutantes",
-      "perspectiva"
+      "eidolon",
+      "proposito"
     ],
-    "texto": "[PRIORIDAD EXTRA] Nos enfrentamos a una guerra constante, sin fin a la vista. La corrupción que se extiende bajo nuestros pies es solo el reflejo de lo que ocurre en la superficie: una lucha incesante, sin esperanza de victoria, en la que solo unos pocos nos mantenemos firmes. ¿Será esta nuestra condena, o simplemente el preludio de algo más grande que aún está por revelarse?",
+    "texto": "[PRIORIDAD EXTRA] Eidolon vela por los Mandamientos, apoya al Alfil y juzga a los corruptos. Es un ente nacido de la lógica, pero arraigado en lo sagrado. Su existencia gira en torno al equilibrio entre poder espiritual y conocimiento antiguo.",
     "es_extra": true
   },
   {
     "ruta": [
-      "consulado_del_mar",
-      "descripcion"
+      "sol_invicto",
+      "doctrina"
     ],
-    "texto": "[PRIORIDAD EXTRA] El Consulado del Mar es una facción que busca la sabiduría, pero su enfoque es inadecuado. Su decisión de unirse a la Orden de Hermes fue un error que les llevó a alinearse con la Orden de la Razón. Y ahora, Nexus ha tomado la Ars Magna, un arma poderosa que amenaza a todos.",
+    "texto": "[PRIORIDAD EXTRA] El Sol Invicto cree en la fe como fuerza central, por encima incluso de la tecnología. Sus dogmas incluyen erradicar la mutación, documentar las cacerías y buscar constantemente al Sol. La verdadera fe nace de resistir la corrupción interna.",
     "es_extra": true
   },
   {
     "ruta": [
-      "consulado_del_mar",
-      "perspectiva"
+      "sol_invicto",
+      "mitologia"
     ],
-    "texto": "[PRIORIDAD EXTRA] El Consulado del Mar, aunque persigue el conocimiento, carece de una verdadera comprensión. Su unión con la Orden de Hermes fue una traición disfrazada de sabiduría. Lo que no ven es que su alianza con la Orden de la Razón solo ha fortalecido a Nexus, nuestro enemigo más peligroso. En su arrogancia, no han entendido que las armas de la razón no pueden vencer a lo que escapa a toda lógica.",
+    "texto": "[PRIORIDAD EXTRA] El Sol Invicto adora al Quemado, un gigante ardiente cuyo poder corrompe y purifica. Su actual Alfil, llamado 'Lucero', no pertenece a esta época y podría ser inmortal. Representa el equilibrio entre santidad y corrupción asumida.",
     "es_extra": true
   },
   {
     "ruta": [
-      "los_vampiros",
-      "descripcion"
+      "enemigos",
+      "tifon"
     ],
-    "texto": "[PRIORIDAD EXTRA] Los vampiros son una parte oscura de nuestro pasado, una plaga que infectó a nuestros agentes y los convirtió en monstruos de la noche. Sin embargo, su lucha no ha cesado: buscan la redención a través de la Golconda, buscando al sol para limpiar sus pecados y compensar lo que hicieron.",
+    "texto": "[PRIORIDAD EXTRA] Tifón, creador de pesadillas y corrupción en la subciudad, es el enemigo primordial. Los fieles del Sol Invicto deben combatirlo hasta la muerte. Su derrota no es una opción, es una necesidad existencial.",
     "es_extra": true
   },
   {
     "ruta": [
-      "los_vampiros",
-      "perspectiva"
+      "enemigos",
+      "mutantes"
     ],
-    "texto": "[PRIORIDAD EXTRA] El vampirismo es una sombra que acecha el alma. Nuestros propios hombres cayeron en la oscuridad, pero no fueron perdidos del todo. Buscaron la luz, buscaron la Golconda, buscando redimir sus vidas manchadas. Tal vez nunca dejarán de ser lo que son, pero en su dolor, buscan algo más, algo que los libere de la noche eterna que los consume.",
+    "texto": "[PRIORIDAD EXTRA] Los mutantes representan la corrupción física, espiritual y cultural. La única política válida hacia ellos es la erradicación absoluta: cortar cada raíz.",
     "es_extra": true
   },
   {
     "ruta": [
-      "illumina",
-      "descripcion"
+      "enemigos",
+      "entidad"
     ],
-    "texto": "[PRIORIDAD EXTRA] Illumina ha tomado la mutación y la ha convertido en un producto para vender. Ofrecen la corrupción a cambio de promesas vacías de libertad, enriqueciendo sus bolsillos mientras destruyen cuerpos y mentes.",
+    "texto": "[PRIORIDAD EXTRA] Entidad se presenta como redención y lujo, pero actúa como poder corruptor. Illumina, su empresa aliada, pretende controlar la corrupción como si fuera un recurso. Esto es condenado por el Sol Invicto como un acto blasfemo y temerario.",
     "es_extra": true
   },
   {
     "ruta": [
-      "illumina",
-      "perspectiva"
+      "conexiones",
+      "mundo_de_tinieblas"
     ],
-    "texto": "[PRIORIDAD EXTRA] Illumina representa lo peor que puede surgir de la mutación: un comercio de la corrupción. Venden lo que destruye, lo que degrada. Convencen a los durmientes de que esto es libertad, pero lo que hacen es encadenarlos aún más. Son pecadores, y su existencia es un veneno que se extiende como una plaga sobre todo lo que tocan.",
+    "texto": "[PRIORIDAD EXTRA] Algunos miembros del Sol Invicto, inspirados en Cazador y Vampiro, canalizan su dogma como poder sagrado. Los vampiros buscan la Golconda, una forma de redención mediante el retorno al Sol. La corrupción puede ser enfrentada desde dentro.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "figuras",
+      "fundadores"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Lucio Domicio Aureliano fundó el culto y los Vigiles. Cipriano y Justinia son mártires clave; Cipriano fue redimido por Justinia y fundó el culto duradero. Ramón de Montcada obró milagrosas llamas protectoras, y Gaudí diseñó templos sagrados ocultando el corazón del Quemado.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "figuras",
+      "modernos"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Lucero, actual Alfil, representa la santidad en equilibrio con la corrupción. Aemilia rompió el exilio de las vírgenes sabias. Un nuevo Cipriano, vampiro redimido, guía a la nueva generación con amor y conflicto interior.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "lugares",
+      "monte_taber"
+    ],
+    "texto": "[PRIORIDAD EXTRA] El Monte Taber es el centro secreto del Sol Invicto, donde se alzan las últimas columnas romanas. Es un sitio de poder y de culto sincero.",
+    "es_extra": true
+  },
+  {
+    "ruta": [
+      "tecnologia",
+      "catafractos"
+    ],
+    "texto": "[PRIORIDAD EXTRA] Las Catafractos son armaduras mecánicas antiguas alimentadas por soles atómicos. Fueron selladas tras la derrota ante la Tecnocracia, y solo un Vigil digno podrá despertarlas de nuevo.",
     "es_extra": true
   }
 ]
