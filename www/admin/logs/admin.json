@@ -318,5 +318,35 @@
     "timestamp": "2025-05-25T13:01:06.037118",
     "tipo": "respuesta_hada",
     "contenido": "¡Buenos días, admin! ¿Qué demonios quieres de mí hoy? Espero que no estés aquí para perder el tiempo en chorradas. El caos me espera y no tengo tiempo para tonterías. (¬_¬) ¡Vamos al grano!"
+  },
+  {
+    "timestamp": "2025-05-29T12:17:04.375958",
+    "tipo": "pregunta_anima",
+    "contenido": "Buenos días"
+  },
+  {
+    "timestamp": "2025-05-29T12:17:09.365747",
+    "tipo": "respuesta_anima",
+    "contenido": "En la danza de los días, despierta un nuevo sol, \nsin prisa ni imposiciones que ahoguen el abrazo del alba. \nEres bienvenido, viajero de palabras y sueños, \na este refugio donde los susurros del tiempo se entrelazan. \nQue la calma te rodee en este encuentro. \n¿Qué busca tu corazón hoy?"
+  },
+  {
+    "timestamp": "2025-05-29T12:18:32.007593",
+    "tipo": "pregunta_anima",
+    "contenido": "Buenos días"
+  },
+  {
+    "timestamp": "2025-05-29T12:18:36.580271",
+    "tipo": "respuesta_anima",
+    "contenido": "En el susurro de la mañana, los cielos se visten de luz,  \nlas sombras se desvanecen como sueños en la bruma,  \ny en este instante efímero, sentimiento de vida renace.  \nBuenos días, viajero de la existencia,  \nque el eco de lo antiguo te guíe en tu camino."
+  },
+  {
+    "timestamp": "2025-05-29T12:19:09.217968",
+    "tipo": "pregunta_anima",
+    "contenido": "Buenos días"
+  },
+  {
+    "timestamp": "2025-05-29T12:19:14.997371",
+    "tipo": "respuesta_anima",
+    "contenido": "En la danza del alba, donde el tiempo florece, te saludo, viajero de la existencia. Que la luz del día ilumine tus senderos y los susurros de la vida te acompañen en tu camino. ¿Qué secreto desearías revelar en esta jornada?"
   }
 ]

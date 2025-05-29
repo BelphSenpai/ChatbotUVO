@@ -266,6 +266,17 @@ def ia_query():
     return jsonify({"respuesta": respuesta})
 
 # ========== ADMINISTRACIÓN ==========
+
+def cargar_personajes():
+    global PERSONAJES
+    with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
+        PERSONAJES = json.load(f)
+
+def guardar_personajes():
+    with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
+        json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
+
+
 @app.route('/admin')
 def admin_panel():
     if session.get('rol') != 'admin':
@@ -308,6 +319,8 @@ def admin_personajes():
         clave_hash = bcrypt.hashpw(clave.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
         PERSONAJES[nombre_lower] = {"clave": clave_hash, "rol": rol}
+        guardar_personajes()
+        cargar_personajes()  # <<< importante
 
         if nombre_lower not in preguntas_restantes:
             preguntas_restantes[nombre_lower] = {
@@ -317,12 +330,10 @@ def admin_personajes():
                 "fantasma": 3
             }
 
-        with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
-            json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
-
         guardar_preguntas()
 
         return jsonify({"mensaje": "Personaje creado o actualizado"})
+
 
     if request.method == 'DELETE':
         datos = request.json

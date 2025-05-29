@@ -12,6 +12,12 @@
           "id": "lucky",
           "label": "Lucky"
         }
+      },
+      {
+        "data": {
+          "id": "admin",
+          "label": "admin"
+        }
       }
     ],
     "edges": [
@@ -21,6 +27,22 @@
           "label": "pito",
           "source": "Victoria",
           "target": "lucky"
+        }
+      },
+      {
+        "data": {
+          "id": "e1748513107113",
+          "source": "admin",
+          "target": "lucky",
+          "label": "pito"
+        }
+      },
+      {
+        "data": {
+          "id": "e1748513113657",
+          "source": "admin",
+          "target": "Victoria",
+          "label": "pito"
         }
       }
     ]
