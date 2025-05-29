@@ -10,3 +10,11 @@ services:
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/app/www/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data

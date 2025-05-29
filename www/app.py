@@ -292,6 +292,7 @@ def admin_personajes():
     cargar_preguntas()
 
     if request.method == 'GET':
+        cargar_personajes()  # ✅ Esto garantiza que la vista admin esté siempre actualizada
         lista = []
         for nombre in PERSONAJES.keys():
             user_preguntas = preguntas_restantes.get(nombre, {
@@ -320,7 +321,7 @@ def admin_personajes():
 
         PERSONAJES[nombre_lower] = {"clave": clave_hash, "rol": rol}
         guardar_personajes()
-        cargar_personajes()  # <<< importante
+        cargar_personajes()
 
         if nombre_lower not in preguntas_restantes:
             preguntas_restantes[nombre_lower] = {
@@ -333,6 +334,25 @@ def admin_personajes():
         guardar_preguntas()
 
         return jsonify({"mensaje": "Personaje creado o actualizado"})
+
+    if request.method == 'DELETE':
+        datos = request.json
+        nombre = datos.get('nombre')
+
+        if not nombre or nombre.lower() not in PERSONAJES:
+            return jsonify({"error": "Personaje no encontrado"}), 404
+
+        nombre_lower = nombre.strip().lower()
+
+        del PERSONAJES[nombre_lower]
+        if nombre_lower in preguntas_restantes:
+            del preguntas_restantes[nombre_lower]
+
+        guardar_personajes()
+        guardar_preguntas()
+
+        return jsonify({"mensaje": "Personaje eliminado"})
+
 
 
     if request.method == 'DELETE':
