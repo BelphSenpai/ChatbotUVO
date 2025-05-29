@@ -10,3 +10,4 @@ bcrypt
 asgiref
 jinja2
 flask
+gunicorn

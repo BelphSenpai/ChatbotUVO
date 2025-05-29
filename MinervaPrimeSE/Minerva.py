@@ -16,7 +16,6 @@ import difflib
 from MinervaPrimeSE.utils import cargar_json, guardar_json, get_name_ia
 import re
 from sklearn.preprocessing import normalize 
-from sklearn.metrics.pairwise import cosine_similarity
 
 # Inicializar colorama (colores en terminal para  hacerlo bonito jaja salu2)
 init(autoreset=True)
