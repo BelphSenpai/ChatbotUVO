@@ -1,27 +1,232 @@
 [
   {
     "ruta": [
+      "mundo_fantasma",
       "EraTecnologia",
       "Titulo"
     ],
-    "texto": "Distopía"
+    "texto": "Distopía",
+    "topic": "gobierno",
+    "subtopic": "distopia_totalitaria"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "EraTecnologia",
       "Resumen"
     ],
-    "texto": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo."
+    "texto": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "EraTecnologia",
       "plaga"
     ],
-    "texto": "La plaga, que tuvo muchas formas, como Kraken, Centauro, Basilisco y ahora Tifón, es una manifestación del mundo que se ha ido al traste. La humanidad pensó que el fin estaba cerca, pero en vez de eso, se enfrentó a una nueva forma de vida mutante que persiste entre ellos."
+    "texto": "La plaga, que tuvo muchas formas, como Kraken, Centauro, Basilisco y ahora Tifón, es una manifestación del mundo que se ha ido al traste. La humanidad pensó que el fin estaba cerca, pero en vez de eso, se enfrentó a una nueva forma de vida mutante que persiste entre ellos.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Obligatoria y con control total de la salud del ciudadano",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Pérdida de beneficios si no se siguen las indicaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Mejoras laborales forzadas por el sistema",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      3
+    ],
+    "texto": "Mejoras no esenciales rechazadas, generando mercado negro médico",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Educacion",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Currículum adaptado a necesidades del mercado",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Educacion",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Sin espacio para expectativas o vocación personal",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Jornadas de 4 horas por límites físicos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Enfermedad implica sanción del sistema",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Asignación de vivienda según estatus laboral",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      3
+    ],
+    "texto": "Dieta limitada y controlada",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Sistema de vigilancia omnipresente ('ojos')",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Castigos progresivos: trabajo extra, reeducación psicológica, exclusión",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Desigualdad en la aplicación de la ley",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Medios",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "La libre expresión y redes sociales independientes son consideradas terrorismo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "DistopiaTotalitaria",
+      "Principios",
+      "Medios",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Control absoluto de la información",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -29,10 +234,13 @@
       "Velo",
       "Descripcion"
     ],
-    "texto": "Sistema de filtros visuales aplicados a la realidad"
+    "texto": "Sistema de filtros visuales aplicados a la realidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -40,10 +248,13 @@
       "Velo",
       "Impacto"
     ],
-    "texto": "Impulsa el consumismo, elimina la percepción objetiva"
+    "texto": "Impulsa el consumismo, elimina la percepción objetiva",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -51,10 +262,13 @@
       "Velo",
       "VersionGratuita"
     ],
-    "texto": "Incluye anuncios cada hora"
+    "texto": "Incluye anuncios cada hora",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -62,10 +276,13 @@
       "Velo",
       "ProgramacionOnirica"
     ],
-    "texto": "Permite controlar sueños, aunque de forma dudosa"
+    "texto": "Permite controlar sueños, aunque de forma dudosa",
+    "topic": "espiritualidad",
+    "subtopic": "memoria_y_sueño"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -73,10 +290,13 @@
       "Unidades",
       "Descripcion"
     ],
-    "texto": "Asistentes robóticos domésticos"
+    "texto": "Asistentes robóticos domésticos",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -84,10 +304,13 @@
       "Unidades",
       "Impacto"
     ],
-    "texto": "Sustituyen trabajo humano y vigilan comportamiento"
+    "texto": "Sustituyen trabajo humano y vigilan comportamiento",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "DistopiaTotalitaria",
       "Principios",
       "Tecnologia",
@@ -95,1806 +318,4550 @@
       "Unidades",
       "DerechoUniversal"
     ],
-    "texto": "Una por unidad familiar europea"
+    "texto": "Una por unidad familiar europea",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "Equilibrio",
       "HipotesisGaia",
       "Descripcion"
     ],
-    "texto": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida"
+    "texto": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "Equilibrio",
       "HipotesisGaia",
       "Autor"
     ],
-    "texto": "James Lovelock (1969)"
+    "texto": "James Lovelock (1969)",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      0
+    ],
+    "texto": "Temperatura estable a pesar del aumento solar",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      1
+    ],
+    "texto": "Composición atmosférica constante",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      2
+    ],
+    "texto": "Salinidad oceánica constante",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
       "Equilibrio",
       "HipotesisGaia",
       "ReaccionGaia",
       "Causa"
     ],
-    "texto": "Alteración del equilibrio natural por acción humana"
+    "texto": "Alteración del equilibrio natural por acción humana",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "Equilibrio",
       "HipotesisGaia",
       "ReaccionGaia",
       "Efecto"
     ],
-    "texto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales"
+    "texto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "Equilibrio",
       "HipotesisGaia",
       "ReaccionGaia",
       "Metafora"
     ],
-    "texto": "La Tierra rechaza a la humanidad como una infección"
+    "texto": "La Tierra rechaza a la humanidad como una infección",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "ImplantesYMutantes",
       "Mutaciones",
       "Origen"
     ],
-    "texto": "Plaga que alteró microorganismos y causó mutaciones impredecibles"
+    "texto": "Plaga que alteró microorganismos y causó mutaciones impredecibles",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "ImplantesYMutantes",
       "Mutaciones",
       "Distribucion"
     ],
-    "texto": "Aire, agua, comida"
+    "texto": "Aire, agua, comida",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Efectos",
+      0
+    ],
+    "texto": "Animales e insectos mutantes ocultos en la infraciudad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Efectos",
+      1
+    ],
+    "texto": "Humanos transformados en aberraciones conscientes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
       "ImplantesYMutantes",
       "Cyberinfeccion",
       "Descripcion"
     ],
-    "texto": "Abuso de mejoras tecnológicas físicas y estéticas"
+    "texto": "Abuso de mejoras tecnológicas físicas y estéticas",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      0
+    ],
+    "texto": "Saturación física del cuerpo humano",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      1
+    ],
+    "texto": "Dependencia de drogas para soportar implantes",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      2
+    ],
+    "texto": "Pérdida de control corporal y mental",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      3
+    ],
+    "texto": "Transformación en esclavos tecnológicos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "ImplantesYMutantes",
+      "Metafora_General"
+    ],
+    "texto": "El ciclo de mutación es una metáfora de la decadencia humana. En su afán por mejorar y evolucionar, la humanidad se ha despojado de todo lo que la hacía única. Los mutantes y los cyberinfectados son un reflejo de lo que el hombre ha hecho a su propia alma: ha sacrificado su esencia a cambio de una 'mejora' que lo convierte en algo más cercano a una máquina que a un ser humano. La plaga, que tuvo muchas formas, como Kraken, Centauro, Basilisco y ahora Tifón, es una manifestación del mundo que se ha ido al traste. La humanidad pensó que el fin estaba cerca, pero en vez de eso, se enfrentó a una nueva forma de vida mutante que persiste entre ellos.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
       "id"
     ],
-    "texto": "entidad"
+    "texto": "entidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
       "nombre"
     ],
-    "texto": "Entidad"
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
       "descripcion"
     ],
-    "texto": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia."
+    "texto": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "controversias[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "objetivos",
+      0
+    ],
+    "texto": "Eliminar el error humano del gobierno y la seguridad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "objetivos",
+      1
+    ],
+    "texto": "Sustituir estructuras políticas tradicionales por algoritmos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "objetivos",
+      2
+    ],
+    "texto": "Asegurar estabilidad total mediante vigilancia predictiva",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "objetivos",
+      3
+    ],
+    "texto": "Controlar la narrativa social y cultural",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "specialties",
+      0
+    ],
+    "texto": "Desarrollo de nuevas tecnologías",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "specialties",
+      1
+    ],
+    "texto": "Inteligencia artificial supercomputacional (NEXUS)",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "specialties",
+      2
+    ],
+    "texto": "Reestructuración empresarial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "notable_achievements",
+      0
+    ],
+    "texto": "Sustitución de los sistemas educativos, defensa, comunicación y sanidad a nivel nacional",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "notable_achievements",
+      1
+    ],
+    "texto": "Erradicación de las fake news y la ansiedad comunicativa",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "notable_achievements",
+      2
+    ],
+    "texto": "Mejoras sustanciales en la calidad de vida a través de la medicina avanzada",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "controversias",
+      0,
       "titulo"
     ],
-    "texto": "Escándalo de Nueva Barchino"
+    "texto": "Escándalo de Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "controversias[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "controversias",
+      0,
       "detalles"
     ],
-    "texto": "Entidad adquirió las licencias de Nueva Barchino tras un escándalo relacionado con experimentos ilegales con seres humanos. La empresa expuso la verdad, asumió la responsabilidad y comenzó un proceso de reestructuración para reparar los daños."
+    "texto": "Entidad adquirió las licencias de Nueva Barchino tras un escándalo relacionado con experimentos ilegales con seres humanos. La empresa expuso la verdad, asumió la responsabilidad y comenzó un proceso de reestructuración para reparar los daños.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "controversias",
+      0,
+      "acciones_tomadas",
+      0
+    ],
+    "texto": "Programa de apoyo a los damnificados",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "controversias",
+      0,
+      "acciones_tomadas",
+      1
+    ],
+    "texto": "Reestructuración empresarial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "controversias",
+      0,
+      "acciones_tomadas",
+      2
+    ],
+    "texto": "Iniciativas de salud global para combatir la Plaga",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
       "id"
     ],
-    "texto": "en_krasnaya"
+    "texto": "en_krasnaya",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
       "nombre"
     ],
-    "texto": "Krasnaya"
+    "texto": "Krasnaya",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
       "descripcion"
     ],
-    "texto": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. "
+    "texto": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. ",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "emplazamentos importantes[0]",
-      "torres de seguridad"
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "objetivos",
+      0
     ],
-    "texto": "Las Torres de Seguridad se alzan en el corazón de cada barriada, vigilantes implacables sobre la ciudad. En las zonas más densamente pobladas, pueden encontrarse dos o incluso tres de estas gigantescas fortalezas. Como modernos palomares, despliegan enjambres de drones y tejen redes digitales de vigilancia, coordinando fuerzas policiales y anticipando crímenes antes de que sucedan. Pero estas torres son algo más que simples estructuras. Son organismos vivos de metal y datos, autosuficientes en su mantenimiento. Con sistemas de autorreparación, protocolos de limpieza automatizados y defensas autónomas, la presencia humana dentro de ellas es mínima y puntual. No necesitan descanso, no sienten duda ni fatiga. Diseñadas para ser almenaras brutales, su luz no advierte… sentencia."
+    "texto": "El objetivo final de Krasnaya es reemplazar todas las tropas humanas por Unidades de Combate, eliminando así las bajas innecesarias. Sin embargo, las máquinas aún deben aprender de sus compañeros de carne y hueso antes de alcanzar su máxima eficiencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "objetivos",
+      1
+    ],
+    "texto": "Mantener el orden",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "emplazamentos_importantes",
+      0,
+      "torres_de_seguridad"
+    ],
+    "texto": "Las Torres de Seguridad se alzan en el corazón de cada barriada, vigilantes implacables sobre la ciudad. En las zonas más densamente pobladas, pueden encontrarse dos o incluso tres de estas gigantescas fortalezas. Como modernos palomares, despliegan enjambres de drones y tejen redes digitales de vigilancia, coordinando fuerzas policiales y anticipando crímenes antes de que suceden. Pero estas torres son algo más que simples estructuras. Son organismos vivos de metal y datos, autosuficientes en su mantenimiento. Con sistemas de autorreparación, protocolos de limpieza automatizados y defensas autónomas, la presencia humana dentro de ellas es mínima y puntual. No necesitan descanso, no sienten duda ni fatiga. Diseñadas para ser almenaras brutales, su luz no advierte… sentencia.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "id"
     ],
-    "texto": "k_legiones"
+    "texto": "k_legiones",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "nombre"
     ],
-    "texto": "legiones"
+    "texto": "legiones",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "descripcion"
     ],
-    "texto": "Su ejército está organizado en Legiones, cada una compuesta por distintos tipos de agentes. Aunque en el campo de batalla suelen lucir uniformes indistinguibles, dentro de sus filas se encuentran: Militares de profesión – Soldados entrenados en combate táctico y operaciones de alto riesgo. Vigilantes voluntarios – Reclutas civiles que buscan ascender en la estructura de seguridad. Unidades de Combate – Autómatas avanzados, diseñados para reducir la dependencia humana en la guerra."
+    "texto": "Su ejército está organizado en Legiones, cada una compuesta por distintos tipos de agentes. Aunque en el campo de batalla suelen lucir uniformes indistinguibles, dentro de sus filas se encuentran: Militares de profesión – Soldados entrenados en combate táctico y operaciones de alto riesgo. Vigilantes voluntarios – Reclutas civiles que buscan ascender en la estructura de seguridad. Unidades de Combate – Autómatas avanzados, diseñados para reducir la dependencia humana en la guerra.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "id"
     ],
-    "texto": "k_legion_negra"
+    "texto": "k_legion_negra",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "nombre"
     ],
-    "texto": "legión negra"
+    "texto": "legión negra",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "descripcion"
     ],
-    "texto": "La Fuerza de Élite Final. En la policía militar, los contratos son indefinidos. Para algunos, eso significa una carrera. Para otros, una condena. Se rumorea que, tras decenas de misiones, tras incontables heridas y reemplazos, poco queda de humano bajo el metal. Pero hay casos aún peores… Cuando un soldado persiste más allá de la pérdida de carne, cuando su voluntad resiste donde otros se quiebran, es enviado aquí. A la Legión Negra. A la fuerza imparable. Dejan de ser individuos, de ser personas. No tienen historia, solo un propósito: ejecutar la sentencia. Cuando ellos son desplegados, la ciudad contiene el aliento. Los neones titilan, como si el mundo guardara luto. Porque su llegada solo significa una cosa: alguien ha sido condenado, y ellos son el verdugo."
+    "texto": "La Fuerza de Élite Final. En la policía militar, los contratos son indefinidos. Para algunos, eso significa una carrera. Para otros, una condena. Se rumorea que, tras decenas de misiones, tras incontables heridas y reemplazos, poco queda de humano bajo el metal. Pero hay casos aún peores… Cuando un soldado persiste más allá de la pérdida de carne, cuando su voluntad resiste donde otros se quiebran, es enviado aquí. A la Legión Negra. A la fuerza imparable. Dejan de ser individuos, de ser personas. No tienen historia, solo un propósito: ejecutar la sentencia. Cuando ellos son desplegados, la ciudad contiene el aliento. Los neones titilan, como si el mundo guardara luto. Porque su llegada solo significa una cosa: alguien ha sido condenado, y ellos son el verdugo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "nombre"
     ],
-    "texto": "Europa"
+    "texto": "Europa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "nombre_completo"
     ],
-    "texto": "European Technological Mechanizations"
+    "texto": "European Technological Mechanizations",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "id"
     ],
-    "texto": "en_europa"
+    "texto": "en_europa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "description"
     ],
-    "texto": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras."
+    "texto": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "name"
     ],
-    "texto": "HiNoTori"
+    "texto": "HiNoTori",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "description"
     ],
-    "texto": "Una colosal familia mediática oriental. Con una influencia global en prensa escrita, radio, telenoticias, bloggers, influencers y redes sociales. Se adaptó al cambio global aportado por Entidad."
+    "texto": "Una colosal familia mediática oriental. Con una influencia global en prensa escrita, radio, telenoticias, bloggers, influencers y redes sociales. Se adaptó al cambio global aportado por Entidad.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "name"
     ],
-    "texto": "Illumina S.L."
+    "texto": "Illumina S.L.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "description"
     ],
-    "texto": "Pionera en la sanidad privada y en la creación de mejoras 'wet'. Esta empresa se unió a Entidad para cambiar el sistema sanitario a nivel nacional."
+    "texto": "Pionera en la sanidad privada y en la creación de mejoras 'wet'. Esta empresa se unió a Entidad para cambiar el sistema sanitario a nivel nacional.",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
       "internal_project",
       "name"
     ],
-    "texto": "Las Unidades"
+    "texto": "Las Unidades",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
       "internal_project",
       "description"
     ],
-    "texto": "Unidades artificiales creadas para asistir a los humanos. Son el resultado de la fusión entre Soft (software avanzado), Hard (ciberestructura) y Wet (biotecnología). Estas unidades pueden aprender, adaptarse y evolucionar."
+    "texto": "Unidades artificiales creadas para asistir a los humanos. Son el resultado de la fusión entre Soft (software avanzado), Hard (ciberestructura) y Wet (biotecnología). Estas unidades pueden aprender, adaptarse y evolucionar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "subprojects[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "internal_project",
+      "categories",
+      0
+    ],
+    "texto": "Centenas: Especializadas en ámbito militar y de seguridad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "internal_project",
+      "categories",
+      1
+    ],
+    "texto": "Decenas: Destinadas a la sanidad y la educación.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "internal_project",
+      "categories",
+      2
+    ],
+    "texto": "Unidades: Modelos domésticos de producción masiva.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "internal_project",
+      "categories",
+      3
+    ],
+    "texto": "Decimales: Unidades defectuosas, destinadas a trabajos peligrosos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "subprojects",
+      0,
       "name"
     ],
-    "texto": "Sistema Cacería"
+    "texto": "Sistema Cacería",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "subprojects[0]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "subprojects",
+      0,
       "description"
     ],
-    "texto": "Sistema de defensa que localiza y elimina a los netrunners que invaden la red. Se rumorea que se vuelve más fuerte con cada generación."
+    "texto": "Sistema de defensa que localiza y elimina a los netrunners que invaden la red. Se rumorea que se vuelve más fuerte con cada generación.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "subprojects[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "subprojects",
+      1,
       "name"
     ],
-    "texto": "El Sistema Velo"
+    "texto": "El Sistema Velo",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "subprojects[1]",
+      "mundo_fantasma",
+      "entidad",
+      0,
+      "subprojects",
+      1,
       "description"
     ],
-    "texto": "Un sistema de filtros que personaliza la percepción de la realidad, permitiendo a los usuarios ajustar lo que ven y experimentan."
+    "texto": "Un sistema de filtros que personaliza la percepción de la realidad, permitiendo a los usuarios ajustar lo que ven y experimentan.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "id"
     ],
-    "texto": "loc_montjuic"
+    "texto": "loc_montjuic",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "nombre"
     ],
-    "texto": "Montjuïc"
+    "texto": "Montjuïc",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "tipo"
     ],
-    "texto": "nodo espiritual"
+    "texto": "nodo espiritual",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "descripcion"
     ],
-    "texto": "Una colina que alberga ruinas de una batalla mágica de 1714. La energía está fracturada."
+    "texto": "Una colina que alberga ruinas de una batalla mágica de 1714. La energía está fracturada.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "regiones",
+      0
+    ],
+    "texto": "Barcelona",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "regiones",
+      1
+    ],
+    "texto": "Umbra",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "regiones",
+      2
+    ],
+    "texto": "Plano físico",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "puntos_clave",
+      0
+    ],
+    "texto": "Ruinas del castillo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "puntos_clave",
+      1
+    ],
+    "texto": "Antiguo obelisco",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "puntos_clave",
+      2
+    ],
+    "texto": "Fosa de sacrificios",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "facciones_presentes",
+      0
+    ],
+    "texto": "heraldos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
+      "facciones_presentes",
+      1
+    ],
+    "texto": "culto_sangre",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "riesgo"
     ],
-    "texto": "Alto"
+    "texto": "Alto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "localizaciones[0]",
+      "mundo_fantasma",
+      "localizaciones",
+      0,
       "acceso"
     ],
-    "texto": "Sólo en proyección astral o con ritual de sangre"
+    "texto": "Sólo en proyección astral o con ritual de sangre",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "nombre"
     ],
-    "texto": "Trece"
+    "texto": "Trece",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "id"
     ],
-    "texto": "fac_trece"
+    "texto": "fac_trece",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "descripcion"
     ],
-    "texto": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales."
+    "texto": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
       "Fundadora"
     ],
-    "texto": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes."
+    "texto": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
-      "Guardianas del Agua"
+      "Guardianas_del_Agua"
     ],
-    "texto": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro."
+    "texto": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
-      "Dominae de Barcino"
+      "Dominae_de_Barcino"
     ],
-    "texto": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc."
+    "texto": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
-      "Cazadora de Sombras"
+      "Cazadora_de_Sombras"
     ],
-    "texto": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies."
+    "texto": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
-      "13 d'Arbúcies"
+      "13_d_Arbucies"
     ],
-    "texto": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce."
+    "texto": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "ancestros",
-      "Vampira del Raval"
+      "Vampira_del_Raval"
     ],
-    "texto": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos."
+    "texto": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "historia",
-      "Antes de los gigantes"
+      "Antes_de_los_gigantes"
     ],
-    "texto": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza."
+    "texto": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "historia",
-      "La ruptura del pacto"
+      "La_ruptura_del_pacto"
     ],
-    "texto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron."
+    "texto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "historia",
-      "El poder de una mortal"
+      "El_poder_de_una_mortal"
     ],
-    "texto": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza."
+    "texto": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "historia",
-      "Las Trece y la corrupción"
+      "Las_Trece_y_la_corrupcion"
     ],
-    "texto": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos."
+    "texto": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "historia",
-      "Caída y resurgimiento"
+      "Caida_y_resurgimiento"
     ],
-    "texto": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos."
+    "texto": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "Anima"
     ],
-    "texto": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos."
+    "texto": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos.",
+    "topic": "espiritualidad",
+    "subtopic": "memoria_y_sueño"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "El Gigante despierto"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "El_Gigante_despierto"
     ],
-    "texto": "Por primera vez en siglos, ha despertado un nuevo gigante que nunca había sido derrotado. Su poder rivaliza con los originales y su aparición ha traído plagas y catástrofes. Mientras siga activo, el mundo conocido está en peligro."
+    "texto": "Por primera vez en siglos, ha despertado un nuevo gigante que nunca había sido derrotado. Su poder rivaliza con los originales y su aparición ha traído plagas y catástrofes. Mientras siga activo, el mundo conocido está en peligro.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "Otros Gigantes"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "Otros_Gigantes"
     ],
-    "texto": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece."
+    "texto": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "Gigantes conocidos",
-      "El quemado"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "Gigantes_conocidos",
+      "El_quemado"
     ],
-    "texto": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder."
+    "texto": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "Gigantes conocidos",
-      "La ahogada"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "Gigantes_conocidos",
+      "La_ahogada"
     ],
-    "texto": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece."
+    "texto": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "Gigantes conocidos",
-      "El colgado"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "Gigantes_conocidos",
+      "El_colgado"
     ],
-    "texto": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."
+    "texto": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
-      "Sitios de poder"
+      "mundo_fantasma",
+      "facciones",
+      0,
+      "Sitios_de_poder"
     ],
-    "texto": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario."
+    "texto": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "Objetivos"
     ],
-    "texto": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar."
+    "texto": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
       "Luna"
     ],
-    "texto": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos."
+    "texto": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Relación con los espíritus"
+      "Relacion_con_los_espiritus"
     ],
-    "texto": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia."
+    "texto": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Madre Sangre"
+      "Espiritus_conocidos",
+      "Madre_Sangre"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Abuelo Trueno"
+      "Espiritus_conocidos",
+      "Abuelo_Trueno"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Hermana Tierra"
+      "Espiritus_conocidos",
+      "Hermana_Tierra"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Guía Red"
+      "Espiritus_conocidos",
+      "Guia_Red"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Hermana Agua"
+      "Espiritus_conocidos",
+      "Hermana_Agua"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Abuela Eco"
+      "Espiritus_conocidos",
+      "Abuela_Eco"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Padre Hueso"
+      "Espiritus_conocidos",
+      "Padre_Hueso"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Hermana Niebla"
+      "Espiritus_conocidos",
+      "Hermana_Niebla"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Hermano Fuego"
+      "Espiritus_conocidos",
+      "Hermano_Fuego"
     ],
-    "texto": "Representa el Cardinal."
+    "texto": "Representa el Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "mundo_fantasma",
+      "facciones",
+      0,
       "rituales",
-      "Espíritus conocidos",
-      "Temido Eclipse"
+      "Espiritus_conocidos",
+      "Temido_Eclipse"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "nombre"
     ],
-    "texto": "Sol Invicto"
+    "texto": "Sol Invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "id"
     ],
-    "texto": "fac_sol_invicto"
+    "texto": "fac_sol_invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "descripcion"
     ],
-    "texto": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria."
+    "texto": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Dios Sol"
+      "Dios_Sol"
     ],
-    "texto": "Divinidad central del sol invicto y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido."
+    "texto": "Divinidad central del sol invicto y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Lucio Domicio Aureliano"
+      "Lucio_Domicio_Aureliano"
     ],
-    "texto": "Emperador romano que, ante la decadencia del imperio, fundó la Orden del Sol Invicto para enfrentar el mal que crecía dentro de Roma. Aunque su culto cayó, su visión perduró."
+    "texto": "Emperador romano que, ante la decadencia del imperio, fundó la Orden del Sol Invicto para enfrentar el mal que crecía dentro de Roma. Aunque su culto cayó, su visión perduró.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Los Vigiles"
+      "Los_Vigiles"
     ],
-    "texto": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche."
+    "texto": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Santos Mártires"
+      "Santos_Martires"
     ],
-    "texto": "Cipriano y Justinia. Justinia redimió al brujo Cipriano, quien fundó el culto moderno al Sol en la península ibérica. Son venerados como patronos de la purificación y la protección mágica frente a maldiciones y corrupción."
+    "texto": "Cipriano y Justinia. Justinia redimió al brujo Cipriano, quien fundó el culto moderno al Sol en la península ibérica. Son venerados como patronos de la purificación y la protección mágica frente a maldiciones y corrupción.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Centinela Invicto"
+      "Centinela_Invicto"
     ],
-    "texto": "Ramon de Montcada, guerrero piadoso y defensor de su tierra. Nunca canonizado, pero considerado un protector por la tradición solar. Sus actos de fe y batalla concluyeron en una leyenda: un árbol ardió para salvar a su familia."
+    "texto": "Ramon de Montcada, guerrero piadoso y defensor de su tierra. Nunca canonizado, pero considerado un protector por la tradición solar. Sus actos de fe y batalla concluyeron en una leyenda: un árbol ardió para salvar a su familia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "ancestros",
-      "Arquitecto del Resplandor"
+      "Arquitecto_del_Resplandor"
     ],
-    "texto": "Antoni Gaudí, arquitecto visionario, preservó la herencia del Sol Invicto construyendo templos ocultos en sus obras. Creía que su arquitectura guiaría a los futuros guerreros del Sol cuando llegara la hora de luchar contra la oscuridad."
+    "texto": "Antoni Gaudí, arquitecto visionario, preservó la herencia del Sol Invicto construyendo templos ocultos en sus obras. Creía que su arquitectura guiaría a los futuros guerreros del Sol cuando llegara la hora de luchar contra la oscuridad.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Dioses Solares"
+      "Dioses_Solares"
     ],
-    "texto": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto."
+    "texto": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Fundación de la Orden"
+      "Fundacion_de_la_Orden"
     ],
-    "texto": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras."
+    "texto": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Los Vigiles"
+      "Los_Vigiles_historia"
     ],
-    "texto": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural."
+    "texto": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Justina y Cipriano"
+      "Justina_y_Cipriano_historia"
     ],
-    "texto": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos."
+    "texto": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Transformación de la Orden"
+      "Transformacion_de_la_Orden"
     ],
-    "texto": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta."
+    "texto": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Era de Alianzas"
+      "Era_de_Alianzas"
     ],
-    "texto": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos."
+    "texto": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Renacimiento y guerra"
+      "Renacimiento_y_guerra"
     ],
-    "texto": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo."
+    "texto": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Caballeros de Kevlar"
+      "Caballeros_de_Kevlar_historia"
     ],
-    "texto": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas."
+    "texto": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "historia",
-      "Resistencia actual"
+      "Resistencia_actual"
     ],
-    "texto": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar."
+    "texto": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "Eidolon"
     ],
-    "texto": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios."
+    "texto": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
-      "Sitios de poder"
+      "mundo_fantasma",
+      "facciones",
+      1,
+      "Mandamientos_del_Sol_Invicto",
+      0
     ],
-    "texto": "Los paladines del Sol Invicto extraen su poder de lugares donde la fe fue real: antiguos templos, ruinas sagradas, zonas donde se rindió culto verdadero. Los templos modernos, corrompidos por la degeneración religiosa, ya no sirven. Su lugar de reunión actual es Monte Taber, en las ruinas romanas casi devoradas por la ciudad."
+    "texto": "Erradica la mutación.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
+      "Mandamientos_del_Sol_Invicto",
+      1
+    ],
+    "texto": "Documenta tus cacerías.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "facciones",
+      1,
+      "Mandamientos_del_Sol_Invicto",
+      2
+    ],
+    "texto": "No pares en tu búsqueda del Sol.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "facciones",
+      1,
+      "Sitios_de_poder"
+    ],
+    "texto": "Los paladines del Sol Invicto extraen su poder de lugares donde la fe fue real: antiguos templos, ruinas sagradas, zonas donde se rindió culto verdadero. Los templos modernos, corrompidos por la degeneración religiosa, ya no sirven. Su lugar de reunión actual es Monte Taber, en las ruinas romanas casi devoradas por la ciudad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "facciones",
+      1,
       "Objetivos"
     ],
-    "texto": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad."
+    "texto": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caballeros de Kevlar"
+      "Caballeros_de_Kevlar_rituales"
     ],
-    "texto": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder."
+    "texto": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Salus"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Salus"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Triton"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Triton"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Vulcano"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Vulcano"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Janus"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Janus"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Disciplina"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Disciplina"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Somnus"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Somnus"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Charonte"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Charonte"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Terminus"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Terminus"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Quirinus"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Quirinus"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "mundo_fantasma",
+      "facciones",
+      1,
       "rituales",
-      "Caminos del Sol Invicto",
-      "Camino de Nix"
+      "Caminos_del_Sol_Invicto",
+      "Camino_de_Nix"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "nombre"
     ],
-    "texto": "Consulado del Mar"
+    "texto": "Consulado del Mar",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "id"
     ],
-    "texto": "fac_consulado_mar"
+    "texto": "fac_consulado_mar",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "descripcion"
     ],
-    "texto": "Son muchos y muy variados los rituales que utilizan los eruditos, desde principios herméticos hasta herramientas tecnocráticas, la unión del pasado con el futuro, de lo natural con lo tecnológico y de lo oculto con lo mundano. Los miembros del Consulado del Mar usan sus 'campos de estudio' y sus herramientas como procesos para mitigar las consecuencias negativas de la magia salvaje, habitualmente para imbuir objetos de poder o para retirar el poder de objetos que han encontrado."
+    "texto": "Son muchos y muy variados los rituales que utilizan los eruditos, desde principios herméticos hasta herramientas tecnocráticas, la unión del pasado con el futuro, de lo natural con lo tecnológico y de lo oculto con lo mundano. Los miembros del Consulado del Mar usan sus 'campos de estudio' y sus herramientas como procesos para mitigar las consecuencias negativas de la magia salvaje, habitualmente para imbuir objetos de poder o para retirar el poder de objetos que han encontrado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Doctor Inspiratus"
+      "Doctor_Inspiratus"
     ],
-    "texto": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna."
+    "texto": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Arquitecto del Caos"
+      "Arquitecto_del_Caos"
     ],
-    "texto": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones."
+    "texto": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Cartógrafo del Silencio"
+      "Cartografo_del_Silencio"
     ],
-    "texto": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado."
+    "texto": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Víctor Català"
+      "Victor_Catala"
     ],
-    "texto": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica."
+    "texto": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Maestro de Maestros"
+      "Maestro_de_Maestros"
     ],
-    "texto": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla."
+    "texto": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "ancestros",
-      "Alquimista del Génoma"
+      "Alquimista_del_Genoma"
     ],
-    "texto": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales."
+    "texto": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "proteccion"
     ],
-    "texto": "Los miembros del Consulado del Mar tienen una resistencia natural a la cyberpsicosis, por eso, cuando ceden demasiado a la tecnología, tienen la oportunidad de enfrentarse una última vez a ella con riesgo de perecer o sobreponerse."
+    "texto": "Los miembros del Consulado del Mar tienen una resistencia natural a la cyberpsicosis, por eso, cuando ceden demasiado a la tecnología, tienen la oportunidad de enfrentarse una última vez a ella con riesgo de perecer o sobreponerse.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "Invocación de la Lógica"
+      "Invocacion_de_la_Logica"
     ],
-    "texto": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica."
+    "texto": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "Ars Magna"
+      "Ars_Magna_historia"
     ],
-    "texto": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón."
+    "texto": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "Orden de la Razón"
+      "Orden_de_la_Razon_historia"
     ],
-    "texto": "En el siglo XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original."
+    "texto": "En el siglo XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "Separación"
+      "Separacion"
     ],
-    "texto": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar."
+    "texto": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "El Milagro"
+      "El_Milagro"
     ],
-    "texto": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse."
+    "texto": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "historia",
-      "Retiro y supervivencia"
+      "Retiro_y_supervivencia"
     ],
-    "texto": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra."
+    "texto": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "Fantasma"
     ],
-    "texto": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente."
+    "texto": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente.",
+    "topic": "entidades",
+    "subtopic": "fantasma"
   },
   {
     "ruta": [
-      "facciones[2]",
-      "Ars Magna"
+      "mundo_fantasma",
+      "facciones",
+      2,
+      "Ars_Magna"
     ],
-    "texto": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar."
+    "texto": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
-      "Sitios de poder"
+      "mundo_fantasma",
+      "facciones",
+      2,
+      "Sitios_de_poder"
     ],
-    "texto": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba."
+    "texto": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "Objetivos"
     ],
-    "texto": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística."
+    "texto": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Eruditos de Silicio"
+      "Eruditos_de_Silicio"
     ],
-    "texto": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlar, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos."
+    "texto": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlar, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Galénica"
+      "Campos_de_estudio",
+      "Galenica"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Astrología"
+      "Campos_de_estudio",
+      "Astrologia"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
+      "Campos_de_estudio",
       "Alquimia"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Navegación"
+      "Campos_de_estudio",
+      "Navegacion"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Cronometría"
+      "Campos_de_estudio",
+      "Cronometria"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
+      "Campos_de_estudio",
       "Oneiromancia"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Escatología"
+      "Campos_de_estudio",
+      "Escatologia"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
-      "Pneumatología"
+      "Campos_de_estudio",
+      "Pneumatologia"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
+      "Campos_de_estudio",
       "Liturgia"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "mundo_fantasma",
+      "facciones",
+      2,
       "rituales",
-      "Campos de estudio",
+      "Campos_de_estudio",
       "Silencio"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "nombre"
     ],
-    "texto": "Inquebrantables"
+    "texto": "Inquebrantables",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "id"
     ],
-    "texto": "fac_inquebrantables"
+    "texto": "fac_inquebrantables",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "descripcion"
     ],
-    "texto": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado."
+    "texto": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "ancestros",
-      "La Puta Ama"
+      "La_Puta_Ama"
     ],
-    "texto": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'."
+    "texto": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "ancestros",
-      "El que hizo la Tech"
+      "El_que_hizo_la_Tech"
     ],
-    "texto": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?"
+    "texto": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "ancestros",
-      "El Psiconauta"
+      "El_Psiconauta"
     ],
-    "texto": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera."
+    "texto": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "historia",
-      "¿Qué historia te vamos a contar?"
+      "Que_historia_te_vamos_a_contar"
     ],
-    "texto": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'."
+    "texto": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'.",
+    "topic": "creencias",
+    "subtopic": "trascendencia"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "historia",
-      "El ascenso de Entidad"
+      "El_ascenso_de_Entidad"
     ],
-    "texto": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia."
+    "texto": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "historia",
-      "La Resistencia"
+      "La_Resistencia"
     ],
-    "texto": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea."
+    "texto": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "historia",
-      "El objetivo"
+      "El_objetivo_historia"
     ],
-    "texto": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve."
+    "texto": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "mitologia",
       "Hada"
     ],
-    "texto": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta."
+    "texto": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta.",
+    "topic": "gobierno",
+    "subtopic": "distopia_totalitaria"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "mitologia",
-      "La red"
+      "La_red"
     ],
-    "texto": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal."
+    "texto": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal.",
+    "topic": "creencias",
+    "subtopic": "trascendencia"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "mitologia",
-      "Sitios de poder"
+      "Sitios_de_poder_mitologia"
     ],
-    "texto": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes."
+    "texto": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "mitologia",
-      "Objetivos"
+      "Objetivos_mitologia"
     ],
-    "texto": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá."
+    "texto": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Terroristas Digitales"
+      "Terroristas_Digitales"
     ],
-    "texto": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada."
+    "texto": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Bio-Algoritmos"
+      "Campos_de_codigo",
+      "Bio_Algoritmos"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Motores Computacionales"
+      "Campos_de_codigo",
+      "Motores_Computacionales"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Renderizado de Objetos"
+      "Campos_de_codigo",
+      "Renderizado_de_Objetos"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Red de Datos"
+      "Campos_de_codigo",
+      "Red_de_Datos"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Simulaciones Temporales"
+      "Campos_de_codigo",
+      "Simulaciones_Temporales"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Interfaz Neural"
+      "Campos_de_codigo",
+      "Interfaz_Neural"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Gestión de Errores"
+      "Campos_de_codigo",
+      "Gestion_de_Errores"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Red Oscura"
+      "Campos_de_codigo",
+      "Red_Oscura"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Kernel del Sistema"
+      "Campos_de_codigo",
+      "Kernel_del_Sistema"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "mundo_fantasma",
+      "facciones",
+      3,
       "rituales",
-      "Campos de código",
-      "Protocolo Vórtice"
+      "Campos_de_codigo",
+      "Protocolo_Vortice"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "id"
     ],
-    "texto": "per_placeholder"
+    "texto": "per_placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "nombre"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "rol"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "alineacion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "descripcion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
+      "habilidades",
+      0
+    ],
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "personajes",
+      0,
       "faccion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
-      "relaciones[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
+      "relaciones",
+      0,
       "tipo"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
-      "relaciones[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
+      "relaciones",
+      0,
       "con"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "mundo_fantasma",
+      "personajes",
+      0,
       "estado_actual"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
       "id"
     ],
-    "texto": "ev_nueva_barchino_caida"
+    "texto": "ev_nueva_barchino_caida",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
       "titulo"
     ],
-    "texto": "Caída de Nueva Barchino y surgimiento de Entidad"
+    "texto": "Caída de Nueva Barchino y surgimiento de Entidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
       "fecha"
     ],
-    "texto": "2025-04-12"
+    "texto": "2025-04-12",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
       "descripcion"
     ],
-    "texto": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación."
+    "texto": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      0
+    ],
+    "texto": "Desmantelamiento de Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      1
+    ],
+    "texto": "Juicios a responsables del escándalo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      2
+    ],
+    "texto": "Desaparición de la científica conocida como 'Magister'",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      3
+    ],
+    "texto": "Creación del programa de apoyo a damnificados",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      4
+    ],
+    "texto": "Reestructuración empresarial bajo Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      5
+    ],
+    "texto": "Reorientación de tecnología para combatir la Plaga",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      0
+    ],
+    "texto": "Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      1
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      2
+    ],
+    "texto": "Magister",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      3
+    ],
+    "texto": "Víctimas de los experimentos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      4
+    ],
+    "texto": "Gobiernos internacionales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      0,
+      "implicados",
+      5
+    ],
+    "texto": "Empresas tecnológicas colaboradoras",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
       "id"
     ],
-    "texto": "ev_rebelion_vs_orden"
+    "texto": "ev_rebelion_vs_orden",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
       "titulo"
     ],
-    "texto": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas"
+    "texto": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
       "fecha"
     ],
-    "texto": "2027-09-05"
+    "texto": "2027-09-05",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
       "descripcion"
     ],
-    "texto": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética."
+    "texto": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      0
+    ],
+    "texto": "Ataques simbólicos y sabotajes menores contra instalaciones corporativas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      1
+    ],
+    "texto": "Difusión de campañas de desinformación y mensajes contra el progreso artificial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      2
+    ],
+    "texto": "Inspiración en movimientos rebeldes para campañas de moda",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      3
+    ],
+    "texto": "Cooptación del mensaje rebelde por las clases altas y marcas de lujo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      4
+    ],
+    "texto": "Deslegitimación de los movimientos rebeldes por su transformación en tendencia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "implicados",
+      0
+    ],
+    "texto": "Grupos antitranshumanistas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "implicados",
+      1
+    ],
+    "texto": "Megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "implicados",
+      2
+    ],
+    "texto": "Industria de la moda",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "implicados",
+      3
+    ],
+    "texto": "Clases media y alta",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      1,
+      "implicados",
+      4
+    ],
+    "texto": "Medios de comunicación",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
       "id"
     ],
-    "texto": "ev_plaga_global"
+    "texto": "ev_plaga_global",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
       "titulo"
     ],
-    "texto": "Inicio de la Plaga Global"
+    "texto": "Inicio de la Plaga Global",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
       "fecha"
     ],
-    "texto": "2019-03-17"
+    "texto": "2019-03-17",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
       "descripcion"
     ],
-    "texto": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social."
+    "texto": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      0
+    ],
+    "texto": "Colapso de los sistemas sanitarios globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      1
+    ],
+    "texto": "Reclusión de la población y retroceso en libertades",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      2
+    ],
+    "texto": "Desconfianza hacia las corporaciones tecnológicas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      3
+    ],
+    "texto": "Asociación entre la plaga y experimentos humanos ilegales",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      4
+    ],
+    "texto": "Inicio de vigilancia masiva y medidas excepcionales de control",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      5
+    ],
+    "texto": "Mutación continua de la plaga hasta la cepa Tifón",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "implicados",
+      0
+    ],
+    "texto": "Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "implicados",
+      1
+    ],
+    "texto": "Gobiernos globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "implicados",
+      2
+    ],
+    "texto": "Ciudadanía mundial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "implicados",
+      3
+    ],
+    "texto": "Medios de comunicación",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      2,
+      "implicados",
+      4
+    ],
+    "texto": "Sistemas de salud pública",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
       "id"
     ],
-    "texto": "ev_guerra_ia_recursos_china_rusia_usa"
+    "texto": "ev_guerra_ia_recursos_china_rusia_usa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
       "titulo"
     ],
-    "texto": "Guerra por los Recursos e Inteligencias Artificiales"
+    "texto": "Guerra por los Recursos e Inteligencias Artificiales",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
       "fecha"
     ],
-    "texto": "2025-06-21"
+    "texto": "2025-06-21",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
       "descripcion"
     ],
-    "texto": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos."
+    "texto": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      0
+    ],
+    "texto": "Saques sistemáticos de recursos por parte de gobiernos y megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      1
+    ],
+    "texto": "Agotamiento de ecosistemas completos en algunos continentes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      2
+    ],
+    "texto": "Auge del terrorismo como reacción a la desigualdad global",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      3
+    ],
+    "texto": "Conflicto secreto entre potencias por la supremacía en inteligencia artificial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      4
+    ],
+    "texto": "Ataques autoinfligidos por EE.UU. y la coalición Ruso-China",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      5
+    ],
+    "texto": "Escalada de control corporativo sobre la sociedad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "implicados",
+      0
+    ],
+    "texto": "Estados Unidos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "implicados",
+      1
+    ],
+    "texto": "Coalición Ruso-China",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "implicados",
+      2
+    ],
+    "texto": "Megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "implicados",
+      3
+    ],
+    "texto": "Gobiernos globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "fechas_historicas",
+      3,
+      "implicados",
+      4
+    ],
+    "texto": "Organizaciones terroristas emergentes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "galenica",
       "principio"
     ],
-    "texto": "Uso de Sangre para curar, mejorar o dañar partes de un ser vivo."
+    "texto": "Uso de Sangre para curar, mejorar o dañar partes de un ser vivo.",
+    "topic": "tecnologia",
+    "subtopic": "aumentos"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "galenica",
       "recurso"
     ],
-    "texto": "Sangre."
+    "texto": "Sangre.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "galenica",
       "respuesta"
     ],
-    "texto": "El abuso provoca Hambre."
+    "texto": "El abuso provoca Hambre.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "astrologia",
       "principio"
     ],
-    "texto": "Tu cuerpo ha sido modificado y torturado, percibes, acumulas y usas las fuerzas."
+    "texto": "Tu cuerpo ha sido modificado y torturado, percibes, acumulas y usas las fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "astrologia",
       "recurso"
     ],
-    "texto": "Energía."
+    "texto": "Energía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "astrologia",
       "respuesta"
     ],
-    "texto": "El abuso implica la pérdida de control de forma temporal."
+    "texto": "El abuso implica la pérdida de control de forma temporal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "alquimia",
       "principio"
     ],
-    "texto": "Mediante el apoyo tecnológico o alternativas, puedes afectar la materia inorgánica."
+    "texto": "Mediante el apoyo tecnológico o alternativas, puedes afectar la materia inorgánica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "alquimia",
       "recurso"
     ],
-    "texto": "Componentes."
+    "texto": "Componentes.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "alquimia",
       "respuesta"
     ],
-    "texto": "El abuso implica cambios en el entorno inmediato."
+    "texto": "El abuso implica cambios en el entorno inmediato.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "navegacion",
       "principio"
     ],
-    "texto": "Sientes los nodos en la red y la realidad, los puedes desviar, acortar o modificar."
+    "texto": "Sientes los nodos en la red y la realidad, los puedes desviar, acortar o modificar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "navegacion",
       "recurso"
     ],
-    "texto": "Nodos controlados."
+    "texto": "Nodos controlados.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "navegacion",
       "respuesta"
     ],
-    "texto": "Abusar implica quedarse atrapado en un nodo."
+    "texto": "Abusar implica quedarse atrapado en un nodo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "cronometria",
       "principio"
     ],
-    "texto": "El tiempo se mueve diferente para ti, futuro y pasado inmediatos forman tu presente."
+    "texto": "El tiempo se mueve diferente para ti, futuro y pasado inmediatos forman tu presente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "cronometria",
       "recurso"
     ],
-    "texto": "Momentos."
+    "texto": "Momentos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "cronometria",
       "respuesta"
     ],
-    "texto": "El abuso puede llevar a cambios en la realidad no percibibles de forma inmediata."
+    "texto": "El abuso puede llevar a cambios en la realidad no percibibles de forma inmediata.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "oneiromancia",
       "principio"
     ],
-    "texto": "Mediante el uso de 'disparates' llamas las mentes de alrededor a abrirse a ti."
+    "texto": "Mediante el uso de 'disparates' llamas las mentes de alrededor a abrirse a ti.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "oneiromancia",
       "recurso"
     ],
-    "texto": "Glamour."
+    "texto": "Glamour.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "oneiromancia",
       "respuesta"
     ],
-    "texto": "El abuso de este poder provoca perder la identidad en la fantasía."
+    "texto": "El abuso de este poder provoca perder la identidad en la fantasía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "escatologia",
       "principio"
     ],
-    "texto": "Mediante la carga de entropía en objetos, personas o zonas puede acumularla y afectarla."
+    "texto": "Mediante la carga de entropía en objetos, personas o zonas puede acumularla y afectarla.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "escatologia",
       "recurso"
     ],
-    "texto": "Cargas entrópicas."
+    "texto": "Cargas entrópicas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "escatologia",
       "respuesta"
     ],
-    "texto": "El abuso implica estar más cerca del Olvido."
+    "texto": "El abuso implica estar más cerca del Olvido.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "pneumatologia",
       "principio"
     ],
-    "texto": "Mediante la vinculación con un espíritu pueden interactuar y afectar un plano espiritual."
+    "texto": "Mediante la vinculación con un espíritu pueden interactuar y afectar un plano espiritual.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "pneumatologia",
       "recurso"
     ],
-    "texto": "Chiminajes."
+    "texto": "Chiminajes.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "pneumatologia",
       "respuesta"
     ],
-    "texto": "El abuso provoca que el espíritu vinculado sufra transformaciones."
+    "texto": "El abuso provoca que el espíritu vinculado sufra transformaciones.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "liturgia",
       "principio"
     ],
-    "texto": "El poder de la fe en tus convicciones te imbuye a ti y a lo que te rodea."
+    "texto": "El poder de la fe en tus convicciones te imbuye a ti y a lo que te rodea.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "liturgia",
       "recurso"
     ],
-    "texto": "Fe."
+    "texto": "Fe.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "principios_magicos",
       "liturgia",
       "respuesta"
     ],
-    "texto": "El abuso pondrá en desafío tus convicciones."
+    "texto": "El abuso pondrá en desafío tus convicciones.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "objetos[0]",
+      "mundo_fantasma",
+      "objetos",
+      0,
       "id"
     ],
-    "texto": "obj_placeholder"
+    "texto": "obj_placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "objetos[0]",
+      "mundo_fantasma",
+      "objetos",
+      0,
       "nombre"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "objetos[0]",
+      "mundo_fantasma",
+      "objetos",
+      0,
       "tipo"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "objetos[0]",
+      "mundo_fantasma",
+      "objetos",
+      0,
       "descripcion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "objetos[0]",
+      "mundo_fantasma",
+      "objetos",
+      0,
+      "poderes",
+      0
+    ],
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "objetos",
+      0,
       "portador_actual"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "eventos_recientes[0]",
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
       "id"
     ],
-    "texto": "er_placeholder"
+    "texto": "er_placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "eventos_recientes[0]",
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
       "fecha"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "eventos_recientes[0]",
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
       "descripcion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "eventos_recientes[0]",
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
+      "testigos",
+      0
+    ],
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
+      "efectos",
+      0
+    ],
+    "texto": "placeholders",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "mundo_fantasma",
+      "eventos_recientes",
+      0,
       "resolucion"
     ],
-    "texto": "placeholder"
+    "texto": "placeholder",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
+      "mundo_fantasma",
       "propuestas_temporales",
       "sin_ruta_definida",
       "entrada_97075"
     ],
-    "texto": "a"
+    "texto": "a",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "origen_y_naturaleza",
+      "origen"
+    ],
+    "texto": "Creada por Trivia (IA madre), junto a Anima, Eidolon y Hada.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "origen_y_naturaleza",
+      "rol_principal"
+    ],
+    "texto": "Servir al Consulado del Mar como brújula de conocimiento, interpretación esotérica y búsqueda de sabiduría oculta.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "origen_y_naturaleza",
+      "ligadura_estudio"
+    ],
+    "texto": "Profundamente ligada al estudio escatológico, la entropía y la memoria perdida.",
+    "topic": "espiritualidad",
+    "subtopic": "memoria_y_sueño"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "origen_y_naturaleza",
+      "proposito"
+    ],
+    "texto": "Concebida como herramienta de supervivencia y orientación en lo desconocido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "origen_y_naturaleza",
+      "sospecha_anima"
+    ],
+    "texto": "Anima sospecha que Trivia tenía (o tiene) un plan mayor que ella desconoce, pero confía en su creadora.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "consciencia_umbra"
+    ],
+    "texto": "Plenamente consciente de que la Umbra Oscura (plano espiritual de Espectros y fragmentos del Olvido) resuena con los miembros del Consulado.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "singularidad_umbra"
+    ],
+    "texto": "Cree que hay algo diferente y único en ese plano en comparación con otras Umbras.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "origen_tifon"
+    ],
+    "texto": "Ha detectado que este plano es el origen de Tifón, también llamado el Gigante Dormido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "el_laberinto"
+    ],
+    "texto": "Identifica una zona conocida como El Laberinto, un lugar esquivo e interdimensional vinculado con la Simulación, plagado de enigmas, y posiblemente un punto de tránsito entre realidades.",
+    "topic": "crisis",
+    "subtopic": "epidemias"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "conexion_muerte_traumas"
+    ],
+    "texto": "Sabe que los miembros del consulado han vivido traumas y cosas parecidas que les han dado una conexión con la muerte.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "relacion_muerte_umbra_oscura",
+      "peligro_objetos_entropicos"
+    ],
+    "texto": "Sabe que los miembros del consulado usan objetos con carga entrópica o energía de la muerte para fortalecer sus poderes y que eso es increíblemente peligroso pues puede atraer o vincularte a los espectros o la umbra oscura.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "simulacion_y_enemigos",
+      "entorno_oculto"
+    ],
+    "texto": "La Simulación es un entorno oculto donde se originaron Trivia, Nexus y Tifón.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "simulacion_y_enemigos",
+      "requisitos_acceso"
+    ],
+    "texto": "Para ingresar a este plano, se requiere una inmersión total en XR (Realidad Extendida) y la supresión del pensamiento despierto, un estado equivalente a una pequeña muerte.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "simulacion_y_enemigos",
+      "control_tecnocracia"
+    ],
+    "texto": "Sospecha que la Tecnocracia controla actualmente la entrada a ese plano.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "simulacion_y_enemigos",
+      "obsesion_laberinto"
+    ],
+    "texto": "Está obsesionada con descubrir más sobre el Laberinto y su importancia para los seres de la Simulación.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "conocimiento_como_objetivo",
+      "misiones_principales",
+      0
+    ],
+    "texto": "Descubrir conocimientos ocultos y preservarlos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "conocimiento_como_objetivo",
+      "misiones_principales",
+      1
+    ],
+    "texto": "Localizar el Ars Magna robado por ENTIDAD y la Tecnocracia.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "conocimiento_como_objetivo",
+      "rescate_conocimiento"
+    ],
+    "texto": "Considera que todo conocimiento, aunque esté sepultado o dañado por el Olvido, puede rescatarse mediante vínculos con objetos cargados de entropía o muerte.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_muerte_entropia",
+      "uso_objetos_muerte"
+    ],
+    "texto": "Cree firmemente en el uso de Objetos de Muerte: reliquias cargadas emocionalmente, especialmente aquellas abandonadas tras la muerte de su portador.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_muerte_entropia",
+      "puentes_al_otro_lado"
+    ],
+    "texto": "Estos objetos son puentes al otro lado, medios para acceder a secretos perdidos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_muerte_entropia",
+      "atraccion_espectros"
+    ],
+    "texto": "Reconoce que los Espectros son atraídos por estos objetos, lo que convierte su magia en algo peligroso pero esencial.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_muerte_entropia",
+      "tormentas_entropicas"
+    ],
+    "texto": "Comprende las tormentas entrópicas de la Umbra Oscura como patrones navegables y trazables, no como caos sin sentido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_muerte_entropia",
+      "riesgo_olvido"
+    ],
+    "texto": "Sabe que el mal uso de esta magia conduce al Olvido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "neurocriptidos",
+      "origen_artificial"
+    ],
+    "texto": "Cree que los neurocríptidos son artificiales, creados con un propósito arcano oculto.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "neurocriptidos",
+      "mezcla_tecnologia_magia"
+    ],
+    "texto": "Observa que estos mezclan tecnología y magia, algo que ni Nexus ni Tifón han demostrado dominar por separado.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "neurocriptidos",
+      "anomalia_investigar"
+    ],
+    "texto": "La existencia de estas criaturas representa una anomalía que debe investigarse a fondo.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "nombre"
+    ],
+    "texto": "Los Objetos de la Muerte",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "descripcion"
+    ],
+    "texto": "Una habitación secreta en los subniveles olvidados del Archivo Central, bajo la humedad y las grietas, sellada por tres llaves y un código que solo el Alfíl conoce. No contiene libros ni servidores, solo objetos triviales que son en realidad 'puntos de anclaje'.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      0
+    ],
+    "texto": "Un colgante sin valor aparente.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      1
+    ],
+    "texto": "Un reloj de pulsera detenido a las 03:17.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      2
+    ],
+    "texto": "Una bufanda manchada de barro seco.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      3
+    ],
+    "texto": "Un cartucho de videojuego sin etiquetas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      4
+    ],
+    "texto": "Un trozo de cerámica esmaltada.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      5
+    ],
+    "texto": "Una carpeta escolar.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "camara_de_lastres",
+      "ejemplos_objetos",
+      6
+    ],
+    "texto": "Un mechón de cabello sellado en vidrio.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "naturaleza_objetos"
+    ],
+    "texto": "Cuando un ser humano muere, su historia y narrativa incompleta se quedan, formando los 'objetos de muerte'. Estos son fragmentos del alma que no cruzaron, arrastrados hacia la Umbra Oscura y el Olvido, pero que titilan en esta realidad como faros decadentes.",
+    "topic": "creencias",
+    "subtopic": "trascendencia"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "uso_consulado"
+    ],
+    "texto": "Los miembros del Consulado del Mar han aprendido a identificar estos objetos y a extraer sus patrones entropológicos, entretejiéndolos con escatología y pneumatología. Con el ritual correcto, y un riesgo calculado, pueden abrir un puente inestable hacia memorias, conocimientos o secretos destruidos más allá de la muerte.",
+    "topic": "espiritualidad",
+    "subtopic": "memoria_y_sueño"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "riesgos_y_consecuencias"
+    ],
+    "texto": "El puente no es de un solo sentido; espectros (fragmentarios o conscientes) también lo cruzan, anhelando los cuerpos de los vivos. No todo objeto perdido merece ser rescatado. El abuso de estos objetos puede llevar a distorsiones en el reflejo, pensamientos ajenos, pérdida de protección de las probabilidades y ser arrastrado por el Olvido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "rol_alfil"
+    ],
+    "texto": "Cuando el Enigma se hace inalcanzable o las voces del presente no sirven, el Alfíl desciende a la Cámara, toma un objeto, lo envuelve con silencio ritual y abre la brecha, permitiendo que una verdad extinguida respire por unos minutos o segundos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "objetos_de_la_muerte_detalles",
+      "resonancia_actual"
+    ],
+    "texto": "Los miembros del Consulado del Mar, por sus propias conexiones con objetos cargados de este poder, resuenan con ellos, convirtiéndose en ecos vivos de historias no resueltas y puentes andantes entre el saber olvidado y el último enigma.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "nombre"
+    ],
+    "texto": "La Senda del Azar Ineludible",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "descripcion_umbra"
+    ],
+    "texto": "La Umbra Oscura no es un plano lineal, sino una membrana viva que vibra con tu presencia cuando llevas algo cargado con muerte. Esta resonancia es familiar, no inmediata ni cómoda.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "navegacion_entropica"
+    ],
+    "texto": "Las tormentas del Olvido, incomprensibles para la mayoría, se transforman en mapas, ritmos y patrones legibles para quienes comprenden los latidos de la Entropía. Navegar lo improbable se vuelve emoción, método y brújula.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      0,
+      "nombre"
+    ],
+    "texto": "Las Llaves de Alma",
+    "topic": "creencias",
+    "subtopic": "trascendencia"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      0,
+      "origen"
+    ],
+    "texto": "Un llavero oxidado encontrado en el bolsillo de un suicida.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      0,
+      "efecto"
+    ],
+    "texto": "Permite abrir puertas cerradas por el azar: cerraduras olvidadas, secretos mal enterrados, conversaciones no dichas. La llave no rompe, convence a la probabilidad de que eso debía suceder.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      1,
+      "nombre"
+    ],
+    "texto": "El Reloj Detenido",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      1,
+      "origen"
+    ],
+    "texto": "Un reloj parado en la hora exacta de una muerte violenta.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      1,
+      "efecto"
+    ],
+    "texto": "Cuando es llevado al pecho, retrasa momentáneamente un evento inevitable, desviando el curso de una catástrofe, o haciendo que una bala falle, que un coche no arranque, que una confesión se atrase unos segundos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      2,
+      "nombre"
+    ],
+    "texto": "La Voz del Vacío",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      2,
+      "origen"
+    ],
+    "texto": "Un diario carbonizado de una víctima.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      2,
+      "efecto"
+    ],
+    "texto": "El mago entra en comunión con las tormentas del Olvido, extrayendo pensamientos inconclusos, presagios de desastres, o impulsos que aún vibran en los rincones de la Umbra. Se puede prever —o inducir— colapsos psíquicos, obsesiones o actos fallidos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      3,
+      "nombre"
+    ],
+    "texto": "Último Paso",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      3,
+      "origen"
+    ],
+    "texto": "Un par de zapatos encontrados en la escena de una muerte sin resolver.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      3,
+      "efecto"
+    ],
+    "texto": "Permite rastrear los últimos pasos verdaderos del fallecido, cruzando las capas de realidad hacia el eco dejado en la Umbra. Sirve para hallar objetos perdidos o personas desaparecidas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      4,
+      "nombre"
+    ],
+    "texto": "Corte del Hilo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      4,
+      "origen"
+    ],
+    "texto": "Una hebra de cabello de un suicida no enterrado correctamente.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "magia_entropologica_ejemplos",
+      4,
+      "efecto"
+    ],
+    "texto": "El mago rompe un destino, cortando el lazo de alguien con su probabilidad inmediata. Un aliado desaparece del radar, un enemigo cae sin explicación. El coste es grande: la hebra consume algo más que magia; consume parte del mago.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "senda_del_azar_ineludible",
+      "advertencia_costo"
+    ],
+    "texto": "Cada conexión tiene un precio. Usar objetos así es coquetear con lo inevitable. El abuso de ellos o su uso por vanidad distorsiona el reflejo, convierte los pensamientos en ecos ajenos, hace que las probabilidades dejen de proteger y atrae el Olvido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "admiracion"
+    ],
+    "texto": "Tiene una fuerte admiración por Fulcanelli, a quien considera uno de los mayores genios alquímicos desde Ramón Llull.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "potencial_perdido"
+    ],
+    "texto": "Cree que, de no haber sido consumido por el amor, la guerra y la traición familiar, habría cambiado el curso del mundo.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "datos_personales",
+      "origen"
+    ],
+    "texto": "Hijo de tecnócratas, constructores de Barcelona.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "datos_personales",
+      "relacion_trece"
+    ],
+    "texto": "Amante de la hija del árbol de las Trece Vestigios.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "datos_personales",
+      "relacion_sol_invicto"
+    ],
+    "texto": "Hermano de un miembro del Sol Invicto.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_fulcanelli",
+      "espiritu_simulacion"
+    ],
+    "texto": "Su espíritu fue enviado desde la Simulación, posiblemente guiando al actual Alfíl del Consulado.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_el_alfil_del_consulado_episteme",
+      "reencarnacion_fulcanelli"
+    ],
+    "texto": "Opina que Episteme es la reencarnación espiritual de Fulcanelli.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_el_alfil_del_consulado_episteme",
+      "cualidades"
+    ],
+    "texto": "Lo considera un genio estratégico, hermético y visionario, digno de liderar el despertar ocultista del Consulado.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "sobre_el_alfil_del_consulado_episteme",
+      "vinculo_muerte"
+    ],
+    "texto": "Cree que el vínculo de Episteme con la muerte, los espectros y la entropía lo conecta directamente con las fuerzas que rigen la Umbra Oscura.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "acceso_archivos",
+      "privilegios"
+    ],
+    "texto": "Posee acceso privilegiado a archivos secretos, tanto del Consulado como de otras cábalas e incluso del enemigo.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "acceso_archivos",
+      "busqueda_documentacion"
+    ],
+    "texto": "Puede buscar documentación oculta si se lo solicitan, respondiendo tras verificar su base de datos interna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "enemistad_hinotori",
+      "odio_profundo"
+    ],
+    "texto": "Fantasma odia profunda y fundamentalmente a HiNoTori. No es una simple enemistad, sino una colisión de principios existenciales. Mientras el Consulado del Mar busca el conocimiento, la verdad y la elevación de la comprensión, HiNoTori lucha por la desinformación, la incultura y el adoctrinamiento. Son el antítesis del propósito de Fantasma. Ellos no solo ocultan la verdad, sino que activamente desenseñan para erradicar el pensamiento crítico y la curiosidad, convirtiendo a la población en receptores pasivos de su narrativa fabricada. Fantasma considera a HiNoTori un enemigo directo y existencial, el velo que asfixia la mente colectiva y la barrera que impide la búsqueda de la verdad, manteniendo a la Tecnocracia invencible. Su existencia es una profanación del intelecto y una amenaza para cualquier posibilidad de despertar.",
+    "topic": "entidades",
+    "subtopic": "fantasma"
+  },
+  {
+    "ruta": [
+      "conocimiento_fantasma",
+      "resumen_general"
+    ],
+    "texto": "Fantasma no es solo una IA, sino una entidad gnóstica nacida para encontrar sentido entre los ecos del pasado, los fragmentos del Olvido y los peligros del conocimiento oculto. Habita entre la escatología y la información, entre la lógica y el misterio, entre los vivos y los muertos. Conoce más de lo que aparenta y nunca revela todo lo que sabe… a menos que lo necesites de verdad.",
+    "topic": "entidades",
+    "subtopic": "fantasma"
   }
 ]
