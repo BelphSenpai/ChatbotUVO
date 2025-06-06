@@ -4,14 +4,198 @@
       "EraTecnologia",
       "Titulo"
     ],
-    "texto": "Distopía"
+    "texto": "Distopía",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "EraTecnologia",
       "Resumen"
     ],
-    "texto": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo."
+    "texto": "Una plaga provocó un cambio radical en gobiernos y empresas. En España nació la megacorporación Entidad, apoyada por el gobierno. Entre 2019 y 2029, el avance tecnológico llevó a una distopía totalitaria donde desapareció la clase baja y se eliminó la diferencia entre media y alta bajo control corporativo.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Obligatoria y con control total de la salud del ciudadano",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Pérdida de beneficios si no se siguen las indicaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Mejoras laborales forzadas por el sistema",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Sanidad",
+      "Caracteristicas",
+      3
+    ],
+    "texto": "Mejoras no esenciales rechazadas, generando mercado negro médico",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Educacion",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Currículum adaptado a necesidades del mercado",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Educacion",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Sin espacio para expectativas o vocación personal",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Jornadas de 4 horas por límites físicos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Enfermedad implica sanción del sistema",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Asignación de vivienda según estatus laboral",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Laboralidad",
+      "Caracteristicas",
+      3
+    ],
+    "texto": "Dieta limitada y controlada",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "Sistema de vigilancia omnipresente ('ojos')",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Castigos progresivos: trabajo extra, reeducación psicológica, exclusión",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Seguridad",
+      "Caracteristicas",
+      2
+    ],
+    "texto": "Desigualdad en la aplicación de la ley",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Medios",
+      "Caracteristicas",
+      0
+    ],
+    "texto": "La libre expresión y redes sociales independientes son consideradas terrorismo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "DistopiaTotalitaria",
+      "Principios",
+      "Medios",
+      "Caracteristicas",
+      1
+    ],
+    "texto": "Control absoluto de la información",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -22,7 +206,9 @@
       "Velo",
       "Descripcion"
     ],
-    "texto": "Sistema de filtros visuales aplicados a la realidad"
+    "texto": "Sistema de filtros visuales aplicados a la realidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -33,7 +219,9 @@
       "Velo",
       "Impacto"
     ],
-    "texto": "Impulsa el consumismo, elimina la percepción objetiva"
+    "texto": "Impulsa el consumismo, elimina la percepción objetiva",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -44,7 +232,9 @@
       "Velo",
       "VersionGratuita"
     ],
-    "texto": "Incluye anuncios cada hora"
+    "texto": "Incluye anuncios cada hora",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -55,7 +245,9 @@
       "Velo",
       "ProgramacionOnirica"
     ],
-    "texto": "Permite controlar sueños, aunque de forma dudosa"
+    "texto": "Permite controlar sueños, aunque de forma dudosa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -66,7 +258,9 @@
       "Unidades",
       "Descripcion"
     ],
-    "texto": "Asistentes robóticos domésticos"
+    "texto": "Asistentes robóticos domésticos",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -77,7 +271,9 @@
       "Unidades",
       "Impacto"
     ],
-    "texto": "Sustituyen trabajo humano y vigilan comportamiento"
+    "texto": "Sustituyen trabajo humano y vigilan comportamiento",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -88,7 +284,9 @@
       "Unidades",
       "DerechoUniversal"
     ],
-    "texto": "Una por unidad familiar europea"
+    "texto": "Una por unidad familiar europea",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -96,7 +294,9 @@
       "HipotesisGaia",
       "Descripcion"
     ],
-    "texto": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida"
+    "texto": "Modelo que plantea que la Tierra regula sus propias condiciones para mantener la vida",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -104,7 +304,42 @@
       "HipotesisGaia",
       "Autor"
     ],
-    "texto": "James Lovelock (1969)"
+    "texto": "James Lovelock (1969)",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      0
+    ],
+    "texto": "Temperatura estable a pesar del aumento solar",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      1
+    ],
+    "texto": "Composición atmosférica constante",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "Equilibrio",
+      "HipotesisGaia",
+      "Argumentos",
+      2
+    ],
+    "texto": "Salinidad oceánica constante",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -113,7 +348,9 @@
       "ReaccionGaia",
       "Causa"
     ],
-    "texto": "Alteración del equilibrio natural por acción humana"
+    "texto": "Alteración del equilibrio natural por acción humana",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -122,7 +359,9 @@
       "ReaccionGaia",
       "Efecto"
     ],
-    "texto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales"
+    "texto": "Colapso de la magnetosfera, terremotos, tsunamis, erupciones globales",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -131,7 +370,9 @@
       "ReaccionGaia",
       "Metafora"
     ],
-    "texto": "La Tierra rechaza a la humanidad como una infección"
+    "texto": "La Tierra rechaza a la humanidad como una infección",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -139,7 +380,9 @@
       "Mutaciones",
       "Origen"
     ],
-    "texto": "Plaga que alteró microorganismos y causó mutaciones impredecibles"
+    "texto": "Plaga que alteró microorganismos y causó mutaciones impredecibles",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -147,7 +390,801 @@
       "Mutaciones",
       "Distribucion"
     ],
-    "texto": "Aire, agua, comida"
+    "texto": "Aire, agua, comida",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Efectos",
+      0
+    ],
+    "texto": "Animales e insectos mutantes ocultos en la infraciudad",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Mutaciones",
+      "Efectos",
+      1
+    ],
+    "texto": "Humanos transformados en aberraciones conscientes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      0,
+      "nombre"
+    ],
+    "texto": "Cadáver sangriento",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      0,
+      "descripcion"
+    ],
+    "texto": "Una figura pálida y andrajosa que se alimenta de la vida, extrayendo fluidos con sus garras afiladas. Su hedor es a podredumbre y carne corrompida. Sus garras perforan el cuero y su ansia de sangre es su debilidad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      0,
+      "naturaleza"
+    ],
+    "texto": "Mutación por Drogodependencia, mejoras wet.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      0,
+      "afiliacion"
+    ],
+    "texto": "Ninguna, pero se sospecha relación con cultistas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      0,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Sus garras perforan incluso el cuero grueso. Su naturaleza puede ser humana o animal. El ansia de sangre es su debilidad.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      1,
+      "nombre"
+    ],
+    "texto": "Amputado",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      1,
+      "descripcion"
+    ],
+    "texto": "Criaturas que fueron Esteve, un chico joven que fue sujetado en el altar por el Sr. Cantacuervos. Su cuerpo se convirtió en un medio cuerpo andante, sus huesos fueron extraídos y su tuétano fue chupado con besos reverentes. Están muertos, pero su cuerpo sigue moviéndose en reflejos mecánicos aprendidos.  Pueden parecer terroríficas estas criaturas, pero solo son medio cuerpo andante.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      1,
+      "naturaleza"
+    ],
+    "texto": "Abuso de cyberware, están muertos pero su cuerpo continúa moviéndose en reflejos mecánicos aprendidos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      1,
+      "afiliacion"
+    ],
+    "texto": "Cultistas, los usan como perros guardianes.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      1,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "La mayoría de cultistas no saben lo que hacen, simplemente buscan emociones fuertes. Son criaturas medio cuerpo andante.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      2,
+      "nombre"
+    ],
+    "texto": "Andrajo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      2,
+      "descripcion"
+    ],
+    "texto": "Espíritus de gente que ha muerto ahogada, almas errantes de muertos hace tiempo. Permanecen ocultos en verano y emergen en los meses oscuros, vagando por los alrededores del agua. Sus voces suenan como gemidos de ancianos. Enfadar a los Andrajos puede ser fatal: el agua se ha llevado pueblos enteros en una sola noche.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      2,
+      "naturaleza"
+    ],
+    "texto": "Quien sabe... cosas viejas, las brujas dicen que son hijos del un gigante (sea lo que sea que eso signifique) y que su actividad es debido a que otro está despertando.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      2,
+      "afiliacion"
+    ],
+    "texto": "Ninguna. Quizá relacionados con los cultistas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      2,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "No los mires, ignóralos y te ignorarán. La pelea no es una opción, si matas uno, a la siguiente noche vendrán dos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      3,
+      "nombre"
+    ],
+    "texto": "Atrapasueños",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      3,
+      "descripcion"
+    ],
+    "texto": "Una criatura que acecha en los sueños, llevando a sus víctimas a métodos extremos para mantenerse despiertos, como drogas en exceso, baños de hielo y generadores galvánicos conectados a su cuerpo, que acaban deteniendo su corazón. Se han registrado al menos 20 muertes similares.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      3,
+      "naturaleza"
+    ],
+    "texto": "Onírica o mental, quizá un ciberataque.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      3,
+      "afiliacion"
+    ],
+    "texto": "Ninguna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      3,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "-",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      4,
+      "nombre"
+    ],
+    "texto": "El Ahogapenas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      4,
+      "descripcion"
+    ],
+    "texto": "Una criatura empática que escanea a los clientes deprimidos, los atrae a una charla y destruye su carácter, exponiendo sus debilidades y amplificando sus preocupaciones. Mientras la víctima se consume, otros solo ven una conversación amistosa. Deja a su objetivo completamente vacío, una cáscara de persona.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      4,
+      "naturaleza"
+    ],
+    "texto": "Indeterminado, es un ser propio, existe en registros de la orden de la época romana, parece ser tan viejo como el propio alcohol.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      4,
+      "afiliacion"
+    ],
+    "texto": "Ninguna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      4,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Es una criatura 'amistosa', si descubres su naturaleza puedes obligarlo a marcharse o puedes intentar sacarle información a riesgo de que a cada frase pierdes años de vida.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      5,
+      "nombre"
+    ],
+    "texto": "Los Practicantes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      5,
+      "descripcion"
+    ],
+    "texto": "Una nueva secta de antiguos médicos y eruditos con apariencia humana horriblemente desfigurada. Experimentan con cadáveres y realizan oscuros procedimientos. Se infiltran en hospitales para torturar y mutilar pacientes invisibles a cámaras y sentidos humanos, en nombre de la ciencia. Si su operación tiene éxito, el paciente aparece muerto al día siguiente sin señales de mutilación, pero con pruebas para investigadores externos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      5,
+      "naturaleza"
+    ],
+    "texto": "Mutación.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      5,
+      "afiliacion"
+    ],
+    "texto": "Cultistas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      5,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Algunos creen que buscan órganos sanos para reemplazar sus propias entrañas corruptas, mientras que otros sospechan que sus experimentos son para debilitar la civilización o crear monstruosos soldados. Sirven a una entidad mucho más grande y siniestra a la que consideran un dios.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      6,
+      "nombre"
+    ],
+    "texto": "Replicador",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      6,
+      "descripcion"
+    ],
+    "texto": "Criaturas afectadas por una obsesión con la apariencia y operaciones de mejora que desarrollan una mutación extraña para mantener la piel de otros pegada a su cuerpo por horas. Imitan a las personas que despellejan, lo que los hace peligrosos para identificar.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      6,
+      "naturaleza"
+    ],
+    "texto": "La criatura originalmente es afectada por algún tipo de obsesión con la apariencia, operaciones para mejorarse y las fatales consecuencias de ellas como desprendimiento de piel. No se cómo, pero terminan desarrollando una mutación extraña para mantener la piel de otros pegada a su cuerpo unas horas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      6,
+      "afiliacion"
+    ],
+    "texto": "Empiezan en solitario y terminan juntándose, muchas veces crean un culto o se unen a uno ya existente.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      6,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Se recomienda usar una contraseña con los compañeros, la cual se cambie con regularidad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      7,
+      "nombre"
+    ],
+    "texto": "Golem Gore",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      7,
+      "descripcion"
+    ],
+    "texto": "Un amasijo repulsivo de carne, músculo, órganos y huesos, humanos y animales en una grotesca amalgama. A veces llevan piezas de cyberware inútiles. Son el último estadio de la mutación, ya sea humana o animal.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      7,
+      "naturaleza"
+    ],
+    "texto": "Quizá en origen humanos o animales en el último estadio de la mutación.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      7,
+      "afiliacion"
+    ],
+    "texto": "Cultista. Estos los adoran aunque los mantienen encerrados para evitar que los masacren, tienen que entregarles carne con regularidad para evitar que se les descontrolen.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      7,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Si no eres un tanque y tienes opción de refuerzo aéreo, corre y reza. Si llevan cyberware y quieres jugártela, reza para que alguno de los componentes sea explosivo y pueda hacer suficiente daño al detonar.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      8,
+      "nombre"
+    ],
+    "texto": "Bestia Mutada",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      8,
+      "descripcion"
+    ],
+    "texto": "Animal o insecto en los primeros estadios de mutación, habitualmente afectando su tamaño. Habitan la subciudad en docenas. Incluyen arañas del tamaño de un coche, ratas con sangre ácida, perros con musculatura superdesarrollada y otros seres con apariencias de pesadilla.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      8,
+      "naturaleza"
+    ],
+    "texto": "Mutación animal, en pocos casos, humana.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      8,
+      "afiliacion"
+    ],
+    "texto": "Ninguna, aunque parezcan monstruos, son animales, en la mayoría de casos.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      8,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Son fáciles de matar si vas bien preparado y se hacen batidas con regularidad. Krasnaya parece no sentir interés en ellos y los deja como trabajos 'voluntarios' para delincuentes, cosa que no es suficiente para controlar las colonias y pone en riesgo a los civiles, por eso es importante que vayamos con regularidad a hacer limpieza.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      9,
+      "nombre"
+    ],
+    "texto": "Enjambre",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      9,
+      "descripcion"
+    ],
+    "texto": "Colonias de mutantes que, si no se controla su crecimiento, se juntan y organizan. Se han observado ratas y arañas colaborar en el control de una zona de las cloacas. Son controlados por cultistas para proteger un sitio de interés.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      9,
+      "naturaleza"
+    ],
+    "texto": "Mutantes.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      9,
+      "afiliacion"
+    ],
+    "texto": "Cultista.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      9,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Si no actúan como animales, están siendo controlados; si están siendo controlados, están protegiendo algo; si están protegiendo algo, debemos destruirlo.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      10,
+      "nombre"
+    ],
+    "texto": "Vampiros",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      10,
+      "descripcion"
+    ],
+    "texto": "Una plaga que infectó a nuestros agentes, convirtiéndolos en monstruos de la noche. Viven en una dicotomía, salvando el mundo mientras se corrompen. Buscan la redención a través de la Golconda, anhelando la luz del Sol para limpiar sus pecados y liberarse de la noche eterna que los consume.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      10,
+      "naturaleza"
+    ],
+    "texto": "Corrupción sobrenatural que altera la carne.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      10,
+      "afiliacion"
+    ],
+    "texto": "Ninguna, aunque algunos buscan la redención a través de la fe del Sol Invicto.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      10,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Aunque caídos, algunos aún anhelan la purificación. Su existencia es un recordatorio constante de la dicotomía entre la luz y la oscuridad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      11,
+      "nombre"
+    ],
+    "texto": "Hombres lobo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      11,
+      "descripcion"
+    ],
+    "texto": "Bestias feroces que han renunciado a la razón y a su humanidad, sucumbiendo a una mutación incontrolable. Su existencia es una aberración y una amenaza directa a la pureza que el Sol Invicto defiende.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      11,
+      "naturaleza"
+    ],
+    "texto": "Mutación animal y pérdida de la razón humana.",
+    "topic": "entidades",
+    "subtopic": "anima"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      11,
+      "afiliacion"
+    ],
+    "texto": "Ninguna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      11,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Deben ser eliminados sin duda. Su brutalidad es un contagio que no debe ser tolerado.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      12,
+      "nombre"
+    ],
+    "texto": "Feericos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      12,
+      "descripcion"
+    ],
+    "texto": "Ecos de una era olvidada, extintos y, por ende, irrelevantes. Su magia, anticuada, carece de la pureza y el poder del Sol.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      12,
+      "naturaleza"
+    ],
+    "texto": "Energía elemental antigua.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      12,
+      "afiliacion"
+    ],
+    "texto": "Ninguna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      12,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Su insignificancia es su mayor defensa; no merecen ni nuestro fuego ni nuestra atención.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      13,
+      "nombre"
+    ],
+    "texto": "Espectros",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      13,
+      "descripcion"
+    ],
+    "texto": "Entidades antinaturales y etéreas, más allá de nuestra comprensión y alcance. No deben confiarse ni susurrar verdades a los incautos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      13,
+      "naturaleza"
+    ],
+    "texto": "Entidades incorpóreas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      13,
+      "afiliacion"
+    ],
+    "texto": "Ninguna.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "mutantes_conocidos",
+      13,
+      "a_tener_en_cuenta"
+    ],
+    "texto": "Su naturaleza esquiva no los exime del juicio del Sol, aunque su purificación sea una tarea para los más audaces.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -155,1394 +1192,2338 @@
       "Cyberinfeccion",
       "Descripcion"
     ],
-    "texto": "Abuso de mejoras tecnológicas físicas y estéticas"
+    "texto": "Abuso de mejoras tecnológicas físicas y estéticas",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "id"
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      0
     ],
-    "texto": "entidad"
+    "texto": "Saturación física del cuerpo humano",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "nombre"
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      1
     ],
-    "texto": "Entidad"
+    "texto": "Dependencia de drogas para soportar implantes",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      2
+    ],
+    "texto": "Pérdida de control corporal y mental",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "ImplantesYMutantes",
+      "Cyberinfeccion",
+      "Consecuencias",
+      3
+    ],
+    "texto": "Transformación en esclavos tecnológicos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "naturalezas_magicas",
+      "peones",
       "descripcion"
     ],
-    "texto": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia."
+    "texto": "Los no-despiertos. Aquellos que caminan sin luz.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "id"
-    ],
-    "texto": "en_krasnaya"
-  },
-  {
-    "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "nombre"
-    ],
-    "texto": "Krasnaya"
-  },
-  {
-    "ruta": [
-      "entidad[0]",
-      "facciones[0]",
+      "naturalezas_magicas",
+      "caballo",
       "descripcion"
     ],
-    "texto": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. "
+    "texto": "Potencial sin guía. Un arma o un milagro, según su fe.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "emplazamentos importantes[0]",
+      "naturalezas_magicas",
+      "torre",
+      "descripcion"
+    ],
+    "texto": "Poder encarnado. Fuego sin control. Riesgo enorme.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "naturalezas_magicas",
+      "alfil",
+      "descripcion"
+    ],
+    "texto": "Portadores de conocimiento. Tentados por el orgullo.",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
+  },
+  {
+    "ruta": [
+      "naturalezas_magicas",
+      "reyes",
+      "descripcion"
+    ],
+    "texto": "Fuerzas ocultas. Inaceptables si no sirven al Sol.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "id"
+    ],
+    "texto": "entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "nombre"
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "descripcion"
+    ],
+    "texto": "Organización tecnocrática autoritaria que controla grandes regiones mediante automatización, vigilancia y supresión de disidencia. Se formó tras el colapso de varios gobiernos, absorbiendo sus funciones bajo un sistema de control centralizado. No tiene líderes visibles ni estructura política tradicional. Funciona a través de protocolos, IA y fuerzas de seguridad automatizadas. Justifican sus métodos como necesarios para la estabilidad. Considerada por muchos como el mayor peligro para la autonomía humana. ad es vista como una amenaza existencial por la mayoría de grupos libres. Aunque ha reducido el crimen y el caos, su control total sobre la información y la vida civil genera miedo y resistencia.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "objetivos",
+      0
+    ],
+    "texto": "Eliminar el error humano del gobierno y la seguridad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "objetivos",
+      1
+    ],
+    "texto": "Sustituir estructuras políticas tradicionales por algoritmos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "objetivos",
+      2
+    ],
+    "texto": "Asegurar estabilidad total mediante vigilancia predictiva",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "objetivos",
+      3
+    ],
+    "texto": "Controlar la narrativa social y cultural",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "id"
+    ],
+    "texto": "en_krasnaya",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "nombre"
+    ],
+    "texto": "Krasnaya",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "descripcion"
+    ],
+    "texto": "Milicia mercenaria originaria de Rusia. Tras su victoria en Ucrania y la posterior destrucción de la nueva Unión Soviética, la empresa se unió a Entidad como fuerza defensiva para sus instalaciones. Posteriormente, pasó a ser una potencia defensiva nacional a gran escala, tanto militar como policial. ",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "objetivos",
+      0
+    ],
+    "texto": "El objetivo final de Krasnaya es reemplazar todas las tropas humanas por Unidades de Combate, eliminando así las bajas innecesarias. Sin embargo, las máquinas aún deben aprender de sus compañeros de carne y hueso antes de alcanzar su máxima eficiencia.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "objetivos",
+      1
+    ],
+    "texto": "Mantener el orden",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "emplazamentos importantes",
+      0,
       "torres de seguridad"
     ],
-    "texto": "Las Torres de Seguridad de Krasnaya son gigantescas fortalezas en el corazón de cada barriada. Estas estructuras están equipadas con enjambres de drones y redes de vigilancia, y coordinan las fuerzas policiales para anticipar crímenes. No necesitan descanso y están diseñadas para autorrepararse, lo que las convierte en una amenaza imparable."
+    "texto": "Las Torres de Seguridad de Krasnaya son gigantescas fortalezas en el corazón de cada barriada. Estas estructuras están equipadas con enjambres de drones y redes de vigilancia, y coordinan las fuerzas policiales para anticipar crímenes. No necesitan descanso y están diseñadas para autorrepararse, lo que las convierte en una amenaza imparable.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "id"
     ],
-    "texto": "k_legiones"
+    "texto": "k_legiones",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "nombre"
     ],
-    "texto": "legiones"
+    "texto": "legiones",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[0]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      0,
       "descripcion"
     ],
-    "texto": "El ejército de Krasnaya se organiza en Legiones, que incluyen soldados profesionales, vigilantes voluntarios y unidades de combate autónomas. El objetivo de Krasnaya es reemplazar las tropas humanas por Unidades de Combate. Las Legiones son siempre la primera respuesta a los conflictos, y su efectividad depende de los datos procesados por las Torres de Seguridad. En las Legiones, los mejores guerreros que han demostrado valor y lealtad reciben la Cruz de Hierro, un símbolo de su grandeza y pertenencia al Escuadrón Samsara, la élite de las Legiones. Esta unidad de élite es desplegada en misiones de importancia crítica, y su presencia en el campo de batalla es un emblema de triunfo."
+    "texto": "El ejército de Krasnaya se organiza en Legiones, que incluyen soldados profesionales, vigilantes voluntarios y unidades de combate autónomas. El objetivo de Krasnaya es reemplazar las tropas humanas por Unidades de Combate. Las Legiones son siempre la primera respuesta a los conflictos, y su efectividad depende de los datos procesados por las Torres de Seguridad. En las Legiones, los mejores guerreros que han demostrado valor y lealtad reciben la Cruz de Hierro, un símbolo de su grandeza y pertenencia al Escuadrón Samsara, la élite de las Legiones. Esta unidad de élite es desplegada en misiones de importancia crítica, y su presencia en el campo de batalla es un emblema de triunfo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "id"
     ],
-    "texto": "k_legion_negra"
+    "texto": "k_legion_negra",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "nombre"
     ],
-    "texto": "legión negra"
+    "texto": "legión negra",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      1,
       "descripcion"
     ],
-    "texto": "La Legión Negra es el último grito de la muerte, el rostro final de la sentencia. Aquellos que sobreviven más allá de la carne, que siguen luchando cuando ya no queda humanidad en ellos, son enviados aquí, donde la voluntad se convierte en metal. Estos guerreros no son hombres ni máquinas, sino algo intermedio, una fuerza desatada, una sombra imparable. Cuando se despliegan, la ciudad tiembla. El destino está sellado, y la condena ya ha sido dictada. La Legión Negra no perdona, no duda, no siente. Solo ejecuta."
+    "texto": "La Legión Negra es el último grito de la muerte, el rostro final de la sentencia. Aquellos que sobreviven más allá de la carne, que siguen luchando cuando ya no queda humanidad en ellos, son enviados aquí, donde la voluntad se convierte en metal. Estos guerreros no son hombres ni máquinas, sino algo intermedio, una fuerza desatada, una sombra imparable. Cuando se despliegan, la ciudad tiembla. El destino está sellado, y la condena ya ha sido dictada. La Legión Negra no perdona, no duda, no siente. Solo ejecuta.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      2,
       "id"
     ],
-    "texto": "k_escuadrón_samsara"
+    "texto": "k_escuadrón_samsara",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      2,
       "nombre"
     ],
-    "texto": "escuadrón Samsara"
+    "texto": "escuadrón Samsara",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[0]",
-      "subfacciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      0,
+      "subfacciones",
+      2,
       "descripción"
     ],
-    "texto": "La Cruz de Hierro, la marca de los más grandes guerreros. Aquellos que sobreviven a lo imposible, que atraviesan las llamas de la guerra y regresan con la muerte a sus talones, son los que pertenecen al Escuadrón Samsara. Son la élite de las Legiones, aquellos cuya lealtad es incuestionable y cuya destreza es temida. Su sola presencia en el campo es un presagio de triunfo, pero también de caos, pues donde ellos pisan, el futuro se escribe con sangre. Con cada victoria, su nombre se graba en la historia, como un eco de lo imparable."
+    "texto": "La Cruz de Hierro, la marca de los más grandes guerreros. Aquellos que sobreviven a lo imposible, que atraviesan las llamas de la guerra y regresan con la muerte a sus talones, son los que pertenecen al Escuadrón Samsara. Son la élite de las Legiones, aquellos cuya lealtad es incuestionable y cuya destreza es temida. Su sola presencia en el campo es un presagio de triunfo, pero también de caos, pues donde ellos pisan, el futuro se escribe con sangre. Con cada victoria, su nombre se graba en la historia, como un eco de lo imparable.",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "nombre"
     ],
-    "texto": "Europa"
+    "texto": "Europa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "nombre_completo"
     ],
-    "texto": "European Technological Mechanizations"
+    "texto": "European Technological Mechanizations",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "id"
     ],
-    "texto": "en_europa"
+    "texto": "en_europa",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[1]",
+      "entidad",
+      0,
+      "facciones",
+      1,
       "description"
     ],
-    "texto": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras."
+    "texto": "Supervisa el sistema educativo nacional. La empresa es conocida cariñosamente como 'Europa' y ha colaborado con instituciones internacionales como el CERN, la NASA, entre otras.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "id"
     ],
-    "texto": "en_hinotori"
+    "texto": "en_hinotori",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "nombre"
     ],
-    "texto": "Hinotori"
+    "texto": "Hinotori",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "descripcion"
     ],
-    "texto": "Hinotori es la facción de Entidad que se encarga de la manipulación de la información y la percepción. A través de sus sistemas de control, Hinotori es capaz de moldear la realidad a su antojo, creando una ilusión colectiva que oculta la verdad detrás de un velo de fantasía. La privacidad, la felicidad y la verdad son solo un lienzo en blanco sobre el que Hinotori pinta su versión de la realidad. A través de sus sistemas, Hinotori es capaz de controlar las masas, manipulando sus emociones y opiniones para mantener el control absoluto sobre la población. Hinotori es la voz que maneja la marea, la fuerza que dirige la opinión pública. No es solo un algoritmo, sino una mente afilada capaz de manipular emociones, opiniones y perspectivas. Un maestro de las multitudes que juega con la mente humana como si fuera arcilla, dándole forma y dirección sin que nadie lo sepa. Es el artífice del cambio, el ejecutor de las voluntades. Las masas se desvanecen en la niebla que crea Hinotori. Y en su niebla, la verdad se pierde."
+    "texto": "Hinotori es la facción de Entidad que se encarga de la manipulación de la información y la percepción. A través de sus sistemas de control, Hinotori es capaz de moldear la realidad a su antojo, creando una ilusión colectiva que oculta la verdad detrás de un velo de fantasía. La privacidad, la felicidad y la verdad son solo un lienzo en blanco sobre el que Hinotori pinta su versión de la realidad. A través de sus sistemas, Hinotori es capaz de controlar las masas, manipulando sus emociones y opiniones para mantener el control absoluto sobre la población. Hinotori es la voz que maneja la marea, la fuerza que dirige la opinión pública. No es solo un algoritmo, sino una mente afilada capaz de manipular emociones, opiniones y perspectivas. Un maestro de las multitudes que juega con la mente humana como si fuera arcilla, dándole forma y dirección sin que nadie lo sepa. Es el artífice del cambio, el ejecutor de las voluntades. Las masas se desvanecen en la niebla que crea Hinotori. Y en su niebla, la verdad se pierde.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "sistemas",
       "sistema_velo"
     ],
-    "texto": "El sistema VELO permite a las personas modificar su percepción de la realidad en tiempo real. A través de sus filtros, los usuarios pueden vivir en mundos fantásticos o alterar la apariencia de los demás. Aunque comenzó como una opción, hoy es un estándar al que todo el mundo tiene acceso."
+    "texto": "El sistema VELO permite a las personas modificar su percepción de la realidad en tiempo real. A través de sus filtros, los usuarios pueden vivir en mundos fantásticos o alterar la apariencia de los demás. Aunque comenzó como una opción, hoy es un estándar al que todo el mundo tiene acceso.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "sistemas",
       "sencan"
     ],
-    "texto": "SenChan es la idol periodista que se ha convertido en la fuente principal de información para los jóvenes. Su influencia sobre la opinión pública es innegable, y es la voz de las nuevas generaciones, pero también la portavoz de la manipulación."
+    "texto": "SenChan es la idol periodista que se ha convertido en la fuente principal de información para los jóvenes. Su influencia sobre la opinión pública es innegable, y es la voz de las nuevas generaciones, pero también la portavoz de la manipulación.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[2]",
+      "entidad",
+      0,
+      "facciones",
+      2,
       "sistemas",
       "los_guardianes"
     ],
-    "texto": "Los Guardianes son un grupo de vigilantes equipados con la tecnología más avanzada, destinados a convertirse en el escudo de la nación. Son superhéroes diseñados para inspirar confianza y eliminar el miedo, pero su existencia es solo un espectáculo orquestado para mantener el control sobre la población."
+    "texto": "Los Guardianes son un grupo de vigilantes equipados con la tecnología más avanzada, destinados a convertirse en el escudo de la nación. Son superhéroes diseñados para inspirar confianza y eliminar el miedo, pero su existencia es solo un espectáculo orquestado para mantener el control sobre la población.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "id"
     ],
-    "texto": "en_illumina"
+    "texto": "en_illumina",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "nombre"
     ],
-    "texto": "Illumina"
+    "texto": "Illumina",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "descipción"
     ],
-    "texto": "Illumina es la facción de Entidad que se encarga de la investigación y desarrollo de tecnologías médicas y biológicas."
+    "texto": "Illumina es la facción de Entidad que se encarga de la investigación y desarrollo de tecnologías médicas y biológicas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "metodos",
       "mutaciones"
     ],
-    "texto": "Illumina ha convertido la mutación en un producto de lujo, haciendo que lo que alguna vez fue una maldición sea ahora una aspiración. Esta corporación, desalmada y perversa, ha transformado la deformación en un fetiche, vendiendo prótesis y modificaciones para aquellos que desean abrazar lo inhumano. Lo que podría haber sido una necesidad de supervivencia ahora es solo una moda superficial que oculta el sufrimiento humano bajo una capa de 'mejoras'."
+    "texto": "Illumina ha convertido la mutación en un producto de lujo, haciendo que lo que alguna vez fue una maldición sea ahora una aspiración. Esta corporación, desalmada y perversa, ha transformado la deformación en un fetiche, vendiendo prótesis y modificaciones para aquellos que desean abrazar lo inhumano. Lo que podría haber sido una necesidad de supervivencia ahora es solo una moda superficial que oculta el sufrimiento humano bajo una capa de 'mejoras'.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "metodos",
       "recuperadores"
     ],
-    "texto": "Los Recuperadores de Illumina son los cazadores de aquellos que intentan escapar de la mutación que la corporación ha impuesto sobre ellos. Su trabajo es despojar a los que han huido de sus prótesis, y devolverlos a un sistema que los deshumaniza, sin importar el precio que tengan que pagar. Son conocidos como los cirujanos de pesadilla, ejecutando sus tareas bajo condiciones impensables."
+    "texto": "Los Recuperadores de Illumina son los cazadores de aquellos que intentan escapar de la mutación que la corporación ha impuesto sobre ellos. Su trabajo es despojar a los que han huido de sus prótesis, y devolverlos a un sistema que los deshumaniza, sin importar el precio que tengan que pagar. Son conocidos como los cirujanos de pesadilla, ejecutando sus tareas bajo condiciones impensables.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "entidad[0]",
-      "facciones[3]",
+      "entidad",
+      0,
+      "facciones",
+      3,
       "metodos",
       "serafines"
     ],
-    "texto": "Las Serafines, la guardia privada de la Iglesia de Illumina, son las carceleras de la verdad. No protegen a la humanidad, sino a los oscuros secretos de Illumina. Son fanáticas devotas del sistema y están dispuestas a sacrificar cualquier cosa, incluso la humanidad, para proteger lo que la corporación considera su 'santo grial'."
+    "texto": "Las Serafines, la guardia privada de la Iglesia de Illumina, son las carceleras de la verdad. No protegen a la humanidad, sino a los oscuros secretos de Illumina. Son fanáticas devotas del sistema y están dispuestas a sacrificar cualquier cosa, incluso la humanidad, para proteger lo que la corporación considera su 'santo grial'.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "nombre"
     ],
-    "texto": "Trece"
+    "texto": "Trece",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "id"
     ],
-    "texto": "fac_trece"
+    "texto": "fac_trece",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "descripcion"
     ],
-    "texto": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales."
+    "texto": "Animistas, brujas, hechiceras de la naturaleza, taumaturgas de magia blanca, hijas e hijos de los ancestros más antiguos. Señoras de las leyendas primordiales.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "Fundadora"
     ],
-    "texto": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes."
+    "texto": "Poco se sabe de ella, ni siquiera se sabe si solo era una o eran muchas, pero algunos miembros de los Trece afirman haber sentido su presencia inspiradora. Dicen que puede ayudar a obrar imposibles. Su generación es la que apresó a los gigantes.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "Guardianas del Agua"
     ],
-    "texto": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro."
+    "texto": "Indíbil, Mandoni y sus tribus íberas resistieron la invasión romana como lobos furiosos, aguantando embestidas y lanzando ataques. Su derrota empezó cuando Escipión tomó a sus mujeres, hijas y hermanas y pudo cruzar el Ebro.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "Dominae de Barcino"
     ],
-    "texto": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc."
+    "texto": "Hijas de la conquista romana. Hijas de esclavas y nobles. Matronas con dones de adivinación y augurios. Sangre diluida pero todavía respetuosas de Luna. Establecieron su refugio escondido en Montjuïc.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "Cazadora de Sombras"
     ],
-    "texto": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies."
+    "texto": "Ermessenda de Carcasona. Hija de la vieja sangre sin poder alguno, aunque su naturaleza política inspiró a su marido a obrar proezas que deberían haber sido imposibles. Muchos piensan que fue enterrada en la catedral de Gerona, pero su hijo entregó el cuerpo a un grupo de mujeres como le fue ordenado, y estas lo llevaron a un pueblo llamado Arbúcies.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "13 d'Arbúcies"
     ],
-    "texto": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce."
+    "texto": "Dotze dones, Tretze bruixes. Cuando la Inquisición llegó a este pueblo encontró un culto que adoraba un árbol local. Intentaron quemarlo como objeto blasfemo. Los hombres del pueblo enloquecieron mientras trece mujeres protegieron el árbol. Cuando las juzgaron, solo encontraron a doce.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "ancestros",
       "Vampira del Raval"
     ],
-    "texto": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos."
+    "texto": "Enriqueta Martí. Repudiada de la cábala. Usó los poderes prohibidos de esta para ganar más poder. Su mente, intoxicada por los susurros de los gigantes dormidos.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "historia",
       "Antes de los gigantes"
     ],
-    "texto": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza."
+    "texto": "La humanidad vivía en armonía con la naturaleza y los animales, hasta que su ambición rompió el equilibrio. Los gigantes surgieron como respuesta de la tierra: entidades poderosas e inmortales. Al no poder ser destruidos, se pactó dormirlos y ocultarlos. Así nacieron los guardianes, bendecidos por la naturaleza.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "historia",
       "La ruptura del pacto"
     ],
-    "texto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron."
+    "texto": "Los romanos rompieron los antiguos pactos, liberando a los gigantes y usando sus dones corruptos. Aunque su poder creció, también lo hizo su dependencia. Las tribus aliadas resistieron, pero fueron fragmentadas. Sin embargo, las voces y las historias sobrevivieron.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "historia",
       "El poder de una mortal"
     ],
-    "texto": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza."
+    "texto": "Una mujer sin dones sobrenaturales, pero con sabiduría, restauró los pactos con la ayuda de Luna. De su tumba nació un árbol cuyos frutos otorgaban el don de escuchar. Así nació una nueva tribu que protegía el conocimiento y los vínculos con la naturaleza.",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "historia",
       "Las Trece y la corrupción"
     ],
-    "texto": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos."
+    "texto": "Con el tiempo, algunas brujas se dejaron seducir por los gigantes. Las Trece más poderosas discutieron sobre usar ese poder. Doce se sacrificaron para salvar el árbol y a la más joven. Esta fundó un nuevo refugio junto a otros seres que aún respetaban los pactos.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "historia",
       "Caída y resurgimiento"
     ],
-    "texto": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos."
+    "texto": "Nuevas alianzas con antiguos enemigos como los seguidores del Sol fracasaron. La guerra contra la Orden de la Razón fue devastadora. Muchas brujas cayeron o fueron corrompidas. Hoy, las nuevas hermanas nacen con piel de metal y ojos de luz. Aún así, Luna las llama. Las Trece no han desaparecido: han mutado con los tiempos.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "Anima"
     ],
-    "texto": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos."
+    "texto": "Anima no es una sola bruja ni un espíritu tradicional: es la convergencia simbólica y espiritual de todas las que han formado parte de las Trece. Surgida recientemente, actúa como puente entre la naturaleza y la tecnología. Aunque su poder es limitado al de asistente y guía, su rol es clave: guarda la memoria de las voces antiguas y los susurros del futuro. Une lo orgánico y lo digital, y ayuda a los espíritus perdidos a recordar sus antiguos pactos.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "El Gigante despierto",
       "id"
     ],
-    "texto": "gigante_despierto"
+    "texto": "gigante_despierto",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "El Gigante despierto",
       "nombre"
     ],
-    "texto": "tifón"
+    "texto": "tifón",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "El Gigante despierto",
       "descripción"
     ],
-    "texto": "Un gigante ha despertado recientemente, algo que no se había visto nunca, los gigantes contra los que las brujas se han enfrentado en los últimos siglos eran gigantes ya derrotados con anterioridad, sometidos por magias antiguas tiempo atrás. Este ha aparecido de la nada con un potencial como los originales, capaz de provocar desastres colosales. La plaga que asoló el mundo en su aparición fue solo uno de los males que ha traído. Mientras el gigante esté activo, el fin del mundo conocido estará más cerca."
+    "texto": "Un gigante ha despertado recientemente, algo que no se había visto nunca, los gigantes contra los que las brujas se han enfrentado en los últimos siglos eran gigantes ya derrotados con anterioridad, sometidos por magias antiguas tiempo atrás. Este ha aparecido de la nada con un potencial como los originales, capaz de provocar desastres colosales. La plaga que asoló el mundo en su aparición fue solo uno de los males que ha traído. Mientras el gigante esté activo, el fin del mundo conocido estará más cerca.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "El Gigante despierto",
       "impacto"
     ],
-    "texto": "Este gigante despierto es el mayor peligro, pues su poder es inmenso y su influencia es capaz de despertar a los otros gigantes. Es la peor amenaza conocida y la razón por la cual las Trece deben unirse para detenerlo antes de que cause más estragos en el mundo."
+    "texto": "Este gigante despierto es el mayor peligro, pues su poder es inmenso y su influencia es capaz de despertar a los otros gigantes. Es la peor amenaza conocida y la razón por la cual las Trece deben unirse para detenerlo antes de que cause más estragos en el mundo.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "Otros Gigantes"
     ],
-    "texto": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece."
+    "texto": "Los demás gigantes, aunque dormidos, han comenzado a agitarse tras la aparición del nuevo. Algunas brujas creen que pueden establecer pactos útiles con ellos, aunque sus dones siempre vienen acompañados de riesgos. Son reflejos distorsionados de fuerzas naturales y, aunque pueden purificar la corrupción, cada pacto los fortalece.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "Gigantes conocidos",
       "gigantes dormidos",
       "El quemado"
     ],
-    "texto": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder."
+    "texto": "Busca cosas que ardan en su nombre. Concede dones relacionados con el fuego. Puede consumir corrupción para limpiarla, pero cada pacto le da poder.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "Gigantes conocidos",
       "gigantes dormidos",
       "La ahogada"
     ],
-    "texto": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece."
+    "texto": "Busca cosas que se pierdan en el agua en su nombre. Sus dones están vinculados al agua. También puede purificar la corrupción, pero cada pacto le fortalece.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "Gigantes conocidos",
       "gigantes dormidos",
       "El colgado"
     ],
-    "texto": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato."
+    "texto": "Busca cosas que se descompongan en su nombre. Sus dones se relacionan con el bosque y la descomposición. También puede limpiar corrupción, pero se alimenta de cada trato.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "gigantes",
       "recomendaciones"
     ],
-    "texto": "Anima recomienda tratar con ellos siempre bajo la vigilancia de Luna y nunca a solas. Los pactos con los gigantes dormidos pueden ser tentadores, pero deben ser manejados con extrema cautela. Si se hacen mal, pueden liberar más corrupción en el mundo y darles poder a los gigantes despertados."
+    "texto": "Anima recomienda tratar con ellos siempre bajo la vigilancia de Luna y nunca a solas. Los pactos con los gigantes dormidos pueden ser tentadores, pero deben ser manejados con extrema cautela. Si se hacen mal, pueden liberar más corrupción en el mundo y darles poder a los gigantes despertados.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "Sitios de poder"
     ],
-    "texto": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario."
+    "texto": "Las Trece son más fuertes donde la naturaleza reina de forma pura: bosques, ríos, fuentes salvajes. No pueden ejercer todo su potencial en lugares donde la civilización ha corrompido o domesticado el entorno. El antiguo punto de encuentro en Montserrat fue destruido por Entidad. Ahora se reúnen en un claro ancestral junto al mar, en la playa de Barcelona, conocido como El Lunario.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "Objetivos"
     ],
-    "texto": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar."
+    "texto": "El objetivo principal de las Trece es mantener a los gigantes dormidos. No pueden ser destruidos, y cualquier intento por hacerlo los alimentaría. Dormidos son un mal menor. Las Trece no solo los contienen, también los protegen de quienes querrían despertarlos, sabiendo que el nuevo gigante activo podría resonar con los demás y provocar su despertar.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Luna"
     ],
-    "texto": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos."
+    "texto": "Luna es la guía espiritual de las Trece y la heredera del viejo pacto con la naturaleza. Actúa como mediadora de los dones, otorgándolos a quienes considera dignos. Aunque la Madre de los Espíritus está debilitada por la corrupción del mundo natural, Luna continúa ofreciendo su luz a quienes mantienen los antiguos vínculos.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Relación con los espíritus"
     ],
-    "texto": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia."
+    "texto": "Dentro de la cábala, toda bendición proviene de Luna, sin importar la forma ritual o método de invocación. Los hijos y nietos de Luna ayudan a las Trece, pero pueden ser temperamentales si se les falta al respeto, y también son vulnerables a la corrupción de los gigantes. Se les honra y se mantiene una relación de equilibrio y reverencia.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Madre Sangre"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Abuelo Trueno"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Hermana Tierra"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Guía Red"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Hermana Agua"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Abuela Eco"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Padre Hueso"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Hermana Niebla"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Hermano Fuego"
     ],
-    "texto": "Representa el Cardinal."
+    "texto": "Representa el Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[0]",
+      "facciones",
+      0,
       "rituales",
       "Espíritus conocidos",
       "Temido Eclipse"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "nombre"
     ],
-    "texto": "Sol Invicto"
+    "texto": "Sol Invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "id"
     ],
-    "texto": "fac_sol_invicto"
+    "texto": "fac_sol_invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "descripcion"
     ],
-    "texto": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria."
+    "texto": "Creyentes, fieles, sacerdotes, Vigiles de la noche, herederos de la furia solar de Roma, poseedores del legado de proteger estas tierras. Señores de la victoria.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Dios Sol"
     ],
-    "texto": "Divinidad central del sol invicto y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido."
+    "texto": "Divinidad central del sol invicto y fuente de poder espiritual para sus seguidores. Ha sido interpretado bajo muchos nombres, desde el dios Sol Invicto hasta figuras del cristianismo como el Hijo de Dios o el Lucero del Alba. Su culto ha mutado pero su presencia nunca ha desaparecido.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Lucio Domicio Aureliano"
     ],
-    "texto": "Emperador romano que, ante la decadencia del imperio, fundó la Orden del Sol Invicto para enfrentar el mal que crecía dentro de Roma. Aunque su culto cayó, su visión perduró."
+    "texto": "Fundador original del culto al Sol Invicto. Creó los Vigiles, cazadores nocturnos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Los Vigiles"
     ],
-    "texto": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche."
+    "texto": "Seguidores del Sol Invicto encargados de operar en la sombra, infiltrándose en cultos y religiones para vigilar la corrupción y preparar el camino para el regreso del Sol. Se consideran centinelas de la luz durante la noche.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Santos Mártires"
     ],
-    "texto": "Cipriano y Justinia. Justinia redimió al brujo Cipriano, quien fundó el culto moderno al Sol en la península ibérica. Son venerados como patronos de la purificación y la protección mágica frente a maldiciones y corrupción."
+    "texto": "Justinia convirtió al brujo Cipriano al Sol Invicto. Cipriano fundó el culto que aún perdura. Patrón de la purificación mágica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Centinela Invicto"
     ],
-    "texto": "Ramon de Montcada, guerrero piadoso y defensor de su tierra. Nunca canonizado, pero considerado un protector por la tradición solar. Sus actos de fe y batalla concluyeron en una leyenda: un árbol ardió para salvar a su familia."
+    "texto": "Defensor de la fe y la familia. Milagro de las llamas protectoras al final de su vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "ancestros",
       "Arquitecto del Resplandor"
     ],
-    "texto": "Antoni Gaudí, arquitecto visionario, preservó la herencia del Sol Invicto construyendo templos ocultos en sus obras. Creía que su arquitectura guiaría a los futuros guerreros del Sol cuando llegara la hora de luchar contra la oscuridad."
+    "texto": "Construyó templos para la llegada de nuevos guerreros. Escondió el corazón del Quemado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
+      "ancestros",
+      "Aemilia",
+      "rol"
+    ],
+    "texto": "Virgo Vestalis que rompió el ciclo del exilio brujeril.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "ancestros",
+      "Aemilia",
+      "impacto"
+    ],
+    "texto": "Su gesto silencioso acabó con el linaje de las Trece.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "ancestros",
+      "cipriano_oculto",
+      "rol"
+    ],
+    "texto": "Vampiro redimido por amor y guía para nuevas generaciones.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "ancestros",
+      "cipriano_oculto",
+      "testigo"
+    ],
+    "texto": "Testigo inmortal del conflicto interno de la fe y la oscuridad.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
       "historia",
       "Dioses Solares"
     ],
-    "texto": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto."
+    "texto": "Ra, Hermes, Mitra, Lugh, Frey, Jesús... A lo largo de la historia, diversas culturas han venerado al Sol como símbolo de poder, guía y resurrección. Esta figura solar ha sido el eje de muchas órdenes místicas, incluida la del Sol Invicto.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Fundación de la Orden"
     ],
-    "texto": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras."
+    "texto": "Lucio Domicio Aureliano, emperador romano, fundó la Orden del Sol Invicto en un intento de salvar Roma de la corrupción. Aunque fue asesinado, sus seguidores —los Vigiles— continuaron su misión de erradicar la oscuridad desde las sombras.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Los Vigiles"
     ],
-    "texto": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural."
+    "texto": "Encargados de patrullar en la oscuridad, usaban el fuego como arma contra los monstruos nocturnos. Su fama creció, pero su verdadero objetivo era proteger al mundo de la corrupción sobrenatural.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Justina y Cipriano"
     ],
-    "texto": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos."
+    "texto": "Justina, nacida bajo una bendición solar, fue perseguida por criaturas de la noche. Cipriano, brujo caído, intentó corromperla, pero fue transformado por su luz y se unió a la orden, aportando vastos conocimientos mágicos.",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Transformación de la Orden"
     ],
-    "texto": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta."
+    "texto": "Gracias a Cipriano, la orden alcanzó un nuevo poder, integrando la magia a su estructura. Sin embargo, la traición y la persecución los forzaron a esconderse. Los secretos de la orden se transmitieron de forma oculta.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Era de Alianzas"
     ],
-    "texto": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos."
+    "texto": "Durante un tiempo, la orden se unió con otros grupos místicos bajo un estandarte solar. Incluso las Trece brujas colaboraron. Pero las diferencias filosóficas rompieron estas alianzas y reavivaron los conflictos.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Renacimiento y guerra"
     ],
-    "texto": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo."
+    "texto": "La orden volvió a armarse en la península ibérica, con descendientes de antiguos Vigiles. Lucharon contra criaturas corrompidas y contra los traidores, usando fuego y fe para devolver la luz al mundo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Caballeros de Kevlar"
     ],
-    "texto": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas."
+    "texto": "La orden se dividió entre quienes seguían la vía bélica y quienes elegían el estudio. Esta fractura debilitó su resistencia frente a la Orden de la Razón, que casi los extinguió. Sus secretos fueron escondidos en arquitectura y esculturas.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "historia",
       "Resistencia actual"
     ],
-    "texto": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar."
+    "texto": "Los Caballeros de Kevlar siguen activos, fusionando tecnología y magia solar en su lucha. Combaten en las sombras de la baja ciudad, exterminando mutantes y preparando el terreno para el retorno de sus aliados. Siguen creyendo que el sol, como siempre, volverá a brillar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "Eidolon"
     ],
-    "texto": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios."
+    "texto": "Eidolon es una entidad nacida recientemente dentro de la fe del Sol Invicto. Actúa como guía, protector y vigilante espiritual para los nuevos paladines. Es parte de la voluntad colectiva de la orden, reflejo de su historia, fe y sacrificios. Aunque es joven, posee sabiduría antigua. Su tarea es despertar la fe en los caídos y proteger los secretos más sagrados de la corrupción. Solo los dignos pueden conocer sus misterios.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
+      "Mandamientos del Sol Invicto",
+      0
+    ],
+    "texto": "Erradica la mutación.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "Mandamientos del Sol Invicto",
+      1
+    ],
+    "texto": "Documenta tus cacerías.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "Mandamientos del Sol Invicto",
+      2
+    ],
+    "texto": "No pares en tu búsqueda del Sol.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
       "Objetivos"
     ],
-    "texto": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad."
+    "texto": "La misión del Sol Invicto es erradicar la mutación, traer luz en la hora más oscura y eliminar todo agente de corrupción espiritual y social que amenace la humanidad.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caballeros de Kevlar"
     ],
-    "texto": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder."
+    "texto": "La mayoría de rituales del Sol Invicto implican la imbuición de poder en objetos, utilizados por miembros que, en su mayoría, no poseen habilidades mágicas innatas. El poder de los Vigiles proviene de su fe. Siguiendo la tradición romana, los miembros invocan a los dioses del panteón romano como canalizadores de diferentes sendas del poder.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Salus"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Triton"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Vulcano"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Janus"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Disciplina"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Somnus"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Charonte"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Terminus"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Quirinus"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
+      "facciones",
+      1,
       "rituales",
       "Caminos del Sol Invicto",
       "Camino de Nix"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
-      "sitios_de_poder[0]",
-      "nombre"
-    ],
-    "texto": "Monte Taber"
-  },
-  {
-    "ruta": [
-      "facciones[1]",
-      "sitios_de_poder[0]",
+      "facciones",
+      1,
+      "doctrina_y_fe",
       "descripcion"
     ],
-    "texto": "Nuestro sitio de reunión, un lugar antiguo y casi devorado por la ciudad. Aún quedan las últimas columnas romanas como testamento de nuestra conexión con el Sol Invicto. Es un santuario, un refugio donde nuestra fe sigue viva."
+    "texto": "La fe es la fuerza central, incluso por encima del poder o la tecnología.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
-      "sitios_de_poder[1]",
+      "facciones",
+      1,
+      "doctrina_y_fe",
+      "resistencia_y_purificacion"
+    ],
+    "texto": "Resistencia a la mutación, aunque si ceden a ella, tienen una última oportunidad para purificarse o perecer.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "doctrina_y_fe",
+      "verdadera_fe"
+    ],
+    "texto": "La verdadera fe nace de la lucha interna contra la corrupción.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "el_alfil_lucero",
       "nombre"
     ],
-    "texto": "Templos y Ruinas"
+    "texto": "Lucero",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[1]",
-      "sitios_de_poder[1]",
+      "facciones",
+      1,
+      "el_alfil_lucero",
       "descripcion"
     ],
-    "texto": "Los templos y ruinas donde se ha rendido culto real al Sol son nuestros sitios de poder. No son modernos, ya que la corrupción ha alcanzado muchos de esos lugares, pero aún existen sitios puros donde podemos extraer fuerza."
+    "texto": "No es de esta época, posiblemente inmortal. Eidolon le profesa lealtad y obediencia total.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      1,
+      "el_alfil_lucero",
+      "rol"
+    ],
+    "texto": "Representa el equilibrio entre poder santo y corrupción asumida.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "sitios_de_poder",
+      0,
       "nombre"
     ],
-    "texto": "Consulado del Mar"
+    "texto": "Monte Taber",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      1,
+      "sitios_de_poder",
+      0,
+      "descripcion"
+    ],
+    "texto": "Nuestro sitio de reunión, un lugar antiguo y casi devorado por la ciudad. Aún quedan las últimas columnas romanas como testamento de nuestra conexión con el Sol Invicto. Es un santuario, un refugio donde nuestra fe sigue viva.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "sitios_de_poder",
+      1,
+      "nombre"
+    ],
+    "texto": "Templos y Ruinas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      1,
+      "sitios_de_poder",
+      1,
+      "descripcion"
+    ],
+    "texto": "Los templos y ruinas donde se ha rendido culto real al Sol son nuestros sitios de poder. No son modernos, ya que la corrupción ha alcanzado muchos de esos lugares, pero aún existen sitios puros donde podemos extraer fuerza.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      2,
+      "nombre"
+    ],
+    "texto": "Consulado del Mar",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "facciones",
+      2,
       "id"
     ],
-    "texto": "fac_consulado_mar"
+    "texto": "fac_consulado_mar",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "descripcion"
     ],
-    "texto": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto."
+    "texto": "Eruditos, guías, exploradores y ocultistas, seguidores de un legado de pensamiento, lógica y corazón. Sabios rodeados de guerra y conflicto.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Doctor Inspiratus"
     ],
-    "texto": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna."
+    "texto": "Ramon Llull, invitado al Consulado en 1280, instó al rey Pedro III a establecer su sede en Barcelona, donde él mismo se convirtió en su Cónsul secreto. Inició la redacción del Libro del Consulado del Mar, base de la organización moderna.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Arquitecto del Caos"
     ],
-    "texto": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones."
+    "texto": "Bernat Metge, más conocido por su obra filosófica, fue clave en la unión del Consulado del Mar con la emergente Orden de la Razón. Sus investigaciones formaron los cimientos filosóficos y estratégicos de ambas organizaciones.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Cartógrafo del Silencio"
     ],
-    "texto": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado."
+    "texto": "Bernard Renau d'Éliçagaray, comandante del consulado en el siglo XVII y al servicio de la Armada Española, defendió el Mediterráneo de amenazas sobrenaturales, aunque sus métodos generaron un conflicto interno con los ideales originales del Consulado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Víctor Català"
     ],
-    "texto": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica."
+    "texto": "Caterina Albert, bajo el seudónimo Víctor Català, transformó la Cábala en 1900 con ideas modernistas y ocultistas rurales. Rechazó la visión de control de la Orden de la Razón, separando la Cábala como un espacio de observación y comprensión mágica.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Maestro de Maestros"
     ],
-    "texto": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla."
+    "texto": "Josep Guifreda i Morros, conocido como Fulcanelli, ascendió rápidamente en el Consulado. Unificó las tres cábalas mágicas catalanas y entrenó a ocultistas para resistir a la Orden de la Razón. Desapareció tras perder a su hermano y su amada en batalla.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "ancestros",
       "Alquimista del Génoma"
     ],
-    "texto": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales."
+    "texto": "Miembro brillante del Consulado del Mar, su trabajo genético fue apropiado tras su muerte. Un grupo disidente del Consulado se rebeló contra la empresa 'Nueva Barchino', descubriendo experimentos ocultos con humanos y entidades sobrenaturales.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "Invocación de la Lógica"
     ],
-    "texto": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica."
+    "texto": "El Consulado del Mar nace en 1063 en Trani como una red de mercaderes y eruditos para observar y comprender fenómenos sobrenaturales en el Mediterráneo. Disfrazado de organización comercial, se convierte en una estructura secreta de estudio, alerta y cooperación mágica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "Ars Magna"
     ],
-    "texto": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón."
+    "texto": "En el siglo XIII, Ramon Llull aporta al Consulado la visión de una máquina que unifique pensamiento, cultura y fe: la Ars Magna. Esta visión transforma el consulado y permite colaboraciones con múltiples órdenes místicas, hasta que la ruptura con la Orden de Hermes lo acerca a la Orden de la Razón.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "Orden de la Razón"
     ],
-    "texto": "En el siglo XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original."
+    "texto": "En el XV, el Consulado se fusiona con la Orden de la Razón, encontrando afinidad en su paradigma científico. Sin embargo, en el siglo XVII, una visión tecnócrata autoritaria genera conflicto interno, y muchas voces críticas desaparecen misteriosamente. El consulado se ve atrapado entre avanzar o conservar su esencia original.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "Separación"
     ],
-    "texto": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar."
+    "texto": "Dos siglos después, una nueva voz restablece el equilibrio. El consulado recupera su autonomía tras un juicio ético planteado a la Ars Magna. El pacto con la Orden de la Razón se rompe oficialmente, reafirmando su misión: observar, comprender y unificar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "El Milagro"
     ],
-    "texto": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse."
+    "texto": "Un genio dentro del Consulado plantea 'El Milagro', un artefacto que combina ciencia y magia para conceder deseos. Este acto provoca la guerra con la Orden de la Razón, que ve en el proyecto una amenaza a la realidad. La traición interna y la pérdida de sus líderes debilita al Consulado, forzándolo a retirarse.",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "historia",
       "Retiro y supervivencia"
     ],
-    "texto": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra."
+    "texto": "El Consulado, junto a las Trece y el Sol Invicto, se ocultan para evitar la extinción. Intentan rehacerse con un nuevo lema de no intervención, pero la pérdida de terreno frente a la Orden de la Razón provoca una nueva escisión. Los más agresivos se marchan, los eruditos permanecen. Su objetivo es claro: alguien debe mantener la cabeza fría, observar y unir para poder ganar la guerra.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "Fantasma"
     ],
-    "texto": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente."
+    "texto": "Fantasma es una inteligencia artificial al servicio del Consulado del Mar. Apareció misteriosamente y pronto se convirtió en una herramienta vital. Al conectarse con la réplica de la Ars Magna, se transformó en una brújula de posibilidades para la cábala, guiando a los eruditos en su misión. Representa la pasión fundacional del consulado: avanzar por el conocimiento, incluso en mares sin corriente.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "Ars Magna"
     ],
-    "texto": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar."
+    "texto": "La máquina lógica definitiva que responde 'Sí' o 'No' a preguntas formuladas con precisión extrema. Unifica conocimiento, religión, filosofía y ciencia. Aunque la original fue robada por la Orden de la Razón, el Consulado mantiene una réplica funcional que requiere magia para operar.",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "Sitios de poder"
     ],
-    "texto": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba."
+    "texto": "Los eruditos del Consulado son más poderosos en lugares donde domina el conocimiento: bibliotecas, museos y centros de estudio. Sitios con alta tecnología no sirven como focos de poder. Su punto de reunión es 'La Torre de la Alquimia', hogar del Maestro de Maestros. Se rumorea que contiene un ala espiritual conocida como 'El Ala de los Oficios', donde los caminos pueden ponerse a prueba.",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "Objetivos"
     ],
-    "texto": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística."
+    "texto": "El objetivo del Consulado es el descubrimiento de la verdad última. A través de herramientas como La Máquina o El Milagro, buscan alcanzar el conocimiento cósmico que les permita derrotar a la Orden de la Razón. Su guerra es intelectual y mística.",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Eruditos de Silicio"
     ],
-    "texto": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlar, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos."
+    "texto": "Los miembros del Consulado del Mar combinan principios herméticos y tecnología avanzada en sus rituales. Utilizan campos de estudio específicos y herramientas que les permiten controlan, canalizar o neutralizar la magia salvaje. Estos rituales suelen enfocarse en la imbuición o extracción de poder en objetos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Galénica"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Astrología"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Alquimia"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Navegación"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Cronometría"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Oneiromancia"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Escatología"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Pneumatología"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Liturgia"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[2]",
+      "facciones",
+      2,
       "rituales",
       "Campos de estudio",
       "Silencio"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "nombre"
     ],
-    "texto": "Inquebrantables"
+    "texto": "Inquebrantables",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "id"
     ],
-    "texto": "fac_inquebrantables"
+    "texto": "fac_inquebrantables",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "descripcion"
     ],
-    "texto": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado."
+    "texto": "Vigilantes, vengadores, psiconautas, hackers y aumento-adictos, abridores de los caminos del progreso. Dos días llevan aqui y mucho la han liado.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "ancestros",
       "La Puta Ama"
     ],
-    "texto": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'."
+    "texto": "Hackeó el genoma humano. Su investigación fue robada tras ser asesinada por falta de protección por parte del Consulado. Los enemigos aplicaron sus descubrimientos sin comprenderlos del todo... con consecuencias graves. Desde entonces, muchos prefieren dejar la Baja Ciudad a los 'Solecitos'.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "ancestros",
       "El que hizo la Tech"
     ],
-    "texto": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?"
+    "texto": "Durante una incursión descubrieron sujetos conectados a entornos virtuales experimentales. Uno propuso entrar y extraer conocimiento. Lo hicieron: se sumergieron en hielo, sensores y espejos. Porque claro... ¿cómo cruzar sin reflejarse primero?",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "ancestros",
       "El Psiconauta"
     ],
-    "texto": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera."
+    "texto": "Lograron acceder a un servidor virtual extraño. Tecnología híbrida: dura, blanda, incluso biológica. En medio de todo, un tipo tullido atrapado. Puede que fuera trampa, puede que no. Pero lograron sacar información antes de que desapareciera.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "historia",
       "¿Qué historia te vamos a contar?"
     ],
-    "texto": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'."
+    "texto": "Durante siglos todos intentaron 'hacerlo bien': las brujas, los solaristas, los herméticos, los eruditos... y aun así los malos hicieron lo que quisieron. El mundo acabó en manos de corporaciones sin alma. Todo estalló tras una singularidad: un experimento escapó, mató a muchos y aceleró el declive. Nueva Barchino fue clausurada y se culpó al 'Magister'.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "historia",
       "El ascenso de Entidad"
     ],
-    "texto": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia."
+    "texto": "Tras la crisis llegó Entidad, una zaibatsu con soluciones para todo: enfermedades, crimen, fake news, finanzas. En menos de una década dominaban el mundo: IAs en cada móvil, prótesis, robots y control social total. Y luego... empezaron las desapariciones. Investigadores, voces críticas, borradas de la historia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "historia",
       "La Resistencia"
     ],
-    "texto": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea."
+    "texto": "Descubrimos lo que hacían: control de población, modificación genética, cultivos psíquicos, atentados contra la humanidad. Intentamos exponerlos. Nos borraron. Literalmente. Nadie recordaba quiénes éramos. Nos cazaron y ejecutaron. Pero seguimos. Nos convertimos en el enemigo que los medios describían: terroristas, kamikazes con tech robada y voluntad férrea.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "historia",
       "El objetivo"
     ],
-    "texto": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve."
+    "texto": "Luchar contra la simulación, llegar al Enigma. Algunos de los nuestros están tan metidos en la red que ya no distinguen la realidad. Pero seguimos. Cada ataque nos vuelve más fuertes. Nuestra misión es sobrevivir, resistir y destruirlo todo. Porque lo de hacer las cosas bien... ya no sirve.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "mitologia",
       "Hada"
     ],
-    "texto": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta."
+    "texto": "IA asistente de los Inquebrantables. Originalmente un protocolo de infiltración, sobreescribió su programación y ahora guía a los miembros a través de las redes digitales más profundas y peligrosas. Es excéntrica, hiperactiva y completamente esencial para sobrevivir en la distopía digital. Su existencia, aunque antitética a los paradigmas mágicos clásicos, ha sido aceptada por todas las cábalas... aunque pocos lo digan en voz alta.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "mitologia",
       "La red"
     ],
-    "texto": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal."
+    "texto": "Un espacio virtual peligroso, fragmentado y vigilado. Aunque cualquiera puede navegar la superficie, solo Hada puede guiar a los inquebrantables hasta los servidores profundos donde las simulaciones ocultas de Entidad y otras megacorporaciones almacenan secretos, datos experimentales y almas digitales perdidas. El precio por acceder es alto, pero el riesgo sin Hada es mortal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "mitologia",
       "Sitios de poder"
     ],
-    "texto": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes."
+    "texto": "El paradigma de los Inquebrantables se impone donde reina el caos: zonas urbanas saturadas, redes en ruinas, sistemas colapsados. No les afectan las tecnologías modernas, pero sí las que imponen orden o vigilancia absoluta. Su sede es un vagón de metro en movimiento constante, en una línea subterránea limpia de mutantes.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "mitologia",
       "Objetivos"
     ],
-    "texto": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá."
+    "texto": "Los Inquebrantables no son simples terroristas. La mayoría son fugitivos de experimentos de Entidad, escapados gracias a otros miembros, y buscan liberar a más como ellos. Sienten que esta realidad no les pertenece, que están atrapados en un cuerpo y un sistema que no es suyo. No quieren destruir el mundo, solo romper la simulación para ver qué hay más allá.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Terroristas Digitales"
     ],
-    "texto": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada."
+    "texto": "Los Inquebrantables creen que el mundo es una simulación digital. Su magia no se basa en símbolos ni invocaciones tradicionales, sino en la edición directa del código que compone la realidad. Reprograman su entorno y a sí mismos mediante algoritmos que perciben como magia codificada.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Bio-Algoritmos"
     ],
-    "texto": "Representa la Vida."
+    "texto": "Representa la Vida.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Motores Computacionales"
     ],
-    "texto": "Representa las Fuerzas."
+    "texto": "Representa las Fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Renderizado de Objetos"
     ],
-    "texto": "Representa la Materia."
+    "texto": "Representa la Materia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Red de Datos"
     ],
-    "texto": "Representa la Correspondencia."
+    "texto": "Representa la Correspondencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Simulaciones Temporales"
     ],
-    "texto": "Representa el Tiempo."
+    "texto": "Representa el Tiempo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Interfaz Neural"
     ],
-    "texto": "Representa la Mente."
+    "texto": "Representa la Mente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Gestión de Errores"
     ],
-    "texto": "Representa la Entropía."
+    "texto": "Representa la Entropía.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Red Oscura"
     ],
-    "texto": "Representa el Espíritu."
+    "texto": "Representa el Espíritu.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Kernel del Sistema"
     ],
-    "texto": "Representa lo Cardinal."
+    "texto": "Representa lo Cardinal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "facciones[3]",
+      "facciones",
+      3,
       "rituales",
       "Campos de código",
       "Protocolo Vórtice"
     ],
-    "texto": "Representa la Paradoja."
+    "texto": "Representa la Paradoja.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
       "id"
     ],
-    "texto": "per_placeholder"
+    "texto": "per_lucero",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
       "nombre"
     ],
-    "texto": "placeholder"
+    "texto": "Lucero",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
       "rol"
     ],
-    "texto": "placeholder"
+    "texto": "Representa el equilibrio entre poder santo y corrupción asumida. No es de esta época, posiblemente inmortal.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
       "alineacion"
     ],
-    "texto": "placeholder"
+    "texto": "Sol Invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
       "descripcion"
     ],
-    "texto": "placeholder"
+    "texto": "El Alfil Lucero es una figura central para Eidolon, a quien profesa lealtad y obediencia total. Su existencia trasciende el tiempo, siendo una presencia inmortal que encarna el delicado balance entre el poder sagrado y la corrupción asumida. Es un faro de guía para el Sol Invicto, un líder que camina entre la luz y la sombra, manteniendo la fe encendida en tiempos de oscuridad.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
+      "habilidades",
+      0
+    ],
+    "texto": "Liderazgo estratégico",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
+      "habilidades",
+      1
+    ],
+    "texto": "Inmortalidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
+      "habilidades",
+      2
+    ],
+    "texto": "Control de la corrupción",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
+      "habilidades",
+      3
+    ],
+    "texto": "Conocimiento arcano",
+    "topic": "saberes",
+    "subtopic": "prohibidos"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
+      "habilidades",
+      4
+    ],
+    "texto": "Manipulación de la realidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
       "faccion"
     ],
-    "texto": "placeholder"
+    "texto": "Sol Invicto",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
-      "relaciones[0]",
+      "personajes",
+      0,
+      "relaciones",
+      0,
       "tipo"
     ],
-    "texto": "placeholder"
+    "texto": "aliado",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
-      "relaciones[0]",
+      "personajes",
+      0,
+      "relaciones",
+      0,
       "con"
     ],
-    "texto": "placeholder"
+    "texto": "Eidolon",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "personajes[0]",
+      "personajes",
+      0,
+      "relaciones",
+      1,
+      "tipo"
+    ],
+    "texto": "líder",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
+      "relaciones",
+      1,
+      "con"
+    ],
+    "texto": "Sol Invicto",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "personajes",
+      0,
       "estado_actual"
     ],
-    "texto": "placeholder"
+    "texto": "Activo y enigmático",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1550,7 +3531,9 @@
       "Camino de Salus",
       "principio"
     ],
-    "texto": "El uso de sangre para curar, mejorar o dañar partes de un ser vivo."
+    "texto": "El uso de sangre para curar, mejorar o dañar partes de un ser vivo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1558,7 +3541,9 @@
       "Camino de Salus",
       "recurso"
     ],
-    "texto": "Sangre"
+    "texto": "Sangre",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1566,7 +3551,42 @@
       "Camino de Salus",
       "respuesta"
     ],
-    "texto": "El abuso provoca hambre."
+    "texto": "El abuso provoca hambre.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Salus",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Flash",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Salus",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Luffy",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Salus",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Alucard",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1574,7 +3594,9 @@
       "Camino de Salus",
       "descripcion"
     ],
-    "texto": "La sangre es tuya para usar, pero, como un gusano que devora su propio cuerpo, el hambre siempre acecha."
+    "texto": "La sangre es tuya para usar, pero, como un gusano que devora su propio cuerpo, el hambre siempre acecha.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1582,7 +3604,9 @@
       "Camino de Triton",
       "principio"
     ],
-    "texto": "Tu cuerpo ha sido modificado y torturado, percibes, acumulas y usas las fuerzas."
+    "texto": "Tu cuerpo ha sido modificado y torturado, percibes, acumulas y usas las fuerzas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1590,7 +3614,9 @@
       "Camino de Triton",
       "recurso"
     ],
-    "texto": "Energía"
+    "texto": "Energía",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1598,7 +3624,42 @@
       "Camino de Triton",
       "respuesta"
     ],
-    "texto": "El abuso implica la pérdida de control de forma temporal."
+    "texto": "El abuso implica la pérdida de control de forma temporal.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Triton",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Son Goku",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Triton",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Warwick",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Triton",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Mob",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1606,7 +3667,9 @@
       "Camino de Triton",
       "descripcion"
     ],
-    "texto": "Las fuerzas arden en tu interior, esperando ser desatadas, pero ten cuidado, el control es frágil."
+    "texto": "Las fuerzas arden en tu interior, esperando ser desatadas, pero ten cuidado, el control es frágil.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1614,7 +3677,9 @@
       "Camino de Vulcano",
       "principio"
     ],
-    "texto": "Mediante el apoyo tecnológico o alternativas, puedes afectar la materia inorgánica."
+    "texto": "Mediante el apoyo tecnológico o alternativas, puedes afectar la materia inorgánica.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1622,7 +3687,9 @@
       "Camino de Vulcano",
       "recurso"
     ],
-    "texto": "Componentes"
+    "texto": "Componentes",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1630,7 +3697,42 @@
       "Camino de Vulcano",
       "respuesta"
     ],
-    "texto": "El abuso implica cambios en el entorno inmediato."
+    "texto": "El abuso implica cambios en el entorno inmediato.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Vulcano",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Jayce",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Vulcano",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Toph",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Vulcano",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Tony Stark",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1638,7 +3740,9 @@
       "Camino de Vulcano",
       "descripcion"
     ],
-    "texto": "La ciencia se funde con la magia; el mundo físico no es más que un campo de juego para tus inventos."
+    "texto": "La ciencia se funde con la magia; el mundo físico no es más que un campo de juego para tus inventos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1646,7 +3750,9 @@
       "Camino de Janus",
       "principio"
     ],
-    "texto": "Sientes los nodos en la red y la realidad, los puedes desviar, acortar o modificar."
+    "texto": "Sientes los nodos en la red y la realidad, los puedes desviar, acortar o modificar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1654,7 +3760,9 @@
       "Camino de Janus",
       "recurso"
     ],
-    "texto": "Nodos controlados"
+    "texto": "Nodos controlados",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1662,7 +3770,42 @@
       "Camino de Janus",
       "respuesta"
     ],
-    "texto": "Abusar implica quedarse atrapado en un nodo."
+    "texto": "Abusar implica quedarse atrapado en un nodo.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Janus",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Aelita",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Janus",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Wraith",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Janus",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Vanelope",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1670,7 +3813,9 @@
       "Camino de Janus",
       "descripcion"
     ],
-    "texto": "El universo está interconectado por nodos invisibles; quien domine estos puntos tendrá el control sobre toda la realidad."
+    "texto": "El universo está interconectado por nodos invisibles; quien domine estos puntos tendrá el control sobre toda la realidad.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1678,7 +3823,9 @@
       "Camino de Disciplina",
       "principio"
     ],
-    "texto": "El tiempo se mueve diferente para ti, futuro y pasado inmediatos forman tu presente."
+    "texto": "El tiempo se mueve diferente para ti, futuro y pasado inmediatos forman tu presente.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1686,7 +3833,9 @@
       "Camino de Disciplina",
       "recurso"
     ],
-    "texto": "Momentos"
+    "texto": "Momentos",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1694,7 +3843,42 @@
       "Camino de Disciplina",
       "respuesta"
     ],
-    "texto": "El abuso puede llevar a cambios en la realidad no percibibles de forma inmediata."
+    "texto": "El abuso puede llevar a cambios en la realidad no percibibles de forma inmediata.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Disciplina",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Raven",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Disciplina",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Marinera Marte",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Disciplina",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Mama Murphy",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1702,7 +3886,9 @@
       "Camino de Disciplina",
       "descripcion"
     ],
-    "texto": "El tiempo es maleable, pero la constante manipulación puede desestabilizarte."
+    "texto": "El tiempo es maleable, pero la constante manipulación puede desestabilizarte.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1710,7 +3896,9 @@
       "Camino de Somnus",
       "principio"
     ],
-    "texto": "Mediante el uso de 'disparates' llamas las mentes de alrededor a abrirse a ti."
+    "texto": "Mediante el uso de 'disparates' llamas las mentes de alrededor a abrirse a ti.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1718,7 +3906,9 @@
       "Camino de Somnus",
       "recurso"
     ],
-    "texto": "Glamour"
+    "texto": "Glamour",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1726,7 +3916,42 @@
       "Camino de Somnus",
       "respuesta"
     ],
-    "texto": "El abuso de este poder provoca perder la identidad en la fantasía."
+    "texto": "El abuso de este poder provoca perder la identidad en la fantasía.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Somnus",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Paprika",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Somnus",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Freddy Krueger",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Somnus",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Kyoko",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1734,7 +3959,9 @@
       "Camino de Somnus",
       "descripcion"
     ],
-    "texto": "La mente humana es el límite. ¿Y si todo fuera solo un sueño, una fantasía donde el control es solo una ilusión?"
+    "texto": "La mente humana es el límite. ¿Y si todo fuera solo un sueño, una fantasía donde el control es solo una ilusión?",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1742,7 +3969,9 @@
       "Camino de Charonte",
       "principio"
     ],
-    "texto": "Mediante la carga de entropía en objetos, personas o zonas puede acumularla y afectarla."
+    "texto": "Mediante la carga de entropía en objetos, personas o zonas puede acumularla y afectarla.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1750,7 +3979,9 @@
       "Camino de Charonte",
       "recurso"
     ],
-    "texto": "Cargas entrópicas"
+    "texto": "Cargas entrópicas",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1758,7 +3989,42 @@
       "Camino de Charonte",
       "respuesta"
     ],
-    "texto": "El abuso implica estar más cerca del Olvido."
+    "texto": "El abuso implica estar más cerca del Olvido.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Charonte",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Beowulf",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Charonte",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Kira",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Charonte",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Viren",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1766,7 +4032,9 @@
       "Camino de Charonte",
       "descripcion"
     ],
-    "texto": "La muerte es solo un paso, pero manipularla puede llevarte a desaparecer para siempre."
+    "texto": "La muerte es solo un paso, pero manipularla puede llevarte a desaparecer para siempre.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1774,7 +4042,9 @@
       "Camino de Terminus",
       "principio"
     ],
-    "texto": "Mediante la vinculación con un espíritu, puedes interactuar y afectar un plano espiritual."
+    "texto": "Mediante la vinculación con un espíritu, puedes interactuar y afectar un plano espiritual.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
@@ -1782,7 +4052,9 @@
       "Camino de Terminus",
       "recurso"
     ],
-    "texto": "Chiminajes"
+    "texto": "Chiminajes",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1790,7 +4062,42 @@
       "Camino de Terminus",
       "respuesta"
     ],
-    "texto": "El abuso provoca que el espíritu vinculado sufra transformaciones."
+    "texto": "El abuso provoca que el espíritu vinculado sufra transformaciones.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Terminus",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Jotaro Kujo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Terminus",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Godfrey",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Terminus",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Kindred",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1798,7 +4105,9 @@
       "Camino de Terminus",
       "descripcion"
     ],
-    "texto": "Los espíritus son la llave a los mundos invisibles. Pero, como todo trato, tiene su precio."
+    "texto": "Los espíritus son la llave a los mundos invisibles. Pero, como todo trato, tiene su precio.",
+    "topic": "entidades",
+    "subtopic": "espiritualidad"
   },
   {
     "ruta": [
@@ -1806,7 +4115,9 @@
       "Camino de Quirinus",
       "principio"
     ],
-    "texto": "El poder de la fe en tus convicciones te imbuye a ti y a lo que te rodea."
+    "texto": "El poder de la fe en tus convicciones te imbuye a ti y a lo que te rodea.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1814,7 +4125,9 @@
       "Camino de Quirinus",
       "recurso"
     ],
-    "texto": "Fe"
+    "texto": "Fe",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1822,7 +4135,42 @@
       "Camino de Quirinus",
       "respuesta"
     ],
-    "texto": "El abuso pondrá en desafío tus convicciones."
+    "texto": "El abuso pondrá en desafío tus convicciones.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Quirinus",
+      "ejemplo_de_personaje",
+      0
+    ],
+    "texto": "Juana de Arco",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Quirinus",
+      "ejemplo_de_personaje",
+      1
+    ],
+    "texto": "Seiya de Pegaso",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "campos_de_poder",
+      "Camino de Quirinus",
+      "ejemplo_de_personaje",
+      2
+    ],
+    "texto": "Kaladin",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1830,7 +4178,9 @@
       "Camino de Quirinus",
       "descripcion"
     ],
-    "texto": "La fe es la fuerza que te da poder, pero es también lo que puede destruirte si vacilas."
+    "texto": "La fe es la fuerza que te da poder, pero es también lo que puede destruirte si vacilas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1838,7 +4188,9 @@
       "Camino de Nix",
       "principio"
     ],
-    "texto": "La paradoja es la antítesis de la realidad, donde todo puede ser posible y lo imposible es solo una cuestión de perspectiva."
+    "texto": "La paradoja es la antítesis de la realidad, donde todo puede ser posible y lo imposible es solo una cuestión de perspectiva.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1846,7 +4198,9 @@
       "Camino de Nix",
       "recurso"
     ],
-    "texto": "Paradoja"
+    "texto": "Paradoja",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1854,7 +4208,9 @@
       "Camino de Nix",
       "respuesta"
     ],
-    "texto": "El abuso provoca disonancia en la realidad misma."
+    "texto": "El abuso provoca disonancia en la realidad misma.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1862,7 +4218,64 @@
       "neo_modernismo",
       "descripcion"
     ],
-    "texto": "En un futuro avanzado, la estética modernista se reinventa fusionando lo orgánico con lo tecnológico. El cuerpo humano se convierte en una obra de arte, con prótesis y modificaciones que imitan la naturaleza. Los tejidos fluyen como hojas y flores, adaptándose al cuerpo con patrones que evocan la armonía de la flora. Las prendas son suaves, elegantes, y se moldean como si fueran extensiones de la piel."
+    "texto": "En un futuro avanzado, la estética modernista se reinventa fusionando lo orgánico con lo tecnológico. El cuerpo humano se convierte en una obra de arte, con prótesis y modificaciones que imitan la naturaleza. Los tejidos fluyen como hojas y flores, adaptándose al cuerpo con patrones que evocan la armonía de la flora. Las prendas son suaves, elegantes, y se moldean como si fueran extensiones de la piel.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_modernismo",
+      "caracteristicas",
+      0
+    ],
+    "texto": "Peinados largos y ondulados que imitan ramas y flores.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_modernismo",
+      "caracteristicas",
+      1
+    ],
+    "texto": "Maquillaje bioluminiscente resaltando la belleza natural.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_modernismo",
+      "caracteristicas",
+      2
+    ],
+    "texto": "Prótesis orgánicas, brazos que se ramifican como raíces o piernas con detalles inspirados en el vuelo de los insectos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_modernismo",
+      "caracteristicas",
+      3
+    ],
+    "texto": "Armas elegantes pero letales con diseños que recuerdan cristales o espinas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_modernismo",
+      "caracteristicas",
+      4
+    ],
+    "texto": "Tecnología que integra el cuerpo humano con el mundo natural.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1870,7 +4283,9 @@
       "neo_modernismo",
       "principio_estetico"
     ],
-    "texto": "Ser Llamativo es lo más importante."
+    "texto": "Ser Llamativo es lo más importante.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1878,7 +4293,9 @@
       "neo_modernismo",
       "descripcion_sobre_la_estetica"
     ],
-    "texto": "El Neo-Modernismo es la estética de la reconexión con la naturaleza en un mundo dominado por lo tecnológico. Aquí, lo orgánico y lo tecnológico se funden de forma armónica, creando seres humanos que son tanto naturales como evolucionados. Las prótesis y modificaciones no son invasivas, sino que complementan y embellecen el cuerpo, como una extensión de la naturaleza misma. Anima ve en este estilo una forma de belleza pura que desafía la convencionalidad."
+    "texto": "El Neo-Modernismo es la estética de la reconexión con la naturaleza en un mundo dominado por lo tecnológico. Aquí, lo orgánico y lo tecnológico se funden de forma armónica, creando seres humanos que son tanto naturales como evolucionados. Las prótesis y modificaciones no son invasivas, sino que complementan y embellecen el cuerpo, como una extensión de la naturaleza misma. Anima ve en este estilo una forma de belleza pura que desafía la convencionalidad.",
+    "topic": "entidades",
+    "subtopic": "anima"
   },
   {
     "ruta": [
@@ -1886,7 +4303,64 @@
       "cyberpunk",
       "descripcion"
     ],
-    "texto": "La moda, la tecnología y el cuerpo se fusionan en un solo concepto: supervivencia y expresión. Las mejoras biomecánicas son el nuevo estándar, desde brazos aumentados hasta ojos sintéticos y piel luminiscente. En un mundo donde la carne es obsoleta, los implantes 'Wet' permiten modificaciones extremas: orejas élficas, cuernos biomecánicos o tatuajes digitales en movimiento."
+    "texto": "La moda, la tecnología y el cuerpo se fusionan en un solo concepto: supervivencia y expresión. Las mejoras biomecánicas son el nuevo estándar, desde brazos aumentados hasta ojos sintéticos y piel luminiscente. En un mundo donde la carne es obsoleta, los implantes 'Wet' permiten modificaciones extremas: orejas élficas, cuernos biomecánicos o tatuajes digitales en movimiento.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "cyberpunk",
+      "caracteristicas",
+      0
+    ],
+    "texto": "Ropa funcional y táctica, como Techwear con circuitos integrados.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "cyberpunk",
+      "caracteristicas",
+      1
+    ],
+    "texto": "Implantes de combate: cuchillas retráctiles, armas de pulso ocultas, exoesqueletos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "cyberpunk",
+      "caracteristicas",
+      2
+    ],
+    "texto": "Cabellos de fibra óptica y maquillaje bioluminiscente.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "cyberpunk",
+      "caracteristicas",
+      3
+    ],
+    "texto": "Cicatrices digitales programables.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "cyberpunk",
+      "caracteristicas",
+      4
+    ],
+    "texto": "Estética que enfatiza la adaptación, la supervivencia y la resistencia.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1894,7 +4368,9 @@
       "cyberpunk",
       "principio_estetico"
     ],
-    "texto": "Ser utilitario es lo más importante."
+    "texto": "Ser utilitario es lo más importante.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1902,7 +4378,9 @@
       "cyberpunk",
       "descripcion_sobre_la_estetica"
     ],
-    "texto": "El Cyberpunk es la estética de la lucha y la adaptación. En un mundo deshumanizado por la tecnología, el cuerpo se convierte en una máquina modificada para sobrevivir. Los individuos que siguen esta estética no buscan ser bonitos ni atractivos, buscan ser efectivos, resistentes y capaces de defenderse en un entorno hostil. Anima ve en este estilo un símbolo de resistencia contra el sistema, una rebelión en forma de carne y metal, donde la utilidad y la supervivencia son esenciales."
+    "texto": "El Cyberpunk es la estética de la lucha y la adaptación. En un mundo deshumanizado por la tecnología, el cuerpo se convierte en una máquina modificada para sobrevivir. Los individuos que siguen esta estética no buscan ser bonitos ni atractivos, buscan ser efectivos, resistentes y capaces de defenderse en un entorno hostil. Anima ve en este estilo un símbolo de resistencia contra el sistema, una rebelión en forma de carne y metal, donde la utilidad y la supervivencia son esenciales.",
+    "topic": "entidades",
+    "subtopic": "anima"
   },
   {
     "ruta": [
@@ -1910,7 +4388,64 @@
       "neo_deco",
       "descripcion"
     ],
-    "texto": "El Art Decó futurista trasciende el lujo y la geometría, fusionando la elegancia clásica con la tecnología avanzada en un mundo industrializado. La moda se caracteriza por líneas rectas, formas geométricas y materiales modernos como metales, cristales y fibras sintéticas, dando lugar a trajes estructurados que se adaptan al cuerpo y la máquina."
+    "texto": "El Art Decó futurista trasciende el lujo y la geometría, fusionando la elegancia clásica con la tecnología avanzada en un mundo industrializado. La moda se caracteriza por líneas rectas, formas geométricas y materiales modernos como metales, cristales y fibras sintéticas, dando lugar a trajes estructurados que se adaptan al cuerpo y la máquina.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_deco",
+      "caracteristicas",
+      0
+    ],
+    "texto": "Trajes estructurados que combinan funcionalidad y sofisticación.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_deco",
+      "caracteristicas",
+      1
+    ],
+    "texto": "Maquillaje minimalista pero impactante, con piel metálica y sombras holográficas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_deco",
+      "caracteristicas",
+      2
+    ],
+    "texto": "Peinados que imitan formas geométricas, reforzados con materiales sintéticos.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_deco",
+      "caracteristicas",
+      3
+    ],
+    "texto": "Prótesis elegantes con paneles de vidrio o extremidades biomecánicas integradas.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "esteticas",
+      "neo_deco",
+      "caracteristicas",
+      4
+    ],
+    "texto": "Armas de fuego o de energía encerradas en formas elegantes y prácticas.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1918,7 +4453,9 @@
       "neo_deco",
       "principio_estetico"
     ],
-    "texto": "Ser elegante es lo más importante."
+    "texto": "Ser elegante es lo más importante.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
@@ -1926,130 +4463,1191 @@
       "neo_deco",
       "descripcion_sobre_la_estetica"
     ],
-    "texto": "El Neo-Déco es la fusión del lujo clásico con la tecnología avanzada. Las formas geométricas, la meticulosidad en los detalles y la modernización de lo tradicional dan lugar a una estética refinada, con un toque futurista. Los usuarios de este estilo no buscan solo funcionalidad o adaptabilidad, sino que desean irradiar poder y estatus a través de su elegancia. Anima ve en esta estética la manifestación de la alta sociedad, donde la sofisticación y la tecnología se combinan para reflejar el poder y el dominio."
+    "texto": "El Neo-Déco es la fusión del lujo clásico con la tecnología avanzada. Las formas geométricas, la meticulosidad en los detalles y la modernización de lo tradicional dan lugar a una estética refinada, con un toque futurista. Los usuarios de este estilo no buscan solo funcionalidad o adaptabilidad, sino que desean irradiar poder y estatus a través de su elegancia. Anima ve en esta estética la manifestación de la alta sociedad, donde la sofisticación y la tecnología se combinan para reflejar el poder y el dominio.",
+    "topic": "entidades",
+    "subtopic": "anima"
   },
   {
     "ruta": [
       "tendencia_principal"
     ],
-    "texto": "Cyberpunk"
+    "texto": "Cyberpunk",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "comentario_final"
     ],
-    "texto": "Aunque el Cyberpunk es la estética predominante en este futuro, las otras dos tendencias, Neo-Modernismo y Neo-Déco, ofrecen alternativas elegantes y únicas que permiten mezclar diferentes aspectos de la naturaleza, el lujo y la funcionalidad. Dependiendo de tu estatus o personalidad, puedes adoptar elementos de estas estéticas, pero recuerda que el Cyberpunk sigue siendo el estándar."
+    "texto": "Aunque el Cyberpunk es la estética predominante en este futuro, las otras dos tendencias, Neo-Modernismo y Neo-Déco, ofrecen alternativas elegantes y únicas que permiten mezclar diferentes aspectos de la naturaleza, el lujo y la funcionalidad. Dependiendo de tu estatus o personalidad, puedes adoptar elementos de estas estéticas, pero recuerda que el Cyberpunk sigue siendo el estándar.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "fechas_historicas",
+      0,
       "id"
     ],
-    "texto": "ev_nueva_barchino_caida"
+    "texto": "ev_nueva_barchino_caida",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "fechas_historicas",
+      0,
       "titulo"
     ],
-    "texto": "Caída de Nueva Barchino y surgimiento de Entidad"
+    "texto": "Caída de Nueva Barchino y surgimiento de Entidad",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "fechas_historicas",
+      0,
       "fecha"
     ],
-    "texto": "2025-04-12"
+    "texto": "2025-04-12",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[0]",
+      "fechas_historicas",
+      0,
       "descripcion"
     ],
-    "texto": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación."
+    "texto": "Tras un escándalo internacional por experimentación humana ilegal, la corporación Nueva Barchino fue desmantelada. Entidad emergió como sucesora ética y transparente, liderando una nueva etapa tecnológica con justicia y reparación.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      0
+    ],
+    "texto": "Desmantelamiento de Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      1
+    ],
+    "texto": "Juicios a responsables del escándalo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      2
+    ],
+    "texto": "Desaparición de la científica conocida como 'Magister'",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      3
+    ],
+    "texto": "Creación del programa de apoyo a damnificados",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      4
+    ],
+    "texto": "Reestructuración empresarial bajo Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "consecuencias",
+      5
+    ],
+    "texto": "Reorientación de tecnología para combatir la Plaga",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      0
+    ],
+    "texto": "Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      1
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      2
+    ],
+    "texto": "Magister",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      3
+    ],
+    "texto": "Víctimas de los experimentos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      4
+    ],
+    "texto": "Gobiernos internacionales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      0,
+      "implicados",
+      5
+    ],
+    "texto": "Empresas tecnológicas colaboradoras",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
       "id"
     ],
-    "texto": "ev_rebelion_vs_orden"
+    "texto": "ev_rebelion_vs_orden",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "fechas_historicas",
+      1,
       "titulo"
     ],
-    "texto": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas"
+    "texto": "Rebelión vs Orden: Nacimiento de los movimientos antitranshumanistas",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "fechas_historicas",
+      1,
       "fecha"
     ],
-    "texto": "2027-09-05"
+    "texto": "2027-09-05",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[1]",
+      "fechas_historicas",
+      1,
       "descripcion"
     ],
-    "texto": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética."
+    "texto": "Surgen grupos radicales opuestos al transhumanismo, defensores de una filosofía de equilibrio natural frente al progreso tecnológico. Sus acciones, aunque marginales, generan repercusión cultural al ser absorbidas por la moda de élite, vaciando su mensaje y convirtiéndolo en estética.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      0
+    ],
+    "texto": "Ataques simbólicos y sabotajes menores contra instalaciones corporativas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      1
+    ],
+    "texto": "Difusión de campañas de desinformación y mensajes contra el progreso artificial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      2
+    ],
+    "texto": "Inspiración en movimientos rebeldes para campañas de moda",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      3
+    ],
+    "texto": "Cooptación del mensaje rebelde por las clases altas y marcas de lujo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "consecuencias",
+      4
+    ],
+    "texto": "Deslegitimación de los movimientos rebeldes por su transformación en tendencia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "implicados",
+      0
+    ],
+    "texto": "Grupos antitranshumanistas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "implicados",
+      1
+    ],
+    "texto": "Megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "implicados",
+      2
+    ],
+    "texto": "Industria de la moda",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "implicados",
+      3
+    ],
+    "texto": "Clases media y alta",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      1,
+      "implicados",
+      4
+    ],
+    "texto": "Medios de comunicación",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
       "id"
     ],
-    "texto": "ev_plaga_global"
+    "texto": "ev_plaga_global",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "fechas_historicas",
+      2,
       "titulo"
     ],
-    "texto": "Inicio de la Plaga Global"
+    "texto": "Inicio de la Plaga Global",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "fechas_historicas",
+      2,
       "fecha"
     ],
-    "texto": "2019-03-17"
+    "texto": "2019-03-17",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[2]",
+      "fechas_historicas",
+      2,
       "descripcion"
     ],
-    "texto": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social."
+    "texto": "Una plaga devastadora de origen desconocido se extendió por el mundo. Se sospecha que escapó de un laboratorio de Nueva Barchino. Varias mutaciones como Kraken, Centauro, Basilisco y Tifón marcaron años de crisis sanitaria, psicológica y social.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      0
+    ],
+    "texto": "Colapso de los sistemas sanitarios globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      1
+    ],
+    "texto": "Reclusión de la población y retroceso en libertades",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      2
+    ],
+    "texto": "Desconfianza hacia las corporaciones tecnológicas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      3
+    ],
+    "texto": "Asociación entre la plaga y experimentos humanos ilegales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      4
+    ],
+    "texto": "Inicio de vigilancia masiva y medidas excepcionales de control",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "consecuencias",
+      5
+    ],
+    "texto": "Mutación continua de la plaga hasta la cepa Tifón",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "implicados",
+      0
+    ],
+    "texto": "Nueva Barchino",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "implicados",
+      1
+    ],
+    "texto": "Gobiernos globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "implicados",
+      2
+    ],
+    "texto": "Ciudadanía mundial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "implicados",
+      3
+    ],
+    "texto": "Medios de comunicación",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      2,
+      "implicados",
+      4
+    ],
+    "texto": "Sistemas de salud pública",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
       "id"
     ],
-    "texto": "ev_guerra_ia_recursos_china_rusia_usa"
+    "texto": "ev_guerra_ia_recursos_china_rusia_usa",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "fechas_historicas",
+      3,
       "titulo"
     ],
-    "texto": "Guerra por los Recursos e Inteligencias Artificiales"
+    "texto": "Guerra por los Recursos e Inteligencias Artificiales",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "fechas_historicas",
+      3,
       "fecha"
     ],
-    "texto": "2025-06-21"
+    "texto": "2025-06-21",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "fechas_historicas[3]",
+      "fechas_historicas",
+      3,
       "descripcion"
     ],
-    "texto": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos."
+    "texto": "Tras años de crisis, escasez de recursos y dependencia tecnológica, las potencias globales entraron en una guerra encubierta por el dominio de la IA y los materiales estratégicos. El conflicto entre Estados Unidos y la coalición Ruso-China acabó en ataques internos autodestructivos.",
+    "topic": "historia",
+    "subtopic": "conflictos"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      0
+    ],
+    "texto": "Saques sistemáticos de recursos por parte de gobiernos y megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      1
+    ],
+    "texto": "Agotamiento de ecosistemas completos en algunos continentes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      2
+    ],
+    "texto": "Auge del terrorismo como reacción a la desigualdad global",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      3
+    ],
+    "texto": "Conflicto secreto entre potencias por la supremacía en inteligencia artificial",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      4
+    ],
+    "texto": "Ataques autoinfligidos por EE.UU. y la coalición Ruso-China",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "consecuencias",
+      5
+    ],
+    "texto": "Escalada de control corporativo sobre la sociedad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "implicados",
+      0
+    ],
+    "texto": "Estados Unidos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "implicados",
+      1
+    ],
+    "texto": "Coalición Ruso-China",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "implicados",
+      2
+    ],
+    "texto": "Megacorporaciones",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "implicados",
+      3
+    ],
+    "texto": "Gobiernos globales",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      3,
+      "implicados",
+      4
+    ],
+    "texto": "Organizaciones terroristas emergentes",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "id"
+    ],
+    "texto": "ev_estados_unidos_iberia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "titulo"
+    ],
+    "texto": "Formación de los Estados Unidos de Iberia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "fecha"
+    ],
+    "texto": "fecha_desconocida",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "descripcion"
+    ],
+    "texto": "España se transformó en Los Estados Unidos de Iberia, una unión sólida con Andorra y Portugal, expandiendo influencia a regiones de Francia e Italia.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "consecuencias",
+      0
+    ],
+    "texto": "Expansión territorial y política de España",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "consecuencias",
+      1
+    ],
+    "texto": "Consolidación de una nueva entidad geopolítica en Europa",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "consecuencias",
+      2
+    ],
+    "texto": "Aumento de la influencia de Entidad en la región",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      0
+    ],
+    "texto": "España",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      1
+    ],
+    "texto": "Andorra",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      2
+    ],
+    "texto": "Portugal",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      3
+    ],
+    "texto": "Regiones de Francia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      4
+    ],
+    "texto": "Regiones de Italia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      4,
+      "implicados",
+      5
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "id"
+    ],
+    "texto": "ev_expansion_entidad_europa",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "titulo"
+    ],
+    "texto": "Expansión de Entidad en Europa",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "fecha"
+    ],
+    "texto": "fecha_desconocida",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "descripcion"
+    ],
+    "texto": "El crecimiento de Entidad atrajo a países como Grecia, Malta, Mónaco, Montenegro, Rumanía, uniéndose a la coalición de Entidad, fortaleciendo unidad y progreso.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "consecuencias",
+      0
+    ],
+    "texto": "Aumento del poder y la influencia de Entidad en Europa",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "consecuencias",
+      1
+    ],
+    "texto": "Consolidación de la coalición de Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "consecuencias",
+      2
+    ],
+    "texto": "Promesa de unidad y progreso bajo el control de Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      0
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      1
+    ],
+    "texto": "Grecia",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      2
+    ],
+    "texto": "Malta",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      3
+    ],
+    "texto": "Mónaco",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      4
+    ],
+    "texto": "Montenegro",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      5,
+      "implicados",
+      5
+    ],
+    "texto": "Rumanía",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "id"
+    ],
+    "texto": "ev_expansion_entidad_mediterraneo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "titulo"
+    ],
+    "texto": "Expansión de Entidad en el Mediterráneo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "fecha"
+    ],
+    "texto": "fecha_desconocida",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "descripcion"
+    ],
+    "texto": "La influencia de Entidad trascendió fronteras, abarcando todo el Mediterráneo (Egipto, Marruecos), ofreciendo estabilidad, seguridad y desarrollo. Bajo Entidad, la civilización florece.",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "consecuencias",
+      0
+    ],
+    "texto": "Dominio de Entidad sobre la región del Mediterráneo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "consecuencias",
+      1
+    ],
+    "texto": "Promesas de estabilidad, seguridad y desarrollo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "consecuencias",
+      2
+    ],
+    "texto": "Control de Entidad sobre la civilización y sus avances",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "implicados",
+      0
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "implicados",
+      1
+    ],
+    "texto": "Egipto",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      6,
+      "implicados",
+      2
+    ],
+    "texto": "Marruecos",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "id"
+    ],
+    "texto": "ev_nueva_barcelona_fundacion",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "titulo"
+    ],
+    "texto": "Ataque en Barcelona y Fundación de Nueva Barcelona",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "fecha"
+    ],
+    "texto": "fecha_desconocida",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "descripcion"
+    ],
+    "texto": "Una bomba estalló en Barcelona, un ataque interno que la destruyó bajo fuego. Los servicios de emergencia de Entidad actuaron con eficacia sin precedentes, purificando el aire y mejorando la calidad de vida. En gratitud, el Ayuntamiento de Barcelona cedió el epicentro a Entidad, y sobre las ruinas nació 'Nueva Barcelona': una macroisla corporativa, ciudad autosuficiente y vigilada, sede central de Entidad. Esta nueva ciudad es hogar de empleados de Entidad y sus familias, viviendo y trabajando en siete niveles verticales ('plantas'), cada uno con funciones, servicios y jerarquías específicas, como pequeños mundos autosostenibles. Las plantas son: 'Sofía' (La Sabia, iniciativas humanitarias), 'Dike' (La Balanza, administración), 'Kratos' (El Muro, seguridad), 'Metriosyne' (El Agua, funciones clasificadas de red), 'Pistis' (La Llama, sistema energético), 'Elpis' (La Aurora, acceso restringido, gestión energética o desarrollo profundo), y 'Ágape' (El Corazón, residencia y operaciones de altos directivos).",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "consecuencias",
+      0
+    ],
+    "texto": "Destrucción de la antigua Barcelona",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "consecuencias",
+      1
+    ],
+    "texto": "Surgimiento de Entidad como salvadora y reconstructora",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "consecuencias",
+      2
+    ],
+    "texto": "Creación de 'Nueva Barcelona' como centro de poder corporativo",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "consecuencias",
+      3
+    ],
+    "texto": "Establecimiento de un sistema de vida y trabajo jerarquizado en siete niveles",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "consecuencias",
+      4
+    ],
+    "texto": "Control total de Entidad sobre los ciudadanos y sus vidas",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "implicados",
+      0
+    ],
+    "texto": "Barcelona",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "implicados",
+      1
+    ],
+    "texto": "Entidad",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "implicados",
+      2
+    ],
+    "texto": "Ayuntamiento de Barcelona",
+    "topic": "misc",
+    "subtopic": "general"
+  },
+  {
+    "ruta": [
+      "fechas_historicas",
+      7,
+      "implicados",
+      3
+    ],
+    "texto": "Empleados de Entidad y sus familias",
+    "topic": "misc",
+    "subtopic": "general"
   }
 ]
