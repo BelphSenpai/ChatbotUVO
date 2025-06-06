@@ -52,7 +52,7 @@ def extraer_claves_relevantes(respuesta, world_data, extra_data):
     return claves_usadas
 
 # Consulta directa con JSON completo
-def ask(user_input):
+def responder_a_usuario(user_input):
         name_ia = get_name_ia()
         BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
