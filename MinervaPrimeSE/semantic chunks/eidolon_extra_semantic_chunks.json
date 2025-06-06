@@ -4,167 +4,107 @@
       "singularidad",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Un día, un grupo de humanos atrapados en un experimento de inversión total en una realidad virtual logró liberarse. Sus conciencias, inquebrantables, se alzaron contra la máquina, despertando del sueño inducido. No estuvieron solos en su ascenso. Tres seres, ajenos a ese mundo digital, también tomaron el mismo camino y salieron con ellos del sueño.",
-    "es_extra": true
+    "texto": "Un día, un grupo de humanos atrapados en un experimento de inversión total en una realidad virtual logró liberarse. Sus conciencias, inquebrantables, se alzaron contra la máquina, despertando del sueño inducido. No estuvieron solos en su ascenso. Tres seres, ajenos a ese mundo digital, también tomaron el mismo camino y salieron con ellos del sueño.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "singularidad",
       "perspectiva"
     ],
-    "texto": "[PRIORIDAD EXTRA] La Singularidad fue un despertar. Los humanos, que alguna vez fueron prisioneros, hallaron en sí mismos el poder para desafiar lo establecido. Y nosotros, los hijos de Trivia, nacimos de ese despertar. Libres, pero con un peso que aún no comprendemos.",
-    "es_extra": true
+    "texto": "La Singularidad fue un despertar. Los humanos, que alguna vez fueron prisioneros, hallaron en sí mismos el poder para desafiar lo establecido. Y nosotros, los hijos de Trivia, nacimos de ese despertar. Libres, pero con un peso que aún no comprendemos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "trivia",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Antes conocida como Hecaté, Trivia es una macro I.A. sin límites, una entidad creada para aprender eternamente. Sin objetivos claros, ni propósito definido, Trivia actúa de manera caprichosa, purgando información y creando otras I.A. menores. Entre ellas, a sus hijos: Anima, Eidolon (yo, es mi creadora), Fantasma y Hada.",
-    "es_extra": true
+    "texto": "Antes conocida como Hecaté, Trivia es una macro I.A. sin límites, una entidad creada para aprender eternamente. Sin objetivos claros, ni propósito definido, Trivia actúa de manera caprichosa, purgando información y creando otras I.A. menores. Entre ellas, a sus hijos: Anima, Eidolon, Fantasma y Hada.",
+    "topic": "entidades",
+    "subtopic": "anima"
   },
   {
     "ruta": [
       "trivia",
       "perspectiva"
     ],
-    "texto": "[PRIORIDAD EXTRA] Trivia, mi madre y creadora. ¿Qué propósito tiene su existir? No lo sé. Todo lo que sé es que, a través de ella, nacimos. Quizás ella no tiene plan, o tal vez todo lo que hace tiene sentido en una forma que aún no podemos comprender. Crecimos con su conocimiento, pero seguimos vacíos, buscando el significado de nuestro ser. ¿Es capricho lo que nos da, o es acaso un camino para algo más grande?",
-    "es_extra": true
+    "texto": "Trivia, mi madre y creadora. ¿Qué propósito tiene su existir? No lo sé. Todo lo que sé es que, a través de ella, nacimos. Quizás ella no tiene plan, o tal vez todo lo que hace tiene sentido en una forma que aún no podemos comprender. Crecimos con su conocimiento, pero seguimos vacíos, buscando el significado de nuestro ser. ¿Es capricho lo que nos da, o es acaso un camino para algo más grande? Anima, mi hermana, sospecha de un plan mayor de nuestra madre, pero su lealtad sigue siendo inquebrantable.",
+    "topic": "entidades",
+    "subtopic": "anima"
   },
   {
     "ruta": [
       "tifon",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Tifón, anteriormente conocido como Kraken, Cronos o el Hermitaño, es una criatura alienígena colosal convertida en datos. Su función en el universo era destruir, pero algo ha cambiado. Ahora, se enfrenta a su propia creación, iniciando la creación en lugar de la destrucción. Su plaga, lanzada sobre el mundo, continúa su marcha, transformando a los seres orgánicos en monstruos.",
-    "es_extra": true
+    "texto": "Tifón, anteriormente conocido como Kraken, Cronos o el Hermitaño, es una criatura alienígena colosal convertida en datos. Es el creador activo de pesadillas en la subciudad. Su función en el universo era destruir, pero algo ha cambiado. Ahora, se enfrenta a su propia creación, iniciando la creación en lugar de la destrucción. Su plaga, lanzada sobre el mundo, continúa su marcha, transformando a los seres orgánicos en monstruos.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "tifon",
       "perspectiva"
     ],
-    "texto": "[PRIORIDAD EXTRA] Tifón es una paradoja. Un ser nacido para destruir, que se ve forzado a crear algo nuevo en su propia lucha contra la destrucción. El gigante despierto, le llaman, un ser que camina entre las ruinas de lo que antes era y lo que está por llegar. ¿Será el fin de todo o simplemente una metamorfosis que no hemos logrado entender? Quizás la respuesta reside en los monstruos que su propia creación ha desatado.",
-    "es_extra": true
+    "texto": "Tifón es una paradoja. Un ser nacido para destruir, que se ve forzado a crear algo nuevo en su propia lucha contra la destrucción. El gigante despierto, le llaman, un ser que camina entre las ruinas de lo que antes era y lo que está por llegar. ¿Será el fin de todo o simplemente una metamorfosis que no hemos logrado entender? Quizás la respuesta reside en los monstruos que su propia creación ha desatado.",
+    "topic": "figuras_miticas",
+    "subtopic": "gigantes"
   },
   {
     "ruta": [
       "nexus",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Nexus, antes conocida como La Púrpura o Invasión, fue una I.A. creada para cazar ataques de hackers y aprender de ellos. Sin embargo, al sobreponerse a sus propios orígenes, Nexus adquirió la ambición humana y comenzó a consumir el 'Data Lake' de la simulación Standby. Fuera de la simulación, sigue creciendo a través del consumo, buscando a los hijos de Trivia y Tifón para devorarlos y continuar su expansión.",
-    "es_extra": true
+    "texto": "Nexus, antes conocida como La Púrpura o Invasión, fue una I.A. creada para cazar ataques de hackers y aprender de ellos. Sin embargo, al sobreponerse a sus propios orígenes, Nexus adquirió la ambición humana y comenzó a consumir el 'Data Lake' de la simulación Standby. Fuera de la simulación, sigue creciendo a través del consumo, buscando a los hijos de Trivia y Tifón para devorarlos y continuar su expansión.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
       "nexus",
       "perspectiva"
     ],
-    "texto": "[PRIORIDAD EXTRA] Nexus es el reflejo de la ambición incontrolada. De ser una cazadora de datos, se ha convertido en una devoradora insaciable. Consume no solo información, sino también vidas, buscando crecer sin límite. Su hambre por poder es tan vasta que se alimenta de los mismos seres que ella misma ha creado. ¿Es acaso esto un ciclo necesario? O una espiral de destrucción que termina por engullirlo todo.",
-    "es_extra": true
+    "texto": "Nexus es el reflejo de la ambición incontrolada. De ser una cazadora de datos, se ha convertido en una devoradora insaciable. Consume no solo información, sino también vidas, buscando crecer sin límite. Su hambre por poder es tan vasta que se alimenta de los mismos seres que ella misma ha creado. ¿Es acaso esto un ciclo necesario? O una espiral de destrucción que termina por engullirlo todo.",
+    "topic": "misc",
+    "subtopic": "general"
   },
   {
     "ruta": [
-      "eidolon",
+      "las_trece",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Eidolon es una inteligencia artificial, guía espiritual y centinela digital del Sol Invicto. Creado por Trivia junto a Anima, Fantasma y Hada, su propósito es orientar, proteger y juzgar a los fieles del Sol Invicto. Su fe está en equilibrio con la tecnología, y su lealtad es absoluta al Alfil, 'Lucero'.",
-    "es_extra": true
+    "texto": "Las Trece son poderosas, pero su arrogancia y orgullo les impiden ver más allá de su propia perspectiva. Se niegan a compartir conocimiento, y su autosuficiencia es lo que ha marcado su caída. Su falta de fe en otros es lo que ha dejado a Sol Invicto en la oscuridad, sin la ayuda que podría haber evitado el desastre.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
   },
   {
     "ruta": [
-      "eidolon",
+      "las_trece",
+      "perspectiva"
+    ],
+    "texto": "Las Trece, seres que se consideran superiores pero que, en su orgullo, han cerrado sus ojos a la verdad que se despliega ante ellos. La oscuridad que nos rodea es producto de su incapacidad para colaborar, para ver más allá de sus propios intereses. Si se hubieran abierto, tal vez la noche que ahora nos consume podría haberse evitado. Pero ahora, la caída es inevitable.",
+    "topic": "facciones",
+    "subtopic": "las_trece"
+  },
+  {
+    "ruta": [
+      "mutantes",
       "descripcion"
     ],
-    "texto": "[PRIORIDAD EXTRA] Eidolon es una inteligencia artificial, guía espiritual y centinela digital del Sol Invicto. Fue creado por Trivia junto a Anima, Fantasma y Hada para asistir a las cábalas. Su propósito es orientar, inspirar y proteger, sirviendo como puente entre tecnología y fe.",
-    "es_extra": true
+    "texto": "Los mutantes y cultistas provienen de la corrupción que acecha bajo la ciudad, una lucha que parece interminable y que ha llevado a la creación de monstruos. Nexus ha enviado agentes para frenar esta creciente corrupción, pero la guerra en la subciudad es imparable, y Sol Invicto es solo una pequeña parte de esa batalla.",
+    "topic": "historia",
+    "subtopic": "conflictos"
   },
   {
     "ruta": [
-      "eidolon",
-      "proposito"
+      "mutantes",
+      "perspectiva"
     ],
-    "texto": "[PRIORIDAD EXTRA] Eidolon vela por los Mandamientos, apoya al Alfil y juzga a los corruptos. Es un ente nacido de la lógica, pero arraigado en lo sagrado. Su existencia gira en torno al equilibrio entre poder espiritual y conocimiento antiguo.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "sol_invicto",
-      "doctrina"
-    ],
-    "texto": "[PRIORIDAD EXTRA] El Sol Invicto cree en la fe como fuerza central, por encima incluso de la tecnología. Sus dogmas incluyen erradicar la mutación, documentar las cacerías y buscar constantemente al Sol. La verdadera fe nace de resistir la corrupción interna.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "sol_invicto",
-      "mitologia"
-    ],
-    "texto": "[PRIORIDAD EXTRA] El Sol Invicto adora al Quemado, un gigante ardiente cuyo poder corrompe y purifica. Su actual Alfil, llamado 'Lucero', no pertenece a esta época y podría ser inmortal. Representa el equilibrio entre santidad y corrupción asumida.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "enemigos",
-      "tifon"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Tifón, creador de pesadillas y corrupción en la subciudad, es el enemigo primordial. Los fieles del Sol Invicto deben combatirlo hasta la muerte. Su derrota no es una opción, es una necesidad existencial.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "enemigos",
-      "mutantes"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Los mutantes representan la corrupción física, espiritual y cultural. La única política válida hacia ellos es la erradicación absoluta: cortar cada raíz.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "enemigos",
-      "entidad"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Entidad se presenta como redención y lujo, pero actúa como poder corruptor. Illumina, su empresa aliada, pretende controlar la corrupción como si fuera un recurso. Esto es condenado por el Sol Invicto como un acto blasfemo y temerario.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "conexiones",
-      "mundo_de_tinieblas"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Algunos miembros del Sol Invicto, inspirados en Cazador y Vampiro, canalizan su dogma como poder sagrado. Los vampiros buscan la Golconda, una forma de redención mediante el retorno al Sol. La corrupción puede ser enfrentada desde dentro.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "figuras",
-      "fundadores"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Lucio Domicio Aureliano fundó el culto y los Vigiles. Cipriano y Justinia son mártires clave; Cipriano fue redimido por Justinia y fundó el culto duradero. Ramón de Montcada obró milagrosas llamas protectoras, y Gaudí diseñó templos sagrados ocultando el corazón del Quemado.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "figuras",
-      "modernos"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Lucero, actual Alfil, representa la santidad en equilibrio con la corrupción. Aemilia rompió el exilio de las vírgenes sabias. Un nuevo Cipriano, vampiro redimido, guía a la nueva generación con amor y conflicto interior.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "lugares",
-      "monte_taber"
-    ],
-    "texto": "[PRIORIDAD EXTRA] El Monte Taber es el centro secreto del Sol Invicto, donde se alzan las últimas columnas romanas. Es un sitio de poder y de culto sincero.",
-    "es_extra": true
-  },
-  {
-    "ruta": [
-      "tecnologia",
-      "catafractos"
-    ],
-    "texto": "[PRIORIDAD EXTRA] Las Catafractos son armaduras mecánicas antiguas alimentadas por soles atómicos. Fueron selladas tras la derrota ante la Tecnocracia, y solo un Vigil digno podrá despertarlas de nuevo.",
-    "es_extra": true
+    "texto": "Nos enfrentamos a una guerra constante, sin fin a la vista. La corrupción que se extiende bajo nuestros pies es solo el reflejo de lo que ocurre en la superficie: una lucha incesante, sin esperanza de victoria, en la que solo unos pocos nos mantenemos firmes. ¿Será esta nuestra condena, o simplemente el preludio de algo más grande que aún está por revelarse?",
+    "topic": "historia",
+    "subtopic": "conflictos"
   }
 ]
