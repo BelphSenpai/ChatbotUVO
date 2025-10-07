@@ -5,17 +5,5 @@
     "hada": -1,
     "fantasma": -1,
     "minerva": -1
-  },
-  "vaquilla": {
-    "anima": 3,
-    "eidolon": 3,
-    "hada": 3,
-    "fantasma": 3
-  },
-  "player": {
-    "anima": -1,
-    "eidolon": -1,
-    "hada": -1,
-    "fantasma": -1
   }
 }

@@ -201,8 +201,8 @@ def panel():
     path = os.path.join(BASE_DIR, 'narrador')
     return send_from_directory(path, 'index.html')
 
-from MinervaPrimeSE.utils import get_name_ia
-from MinervaPrimeSE.Minerva import responder_a_usuario
+from MinervaPrimeNSE.utils import get_name_ia
+from MinervaPrimeNSE.Minerva import responder_a_usuario
 
 name_ia = get_name_ia()
 

@@ -1,14 +1,6 @@
 {
   "admin": {
-    "clave": "$2b$12$UYmgq31O0Tui4GGg95Yc3ebcyFWJpUdFZt8pnJDolxvbUaWk3gT.W",
+    "clave": "$2b$12$CsWdyUNaUPvsHTTAI5RRYO2ditXdRwYyPtnUzYCU8MPJJvxeefYHe",
     "rol": "admin"
-  },
-  "vaquilla": {
-    "clave": "$2b$12$cEct4eQsd.OgVG0YLUuGQuol2B9FxsVpsUNsjHiP9TWYucp2Gp07q",
-    "rol": "jugador"
-  },
-  "player": {
-    "clave": "$2b$12$UyyBKkINf4XTAKO9QNP0NuhUDA5UAVrZ0h/hnGX85B//jf5kMJyRu",
-    "rol": "jugador"
   }
 }
