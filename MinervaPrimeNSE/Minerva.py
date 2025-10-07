@@ -69,7 +69,6 @@ def responder_a_usuario(user_input: str, name_ia: str, user=None):
 
     print(Fore.CYAN + f"Path de personalidad: {personalidad_path}")
     print(Fore.CYAN + f"Path de contexto general: {world_general_path}")
-    print(Fore.CYAN + f"\n📝 Prompt completo:\n{full_prompt}\n")
 
     start = time.time()
     try:
