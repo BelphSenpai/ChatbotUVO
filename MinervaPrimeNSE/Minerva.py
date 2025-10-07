@@ -4,7 +4,7 @@ import time
 from colorama import Fore, init
 from dotenv import load_dotenv
 from openai import OpenAI
-from utils import cargar_json, get_name_ia
+from MinervaPrimeNSE.utils import cargar_json, get_name_ia
 
 init(autoreset=True)
 load_dotenv()
