@@ -71,13 +71,13 @@ def responder_a_usuario(user_input: str, name_ia: str, user=None):
     try:
         resp = client.chat.completions.create(
             model="gpt-4.1",
-            input=[
+            messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": full_prompt},
             ],
             temperature=0.8,
         )
-        output = resp.output_text
+        output = resp.choices[0].message.content
     except Exception as e:
         print(Fore.RED + f"❌ Error en la llamada a OpenAI: {e}")
         return "[DATA NOT FOUND]"
