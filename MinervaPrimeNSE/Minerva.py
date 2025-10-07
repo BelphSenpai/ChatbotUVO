@@ -4,6 +4,7 @@ import time
 from colorama import Fore, init
 from dotenv import load_dotenv
 from openai import OpenAI
+from pathlib import Path
 from MinervaPrimeNSE.utils import cargar_json, get_name_ia
 
 init(autoreset=True)
@@ -30,13 +31,28 @@ def cargar_texto(path: str) -> str:
         return f.read()
 
 
-def responder_a_usuario(user_input: str, NAME_IA, User):
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    try:
-        personalidad = cargar_json(os.path.join(BASE_DIR, "personalidades", f"{NAME_IA.lower()}.json"))
+def responder_a_usuario(user_input: str, name_ia: str, user=None):
+    # 1) Fija la raíz del proyecto a /app (padre de MinervaPrimeNSE)
+    PROJECT_ROOT = Path(__file__).resolve().parents[1]  # -> /app
 
-        # Carga explícita de las 2 fuentes del mundo, como promete el prompt
-        world_general = cargar_texto(os.path.join(BASE_DIR, "pdfs", f"{NAME_IA.lower()}.txt"))
+    # 2) (Opcional) permite override por variable de entorno si la tienes
+    PROJECT_ROOT = Path(os.getenv("APP_ROOT", str(PROJECT_ROOT))).resolve()
+
+    try:
+        # 3) Construye rutas desde /app, NO desde /app/MinervaPrimeNSE
+        personalidad_path = PROJECT_ROOT / "personalidades" / f"{name_ia.lower()}.json"
+        world_general_path = PROJECT_ROOT / "pdfs" / f"{name_ia.lower()}.txt"
+
+        # 4) Fails fast y logs útiles
+        if not personalidad_path.exists():
+            print(Fore.RED + f"❌ No existe personalidad: {personalidad_path}")
+            return "[DATA NOT FOUND]"
+        if not world_general_path.exists():
+            print(Fore.RED + f"❌ No existe world.txt: {world_general_path}")
+            return "[DATA NOT FOUND]"
+
+        personalidad = cargar_json(str(personalidad_path))
+        world_general = cargar_texto(str(world_general_path))
 
     except Exception as e:
         print(Fore.RED + f"❌ Error cargando datos: {e}")
