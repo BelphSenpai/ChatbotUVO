@@ -36,7 +36,7 @@ def responder_a_usuario(user_input: str, NAME_IA, User):
         personalidad = cargar_json(os.path.join(BASE_DIR, "personalidades", f"{NAME_IA.lower()}.json"))
 
         # Carga explícita de las 2 fuentes del mundo, como promete el prompt
-        world_general = cargar_texto(os.path.join(BASE_DIR, "pdfs", f"{NAME_IA.lower()}_world.txt"))
+        world_general = cargar_texto(os.path.join(BASE_DIR, "pdfs", f"{NAME_IA.lower()}.txt"))
 
     except Exception as e:
         print(Fore.RED + f"❌ Error cargando datos: {e}")
