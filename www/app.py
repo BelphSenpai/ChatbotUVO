@@ -267,15 +267,25 @@ def ia_query():
 
 # ========== ADMINISTRACIÓN ==========
 
+def normalizar_personajes(d):
+    # Fuerza claves a minúsculas y limpia espacios
+    out = {}
+    for k, v in d.items():
+        out[k.strip().lower()] = v
+    return out
+
+# Carga inicial
+with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
+    PERSONAJES = normalizar_personajes(json.load(f))
+
 def cargar_personajes():
     global PERSONAJES
     with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
-        PERSONAJES = json.load(f)
+        PERSONAJES = normalizar_personajes(json.load(f))
 
 def guardar_personajes():
     with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
         json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
-
 
 @app.route('/admin')
 def admin_panel():
