@@ -2,5 +2,105 @@
   "admin": {
     "clave": "$2b$12$/g6Je2ToKL/KIEdJODEwC.YcgVEbgUbRjrdZ1Zg4bUqDq.c0EjgnS",
     "rol": "admin"
+  },
+  "Test": {
+    "clave": "$2b$12$RafXmp0NPqEHMtpA1KVX.O/Io5Np8fC38z2fPxrkv.7a//U.4Cvjm",
+    "rol": "jugador"
+  },
+  "S33D": {
+    "clave": "$2b$12$v4vzmoG/Ihg3ksVUAKB6f.e7UWMdz7oHa7PjlonxfakJxcZSjEBLK",
+    "rol": "jugador"
+  },
+  "RAM-1": {
+    "clave": "$2b$12$rtLBVXy4q.kw0HmWIXd0suKPy54IcVA0jOG1ibDG9KXGVEhrzdQhO",
+    "rol": "jugador"
+  },
+  "SV3ZD4": {
+    "clave": "$2b$12$HNWbCyzdvPfkPGV7cnGNdeyIbJB6/d0gWrzeIjrxuY/WkzT9NwX1u",
+    "rol": "jugador"
+  },
+  "L30N4": {
+    "clave": "$2b$12$BHeh8nkBGaWY.t/sNcdtu.IEL.jluLPm8n.vvB/LcNywzIvdobRLu",
+    "rol": "jugador"
+  },
+  "CH3SHIR3": {
+    "clave": "$2b$12$cneohESPDcTPz4pZoon/b.vg5lyD93FR.x2MtFDE0bAi3U9hqCnZ.",
+    "rol": "jugador"
+  },
+  "M7RDD1N": {
+    "clave": "$2b$12$JP8ZmHQvg66XwJVsgPnj5e9nJ.nvteeEgIP6/fTUbBXJcJCS80A7q",
+    "rol": "jugador"
+  },
+  "SK14": {
+    "clave": "$2b$12$a4JTEzaONSt7f.91xR7Sy.TDsLxZ6IQmjr8mM0EOZxjznhqTV/cjy",
+    "rol": "jugador"
+  },
+  "M0R14RT7": {
+    "clave": "$2b$12$hrLe3.sNvUFzX9GUQhqmSe.4PbR1Ehi9Z.QrUYmokwAzWvqSlaKC.",
+    "rol": "jugador"
+  },
+  "MM": {
+    "clave": "$2b$12$hpvSbfA8JJBquVvM9zOhceTNr2fWNC1pEV6osY4wxQBavblDzrsnm",
+    "rol": "jugador"
+  },
+  "3RR4NT3": {
+    "clave": "$2b$12$GrJoM1N4fQ0eu9w1VHSSK.SztchFZdYru/c.ZZ.eRyIR7Udz35LFm",
+    "rol": "jugador"
+  },
+  "3P1ST3M3": {
+    "clave": "$2b$12$SJc7cHINQl3Sgp0nnkjOWOK4JNk00xu/6beOEy39KYr1yJo9ppj1a",
+    "rol": "jugador"
+  },
+  "L4ZH0R": {
+    "clave": "$2b$12$BCDvZSI.mPrkP7R2D815iOpUmvHVMQLN5oV7Ybo1Zo/dMJTdkTeKa",
+    "rol": "jugador"
+  },
+  "D14BL0": {
+    "clave": "$2b$12$oYlHvRQB8ee/ga39kLyqd.296b07qBp5zA69CVlSJj9ZSri/bHpY6",
+    "rol": "jugador"
+  },
+  "LUC3R0": {
+    "clave": "$2b$12$LxkxNF8hJb4/nz.egw0LOOJteM1ZaToBIVke3wtEJvSYZmp6einuq",
+    "rol": "jugador"
+  },
+  "4N4T0L4": {
+    "clave": "$2b$12$lu4axewfT5RUurq/hiMmjOmtqPZiZRAfb0BK9KWdfHOM.pVL1i5A2",
+    "rol": "jugador"
+  },
+  "R3QU13M": {
+    "clave": "$2b$12$1ULsiSCrV1rvWhXjXkquyeUWpOpYWK3YR377Gtb2zRifliVRHj7kW",
+    "rol": "jugador"
+  },
+  "54R13L": {
+    "clave": "$2b$12$wleaTWmjzpio5C.WPbt98.qQvqHK8ts3YRBx.NF939gbTPw7.oZg6",
+    "rol": "jugador"
+  },
+  "V3X4": {
+    "clave": "$2b$12$BSRFJvXPDHjMaDiYo68UA.LqXQCvw8croyFHnD6J9yPH8fxTeWN1C",
+    "rol": "jugador"
+  },
+  "4L3X": {
+    "clave": "$2b$12$ymHUbEZMvxHrMbCRsCov/.woLth65mgMMRGEGXzeOeX4irSaqorUO",
+    "rol": "jugador"
+  },
+  "S1B1L4": {
+    "clave": "$2b$12$3/St2fuPXRsntmm4OGbzPOM8flO9eyeCOf4HL/3D3sqfxW4DTBi3a",
+    "rol": "jugador"
+  },
+  "3L1A5": {
+    "clave": "$2b$12$gSnjTlR/TU6RA3kUaSEaTecy/U4jyCRjtHJXTHwwcEKFe5.X8VKRi",
+    "rol": "jugador"
+  },
+  "L0C0": {
+    "clave": "$2b$12$j25wei9JdWdfK.MYmYUcUumYcu3dUNBx35z5VXSnzinWa72skCrua",
+    "rol": "jugador"
+  },
+  "D4N43": {
+    "clave": "$2b$12$rmkheplA/UaiIBn/R7oI9e7TEmqwrsiS7ca4j9pphDJaZrJH64V2a",
+    "rol": "jugador"
+  },
+  "B4N74": {
+    "clave": "$2b$12$J8smnWIcAuwHXrOaSRI4WOU5RPhreKNBpnhqllM2UHKXiF0/gx.qi",
+    "rol": "jugador"
   }
 }

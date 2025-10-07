@@ -30,7 +30,7 @@ def cargar_texto(path: str) -> str:
         return f.read()
 
 
-def responder_a_usuario(user_input: str):
+def responder_a_usuario(user_input: str, NAME_IA, User):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     try:
         personalidad = cargar_json(os.path.join(BASE_DIR, "personalidades", f"{NAME_IA.lower()}.json"))
