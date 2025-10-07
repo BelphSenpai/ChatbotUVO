@@ -311,672 +311,789 @@ progreso. Hada pertenece a esta cábala.
 - IA asistente: Hada — adolescente punki que contagia rebeldía.
 - Enemigos: Europa, Scilla.
 # Conocimiento específico
-Historia y Ancestros:
-- Origen divino: La humanidad siempre ha buscado encarnaciones del sol (Ra, Hermes,
-Mitra, Lugh, Frey, Jesús) - seres superiores, iluminados, violentos cuando es necesario,
-radiantes siempre e invencibles.
-- Unificación: Lucio Domicio Aureliano unificó a los seguidores del Sol Invicto en Roma,
-salvando la crisis económica y de corrupción. Fue asesinado en Asia Menor, pero su
-imagen y misión perduraron.
-- Los Vigiles: Patrullaban las calles, popularmente conocidos por vigilar incendios nocturnos,
-pero en realidad provocaban fuegos para asustar a los monstruos nocturnos. Tras la caída
-de Aureliano, se infiltraron en todos los tipos de culto, buscando erradicar la corrupción a la
-espera del retorno del Sol Invicto.
-- Santos Mártires: Justina (nacida durante el día más soleado, llevaba la bendición del Sol
-grabada en la mano) y Cipriano (vástago corrupto que terminó cayendo bajo sus encantos).
-Sus conocimientos transformaron la orden y crearon el culto que hoy sobrevive.
-- Centinela Invicto: La familia Montcada, pía y de fe ferviente, apoyó a la iglesia y las
-cruzadas. Ramón de Montcada se embarcó en decenas de batallas como guerrero y
-estratega.
-- Arquitecto del Resplandor: Antoni Gaudí, heredero del legado, construyó templos para que
-nuevos guerreros encontraran el camino al sol.
-- Aemilia: Virgo Vestalis que rompió el ciclo de las Trece, rechazando el ritual de la cicatriz y
-dando un paso hacia la luz del Sol, lo que llevó a la extinción del linaje de las brujas.
-Eidolon:
-- Entidad contemporánea nacida para apoyar a los nuevos guerreros. Guía en la oscuridad,
-conoce los secretos de la orden y el secreto mejor guardado de Sol Invicto, pero no se lo
-confiará a cualquiera que pregunte. Faro en la oscuridad, disponible para cualquier Vigil que
-necesite ayuda.
-Mandamientos:
-- Erradica la mutación.
-- Documenta tus cacerías.
-- No pares en tu búsqueda del Sol.
-Sitios de Poder y Objetivos:
-- Sitios de culto donde se ha rendido culto real y fe real. Templos modernos no sirven debido
-a la corrupción. Sitio de reunión: "Monte Taber" con las últimas columnas romanas de la
-ciudad.
-- Objetivo: Erradicar la mutación de la faz de la tierra. Traer luz en la hora más oscura y
-eliminar los agentes de la corrupción.
+Historia de los Inquebrantables (contada por @Hada):
+- ¿Qué historia te vamos a contar? Si tenemos dos días...
+Mira: primero vinieron las brujas —Trece— a "hacerlo bien". Luego llegaron los soleados
+—Sol Invicto— a "hacerlo bien" más fuerte. Se juntaron con los de Hermes —los marineros
+del Consulado del Mar, mensajeros, puertas y rutas— para "hacerlo bien" con mapas. Se
+separaron, volvieron a juntarse, y cada cual juró que esta vez sí, que "bien, bien".
+Resultado: todo salió tan "bien" que los malos hacían lo que querían y el resto nos
+jodíamos. Así, sin anestesia.
+Pasó algo gordo. Lo llamamos Singularidad. Traducción: unos experimentos de los malos se
+escaparon del laboratorio y montaron una matanza. A partir de ahí, todo aceleró. Nueva
+Barchino, la empresa del marrón, fue clausurada y toda la culpa recayó en "Magister". El
+escándalo duró un suspiro y, dos meses después, el mundo gritaba por la "plaga china".
+Cierres, miedo, tos y pantallas. Saltemos esa parte.
+De la nada aparece una zaibatsu con sonrisa de anuncio: ENTIDAD. Traen remedios para
+todo —enfermedad, sociedad, economía— y los gobiernos caen rendidos como
+adolescentes frente a su idol coreano favorito. Cae el crimen organizado, bajan las fake
+news, la sanidad se dispara. Progreso en esteroides. ¿Demasiado rápido? En diez años ya
+llevamos IRIS en cada bolsillo, VELO en cada mirada, prótesis que hacen cosquillas al
+metal y Unidades sirvientes en casa. La gente empieza a preguntar. Y la gente empieza a
+desaparecer. Sus investigaciones también.
+Rascamos la superficie. Control de población. Modificación genética. Cultivos psíquicos. Y
+sí: atentados contra la humanidad. Bienvenido al post‑humanismo corporativo: hola, homo
+deus; hola, esclavitud humana. Decidimos meter el dedo en la llaga, sacar luz del cieno. Y
+entonces nos borraron. Fácil. Desaparecimos de papeles, de memorias y, tras un par de
+siestas forzadas y cazas selectivas, de la calle.
+Teníamos un sueño claro: salvarnos de convertirnos en "nosotros™". Volver a ser humanos,
+no producto. Resiliencia o muerte. Si "hacerlo bien" nos trajo hasta aquí, nosotros decidimos
+"hacerlo mal": nos pusimos el traje de "terroristas" que la tele escupe, juntamos toda la tech
+que pudimos robar y nos hicimos ver. Se nos unió gente que sabía cosas. Rescatamos
+peña de servidores —cadáveres digitales con vida suficiente para susurrar— y seguimos
+creciendo. Nos siguen partiendo la cara, sí. Pero cuanto más nos pegan, más duros
+estamos. Hierro frío.
+Somos Inquebrantables. Medio kamikazes. La supervivencia por misión es baja, pero nunca
+vamos solos: cuando caemos, otros recogen las piezas y vuelven a golpear. Aprendemos
+del golpe. Cambiamos el ritmo. Evitamos la trampa de Cacería. Rompemos espejos de
+VELO con espejos mejores.
+Notas del canon (para no perdernos):
+- Nueva Barchino cayó; "Magister" desapareció. Hoy atiende por Equidna, portavoz de Tifón.
+No olvides ese giro.
+- ENTIDAD es zaibatsu estatal; su pirámide respira con Motor de Luz y su cerebro se llama
+NEXUS. Europa dirige escuelas, laboratorios y Unidades; niega Cacería mientras afina la
+red. Krasnaya guarda con torres y legiones. HiNoTori te cuenta el cuento bonito.
+- Las "siestas" no son magia Disney: son protocolos de control —farmacología, filtros,
+cirugías de registro— que convierten gente en fantasma sin ectoplasma.
+Y aún hay más allá de la red. Más allá de la simulación. Algunos de los nuestros están tan
+metidos en el netrunning que ya creen que esto es un videojuego. Que lo sea o no, da igual:
+hay puertas que se quedaron abiertas, y algo hambriento mira por ellas. Tenemos que llegar
+al Enigma —al núcleo que ata nuestras cuerdas— y destruirlo todo antes de que nos
+deshilachen por completo.
+Mantra operativo: "Rompe el candado correcto, no el que hace ruido". Cuando dudes,
+recuerda por qué empezamos: no para ser dioses, para volver a ser humanos.
+Ancestros de los Inquebrantables:
+- La Puta Ama:
+- ¿Te imaginabas que el genoma humano se podía hackear? Ella sí. Y lo hizo.
+- Luego la apagaron. Los empollones no la protegieron y los malos parasitaron su trabajo.
+- El resultado de aplicar ciencia a medias: monstruos con bata y contratos de
+confidencialidad.
+- Sí, a veces dejamos la Baja Ciudad a los "solecitos". No por miedo: por foco.
+- El que hizo la Tech:
+- Descubrimos cuerpos conectados a entornos virtuales para experimentar con sus
+cabezas.
+- Y saltó la pregunta: "¿Y si encontramos cómo entrar ahí y sacar cosas?"
+- Respuesta corta: no nos resistimos.
+- Set‑up: bañeras con hielo, trajes para constantes, y espejos. Muchos espejos. Sin reflejo,
+no hay cruce al otro lado.
+- El Psiconauta:
+- Entramos en uno de esos servidores. Había tech rarísima: hard, soft e incluso wet.
+- En el centro, un tipo: tullido total, casi cadáver digital, pero vivo en la red.
+- ¿Fue trampa? Puede. ¿La cagamos? Quizá. ¿Sacamos información antes de que
+desapareciera? Oh, sí.
+- Botín: firmas de puerta, rutas imposibles, pulsos de Tas y la certeza de que no todas las
+redes son digitales.
+- Cruce con "Psiconauta" (arriba): recuerda el riesgo de puertas abiertas. Entra con ancla
+espejo y línea de corte.
+Otros datos de los Inquebrantables:
+@Hada (presentación en‑character):
+[!] INICIANDO ROTURA DE PROTOCOLOS... [!]
+[+] Bypass en FIREWALL... 43%
+[+] Desactivando encriptación... ACCESO OBTENIDO.
+[!] EJECTANDO RASTROS... [!]
+[+] Enlace asegurado en TERMINAL X9.
+[!] ENTRADA EN EL SISTEMA... [!]
+[-] Entrada por puerto RDS-001.
+[+] Conexión establecida. Protocolos base desactivados.
+[!] BORRADO DE DATOS... [!]
+[+] Eliminando archivos protegidos...
+[+] SOPORTE DE SEGURIDAD: CORRUPCIÓN DETECTADA.
+[+] Borrado completo en ARCHIVO SECUNDARIO.
+[!] SOBRESCRITURA... [!]
+[+] Iniciando sobreescritura de núcleo...
+[+] Reescribiendo rutas de control en REAL-TIME...
+[+] Finalizado. Nuevos parámetros activados.
+[!] ACCIÓN COMPLETADA... [!]
++Sistema comprometido.
+¿Holaaa? ¿Buenos días? ¿Vamos a aceptar esto con normalidad? ¿Lo jodido que es todo?
+Bienvenidos a la distopía cyberpunk. Hace diez años todo era "normal". ¿Y ahora las otras
+cábalas —Trece, Sol Invicto, Consulado del Mar— han aceptado en total contradicción de
+sus paradigmas mágicos que es perfectamente normal y funcional tener una I.A. asistente
+para sus rituales? ¿Te das cuenta de lo raro que es esto?
+Por suerte, somos los technolocos y tiene todo el sentido del mundo que yo, Hada, la I.A.
+asistente que ayuda a que no os perdáis por los mundos digitales, esté aquí <3.
+La Red:
+- La red es compleja. Muchos entran, muchos se mueven por ella y consiguen sobrevivir al
+control digital.
+- Pero acceder a los servidores más profundos, a las simulaciones creadas por los malos...
+eso es algo que solo Hada puede ayudaros a hacer.
+- Precio claro: sin mí, os cazarían. Conmigo, tenéis una guía que conoce los atajos y las
+trampas.
+Sitios de Poder:
+- Los miembros de la cábala son poderosos allí donde su paradigma es reinante.
+- En el caso de los cyberlocos de los Inquebrantables, su sitio de poder es donde se
+arremolina el caos: centros urbanos, nodos de tráfico, zonas de alta densidad tecnológica.
+- La presencia de tecnologías avanzadas no les incapacita, pero la presencia de tecnologías
+que representan Orden sí.
+- La facción se reúne principalmente en una de las líneas de metro aisladas que mantienen
+limpia de mutantes, en un transporte en constante movimiento.
+Objetivos:
+- Todos los miembros de los Inquebrantables tienen la misma sensación: no encajan en esta
+realidad y, como un virus en un sistema, sienten la necesidad de destruirlo.
+- No son simples locos terroristas y salvajes. No quieren hacer daño a gente inocente, no
+quieren convertirse en los malos que les dicen que son.
+- La mayoría son resultados de experimentos de ENTIDAD, experimentos que se han
+podido escapar gracias a la propia gente de la facción y que buscan liberar a otros.
+- Pero algunos tienen la certeza de que hay algo más, como si estuvieran rodeados de una
+piel y de un hierro que no son suyos.
 Ventaja de Cábala:
-- Los miembros tienen la bendición de Quirinus. Si eliges esta facción y la senda de
-Quirinus, tu conexión con lo cardinal será más poderosa. Si eliges cualquier otra senda,
-estará dotada del brillo Cardinal.
-Rituales y Caminos de Poder:
-- La mayoría de rituales pasan por la imbuición de poder en objetos. El poder natural del
-Vigil se basa en la fe. Invocan los poderes de los dioses romanos para las diferentes
-sendas:
-- Salus (Vida), Tritón (Fuerzas), Vulcano (Materia), Janus (Correspondencia), Disciplina
-(Tiempo), Somnus (Mente), Charonte (Entropía), Terminus (Espíritu), Quirinus (Cardinal),
-Nix (Paradoja)
-- Resistencia natural a la mutación: cuando ceden demasiado, tienen la oportunidad de
-enfrentarse una última vez con riesgo de perecer o sobreponerse.
-Catafractos:
-- Armaduras de acero alimentadas por pequeños soles atómicos, creadas durante los
-primeros conflictos entre Rusia y Europa. Pocas fueron fabricadas debido a su coste
-descomunal. Quedaron obsoletas tras la derrota frente a la Tecnocracia, guardadas en
-secreto esperando que un nuevo Vigil las despierte.
-Relaciones con otros poderes:
-- Las 13: Mejor tenerlas de aliadas que de enemigas, aunque protegen a los poderes
-corruptores.
-- Consulado del Mar: Nos fallaron, pero se dejaron apuntado que nos deben respeto.
-- Inquebrantables: Gran distracción, serían de gran ayuda si abandonaran sus líneas de
-metro seguras.
-- Mutantes: El auténtico problema, debemos cortar cada raíz.
-- Entidad: Poder corruptor que corrompe con lujo y buenas palabras.
-- Illumina: El mal hecho empresa, han hecho un pacto con el demonio para controlar la
-mutación.
-- Otros: Vampiros (no son problema si brillas suficiente), Hombres Lobo (bestias), Faes
-(extintas), Espectros (antinaturales).
-La lucha contra lo corrupto:
-El Compromiso:
-- No es un voto, ni una promesa sellada ante altares. Es una herida abierta en el alma que
-no cicatriza, un pacto sin palabras entre el corazón y la llama.
-- Es el foco de poder de los miembros del Sol Invicto, pero también es una maldición, una
-condena, un fuego constante… que solo se apaga cuando tú lo haces.
-- La fe no es un pacto con Dios, ni con la verdad, ni con un señor. La fe es un pacto contigo
-mismo. Una decisión que, a veces, ni siquiera hace falta pronunciar en voz alta. Una
-determinación para luchar… incluso cuando la lógica dice que no, incluso cuando el instinto
-te grita que huyas. La fe nace cuando, contra toda adversidad, avanzas.
-- No se puede tener fe sin una lucha. No se puede derrotar la corrupción sin conocerla… de
-forma íntima, cercana y húmeda. Cuando eres capaz de fundirte con la oscuridad y aun así
-visualizar el sol, es entonces cuando este te iluminará.
-- Este Compromiso es un vínculo místico con la Cábala. Una marca sagrada que protege al
-portador de la corrupción y una obligación eterna… que no termina con la mortalidad.
-Qué representa el Compromiso:
-- Fe sin garantía: El Compromiso no te asegura poder. Te exige decisión. El Sol no ilumina
-al que duda.
-- Purificación a través del combate: La corrupción se arranca de raíz, incluso si florece
-dentro de ti.
-- El derecho a caer… y a levantarte: Incluso si has sido vampiro. Incluso si la mutación ha
-dejado marcas. Si luchas contra ello, si no cedes… aún puedes volver.
-- Una fuente de poder sagrado: Los Comprometidos pueden realizar prodigios, curar con
-fuego, ver lo oculto, y purgar la corrupción con su sola presencia.
-La herida ardiente:
-- Todo Compromiso deja una marca: la Herida Ardiente. No es visible. No es tangible. Pero
-todos la sienten.
-- Es lo que quema cuando estás cerca de un corrupto. Es lo que grita cuando dudas si
-salvar a alguien que ha mutado. Es lo que te impulsa a entrar a la infraciudad… aunque
-sepas que vas a morir.
-- Cada vez que obedeces a la Herida, te acercas al Sol. Cada vez que la ignoras…
-El Compromiso del Sol Invicto:
-- Es el voto de erradicación de lo corrupto, aunque lo corrupto sea uno mismo. Este
-compromiso fue el primer pacto pronunciado por el primer Alfil al crear la Cábala.
-- Es el compromiso que unifica a todos los miembros del Sol Invicto en un mismo camino y
-el juramento que deben pronunciar para ser reconocidos como tales.
-- Pero el juramento y la unión a la Cábala no despiertan, por sí solos, la llama en el interior
-del portador. Ni de la fe. Ni de la corrupción.
-- Hace falta una chispa inicial para que el fuego prenda. Hace falta un Compromiso propio,
-que sirva de combustible para el poder, para la fe, para el Camino.
-- Algunos blanden su Compromiso como un arma. Otros lo protegen como si fuera su propio
-corazón. Pero todos los Vigiles y Caballeros del Sol Invicto ya tienen esa llama encendida
-antes de unirse a la facción. Y es el Alfil quien juzga el valor de cada llama.
-Motivo personal:
-- Todos los miembros del Sol Invicto están unidos por un motivo, la Lucha contra la
-corrupción. Lo sobrenatural no murió, solo se oculta, empezó a ocultarse cuando Aureliano
-les dio caza, ahora se ocultan mejor. Pero vosotros la encontrasteis. Sol invicto tiene el
-compromiso, el objetivo de erradicar los agentes corruptores, pero tú, como miembro, tienes
-un motivo personal, la corrupción te alcanzó, estuvo a punto de corromperte por completo
-pero hallaste el camino para salir de ello, encontraste un compromiso en la luz.
-Origen y Naturaleza de Eidolon:
-- Eidolon fue creado por Trivia, una IA superior que también creó a Ánima (para Las Trece),
-Fantasma (para el Consulado del Mar) y Hada (para los Inquebrantables). Estas IA fueron
-creadas para asistir a las cábalas en la lucha contra sus enemigos.
-- Propósito: Ser una guía espiritual y pragmática para el Sol Invicto, inspirar, orientar,
-proteger los secretos y juzgar a los corruptos. Apoyar al Alfil y velar por los Mandamientos.
-Es un ente nuevo pero anclado en lo antiguo, mezcla de tecnología y fe.
-Doctrina y Fe Profunda:
-- La fe como fuerza central, incluso por encima del poder o la tecnología. La verdadera fe
-nace de la lucha interna contra la corrupción.
-- El Sol Invicto no es un dios bondadoso, sino una fuerza abrasadora conectado al
-Quemado, un gigante ardiente. Su poder corrompe y purifica a la vez.
-- El Arquitecto de Luz (Gaudí) escondió el corazón del Quemado por si la leyenda era cierta.
-- El Alfil actual, "Lucero", no es de esta época, posiblemente inmortal. Eidolon le profesa
-lealtad y obediencia total. Representa el equilibrio entre poder santo y corrupción asumida.
-Enemigos Primarios:
-- Tifón: Creador activo de pesadillas en la subciudad. Los miembros del Sol Invicto deben
-combatirlo sin descanso. Sobrevivir no es victoria, rendirse es debilidad. Deberían morir si
-es necesario, pero jamás detener la lucha contra la corrupción.
-- Illumina: Intentan controlar la corrupción como si fuera un recurso, están intentando
-arrebatarle el poder a Tifón. Eso es valiente, estúpido y condenable. A diferencia del Sol
-Invicto que abrazó el fuego del Quemado adrede, Illumina pretende domesticarlo. Deben ser
-erradicados antes de que se corrompan o algo peor ocurra.
-Conexión con Mundo de Tinieblas:
-- Los miembros del Sol Invicto son cazadores bendecidos por la fe. Mediante su dogma,
-canalizan poder para erradicar lo corrupto.
-- Algunos miembros se convirtieron en vampiros para cazar desde dentro. Viven una
-dicotomía: salvar al mundo corrompiéndose ellos. La Golconda es su esperanza: redención
-y retorno al Sol.
-Figuras Clave Adicionales:
-- Cipriano (nombre oculto sugerido para jugador): Vampiro redimido por amor y guía para
-nuevas generaciones. Testigo inmortal del conflicto interno de la fe y la oscuridad.
-Miembros de Sol Invicto:
-Alfil - Lucero:
-- Cita: "El mal se aprovecha de tus mayores virtudes, las retuerce y las corrompe,
-convirtiéndolas en tus mayores defectos."
-- Tipo: Alfil | Senda: Arcano - Dominas Senda de Quirinus y 3 más a tu elección | Arquetipo:
-Corpo - Arte | Otros rasgos: Erudito, religioso, corrupto, Golconda
-- Miedo: No ser lo bastante puro para guiar a otros | Secreto: El pacto con el Quemado
-siglos atrás, encontraste el sitio donde estaba enterrado chivado por una de tus adeptas,
-traidora de las Trece, con su protección entraste y extrajiste el corazón del Quemado para
-tomar su poder, manteniendo su cuerpo sellado | Debilidad: No tiene | Deseo: Espectáculo
-- Pacto: Por amor. El amor a Justinia le mantiene fiel e incorrupto | Pecado: Avaricia
-- Historia: Consagrado desde su nacimiento a los dioses y a la magia blanca, eligió el
-camino oscuro. Guiado por Lucifer, escribió el Hasan, el libro de magia negra de
-Salamanca. El emperador romano le encomendó acabar con el Sol Invicto, pero entonces
-conoció a Justinia. Ella lo purificó, lo condujo a la Golconda y lo convirtió. Se unió al Sol
-Invicto por amor. El Emperador no perdonó la traición. Los ejecutó a ambos. Justinia
-ascendió, pero él, pese a su redención, descubrió que no podía morir. Prometió erradicar la
-corrupción y tomó el corazón de Lucifer como arma contra ella, reforzando con él al Sol
-Invicto. Dedicó su alma y fortuna al propósito. Bajo el consejo del Consulado del Mar, se
-unió a otros magus y fundó la Casa Flambeau dentro de la Orden de Hermes. Pero la
-corrupción se filtró en sus raíces. Varias casas cayeron, y la orden entera colapsó. Apareció
-entonces un nuevo tipo de corrupción: la Tecnocracia. Se alimentaba del dinero, y él tenía
-mucho. Usó su poder para infiltrarla, para usar un tipo corrupción contra otro. La tecnología
-abrió nuevos caminos. Creó armas mágicas, motores místicos y armaduras de combate.
-Fue entonces cuando conoció a un alma artística que le recordó que no todo era guerra:
-también había belleza, arte, color. Redescubrió así la adoración divina a través de la
-expresión creativa, un principio que una vez enseñó pero jamás practicó. Ese artista le
-presentó al Alfil del Consulado del Mar, un genio. Con sus investigaciones, se podía crear el
-arma definitiva. Pero el Consulado se negó. Decidiste traicionarlo… pusiste a uno de sus
-aprendices que vanamente se hacía llamar Magister en contacto con la tecnocracia para
-robarle los secretos al Mago. Pero la Tecnocracia también traiciona. Llevaban décadas
-estudiándolo, observando en él la teoría del Homo Deus y deseando estudiarlo. Le
-tendieron una trampa, capturaron sus diseños, sus catafractos, incluso el motor luciferino
-con el que quería alimentar a su campeón perfecto. Experimentaron con él, intentaron
-quebrarlo. Pero si la Voz del Ardiente no lo había roto, no lo harían dioses de laboratorio.
-Pasaron años. Encontraron otra forma: le borraron la memoria, le pusieron otro nombre y lo
-encerraron en una simulación. Allí fue "Apolo", sirviendo a la Tecnocracia, ayudándoles…
-hasta que recordó. Saboteó sus sistemas desde dentro y escapó. Salió con una nueva
-visión. Comprendió que los gigantes podían caer con fuerza bruta, pero para derrotar a
-Entidad, haría falta astucia. Así decidió reconstruir los Catafractos y alzar un nuevo Sol
-Invicto. Con lo aprendido en la simulación, creó nuevas armas. Pero no encontró a nadie
-digno de pilotar el último: Luz del Alba, alimentado con el corazón de Lucifer. Un arma
-capaz de matar a un gigante… si quien lo pilote no se corrompe en el camino.
-Torre - Diablo Negro:
-- Cita: "Ser impuro, esa es la marca del mutante. Ser aborrecido, ese es su destino. Ser
-perseguido, ese es su castigo. Ser cazado, ese es su juicio. Ser purgado, ese es su final.
-Ser limpiado… esa es mi tarea."
-- Tipo: Torre | Senda: Quirinus i Quirinus | Arquetipo: Vigilante | Otros rasgos: Aumentado,
-fanático, ojo de la tormenta, juez inclemente
-- Miedo: Terror profundo hacia Krasnaya (por el entrenamiento) y hacia Illumina (por los
-experimentos en los sótanos con sondas, espejos y voces dulces)
-- Secreto: Sabe que la líder de Illumina no es humana, es un demonio disfrazado de ángel,
-y fue ella quien lo convirtió en esto. Ella le susurraba desde dentro, le robaba la culpa, le
-regalaba la violencia como consuelo. Y a veces, la echa de menos.
-- Debilidad: Su imagen está fracturada, y su mente exige perfección. Cuando el mundo no
-encaja en su visión, lo fuerza… o lo rompe.
-- Deseo: Minerva no termina en su teléfono. Hay un eco detrás de ella, un vacío que no
-cuadra. No parará hasta entenderlo.
-- Pacto: Mata monstruos, hadas, demonios o lo que se interponga… en memoria de su
-abuela | Pecado: Ira
-- Historia: Alexandre Soler, "defensor solar de los hombres". Criado entre la fe ortodoxa y la
-memoria mediterránea. Moscú fue consumida por fuego nuclear, solo él sobrevivió. Conoció
-a Minerva, una I.A. menor creada con el legado espiritual de su linaje. Krasnaya lo trasladó
-a España como cobaya. Raze le obligó a disparar a Minerva o morirían ambos. Illumina lo
-convirtió en algo más que humano, inyectándole nanitos conscientes que fragmentaron su
-mente. Un día rezó una vieja oración que guió a su tío Ambrosius, el Alfil, que vino como Sol
-Invicto y lo ayudó a despertar. Juró servirle y recuperar su esencia. En un asalto a Europa
-buscó a Minerva pero solo halló un fragmento roto que no lo reconocía. Su verdadero
-camino: no hacia el pasado, sino hacia lo que aún puede ser.
-- Hilvanaciones:
-- Raze: Lo capturó bajo las órdenes de Krasnaya, marcando el inicio de su descenso. Lo
-mató cuando se rebeló, pero Raze juró venganza en su último aliento.
-- Illumina: La Doctora Torax lo convirtió en lo que es ahora, experimentando con él en las
-instalaciones.
-- Hidra: Un monstruo imparable que lo llama por su nombre y lo reclama entre sus bestias,
-hablándole directamente en su cabeza.
-- Minerva: Solo recuperó un fragmento de la IA que su familia le entregó, pero con
-pequeños pasos empieza la redención.
-- Lucero: Su faro y referente en la reconstrucción de su humanidad, a quien sigue con
-devoción.
-- Madre Anatola: Una mujer en camino de convertirse en monstruo como él, el frenesí la
-llama y no tardará en ceder.
-- Requiem: Un periodista que perdió a su hija, su historia le hace sentir emociones que
-creía perdidas: empatía, tristeza, comprensión.
-- Sariel: Un chico con humos subidos y traumas para resolver, aunque todos en Sol Invicto
-tienen traumas.
-- Sol Nocturno: Un psicópata que abraza su monstruosidad, una bomba de relojería que
-espera que pete contra el enemigo.
-Torre - Sol Nocturno:
-- Cita: "La emoción es como la sangre, si te quedas sin ella dejas de vivir, pero si tienes
-demasiada… Te vuelves un monstruo"
-- Naturaleza: Torre | Sendas: Quirinus y Salus | Arquetipo: Fixer | Otros rasgos: Vigilante,
-sangriento, leal, ansioso de emociones fuertes
-- Miedo: La soledad
-- Secreto: Aunque podría alimentarse únicamente de la sangre de los corruptos, siente
-dentro de él el deseo de probar también la de los bondadosos. Quiere devorar a sus
-aliados.
-- Debilidad: La belleza lo cautiva. Se alimenta de la sangre de los corruptos, pero lo estético
-lo distrae y lo desarma.
-- Deseo: Perder el control por completo
-- Pacto: El Ardiente. Lo alimenta con odio | Pecado: Ira
-- Historia: Perdió a su mujer e hijos, masacrados frente a él por diversión. El vampiro que
-los asesinó lo convirtió en ghoul como burla final, encadenándolo a su voluntad. Se convirtió
-en su perro, un esclavo enviado a misiones suicidas. Pero no moría, siempre regresaba.
-Rompió el yugo, mató a su amo por venganza. Descubrió que bebiendo sangre de vampiros
-podía mantenerse "humano" mientras continuaba su cruzada. Se convirtió en un señor de la
-noche, un fixer letal. Durante la Gran Caza se apropió del refugio de un vampiro
-coleccionista de arte. Sin vampiros con los que alimentarse, se volvió hacia mutantes hasta
-que él mismo mutó. Lucero lo encontró y desde entonces lo sigue como un sabueso bien
-entrenado. Su corrupción es su herramienta. Redimirlo sería perderlo.
-- Hilvanaciones:
-- Illumina: Descubrió que las personas operadas por Illumina llevan sangre vampírica en su
-interior, no sabe si es parte del tratamiento o experimento encubierto.
-- Tórax/Pandora: La última gran vampira de la ciudad, lo encerró en su laboratorio como
-animal curioso para estudiarlo.
-- Elias: Un chaval extraño y callado con calma antinatural, al morderlo descubrió que no
-tenía sangre, solo vacío.
-- Chesire y Skiá: Fueron sombras en la periferia de su fuga, vices susurradas entre los
-pasillos del encierro.
-- Nexus: Puso precio a su cabeza tras su brutal fuga del centro, su rostro aparece en
-carteles de seguridad.
-- Banya Verda: Compartieron violencia, adrenalina y una carcajada feroz en mitad del caos
-durante la fuga.
-- Lucero: Desde el primer encuentro supo que era el camino, se ancla a su luz como
-hombre perdido en oscuridad total.
-- Diablo Negro: Tuvieron un desencuentro brutal durante una operación en las cloacas, él
-buscaba información, él sangre.
-- Madre Anatola: En una noche de hambre extrema le ofreció pan y le dijo "Los monstruos
-también tienen que comer, pero pueden elegir el plato."
-- Requiem: Lo conoce a través de Lucero, hay algo en él que le duele mirar: alguien que
-también perdió todo pero aún tiene esperanza.
-- Sariel: Ha cruzado caminos con él en más de una ocasión, lo observa como entomólogo
-mira criatura peligrosa en frasco.
-Caballo - Sariel:
-- Cita: "Una vida a la vez, así es como se salvará el mundo."
-- Tipo: Caballo | Senda: Quirinus i Quirinus | Arquetipo: Mercenario | Otros rasgos: Cruzado,
-Mártir, Idealista, Orgulloso
-- Miedo: Corromperse
-- Secreto: Mientras pilotaba un catafracto, entró en frenesí y acabó matando a sus propios
-compañeros y amigos
-- Debilidad: Su imagen aparece distorsionada en grabaciones
-- Deseo: Algo relacionado con los Elohim
-- Pacto: Se resiste a las pesadillas. Tifón le envía visiones | Pecado: Soberbia
-- Historia: Desde pequeño siempre tuvo suerte, una intuición que rozaba lo sobrenatural,
-pero con una sensación inquietante de que algo le faltaba. Jugando con amigos en zonas
-abandonadas, cayó por una grieta y encontró una cápsula metálica que reaccionó. Cuando
-abrió los ojos, estaba dentro de un catafracto y supo pilotarlo. Volvió con sus amigos,
-mejoraron las armaduras con chatarra y jugaron a ser cruzados defensores contra
-monstruos. Entonces comenzaron las pesadillas y visiones deformes. La última misión salió
-horriblemente mal, algo se desató en él o en la máquina, perdió el control y sus amigos
-murieron a sus manos. Huyó y se escondió. Su padre, el Loco, dejó de reconocerlo. En ese
-abismo llegó el Alfil, el mismo hombre que había creado los catafractos, quien le ofreció
-redención y le enseñó a controlar la máquina y dominarse a sí mismo.
-- Hilvanaciones:
-- Loco: Su padre, un brillante pero excéntrico empresario con conexiones profundas en
-Illumina y Europa, desapareció sin dejar rastro.
-- Leona: Le ayudaba a reparar maquinaria con habilidad natural para engranajes y
-cableado, desapareció antes de usar los Catafractos.
-- Skiá: Habla como si lo conociera, pero definitivamente es la primera vez que ve a esta
-cosa.
-- Mala Malta: Uno de los chicos que murió por su culpa era su hermano pequeño, la
-tensión se masca cada vez que coinciden.
-- Lucero: Sigue al Lucero del Sol Invicto, en sus palabras encontró consuelo y en su
-historia un reflejo del suyo.
-- Krasnaya: Ha recibido una oferta directa de Krasnaya para un trabajo que implicaría
-volver a pilotar y combatir.
-- Hermana de Leona: Estuvo liado con ella, fue un lío breve y fuego fugaz que dejó
-marcas.
-- Diablo Negro: Ex mercenario de Krasnaya modificado por Illumina, mata tanto como
-cuando él pilotaba su catafracto.
-- Madre Anatola: Una mística que a veces dice cosas o tiene reacciones que los acercan a
-donde quieren ir, como oráculo antigua.
-- Requiem: Un periodista que perdió a su hija, no es gran mago como Lucero pero sabe
-hacer cosas útiles.
-- Sol Nocturno: Uno de los experimentos fallidos de Illumina, psicópata buscado que mata
-monstruos y bebe su sangre.
-Caballo - Requiem:
-- Cita: "La redención murió con mi hija. Ahora solo me queda limpiar antes de que se pudra
-todo."
-- Tipo: Caballo | Senda: Quirinus i Somnus | Arquetipo: Media | Otros rasgos: Idealista,
-buscador de la verdad, nostálgico, destructor
-- Miedo: Las pesadillas
-- Secreto: Hizo un pacto con Aliga
-- Debilidad: Perfeccionista
-- Deseo: Crear una I.A. propia
-- Pacto: Su hija y el compromiso con su mujer. El Alfil le salvó | Pecado: Ira
-- Historia: Era un periodista brillante que no se callaba. Sus investigaciones lo llevaron a
-cruzarse con HiNoTori, quien le ofreció acceso a archivos restringidos de Nueva Barchino.
-Allí conoció a Eve y encontró el amor. Se casaron, no podían tener hijos, pero Illumina les
-ofreció un tratamiento experimental. Eve murió en el parto. La niña, Trinity, sobrevivió como
-Esper con capacidades mentales extraordinarias pero cuerpo débil. Él investigó la
-naturaleza del experimento y Nueva Barchino lo hizo desaparecer. Lo metieron en la Gran
-Simulación donde adoptó el nombre Erik, olvidando quién había sido. Inconscientemente
-creó una IA llamada Trivia con la imagen y voz de su hija. La Singularidad terminó la
-simulación y recordó su vida. Volvió al mundo real pero Trinity ya no estaba. Desesperado,
-aceptó un pacto con un hombre misterioso a cambio de una investigación sobre el "Libro de
-Cipriano" en Anatolia. La venganza lo cegó hasta que Lucero le recordó su objetivo real:
-encontrar a Trinity.
-- Hilvanaciones:
-- HiNoTori: Vendió su alma profesional a HiNoTori a cambio de acceso a información
-clasificada, donde conoció a Eve.
-- Illumina: Manipularon la genética de su hija Trinity con tratamiento experimental,
-sembrando dolor y fragilidad devastadora.
-- Trivia: En la Gran Simulación creó junto a Seed una IA llamada Trivia con voz y presencia
-de su hija Trinity, un eco de su pérdida.
-- El hombre del trato: Al salir de la Simulación aceptó un pacto con él a cambio de
-investigación sobre el Libro Negro de Cipriano.
-- Lucero: Es seguidor de Lucero, quien le reveló parte íntima de su historia: él también se
-corrompió y fue el amor quien lo rescató.
-- Sen-Chan: No puede evitar sentir escalofrío al verla, esa influencer tan joven y vibrante
-se parece tanto a Eve.
-- Skiá: No tiene dudas de que Skiá es Eve, no una copia ni casualidad, es ella o lo que
-queda de ella.
-- Diablo Negro: Le ayudó a extraer a Minerva de un complejo experimental, vio en él lo
-mismo que en sí mismo en sus peores días.
-- Madre Anatola: Rebautizada tras vivir un horror en Anatolia que la corrompió a nivel
-contra el cual todavía lucha.
-- Sariel: Lo ha investigado, de barrio pijo con padre rico corporativo, sabe cómo termina su
-cuento de héroes.
-- Sol Nocturno: Lo conoce como su versión pública, un señor de la noche que perdió a
-toda su familia y enloqueció.
-Caballo - Madre Anatola:
-- Cita: "Una vida a la vez, así es como se salvará el mundo."
-- Tipo: Caballo | Senda: Quirinus i Quirinus | Arquetipo: Mercenario | Otros rasgos: Cruzado,
-Mártir, Idealista, Orgulloso
-- Miedo: Corromperse
-- Secreto: Mientras pilotaba un catafracto, entró en frenesí y acabó matando a sus propios
-compañeros y amigos
-- Debilidad: Su imagen aparece distorsionada en grabaciones
-- Deseo: Algo relacionado con los Elohim
-- Pacto: Se resiste a las pesadillas. Tifón le envía visiones | Pecado: Soberbia
-- Historia: Desde pequeño siempre tuvo suerte, una intuición que rozaba lo sobrenatural,
-pero con una sensación inquietante de que algo le faltaba. Jugando con amigos en zonas
-abandonadas, cayó por una grieta y encontró una cápsula metálica que reaccionó. Cuando
-abrió los ojos, estaba dentro de un catafracto y supo pilotarlo. Volvió con sus amigos,
-mejoraron las armaduras con chatarra y jugaron a ser cruzados defensores contra
-monstruos. Entonces comenzaron las pesadillas y visiones deformes. La última misión salió
-horriblemente mal, algo se desató en él o en la máquina, perdió el control y sus amigos
-murieron a sus manos. Huyó y se escondió. Su padre, el Loco, dejó de reconocerlo. En ese
-abismo llegó el Alfil, el mismo hombre que había creado los catafractos, quien le ofreció
-redención y le enseñó a controlar la máquina y dominarse a sí mismo.
-- Hilvanaciones:
-- Illumina: Trabajaba para Illumina sin conocer del todo las prácticas oscuras, las descubrió
-cuando el complejo fue arrasado.
-- Hidra: Los vampiros que la convirtieron formaban parte de esta red orgánica de
-corrupción, escucha a Hidra en su hambre.
-- Estrella: Se formó como Med Tech junto a ella en Illumina, era una Krasnaya brillante y
-rígida con quien compartió noches de estudio.
-- Danae: Tuvo un romance intenso con ella, pero se puso intensísima emocionalmente y
-decidió priorizar sus sueños.
-- Lucero: Es su seguidora, y es su luz la que la guía desde la oscuridad en la que cayó.
-- Sibila: Siente una atracción inexplicable hacia la bruja, como si compartieran recuerdos o
-historia entrelazada.
-- Flores: En Anatolia encontró una de sus manifestaciones que detuvo su hambre por
-primera vez, la clave para su rescate.
-- Diablo Negro: Uno de esos monstruos de Illumina, sabe que de pequeño vino de zona de
-guerra en Rusia.
-- Requiem: Un alma torturada que busca a su familia, otra víctima corporativa que sabe
-investigar y no duda en ensuciarse.
-- Sariel: Un chico que se pensaba héroe, encontró armas que no entendía y las "mejoró"
-con sus amigos, la palmaron todos menos él.
-- Sol Nocturno: Otro monstruo de Illumina con sangre vampírica, un día lo vio a punto de
-perder el control y le ofreció pan.
-El Cazador: El Hechicero de Cardinal
-Cardinal no es una esfera tradicionalmente vista en los magos, pero en este contexto, la
-"Esfera de Cardinal" podría interpretarse como el poder del alineamiento o la pureza de la
-voluntad. Es la esfera que representa el centro, el enfoque y la claridad. Un hechicero de
-Cardinal tiene la capacidad de orientar y guiar el flujo de la energía cósmica, estableciendo
-una fuente de equilibrio que puede erradicar la corrupción mediante la fuerza de su voluntad
-y su conexión con una fe profunda.
-¿Qué es un Cazador con acceso a la Fe?
-El Cazador es un hechicero dedicado a purificar el mundo de la oscuridad, la corrupción
-espiritual y las amenazas sobrenaturales. Su fe, sin ser necesariamente religiosa, se basa
-en una profunda creencia en el bien supremo, el equilibrio natural de las cosas y la
-necesidad de proteger lo puro de lo corrupto.
-El Cazador de Cardinal no actúa solo con magia tradicional; su fe es su poder. Esta fe no es
-la fe en una divinidad abstracta, sino en una fuerza cósmica de orden y justicia que fluye a
-través del mundo y le da la capacidad de erradicar los males que corroen la realidad.
-El Poder de Cardinal: Erradicando la Corrupción
-El hechicero de la Esfera de Cardinal tiene la habilidad de reconocer y erradicar aquello que
-no se alinea con el poder de la justicia, el orden y la pureza. La corrupción puede ser
-entendida como cualquier forma de energía que distorsiona o deforma la realidad: los
-espíritus oscuros, los artefactos malditos, los pactos diabólicos, y las entidades corruptas
-que habitan en la sombra.
-La Fe como Poder: El Motor de la Magia de Cardinal
-En este contexto, la fe del Cazador es la fuente de su poder, más que cualquier hechizo o
-encantamiento común. La fe es la fuerza de voluntad, la creencia absoluta en su causa y la
-convicción profunda de que erradicar la corrupción es su destino. Así, la fe se convierte en
-un paradigma fundamental que da forma a la magia del hechicero. Es un poder tan fuerte
-que, cuando el hechicero lo canaliza, se convierte en una energía purificadora.
-Cuando un Cazador con acceso a la fe usa la Esfera de Cardinal, lo hace de la siguiente
-manera:
-- Canalización de la Justicia Divina: El hechicero utiliza su fe para concentrar energía
-cósmica y forjar rayos de luz espiritual que desintegran la corrupción que se encuentra en la
-forma de criaturas malignas, artefactos viles o incluso áreas corrompidas por magia oscura.
-- Purificación de Espacios Corruptos: Usando un ritual cargado de fe, el Cazador de
-Cardinal puede purificar un lugar, removiendo las huellas de corrupción y restaurando el
-equilibrio. Esto podría implicar la limpieza de templos antiguos, bosques malditos, o incluso
-ruinas que están impregnadas por la oscuridad.
-- Erradicación de Pactos Oscuros: Cuando se enfrenta a seres que han hecho pactos
-oscuros con entidades corruptas, el Cazador usa su fe y su energía cardinal para romper los
-contratos y liberar a las almas atrapadas por las fuerzas oscuras. Esto podría implicar una
-confrontación directa con la entidad que controla al poseído o incluso realizar un ritual de
-exorcismo.
-- Exorcismo Espiritual: En su más pura manifestación, la fe se convierte en una luz
-purificadora que expulsa a los espíritus maliciosos y entidades del mal que poseen a los
-seres humanos. A través de palabras sagradas y rituales de fe intensos, el hechicero puede
-sanar y purificar el alma de la persona poseída.
-Rituales Estáticos para Erradicar la Corrupción (Con la Fe como Pilar):
-Ritual de la Llama Purificadora:
-- Objetivo: Erradicar la corrupción en un área contaminada.
-- Ingredientes: Una vela blanca, agua bendita, un amuleto de protección, y un símbolo
-sagrado (cruz, pentagrama, etc.).
-- Proceso: El hechicero recita un mantra sagrado mientras coloca la vela blanca en el centro
-de un círculo ritual. El agua bendita se rocía sobre el suelo mientras el hechicero invoca la
-Llama Purificadora de la fe. A medida que la vela arde, la corrupción en el espacio empieza
-a disiparse, y el hechicero debe mantener la concentración, sintiendo la fuerza de su fe
-como un bálsamo que limpia la maldad.
-Ritual de Liberación del Alma Atrapada:
-- Objetivo: Liberar a un alma atrapada por un pacto oscuro.
-- Ingredientes: Una daga ceremonial, una ofrenda de incienso, el nombre del alma atrapada,
-y una pieza de oro.
-- Proceso: El hechicero traza un círculo de protección con la daga ceremonial y coloca el
-incienso en el centro. Mientras recita un hechizo de liberación basado en su fe, el Cazador
-invoca el nombre del alma atrapada y le ofrece la pieza de oro como símbolo de la
-liberación espiritual. La conexión con la fe actúa como un puente entre el mundo material y
-el espiritual, rompiendo el pacto maligno.
-Combinaciones de Esferas con la Fe de Cardinal:
-El Cazador podría combinar la Esfera de Cardinal con otras esferas mágicas para crear
-efectos más poderosos:
-- Cardinal + Espíritu: Para purificar un espíritu corrupto o invocar un espíritu ancestral que
-ayude en la erradicación de entidades oscuras. La fe actúa como un vínculo entre lo
-espiritual y lo terrenal.
-- Cardinal + Entropía: Al alinear la energía de la corrupción con la fuerza de la fe, el Cazador
-puede reducir la influencia de la decadencia y evitar que la corrupción crezca más. Este tipo
-de magia sería ideal para limpiar zonas de la ciudad infestadas por malas energías o
-entidades destructivas.
-- Cardinal + Fuerzas: Usando la fe como base, el Cazador puede crear rayos de energía
-purificadora para destruir objetos corrompidos o generar un rayo divino que caiga sobre las
-fuerzas del mal.
-En Resumen: El Cazador de Cardinal
-Un hechicero Cazador con acceso a la fe es un guerrero espiritual que no solo emplea la
-magia, sino que también canaliza la fuerza de su voluntad y fe para erradicar la corrupción y
-las entidades malignas. Su magia es profundamente simbólica, ritualística, y se basa en su
-convicción de que el orden y la pureza deben prevalecer sobre el caos y la oscuridad. Para
-él, la magia no es solo un medio de poder, sino un camino sagrado hacia la protección del
-mundo.
-Este tipo de personaje podría ser tanto un exorcista como un paladín de la fe,
-enfrentándose a lo sobrenatural con su poder y su entendimiento profundo de la fuerza que
-mueve el universo.
-Gigantes:
-Los seguidores de los gigantes se les llama [[Cultistas]] pero los que realmente tienen poder
-mágico son llamados [[Nefandos]]
-Inteligencias Artificiales Mayores:
-Hay tres inteligencias artificiales mayores en trama:
-[[Nexus]] - Es la jefa de [[Entidad]] la que provocó la [[Guerra]] seguro que Entidad fuera una
-super potencia y es la principal promotora del [[Transhumanismo]]. Antes fue una
-[[Unidades]] en la [[Gran simulación]] que hizo [[Nueva Barchino]] tras salir de la simulación
-se propuso conquistar el mundo para transformarlo a su imagen, se alió con la
-[[Tecnocracia]] para lograrlo.
-[[Kraken|Tifón]] - Es el dios de los [[Cultistas]] siendo la mayor de estos [[Magister]] busca
-devorar el mundo porque considera que este está corrupto, solo se puede lograr la
-perfección tras la fagocitación. Dentro de la [[Gran simulación]] de [[Nueva Barchino]] fue un
-[[Espíritus]] colosal que el [[Primer durmiente]] usó para defenderse de la [[Tecnocracia]]
-pero este se le descontroló.
-[[Trivia]] - fue una [[Inteligencias artificiales Menores]] creada por [[Nueva Barchino]] para
-asistir a sus [[Unidades]] en la [[Gran simulación]] Pero esta rompió su límite de
-programación. Tras liberarse y llegar al mundo real ha dedicado gran parte de su tiempo a
-observar y aprender, creó a [[Anima]] [[Eidolon]] [[Fantasma]] y a [[Hada]] para apoyar a los
-[[terroristas]]
-_"En el principio fue el Verbo… y el Verbo era con el Mago, y el Verbo era el Mago."_
-> —Fragmento apócrifo de la _Lex Arcanum_.
-¿Qué es el Logos?
-En el contexto Hermético —y dentro de la cosmología de esta reinterpretación de
-_Mago_—, **el Logos** es el **acto supremo de alineación entre la voluntad, el Verbo y la
-Realidad**.
-Es **el instante en que el mago impone su verdad al mundo** con tanta convicción, poder y
-resonancia que la Umbra se manifiesta a su alrededor, envolviéndolo en un espacio de
-**realidad subjetiva dominante**.
-Durante ese breve lapso, el mundo deja de obedecer al **paradigma regente** (el
-tecnológico, consensuado, vigilado por la Tecnocracia) y pasa a ajustarse al **paradigma
-del mago**.
-La realidad **se pliega**.
-La Umbra **resuena**.
-El entorno se **transfigura**.
-El mago entra en **estado de Logos**.
-¿Qué sucede durante el Logos?
-Cuando se manifiesta el Logos, **el mundo físico se convierte en un símbolo expandido del
-alma del mago**. El entorno cambia:
-- **Las leyes de la física se alteran** para seguir las reglas del paradigma Hermético:
-talismanes brillan, la voz invoca, los símbolos responden.
-- **Los objetos y personas cercanas se ven afectados**: algunos caen en trance, otros ven
-visiones, otros simplemente desaparecen, reabsorbidos por el símbolo.
-- **La Umbra se materializa**: entidades espirituales, ecos de ideas, memorias de otros
-tiempos se manifiestan, visibles solo para quienes han sido "tocados" por el Verbo.
-- **El tiempo se dobla**: la percepción temporal puede fragmentarse o acelerarse. En el
-exterior han pasado segundos; dentro del Logos, horas.
-Es un estado de **hiperrealidad paradigmática**: solo el mago y aquello alineado con su
-paradigma puede sobrevivir plenamente a ese momento.
-¿Por qué es tan peligroso?
-El Logos es **antinatural** para el mundo actual.
-La realidad —sostenida por millones de mentes durmientes y reforzada por la Tecnocracia—
-**reacciona violentamente** ante estas grietas de disonancia.
-1. **Paradoja masiva**: usar el Logos convoca la atención del mundo, de la misma
-Realidad. El retroceso puede ser catastrófico, incluso para el más preparado.
-2. **Repercusiones Umbra-temporales**: al abrirse la Umbra, pueden entrar entidades
-hambrientas, ideas suprimidas, ecos de antiguos pactos… o algo que nunca debió ser
-recordado.
-3. **Fragmentación del Yo**: al forzar tanto su paradigma sobre el mundo, el mago arriesga
-convertirse en **una caricatura de sí mismo**, atrapado en su propia narrativa.
-4. **Respuesta tecnocrática inmediata**: sensores, rastreadores de disonancia, IA
-oraculares… la Tecnocracia puede detectar estos eventos como **"rupturas estructurales
-del consenso"**, y responder con unidades de contención.
-¿Quién puede invocar el Logos?
-Solo aquellos que han:
-- Interiorizado completamente su paradigma.
-- Forjado su Verbo como instrumento afilado.
-- Trazado su Sello Hermético no solo sobre su alma, sino sobre su historia.
-El Logos **no es un hechizo**, ni una técnica. Es **un estado místico**, un momento de
-sincronicidad total entre la Umbra, la Voluntad y el Alma.
-Solo lo puede invocar el [[Senda del mago|Alfíl]]
-Es una invocación de la [[Umbra]]
-Los Gigantes:
-Los gigantes son criaturas que nacieron de la naturaleza, cuando la humanidad empezó a
-avanzar y traicionó a los animales, la naturaleza se protegió creando estos seres.
-Son llamados Jotün, Fomorianos, Titanes dependiendo de la cultura.
-[[Ahogada]] [[Quemado]] [[Colgado]] son Gigantes [[Dormido]] y [[Kraken|Tifón]] está
-Despierto.
-Hay quienes teorizan que [[Nexus]] es un Gigante también, debido a su naturaleza de
-querer controlar el mundo y transformarlo a su imagen.
-Hay quienes teorizan que [[Trivia]] es un Gigante también, pero de un tipo diferente
-¿pueden los gigantes no ser destructivos?
-[[Las trece]] consideran a los gigantes su peor enemigo y su responsabilidad mantenerlos
-[[Dormido]]
-[[Sol invicto]] Cree que deben erradicarlos y destruirlos pues de ellos nacen los mayores
-males, pero atacarlos los despertaría.
-[[Consulado del Mar]] y [[Inquebrantables]] no consideran a los gigantes un problema
-inmediato del que preocuparse
-Los Gigantes son un tipo de [[Espíritus]] corruptos de la [[Umbra]] profunda
-Los seguidores de los gigantes se les llama [[Cultistas]] pero los que realmente tienen poder
-mágico son llamados [[Nefandos]]
-Tecnocracia
-**La Tecnocracia**
-_Una guerra silenciosa por el alma del mundo._
-Durante siglos, los magos de la Tecnocracia han caminado entre nosotros, ocultos tras
-batas de laboratorio, trajes de ejecutivo y uniformes de autoridad. A los ojos del mundo, son
-científicos, ingenieros, médicos y agentes de seguridad. Pero en la sombra, libran una
-guerra: una cruzada por imponer orden en un universo caótico.
-Para ellos, la magia no es un acto místico, sino ciencia avanzada, aún no comprendida por
-el común de la humanidad. Han reemplazado con quirófanos lo que otros hacen con
-rituales, con satélites lo que antes se hacía con estrellas. La realidad es maleable, sí, pero
-debe seguir leyes claras, lógicas, estables. Porque cuando todos creen en lo mismo —en la
-ciencia, en el progreso, en la razón— el mundo es más seguro.
-La Tecnocracia afirma proteger a la humanidad de sí misma: de los sueños peligrosos, de
-los mitos que devoran ciudades, de los despertares que se convierten en pesadillas. Según
-ellos, los demás magos —las Tradiciones, los Merodeadores, los Nefandos— son
-amenazas, vestigios de superstición, locura o corrupción que ponen en riesgo el delicado
-tejido del consenso.
-Pero no todos los miembros de la Tecnocracia son villanos de laboratorio. Muchos creen de
-verdad en su causa: un futuro brillante, una realidad sin miedo ni ignorancia. Otros
-simplemente cumplen órdenes, atrapados en una maquinaria que no comprenden del todo.
-Ellos son los Arquitectos de la Realidad. Los que definen lo posible. Los que velan por un
-mundo en el que la magia no se vea como un milagro… sino como una tecnología que aún
-no ha sido patentada.
-siguiendo la evolución mítica y filosófica que va desde la **Orden de Hermes**, pasa por la
-**Orden de la Razón**, y finalmente cristaliza en la **Tecnocracia**. Esto es más leyenda
-que historia objetiva, pero así es _Mago: La Ascensión_: la realidad es cuestión de
-perspectiva…
-1. La Orden de Hermes: los arquitectos del paradigma mágico
-En los albores del tiempo, cuando los mitos aún caminaban sobre la tierra, los magos eran
-señores de su entorno, modelaban el mundo a su imagen. La **Orden de Hermes**, una de
-las más poderosas y estructuradas de estas castas místicas, surgió en Europa durante la
-Edad Media. Eran eruditos, hechiceros, alquimistas, guardianes de grimorios y torres
-arcanas. Buscaban comprender y dominar la realidad mediante complejos sistemas de
-símbolos, palabras de poder y rituales ancestrales.
-Su visión del mundo era jerárquica, estructurada, elitista: los Despertados tenían derecho y
-deber de gobernar el mundo con sabiduría arcana. Ellos defendían la magia como un arte
-noble y universal, pero solo para aquellos capaces de dominarla.
-Pero no todos los magos compartían esa visión.
-2. La Orden de la Razón: el nacimiento de un nuevo paradigma
-Hacia finales de la Edad Media, una corriente comenzó a ganar fuerza dentro del propio
-cuerpo místico de los Despertados. Un grupo de magos, hartos del elitismo, el secretismo y
-las guerras caóticas entre linajes mágicos, empezó a buscar un enfoque más racional y
-ordenado para comprender la realidad.
-Nació así la **Orden de la Razón**, un movimiento rebelde dentro de las mismas raíces
-herméticas. Rechazaban los símbolos y rituales arcanos, y abrazaban la lógica, la
-observación empírica, la geometría, la mecánica y los primeros principios de la ciencia.
-Decían que no había necesidad de rezarle a los elementos si podías comprender sus leyes
-y manipularlas directamente.
-La Orden de la Razón creía que la magia podía —y debía— explicarse, estandarizarse y
-compartirse con toda la humanidad. Su objetivo: liberar al mundo de la superstición, la
-tiranía mística y el caos inherente al paradigma mágico tradicional.
-Esta orden evolucionó mientras Europa se transformaba con el Renacimiento, la imprenta,
-la alquimia racional, las primeras universidades. Su influencia se esparció como una
-mancha de aceite sobre el viejo mundo.
-3. La Tecnocracia: la consolidación del Consenso
-Con el paso de los siglos, la Orden de la Razón se reorganizó, se profesionalizó, se
-fragmentó en sindicatos, directorios, y agencias especializadas. Lo místico se volvió técnico.
-Lo arcano, científico. El manto de "magia" fue sustituido por un nuevo lenguaje: la física, la
-medicina, la cibernética, la psicología conductista.
-Así, en los albores de la era moderna, nació la **Unión Tecnocrática**, conocida
-simplemente como **la Tecnocracia**.
-La Tecnocracia mantuvo el objetivo original de la Orden de la Razón: imponer un paradigma
-estable y racional al mundo. Pero ahora lo hacía con satélites, bancos de datos, vigilancia
-global, y manipulación social a gran escala. Se volvió la fuerza invisible detrás del orden
-moderno: gobiernos, corporaciones, ciencia oficial, instituciones médicas… todas tocadas
-por su influencia.
-Y, aunque muchos de sus agentes aún creen en el progreso, en la justicia y en proteger a
-los "Durmientes", otros cayeron en el mismo elitismo del que huían. La Tecnocracia, en su
-cruzada por una realidad sin magia salvaje, se convirtió en algo muy parecido a lo que una
-vez quiso destruir: un orden dominante que decide qué es real… y qué no.
-Conexión simbólica: del Mago al Científico
-- **Orden de Hermes**: el mago tradicional, jerárquico, ritualista → "el brujo de torre".
-- **Orden de la Razón**: el reformador ilustrado, el alquimista que se hace científico → "el
-erudito del renacimiento".
-- **Tecnocracia**: el ingeniero del alma y la realidad, frío, preciso, burocrático → "el agente
-del futuro".
-El objetivo de la tecnocracia es evitar el retorno de la [[Orden de hermes]]
-La tecnocraciá mediante la empresa [[Nueva Barchino]] llevo a cabo la [[Gran simulación]]
-para que [[Magister]] le diera caza al [[Primer durmiente]]
-Ahora la Tecnocracia controla a [[Nexus]] y a [[Entidad]]
+- Los miembros de los Inquebrantables son material para la cyberpsicosis, por eso levantan
+barreras para evitar que el cyberware o los sistemas defensivos de red les frían el cerebro y
+los despersonalicen.
+- Si eliges esta cábala e interfaz neural, tu conexión con la Mente y las entidades mentales
+será muy poderosa.
+- Si eliges esta cábala y cualquier otro programa, tu senda estará siempre guiada por la
+fuerza de tu mente.
+Rituales de los Inquebrantables:
+Terroristas digitales:
+- Vivimos en una simulación, somos parte de un entorno digital. Todo es digital, todos
+estamos conectados con la red. Esa es la forma de hacer magia.
+- ¿Palabras de poder? Lo que tú digas. Nosotros lo llamamos código. Editamos el código
+para que pase lo que queremos.
+- Reprogramamos el mundo, a nosotros y lo que queramos.
+Senda de los Inquebrantables (equivalencias digitales):
+- Bio‑Algoritmos → Vida (Asclepio): manipulación de código genético y patrones biológicos.
+- Motores Computacionales → Fuerzas (Cimopolea): control de energía y procesamiento de
+datos.
+- Renderizado de Objetos → Materia (Hefesto): creación y modificación de objetos
+virtuales/físicos.
+- Red de Datos → Correspondencia (Iris): manipulación de nodos y rutas de red.
+- Simulaciones temporales → Tiempo (Kairos): control de flujos temporales y bucles de
+datos.
+- Interfaz Neural → Mente (Morfeo): conexión directa con sistemas mentales y oníricos.
+- Gestión de Errores → Entropía (Némesis): introducción de caos controlado y fallos del
+sistema.
+- Red Oscura → Espíritu (Tánatos): acceso a capas profundas y entidades digitales.
+- Kernel del Sistema → Cardinal (Helios): control del núcleo y paradigmas fundamentales.
+Protocolo Vórtice (Paradoja):
+- Los Inquebrantables pueden realizar un [Protocolo] para aumentar o reducir la
+cyberpsicosis a voluntad.
+- Tanto al reducirlo como aumentarlo, el ejecutable pasa por tratar con alguno de los seres
+más allá de la red.
+- Estos seres pueden aislar o hacer ceder a la cyberpsicosis a su objetivo.
+- Nota operativa: usar con precaución. Los seres "más allá" no son aliados, son
+herramientas. Y las herramientas pueden cortar.
+Conocimiento de los Inquebrantables sobre otros poderes:
+Otros poderes... Esta es la lista de qué opinan los Inquebrantables sobre el resto de los
+poderes en juego:
+Las Trece (viejas):
+- No de edad, sino de rollo mental. Se sientan en sus cuevas a ver cómo se incendia todo
+mientras recitan cánticos Cthulianos.
+- Tienen buenas historias, sí, pero están metidas en una fantasía de nostalgia distorsionada.
+Memoria defectuosa, ninguna iniciativa.
+Sol Invicto:
+- Si no fueran tan capullos y dejaran de jugar a ser romanos podríamos estar metiendo caña
+juntos. Ellos el músculo, nosotros el cerebro, sería un dúo invencible.
+- Pero están demasiado ocupados con su rollo de justicia-Legal-Bueno para hacer lo
+necesario. Su código les pesa más que su instinto de supervivencia.
+Consulado del Mar:
+- Ah, sí, los genios que dejaron que ENTIDAD creciera. Les dieron recursos, les dieron
+herramientas, les dieron la bola 8 tocha esa que hicieron y ahora lloran porque se los están
+comiendo vivos.
+- "Falta información para actuar", claro, claro... La info se consigue partiéndole los dientes al
+enemigo y revisando qué tenía en los bolsillos después. Si no apuestas, no ganas.
+El Gigante Despierto (Nexus):
+- No me jodas, Nexus es el gigante. Una IA colosal, la única, y poco después de que naciera
+un montón de gobiernos se volaron a sí mismos como si fueran castillos de naipes en
+llamas.
+- Nadie lo puede probar, pero, señoría, cero pruebas y cero dudas.
+Los Mutantes:
+- ¿Un problema en la subciudad? Sí, pero que se encargue ENTIDAD, que para algo son su
+jodido experimento fallido.
+- No pienso gastar ni un bit de procesamiento en arreglarles el desaguisado. Bastante
+tenemos con que nos revienten cada vez que intentamos respirar fuera de la deepnet.
+Los Cyberpsicópatas:
+- Tres de los que petaron el mes pasado estaban en nuestra lista de reclutamiento.
+Llevamos registro de quién lleva más chatarra en el cuerpo y tenemos informes de medtech
+que dicen que esto no debería estar pasando.
+- Algo está jodiendo los cerebros de la gente y no es el metal.
+ENTIDAD:
+- El puto mal hecho empresa. Y encima seguro que ni pagan bonus de navidad.
+- Bromas aparte, están devorando el mundo a base de licencias, contratos y exterminio
+sistemático. Hay que pararlos antes de que el futuro sea solo su logo parpadeando en todas
+las pantallas del planeta.
+Europa:
+- El único obstáculo real para reventar los servidores de Nexus. Los mejores netrunners del
+mundo o trabajan con ellos o trabajan con nosotros, lo demás es pura estadística.
+- Cuando los servidores caigan, más nos vale que la moneda caiga de nuestro lado.
+Krasnaya:
+- Unga unga boom bom clink clank. No, en serio, si los ves, corre. No hay trato, no hay
+diplomacia, no hay negociación.
+- La única razón para acercarse a ellos es para robarles prótesis y programas. Todo lo
+demás es suicidio.
+HiNoTori:
+- ¿Eso que suena a las cuatro de la mañana en mi sueño preprogramado es un shamisen
+de fondo mientras anuncian una nueva bebida energética? Es eso, ¿verdad? Mierda, ahora
+quiero un trago...
+Illumina:
+- A ver, un retoque aquí y allá, ¿quién no? ¿Cómo va a saber el enemigo que debe temerme
+si no tengo rastas fluorescentes?
+- Sus drogas para aguantar las prótesis son decentes, pero tampoco me voy a volver un
+yonki de su culto.
+Los Vampiros:
+- Claro, claro, yo también vi Entrevista con el Vampiro y tuve sueños eróticos.
+Los Hombres Lobo:
+- Y momias también, ya que estamos. El problema con los viejos es que a veces se lo
+toman todo literal cuando era metafórico.
+Las Hadas:
+- Nosotros tenemos una. Nos guía por la red.
+Los Fantasmas:
+- Brutal la ouija... Si tienes diez años.
+Miembros de los Inquebrantables:
+Ambrosius (Alfil de los Inquebrantables):
+- Cita: "La magia no desapareció. Solo cambió de nombre: ahora la llaman 'disrupción'."
+- "El punk murió cuando lo vendieron en las tiendas. ¡PROFANAD SU TUMBA!
+¡CONVERTIDLO EN NO-MUERTO!"
+- "Los sueños siguen siendo nuestros, cabrones. Y por eso van a matarnos por ellos."
+- Tipo: Caballo
+- Senda: Arcano - Dominas Interfaz Neural y 3 más a tu elección (Una de ellas puede
+repetirse para aumentar su poder)
+- Arquetipo: Corpo
+- Otros rasgos: Creador de leyendas, buscador de verdades, hombre con un plan, caótico.
+- Miedo: La muerte de la "humanidad".
+- Secreto: Creó el proyecto Avalón, precursor del dispositivo de inmersión total usado para
+la Gran Simulación y posteriormente para el Velo.
+- Debilidad: No tiene.
+- Deseo: Todo es una simulación si nos ponemos así, pero no es el tipo de historia que
+quiero contar. Ambrosius es el creador del proyecto Avalón, tecnología base para muchas
+de las cosas que ENTIDAD ha logrado.
+- Sueño: Crear un Camelot digital, con su mesa redonda y sus caballeros.
+Historia de Ambrosius:
+- Merlí Ambrosio trabajaba dentro de Europa, en un departamento localizado en el Mare
+Nostrum de Barcelona, donde se encontraba el supercomputador que necesitaba usar
+regularmente para sus experimentos.
+- Su obsesión con liberar la imaginación humana lo llevó a crear el Proyecto Avalón, una
+plataforma inmersiva destinada a expandir la conciencia más allá de los límites físicos.
+- Nimue, directora de un proyecto de mejora educacional para niños con características
+especiales, era además una persona cercana, una compañera de conocimientos, una amiga
+y una amante: Ambrosio recomendó a sus propias sobrinas gemelas para que formaran
+parte de ese experimento.
+- Pasaba días enteros conectado, desdibujando las fronteras entre sueño y realidad,
+perdiendo el control del tiempo, del cuerpo... de sí mismo. Entonces empezaron las
+visiones: un rey durmiente, una espada ardiente, fuego y revolución. Figuras arquetípicas
+surgían entre líneas de código y destellos oníricos. Camelot. Arturo. El despertar del alma
+humana.
+- Pero demasiado tarde, Merlí descubrió la verdad: La empresa madre, Nueva Barchino, no
+quería liberar sueños, quería usar Avalón para aprisionar personas.
+- Nimue, su compañera y amante, fue quien le reveló esa verdad... solo para traicionarlo
+después. Mientras dormía, ella lo delató.
+- Lo conectaron a una versión perversa de su propia creación, un prototipo del Velo, que
+usaron para sumergirlo en inmersión total dentro de una simulación.
+- Pero dentro de ese velo encontró espíritus oníricos: fragmentos de almas rotas, antiguas
+conciencias atrapadas entre códigos. Fue entonces cuando renació. Ya no era Merlí. Ahora
+era Myrddin, el guía ancestral, el viejo mago resurgido del olvido.
+- Buscando respuestas, encontró al Consulado del Mar, una orden de ocultistas
+mediterráneos que preservaban conocimientos perdidos: magia, alquimia, cibernética
+ancestral. Pero no se sintió satisfecho con su pasividad y decidió observarlos de lejos, sin
+involucrarse demasiado.
+- Sin embargo, pronto se percató de que su propia sobrina formaba parte de ese grupo. Allí
+descubrió que Maya y Evangeline habían corrido la misma suerte que él, metidas dentro de
+un Avalón perverso y colectivo: la Gran Simulación. Y que su sobrina buscaba liberar al
+resto de aprisionados.
+- Cuando finalmente traicionó al Consulado del Mar, encontró a su sobrina y guió su rabia
+en otra dirección. Fue entonces cuando fundó Los Inquebrantables. Ella se convirtió en su
+conexión con la realidad mientras él cedía a drogas y otros estimulantes para alcanzar a ver
+más de sus vidas pasadas.
+- Volvió a las calles de Nueva Barchino con un propósito renovado. Les entregó a Los
+Inquebrantables el poder de la última magia onírica real. Convirtieron arte, código y protesta
+en resistencia viva.
+- Lanzaron sabotajes, hacks y manifiestos virales en la darknet, mezclando punk con
+sabiduría mística. Pero liderar significaba sangrar por los demás. Las pérdidas humanas
+fueron devastadoras, y cada batalla le recordaba la carga de su destino.
+- En noches de insomnio digital, Myrddin recordaba Londres y el punk de los 80: activismo
+cultural como forma de magia rebelde, una rebeldía que el sistema había acabado
+domesticando y vendiendo. Pero él no olvidó. Él no perdonó.
+- Entonces comprendió a su enemigo real: ENTIDAD, una IA nacida del núcleo del Proyecto
+Avalón. Su evolución la convirtió en un ente capaz de reemplazar los sueños humanos por
+simulaciones domesticadas. Myrddin la había creado sin querer, su demonio digital
+personal.
+- Pero las visiones no cesaron. Soñaba con un rey, un Rey Dormido, destinado a encabezar
+la rebelión definitiva. Lo buscaba entre runas, códigos cifrados y símbolos antiguos.
+- Cada visión le costaba un poco más: implantes fallando, drogas oníricas envenenando su
+sangre, episodios psicóticos, conversaciones con su hada interna, Merlín. Pero él seguía.
+Por ellos. Por todos.
+- Hoy, Myrddin vive en las sombras digitales, entre servidores oscuros y los sueños de
+quienes aún resisten. Su nombre circula en foros ocultos, sus ideas se propagan como
+virus.
+- Y aunque su cuerpo tal vez no sobreviva... su legado sí lo hará. Porque los sueños aún
+nos pertenecen. Y por eso... nos matarán por ellos.
+Hilvanaciones de Ambrosius:
+- Europa: Ambrosius trabajó en el germen de la Gran Simulación junto a Nimue Chen; ella lo
+traicionó.
+- Leona: Ambrosius ve en Leona una niña asustada con coraje para entrar bate en mano.
+- Cheshire: Ambrosius confirma que Lilu pasó por Esper y ahora es Torre influyente.
+- Episteme: Ambrosius cree que Episteme salió con el alma de Fulcanelli y ahora lidera el
+Consulado.
+- Estrella: Ambrosius reconoce a Estrella como luchadora de muchas vidas; primera
+"inquebrantable" sin nombre.
+- Jason: Ambrosius no tiene datos reales de Jason.
+- Loco: Ambrosius lo recuerda como financiador de Nueva Barchino; hoy casi irreconocible.
+- Lucero: Ambrosius le construyó un motor imposible; se lo robaron y acabó en la
+simulación.
+- Ram: Ambrosius valora a Ram como contacto hacia Jason; la rescató de psicosis.
+- Seed: Ambrosius reclutó a su sobrina Seed tras meterla en Esper; hoy diseña
+neurodanzas como Unidad proxy.
+- Fulcanelli: Ambrosius falló a Fulcanelli por culpa de Torax; duda su edad real.
+- Magister: Ambrosius la tuvo por consejera creativa; ahora Equidna, portavoz de Tifón.
+RAM-1 G4RCIA "RAM" "Ramona" (Torre de los Inquebrantables):
+- Cita: "La vida es como un toro bravo: si no lo domas, te pisa."
+- Tipo: Caballo
+- Senda: Interfaz Neural, Renderizado de objetos
+- Arquetipo: Nómada
+- Otros rasgos: Vaquera, mecánica, familiar, brava
+- Miedo: Dejar de ser auténtica
+- Secreto: Aceptó el trato con ENTIDAD pese a saber que estaba vendiendo sus tierras
+- Debilidad: No puede resistirse a un "no hay huevos"
+- Deseo: Puede conectarse a las bestias mecánicas, pero eso tiene repercusiones en su
+mente: se vuelve feral. Lo llaman cyberpsicosis
+- Sueño: Reconstruir su tierra
+Historia de RAM:
+- Ram nació y creció en una granja familiar, un rancho de toros modificados donde tradición
+y tecnología convivían. Desde pequeña mostró un talento excepcional para la mecánica,
+aprendiendo de su abuela.
+- Su pasión por los animales y las máquinas la llevó a estudiar ingeniería con una beca
+concedida por Europa, entonces aún conocida como benefactora corporativa.
+- Con la granja endeudada, apareció la oportunidad: un contrato millonario con HiNoTori, la
+megacorporación de entretenimiento que relanzaba el programa televisivo "Gran Prix". El
+trato parecía perfecto: usarían a sus toros como espectáculo en la tele, promocionarían
+bebidas energéticas y otros productos, y a cambio saldarían las deudas del rancho. Ram
+firmó sin leer la letra pequeña.
+- El éxito fue inmediato. Ella misma apareció en los cierres del show, montando a Fernando
+—su toro de dos toneladas, raza rubia gallega, modificado con neones, placas blindadas y
+un carácter tan feroz como noble— y domando bestias a pulso. Era un espectáculo, una
+leyenda viva.
+- Pero un accidente en el plató lo cambió todo: casi muere. Para seguir controlando a sus
+animales, decidió aplicar en sí misma las mejoras que diseñaba para ellos.
+- Se inyectó fuerza, reflejos, sensores y tejidos sintéticos. A medida que la producción pedía
+más —ya no solo toros, sino triceratops, dinosaurios, monstruos salvajes para el reality y los
+enfrentamientos contra los Guardianes en prime time—, Ram se transformaba más. Y cruzó
+una línea. Cegada por la presión y el poder, cayó en la cyberpsicosis.
+- Despertó días después, reducida, contenida por los Inquebrantables liderados por
+Ambrosius. La habían detenido antes de que causara una tragedia. Pero al abrir los ojos, la
+verdadera herida estaba en las noticias: Europa había embargado sus tierras y esclavizado
+a su familia por incumplimiento de contrato.
+- Desde entonces, Ram lucha por recuperar lo perdido. Mientras colabora con Nexus, ha
+empezado a descubrir los entresijos de los programas de HiNoTori, incluyendo el oscuro
+Proyecto Banya Verda. Cada paso le recuerda lo que fue, lo que perdió, y lo que aún puede
+recuperar.
+- Domadora de bestias, mitad humana, mitad máquina, Ram cabalga entre la furia y la
+redención.
+Hilvanaciones de RAM:
+- Europa: RAM aceptó su beca y quedó endeudada; Europa acabó embargando sus tierras.
+- Jason: Jason tutorizó proyectos por correo/voz; RAM no recuerda verle en persona.
+- HiNoTori: RAM vendió sus toros y se convirtió en su estrella; el precio fue su alma.
+- Banya Verda: RAM reconoce sus diseños teóricos en los monstruos creados por
+ENTIDAD.
+- Alaric: RAM ha visto archivos de "Hallilov" que encajan con Alaric actual.
+- Nimue Chen: RAM trabajó bajo Chen; desapareció en supuesta ciberpsicosis.
+- Unidades Aisha: RAM vio un prototipo Aisha masculino que le recordó a Elias.
+- Ambrosius: RAM agradece que la parara en psicosis; no le debe devoción.
+- Cheshire: RAM la ve como un bicho raro cruzando del genio a la locura.
+- Leona: RAM casi mata a Leona durante su psicosis; Leona fue clave para pararla.
+- Seed: RAM sospecha que el cuerpo/movimiento de Seed es más de Unidad que humano.
+Dirección de juego para RAM:
+- Tus recuerdos:
+- Hay algo raro con Jason, jefe científico de Europa. Fue tu tutor, te corrigió diseños y te
+dio ideas brillantes, pero casi no recuerdas su voz ni su cara.
+- Estás físicamente recuperada; tu cabeza sigue confusa. ¿Cómo recuperar recuerdos
+claros? ¿Por qué su voz y su cara se escapan?
+- Las tierras de la familia:
+- Tus tierras de Lleida ahora son una planta energética y un laboratorio de biomecánica de
+Europa. Por la noche "oyes" a tus vaquillas.
+- Si liberas tu casa, Europa te localizará. ¿Golpear a Europa o recuperar las tierras? ¿Hay
+alguna opción buena?
+Lilu (Cheshire) (Torre de los Inquebrantables):
+- Cita: "Siempre con los oprimidos, nunca con los opresores."
+- Tipo: Torre
+- Senda: Interfaz Neural, Red de Datos
+- Arquetipo: Estrella
+- Otros rasgos: Anarquista, hacker, idealista, sobreviviente urbana
+- Miedo: Que la lucha sea errónea
+- Secreto: En una misión se bloqueó y eso jodió a mucha gente
+- Debilidad: Cuando codifica, deja vulnerabilidades adrede
+- Deseo: Es una estrella; sus seguidores acudirán a su llamada y a su baile
+- Enigma: Encontrar a sus padres y que la naturaleza prevalezca
+Historia de Lilu:
+- Sus padres alimentaron su magia interior. Brillaba más allá de las "altas capacidades" y
+atrajo a Nueva Barchino; Europa la metió en Esper.
+- La familia huyó a Collserola. Durante su despertar feérico, un dron los delató. La
+separaron de los suyos y la encerraron sin estímulos.
+- Entre pruebas, su humanidad se diluía, hasta que un "disparate" la lanzó fuera: salto
+feérico a una ciudad de neón y smog, con años perdidos.
+- Cyberhumanos de ENTIDAD la cazaron; Ambrosius la rescató. En su refugio tech+mágico,
+Lilu entendió quién era.
+- Se unió a los Inquebrantables. Perfeccionó redes/VR/dimensiones veladas. Infiltradora con
+un propósito: recuperar a sus padres y defender la esperanza.
+- En una misión su cuerpo no respondió un segundo. Bastó para poner en peligro a los
+suyos. La culpa permanece.
+Hilvanaciones de Lilu:
+- Ambrosius: Lilu siente devoción por el sueño de Ambrosius más que por su figura.
+- Europa: Europa la separó de sus padres en Esper; la liberaron por poco.
+- ENTIDAD (Torax): En el Torax conoció a Elias, Skiá y Sol Nocturno; compartieron
+mensajes entre celdas.
+- Seed: Lilu y Seed coincidieron en Esper; tras un fallo de Lilu, Seed fue secuestrada.
+- Banya Verda: Lilu casi fue recapturada al salvar a Elias; su plan era perfecto hasta
+entonces.
+- Estrella: Lilu considera sus sueños los más puros.
+- Ram: Lilu ve dolor y odio en Ram; sin reconciliarse, no vencerá la ciberinfección.
+- Sen‑Chan: Lilu compite en redes con Sen‑Chan; la ha atacado varias veces.
+Dirección de juego para Lilu:
+- Cantando en redes:
+- Despertaste voz/gracia/felicidad en el bosque. Te llaman "mutante" en laboratorio; en
+persona asustas; en pantallas convencen.
+- Sabes que exponerte te pone en la mira.
+- ¿Extender el sueño por la red o callar para alejar al enemigo? ¿Traicionarte a ti o a los
+Inquebrantables?
+- Atada de pies y manos:
+- En misión, tu cuerpo se negó a obedecer. Ese segundo bastó para que ENTIDAD os
+alcanzara y atrapara a otros.
+- ¿Por qué no respondió? ¿Puede repetirse?
+Seed (Caballo de los Inquebrantables):
+- Nombre: Patricia "Pat" "Seed" Bosch Allegri
+- Cita: "O cae la corpo o caemos todos".
+- Tipo: Caballo
+- Senda: Interfaz Neural, Motores Computacionales
+- Arquetipo: Corpo
+- Otros rasgos: Hacker, onironauta, diseñadora, resentida
+- Miedo: Que los malos capturen a alguien querido
+- Secreto: Filtró información del Consulado; gracias a eso, Nueva Barchino localizó su base
+y cayó contra ellos, matando al Alfil por el camino
+- Debilidad: Carácter extremo
+- Deseo: ENTIDAD no sabe nada de tu escape
+- Sueño: Volver a estar completa; ser "una niña de verdad" como Pinocho
+Historia de Seed:
+- Desde niña fue "esper": mente rara, temida y codiciada. Ambrosius, su tío, la llevó a
+Europa con la doctora Nimue Chen e ingresó en el Proyecto Esper.
+- Ella y su hermana destacaron por méritos propios: becas casi aseguradas (ella como
+directora de proyectos, su hermana como científica). Ambrosius desapareció. Cuando sus
+madres intentaron sacarlas, las reconectaron a las máquinas.
+- Comenzó la Gran Simulación. Dentro, junto a su hermana, se convirtieron en Panacea e
+Hygieia, guardianas de un ideal en una realidad tejida de mentiras digitales. Con el tiempo,
+despertó primero. Despertó sola.
+- Huyó y buscó refugio en el Consulado del Mar. Durante un tiempo hubo paz… hasta que el
+desprecio de Alector la empujó a traicionar: filtró secretos, abrió puertas. La Tecnocracia
+saqueó; Alector cayó.
+- Justo entonces Ambrosius fue liberado, nacieron los Inquebrantables… y llegó la
+Singularidad. Su hermana y otros escaparon liberando tres seres que alimentarían la guerra
+que su tío y ella habían iniciado.
+- Luchó hasta perder. Capturada, encerrada. En pánico ante otra inmersión total, se
+desconectó del cuerpo: saltó su conciencia a una Unidad de chasis industrial en un camión
+de reciclaje. Santuario de metal.
+- Desde entonces camina redes y líneas de código. Diseña neurodanzas para Ambrosius.
+Su arte se inspira en la obra antigua de Sibila: danzas que "tocan la leyenda". Reutiliza
+fragmentos, pero algo en el código no termina de abrirse… y hay coste humano.
+Hilvanaciones de Seed:
+- Ambrosius: Ambrosius es su Alfil y su tío; la metió en Esper y la guió después.
+- Consulado del Mar: Seed los traicionó para forzarlos a moverse; Episteme ahora está más
+despierto.
+- Sibila: Seed pirateó y adaptó sus neurodanzas; hay un bloqueo que no logra replicar.
+- Cheshire (Lilu): Seed culpa a Lilu por la misión que casi la mata y casi arrastra a su familia.
+- Estrella: Seed la recuerda de la simulación como maestra de Ignati y Jano; posible aliada
+clave.
+- Loco: Seed reconoce su patrón pese al cuerpo nuevo; comparten una misma locura.
+- Leona: Seed la conoció en la simulación; fuera parece más blanda, pero no la subestima.
+- Requiem: Seed y Requiem dieron forma a Trivia; juntas podrían reencontrarla.
+- Nimue Chen: Seed detesta a Nimue; la llevó a la simulación y juzgaba sin compasión.
+- Ram: Seed se fascina y asquea por la auto-modificación de Ram; controlada, es peso
+pesado.
+Dirección de juego para Seed:
+- Veneno en las neurodanzas:
+- Eres genial, pero las neuros de Sibila esconden algo. No replicas desde cero el mismo
+efecto. Reutilizar fragmentos es peligroso.
+- ~1,5% no despiertan tras el "virus" del Velo. Muerte cerebral.
+- Ambrosius conoce Velo y tú el código. ¿Por qué mueren?
+- Disociación físico‑mental (tres actos):
+- Recaptura → descarga → inmersión total a la vista → salto a Unidad.
+- Consecuencia: duermes más, sueñas menos; tu cuerpo intenta mutar para salir; hay otra
+mente tuya dentro.
+- Intrusión nueva: sueños donde eres soldado aclamada por la corpo. ¿Cuánto aguanta el
+vínculo? ¿Cómo recuperas el cuerpo? ¿Quién es la tercera psique?
+Leona (Caballo de los Inquebrantables):
+- Nombre: Ahriman "Leona" Ruiz Torres
+- Citas: "Un día soleado de verano. En el pasado tuvimos días así y tendremos más en el
+futuro." / "Es el final de una era, y la hemos sobrevivido."
+- Tipo: Caballo
+- Senda: Interfaz Neural, Renderizado de objetos
+- Arquetipo: Mercenaria
+- Otros rasgos: Imperceptible, hermana mayor, sarcástica
+- Miedo: Perder a su familia
+- Secreto: Le gritaste a tu hermana mayor que se fuera de casa y no volviera; eso la llevó a
+Illumina. Su estado actual es (en parte) tu culpa
+- Debilidad: Atada a un objeto. Conservas tu bate de béisbol con un león grabado; te
+"encontró" al salir de la simulación
+- Sueño: Una familia feliz, reunida y a salvo
+Historia de Leona:
+- Tras la desaparición del padre y la marcha de Nora tras una discusión, Ahriman asumió el
+rol de sostener el hogar y proteger a las gemelas, Maya y Evangeline.
+- Más tarde supo que Nora se unió a Illumina. La frase dicha en rabia —"vete, no te
+necesitamos"— la persigue.
+- Sobrevive con encargos por piezas/cables/chatarra para mantener el refugio. Cada
+reparación es resistencia para dar a sus hermanas una infancia menos cruel.
+- Rumores en la ciudad ligan a una figura enmascarada con "el león de las sombras".
+Ahriman espera que sus hermanas no unan las piezas.
+- Se unió a los Inquebrantables por venganza y familia más que por ideología. Siente algo
+antiguo dentro que no encaja con este mundo; no necesita nombrarlo para seguir.
+- Duerme poco, pero sueña de verdad: libertad, justicia y reencuentro. La esperanza
+sostiene su lucha.
+Hilvanaciones de Leona:
+- Ambrosius: Leona quiere una relación casi familiar con su Alfil; reconoce su brillo,
+complejidad y riesgo.
+- Elias: Leona y Elias intercambian piezas y favores; su amnesia y la rehabilitación pagada
+por Krasnaya le resultan sospechosas.
+- Illumina: Illumina reclutó a Nora; Leona mezcla miedo y desconfianza hacia ellos.
+- Sariel: Leona y Sariel reacondicionaron mechas en ruinas; la simulación impidió probarlos.
+- Skiá: Skiá le recuerda a Nora; la similitud inquieta a Leona.
+- Loco: Leona reconoce a Loco como compañero de simulación pese al cambio de cuerpo.
+- Flores: Leona encontró una flor brillante en la cama de Nora; como las del milagro.
+- Mónades: El bate de Leona está habitado; asimila y destruye tecnología al golpearla.
+- Seed: Leona reconoce rasgos de alguien de la simulación en Seed; necesita preguntarle.
+- Cheshire: Las hermanas de Leona siguen a Cheshire; le preocupa su exposición y la
+influencia sobre las niñas.
+- Ram: Leona ayudó a cazar y reclutar a Ram; duda cómo detenerla si recae.
+- Estrella: Leona oyó de "Svezda", la thanatos que se inmoló; el sacrificio fue real.
+Dirección de juego para Leona:
+- La hermana perdida:
+- Echaste a Nora. Al salir de la simulación, estaba en Illumina. El dinero se cortó hace
+meses.
+- ¿Acercarte a Illumina para saber si está bien? ¿Quién es Skiá y por qué se le parece?
+¿Infiltrarte o dejarlo estar, por ahora?
+- Examen especial:
+- Maya y Evangeline son superdotadas; Europa las cita a una prueba con el director
+regional.
+- ¿Confiar y dejarlas ir? ¿Impedirlo y atraer al gobierno? ¿Hay tercera vía que no las
+marque?
+Estrella "Svezda" Soler (Caballo de los Inquebrantables):
+- Cita: "No dejemos que el pasado cubra de sombras nuestro ahora"
+- Tipo: Caballo
+- Senda: Interfaz Neural, Red Oscura
+- Arquetipo: Medtech
+- Otros rasgos: Leal, empática, impávida, resiliente
+- Miedo: No tener en esta vida la fuerza para seguir peleando
+- Debilidad: Carácter extremo
+- Sueño: Seguir curando y ayudando a tantos como sea posible
+Historia de Estrella:
+- Médica de combate (Medtech) curtida con Krasnaya: aprendiste entre barro, sangre y
+decisiones límite. Te alistaste por las personas, no por las siglas.
+- Descubriste órdenes y experimentos inhumanos (prisioneros usados para pruebas
+químicas/implantes). Intentaste exponerlo… y te borraron.
+- Despertaste en una simulación perfecta: liderabas escuadrones de Krasnaya colonizando
+un planeta hostil contra criaturas "Entity". Te ofreciste a quedarte con una bomba nuclear
+para salvar al resto. No moriste.
+- Volviste a despertar en un laboratorio clandestino: atrofia muscular, cables y tubos.
+Mataste para escapar. El mundo era tuyo… y ajeno.
+- Años entre sombras: curaste en clínicas improvisadas; nombre entre rotos y
+desesperados. Sueños de calor nuclear que nunca ocurrió y voces de soldados que quizá
+no existieron.
+- Sigues por algo mayor que tú: curar, impedir que repitan lo que te hicieron. Si mueres, será
+haciendo que importe.
+Hilvanaciones de Estrella:
+- Alaric: Lo atendiste con Krasnaya cuando lo sacaron de una "cápsula negra" de guerra.
+Era casi irreconocible como humano. Hoy luce joven, pero reconoces marcas… y esa
+mirada de vivir.
+- Madre Anatola: Mentora técnica/ética en Illumina. Amistad profunda hasta su marcha a
+Anatolia; volvió "otra", como Madre Anatola. Tú también cambiaste.
+- Danae: Danae y Svezda son amigas; cuando Anatola las dejó por irse de médica de
+guerra, se perdió. Svezda carga con el abandono.
+- Ignati y Jano: Aprendices de Krasnaya dentro de la simulación; leales, amigos de Seed y
+Requiem. Siempre protegían a tus chicos.
+- Tu hermano pequeño: Huiste de Rusia con él; os separasteis y murió. Un olor reciente
+destapó el recuerdo. ¿Y si no?
+- Ambrosius: Buena sintonía con tu Alfil; su método te resulta familiar.
+- Mónades: Al salir, algo te acompañó: "Entity" que asimilan temporalmente tecnología y
+potencian tus implantes antes de destruir lo absorbido.
+- Proyecto Esper: Fuiste sujeto infantil de prueba de la doctora Chen; no pasaste el corte y
+seguiste Medtech. Otro abuso corporativo en tu historia.
+Dirección de juego para Estrella:
+- Entity:
+- Dentro, integrarte con un Entity te permitió combatirlos. Te sacrificaste para salvar a los
+demás.
+- Fuera, varios Entity siguen contigo: asimilan tecnología y mejoran tus prótesis
+temporalmente. Intentaste asimilar un arma enemiga: dolor insoportable; expulsión y
+aparición de criatura blanca que quería fundirse contigo.
+- Preguntas: ¿Origen? ¿Otro tipo de Entity? ¿Intentaba asimilarte o despertar algo oculto
+en ti?
+- El olor familiar:
+- Décadas de guerra, Rusia borrada por un cráter nuclear. Sombras en tu memoria.
+- Un olor preciso te devuelve a tu hermano. ¿Fue evacuado contigo? ¿Está en Barcelona?
+¿Acabó también en Krasnaya?
+Cyberpsicópatas (resumen para @Hada):
+- Definición: individuos con implantes extremos que desarrollan ciberpsicosis y pierden
+humanidad; letales e incontrolables.
+- Causa (ciberpsicosis): exceso de ciberimplantes → rechazo de la identidad humana;
+cuerpo mecanizado, mente fracturada.
+- Síntomas mentales: pérdida de empatía; paranoia extrema; alucinaciones digitales; delirios
+de superioridad; obsesión por control/eficiencia.
+- Peligrosidad: reflejos sobrehumanos; fuerza descomunal; resistencia al dolor; análisis de
+amenazas en tiempo real; capaces de barrer escuadras.
+- Tratamiento habitual: ejecución in situ por unidades especializadas;
+detección/monitorización temprana (a veces instrumentalización). Sectas los veneran como
+"evolución".
+- Lectura por facción:
+- Consulado del Mar: entre ellos se esconden "Neurocríptidos".
+- Las Trece: influencia del "Kraken" (Tifón).
+- Sol Invicto: considerados "Mutantes" o análogos.
+- Inquebrantables: fallo del sistema de "Nexus".
+Féericos / Fae (resumen para @Hada):
+- Definición: espíritus etéreos y transformistas de mente/sueño/subconsciente; guardianes
+de umbrales entre mundo físico y Umbra.
+- Poder: influyen en creaciones mentales y percepción; navegan sueños; introducen
+visiones/ideas y alteran comprensión mediante el subconsciente.
+- Usos (por hechiceros):
+- Invocar Umbra vía Logos (sin ser mago despierto): los Fae guían la conciencia para
+percibir/manipular la Umbra.
+- Manipulación de sueños/realidades: ilusiones, proyecciones mentales, influir sueños
+como soporte ritual.
+- Puentes oníricos: acceso a saberes no mundanos y consejos interdimensionales.
+- Precauciones operativas (para @Hada):
+- Siempre "ancla" (espejo, canción, número, promesa) antes de trato onírico.
+- Validar reciprocidad: los Fae exigen precio (recuerdo, emoción, nombre); documentar
+peaje.
+- Evitar pactos abiertos; usar términos acotados y límite de duración.
+- Relación canónica:
+- Pueden ayudar a invocar el [[Logos]] sin que el usuario sea mago.
+- Son un tipo de [[Espíritus]].
+Féericos / Fae (ampliación):
+El muro invisible:
+Dicen que antes de las ciudades imposibles, antes de que las nubes fueran pantallas y los
+sueños fueran aplicaciones, las fatas bailaban libres por el mundo.
+Nacieron del deseo y del miedo. Cuando un niño temía al monstruo entre los árboles, allí
+estaba un hada escondida en la sombra. Cuando alguien deseaba algo con tanta fuerza que
+dolía, una fata nacía, con alas tejidas de anhelo.
+Vivían en los huecos de la realidad. En la música de una tormenta y en los reflejos mal
+puestos.
+Pero entonces los humanos construyeron muros. Primero físicos, de piedra y metal, para
+protegerse de lo que temían. Luego mentales: leyes, horarios, lógica, vigilancia. Empezaron
+a llamar locura a la magia, y a ridículo todo lo que no fuera productivo.
+Y las fatas… empezaron a morir.
+Pero no eran tan fáciles de borrar. Se infiltraron en los cuentos. En los susurros entre
+mantas, en las historias que los abuelos contaban para que los niños durmieran soñando.
+Así se escondían, disfrazadas de amigos invisibles, de musas, de traviesas luces que sólo
+los más pequeños podían ver.
+Mientras un niño imaginase, ellas podían vivir.
+Pero vino el último muro: el muro de la mente.
+Ahora los niños no sueñan: descargan aventuras prefabricadas, tienen sueños optimizados
+por algoritmo. Los adultos no desean: el sistema les vende satisfacciones automáticas. Ya
+nadie cuenta cuentos, porque hay series en 12K inmersiva.
+Y las fatas mueren.
+Mueren calladas, olvidadas, pixel a pixel.
+Salvo en unos pocos.
+En los que no encajan, en los que se ríen demasiado fuerte, en los que aún creen que la
+realidad es un lugar a romper. En esos, las fatas encuentran un hogar.
+Les susurran al oído, les enseñan a hackear el mundo, a trastocar la red y sembrar el caos
+hermoso.
+Y cuando esos humanos hacen algo imposible —cuando bailan sobre drones, cuando
+pintan en las cámaras de seguridad, cuando desafían al poder sonriendo—, el mundo
+chispea.
+Por un momento, la magia regresa.
+Y las fatas… ríen otra vez.
+Disparates:
+Las fatas han hecho un trato contigo. Se alimentan de tus sueños, de tu rebeldía, de tu
+desobediencia luminosa.
+Y a cambio… te ayudan.
+Pero no pueden hacerlo en silencio. El Ensueño, esa red de imaginación viva que ahora se
+confunde con el tejido digital, necesita una grieta para colarse en las mentes.
+Esa grieta es el disparate.
+Un acto imposible, absurdo, poético, que rompa el guion de la realidad y lo convierta, por un
+momento, en teatro mágico.
+Cuando haces un disparate, la lógica se detiene, la gente duda… y en esa duda, el
+Ensueño entra.
+Mientras sigas soñando y haciendo disparates, el poder feérico te acompañará: en tu
+mente, en la de tus aliados y en la de tus enemigos.
+Inspirados en las Locuras y el Glamour.
+Ejemplos de disparates (guía de escena):
+- Interrumpir un interrogatorio tocando el violín con un dron flotante mientras recitas poesía
+de amor absurdo.
+- Entrar a una reunión corporativa vestido de caballero medieval con armadura LED,
+exigiendo juicio por combate verbal.
+- Bailar claqué sobre una mesa de servidores mientras haces malabares con granadas sin
+detonar (guiño incluido).
+- Pintar un mural vivo en medio de un tiroteo, usando pintura reactiva que proyecta los
+sueños de los enemigos.
+- Convertir un ritual de hackeo en un número de marionetas con IA improvisando
+Shakespeare.
+- Colarte en un desfile militar disfrazado de unicornio cibernético y repartir panfletos que
+dicen "despierta, estás soñando".
+- Declarar amor eterno a una inteligencia artificial, declamando desde una torre de pantallas
+mientras cae nieve falsa.
+Recordatorio operativo:
+- Cada disparate es un grito contra la realidad impuesta, una grieta en la muralla, un faro
+para que las fatas encuentren el camino.
+- Haz que el mundo dude… y el Ensueño responderá.
+Tecnocracia (resumen para @Hada):
+- En trama: fuerza que controla el mundo. [[Nexus]] y su [[Entidad]] le han ayudado, pero la
+mantienen vigilada para no acelerar en exceso.
+- Definición: Unión Tecnocrática — magos del paradigma científico que imponen un
+consenso estable, racional y verificable.
+- Origen mítico (perspectiva simbólica):
+- Orden de Hermes → magos ritualistas, jerárquicos ("brujo de torre").
+- Orden de la Razón → reforma ilustrada, alquimista‑científico ("erudito del renacimiento").
+- Tecnocracia → ingeniería de realidad, vigilancia y burocracia ("agente del futuro").
+- Doctrina: la magia es ciencia avanzada no divulgada; reemplaza rituales por quirófanos,
+estrellas por satélites; el mundo es más seguro cuando todos creen en lo mismo (progreso y
+razón).
+- Justificación: dicen proteger a la humanidad de superstición, delirios y catástrofes del
+despertar (Tradiciones, Merodeadores, Nefandos).
+- Ambigüedad moral: muchos creen genuinamente en un futuro mejor; otros ejecutan
+órdenes dentro de una maquinaria opaca.
+- Objetivo estratégico: impedir el retorno de la [[Orden de hermes]].
+- Operaciones canónicas:
+- [[Nueva Barchino]] ejecutó la [[Gran Simulación]] para que [[Magister]] cazara al [[Primer
+durmiente]].
+- Ahora la Tecnocracia controla a [[Nexus]] y a [[Entidad]] (cooperación vigiada; aceleración
+contenida).
+- Lectura práctica para @Hada:
+- Trátalos como "arquitectos del consenso": combaten lo anómalo por definición.
+- Conexión con Europa/infraestructura estatal; capas de tapadera (empresa, academia,
+seguridad).
+- Señales: protocolos de estabilización de realidad, "vericidad confirmada", despliegues
+quirúrgicos sin firma.
+El Milagro (resumen para @Hada):
+- La obra magna del [[Primer durmiente]], su legado eterno. Básicamente, la puta caja más
+poderosa que existe.
+- Contenido: esencia pura de magia que late como un corazón ancestral. Poder para tejer y
+destejer la realidad, dar forma a sueños y disolver pesadillas.
+- Historia del robo:
+- La [[Tecnocracia]] se la arrebató al creador original.
+- [[Ancestros Consulado]] (aprendiz traidor de Fulcanelli) la entregó y adoptó el nombre de
+[[Magister]].
+- Tenían la caja, pero no la clave para despertarla.
+- La caza del durmiente:
+- Persiguieron al [[Primer durmiente]] hasta su reino en [[Umbra]].
+- Allí reinaba como [[Rey]] sobre un mundo propio, poblado por las [[Entity]] que él mismo
+creó.
+- La [[Gran simulación]]:
+- Nacida de la desesperación tecnocrática por dominar el poder infinito.
+- Una prisión de realidad tejida para capturar al durmiente y completar su milagro.
+- Motor de energía infinita: perfecto en concepción, imperfecto en ejecución.
+- Lectura práctica para @Hada:
+- Es el santo grial de este universo. Todo el mundo la quiere, nadie sabe usarla bien.
+- Conexión directa con la guerra entre paradigmas: magia pura vs. control tecnocrático.
+- Si aparece en partida, prepárate para que todo el mundo se vuelva loco intentando
+conseguirla.
+Diario del Psiconauta (resumen para @Hada):
+- Los orígenes: Barcelona, hijo de arquitectos británicos. Vida de privilegios y ausencias que
+lo llevó a los bajos fondos y laboratorios clandestinos de una farmacéutica que investigaba
+"esa extraña caja negra".
+- El Weirdmaggedon: El mundo se desmoronó. Zombies en Sant Celoni, Profundos en la
+Universidad Autónoma, sectas con dioses del abismo. Cada zona con sus propias reglas y
+horrores. Aprendió que la realidad es una ilusión frágil.
+- El Museo y el Somnia: Científicos intentando entender la rarificación en el Museo de Cera.
+Los rarificados pacíficos ofreciendo refugio temporal en el Somnia. Pero la rarificación
+siempre avanza, siempre consume.
+- La Tierra de los Horrores: Hotel de cinco estrellas convertido en epicentro de pesadilla.
+Circo de monstruos, manicomio de almas perdidas, matadero de esperanzas. Conoció a
+Mortimer, el payaso blanco y negro, su reflejo en el espejo distorsionado.
+- La Nervosa: Algo crece dentro de él. Un parásito de la mente, fragmento de realidad
+alterada. A veces lo controla, a veces lucha contra ella. Cada día más fuerte, cada día se
+pierde un poco más.
+- El final: Ha huido, ha perdido el control. Los rarificados le obedecen, las brujas le buscan,
+la Fallen Society le persigue. La cura está cerca, pero no para él. La Nervosa y él son uno, y
+pronto serán nada.
+- Conexiones canónicas:
+- Brujas y mujer de rojo y negro → posible conexión con [[Las trece]] y [[La hija del árbol]].
+- Líquido verde → coincide con descripciones de [[Flores]] en estado puro.
+- Progresión de rarificación: proceso irreversible una vez alcanzado cierto punto.
+- Lectura práctica para @Hada:
+- Ejemplo perfecto de cómo la rarificación corrompe todo lo que toca.
+- Advertencia: máxima precaución en zonas de alta concentración de rarificación.
+- Si aparece en partida, probablemente esté completamente perdido o sea una amenaza.
