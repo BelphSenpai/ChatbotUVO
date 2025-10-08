@@ -16,27 +16,16 @@ from MinervaPrimeNSE.utils import get_name_ia
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "cambia-esto-en-dev")
 
-# --- Redis / RQ ---
-def build_conn_from_url(url):
-    from urllib.parse import urlparse
-    from redis import Redis
-    parsed = urlparse(url)
-    app.logger.info(f"[WEB] Using REDIS_URL host={parsed.hostname} port={parsed.port} user={parsed.username} scheme={parsed.scheme}")
-    kwargs = {}
-    if parsed.scheme == "rediss":
-        kwargs["ssl_cert_reqs"] = None
-    return Redis.from_url(url, **kwargs)
-
 def build_conn_from_discretes():
     from redis import Redis
     host = os.environ.get("REDISHOST")
     port = int(os.environ.get("REDISPORT", 6379))
     user = os.environ.get("REDISUSER", "default")
-    pwd  = os.environ.get("REDISPASSWORD")
-    if host and pwd:
-        app.logger.info(f"[WEB] Using discrete Redis vars host={host} port={port} user={user}")
-        return Redis(host=host, port=port, username=user, password=pwd)
-    return None
+    # acepta REDISPASSWORD y REDIS_PASSWORD
+    pwd  = os.environ.get("REDISPASSWORD") or os.environ.get("REDIS_PASSWORD")
+    app.logger.info(f"[WEB] Using discrete Redis vars host={host} port={port} user={user} pwd_len={len(pwd) if pwd else 0}")
+    return Redis(host=host, port=port, username=user, password=pwd)
+
 
 def get_redis_conn():
     url = (os.environ.get("REDIS_URL") or "").strip()
