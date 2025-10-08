@@ -110,8 +110,8 @@ def _with_preguntas_locked(mutator=None, timeout=10):
 def is_unlimited_user(username: str) -> bool:
     u = (username or "").strip().lower()
     info = PERSONAJES.get(u, {})
-    # Todos los usuarios son ilimitados
-    return True
+    # Un usuario es ilimitado si tiene rol "admin" o plan "ilimitado"
+    return info.get("rol") == "admin" or info.get("plan") == "ilimitado"
 
 def ensure_unlimited_seed(user: str):
     """
