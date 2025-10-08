@@ -269,6 +269,36 @@ def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
 # ========== CONSULTAS (cola RQ) ==========
+# --- añade esto cerca de donde defines 'queue' ---
+from rq.job import Job
+
+def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25):
+    """
+    Encola el job y espera hasta wait_timeout segundos.
+    Si termina a tiempo -> devuelve (status_code, payload_final)
+    Si falla -> 500
+    Si no da tiempo -> 202 con {job_id, status:'queued'}
+    """
+    job = queue.enqueue(job_responder, mensaje, ia, usuario)
+
+    try:
+        # Bloquea hasta 25s máx. (ajusta si quieres)
+        job.wait(timeout=wait_timeout)
+    except Exception:
+        # Timeouts de RQ levantan excepción; continuamos para ver estado
+        pass
+
+    # Refresca estado y decide respuesta
+    status = job.get_status(refresh=True)
+    if status == "finished" and job.result is not None:
+        # job.result ya es {"respuesta": "..."} desde job_responder
+        return 200, job.result
+    if status == "failed":
+        return 500, {"error": "Servicio temporalmente no disponible"}
+
+    # Sigue en cola/started: devolvemos info por si el front alguna vez lo usa
+    return 202, {"job_id": job.get_id(), "status": status}
+
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
     data = request.get_json(silent=True) or {}
@@ -280,17 +310,12 @@ def ia_query_ruta(ia):
         return jsonify({"error": "Falta id"}), 400
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
-
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
 
-    try:
-        job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
-    except Exception as e:
-        app.logger.exception(f"[WEB] enqueue FAILED: {e}")
-        return jsonify({"error": "Servicio temporalmente no disponible"}), 503
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25)
+    return jsonify(payload), status_code
 
-    return jsonify({"job_id": job.get_id()})
 
 @app.route('/query', methods=['POST'])
 def ia_query():
@@ -303,17 +328,12 @@ def ia_query():
         return jsonify({"error": "Falta id"}), 400
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
-
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
 
-    try:
-        job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
-    except Exception as e:
-        app.logger.exception(f"[WEB] enqueue FAILED: {e}")
-        return jsonify({"error": "Servicio temporalmente no disponible"}), 503
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25)
+    return jsonify(payload), status_code
 
-    return jsonify({"job_id": job.get_id()})
 
 @app.route('/jobs/<job_id>', methods=['GET'])
 def job_status(job_id):
