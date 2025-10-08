@@ -38,42 +38,55 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
         es_ilimitado = is_unlimited_user(usuario)
         print(f"👤 Usuario {usuario} - Ilimitado: {es_ilimitado}")
         
-        # Solo consumir token si es necesario Y el usuario no es ilimitado
-        if tipo_consulta["consume_token"] and not es_ilimitado:
-            restantes = preguntas.get(usuario, {}).get(ia, 0)
-            if restantes != -1 and restantes <= 0:
+        # Si es ilimitado, procesar directamente sin verificar tokens
+        if es_ilimitado:
+            print(f"♾️ Usuario ilimitado - procesando sin restricciones")
+            try:
+                texto = responder_a_usuario(mensaje, ia, usuario)
                 return {
-                    "respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA.",
+                    "respuesta": texto,
                     "consumio_token": False,
                     "tipo_consulta": tipo_consulta["tipo"],
-                    "razon": "Sin tokens disponibles"
+                    "razon": "Usuario ilimitado"
                 }
-            if restantes != -1:
-                preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
-                preguntas[usuario][ia] -= 1
-                _guardar_preguntas(preguntas)
-                print(f"💰 Token consumido. Restantes: {preguntas[usuario][ia]}")
-        elif es_ilimitado:
-            print(f"♾️ Usuario ilimitado - no se consume token")
+            except Exception as e:
+                import traceback
+                error_details = traceback.format_exc()
+                print(f"❌ Error en job_responder: {e}")
+                print(f"❌ Traceback: {error_details}")
+                return {
+                    "respuesta": f"⚠️ Error procesando la petición: {e}",
+                    "consumio_token": False,
+                    "tipo_consulta": "error",
+                    "razon": "Error en procesamiento"
+                }
 
+        # Para usuarios limitados, procesar primero y luego verificar consumo
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
             
             # Análisis post-respuesta para verificar si realmente se necesitó documentación
             consumo_real = analizar_respuesta_para_consumo(texto, mensaje)
             
-            # Si se detectó que no debería haber consumido token, compensar (solo si no es ilimitado)
-            if tipo_consulta["consume_token"] and not consumo_real and not es_ilimitado:
-                print(f"🔄 Compensando token - respuesta no requirió documentación")
-                preguntas = _cargar_preguntas()
-                if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
-                    preguntas[usuario][ia] += 1
+            # Solo verificar tokens si realmente se necesita consumir
+            if tipo_consulta["consume_token"] and consumo_real:
+                restantes = preguntas.get(usuario, {}).get(ia, 0)
+                if restantes != -1 and restantes <= 0:
+                    return {
+                        "respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA.",
+                        "consumio_token": False,
+                        "tipo_consulta": tipo_consulta["tipo"],
+                        "razon": "Sin tokens disponibles"
+                    }
+                if restantes != -1:
+                    preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
+                    preguntas[usuario][ia] -= 1
                     _guardar_preguntas(preguntas)
-                    print(f"💰 Token compensado. Restantes: {preguntas[usuario][ia]}")
+                    print(f"💰 Token consumido. Restantes: {preguntas[usuario][ia]}")
             
             return {
                 "respuesta": texto,
-                "consumio_token": tipo_consulta["consume_token"] and consumo_real and not es_ilimitado,
+                "consumio_token": tipo_consulta["consume_token"] and consumo_real,
                 "tipo_consulta": tipo_consulta["tipo"],
                 "razon": tipo_consulta["razon"]
             }
@@ -84,14 +97,6 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             error_details = traceback.format_exc()
             print(f"❌ Error en job_responder: {e}")
             print(f"❌ Traceback: {error_details}")
-            
-            # Si hubo error y se consumió token, compensar (solo si no es ilimitado)
-            if tipo_consulta["consume_token"] and not es_ilimitado:
-                preguntas = _cargar_preguntas()
-                if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
-                    preguntas[usuario][ia] += 1
-                    _guardar_preguntas(preguntas)
-                    print(f"💰 Token compensado por error. Restantes: {preguntas[usuario][ia]}")
             
             return {
                 "respuesta": f"⚠️ Error procesando la petición: {e}",
