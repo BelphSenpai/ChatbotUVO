@@ -26,22 +26,23 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 300) -> d
         # Bloqueo de fichero para consistencia al tocar preguntas.json
         with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
             preguntas = _cargar_preguntas()
-            restantes = preguntas.get(usuario, {}).get(ia, 0)
-            if restantes != -1 and restantes <= 0:
-                return {"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."}
-            if restantes != -1:
-                preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
-                preguntas[usuario][ia] -= 1
-                _guardar_preguntas(preguntas)
+            # Comentado: validación de tokens eliminada
+            # restantes = preguntas.get(usuario, {}).get(ia, 0)
+            # if restantes != -1 and restantes <= 0:
+            #     return {"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."}
+            # if restantes != -1:
+            #     preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
+            #     preguntas[usuario][ia] -= 1
+            #     _guardar_preguntas(preguntas)
 
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
             return {"respuesta": texto}
         except Exception as e:
-            # Compensación si falló el trabajo
-            with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
-                preguntas = _cargar_preguntas()
-                if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
-                    preguntas[usuario][ia] += 1
-                    _guardar_preguntas(preguntas)
+            # Comentado: compensación de tokens eliminada
+            # with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
+            #     preguntas = _cargar_preguntas()
+            #     if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
+            #         preguntas[usuario][ia] += 1
+            #         _guardar_preguntas(preguntas)
             return {"respuesta": f"⚠️ Error procesando la petición: {e}"}
