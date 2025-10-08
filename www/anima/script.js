@@ -189,6 +189,12 @@ function iniciarAnimacionRunes() {
       const data = await res.json();
       await registrarEvento(`respuesta_${ia}`, data.respuesta);
       
+      // Mostrar información de consumo de tokens si está disponible
+      if (data?.consumio_token !== undefined) {
+        const tokenInfo = data.consumio_token ? "💰 Token consumido" : "🆓 Gratis";
+        console.log(`${tokenInfo} - Tipo: ${data.tipo_consulta || 'desconocido'} - Razón: ${data.razon || 'N/A'}`);
+      }
+      
       const botDiv = document.createElement("div");
       botDiv.classList.add("bot-msg");
       botDiv.textContent = `>> ${data.respuesta}`;

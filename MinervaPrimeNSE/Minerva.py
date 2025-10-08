@@ -47,6 +47,79 @@ def limpiar_cache():
     CACHE_TIMESTAMPS.clear()
     print(Fore.YELLOW + "🧹 Caché limpiado - próxima carga será desde disco")
 
+
+def detectar_tipo_consulta(mensaje: str) -> dict:
+    """
+    Detecta si una consulta debe consumir tokens o no
+    Retorna: {"consume_token": bool, "tipo": str, "razon": str}
+    """
+    mensaje_lower = mensaje.lower().strip()
+    
+    # Patrones que NO consumen tokens
+    saludos = ["hola", "hi", "hey", "buenos días", "buenas tardes", "buenas noches", "saludos"]
+    despedidas = ["adiós", "bye", "hasta luego", "nos vemos", "chao", "hasta pronto", "nos vemos"]
+    basicos = ["gracias", "ok", "perfecto", "entendido", "vale", "de nada", "bien", "mal"]
+    preguntas_basicas = ["¿cómo estás?", "¿qué tal?", "¿cómo va?", "¿todo bien?"]
+    
+    # Verificar saludos
+    if any(palabra in mensaje_lower for palabra in saludos):
+        return {"consume_token": False, "tipo": "saludo", "razon": "Saludo detectado"}
+    
+    # Verificar despedidas
+    if any(palabra in mensaje_lower for palabra in despedidas):
+        return {"consume_token": False, "tipo": "despedida", "razon": "Despedida detectada"}
+    
+    # Verificar respuestas básicas
+    if any(palabra in mensaje_lower for palabra in basicos):
+        return {"consume_token": False, "tipo": "basico", "razon": "Respuesta básica detectada"}
+    
+    # Verificar preguntas básicas
+    if any(pregunta in mensaje_lower for pregunta in preguntas_basicas):
+        return {"consume_token": False, "tipo": "pregunta_basica", "razon": "Pregunta básica detectada"}
+    
+    # Si es muy corto (menos de 10 caracteres), probablemente no consume token
+    if len(mensaje.strip()) < 10:
+        return {"consume_token": False, "tipo": "corto", "razon": "Mensaje muy corto"}
+    
+    # Si contiene palabras clave de lore, probablemente consume token
+    lore_keywords = ["seed", "ambrosius", "consulado", "inquebrantables", "simulación", "hada", "eidolon", "fantasma", "anima", "minerva"]
+    if any(palabra in mensaje_lower for palabra in lore_keywords):
+        return {"consume_token": True, "tipo": "lore", "razon": "Contiene palabras clave de lore"}
+    
+    # Si contiene signos de interrogación, probablemente es una consulta real
+    if "?" in mensaje:
+        return {"consume_token": True, "tipo": "consulta", "razon": "Pregunta detectada"}
+    
+    # Por defecto, consume token
+    return {"consume_token": True, "tipo": "consulta", "razon": "Consulta por defecto"}
+
+
+def analizar_respuesta_para_consumo(respuesta: str, mensaje_original: str) -> bool:
+    """
+    Analiza si la respuesta realmente requirió buscar en documentación
+    """
+    respuesta_lower = respuesta.lower()
+    
+    # Si responde con DATA NOT FOUND, no debería consumir token
+    if "[data not found]" in respuesta_lower:
+        return False
+    
+    # Si es una respuesta muy genérica, probablemente no consumió documentación
+    respuestas_genericas = [
+        "hola", "hey", "buenos días", "¿qué tal?", "gracias", 
+        "de nada", "perfecto", "ok", "entendido", "vale",
+        "bien", "mal", "adiós", "hasta luego"
+    ]
+    
+    if any(respuesta_lower.strip() == gen for gen in respuestas_genericas):
+        return False
+    
+    # Si la respuesta es muy corta y no contiene información específica
+    if len(respuesta.strip()) < 20 and not any(keyword in respuesta_lower for keyword in ["seed", "ambrosius", "consulado", "inquebrantables"]):
+        return False
+    
+    return True
+
 def cargar_datos_cached(name_ia: str, project_root: Path, forzar_recarga: bool = False) -> tuple:
     """
     Carga datos con caché en memoria para mejorar eficiencia.

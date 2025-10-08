@@ -251,6 +251,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
 
         const data = await res.json();
+        
+        // Mostrar información de consumo de tokens si está disponible
+        if (data?.consumio_token !== undefined) {
+          const tokenInfo = data.consumio_token ? "💰 Token consumido" : "🆓 Gratis";
+          console.log(`${tokenInfo} - Tipo: ${data.tipo_consulta || 'desconocido'} - Razón: ${data.razon || 'N/A'}`);
+        }
+        
         appendToTerminal(data.respuesta || '⚠️ Sin respuesta de la IA.');
         
         // Guardar conversación DESPUÉS de que termine la animación de escritura

@@ -21,23 +21,56 @@ def _guardar_preguntas(data: dict):
 
 def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> dict:
     redis = Redis.from_url(os.getenv("REDIS_URL", "redis://redis:6379/0"))
+    
+    # Importar funciones de detección
+    from MinervaPrimeNSE.Minerva import detectar_tipo_consulta, analizar_respuesta_para_consumo
+    
+    # Detectar tipo de consulta ANTES de procesar
+    tipo_consulta = detectar_tipo_consulta(mensaje)
+    print(f"🔍 Detección: {tipo_consulta['tipo']} - {tipo_consulta['razon']} - Consume token: {tipo_consulta['consume_token']}")
+    
     # Lock distribuido por usuario para serializar peticiones del mismo user
-    # Reducido timeout para evitar bloqueos largos
     with redis.lock(f"lock:user:{usuario}", timeout=lock_ttl, blocking_timeout=lock_ttl):
-        # Eliminado FileLock innecesario - solo usamos Redis lock
         preguntas = _cargar_preguntas()
-        # Comentado: validación de tokens eliminada
-        # restantes = preguntas.get(usuario, {}).get(ia, 0)
-        # if restantes != -1 and restantes <= 0:
-        #     return {"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."}
-        # if restantes != -1:
-        #     preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
-        #     preguntas[usuario][ia] -= 1
-        #     _guardar_preguntas(preguntas)
+        
+        # Solo consumir token si es necesario
+        if tipo_consulta["consume_token"]:
+            restantes = preguntas.get(usuario, {}).get(ia, 0)
+            if restantes != -1 and restantes <= 0:
+                return {
+                    "respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA.",
+                    "consumio_token": False,
+                    "tipo_consulta": tipo_consulta["tipo"],
+                    "razon": "Sin tokens disponibles"
+                }
+            if restantes != -1:
+                preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
+                preguntas[usuario][ia] -= 1
+                _guardar_preguntas(preguntas)
+                print(f"💰 Token consumido. Restantes: {preguntas[usuario][ia]}")
 
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
-            return {"respuesta": texto}
+            
+            # Análisis post-respuesta para verificar si realmente se necesitó documentación
+            consumo_real = analizar_respuesta_para_consumo(texto, mensaje)
+            
+            # Si se detectó que no debería haber consumido token, compensar
+            if tipo_consulta["consume_token"] and not consumo_real:
+                print(f"🔄 Compensando token - respuesta no requirió documentación")
+                preguntas = _cargar_preguntas()
+                if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
+                    preguntas[usuario][ia] += 1
+                    _guardar_preguntas(preguntas)
+                    print(f"💰 Token compensado. Restantes: {preguntas[usuario][ia]}")
+            
+            return {
+                "respuesta": texto,
+                "consumio_token": tipo_consulta["consume_token"] and consumo_real,
+                "tipo_consulta": tipo_consulta["tipo"],
+                "razon": tipo_consulta["razon"]
+            }
+            
         except Exception as e:
             # Log detallado del error para debugging
             import traceback
@@ -45,10 +78,17 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             print(f"❌ Error en job_responder: {e}")
             print(f"❌ Traceback: {error_details}")
             
-            # Comentado: compensación de tokens eliminada
-            # with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
-            #     preguntas = _cargar_preguntas()
-            #     if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
-            #         preguntas[usuario][ia] += 1
-            #         _guardar_preguntas(preguntas)
-            return {"respuesta": f"⚠️ Error procesando la petición: {e}"}
+            # Si hubo error y se consumió token, compensar
+            if tipo_consulta["consume_token"]:
+                preguntas = _cargar_preguntas()
+                if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
+                    preguntas[usuario][ia] += 1
+                    _guardar_preguntas(preguntas)
+                    print(f"💰 Token compensado por error. Restantes: {preguntas[usuario][ia]}")
+            
+            return {
+                "respuesta": f"⚠️ Error procesando la petición: {e}",
+                "consumio_token": False,
+                "tipo_consulta": "error",
+                "razon": "Error en procesamiento"
+            }

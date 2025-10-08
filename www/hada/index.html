@@ -235,6 +235,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       // Selector robusto de la respuesta
       const texto = data?.respuesta ?? data?.answer ?? data?.message ?? data?.content ?? data?.error ?? "(sin respuesta)";
       
+      // Mostrar información de consumo de tokens si está disponible
+      if (data?.consumio_token !== undefined) {
+        const tokenInfo = data.consumio_token ? "💰 Token consumido" : "🆓 Gratis";
+        console.log(`${tokenInfo} - Tipo: ${data.tipo_consulta || 'desconocido'} - Razón: ${data.razon || 'N/A'}`);
+      }
+      
       // Crear div para la respuesta del bot
       const botDiv = document.createElement("div");
       botDiv.classList.add("bot-msg");
