@@ -236,11 +236,8 @@ def ia_query_ruta(ia):
     if session.get('usuario', '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    job = queue.enqueue(job_responder, mensaje_original, ia, usuario,
-                        job_id=f"q:{usuario}:{uuid4()}")
-
+    job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
     return jsonify({"job_id": job.get_id()})
-
 
 @app.route('/query', methods=['POST'])
 def ia_query():
