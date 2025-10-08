@@ -23,6 +23,18 @@ def get_redis_conn() -> Redis:
             kwargs["ssl_cert_reqs"] = None
         return Redis.from_url(url, **kwargs)
 
+    # ---- Fallback con variables separadas (opcional) ----
+    host = os.environ.get("REDISHOST")
+    port = int(os.environ.get("REDISPORT", 6379))
+    user = os.environ.get("REDISUSER", "default")
+    pwd  = os.environ.get("REDISPASSWORD")
+    if host and pwd:
+        print(f"[Worker] Using discrete Redis vars host={host} port={port} user={user}", flush=True)
+        return Redis(host=host, port=port, username=user, password=pwd)
+
+    print("[Worker] ERROR: No Redis credentials found. Define REDIS_URL (recommended).", file=sys.stderr, flush=True)
+    sys.exit(1)
+
 
 def main():
     conn = get_redis_conn()
