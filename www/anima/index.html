@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/themes.css">
   <link rel="stylesheet" href="/anima/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Cormorant+Garamond&display=swap" rel="stylesheet">
   <style>
@@ -78,30 +79,7 @@
                     document.getElementById("admin-link-container").style.display = "inline-block";
                 }
 
-                const usosRes = await fetch("/usos");
-                if (usosRes.ok) {
-                    const usos = await usosRes.json();
-                    const iaDropdown = document.getElementById("ia-dropdown");
-                    const iaDropdownContainer = document.getElementById("ia-dropdown-container");
-
-                    const ias = ["hada", "eidolon", "fantasma", "anima"];
-                    let tieneIAsDisponibles = false;
-
-                    ias.forEach(ia => {
-                        const cantidad = usos[ia];
-                        if (cantidad === -1 || (typeof cantidad === "number" && cantidad > 0)) {
-                            const link = document.createElement("a");
-                            link.href = `/${ia}`;
-                            link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
-                            iaDropdown.appendChild(link);
-                            tieneIAsDisponibles = true;
-                        }
-                    });
-
-                    if (tieneIAsDisponibles) {
-                        iaDropdownContainer.style.display = "inline-block";
-                    }
-                }
+                // Los usos se cargan en script.js para evitar duplicación
             }
 
             // Dropdown toggle al hacer clic
@@ -168,6 +146,7 @@
   </div>
 
   <script src="/anima/script.js"></script>
+  <script src="/static/theme-manager.js"></script>
     
   
 </body>

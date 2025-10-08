@@ -10,8 +10,8 @@
   --c-text: #b4fff1;
   --c-text-dim: #c4fff472;
 
-  --frame-max-w: 420px;
-  --frame-min-w: 300px;
+  --frame-max-w: 800px;
+  --frame-min-w: 320px;
   --frame-radius: 12px;
 
   --h1-min: 1.4rem;
@@ -556,7 +556,7 @@ html.low-power-mode .spinner { display: none !important; }
    MEDIA QUERIES / RESPONSIVE
 ============================ */
 @media (max-width: 1024px) {
-  .terminal-container2 { width: min(92vw, 520px); }
+  .terminal-container2 { width: min(90vw, 700px); }
 }
 
 @media (max-width: 768px) {
@@ -572,15 +572,15 @@ html.low-power-mode .spinner { display: none !important; }
 }
 
 @media (max-width: 480px) {
-  :root { --frame-min-w: 280px; }
+  :root { --frame-min-w: 300px; }
   .terminal-container2 {
-    width: 94vw;
-    padding: 10px;
-    border-width: 3px;
+    width: 92vw;
+    padding: 8px;
+    border-width: 2px;
   }
   .code {
     font-size: 0.72em;
-    max-height: clamp(128px, 35vh, 220px);
+    max-height: clamp(120px, 30vh, 200px);
   }
 }
 

@@ -1,8 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const inputBox = document.querySelector('.terminal-input');
   const terminalBoot = document.getElementById('terminal-screen');
   const terminalOutput = document.querySelector('.terminal1');
   const loaderContainer = document.querySelector('.container');
+
+  // === Persistencia de conversación ===
+  let usuario = 'invitado';
+  try {
+    const sessionInfo = await fetch('/session-info').then(res => res.json());
+    usuario = typeof sessionInfo.usuario === 'string' ? sessionInfo.usuario : 'invitado';
+  } catch (err) {
+    console.warn('No se pudo obtener usuario:', err);
+  }
+  
+  const CONVERSATION_KEY = `conversacion_eidolon_${usuario}`;
+  
+  function guardarConversacion() {
+    const mensajes = Array.from(terminalOutput.querySelectorAll('.user-msg, .bot-msg')).map(el => ({
+      tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+      contenido: el.textContent.trim()
+    }));
+    localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
+  }
+  
+  function cargarConversacion() {
+    const guardado = localStorage.getItem(CONVERSATION_KEY);
+    if (guardado) {
+      try {
+        const mensajes = JSON.parse(guardado);
+        mensajes.forEach(msg => {
+          const div = document.createElement("div");
+          div.classList.add(msg.tipo === 'usuario' ? 'user-msg' : 'bot-msg');
+          div.textContent = msg.contenido;
+          terminalOutput.appendChild(div);
+        });
+        terminalOutput.scrollTop = terminalOutput.scrollHeight;
+      } catch (e) {
+        console.warn("Error cargando conversación:", e);
+      }
+    }
+  }
+  
+  function limpiarConversacion() {
+    localStorage.removeItem(CONVERSATION_KEY);
+    terminalOutput.innerHTML = '';
+  }
 
   const lines = [
     { main: '> Estableciendo enlace neuronal...', extra: null },
@@ -122,10 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
     typeChar();
   }
 
-  function appendToTerminal(text) {
+  function appendToTerminal(text, isUser = false) {
     removeCursor(terminalOutput);
+    const div = document.createElement('div');
+    div.classList.add(isUser ? 'user-msg' : 'bot-msg');
+    terminalOutput.appendChild(div);
+    
     typeResponse(
-      terminalOutput,
+      div,
       text,
       () => {},
       Math.floor(Math.random() * 5) + 5,
@@ -169,16 +215,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const mensaje = inputBox.value.trim();
       if (!mensaje) return;
 
-      appendToTerminal(`> ${mensaje}`);
+      appendToTerminal(`> ${mensaje}`, true);
       inputBox.value = '';
+      
+      // Guardar conversación después de cada mensaje del usuario
+      guardarConversacion();
 
       startProcessingAnimation();
 
       try {
         const sessionInfo = await fetch('/session-info').then(res => res.json());
         const usuario = typeof sessionInfo.usuario === 'string' ? sessionInfo.usuario : '';
-
-        // console.log('Enviando a la IA:', { mensaje, id: usuario });
 
         const res = await fetch('/eidolon/query', {
           method: 'POST',
@@ -188,6 +235,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const data = await res.json();
         appendToTerminal(data.respuesta || '⚠️ Sin respuesta de la IA.');
+        
+        // Guardar conversación después de la respuesta
+        guardarConversacion();
       } catch (err) {
         appendToTerminal('⚠️ Error al conectar con la IA.');
         console.error(err);
@@ -196,6 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // Cargar conversación al iniciar
+  cargarConversacion();
 
   typeLine();
 });

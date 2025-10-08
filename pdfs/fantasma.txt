@@ -381,7 +381,7 @@ Ejemplos de magia entropológica con objetos de muerte:
 Objetos de muerte en trama:
 - En propiedad de [[Episteme]], [[Mala Malta]], [[Errante]], [[Moriarty]] y [[Alaric]].
   - Objetos vinculados con alta carga entrópica; permiten manipular energía que fluye entre nuestro mundo y el de los muertos.
-  - [[Moriarty]]: «anillo ardiente», prueba del pacto con El Ardiente que lo mantiene con vida.
+  - [[Moriarty]]: «anillo ardiente».
   - [[Mala Malta]]: dos monedas dejadas por la sombra de [[Aliga]] como advertencia.
   - [[Alaric]]: escopeta «siempre fiel», que siempre regresa a su mano.
 
@@ -599,7 +599,7 @@ Alaric es la mano derecha de episteme, dirige sus operaciones, desde decadas atr
   - Otros rasgos: observador, manipulador, inteligente, astuto
   - Miedo: a la muerte definitiva
   - Debilidad: marcas arcanas visibles por el cuerpo
-  - Deseo: dominar muchos conjuros; puede pedir ayuda a El Ardiente para favores arcanos
+  - Deseo:
   - Enigma: ¿cuál es el sentido de la muerte?
   - Objeto de la muerte: anillo que lo mantiene atado a la vida; quema a cualquiera que no sea él
   - Historia:

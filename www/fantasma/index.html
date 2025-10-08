@@ -7,6 +7,7 @@
   <title>Terminal de Fantasma</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/themes.css">
   <link rel="stylesheet" href="/fantasma/style.css">
   <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=UnifrakturCook&display=swap" rel="stylesheet">
@@ -106,6 +107,7 @@
 
             <div class="input-container">
               <input type="text" id="input" placeholder="consulta a FANTASMA..." />
+              <button class="btn-clear" onclick="limpiarConversacion()" title="Limpiar conversación">🗑️</button>
             </div>
             <div class="scan-line"></div>
 
@@ -147,6 +149,40 @@
         const input = document.getElementById("input");
         const output = document.getElementById("output");
 
+        // === Persistencia de conversación ===
+        const CONVERSATION_KEY = `conversacion_fantasma_${usuario}`;
+        
+        function guardarConversacion() {
+          const mensajes = Array.from(output.querySelectorAll('.user-msg, .bot-msg')).map(el => ({
+            tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+            contenido: el.textContent.trim()
+          }));
+          localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
+        }
+        
+        function cargarConversacion() {
+          const guardado = localStorage.getItem(CONVERSATION_KEY);
+          if (guardado) {
+            try {
+              const mensajes = JSON.parse(guardado);
+              mensajes.forEach(msg => {
+                const div = document.createElement("div");
+                div.classList.add(msg.tipo === 'usuario' ? 'user-msg' : 'bot-msg');
+                div.textContent = msg.contenido;
+                output.appendChild(div);
+              });
+              output.scrollTop = output.scrollHeight;
+            } catch (e) {
+              console.warn("Error cargando conversación:", e);
+            }
+          }
+        }
+        
+        function limpiarConversacion() {
+          localStorage.removeItem(CONVERSATION_KEY);
+          output.innerHTML = "";
+        }
+
         input.addEventListener("keydown", async (e) => {
           if (e.key === "Enter") {
             const mensaje = input.value.trim();
@@ -155,8 +191,14 @@
             output.querySelectorAll(".glitch").forEach(el => el.classList.remove("glitch"));
             output.querySelectorAll(".pulse-line").forEach(el => el.remove());
 
-            output.innerHTML += `<div>>> ${mensaje}</div>`;
+            const userDiv = document.createElement("div");
+            userDiv.classList.add("user-msg");
+            userDiv.textContent = `>> ${mensaje}`;
+            output.appendChild(userDiv);
             input.value = "";
+            
+            // Guardar conversación después de cada mensaje del usuario
+            guardarConversacion();
 
             await registrarEvento("pregunta_fantasma", mensaje); // 🔥 LOG: guardamos la pregunta
 
@@ -180,15 +222,15 @@
               escribint.remove();
 
               const respuestaDiv = document.createElement("div");
-              respuestaDiv.classList.add("glitch");
+              respuestaDiv.classList.add("bot-msg", "glitch");
               respuestaDiv.textContent = ">> ";
+              output.appendChild(respuestaDiv);
 
               const pulse = document.createElement("span");
               pulse.classList.add("pulse-line");
               respuestaDiv.appendChild(pulse);
-              output.appendChild(respuestaDiv);
 
-              await registrarEvento("respuesta_fantasma", data.respuesta); // 🔥 LOG: guardamos la respuesta
+              await registrarEvento("respuesta_fantasma", data.respuesta);
 
               let i = 0;
               const text = data.respuesta;
@@ -205,6 +247,9 @@
               escribir();
 
               output.scrollTop = output.scrollHeight;
+              
+              // Guardar conversación después de la respuesta
+              guardarConversacion();
             } catch (error) {
               escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
               console.error("Error enviando a Fantasma:", error);
@@ -249,9 +294,13 @@
             }
           });
         }
+
+        // Cargar conversación al iniciar
+        cargarConversacion();
       });
     </script>
 
+    <script src="/static/theme-manager.js"></script>
 
   </body>
 

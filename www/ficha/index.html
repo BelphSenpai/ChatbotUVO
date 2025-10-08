@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <title>Ficha de Personaje</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/themes.css" />
   <link rel="stylesheet" href="/ficha/style.css" />
   <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -163,7 +164,18 @@
     </div>
   </div>
 
+  <!-- Selector de colores -->
+  <div class="color-selector">
+    <div class="color-option color-red" data-theme="red" title="Tema Rojo"></div>
+    <div class="color-option color-orange" data-theme="orange" title="Tema Naranja"></div>
+    <div class="color-option color-purple" data-theme="purple" title="Tema Púrpura"></div>
+    <div class="color-option color-green" data-theme="green" title="Tema Verde"></div>
+    <div class="color-option color-lightblue" data-theme="lightblue" title="Tema Azul Claro"></div>
+    <div class="color-option color-white" data-theme="white" title="Tema Blanco"></div>
+  </div>
+
   <script src="/ficha/script.js"></script>
+  <script src="/static/theme-manager.js"></script>
 </body>
 
 </html>

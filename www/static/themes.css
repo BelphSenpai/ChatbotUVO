@@ -1,0 +1,148 @@
+/* ============================
+   SISTEMA DE TEMAS DE COLORES
+============================ */
+
+/* Variables por defecto (tema azul) */
+:root {
+  --theme-primary: #00ffc8;
+  --theme-primary-2: #66ffe6;
+  --theme-text: #b4fff1;
+  --theme-text-dim: #c4fff472;
+  --theme-bg: #010607;
+  --theme-accent: #00bfff;
+  --theme-border: rgba(0,255,200,0.6);
+  --theme-glow: rgba(0,255,200,0.3);
+}
+
+/* Tema Rojo */
+[data-theme="red"] {
+  --theme-primary: #ff4444;
+  --theme-primary-2: #ff6666;
+  --theme-text: #ffb4b4;
+  --theme-text-dim: #ffb4b472;
+  --theme-bg: #0a0404;
+  --theme-accent: #ff6b6b;
+  --theme-border: rgba(255,68,68,0.6);
+  --theme-glow: rgba(255,68,68,0.3);
+}
+
+/* Tema Naranja */
+[data-theme="orange"] {
+  --theme-primary: #ff8800;
+  --theme-primary-2: #ffaa44;
+  --theme-text: #ffd4a4;
+  --theme-text-dim: #ffd4a472;
+  --theme-bg: #0a0604;
+  --theme-accent: #ff9500;
+  --theme-border: rgba(255,136,0,0.6);
+  --theme-glow: rgba(255,136,0,0.3);
+}
+
+/* Tema Púrpura */
+[data-theme="purple"] {
+  --theme-primary: #aa44ff;
+  --theme-primary-2: #bb66ff;
+  --theme-text: #ddaaff;
+  --theme-text-dim: #ddaaff72;
+  --theme-bg: #0a040a;
+  --theme-accent: #b366ff;
+  --theme-border: rgba(170,68,255,0.6);
+  --theme-glow: rgba(170,68,255,0.3);
+}
+
+/* Tema Verde */
+[data-theme="green"] {
+  --theme-primary: #44ff44;
+  --theme-primary-2: #66ff66;
+  --theme-text: #b4ffb4;
+  --theme-text-dim: #b4ffb472;
+  --theme-bg: #040a04;
+  --theme-accent: #4dff4d;
+  --theme-border: rgba(68,255,68,0.6);
+  --theme-glow: rgba(68,255,68,0.3);
+}
+
+/* Tema Azul Claro */
+[data-theme="lightblue"] {
+  --theme-primary: #44aaff;
+  --theme-primary-2: #66bbff;
+  --theme-text: #a4d4ff;
+  --theme-text-dim: #a4d4ff72;
+  --theme-bg: #040a0f;
+  --theme-accent: #4db3ff;
+  --theme-border: rgba(68,170,255,0.6);
+  --theme-glow: rgba(68,170,255,0.3);
+}
+
+/* Tema Blanco */
+[data-theme="white"] {
+  --theme-primary: #ffffff;
+  --theme-primary-2: #e0e0e0;
+  --theme-text: #f0f0f0;
+  --theme-text-dim: #f0f0f072;
+  --theme-bg: #0a0a0a;
+  --theme-accent: #cccccc;
+  --theme-border: rgba(255,255,255,0.6);
+  --theme-glow: rgba(255,255,255,0.3);
+}
+
+/* ============================
+   SELECTOR DE COLORES
+============================ */
+.color-selector {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--theme-border);
+}
+
+.color-option {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+  border-color: var(--theme-text);
+}
+
+.color-option.active {
+  border-color: var(--theme-primary);
+  box-shadow: 0 0 10px var(--theme-glow);
+}
+
+.color-option.active::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--theme-primary);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Colores específicos */
+.color-red { background: #ff4444; }
+.color-orange { background: #ff8800; }
+.color-purple { background: #aa44ff; }
+.color-green { background: #44ff44; }
+.color-lightblue { background: #44aaff; }
+.color-white { background: #ffffff; }
+
+/* Animación de cambio de tema */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

@@ -18,7 +18,7 @@ html {
     padding: 10px 20px;
     z-index: 10;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 16px;
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(6px);
@@ -106,8 +106,8 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40vw;
-    max-width: 500px;
+    width: 60vw;
+    max-width: 700px;
     aspect-ratio: 5 / 4;
     display: flex;
     justify-content: center;
@@ -184,19 +184,49 @@ html {
 
 /* ==== INPUT ==== */
 .input-container {
-    display: flex;
+  display: flex;
+  align-items: center;
 }
 
 .input-container input {
-    flex-grow: 1;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #d0f0ff;
-    color: #d0f0ff;
-    font-family: 'Space Mono', monospace;
-    padding: 6px;
-    outline: none;
-    font-size: 0.8rem;
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #d0f0ff;
+  color: #d0f0ff;
+  font-family: 'Space Mono', monospace;
+  padding: 6px;
+  outline: none;
+  font-size: 0.8rem;
+}
+
+/* Mensajes de usuario y bot */
+.user-msg {
+  color: #d0f0ff;
+  margin-bottom: 8px;
+}
+
+.bot-msg {
+  color: #a9d6ff;
+  margin-bottom: 8px;
+}
+
+/* Botón de limpiar */
+.btn-clear {
+  background: rgba(160, 240, 255, 0.1);
+  border: 1px solid #d0f0ff;
+  color: #d0f0ff;
+  padding: 6px 10px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-clear:hover {
+  background: rgba(160, 240, 255, 0.2);
+  box-shadow: 0 0 8px rgba(160, 240, 255, 0.4);
 }
 
 .input-container input::placeholder {
