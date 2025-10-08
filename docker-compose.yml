@@ -37,6 +37,9 @@ services:
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
       - ./www/notas/usuarios:/app/www/notas/usuarios
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+      - ./world:/app/world
     # Si tu Dockerfile ya hace CMD ["/app/entrypoint.sh"], no hace falta command aquí.
 
   worker:
@@ -57,4 +60,7 @@ services:
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
       - ./www/notas/usuarios:/app/www/notas/usuarios
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+      - ./world:/app/world
     command: ["python", "-m", "MinervaPrimeNSE.worker"]
