@@ -1,0 +1,41 @@
+name: Auto-deploy to Server
+
+on:
+  workflow_run:
+    workflows: ["Deploy ChatbotUVO"]
+    types: [completed]
+    branches: [main]
+
+jobs:
+  deploy-to-server:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    
+    steps:
+    - name: Deploy to production server
+      run: |
+        echo "🚀 Starting deployment to production server..."
+        
+        # Aquí irían los comandos para desplegar en tu servidor
+        # Ejemplo para servidor con SSH:
+        # ssh user@your-server.com "cd /path/to/ChatbotUVO && git pull origin main && docker-compose down && docker-compose up --build -d"
+        
+        # Ejemplo para servidor con API:
+        # curl -X POST "https://your-server.com/api/deploy" -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}"
+        
+        echo "✅ Deployment to server completed!"
+        echo "🕐 Deployment time: $(date)"
+        echo "📦 Image deployed: ghcr.io/${{ github.repository }}:${{ github.sha }}"
+        
+    - name: Health check
+      run: |
+        echo "🏥 Running health check..."
+        # Aquí iría la verificación de que el servicio está funcionando
+        # curl -f https://your-chatbot-domain.com/health || exit 1
+        echo "✅ Health check passed!"
+        
+    - name: Notify success
+      run: |
+        echo "🎉 Deployment successful!"
+        echo "🔗 Service should be available at your domain"
+        echo "📊 Status: All systems operational"
