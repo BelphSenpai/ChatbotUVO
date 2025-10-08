@@ -72,6 +72,14 @@
   --theme-accent: #b366ff;
   --theme-border: rgba(170,68,255,0.6);
   --theme-glow: rgba(170,68,255,0.3);
+  --theme-navbar: rgba(170, 68, 255, 0.04);
+  --theme-navbar-border: rgba(170,68,255,0.2);
+  --theme-navbar-text: #ddaaff;
+  --theme-form-bg: rgba(170, 68, 255, 0.03);
+  --theme-form-border: rgba(170,68,255,0.6);
+  --theme-form-text: #ddaaff;
+  --theme-title: #aa44ff;
+  --theme-subtitle: #bb66ff;
 }
 
 /* Tema Verde */
@@ -84,6 +92,14 @@
   --theme-accent: #4dff4d;
   --theme-border: rgba(68,255,68,0.6);
   --theme-glow: rgba(68,255,68,0.3);
+  --theme-navbar: rgba(68, 255, 68, 0.04);
+  --theme-navbar-border: rgba(68,255,68,0.2);
+  --theme-navbar-text: #b4ffb4;
+  --theme-form-bg: rgba(68, 255, 68, 0.03);
+  --theme-form-border: rgba(68,255,68,0.6);
+  --theme-form-text: #b4ffb4;
+  --theme-title: #44ff44;
+  --theme-subtitle: #66ff66;
 }
 
 /* Tema Azul Claro */
@@ -96,6 +112,14 @@
   --theme-accent: #4db3ff;
   --theme-border: rgba(68,170,255,0.6);
   --theme-glow: rgba(68,170,255,0.3);
+  --theme-navbar: rgba(68, 170, 255, 0.04);
+  --theme-navbar-border: rgba(68,170,255,0.2);
+  --theme-navbar-text: #a4d4ff;
+  --theme-form-bg: rgba(68, 170, 255, 0.03);
+  --theme-form-border: rgba(68,170,255,0.6);
+  --theme-form-text: #a4d4ff;
+  --theme-title: #44aaff;
+  --theme-subtitle: #66bbff;
 }
 
 /* Tema Blanco */
@@ -108,6 +132,14 @@
   --theme-accent: #cccccc;
   --theme-border: rgba(255,255,255,0.6);
   --theme-glow: rgba(255,255,255,0.3);
+  --theme-navbar: rgba(255, 255, 255, 0.04);
+  --theme-navbar-border: rgba(255,255,255,0.2);
+  --theme-navbar-text: #f0f0f0;
+  --theme-form-bg: rgba(255, 255, 255, 0.03);
+  --theme-form-border: rgba(255,255,255,0.6);
+  --theme-form-text: #f0f0f0;
+  --theme-title: #ffffff;
+  --theme-subtitle: #e0e0e0;
 }
 
 /* ============================
