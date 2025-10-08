@@ -10,7 +10,7 @@ import bcrypt
 from redis import Redis
 from rq import Queue
 from rq.job import Job
-from filelock import FileLock  # 👈 NUEVO
+from filelock import FileLock  # <<< NUEVO
 
 from MinervaPrimeNSE.tasks import job_responder
 from MinervaPrimeNSE.utils import get_name_ia
@@ -18,6 +18,9 @@ from MinervaPrimeNSE.utils import get_name_ia
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "cambia-esto-en-dev")
 
+DEFAULT_QUOTA = int(os.getenv("DEFAULT_QUOTA", "3"))
+
+# ================== REDIS ==================
 def build_conn_from_discretes():
     from redis import Redis
     host = os.environ.get("REDISHOST")
@@ -69,7 +72,7 @@ queue = Queue("queries", connection=redis_conn, default_timeout=300) if redis_co
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PERSONAJES_PATH = os.path.join(BASE_DIR, 'personajes.json')
 
-# 👇 NUEVO: usa la MISMA ruta que el worker
+# >>> Usa la MISMA ruta que el worker
 APP_STATE_DIR = os.getenv("APP_STATE_DIR", "/state")
 os.makedirs(APP_STATE_DIR, exist_ok=True)
 PREGUNTAS_PATH = os.path.join(APP_STATE_DIR, 'preguntas.json')
@@ -77,7 +80,7 @@ PREGUNTAS_PATH = os.path.join(APP_STATE_DIR, 'preguntas.json')
 with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
     PERSONAJES = json.load(f)
 
-# ========== UTILIDADES (con lock, sin cache global) ==========
+# ========== HELPERS DE PREGUNTAS (con lock, sin cache global) ==========
 def _cargar_preguntas() -> dict:
     if os.path.exists(PREGUNTAS_PATH):
         with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
@@ -104,6 +107,50 @@ def _with_preguntas_locked(mutator=None, timeout=10):
                 _guardar_preguntas(data)
         return data
 
+def is_unlimited_user(username: str) -> bool:
+    u = (username or "").strip().lower()
+    info = PERSONAJES.get(u, {})
+    # criterio: admin y narrador ilimitados, o plan="unlimited"
+    return (info.get("rol") in ("admin", "narrador")) or (str(info.get("plan", "")).lower() == "unlimited")
+
+def ensure_unlimited_seed(user: str):
+    """
+    Si el usuario es ilimitado y su semilla no está a -1, la normaliza a -1 para todas las IAs.
+    """
+    def _mut(data):
+        changed = False
+        u = (user or "").strip().lower()
+        if not u:
+            return False, data
+        cur = data.get(u) or {}
+        # normaliza TODAS las claves presentes, y si faltan crea las conocidas
+        ias = set(cur.keys()) | {"anima", "eidolon", "hada", "fantasma", "minerva"}
+        for ia in ias:
+            if cur.get(ia) != -1:
+                cur[ia] = -1
+                changed = True
+        data[u] = cur
+        return changed, data
+    _with_preguntas_locked(_mut)
+
+# ========== MIGRACIÓN LEGACY (si el fichero estaba en BASE_DIR) ==========
+LEGACY_PREG_PATH = os.path.join(BASE_DIR, 'preguntas.json')
+try:
+    if not os.path.exists(PREGUNTAS_PATH) and os.path.exists(LEGACY_PREG_PATH):
+        os.makedirs(APP_STATE_DIR, exist_ok=True)
+        with open(LEGACY_PREG_PATH, 'r', encoding='utf-8') as f:
+            legacy = json.load(f)
+        # normaliza claves a lower case
+        migrated = { (k or '').strip().lower(): v for k, v in legacy.items() }
+        tmp = PREGUNTAS_PATH + ".tmp"
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(migrated, f, ensure_ascii=False, indent=2)
+        os.replace(tmp, PREGUNTAS_PATH)
+        app.logger.warning(f"[USOS] Migrated preguntas.json from {LEGACY_PREG_PATH} -> {PREGUNTAS_PATH}")
+except Exception as e:
+    app.logger.exception(f"[USOS] Migration failed: {e}")
+
+# ========== UTILIDADES VARIAS ==========
 def obtener_nombre_objetivo():
     if session.get('usuario') == 'narrador':
         return request.args.get('id')
@@ -143,19 +190,23 @@ def do_login():
             session['usuario'] = user
             session['rol'] = datos.get('rol', 'jugador')
 
-            # Inicializa preguntas del usuario si no existen (con lock)
-            def init_preguntas_if_needed(data):
-                changed = False
-                if user not in data:
-                    data[user] = {
-                        "anima": 3,
-                        "eidolon": 3,
-                        "hada": 3,
-                        "fantasma": 3
-                    }
-                    changed = True
-                return changed, data
-            _with_preguntas_locked(init_preguntas_if_needed)
+            # Inicializa preguntas del usuario si no existen (con lock) respetando plan
+            if is_unlimited_user(user):
+                ensure_unlimited_seed(user)
+            else:
+                def init_preguntas_if_needed(data):
+                    changed = False
+                    if user not in data:
+                        data[user] = {
+                            "anima": DEFAULT_QUOTA,
+                            "eidolon": DEFAULT_QUOTA,
+                            "hada": DEFAULT_QUOTA,
+                            "fantasma": DEFAULT_QUOTA,
+                            "minerva": 0
+                        }
+                        changed = True
+                    return changed, data
+                _with_preguntas_locked(init_preguntas_if_needed)
 
             return redirect('/panel' if user == 'narrador' else '/ficha')
 
@@ -322,6 +373,10 @@ def ia_query_ruta(ia):
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
 
+    # autocuramos ilimitado antes de encolar
+    if is_unlimited_user(usuario):
+        ensure_unlimited_seed(usuario)
+
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
 
@@ -338,6 +393,10 @@ def ia_query():
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
+
+    # autocuramos ilimitado antes de encolar
+    if is_unlimited_user(usuario):
+        ensure_unlimited_seed(usuario)
 
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
@@ -388,18 +447,12 @@ def admin_personajes():
 
     if request.method == 'GET':
         cargar_personajes()
-        def read_only(data):
-            lista = []
-            for nombre in PERSONAJES.keys():
-                user_preguntas = data.get(nombre, {
-                    "anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0
-                })
-                lista.append({"nombre": nombre, "preguntas": user_preguntas})
-            return False, lista
         data = _with_preguntas_locked(lambda d: (False, d))
         lista = []
         for nombre in PERSONAJES.keys():
-            user_preguntas = data.get(nombre, {"anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0})
+            user_preguntas = data.get(nombre, {
+                "anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0, "minerva": 0
+            })
             lista.append({"nombre": nombre, "preguntas": user_preguntas})
         return jsonify(lista)
 
@@ -408,6 +461,7 @@ def admin_personajes():
         nombre = datos.get('nombre')
         clave = datos.get('clave')
         rol = datos.get('rol', 'jugador')
+        plan = datos.get('plan')  # opcional
 
         if not nombre or not clave:
             return jsonify({"error": "Faltan datos"}), 400
@@ -416,16 +470,22 @@ def admin_personajes():
         clave_hash = bcrypt.hashpw(clave.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
         PERSONAJES[nombre_lower] = {"clave": clave_hash, "rol": rol}
+        if plan:
+            PERSONAJES[nombre_lower]["plan"] = plan
         guardar_personajes()
         cargar_personajes()
 
-        def upsert_pregs(data):
-            changed = False
-            if nombre_lower not in data:
-                data[nombre_lower] = {"anima": 3, "eidolon": 3, "hada": 3, "fantasma": 3}
-                changed = True
-            return changed, data
-        _with_preguntas_locked(upsert_pregs)
+        # siembra respetando plan
+        if is_unlimited_user(nombre_lower):
+            ensure_unlimited_seed(nombre_lower)
+        else:
+            def upsert_pregs(data):
+                changed = False
+                if nombre_lower not in data:
+                    data[nombre_lower] = {"anima": DEFAULT_QUOTA, "eidolon": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+                    changed = True
+                return changed, data
+            _with_preguntas_locked(upsert_pregs)
 
         return jsonify({"mensaje": "Personaje creado o actualizado"})
 
@@ -461,7 +521,7 @@ def obtener_personaje(nombre):
 
     data = _with_preguntas_locked(lambda d: (False, d))
     datos_personaje = PERSONAJES[nombre].copy()
-    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0})
+    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0, "minerva": 0})
     return jsonify(datos_personaje)
 
 @app.route('/admin/resetear-preguntas', methods=['POST'])
@@ -477,10 +537,13 @@ def resetear_preguntas():
 
     nombre_lower = nombre.strip().lower()
 
-    def reset_user(data):
-        data[nombre_lower] = {"anima": 3, "eidolon": 3, "hada": 3, "fantasma": 3}
-        return True, data
-    _with_preguntas_locked(reset_user)
+    if is_unlimited_user(nombre_lower):
+        ensure_unlimited_seed(nombre_lower)
+    else:
+        def reset_user(data):
+            data[nombre_lower] = {"anima": DEFAULT_QUOTA, "eidolon": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+            return True, data
+        _with_preguntas_locked(reset_user)
 
     return jsonify({"mensaje": f"Preguntas de {nombre} reseteadas."})
 
@@ -496,11 +559,20 @@ def guardar_preguntas_admin():
         changed = False
         for nombre, preguntas in cambios.items():
             nombre_lower = nombre.strip().lower()
+            if is_unlimited_user(nombre_lower):
+                # para ilimitados, fuerzo -1
+                cur = data.get(nombre_lower, {})
+                for ia in set(cur.keys()) | set(preguntas.keys()) | {"anima", "eidolon", "hada", "fantasma", "minerva"}:
+                    if cur.get(ia) != -1:
+                        cur[ia] = -1
+                        changed = True
+                data[nombre_lower] = cur
+                continue
             if nombre_lower not in data:
                 data[nombre_lower] = {}
                 changed = True
             for ia, valor in preguntas.items():
-                data[nombre_lower][ia] = valor
+                data[nombre_lower][ia] = int(valor)
                 changed = True
         return changed, data
 
@@ -546,12 +618,23 @@ def gestionar_notas():
 def usos_actuales():
     if 'usuario' not in session:
         return jsonify({})
-    usuario = session['usuario'].lower()
+    usuario = (session['usuario'] or '').strip().lower()
+
+    # autocura: si es ilimitado, fuerza -1 en el fichero
+    if is_unlimited_user(usuario):
+        ensure_unlimited_seed(usuario)
 
     data = _with_preguntas_locked(lambda d: (False, d))
     usos = data.get(usuario, {})
-    usos_normalizados = {k.lower(): v for k, v in usos.items()}
-    return jsonify(usos_normalizados)
+
+    # LOG útil para depurar qué se está sirviendo y desde dónde
+    app.logger.info(f"[USOS] path={PREGUNTAS_PATH} user={usuario} payload={usos}")
+
+    # Si quisieras evitar -1 en el front, podrías mapear aquí a 999999:
+    # NORMALIZED_INFINITY = 999999
+    # usos = {k: (NORMALIZED_INFINITY if v == -1 else v) for k, v in usos.items()}
+
+    return jsonify({k.lower(): v for k, v in usos.items()})
 
 # ========== LOGS ==========
 LOGS_DIR = os.path.join(BASE_DIR, 'admin', 'logs')
