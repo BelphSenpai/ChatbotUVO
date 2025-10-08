@@ -4,7 +4,7 @@
 
 class ThemeManager {
   constructor() {
-    this.currentTheme = this.getStoredTheme() || 'default';
+    this.currentTheme = this.getStoredTheme() || 'green';
     this.init();
   }
 
@@ -31,10 +31,8 @@ class ThemeManager {
     // Remover tema anterior
     document.documentElement.removeAttribute('data-theme');
     
-    // Aplicar nuevo tema
-    if (theme !== 'default') {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
+    // Aplicar nuevo tema (siempre aplicar, incluso el por defecto)
+    document.documentElement.setAttribute('data-theme', theme);
     
     this.currentTheme = theme;
     this.storeTheme(theme);
@@ -76,10 +74,8 @@ class ThemeManager {
 
   applyThemeGlobally() {
     // Aplicar tema a todas las páginas que carguen este script
-    const theme = this.getStoredTheme();
-    if (theme && theme !== 'default') {
-      document.documentElement.setAttribute('data-theme', theme);
-    }
+    const theme = this.getStoredTheme() || 'green';
+    document.documentElement.setAttribute('data-theme', theme);
   }
 
   // Método público para cambiar tema programáticamente

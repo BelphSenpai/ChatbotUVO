@@ -2,8 +2,8 @@
    SISTEMA DE TEMAS DE COLORES
 ============================ */
 
-/* Variables por defecto (tema azul) */
-:root {
+/* Variables por defecto (tema azul) - Solo para contenido principal */
+.contenedor {
   --theme-primary: #00ffc8;
   --theme-primary-2: #66ffe6;
   --theme-text: #b4fff1;
@@ -12,9 +12,6 @@
   --theme-accent: #00bfff;
   --theme-border: rgba(0,255,200,0.6);
   --theme-glow: rgba(0,255,200,0.3);
-  --theme-navbar: rgba(0, 255, 200, 0.04);
-  --theme-navbar-border: rgba(0,255,200,0.2);
-  --theme-navbar-text: #b4fff1;
   --theme-form-bg: rgba(0, 255, 200, 0.03);
   --theme-form-border: rgba(0,255,200,0.6);
   --theme-form-text: #b4fff1;
@@ -23,7 +20,7 @@
 }
 
 /* Tema Rojo */
-[data-theme="red"] {
+[data-theme="red"] .contenedor {
   --theme-primary: #ff4444;
   --theme-primary-2: #ff6666;
   --theme-text: #ffb4b4;
@@ -32,9 +29,6 @@
   --theme-accent: #ff6b6b;
   --theme-border: rgba(255,68,68,0.6);
   --theme-glow: rgba(255,68,68,0.3);
-  --theme-navbar: rgba(255, 68, 68, 0.04);
-  --theme-navbar-border: rgba(255,68,68,0.2);
-  --theme-navbar-text: #ffb4b4;
   --theme-form-bg: rgba(255, 68, 68, 0.03);
   --theme-form-border: rgba(255,68,68,0.6);
   --theme-form-text: #ffb4b4;
@@ -43,7 +37,7 @@
 }
 
 /* Tema Naranja */
-[data-theme="orange"] {
+[data-theme="orange"] .contenedor {
   --theme-primary: #ff8800;
   --theme-primary-2: #ffaa44;
   --theme-text: #ffd4a4;
@@ -52,9 +46,6 @@
   --theme-accent: #ff9500;
   --theme-border: rgba(255,136,0,0.6);
   --theme-glow: rgba(255,136,0,0.3);
-  --theme-navbar: rgba(255, 136, 0, 0.04);
-  --theme-navbar-border: rgba(255,136,0,0.2);
-  --theme-navbar-text: #ffd4a4;
   --theme-form-bg: rgba(255, 136, 0, 0.03);
   --theme-form-border: rgba(255,136,0,0.6);
   --theme-form-text: #ffd4a4;
@@ -63,7 +54,7 @@
 }
 
 /* Tema Púrpura */
-[data-theme="purple"] {
+[data-theme="purple"] .contenedor {
   --theme-primary: #aa44ff;
   --theme-primary-2: #bb66ff;
   --theme-text: #ddaaff;
@@ -72,9 +63,6 @@
   --theme-accent: #b366ff;
   --theme-border: rgba(170,68,255,0.6);
   --theme-glow: rgba(170,68,255,0.3);
-  --theme-navbar: rgba(170, 68, 255, 0.04);
-  --theme-navbar-border: rgba(170,68,255,0.2);
-  --theme-navbar-text: #ddaaff;
   --theme-form-bg: rgba(170, 68, 255, 0.03);
   --theme-form-border: rgba(170,68,255,0.6);
   --theme-form-text: #ddaaff;
@@ -83,7 +71,7 @@
 }
 
 /* Tema Verde */
-[data-theme="green"] {
+[data-theme="green"] .contenedor {
   --theme-primary: #44ff44;
   --theme-primary-2: #66ff66;
   --theme-text: #b4ffb4;
@@ -92,9 +80,6 @@
   --theme-accent: #4dff4d;
   --theme-border: rgba(68,255,68,0.6);
   --theme-glow: rgba(68,255,68,0.3);
-  --theme-navbar: rgba(68, 255, 68, 0.04);
-  --theme-navbar-border: rgba(68,255,68,0.2);
-  --theme-navbar-text: #b4ffb4;
   --theme-form-bg: rgba(68, 255, 68, 0.03);
   --theme-form-border: rgba(68,255,68,0.6);
   --theme-form-text: #b4ffb4;
@@ -103,7 +88,7 @@
 }
 
 /* Tema Azul Claro */
-[data-theme="lightblue"] {
+[data-theme="lightblue"] .contenedor {
   --theme-primary: #44aaff;
   --theme-primary-2: #66bbff;
   --theme-text: #a4d4ff;
@@ -112,9 +97,6 @@
   --theme-accent: #4db3ff;
   --theme-border: rgba(68,170,255,0.6);
   --theme-glow: rgba(68,170,255,0.3);
-  --theme-navbar: rgba(68, 170, 255, 0.04);
-  --theme-navbar-border: rgba(68,170,255,0.2);
-  --theme-navbar-text: #a4d4ff;
   --theme-form-bg: rgba(68, 170, 255, 0.03);
   --theme-form-border: rgba(68,170,255,0.6);
   --theme-form-text: #a4d4ff;
@@ -123,7 +105,7 @@
 }
 
 /* Tema Blanco */
-[data-theme="white"] {
+[data-theme="white"] .contenedor {
   --theme-primary: #ffffff;
   --theme-primary-2: #e0e0e0;
   --theme-text: #f0f0f0;
@@ -132,9 +114,6 @@
   --theme-accent: #cccccc;
   --theme-border: rgba(255,255,255,0.6);
   --theme-glow: rgba(255,255,255,0.3);
-  --theme-navbar: rgba(255, 255, 255, 0.04);
-  --theme-navbar-border: rgba(255,255,255,0.2);
-  --theme-navbar-text: #f0f0f0;
   --theme-form-bg: rgba(255, 255, 255, 0.03);
   --theme-form-border: rgba(255,255,255,0.6);
   --theme-form-text: #f0f0f0;
@@ -156,7 +135,7 @@
   padding: 10px;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid var(--theme-border);
+  border: 1px solid #00ffff33; /* Color fijo para el selector */
 }
 
 .color-option {
@@ -171,12 +150,12 @@
 
 .color-option:hover {
   transform: scale(1.1);
-  border-color: var(--theme-text);
+  border-color: #00ffff; /* Color fijo para hover */
 }
 
 .color-option.active {
-  border-color: var(--theme-primary);
-  box-shadow: 0 0 10px var(--theme-glow);
+  border-color: #00ffff; /* Color fijo para activo */
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glow fijo */
 }
 
 .color-option.active::after {
@@ -185,7 +164,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--theme-primary);
+  color: #00ffff; /* Color fijo para checkmark */
   font-weight: bold;
   font-size: 14px;
 }
