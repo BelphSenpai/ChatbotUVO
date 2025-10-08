@@ -19,26 +19,31 @@ def _guardar_preguntas(data: dict):
         json.dump(data, f, ensure_ascii=False, indent=2)
     os.replace(tmp, PREGUNTAS_PATH)
 
-def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 300) -> dict:
+def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 60) -> dict:
     redis = Redis.from_url(os.getenv("REDIS_URL", "redis://redis:6379/0"))
     # Lock distribuido por usuario para serializar peticiones del mismo user
     with redis.lock(f"lock:user:{usuario}", timeout=lock_ttl, blocking_timeout=lock_ttl):
-        # Bloqueo de fichero para consistencia al tocar preguntas.json
-        with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
-            preguntas = _cargar_preguntas()
-            # Comentado: validación de tokens eliminada
-            # restantes = preguntas.get(usuario, {}).get(ia, 0)
-            # if restantes != -1 and restantes <= 0:
-            #     return {"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."}
-            # if restantes != -1:
-            #     preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
-            #     preguntas[usuario][ia] -= 1
-            #     _guardar_preguntas(preguntas)
+        # Eliminado FileLock innecesario - solo usamos Redis lock
+        preguntas = _cargar_preguntas()
+        # Comentado: validación de tokens eliminada
+        # restantes = preguntas.get(usuario, {}).get(ia, 0)
+        # if restantes != -1 and restantes <= 0:
+        #     return {"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."}
+        # if restantes != -1:
+        #     preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
+        #     preguntas[usuario][ia] -= 1
+        #     _guardar_preguntas(preguntas)
 
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
             return {"respuesta": texto}
         except Exception as e:
+            # Log detallado del error para debugging
+            import traceback
+            error_details = traceback.format_exc()
+            print(f"❌ Error en job_responder: {e}")
+            print(f"❌ Traceback: {error_details}")
+            
             # Comentado: compensación de tokens eliminada
             # with FileLock(PREGUNTAS_PATH + ".lock", timeout=lock_ttl):
             #     preguntas = _cargar_preguntas()

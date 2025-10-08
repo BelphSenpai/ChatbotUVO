@@ -101,6 +101,11 @@
         <span class="text-decoration"> _</span>
         <span class="decoration">⇒</span>
       </button>
+      <button class="btn-glitch-fill" id="limpiarBtn" onclick="limpiarConversacion()" style="margin-left: 10px;">
+        <span class="text">// Limpiar</span>
+        <span class="text-decoration"> _</span>
+        <span class="decoration">🗑️</span>
+      </button>
     </div>
   </div>
 
@@ -126,6 +131,40 @@ document.addEventListener("DOMContentLoaded", async () => {
   const botonAbrir = document.getElementById("terminalBtn");
   const enviarBtn = document.getElementById("enviarBtn");
 
+  // === Persistencia de conversación ===
+  const CONVERSATION_KEY = `conversacion_${ia}_${usuario}`;
+  
+  function guardarConversacion() {
+    const mensajes = Array.from(output.querySelectorAll('.user-msg, .bot-msg')).map(el => ({
+      tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+      contenido: el.textContent.trim()
+    }));
+    localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
+  }
+  
+  function cargarConversacion() {
+    const guardado = localStorage.getItem(CONVERSATION_KEY);
+    if (guardado) {
+      try {
+        const mensajes = JSON.parse(guardado);
+        mensajes.forEach(msg => {
+          const div = document.createElement("div");
+          div.classList.add(msg.tipo === 'usuario' ? 'user-msg' : 'bot-msg');
+          div.textContent = msg.contenido;
+          output.appendChild(div);
+        });
+        output.scrollTop = output.scrollHeight;
+      } catch (e) {
+        console.warn("Error cargando conversación:", e);
+      }
+    }
+  }
+  
+  function limpiarConversacion() {
+    localStorage.removeItem(CONVERSATION_KEY);
+    output.innerHTML = "";
+  }
+
   function mostrarTerminal() {
     if (!terminal || !botonAbrir) return;
     botonAbrir.style.display = "none";
@@ -146,8 +185,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     const mensaje = (input.value || "").trim();
     if (!mensaje) return;
 
-    output.innerHTML += `<div class="user-msg">>> ${escapeHtml(mensaje)}</div>`;
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user-msg");
+    userDiv.textContent = `>> ${mensaje}`;
+    output.appendChild(userDiv);
     input.value = "";
+    
+    // Guardar conversación después de cada mensaje
+    guardarConversacion();
 
     await registrarEvento("pregunta_hada", mensaje);
 
@@ -171,7 +216,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       // Selector robusto de la respuesta
       const texto = data?.respuesta ?? data?.answer ?? data?.message ?? data?.content ?? data?.error ?? "(sin respuesta)";
-      await escriureLentament(texto, output, 5);
+      
+      // Crear div para la respuesta del bot
+      const botDiv = document.createElement("div");
+      botDiv.classList.add("bot-msg");
+      output.appendChild(botDiv);
+      
+      await escriureLentament(texto, botDiv, 5);
+      
+      // Guardar conversación después de la respuesta
+      guardarConversacion();
 
     } catch (error) {
       escribintDiv.innerText = "ERROR: NO SE PUEDE CONECTAR CON HADA";
@@ -179,8 +233,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
+  // Cargar conversación al iniciar
+  cargarConversacion();
+  
   // Exporta por si necesitas llamarlo desde HTML en otras páginas
   window.enviar = enviar;
+  window.limpiarConversacion = limpiarConversacion;
 
   async function escriureLentament(texto, element, velocidad = 15) {
     const contenedor = document.createElement("div");

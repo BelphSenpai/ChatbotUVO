@@ -26,8 +26,8 @@ services:
       # Si tu app está en www/app.py con "app" como objeto Flask:
       - APP_MODULE=www.app:app
       # Opcional: controla concurrencia del web (no afecta al worker RQ):
-      - WEB_CONCURRENCY=2
-      - THREADS=8
+      - WEB_CONCURRENCY=6
+      - THREADS=16
       - TIMEOUT=120
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
@@ -41,9 +41,97 @@ services:
       - ./personalidades:/app/personalidades
     # Si tu Dockerfile ya hace CMD ["/app/entrypoint.sh"], no hace falta command aquí.
 
-  worker:
+  worker-1:
     build: .
-    container_name: chatbotuvo-worker
+    container_name: chatbotuvo-worker-1
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/state/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+    command: ["python", "-m", "MinervaPrimeNSE.worker"]
+
+  worker-2:
+    build: .
+    container_name: chatbotuvo-worker-2
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/state/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+    command: ["python", "-m", "MinervaPrimeNSE.worker"]
+
+  worker-3:
+    build: .
+    container_name: chatbotuvo-worker-3
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/state/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+    command: ["python", "-m", "MinervaPrimeNSE.worker"]
+
+  worker-4:
+    build: .
+    container_name: chatbotuvo-worker-4
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/state/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+      - ./pdfs:/app/pdfs
+      - ./personalidades:/app/personalidades
+    command: ["python", "-m", "MinervaPrimeNSE.worker"]
+
+  worker-5:
+    build: .
+    container_name: chatbotuvo-worker-5
     depends_on:
       redis:
         condition: service_healthy

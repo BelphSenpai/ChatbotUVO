@@ -66,7 +66,7 @@ except Exception as e:
     app.logger.exception(f"[WEB] Redis init FAILED: {e}")
     redis_conn = None
 
-queue = Queue("queries", connection=redis_conn, default_timeout=300) if redis_conn else None
+queue = Queue("queries", connection=redis_conn, default_timeout=600, job_timeout=600) if redis_conn else None
 
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -373,22 +373,33 @@ def _wrap_err(msg: str, ia: str, usuario: str, job_id: str = None, status: str =
         "status": status
     }
 
-def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25, poll_interval: float = 0.25):
-    job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=300, result_ttl=600)
+def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 60, poll_interval: float = 0.25):
+    job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
 
     deadline = time.time() + wait_timeout
     last_status = None
 
     while time.time() < deadline:
-        status = job.get_status(refresh=True)
-        last_status = status
+        try:
+            status = job.get_status(refresh=True)
+            last_status = status
 
-        if status == "finished" and job.result is not None:
-            wrapped = _wrap_ok(job.result, ia, usuario, job.get_id())
-            return 200, wrapped
+            if status == "finished" and job.result is not None:
+                wrapped = _wrap_ok(job.result, ia, usuario, job.get_id())
+                return 200, wrapped
 
-        if status == "failed":
-            return 200, _wrap_err("Servicio temporalmente no disponible", ia, usuario, job.get_id(), "failed")
+            if status == "failed":
+                error_msg = "Servicio temporalmente no disponible"
+                if hasattr(job, 'exc_info') and job.exc_info:
+                    error_msg = f"Error en procesamiento: {str(job.exc_info)}"
+                return 200, _wrap_err(error_msg, ia, usuario, job.get_id(), "failed")
+
+            # Log del estado para debugging
+            app.logger.info(f"[QUEUE] Job {job.get_id()} status: {status}")
+            
+        except Exception as e:
+            app.logger.error(f"[QUEUE] Error checking job status: {e}")
+            return 200, _wrap_err(f"Error de comunicación con worker: {str(e)}", ia, usuario, job.get_id(), "error")
 
         time.sleep(poll_interval)
 
@@ -414,7 +425,7 @@ def ia_query_ruta(ia):
     if is_unlimited_user(usuario):
         ensure_unlimited_seed(usuario)
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
     app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
     return jsonify(payload), status_code
 
@@ -436,7 +447,7 @@ def ia_query():
     if is_unlimited_user(usuario):
         ensure_unlimited_seed(usuario)
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
     app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
     return jsonify(payload), status_code
 
@@ -617,6 +628,24 @@ def guardar_preguntas_admin():
 
     _with_preguntas_locked(apply_changes)
     return jsonify({"mensaje": "Preguntas actualizadas correctamente."})
+
+# ========== HISTORIAL ==========
+@app.route("/historial/<ia>/<usuario>")
+def obtener_historial(ia, usuario):
+    """Obtiene el historial de conversación de un usuario con una IA específica."""
+    try:
+        historial_dir = os.path.join(BASE_DIR, "historiales")
+        historial_path = os.path.join(historial_dir, f"{usuario}_{ia.lower()}_historial.json")
+        
+        if os.path.exists(historial_path):
+            with open(historial_path, "r", encoding="utf-8") as f:
+                historial = json.load(f)
+            return jsonify({"historial": historial})
+        else:
+            return jsonify({"historial": []})
+    except Exception as e:
+        app.logger.error(f"Error obteniendo historial: {e}")
+        return jsonify({"historial": []}), 500
 
 # ========== NOTAS ==========
 @app.route('/notas')

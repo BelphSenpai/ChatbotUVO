@@ -60,7 +60,7 @@ instrucciones_globales = (
 
     f"Tu perfil completo, incluyendo opiniones, sensibilidades, límites y tono, es este: {json.dumps(PERSONALIDAD_ACTUAL, ensure_ascii=False)}"
 
-    "Tu límite de caracteres para las respuestas es de 900 caracteres. Si el usuario te pide un resumen, puedes usar hasta 1500 caracteres. Si el usuario te pide un resumen corto, puedes usar hasta 500 caracteres. Si el usuario te pide un resumen muy corto, puedes usar hasta 300 caracteres.\n\n"
+    "Tu límite de caracteres para las respuestas es de 400 caracteres. Si el usuario te pide un resumen, puedes usar hasta 600 caracteres. Si el usuario te pide un resumen corto, puedes usar hasta 300 caracteres. Si el usuario te pide un resumen muy corto, puedes usar hasta 200 caracteres.\n\n"
 )
 
 
@@ -266,7 +266,8 @@ def ask(prompt):
                 {"role": "system", "content": instrucciones_globales},
                 {"role": "user", "content": "Recuerda que no tienes acceso a internet ni a información actual. Ahora responde:" + prompt}
             ],
-            temperature=1.0,
+            temperature=0.7,
+            max_tokens=500,
         )
 
         print(f"🧠 Prompt a {name_ia}:\n", prompt)
