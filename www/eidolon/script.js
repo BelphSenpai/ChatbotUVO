@@ -268,6 +268,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Cargar conversación al iniciar
   cargarConversacion();
+  
+  // Hacer funciones disponibles globalmente
+  window.limpiarConversacion = limpiarConversacion;
 
   typeLine();
 });

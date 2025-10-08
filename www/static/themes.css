@@ -12,6 +12,14 @@
   --theme-accent: #00bfff;
   --theme-border: rgba(0,255,200,0.6);
   --theme-glow: rgba(0,255,200,0.3);
+  --theme-navbar: rgba(0, 255, 200, 0.04);
+  --theme-navbar-border: rgba(0,255,200,0.2);
+  --theme-navbar-text: #b4fff1;
+  --theme-form-bg: rgba(0, 255, 200, 0.03);
+  --theme-form-border: rgba(0,255,200,0.6);
+  --theme-form-text: #b4fff1;
+  --theme-title: #00ffc8;
+  --theme-subtitle: #66ffe6;
 }
 
 /* Tema Rojo */
@@ -24,6 +32,14 @@
   --theme-accent: #ff6b6b;
   --theme-border: rgba(255,68,68,0.6);
   --theme-glow: rgba(255,68,68,0.3);
+  --theme-navbar: rgba(255, 68, 68, 0.04);
+  --theme-navbar-border: rgba(255,68,68,0.2);
+  --theme-navbar-text: #ffb4b4;
+  --theme-form-bg: rgba(255, 68, 68, 0.03);
+  --theme-form-border: rgba(255,68,68,0.6);
+  --theme-form-text: #ffb4b4;
+  --theme-title: #ff4444;
+  --theme-subtitle: #ff6666;
 }
 
 /* Tema Naranja */
@@ -36,6 +52,14 @@
   --theme-accent: #ff9500;
   --theme-border: rgba(255,136,0,0.6);
   --theme-glow: rgba(255,136,0,0.3);
+  --theme-navbar: rgba(255, 136, 0, 0.04);
+  --theme-navbar-border: rgba(255,136,0,0.2);
+  --theme-navbar-text: #ffd4a4;
+  --theme-form-bg: rgba(255, 136, 0, 0.03);
+  --theme-form-border: rgba(255,136,0,0.6);
+  --theme-form-text: #ffd4a4;
+  --theme-title: #ff8800;
+  --theme-subtitle: #ffaa44;
 }
 
 /* Tema Púrpura */
