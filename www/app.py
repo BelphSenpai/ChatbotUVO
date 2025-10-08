@@ -668,6 +668,20 @@ def obtener_historial(ia, usuario):
         app.logger.error(f"Error obteniendo historial: {e}")
         return jsonify({"historial": []}), 500
 
+@app.route("/admin/limpiar-cache", methods=['POST'])
+def limpiar_cache():
+    """Limpia el caché de datos para forzar recarga de archivos TXT."""
+    if session.get('rol') != 'admin':
+        return abort(403)
+    
+    try:
+        from MinervaPrimeNSE.Minerva import limpiar_cache
+        limpiar_cache()
+        return jsonify({"mensaje": "✅ Caché limpiado exitosamente"})
+    except Exception as e:
+        app.logger.error(f"Error limpiando caché: {e}")
+        return jsonify({"error": f"Error limpiando caché: {e}"}), 500
+
 # ========== NOTAS ==========
 @app.route('/notas')
 def ver_notas():

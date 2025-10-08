@@ -39,7 +39,15 @@ def cargar_texto(path: str) -> str:
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
-def cargar_datos_cached(name_ia: str, project_root: Path) -> tuple:
+def limpiar_cache():
+    """Limpia todo el caché para forzar recarga de archivos."""
+    global PERSONALIDAD_CACHE, WORLD_CACHE, CACHE_TIMESTAMPS
+    PERSONALIDAD_CACHE.clear()
+    WORLD_CACHE.clear()
+    CACHE_TIMESTAMPS.clear()
+    print(Fore.YELLOW + "🧹 Caché limpiado - próxima carga será desde disco")
+
+def cargar_datos_cached(name_ia: str, project_root: Path, forzar_recarga: bool = False) -> tuple:
     """
     Carga datos con caché en memoria para mejorar eficiencia.
     Solo lee del disco si no están en caché o si los archivos han cambiado.
@@ -53,6 +61,7 @@ def cargar_datos_cached(name_ia: str, project_root: Path) -> tuple:
     
     cache_key = f"{name_ia.lower()}"
     needs_reload = (
+        forzar_recarga or
         cache_key not in PERSONALIDAD_CACHE or 
         cache_key not in WORLD_CACHE or
         CACHE_TIMESTAMPS.get(f"{cache_key}_personalidad", 0) != personalidad_mtime or
