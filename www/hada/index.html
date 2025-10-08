@@ -104,12 +104,12 @@
     </div>
   </div>
 
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", async () => {
   const path = window.location.pathname;
   const ia = path.split('/')[1]; // 'hada', 'eidolon', etc.
 
-  // Obtener el usuario desde la sesión
+  // === Sesión ===
   let usuario = "invitado";
   try {
     const res = await fetch("/session-info", { cache: "no-store" });
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.warn("No se pudo obtener el usuario de sesión:", e);
   }
 
-  // ========= Terminal ==========
+  // === Terminal ===
   const input = document.getElementById("input");
   const output = document.getElementById("output");
   const terminal = document.getElementById("terminal");
@@ -133,11 +133,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     setTimeout(() => input?.focus(), 300);
   }
 
-  // ⬇️ ATAMOS EVENTOS EN JS (no en atributos HTML)
+  // Atamos eventos en JS (no atributos HTML)
   botonAbrir?.addEventListener("click", mostrarTerminal);
-
-  // Exporta por si lo llama algo externo
-  window.mostrarTerminal = mostrarTerminal;
+  window.mostrarTerminal = mostrarTerminal; // por si algo externo lo llama
 
   input?.addEventListener("keydown", (e) => {
     if (e.key === "Enter") enviar();
@@ -168,18 +166,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       });
 
       const data = await safeJson(res);
+      console.debug("[/query] payload:", data);
       escribintDiv.remove();
 
-      // ⬇️ Selección robusta de campo de respuesta
+      // Selector robusto de la respuesta
       const texto = data?.respuesta ?? data?.answer ?? data?.message ?? data?.content ?? data?.error ?? "(sin respuesta)";
       await escriureLentament(texto, output, 5);
+
     } catch (error) {
-      console.error("Error enviando mensaje a Hada:", error);
       escribintDiv.innerText = "ERROR: NO SE PUEDE CONECTAR CON HADA";
+      console.error("Error enviando mensaje a Hada:", error);
     }
   }
 
-  // Exporta enviar (OPCIONAL; por si mantienes onclick en HTML en otras páginas)
+  // Exporta por si necesitas llamarlo desde HTML en otras páginas
   window.enviar = enviar;
 
   async function escriureLentament(texto, element, velocidad = 15) {
@@ -191,7 +191,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const msg = `>> ${texto}\n`;
 
-    // Intentamos loguear; si texto es falsy, registra "(vacío)"
     try { await registrarEvento("respuesta_hada", String(texto || "(vacío)")); } catch {}
 
     let i = 0;
@@ -213,9 +212,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ tipo, contenido })
       });
-    } catch (error) {
-      // Silencioso
-    }
+    } catch {}
   }
 
   // Utils
@@ -228,7 +225,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }[c]));
   }
 
-  // ========= Dropdown ==========
+  // === Dropdown ===
   const dropdown = document.querySelector(".dropdown");
   const dropdownContent = document.querySelector(".dropdown-content");
   if (dropdown && dropdownContent) {
@@ -251,8 +248,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 });
-
-  </script>  
+</script>
 
 
 </body>
