@@ -1,23 +1,30 @@
-import sys
 import os
 import json
-from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
-from datetime import datetime
-import bcrypt
-import os
 from uuid import uuid4
+from datetime import datetime
+from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
+import bcrypt
 from redis import Redis
 from rq import Queue
 from rq.job import Job
+
 from MinervaPrimeNSE.tasks import job_responder
+from MinervaPrimeNSE.utils import get_name_ia
 
 app = Flask(__name__)
-app.secret_key = 'clave-super-secreta'
-REDIS_URL = os.environ["REDIS_URL"]            # ← sin valor por defecto
-redis_conn = Redis.from_url(REDIS_URL)         # con redis:// interno no hace falta TLS
-queue = Queue("queries", connection=redis_conn, default_timeout=300)
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "cambia-esto-en-dev")
 
-print(f"[RQ] Using Redis URL host: {redis_conn.connection_pool.connection_kwargs.get('host')}", flush=True)
+# --- Redis / RQ ---
+REDIS_URL = os.environ["REDIS_URL"]  # Debe estar definida en Railway (Reference al servicio Redis)
+redis_conn = Redis.from_url(REDIS_URL)
+# Verificación temprana (deja estos logs si te ayudan)
+try:
+    redis_conn.ping()
+    app.logger.info("[WEB] Redis ping OK")
+except Exception as e:
+    app.logger.exception(f"[WEB] Redis ping FAILED: {e}")
+
+queue = Queue("queries", connection=redis_conn, default_timeout=300)
 
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -160,7 +167,7 @@ def guardar_ficha():
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        nuevos = request.json
+        nuevos = request.get_json(silent=True) or {}
         data.update(nuevos)
 
         with open(path, "w", encoding="utf-8") as f:
@@ -193,12 +200,11 @@ def manejar_conexiones(nombre):
             return jsonify({"elements": {"nodes": [], "edges": []}}), 404
 
     if request.method == 'POST':
-        data = request.get_json()
+        data = request.get_json(silent=True) or {}
         if not data:
             return jsonify({"error": "No se recibió data válida."}), 400
 
         os.makedirs(os.path.dirname(ruta), exist_ok=True)
-
         with open(ruta, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 
@@ -212,8 +218,6 @@ def panel():
     path = os.path.join(BASE_DIR, 'narrador')
     return send_from_directory(path, 'index.html')
 
-from MinervaPrimeNSE.utils import get_name_ia
-
 name_ia = get_name_ia()
 
 @app.route('/<ia>')
@@ -225,14 +229,17 @@ def ia_home(ia):
 def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
+# ========== CONSULTAS (cola RQ) ==========
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
-    data = request.json or {}
+    data = request.get_json(silent=True) or {}
     mensaje_original = data.get("mensaje", "")
-    usuario = data.get("id", "").strip().lower()
+    usuario = (data.get("id") or "").strip().lower()
     ia = ia.strip().lower()
 
-    if session.get('usuario', '').lower() != usuario:
+    if not usuario:
+        return jsonify({"error": "Falta id"}), 400
+    if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
     job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
@@ -240,12 +247,14 @@ def ia_query_ruta(ia):
 
 @app.route('/query', methods=['POST'])
 def ia_query():
-    data = request.json or {}
+    data = request.get_json(silent=True) or {}
     mensaje_original = data.get("mensaje", "")
-    ia = data.get("ia", name_ia).strip().lower()
-    usuario = data.get("id", "").strip().lower()
+    ia = (data.get("ia") or name_ia).strip().lower()
+    usuario = (data.get("id") or "").strip().lower()
 
-    if session.get('usuario', '').lower() != usuario:
+    if not usuario:
+        return jsonify({"error": "Falta id"}), 400
+    if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
     job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
@@ -261,21 +270,16 @@ def job_status(job_id):
     if job.is_failed:
         return jsonify({"status": "failed", "error": str(job.exc_info)}), 500
     if job.result is not None:
-        # job_responder devuelve {"respuesta": "..."}
         return jsonify({"status": "finished", "result": job.result})
     return jsonify({"status": job.get_status()})
 
-
 # ========== ADMINISTRACIÓN ==========
-
 def normalizar_personajes(d):
-    # Fuerza claves a minúsculas y limpia espacios
     out = {}
     for k, v in d.items():
         out[k.strip().lower()] = v
     return out
 
-# Carga inicial
 with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
     PERSONAJES = normalizar_personajes(json.load(f))
 
@@ -303,7 +307,7 @@ def admin_personajes():
     cargar_preguntas()
 
     if request.method == 'GET':
-        cargar_personajes()  # ✅ Esto garantiza que la vista admin esté siempre actualizada
+        cargar_personajes()
         lista = []
         for nombre in PERSONAJES.keys():
             user_preguntas = preguntas_restantes.get(nombre, {
@@ -319,7 +323,7 @@ def admin_personajes():
         return jsonify(lista)
 
     if request.method == 'POST':
-        datos = request.json
+        datos = request.get_json(silent=True) or {}
         nombre = datos.get('nombre')
         clave = datos.get('clave')
         rol = datos.get('rol', 'jugador')
@@ -341,49 +345,24 @@ def admin_personajes():
                 "hada": 3,
                 "fantasma": 3
             }
-
         guardar_preguntas()
 
         return jsonify({"mensaje": "Personaje creado o actualizado"})
 
     if request.method == 'DELETE':
-        datos = request.json
+        datos = request.get_json(silent=True) or {}
         nombre = datos.get('nombre')
 
         if not nombre or nombre.lower() not in PERSONAJES:
             return jsonify({"error": "Personaje no encontrado"}), 404
 
         nombre_lower = nombre.strip().lower()
-
         del PERSONAJES[nombre_lower]
         if nombre_lower in preguntas_restantes:
             del preguntas_restantes[nombre_lower]
 
         guardar_personajes()
         guardar_preguntas()
-
-        return jsonify({"mensaje": "Personaje eliminado"})
-
-
-
-    if request.method == 'DELETE':
-        datos = request.json
-        nombre = datos.get('nombre')
-
-        if not nombre or nombre.lower() not in PERSONAJES:
-            return jsonify({"error": "Personaje no encontrado"}), 404
-
-        nombre_lower = nombre.strip().lower()
-
-        del PERSONAJES[nombre_lower]
-        if nombre_lower in preguntas_restantes:
-            del preguntas_restantes[nombre_lower]
-
-        with open(PERSONAJES_PATH, 'w', encoding='utf-8') as f:
-            json.dump(PERSONAJES, f, indent=2, ensure_ascii=False)
-
-        guardar_preguntas()
-
         return jsonify({"mensaje": "Personaje eliminado"})
 
 @app.route('/admin/personaje/<nombre>')
@@ -404,7 +383,6 @@ def obtener_personaje(nombre):
         "hada": 0,
         "fantasma": 0
     })
-
     return jsonify(datos_personaje)
 
 @app.route('/admin/resetear-preguntas', methods=['POST'])
@@ -412,14 +390,13 @@ def resetear_preguntas():
     if session.get('rol') != 'admin':
         return abort(403)
 
-    datos = request.json
+    datos = request.get_json(silent=True) or {}
     nombre = datos.get('nombre')
 
     if not nombre or nombre.lower() not in PERSONAJES:
         return jsonify({"error": "Personaje no encontrado"}), 404
 
     nombre_lower = nombre.strip().lower()
-
     preguntas_restantes[nombre_lower] = {
         "anima": 3,
         "eidolon": 3,
@@ -427,7 +404,6 @@ def resetear_preguntas():
         "fantasma": 3
     }
     guardar_preguntas()
-
     return jsonify({"mensaje": f"Preguntas de {nombre} reseteadas."})
 
 @app.route('/admin/guardar-preguntas', methods=['POST'])
@@ -435,7 +411,7 @@ def guardar_preguntas_admin():
     if session.get('rol') != 'admin':
         return abort(403)
 
-    datos = request.json
+    datos = request.get_json(silent=True) or {}
     cambios = datos.get('cambios', {})
 
     for nombre, preguntas in cambios.items():
@@ -446,11 +422,9 @@ def guardar_preguntas_admin():
             preguntas_restantes[nombre_lower][ia] = valor
 
     guardar_preguntas()
-
     return jsonify({"mensaje": "Preguntas actualizadas correctamente."})
 
-
-# ========== NOTAS PERSONALES ==========
+# ========== NOTAS ==========
 @app.route('/notas')
 def ver_notas():
     if 'usuario' not in session:
@@ -475,7 +449,7 @@ def gestionar_notas():
             return jsonify({"contenido": ""})
 
     if request.method == 'POST':
-        datos = request.json
+        datos = request.get_json(silent=True) or {}
         contenido = datos.get('contenido', '')
 
         os.makedirs(os.path.dirname(ruta_nota), exist_ok=True)
@@ -495,7 +469,7 @@ def usos_actuales():
     usos_normalizados = {k.lower(): v for k, v in usos.items()}
     return jsonify(usos_normalizados)
 
-# ========== LOG DE EVENTOS ==========
+# ========== LOGS ==========
 LOGS_DIR = os.path.join(BASE_DIR, 'admin', 'logs')
 os.makedirs(LOGS_DIR, exist_ok=True)
 
@@ -505,7 +479,7 @@ def log_evento():
         return jsonify({"error": "No autorizado"}), 403
 
     usuario = session['usuario'].lower()
-    datos = request.json
+    datos = request.get_json(silent=True) or {}
     tipo = datos.get('tipo')
     contenido = datos.get('contenido')
 
@@ -552,6 +526,7 @@ def borrar_log_personaje(nombre):
     except Exception as e:
         return jsonify({"error": f"Error al borrar el log: {str(e)}"}), 500
 
+# ========== FICHA (ADMIN) ==========
 @app.route('/admin/ficha/<nombre>.json', methods=['GET'])
 def admin_obtener_ficha_json(nombre):
     if session.get('rol') != 'admin':
@@ -563,53 +538,29 @@ def admin_obtener_ficha_json(nombre):
 
     with open(ruta, 'r', encoding='utf-8') as f:
         return jsonify(json.load(f))
-    
+
 @app.route('/admin/ficha/<nombre>.json', methods=['POST'])
 def admin_guardar_ficha_json(nombre):
     if session.get('rol') != 'admin':
         return jsonify({"error": "No autorizado"}), 403
 
     ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
-    os.makedirs(os.path.dirname(ruta), exist_ok=True)  # Asegura que la carpeta exista
+    os.makedirs(os.path.dirname(ruta), exist_ok=True)
 
     try:
-        nuevo_contenido = request.get_json()
+        nuevo_contenido = request.get_json(silent=True) or {}
         with open(ruta, 'w', encoding='utf-8') as f:
             json.dump(nuevo_contenido, f, indent=2, ensure_ascii=False)
         return jsonify({"mensaje": "Ficha creada o actualizada correctamente."})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-    
-@app.route('/admin/ficha/<nombre>.json', methods=['GET', 'POST'])
-def admin_editar_ficha(nombre):
-    if session.get('rol') != 'admin':
-        return jsonify({"error": "No autorizado"}), 403
-
-    ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
-
-    if request.method == 'GET':
-        if not os.path.exists(ruta):
-            return jsonify({"error": "Ficha no encontrada"}), 404
-        with open(ruta, 'r', encoding='utf-8') as f:
-            return jsonify(json.load(f))
-
-    if request.method == 'POST':
-        try:
-            datos = request.get_json()
-            with open(ruta, 'w', encoding='utf-8') as f:
-                json.dump(datos, f, ensure_ascii=False, indent=2)
-            return jsonify({"mensaje": "Ficha guardada correctamente."})
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
-        
 @app.route('/admin/ficha/<nombre>.json', methods=['PATCH'])
 def admin_actualizar_ficha_parcial(nombre):
     if session.get('rol') != 'admin':
         return jsonify({"error": "No autorizado"}), 403
 
     ruta = os.path.join(BASE_DIR, 'ficha', 'personajes', f'{nombre}.json')
-
     if not os.path.exists(ruta):
         return jsonify({"error": "Ficha no encontrada"}), 404
 
@@ -617,7 +568,7 @@ def admin_actualizar_ficha_parcial(nombre):
         with open(ruta, 'r', encoding='utf-8') as f:
             datos_actuales = json.load(f)
 
-        nuevos_datos = request.get_json()
+        nuevos_datos = request.get_json(silent=True) or {}
 
         def actualizar_recursivo(destino, fuente):
             for clave, valor in fuente.items():
@@ -635,9 +586,8 @@ def admin_actualizar_ficha_parcial(nombre):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-
-
 # ========== RUN ==========
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=port)
+    debug = os.environ.get('FLASK_DEBUG') == '1'
+    app.run(host='0.0.0.0', port=port, debug=debug)
