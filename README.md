@@ -2,6 +2,8 @@
 
 **ChatbotUVO** es un asistente conversacional basado en RAG (Retrieval-Augmented Generation), que utiliza embeddings y un índice FAISS para recuperar información relevante de una base de datos textual antes de generar respuestas con un modelo de lenguaje.
 
+> 🚀 **Colaboración activa**: Proyecto en desarrollo colaborativo
+
 El sistema se apoya en dos modelos de inteligencia artificial:
 
 - 🤖 Un modelo para generación de respuestas (chat).  
