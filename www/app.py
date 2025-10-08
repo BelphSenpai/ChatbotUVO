@@ -10,6 +10,7 @@ import bcrypt
 from redis import Redis
 from rq import Queue
 from rq.job import Job
+from filelock import FileLock  # 👈 NUEVO
 
 from MinervaPrimeNSE.tasks import job_responder
 from MinervaPrimeNSE.utils import get_name_ia
@@ -33,8 +34,6 @@ def build_conn_from_url(url: str) -> Redis:
     Soporta redis:// y rediss:// (TLS).
     """
     app.logger.info(f"[WEB] Using REDIS_URL={url}")
-    # Redis-py expone classmethod .from_url
-    # Ej: redis://default:pass@host:port/0
     return Redis.from_url(url)
 
 def get_redis_conn():
@@ -69,29 +68,41 @@ queue = Queue("queries", connection=redis_conn, default_timeout=300) if redis_co
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PERSONAJES_PATH = os.path.join(BASE_DIR, 'personajes.json')
-PREGUNTAS_PATH = os.path.join(BASE_DIR, 'preguntas.json')
+
+# 👇 NUEVO: usa la MISMA ruta que el worker
+APP_STATE_DIR = os.getenv("APP_STATE_DIR", "/state")
+os.makedirs(APP_STATE_DIR, exist_ok=True)
+PREGUNTAS_PATH = os.path.join(APP_STATE_DIR, 'preguntas.json')
 
 with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
     PERSONAJES = json.load(f)
 
-if os.path.exists(PREGUNTAS_PATH):
-    with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
-        preguntas_restantes = json.load(f)
-else:
-    preguntas_restantes = {}
-
-# ========== UTILIDADES ==========
-def cargar_preguntas():
-    global preguntas_restantes
+# ========== UTILIDADES (con lock, sin cache global) ==========
+def _cargar_preguntas() -> dict:
     if os.path.exists(PREGUNTAS_PATH):
         with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
-            preguntas_restantes = json.load(f)
-    else:
-        preguntas_restantes = {}
+            return json.load(f)
+    return {}
 
-def guardar_preguntas():
-    with open(PREGUNTAS_PATH, 'w', encoding='utf-8') as f:
-        json.dump(preguntas_restantes, f, indent=2, ensure_ascii=False)
+def _guardar_preguntas(data: dict):
+    tmp = PREGUNTAS_PATH + ".tmp"
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(tmp, PREGUNTAS_PATH)
+
+def _with_preguntas_locked(mutator=None, timeout=10):
+    """
+    Lee preguntas con lock, aplica mutator(data)->(changed,data) opcional,
+    guarda si cambió y devuelve data final.
+    """
+    lock = FileLock(PREGUNTAS_PATH + ".lock", timeout=timeout)
+    with lock:
+        data = _cargar_preguntas()
+        if mutator is not None:
+            changed, data = mutator(data)
+            if changed:
+                _guardar_preguntas(data)
+        return data
 
 def obtener_nombre_objetivo():
     if session.get('usuario') == 'narrador':
@@ -122,7 +133,6 @@ def login():
 
 @app.route('/login', methods=['POST'])
 def do_login():
-    cargar_preguntas()
     user = request.form.get('usuario', '').strip().lower()
     clave = request.form.get('clave', '').encode('utf-8')
     datos = PERSONAJES.get(user)
@@ -133,14 +143,19 @@ def do_login():
             session['usuario'] = user
             session['rol'] = datos.get('rol', 'jugador')
 
-            if user not in preguntas_restantes:
-                preguntas_restantes[user] = {
-                    "anima": 3,
-                    "eidolon": 3,
-                    "hada": 3,
-                    "fantasma": 3
-                }
-                guardar_preguntas()
+            # Inicializa preguntas del usuario si no existen (con lock)
+            def init_preguntas_if_needed(data):
+                changed = False
+                if user not in data:
+                    data[user] = {
+                        "anima": 3,
+                        "eidolon": 3,
+                        "hada": 3,
+                        "fantasma": 3
+                    }
+                    changed = True
+                return changed, data
+            _with_preguntas_locked(init_preguntas_if_needed)
 
             return redirect('/panel' if user == 'narrador' else '/ficha')
 
@@ -270,29 +285,18 @@ def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
 # ========== CONSULTAS (cola RQ) ==========
-# helper REEMPLAZA el anterior _enqueue_and_wait
 def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25, poll_interval: float = 0.25):
-    """
-    Encola el job y espera activamente (polling) hasta wait_timeout segundos.
-    Si termina -> 200 con {"respuesta": "..."}
-    Si falla  -> 500
-    Si no llega a tiempo -> 202 con {job_id, status}
-    """
-    # Asegura TTLs razonables
     job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=300, result_ttl=600)
 
     deadline = time.time() + wait_timeout
     last_status = None
 
     while time.time() < deadline:
-        # refresca estado y resultado
         status = job.get_status(refresh=True)
         last_status = status
 
         if status == "finished" and job.result is not None:
-            # Devolvemos exactamente lo que espera el front: {"respuesta": "..."}
             payload = job.result
-            # (Opcional) incluir job_id por depuración
             if isinstance(payload, dict):
                 payload.setdefault("job_id", job.get_id())
             return 200, payload
@@ -302,9 +306,7 @@ def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 2
 
         time.sleep(poll_interval)
 
-    # No terminó a tiempo: mantenemos compatibilidad devolviendo 202
     return 202, {"job_id": job.get_id(), "status": (last_status or "queued")}
-
 
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
@@ -323,7 +325,6 @@ def ia_query_ruta(ia):
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
 
-
 @app.route('/query', methods=['POST'])
 def ia_query():
     data = request.get_json(silent=True) or {}
@@ -340,7 +341,6 @@ def ia_query():
 
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
-
 
 @app.route('/jobs/<job_id>', methods=['GET'])
 def job_status(job_id):
@@ -386,22 +386,21 @@ def admin_personajes():
     if session.get('rol') != 'admin':
         return abort(403)
 
-    cargar_preguntas()
-
     if request.method == 'GET':
         cargar_personajes()
+        def read_only(data):
+            lista = []
+            for nombre in PERSONAJES.keys():
+                user_preguntas = data.get(nombre, {
+                    "anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0
+                })
+                lista.append({"nombre": nombre, "preguntas": user_preguntas})
+            return False, lista
+        data = _with_preguntas_locked(lambda d: (False, d))
         lista = []
         for nombre in PERSONAJES.keys():
-            user_preguntas = preguntas_restantes.get(nombre, {
-                "anima": 0,
-                "eidolon": 0,
-                "hada": 0,
-                "fantasma": 0
-            })
-            lista.append({
-                "nombre": nombre,
-                "preguntas": user_preguntas
-            })
+            user_preguntas = data.get(nombre, {"anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0})
+            lista.append({"nombre": nombre, "preguntas": user_preguntas})
         return jsonify(lista)
 
     if request.method == 'POST':
@@ -420,14 +419,13 @@ def admin_personajes():
         guardar_personajes()
         cargar_personajes()
 
-        if nombre_lower not in preguntas_restantes:
-            preguntas_restantes[nombre_lower] = {
-                "anima": 3,
-                "eidolon": 3,
-                "hada": 3,
-                "fantasma": 3
-            }
-        guardar_preguntas()
+        def upsert_pregs(data):
+            changed = False
+            if nombre_lower not in data:
+                data[nombre_lower] = {"anima": 3, "eidolon": 3, "hada": 3, "fantasma": 3}
+                changed = True
+            return changed, data
+        _with_preguntas_locked(upsert_pregs)
 
         return jsonify({"mensaje": "Personaje creado o actualizado"})
 
@@ -440,11 +438,16 @@ def admin_personajes():
 
         nombre_lower = nombre.strip().lower()
         del PERSONAJES[nombre_lower]
-        if nombre_lower in preguntas_restantes:
-            del preguntas_restantes[nombre_lower]
-
         guardar_personajes()
-        guardar_preguntas()
+
+        def remove_user(data):
+            changed = False
+            if nombre_lower in data:
+                del data[nombre_lower]
+                changed = True
+            return changed, data
+        _with_preguntas_locked(remove_user)
+
         return jsonify({"mensaje": "Personaje eliminado"})
 
 @app.route('/admin/personaje/<nombre>')
@@ -452,19 +455,13 @@ def obtener_personaje(nombre):
     if session.get('rol') != 'admin':
         return abort(403)
 
-    cargar_preguntas()
-
     nombre = nombre.strip().lower()
     if nombre not in PERSONAJES:
         return jsonify({"error": "Personaje no encontrado"}), 404
 
+    data = _with_preguntas_locked(lambda d: (False, d))
     datos_personaje = PERSONAJES[nombre].copy()
-    datos_personaje['preguntas'] = preguntas_restantes.get(nombre, {
-        "anima": 0,
-        "eidolon": 0,
-        "hada": 0,
-        "fantasma": 0
-    })
+    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "eidolon": 0, "hada": 0, "fantasma": 0})
     return jsonify(datos_personaje)
 
 @app.route('/admin/resetear-preguntas', methods=['POST'])
@@ -479,13 +476,12 @@ def resetear_preguntas():
         return jsonify({"error": "Personaje no encontrado"}), 404
 
     nombre_lower = nombre.strip().lower()
-    preguntas_restantes[nombre_lower] = {
-        "anima": 3,
-        "eidolon": 3,
-        "hada": 3,
-        "fantasma": 3
-    }
-    guardar_preguntas()
+
+    def reset_user(data):
+        data[nombre_lower] = {"anima": 3, "eidolon": 3, "hada": 3, "fantasma": 3}
+        return True, data
+    _with_preguntas_locked(reset_user)
+
     return jsonify({"mensaje": f"Preguntas de {nombre} reseteadas."})
 
 @app.route('/admin/guardar-preguntas', methods=['POST'])
@@ -496,14 +492,19 @@ def guardar_preguntas_admin():
     datos = request.get_json(silent=True) or {}
     cambios = datos.get('cambios', {})
 
-    for nombre, preguntas in cambios.items():
-        nombre_lower = nombre.strip().lower()
-        if nombre_lower not in preguntas_restantes:
-            preguntas_restantes[nombre_lower] = {}
-        for ia, valor in preguntas.items():
-            preguntas_restantes[nombre_lower][ia] = valor
+    def apply_changes(data):
+        changed = False
+        for nombre, preguntas in cambios.items():
+            nombre_lower = nombre.strip().lower()
+            if nombre_lower not in data:
+                data[nombre_lower] = {}
+                changed = True
+            for ia, valor in preguntas.items():
+                data[nombre_lower][ia] = valor
+                changed = True
+        return changed, data
 
-    guardar_preguntas()
+    _with_preguntas_locked(apply_changes)
     return jsonify({"mensaje": "Preguntas actualizadas correctamente."})
 
 # ========== NOTAS ==========
@@ -545,9 +546,10 @@ def gestionar_notas():
 def usos_actuales():
     if 'usuario' not in session:
         return jsonify({})
-    cargar_preguntas()
     usuario = session['usuario'].lower()
-    usos = preguntas_restantes.get(usuario, {})
+
+    data = _with_preguntas_locked(lambda d: (False, d))
+    usos = data.get(usuario, {})
     usos_normalizados = {k.lower(): v for k, v in usos.items()}
     return jsonify(usos_normalizados)
 
