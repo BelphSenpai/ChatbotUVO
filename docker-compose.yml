@@ -57,4 +57,4 @@ services:
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
       - ./www/notas/usuarios:/app/www/notas/usuarios
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
-    command: ["python", "-m", "MinervaNSE.worker"]
+    command: ["python", "-m", "MinervaPrimeNSE.worker"]
