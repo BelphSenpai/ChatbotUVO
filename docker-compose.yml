@@ -23,6 +23,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       # Si tu app está en www/app.py con "app" como objeto Flask:
       - APP_MODULE=www.app:app
       # Opcional: controla concurrencia del web (no afecta al worker RQ):
@@ -51,6 +52,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/state/preguntas.json
@@ -73,6 +75,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/state/preguntas.json
@@ -95,6 +98,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/state/preguntas.json
@@ -117,6 +121,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/state/preguntas.json
@@ -139,6 +144,7 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - REDIS_URL=redis://redis:6379/0
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/state/preguntas.json

@@ -137,16 +137,37 @@ def ensure_unlimited_seed(user: str):
 LEGACY_PREG_PATH = os.path.join(BASE_DIR, 'preguntas.json')
 try:
     if not os.path.exists(PREGUNTAS_PATH) and os.path.exists(LEGACY_PREG_PATH):
+        # Asegurar que el directorio existe
         os.makedirs(APP_STATE_DIR, exist_ok=True)
+        
         with open(LEGACY_PREG_PATH, 'r', encoding='utf-8') as f:
             legacy = json.load(f)
+        
         # normaliza claves a lower case
         migrated = { (k or '').strip().lower(): v for k, v in legacy.items() }
+        
+        # Crear archivo temporal con manejo de errores
         tmp = PREGUNTAS_PATH + ".tmp"
-        with open(tmp, 'w', encoding='utf-8') as f:
-            json.dump(migrated, f, ensure_ascii=False, indent=2)
-        os.replace(tmp, PREGUNTAS_PATH)
-        app.logger.warning(f"[USOS] Migrated preguntas.json from {LEGACY_PREG_PATH} -> {PREGUNTAS_PATH}")
+        try:
+            with open(tmp, 'w', encoding='utf-8') as f:
+                json.dump(migrated, f, ensure_ascii=False, indent=2)
+            
+            # Verificar que el archivo temporal se creó correctamente
+            if os.path.exists(tmp):
+                os.replace(tmp, PREGUNTAS_PATH)
+                app.logger.warning(f"[USOS] Migrated preguntas.json from {LEGACY_PREG_PATH} -> {PREGUNTAS_PATH}")
+            else:
+                app.logger.error(f"[USOS] Failed to create temporary file: {tmp}")
+                
+        except Exception as tmp_error:
+            app.logger.error(f"[USOS] Failed to create temporary file: {tmp_error}")
+            # Limpiar archivo temporal si existe
+            if os.path.exists(tmp):
+                try:
+                    os.remove(tmp)
+                except:
+                    pass
+                    
 except Exception as e:
     app.logger.exception(f"[USOS] Migration failed: {e}")
 
