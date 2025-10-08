@@ -136,10 +136,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   const CONVERSATION_KEY = `conversacion_${ia}_${usuario}`;
   
   function guardarConversacion() {
-    const mensajes = Array.from(output.querySelectorAll('.user-msg, .bot-msg')).map(el => ({
-      tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
-      contenido: el.textContent.trim()
-    }));
+    const mensajes = Array.from(output.querySelectorAll('.user-msg, .bot-msg')).map(el => {
+      let contenido = '';
+      
+      if (el.classList.contains('user-msg')) {
+        contenido = el.textContent.trim();
+      } else if (el.classList.contains('bot-msg')) {
+        // Buscar el texto en la estructura anidada
+        const aiMsg = el.querySelector('.ai-msg span');
+        if (aiMsg) {
+          contenido = aiMsg.textContent.trim();
+        } else {
+          contenido = el.textContent.trim();
+        }
+      }
+      
+      return {
+        tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+        contenido: contenido
+      };
+    });
+    
     localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
   }
   

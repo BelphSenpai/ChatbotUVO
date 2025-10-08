@@ -16,10 +16,27 @@ document.addEventListener('DOMContentLoaded', async () => {
   const CONVERSATION_KEY = `conversacion_eidolon_${usuario}`;
   
   function guardarConversacion() {
-    const mensajes = Array.from(terminalOutput.querySelectorAll('.user-msg, .bot-msg')).map(el => ({
-      tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
-      contenido: el.textContent.trim()
-    }));
+    const mensajes = Array.from(terminalOutput.querySelectorAll('.user-msg, .bot-msg')).map(el => {
+      let contenido = '';
+      
+      if (el.classList.contains('user-msg')) {
+        contenido = el.textContent.trim();
+      } else if (el.classList.contains('bot-msg')) {
+        // Buscar el texto en la estructura anidada si existe
+        const nestedText = el.querySelector('span, div');
+        if (nestedText) {
+          contenido = nestedText.textContent.trim();
+        } else {
+          contenido = el.textContent.trim();
+        }
+      }
+      
+      return {
+        tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+        contenido: contenido
+      };
+    });
+    
     localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
   }
   

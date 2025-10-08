@@ -9,6 +9,57 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   let usuario = "invitado";
 
+  // === Persistencia de conversación ===
+  const CONVERSATION_KEY = `conversacion_anima_${usuario}`;
+  
+  function guardarConversacion() {
+    const mensajes = Array.from(codeBlock.querySelectorAll('.user-msg, .bot-msg')).map(el => {
+      let contenido = '';
+      
+      if (el.classList.contains('user-msg')) {
+        contenido = el.textContent.trim();
+      } else if (el.classList.contains('bot-msg')) {
+        // Buscar el texto en la estructura anidada si existe
+        const nestedText = el.querySelector('span, div');
+        if (nestedText) {
+          contenido = nestedText.textContent.trim();
+        } else {
+          contenido = el.textContent.trim();
+        }
+      }
+      
+      return {
+        tipo: el.classList.contains('user-msg') ? 'usuario' : 'bot',
+        contenido: contenido
+      };
+    });
+    
+    localStorage.setItem(CONVERSATION_KEY, JSON.stringify(mensajes));
+  }
+  
+  function cargarConversacion() {
+    const guardado = localStorage.getItem(CONVERSATION_KEY);
+    if (guardado) {
+      try {
+        const mensajes = JSON.parse(guardado);
+        mensajes.forEach(msg => {
+          const div = document.createElement("div");
+          div.classList.add(msg.tipo === 'usuario' ? 'user-msg' : 'bot-msg');
+          div.textContent = msg.contenido;
+          codeBlock.appendChild(div);
+        });
+        codeBlock.scrollTop = codeBlock.scrollHeight;
+      } catch (e) {
+        console.warn("Error cargando conversación:", e);
+      }
+    }
+  }
+  
+  function limpiarConversacion() {
+    localStorage.removeItem(CONVERSATION_KEY);
+    codeBlock.innerHTML = "";
+  }
+
   // Carga de sesión y visibilidad de elementos condicionales
   try {
     const res = await fetch("/session-info");
@@ -115,8 +166,15 @@ function iniciarAnimacionRunes() {
     const mensaje = input.value.trim();
     if (!mensaje) return;
 
-    appendLinea(`>> ${mensaje}`, "user");
+    const userDiv = document.createElement("div");
+    userDiv.classList.add("user-msg");
+    userDiv.textContent = `>> ${mensaje}`;
+    codeBlock.appendChild(userDiv);
     input.value = "";
+    
+    // Guardar conversación después de cada mensaje del usuario
+    guardarConversacion();
+    
     await registrarEvento(`pregunta_${ia}`, mensaje);
 
     mostrarPensando();
@@ -130,7 +188,14 @@ function iniciarAnimacionRunes() {
 
       const data = await res.json();
       await registrarEvento(`respuesta_${ia}`, data.respuesta);
-      appendLinea(`>> ${data.respuesta}`, "bot");
+      
+      const botDiv = document.createElement("div");
+      botDiv.classList.add("bot-msg");
+      botDiv.textContent = `>> ${data.respuesta}`;
+      codeBlock.appendChild(botDiv);
+      
+      // Guardar conversación después de la respuesta
+      guardarConversacion();
 
     } catch (err) {
       appendLinea("⚠️ ERROR: No se pudo conectar con la IA.", "error");
@@ -168,5 +233,11 @@ function iniciarAnimacionRunes() {
       console.error("Error registrando evento:", err);
     }
   }
+
+  // Cargar conversación al iniciar
+  cargarConversacion();
+  
+  // Hacer funciones disponibles globalmente
+  window.limpiarConversacion = limpiarConversacion;
 });
 

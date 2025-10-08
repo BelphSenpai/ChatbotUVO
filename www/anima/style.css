@@ -350,6 +350,35 @@ h1 {
 
 .runic-input:focus + .runic-glow { transform: scaleX(1); }
 
+/* Botón de limpiar */
+.btn-clear {
+  background: rgba(0, 255, 200, 0.1);
+  border: 1px solid var(--theme-primary);
+  color: var(--theme-primary);
+  padding: 8px 12px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.btn-clear:hover {
+  background: rgba(0, 255, 200, 0.2);
+  box-shadow: 0 0 8px var(--theme-glow);
+}
+
+/* Mensajes de usuario y bot */
+.user-msg {
+  color: var(--theme-primary);
+  margin-bottom: 8px;
+}
+
+.bot-msg {
+  color: var(--theme-primary-2);
+  margin-bottom: 8px;
+}
+
 /* ============================
    SPINNER / AURA
 ============================ */
