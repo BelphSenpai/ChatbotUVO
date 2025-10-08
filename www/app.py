@@ -336,6 +336,43 @@ def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
 # ========== CONSULTAS (cola RQ) ==========
+def _wrap_ok(payload: dict, ia: str, usuario: str, job_id: str):
+    # payload viene del worker: {"respuesta": "..."} o {"respuesta":"⛔ ..."}
+    resp_text = None
+    if isinstance(payload, dict):
+        resp_text = payload.get("respuesta")
+    elif isinstance(payload, str):
+        resp_text = payload
+        payload = {"respuesta": resp_text}
+    else:
+        payload = {"respuesta": str(payload)}
+        resp_text = str(payload["respuesta"])
+
+    # Envoltura compatible
+    wrapped = {
+        "ok": True,
+        "respuesta": resp_text,
+        "answer": resp_text,     # alias por si el front mira 'answer'
+        "ia": ia,
+        "id": usuario,
+        "job_id": job_id
+    }
+    # conserva el resto del payload original
+    for k, v in payload.items():
+        if k not in wrapped:
+            wrapped[k] = v
+    return wrapped
+
+def _wrap_err(msg: str, ia: str, usuario: str, job_id: str = None, status: str = None):
+    return {
+        "ok": False,
+        "error": msg,
+        "ia": ia,
+        "id": usuario,
+        "job_id": job_id,
+        "status": status
+    }
+
 def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25, poll_interval: float = 0.25):
     job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=300, result_ttl=600)
 
@@ -347,17 +384,17 @@ def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 2
         last_status = status
 
         if status == "finished" and job.result is not None:
-            payload = job.result
-            if isinstance(payload, dict):
-                payload.setdefault("job_id", job.get_id())
-            return 200, payload
+            wrapped = _wrap_ok(job.result, ia, usuario, job.get_id())
+            return 200, wrapped
 
         if status == "failed":
-            return 500, {"error": "Servicio temporalmente no disponible", "job_id": job.get_id()}
+            return 200, _wrap_err("Servicio temporalmente no disponible", ia, usuario, job.get_id(), "failed")
 
         time.sleep(poll_interval)
 
-    return 202, {"job_id": job.get_id(), "status": (last_status or "queued")}
+    # 202 → respondemos 200 con ok:false para que el front SIEMPRE pinte algo
+    return 200, _wrap_err("Procesando… vuelve a intentarlo", ia, usuario, job.get_id(), (last_status or "queued"))
+
 
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
@@ -378,6 +415,7 @@ def ia_query_ruta(ia):
         ensure_unlimited_seed(usuario)
 
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
+    app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
     return jsonify(payload), status_code
 
 @app.route('/query', methods=['POST'])
@@ -399,6 +437,7 @@ def ia_query():
         ensure_unlimited_seed(usuario)
 
     status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
+    app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
     return jsonify(payload), status_code
 
 @app.route('/jobs/<job_id>', methods=['GET'])
