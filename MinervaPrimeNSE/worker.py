@@ -4,8 +4,10 @@ from redis import Redis
 from rq import Worker, Queue
 
 listen = os.getenv('RQ_QUEUES', 'queries').split(',')
-redis_url = os.getenv('REDIS_URL', 'redis://redis:6379/0')
-conn = Redis.from_url(redis_url)
+REDIS_URL = os.environ["REDIS_URL"]
+conn = Redis.from_url(REDIS_URL)
+
+print(f"[Worker] Redis host: {conn.connection_pool.connection_kwargs.get('host')}", flush=True)
 
 if __name__ == '__main__':
     queues = [Queue(name, connection=conn) for name in listen]

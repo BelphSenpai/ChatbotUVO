@@ -13,9 +13,11 @@ from MinervaPrimeNSE.tasks import job_responder
 
 app = Flask(__name__)
 app.secret_key = 'clave-super-secreta'
-REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379/0")
-redis_conn = Redis.from_url(REDIS_URL)
+REDIS_URL = os.environ["REDIS_URL"]            # ← sin valor por defecto
+redis_conn = Redis.from_url(REDIS_URL)         # con redis:// interno no hace falta TLS
 queue = Queue("queries", connection=redis_conn, default_timeout=300)
+
+print(f"[RQ] Using Redis URL host: {redis_conn.connection_pool.connection_kwargs.get('host')}", flush=True)
 
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
