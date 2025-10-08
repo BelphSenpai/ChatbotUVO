@@ -2,6 +2,8 @@ import os
 import json
 from uuid import uuid4
 from datetime import datetime
+from urllib.parse import urlparse
+
 from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
 import bcrypt
 from redis import Redis
@@ -15,16 +17,42 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "cambia-esto-en-dev")
 
 # --- Redis / RQ ---
-REDIS_URL = os.environ["REDIS_URL"]  # Debe estar definida en Railway (Reference al servicio Redis)
-redis_conn = Redis.from_url(REDIS_URL)
-# Verificación temprana (deja estos logs si te ayudan)
+def get_redis_conn() -> Redis:
+    """
+    Crea la conexión a Redis. Prioriza REDIS_URL (Railway Reference).
+    Fallback a REDISHOST/REDISPORT/REDISUSER/REDISPASSWORD si hace falta.
+    """
+    url = (os.environ.get("REDIS_URL") or "").strip()
+    if url:
+        parsed = urlparse(url)
+        app.logger.info(f"[WEB] Using REDIS_URL host={parsed.hostname} port={parsed.port} user={parsed.username} scheme={parsed.scheme}")
+        kwargs = {}
+        # Si el proveedor entrega rediss:// (TLS) y el cert es autofirmado en Railway:
+        if parsed.scheme == "rediss":
+            kwargs["ssl_cert_reqs"] = None
+        return Redis.from_url(url, **kwargs)
+
+    # ---- Fallback con variables separadas ----
+    host = os.environ.get("REDISHOST")
+    port = int(os.environ.get("REDISPORT", 6379))
+    user = os.environ.get("REDISUSER", "default")
+    pwd  = os.environ.get("REDISPASSWORD")
+    if host and pwd:
+        app.logger.info(f"[WEB] Using discrete Redis vars host={host} port={port} user={user}")
+        return Redis(host=host, port=port, username=user, password=pwd)
+
+    raise RuntimeError("No Redis credentials found. Define REDIS_URL or REDISHOST/REDISPORT/REDISUSER/REDISPASSWORD")
+
+redis_conn = None
 try:
+    redis_conn = get_redis_conn()
+    # Verificación temprana
     redis_conn.ping()
     app.logger.info("[WEB] Redis ping OK")
 except Exception as e:
     app.logger.exception(f"[WEB] Redis ping FAILED: {e}")
 
-queue = Queue("queries", connection=redis_conn, default_timeout=300)
+queue = Queue("queries", connection=redis_conn, default_timeout=300) if redis_conn else None
 
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -242,7 +270,15 @@ def ia_query_ruta(ia):
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
+    if not queue:
+        return jsonify({"error": "Servicio de colas no disponible"}), 503
+
+    try:
+        job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
+    except Exception as e:
+        app.logger.exception(f"[WEB] enqueue FAILED: {e}")
+        return jsonify({"error": "Servicio temporalmente no disponible"}), 503
+
     return jsonify({"job_id": job.get_id()})
 
 @app.route('/query', methods=['POST'])
@@ -257,7 +293,15 @@ def ia_query():
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
+    if not queue:
+        return jsonify({"error": "Servicio de colas no disponible"}), 503
+
+    try:
+        job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
+    except Exception as e:
+        app.logger.exception(f"[WEB] enqueue FAILED: {e}")
+        return jsonify({"error": "Servicio temporalmente no disponible"}), 503
+
     return jsonify({"job_id": job.get_id()})
 
 @app.route('/jobs/<job_id>', methods=['GET'])
