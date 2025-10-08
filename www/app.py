@@ -213,7 +213,6 @@ def panel():
     return send_from_directory(path, 'index.html')
 
 from MinervaPrimeNSE.utils import get_name_ia
-from MinervaPrimeNSE.Minerva import responder_a_usuario
 
 name_ia = get_name_ia()
 
@@ -249,9 +248,7 @@ def ia_query():
     if session.get('usuario', '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    job = queue.enqueue(job_responder, mensaje_original, ia, usuario,
-                        job_id=f"q:{usuario}:{uuid4()}")
-
+    job = queue.enqueue(job_responder, mensaje_original, ia, usuario)
     return jsonify({"job_id": job.get_id()})
 
 @app.route('/jobs/<job_id>', methods=['GET'])
