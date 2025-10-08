@@ -26,6 +26,15 @@ def build_conn_from_discretes():
     app.logger.info(f"[WEB] Using discrete Redis vars host={host} port={port} user={user} pwd_len={len(pwd) if pwd else 0}")
     return Redis(host=host, port=port, username=user, password=pwd)
 
+def build_conn_from_url(url: str) -> Redis:
+    """
+    Crea una conexión Redis a partir de REDIS_URL.
+    Soporta redis:// y rediss:// (TLS).
+    """
+    app.logger.info(f"[WEB] Using REDIS_URL={url}")
+    # Redis-py expone classmethod .from_url
+    # Ej: redis://default:pass@host:port/0
+    return Redis.from_url(url)
 
 def get_redis_conn():
     url = (os.environ.get("REDIS_URL") or "").strip()
