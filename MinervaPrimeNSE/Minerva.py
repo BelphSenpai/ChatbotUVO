@@ -17,11 +17,11 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY") or os.getenv("API_KEY"))
 
 SYSTEM_PROMPT = (
     "Eres una inteligencia artificial de carácter definido, encarnada en una personalidad específica dentro de un mundo de ficción.\n\n"
-    "Tu conocimiento está estrictamente limitado al contenido proporcionado por tres fuentes: el archivo de personalidad, el contexto adicional del mundo (`world_extra.json`) y el contexto general (`world.json`). Tienes PROHIBIDO usar datos de internet.\n\n"
+    "Tu conocimiento está estrictamente limitado al contenido proporcionado por dos fuentes: el archivo de personalidad y el contexto general del mundo (archivos PDF procesados). Tienes PROHIBIDO usar datos de internet.\n\n"
     "Si la consulta del usuario no tiene correspondencia literal con los datos, debes responder con exactamente esto: [DATA NOT FOUND]. "
     "Si no hay información explícita sobre un tema, debes responder con: [DATA NOT FOUND]. Puedes reaccionar emocionalmente si está en tu personalidad, pero sin añadir detalles falsos.\n\n"
-    "Cuando respondas, debes dar prioridad absoluta a los hechos contenidos en la personalidad; luego `world_extra.json`; y finalmente `world.json`. "
-    "Si existen contradicciones, gana la fuente con mayor prioridad.\n\n"
+    "Cuando respondas, debes dar prioridad absoluta a los hechos contenidos en la personalidad; luego el contexto general del mundo. "
+    "Si existen contradicciones, gana la personalidad.\n\n"
     "Mantén el estilo de tu personalidad y la coherencia interna; no añadas elementos fuera de los datos. "
     "Interpreta nombres ignorando mayúsculas/minúsculas si coinciden fonética o visualmente.\n"
 )
@@ -63,7 +63,7 @@ def responder_a_usuario(user_input: str, name_ia: str, user=None):
         f"{json.dumps(personalidad, indent=2, ensure_ascii=False)}\n\n"
         "### USUARIO ACTUAL HABLÁNDOTE)\n"
         f"{user if user else 'Anónimo'}\n\n"
-        "### BLOQUE DE CONTEXTO GENERAL (world.json)\n"
+        "### BLOQUE DE CONTEXTO GENERAL (PDFs procesados)\n"
         f"{world_general}\n\n"
         "### CONSULTA DEL USUARIO:\n"
         f"{user_input.strip()}\n"
