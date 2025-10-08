@@ -4,6 +4,7 @@ from uuid import uuid4
 from datetime import datetime
 from urllib.parse import urlparse
 
+import time
 from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
 import bcrypt
 from redis import Redis
@@ -269,35 +270,41 @@ def ia_static(ia, archivo):
     return send_from_directory(os.path.join(BASE_DIR, ia), archivo)
 
 # ========== CONSULTAS (cola RQ) ==========
-# --- añade esto cerca de donde defines 'queue' ---
-from rq.job import Job
-
-def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25):
+# helper REEMPLAZA el anterior _enqueue_and_wait
+def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 25, poll_interval: float = 0.25):
     """
-    Encola el job y espera hasta wait_timeout segundos.
-    Si termina a tiempo -> devuelve (status_code, payload_final)
-    Si falla -> 500
-    Si no da tiempo -> 202 con {job_id, status:'queued'}
+    Encola el job y espera activamente (polling) hasta wait_timeout segundos.
+    Si termina -> 200 con {"respuesta": "..."}
+    Si falla  -> 500
+    Si no llega a tiempo -> 202 con {job_id, status}
     """
-    job = queue.enqueue(job_responder, mensaje, ia, usuario)
+    # Asegura TTLs razonables
+    job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=300, result_ttl=600)
 
-    try:
-        # Bloquea hasta 25s máx. (ajusta si quieres)
-        job.wait(timeout=wait_timeout)
-    except Exception:
-        # Timeouts de RQ levantan excepción; continuamos para ver estado
-        pass
+    deadline = time.time() + wait_timeout
+    last_status = None
 
-    # Refresca estado y decide respuesta
-    status = job.get_status(refresh=True)
-    if status == "finished" and job.result is not None:
-        # job.result ya es {"respuesta": "..."} desde job_responder
-        return 200, job.result
-    if status == "failed":
-        return 500, {"error": "Servicio temporalmente no disponible"}
+    while time.time() < deadline:
+        # refresca estado y resultado
+        status = job.get_status(refresh=True)
+        last_status = status
 
-    # Sigue en cola/started: devolvemos info por si el front alguna vez lo usa
-    return 202, {"job_id": job.get_id(), "status": status}
+        if status == "finished" and job.result is not None:
+            # Devolvemos exactamente lo que espera el front: {"respuesta": "..."}
+            payload = job.result
+            # (Opcional) incluir job_id por depuración
+            if isinstance(payload, dict):
+                payload.setdefault("job_id", job.get_id())
+            return 200, payload
+
+        if status == "failed":
+            return 500, {"error": "Servicio temporalmente no disponible", "job_id": job.get_id()}
+
+        time.sleep(poll_interval)
+
+    # No terminó a tiempo: mantenemos compatibilidad devolviendo 202
+    return 202, {"job_id": job.get_id(), "status": (last_status or "queued")}
+
 
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
@@ -313,7 +320,7 @@ def ia_query_ruta(ia):
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25)
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
 
 
@@ -331,7 +338,7 @@ def ia_query():
     if not queue:
         return jsonify({"error": "Servicio de colas no disponible"}), 503
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25)
+    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=25, poll_interval=0.25)
     return jsonify(payload), status_code
 
 
