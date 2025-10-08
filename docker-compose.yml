@@ -31,7 +31,7 @@ services:
       - TIMEOUT=120
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/app/www/preguntas.json
+      - ./www/preguntas.json:/state/preguntas.json
       - ./www/admin/logs:/app/www/admin/logs
       - ./www/ficha/personajes:/app/www/ficha/personajes
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
@@ -51,7 +51,7 @@ services:
       - REDIS_URL=redis://redis:6379/0
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/app/www/preguntas.json
+      - ./www/preguntas.json:/state/preguntas.json
       - ./www/admin/logs:/app/www/admin/logs
       - ./www/ficha/personajes:/app/www/ficha/personajes
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
