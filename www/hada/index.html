@@ -242,8 +242,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       
       await escriureLentament(texto, botDiv, 5);
       
-      // Guardar conversación después de la respuesta
-      guardarConversacion();
+      // Guardar conversación DESPUÉS de que termine la animación de escritura
+      setTimeout(() => {
+        guardarConversacion();
+      }, (texto.length * 5) + 100); // Esperar a que termine la animación + buffer
 
     } catch (error) {
       escribintDiv.innerText = "ERROR: NO SE PUEDE CONECTAR CON HADA";

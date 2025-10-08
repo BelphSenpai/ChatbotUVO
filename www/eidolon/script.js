@@ -253,8 +253,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await res.json();
         appendToTerminal(data.respuesta || '⚠️ Sin respuesta de la IA.');
         
-        // Guardar conversación después de la respuesta
-        guardarConversacion();
+        // Guardar conversación DESPUÉS de que termine la animación de escritura
+        setTimeout(() => {
+          guardarConversacion();
+        }, 2000); // Esperar a que termine la animación
       } catch (err) {
         appendToTerminal('⚠️ Error al conectar con la IA.');
         console.error(err);

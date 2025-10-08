@@ -311,11 +311,12 @@ h1 {
   max-width: none;
   align-items: center;
   margin-top: 6px;
+  gap: 8px;
 }
 
 .runic-input {
   font-family: 'Cinzel', serif;
-  width: 100%;
+  flex: 1;
   background: transparent;
   border: none;
   border-bottom: 2px solid rgba(0,255,200,0.22);

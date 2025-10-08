@@ -265,8 +265,10 @@
 
               output.scrollTop = output.scrollHeight;
               
-              // Guardar conversación después de la respuesta
-              guardarConversacion();
+              // Guardar conversación DESPUÉS de que termine la animación de escritura
+              setTimeout(() => {
+                guardarConversacion();
+              }, (text.length * 5) + 100); // Esperar a que termine la animación + buffer
             } catch (error) {
               escribint.innerText = "⟪ ERROR: No se puede contactar con FANTASMA ⟫";
               console.error("Error enviando a Fantasma:", error);

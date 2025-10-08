@@ -194,8 +194,10 @@ function iniciarAnimacionRunes() {
       botDiv.textContent = `>> ${data.respuesta}`;
       codeBlock.appendChild(botDiv);
       
-      // Guardar conversación después de la respuesta
-      guardarConversacion();
+      // Guardar conversación DESPUÉS de añadir el mensaje
+      setTimeout(() => {
+        guardarConversacion();
+      }, 100); // Pequeño delay para asegurar que el DOM se actualice
 
     } catch (err) {
       appendLinea("⚠️ ERROR: No se pudo conectar con la IA.", "error");
