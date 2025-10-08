@@ -17,22 +17,18 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "cambia-esto-en-dev")
 
 # --- Redis / RQ ---
-def get_redis_conn() -> Redis:
-    """
-    Crea la conexión a Redis. Prioriza REDIS_URL (Railway Reference).
-    Fallback a REDISHOST/REDISPORT/REDISUSER/REDISPASSWORD si hace falta.
-    """
-    url = (os.environ.get("REDIS_URL") or "").strip()
-    if url:
-        parsed = urlparse(url)
-        app.logger.info(f"[WEB] Using REDIS_URL host={parsed.hostname} port={parsed.port} user={parsed.username} scheme={parsed.scheme}")
-        kwargs = {}
-        # Si el proveedor entrega rediss:// (TLS) y el cert es autofirmado en Railway:
-        if parsed.scheme == "rediss":
-            kwargs["ssl_cert_reqs"] = None
-        return Redis.from_url(url, **kwargs)
+def build_conn_from_url(url):
+    from urllib.parse import urlparse
+    from redis import Redis
+    parsed = urlparse(url)
+    app.logger.info(f"[WEB] Using REDIS_URL host={parsed.hostname} port={parsed.port} user={parsed.username} scheme={parsed.scheme}")
+    kwargs = {}
+    if parsed.scheme == "rediss":
+        kwargs["ssl_cert_reqs"] = None
+    return Redis.from_url(url, **kwargs)
 
-    # ---- Fallback con variables separadas ----
+def build_conn_from_discretes():
+    from redis import Redis
     host = os.environ.get("REDISHOST")
     port = int(os.environ.get("REDISPORT", 6379))
     user = os.environ.get("REDISUSER", "default")
@@ -40,17 +36,34 @@ def get_redis_conn() -> Redis:
     if host and pwd:
         app.logger.info(f"[WEB] Using discrete Redis vars host={host} port={port} user={user}")
         return Redis(host=host, port=port, username=user, password=pwd)
+    return None
 
-    raise RuntimeError("No Redis credentials found. Define REDIS_URL or REDISHOST/REDISPORT/REDISUSER/REDISPASSWORD")
+def get_redis_conn():
+    url = (os.environ.get("REDIS_URL") or "").strip()
+    # Evita placeholders tipo <PASS>
+    if url and "<" not in url and ">" not in url:
+        try:
+            conn = build_conn_from_url(url)
+            conn.ping()
+            app.logger.info("[WEB] Redis ping OK via REDIS_URL")
+            return conn
+        except Exception as e:
+            app.logger.exception(f"[WEB] Redis via REDIS_URL FAILED: {e}")
 
-redis_conn = None
+    # Fallback a discretas
+    conn = build_conn_from_discretes()
+    if conn:
+        conn.ping()
+        app.logger.info("[WEB] Redis ping OK via discrete vars")
+        return conn
+
+    raise RuntimeError("No valid Redis credentials found.")
+
 try:
     redis_conn = get_redis_conn()
-    # Verificación temprana
-    redis_conn.ping()
-    app.logger.info("[WEB] Redis ping OK")
 except Exception as e:
-    app.logger.exception(f"[WEB] Redis ping FAILED: {e}")
+    app.logger.exception(f"[WEB] Redis init FAILED: {e}")
+    redis_conn = None
 
 queue = Queue("queries", connection=redis_conn, default_timeout=300) if redis_conn else None
 
