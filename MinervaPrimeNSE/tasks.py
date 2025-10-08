@@ -33,8 +33,13 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
     with redis.lock(f"lock:user:{usuario}", timeout=lock_ttl, blocking_timeout=lock_ttl):
         preguntas = _cargar_preguntas()
         
-        # Solo consumir token si es necesario
-        if tipo_consulta["consume_token"]:
+        # Verificar si el usuario es ilimitado ANTES de verificar tokens
+        from www.app import is_unlimited_user
+        es_ilimitado = is_unlimited_user(usuario)
+        print(f"👤 Usuario {usuario} - Ilimitado: {es_ilimitado}")
+        
+        # Solo consumir token si es necesario Y el usuario no es ilimitado
+        if tipo_consulta["consume_token"] and not es_ilimitado:
             restantes = preguntas.get(usuario, {}).get(ia, 0)
             if restantes != -1 and restantes <= 0:
                 return {
@@ -48,6 +53,8 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
                 preguntas[usuario][ia] -= 1
                 _guardar_preguntas(preguntas)
                 print(f"💰 Token consumido. Restantes: {preguntas[usuario][ia]}")
+        elif es_ilimitado:
+            print(f"♾️ Usuario ilimitado - no se consume token")
 
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
@@ -55,8 +62,8 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             # Análisis post-respuesta para verificar si realmente se necesitó documentación
             consumo_real = analizar_respuesta_para_consumo(texto, mensaje)
             
-            # Si se detectó que no debería haber consumido token, compensar
-            if tipo_consulta["consume_token"] and not consumo_real:
+            # Si se detectó que no debería haber consumido token, compensar (solo si no es ilimitado)
+            if tipo_consulta["consume_token"] and not consumo_real and not es_ilimitado:
                 print(f"🔄 Compensando token - respuesta no requirió documentación")
                 preguntas = _cargar_preguntas()
                 if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
@@ -66,7 +73,7 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             
             return {
                 "respuesta": texto,
-                "consumio_token": tipo_consulta["consume_token"] and consumo_real,
+                "consumio_token": tipo_consulta["consume_token"] and consumo_real and not es_ilimitado,
                 "tipo_consulta": tipo_consulta["tipo"],
                 "razon": tipo_consulta["razon"]
             }
@@ -78,8 +85,8 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             print(f"❌ Error en job_responder: {e}")
             print(f"❌ Traceback: {error_details}")
             
-            # Si hubo error y se consumió token, compensar
-            if tipo_consulta["consume_token"]:
+            # Si hubo error y se consumió token, compensar (solo si no es ilimitado)
+            if tipo_consulta["consume_token"] and not es_ilimitado:
                 preguntas = _cargar_preguntas()
                 if preguntas.get(usuario, {}).get(ia) is not None and preguntas[usuario][ia] != -1:
                     preguntas[usuario][ia] += 1
