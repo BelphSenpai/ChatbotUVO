@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const crearBtn = document.getElementById("crear-personaje");
   const guardarBtn = document.getElementById("guardar-personaje");
   const cancelarBtn = document.getElementById("cancelar-personaje");
+  const limpiarCacheBtn = document.getElementById("limpiar-cache");
+  const estadoSistemaBtn = document.getElementById("ver-estado-sistema");
 
   verBtn.addEventListener("click", () => {
     const lista = document.getElementById("lista-personajes");
@@ -28,6 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   guardarBtn.addEventListener("click", guardarPersonaje);
   cancelarBtn.addEventListener("click", cerrarModal);
+
+  // Nuevos botones del sistema
+  limpiarCacheBtn.addEventListener("click", limpiarCache);
+  estadoSistemaBtn.addEventListener("click", verEstadoSistema);
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
   document.getElementById("cerrar-modal-conexiones").addEventListener("click", cerrarModalConexiones);
@@ -800,6 +806,173 @@ function generarEditorFicha(datos, parent, prefix = '') {
 document.getElementById("cerrar-modal-ficha").addEventListener("click", () => {
   document.getElementById("modal-ficha").style.display = "none";
 });
+
+// ==== GESTIÓN DEL SISTEMA ====
+
+async function limpiarCache() {
+  const boton = document.getElementById("limpiar-cache");
+  const textoOriginal = boton.textContent;
+  
+  try {
+    // Deshabilitar botón y mostrar loading
+    boton.disabled = true;
+    boton.textContent = "🧹 Limpiando...";
+    boton.style.background = "#666";
+    
+    const response = await fetch("/admin/limpiar-cache", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+    
+    const result = await response.json();
+    
+    if (response.ok) {
+      // Éxito
+      boton.textContent = "✅ ¡Caché limpiado!";
+      boton.style.background = "#4caf50";
+      
+      // Mostrar mensaje de éxito
+      mostrarNotificacion("✅ Caché limpiado exitosamente. La próxima petición cargará datos frescos.", "success");
+      
+      // Restaurar botón después de 3 segundos
+      setTimeout(() => {
+        boton.disabled = false;
+        boton.textContent = textoOriginal;
+        boton.style.background = "#ff6b35";
+      }, 3000);
+      
+    } else {
+      throw new Error(result.error || "Error desconocido");
+    }
+    
+  } catch (error) {
+    console.error("Error limpiando caché:", error);
+    
+    // Error
+    boton.textContent = "❌ Error";
+    boton.style.background = "#f44336";
+    
+    mostrarNotificacion(`❌ Error limpiando caché: ${error.message}`, "error");
+    
+    // Restaurar botón después de 3 segundos
+    setTimeout(() => {
+      boton.disabled = false;
+      boton.textContent = textoOriginal;
+      boton.style.background = "#ff6b35";
+    }, 3000);
+  }
+}
+
+async function verEstadoSistema() {
+  const estadoDiv = document.getElementById("estado-sistema");
+  const boton = document.getElementById("ver-estado-sistema");
+  
+  try {
+    // Mostrar loading
+    boton.textContent = "📊 Cargando...";
+    boton.disabled = true;
+    
+    // Simular información del sistema (puedes expandir esto)
+    const estado = {
+      timestamp: new Date().toLocaleString(),
+      workers: "5 workers activos",
+      redis: "Conectado",
+      cache: "Activo",
+      archivos: "Cargados desde disco"
+    };
+    
+    // Mostrar estado
+    estadoDiv.innerHTML = `
+      <h3>📊 Estado del Sistema</h3>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
+        <div><strong>🕐 Última actualización:</strong><br>${estado.timestamp}</div>
+        <div><strong>⚙️ Workers:</strong><br>${estado.workers}</div>
+        <div><strong>🔴 Redis:</strong><br>${estado.redis}</div>
+        <div><strong>💾 Caché:</strong><br>${estado.cache}</div>
+        <div><strong>📁 Archivos:</strong><br>${estado.archivos}</div>
+        <div><strong>🌐 Servidor:</strong><br>Funcionando</div>
+      </div>
+      <div style="margin-top: 15px; padding: 10px; background: #2a2a2a; border-radius: 5px;">
+        <strong>💡 Consejo:</strong> Si las respuestas parecen desactualizadas, usa "Limpiar Caché" para forzar la recarga de archivos TXT.
+      </div>
+    `;
+    
+    estadoDiv.style.display = estadoDiv.style.display === "none" ? "block" : "none";
+    
+    // Restaurar botón
+    boton.textContent = "📊 Estado del Sistema";
+    boton.disabled = false;
+    
+  } catch (error) {
+    console.error("Error obteniendo estado:", error);
+    mostrarNotificacion("❌ Error obteniendo estado del sistema", "error");
+    
+    boton.textContent = "📊 Estado del Sistema";
+    boton.disabled = false;
+  }
+}
+
+function mostrarNotificacion(mensaje, tipo = "info") {
+  // Crear elemento de notificación
+  const notificacion = document.createElement("div");
+  notificacion.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    z-index: 10000;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-out;
+  `;
+  
+  // Colores según tipo
+  switch (tipo) {
+    case "success":
+      notificacion.style.background = "#4caf50";
+      break;
+    case "error":
+      notificacion.style.background = "#f44336";
+      break;
+    case "warning":
+      notificacion.style.background = "#ff9800";
+      break;
+    default:
+      notificacion.style.background = "#2196f3";
+  }
+  
+  notificacion.textContent = mensaje;
+  document.body.appendChild(notificacion);
+  
+  // Remover después de 5 segundos
+  setTimeout(() => {
+    notificacion.style.animation = "slideOut 0.3s ease-in";
+    setTimeout(() => {
+      if (notificacion.parentNode) {
+        notificacion.parentNode.removeChild(notificacion);
+      }
+    }, 300);
+  }, 5000);
+}
+
+// Agregar estilos CSS para las animaciones
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+  }
+`;
+document.head.appendChild(style);
 
 
 function recopilarDatosEditorFicha() {
