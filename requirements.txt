@@ -11,3 +11,6 @@ asgiref
 jinja2
 flask
 gunicorn
+redis
+rq
+gunicorn

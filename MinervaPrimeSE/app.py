@@ -2,7 +2,6 @@ import sys
 import os
 from flask import Flask, request, jsonify, render_template
 from utils import get_name_ia;
-
 name_ia = get_name_ia()
 
 # Ruta absoluta al proyecto

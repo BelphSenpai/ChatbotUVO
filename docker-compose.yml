@@ -1,15 +1,34 @@
-version: '3.8'
+version: "3.8"
 
 services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
   web:
-  
     build: .
     container_name: chatbotuvo
+    depends_on:
+      redis:
+        condition: service_healthy
     ports:
       - "5000:5000"
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+      # Si tu app está en www/app.py con "app" como objeto Flask:
+      - APP_MODULE=www.app:app
+      # Opcional: controla concurrencia del web (no afecta al worker RQ):
+      - WEB_CONCURRENCY=2
+      - THREADS=8
+      - TIMEOUT=120
     volumes:
       - ./www/personajes.json:/app/www/personajes.json
       - ./www/preguntas.json:/app/www/preguntas.json
@@ -18,3 +37,24 @@ services:
       - ./www/conexiones/personajes:/app/www/conexiones/personajes
       - ./www/notas/usuarios:/app/www/notas/usuarios
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+    # Si tu Dockerfile ya hace CMD ["/app/entrypoint.sh"], no hace falta command aquí.
+
+  worker:
+    build: .
+    container_name: chatbotuvo-worker
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./www/personajes.json:/app/www/personajes.json
+      - ./www/preguntas.json:/app/www/preguntas.json
+      - ./www/admin/logs:/app/www/admin/logs
+      - ./www/ficha/personajes:/app/www/ficha/personajes
+      - ./www/conexiones/personajes:/app/www/conexiones/personajes
+      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
+    command: ["python", "worker.py"]

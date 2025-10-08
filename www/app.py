@@ -4,9 +4,18 @@ import json
 from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
 from datetime import datetime
 import bcrypt
+import os
+from uuid import uuid4
+from redis import Redis
+from rq import Queue
+from rq.job import Job
+from MinervaPrimeNSE.tasks import job_responder
 
 app = Flask(__name__)
 app.secret_key = 'clave-super-secreta'
+REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379/0")
+redis_conn = Redis.from_url(REDIS_URL)
+queue = Queue("queries", connection=redis_conn, default_timeout=300)
 
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -217,8 +226,7 @@ def ia_static(ia, archivo):
 
 @app.route('/<ia>/query', methods=['POST'])
 def ia_query_ruta(ia):
-    cargar_preguntas()
-    data = request.json
+    data = request.json or {}
     mensaje_original = data.get("mensaje", "")
     usuario = data.get("id", "").strip().lower()
     ia = ia.strip().lower()
@@ -226,24 +234,15 @@ def ia_query_ruta(ia):
     if session.get('usuario', '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    restantes = preguntas_restantes.get(usuario, {}).get(ia, 0)
-    print(f"PREGUNTAS DISPONIBLES - usuario: {usuario}, ia: {ia}, restantes: {restantes}", flush=True)
+    job = queue.enqueue(job_responder, mensaje_original, ia, usuario,
+                        job_id=f"q:{usuario}:{uuid4()}")
 
-    if restantes != -1 and restantes <= 0:
-        return jsonify({"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."})
+    return jsonify({"job_id": job.get_id()})
 
-    respuesta = responder_a_usuario(mensaje_original, ia, usuario)
-
-    if restantes != -1:
-        preguntas_restantes[usuario][ia] -= 1
-        guardar_preguntas()
-
-    return jsonify({"respuesta": respuesta})
 
 @app.route('/query', methods=['POST'])
 def ia_query():
-    cargar_preguntas()
-    data = request.json
+    data = request.json or {}
     mensaje_original = data.get("mensaje", "")
     ia = data.get("ia", name_ia).strip().lower()
     usuario = data.get("id", "").strip().lower()
@@ -251,19 +250,25 @@ def ia_query():
     if session.get('usuario', '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
 
-    restantes = preguntas_restantes.get(usuario, {}).get(ia, 0)
-    print(f"PREGUNTAS DISPONIBLES - usuario: {usuario}, ia: {ia}, restantes: {restantes}", flush=True)
+    job = queue.enqueue(job_responder, mensaje_original, ia, usuario,
+                        job_id=f"q:{usuario}:{uuid4()}")
 
-    if restantes != -1 and restantes <= 0:
-        return jsonify({"respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA."})
+    return jsonify({"job_id": job.get_id()})
 
-    respuesta = responder_a_usuario(mensaje_original, ia, usuario)
+@app.route('/jobs/<job_id>', methods=['GET'])
+def job_status(job_id):
+    try:
+        job = Job.fetch(job_id, connection=redis_conn)
+    except Exception:
+        return jsonify({"error": "job no encontrado"}), 404
 
-    if restantes != -1:
-        preguntas_restantes[usuario][ia] -= 1
-        guardar_preguntas()
+    if job.is_failed:
+        return jsonify({"status": "failed", "error": str(job.exc_info)}), 500
+    if job.result is not None:
+        # job_responder devuelve {"respuesta": "..."}
+        return jsonify({"status": "finished", "result": job.result})
+    return jsonify({"status": job.get_status()})
 
-    return jsonify({"respuesta": respuesta})
 
 # ========== ADMINISTRACIÓN ==========
 
@@ -639,4 +644,4 @@ def admin_actualizar_ficha_parcial(nombre):
 # ========== RUN ==========
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=port)

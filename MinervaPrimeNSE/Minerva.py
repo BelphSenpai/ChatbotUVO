@@ -61,6 +61,8 @@ def responder_a_usuario(user_input: str, name_ia: str, user=None):
     full_prompt = (
         "### BLOQUE DE PERSONALIDAD (prioridad MÁXIMA)\n"
         f"{json.dumps(personalidad, indent=2, ensure_ascii=False)}\n\n"
+        "### USUARIO ACTUAL HABLÁNDOTE)\n"
+        f"{user if user else 'Anónimo'}\n\n"
         "### BLOQUE DE CONTEXTO GENERAL (world.json)\n"
         f"{world_general}\n\n"
         "### CONSULTA DEL USUARIO:\n"
