@@ -874,28 +874,42 @@ async function verEstadoSistema() {
     boton.textContent = "📊 Cargando...";
     boton.disabled = true;
     
-    // Simular información del sistema (puedes expandir esto)
-    const estado = {
-      timestamp: new Date().toLocaleString(),
-      workers: "5 workers activos",
-      redis: "Conectado",
-      cache: "Activo",
-      archivos: "Cargados desde disco"
-    };
-    
-    // Mostrar estado
+    // Estado real de workers desde el backend
+    let estadoWorkers = { workers: [], count: 0 };
+    try {
+      const res = await fetch('/admin/estado-workers');
+      if (res.ok) estadoWorkers = await res.json();
+    } catch {}
+
+    const timestamp = new Date().toLocaleString();
+    const workersHtml = (estadoWorkers.workers || []).map(w => `
+      <tr>
+        <td>${w.name}</td>
+        <td>${w.state}</td>
+        <td>${(w.queues || []).join(', ')}</td>
+        <td>${w.current_job_id || '-'}</td>
+      </tr>
+    `).join('');
+
     estadoDiv.innerHTML = `
       <h3>📊 Estado del Sistema</h3>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;">
-        <div><strong>🕐 Última actualización:</strong><br>${estado.timestamp}</div>
-        <div><strong>⚙️ Workers:</strong><br>${estado.workers}</div>
-        <div><strong>🔴 Redis:</strong><br>${estado.redis}</div>
-        <div><strong>💾 Caché:</strong><br>${estado.cache}</div>
-        <div><strong>📁 Archivos:</strong><br>${estado.archivos}</div>
-        <div><strong>🌐 Servidor:</strong><br>Funcionando</div>
-      </div>
+      <div style="margin-bottom: 10px;">🕐 ${timestamp}</div>
+      <div><strong>Workers activos:</strong> ${estadoWorkers.count}</div>
+      <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Nombre</th>
+            <th style="text-align:left;">Estado</th>
+            <th style="text-align:left;">Colas</th>
+            <th style="text-align:left;">Job actual</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${workersHtml || '<tr><td colspan="4">(sin datos)</td></tr>'}
+        </tbody>
+      </table>
       <div style="margin-top: 15px; padding: 10px; background: #2a2a2a; border-radius: 5px;">
-        <strong>💡 Consejo:</strong> Si las respuestas parecen desactualizadas, usa "Limpiar Caché" para forzar la recarga de archivos TXT.
+        <strong>💡 Consejo:</strong> Si las respuestas parecen desactualizadas, usa "Limpiar Caché".
       </div>
     `;
     

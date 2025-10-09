@@ -682,6 +682,27 @@ def limpiar_cache():
         app.logger.error(f"Error limpiando caché: {e}")
         return jsonify({"error": f"Error limpiando caché: {e}"}), 500
 
+@app.route('/admin/estado-workers')
+def estado_workers():
+    if session.get('rol') != 'admin':
+        return abort(403)
+    try:
+        conn = get_redis_conn()
+        from rq import Worker
+        workers = Worker.all(connection=conn)
+        data = []
+        for w in workers:
+            data.append({
+                "name": w.name,
+                "state": w.get_state(),
+                "queues": [q.name for q in w.queues],
+                "current_job_id": w.get_current_job_id()
+            })
+        return jsonify({"workers": data, "count": len(data)})
+    except Exception as e:
+        app.logger.error(f"Error consultando estado de workers: {e}")
+        return jsonify({"error": str(e)}), 500
+
 # ========== NOTAS ==========
 @app.route('/notas')
 def ver_notas():
