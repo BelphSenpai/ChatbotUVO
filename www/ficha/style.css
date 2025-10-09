@@ -26,6 +26,16 @@ body {
   overflow: visible;
   animation: glowFlicker 10s infinite ease-in-out;;
 }
+.color-selector {
+  position: sticky;
+  top: 6px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 6px 0 10px;
+}
+
 
 .titulo-principal {
   font-size: 22px; /* Larger for desktop */
