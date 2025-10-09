@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       ["hada", "eidolon", "fantasma", "anima"].forEach(ia => {
         const cantidad = usos[ia];
-        if (cantidad === -1 || cantidad > 0) {
+        if (cantidad === -1 || cantidad >= 0) {
           const link = document.createElement("a");
           link.href = `/${ia}`;
           link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
