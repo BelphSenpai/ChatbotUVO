@@ -7,6 +7,7 @@ let personajeActual = "";
 document.addEventListener("DOMContentLoaded", () => {
   const verBtn = document.getElementById("ver-personajes");
   const crearBtn = document.getElementById("crear-personaje");
+  const actualizarContadoresBtn = document.getElementById("actualizar-contadores");
   const guardarBtn = document.getElementById("guardar-personaje");
   const cancelarBtn = document.getElementById("cancelar-personaje");
   const limpiarCacheBtn = document.getElementById("limpiar-cache");
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Nuevos botones del sistema
   limpiarCacheBtn.addEventListener("click", limpiarCache);
   estadoSistemaBtn.addEventListener("click", verEstadoSistema);
+  actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
   document.getElementById("cerrar-modal-conexiones").addEventListener("click", cerrarModalConexiones);

@@ -80,7 +80,7 @@ PREGUNTAS_PATH = os.path.join(APP_STATE_DIR, 'preguntas.json')
 with open(PERSONAJES_PATH, 'r', encoding='utf-8') as f:
     PERSONAJES = json.load(f)
 
-# ========== HELPERS DE PREGUNTAS (con lock, sin cache global) ==========
+# ========== HELPERS DE PREGUNTAS (Redis como fuente de verdad, fichero como snapshot) ==========
 def _cargar_preguntas() -> dict:
     if os.path.exists(PREGUNTAS_PATH):
         with open(PREGUNTAS_PATH, 'r', encoding='utf-8') as f:
@@ -106,6 +106,40 @@ def _with_preguntas_locked(mutator=None, timeout=10):
             if changed:
                 _guardar_preguntas(data)
         return data
+
+# --- Redis helpers ---
+def _tokens_redis_key(user: str) -> str:
+    return f"tokens:{(user or '').strip().lower()}"
+
+def _redis_get_tokens(user: str) -> dict:
+    try:
+        conn = get_redis_conn()
+        raw = conn.hgetall(_tokens_redis_key(user)) or {}
+        # hgetall devuelve bytes → int
+        parsed = { (k.decode('utf-8') if isinstance(k, (bytes, bytearray)) else str(k)).lower(): int(v) for k, v in raw.items() }
+        return parsed
+    except Exception:
+        return {}
+
+def _redis_set_tokens(user: str, mapping: dict):
+    try:
+        if not mapping:
+            return
+        conn = get_redis_conn()
+        # Convierte a str→int
+        clean = { str(k).lower(): int(v) for k, v in mapping.items() }
+        if clean:
+            conn.hset(_tokens_redis_key(user), mapping=clean)
+    except Exception:
+        pass
+
+def _sync_file_to_redis_if_missing(user: str):
+    """Si Redis no tiene datos para el usuario, intenta poblar desde el snapshot de fichero."""
+    if _redis_get_tokens(user):
+        return
+    snapshot = _with_preguntas_locked(lambda d: (False, d)) or {}
+    if user in snapshot:
+        _redis_set_tokens(user, snapshot[user])
 
 def is_unlimited_user(username: str) -> bool:
     u = (username or "").strip().lower()
@@ -518,7 +552,10 @@ def admin_personajes():
 
     if request.method == 'GET':
         cargar_personajes()
-        data = _with_preguntas_locked(lambda d: (False, d))
+        # Lee desde Redis por usuario
+        data = {}
+        for nombre in PERSONAJES.keys():
+            data[nombre] = _redis_get_tokens(nombre)
         lista = []
         for nombre in PERSONAJES.keys():
             user_preguntas = data.get(nombre, {
@@ -610,9 +647,12 @@ def resetear_preguntas():
 
     if is_unlimited_user(nombre_lower):
         ensure_unlimited_seed(nombre_lower)
+        _redis_set_tokens(nombre_lower, {"anima": -1, "eidolon": -1, "hada": -1, "fantasma": -1, "minerva": -1})
     else:
         def reset_user(data):
-            data[nombre_lower] = {"anima": DEFAULT_QUOTA, "eidolon": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+            newmap = {"anima": DEFAULT_QUOTA, "eidolon": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+            data[nombre_lower] = newmap
+            _redis_set_tokens(nombre_lower, newmap)
             return True, data
         _with_preguntas_locked(reset_user)
 
@@ -643,11 +683,26 @@ def guardar_preguntas_admin():
                 data[nombre_lower] = {}
                 changed = True
             for ia, valor in preguntas.items():
+                # Forzar lo del panel por encima de cualquier estado previo
                 data[nombre_lower][ia] = int(valor)
                 changed = True
         return changed, data
 
-    _with_preguntas_locked(apply_changes)
+    # Escribe en Redis y guarda snapshot
+    def apply_and_snapshot(dfile):
+        changed = False
+        for nombre, preguntas in cambios.items():
+            nombre_lower = nombre.strip().lower()
+            # fuerza valores en Redis
+            _redis_set_tokens(nombre_lower, preguntas)
+            # refleja en snapshot
+            cur = dfile.get(nombre_lower, {})
+            cur.update({k: int(v) for k, v in preguntas.items()})
+            dfile[nombre_lower] = cur
+            changed = True
+        return changed, dfile
+
+    _with_preguntas_locked(apply_and_snapshot)
     return jsonify({"mensaje": "Preguntas actualizadas correctamente."})
 
 # ========== HISTORIAL ==========
@@ -748,8 +803,9 @@ def usos_actuales():
     if is_unlimited_user(usuario):
         ensure_unlimited_seed(usuario)
 
-    data = _with_preguntas_locked(lambda d: (False, d))
-    usos = data.get(usuario, {})
+    # Fuente: Redis; si falta snapshot, lo sincroniza
+    _sync_file_to_redis_if_missing(usuario)
+    usos = _redis_get_tokens(usuario)
 
     # LOG útil para depurar qué se está sirviendo y desde dónde
     app.logger.info(f"[USOS] path={PREGUNTAS_PATH} user={usuario} payload={usos}")

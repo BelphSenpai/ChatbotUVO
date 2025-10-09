@@ -61,7 +61,7 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
                     "razon": "Error en procesamiento"
                 }
 
-        # Para usuarios limitados, procesar primero y luego verificar consumo
+        # Para usuarios limitados, procesar primero y luego verificar consumo (fuente: Redis)
         try:
             texto = responder_a_usuario(mensaje, ia, usuario)
             
@@ -70,19 +70,21 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
             
             # Solo verificar tokens si realmente se necesita consumir
             if tipo_consulta["consume_token"] and consumo_real:
-                restantes = preguntas.get(usuario, {}).get(ia, 0)
-                if restantes != -1 and restantes <= 0:
+                user_key = (usuario or "").strip().lower()
+                ia_key = (ia or "").strip().lower()
+                cur = redis.hget(f"tokens:{user_key}", ia_key)
+                cur = int(cur) if cur is not None else 0
+                if cur != -1 and cur <= 0:
                     return {
                         "respuesta": "⛔ Se acabaron tus preguntas disponibles para esta IA.",
                         "consumio_token": False,
                         "tipo_consulta": tipo_consulta["tipo"],
                         "razon": "Sin tokens disponibles"
                     }
-                if restantes != -1:
-                    preguntas.setdefault(usuario, {}).setdefault(ia, restantes)
-                    preguntas[usuario][ia] -= 1
-                    _guardar_preguntas(preguntas)
-                    print(f"💰 Token consumido. Restantes: {preguntas[usuario][ia]}")
+                if cur != -1:
+                    nuevo = max(0, cur - 1)
+                    redis.hset(f"tokens:{user_key}", ia_key, nuevo)
+                    print(f"💰 Token consumido. Restantes: {nuevo}")
             
             return {
                 "respuesta": texto,
