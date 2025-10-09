@@ -1,5 +1,7 @@
 # ChatbotUVO
 
+Nota de mantenimiento: commit de prueba para verificar persistencia de fichas/notas tras despliegue.
+
 **ChatbotUVO** es un asistente conversacional basado en RAG (Retrieval-Augmented Generation), que utiliza embeddings y un índice FAISS para recuperar información relevante de una base de datos textual antes de generar respuestas con un modelo de lenguaje.
 
 > 🚀 **Colaboración activa**: Proyecto en desarrollo colaborativo
