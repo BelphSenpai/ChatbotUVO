@@ -31,12 +31,15 @@ services:
       - THREADS=16
       - TIMEOUT=120
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      # Datos persistentes externos al repo
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
+      # Datos estáticos del repo
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
@@ -54,12 +57,13 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
@@ -77,12 +81,13 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
@@ -100,12 +105,13 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
@@ -123,12 +129,13 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
@@ -146,12 +153,13 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - OPENAI_API_KEY=${OPENAI_API_KEY}
     volumes:
-      - ./www/personajes.json:/app/www/personajes.json
-      - ./www/preguntas.json:/state/preguntas.json
-      - ./www/admin/logs:/app/www/admin/logs
-      - ./www/ficha/personajes:/app/www/ficha/personajes
-      - ./www/conexiones/personajes:/app/www/conexiones/personajes
-      - ./www/notas/usuarios:/app/www/notas/usuarios
+      - ./data/state:/state
+      - ./data/personajes.json:/app/www/personajes.json
+      - ./data/logs:/app/www/admin/logs
+      - ./data/ficha/personajes:/app/www/ficha/personajes
+      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/notas/usuarios:/app/www/notas/usuarios
+      - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
       - ./pdfs:/app/pdfs
       - ./personalidades:/app/personalidades
