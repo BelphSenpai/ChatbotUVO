@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cancelarBtn = document.getElementById("cancelar-personaje");
   const limpiarCacheBtn = document.getElementById("limpiar-cache");
   const estadoSistemaBtn = document.getElementById("ver-estado-sistema");
+  const descargarLogsBtn = document.getElementById("download-logs");
 
   verBtn.addEventListener("click", () => {
     const lista = document.getElementById("lista-personajes");
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Nuevos botones del sistema
   limpiarCacheBtn.addEventListener("click", limpiarCache);
   estadoSistemaBtn.addEventListener("click", verEstadoSistema);
+  if (descargarLogsBtn) descargarLogsBtn.addEventListener("click", downloadAllLogs);
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
@@ -864,6 +866,39 @@ async function limpiarCache() {
       boton.textContent = textoOriginal;
       boton.style.background = "#ff6b35";
     }, 3000);
+  }
+}
+
+async function downloadAllLogs() {
+  const btn = document.getElementById("download-logs");
+  const originalText = btn ? btn.textContent : "📦 Descargar Logs";
+  try {
+    if (btn) { btn.disabled = true; btn.textContent = "⬇️ Preparando..."; }
+    const res = await fetch('/admin/download-logs');
+    if (!res.ok) {
+      const data = await res.json().catch(()=>({}));
+      throw new Error(data.error || 'Error descargando logs');
+    }
+    const blob = await res.blob();
+    // Determinar nombre de archivo desde headers si viene
+    const disposition = res.headers.get('content-disposition') || '';
+    let filename = 'logs_all.zip';
+    const m = /filename\*=UTF-8''([^;\n]+)/i.exec(disposition) || /filename="?([^";]+)"?/i.exec(disposition);
+    if (m && m[1]) filename = decodeURIComponent(m[1]);
+
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+    if (btn) { btn.textContent = "✅ Descargado"; setTimeout(()=>{ btn.textContent = originalText; btn.disabled = false }, 2000); }
+  } catch (err) {
+    console.error('Error descargando logs:', err);
+    if (btn) { btn.textContent = '❌ Error'; setTimeout(()=>{ btn.textContent = originalText; btn.disabled = false }, 3000); }
+    mostrarNotificacion(`❌ Error descargando logs: ${err.message}`, 'error');
   }
 }
 

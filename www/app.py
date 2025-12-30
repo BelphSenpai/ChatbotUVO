@@ -5,7 +5,9 @@ from datetime import datetime
 from urllib.parse import urlparse
 
 import time
-from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort
+from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort, send_file
+import io
+import zipfile
 import bcrypt
 from redis import Redis
 from rq import Queue
@@ -958,6 +960,52 @@ def borrar_log_personaje(nombre):
             return jsonify({"mensaje": "No hay log que eliminar."})
     except Exception as e:
         return jsonify({"error": f"Error al borrar el log: {str(e)}"}), 500
+
+
+@app.route('/admin/download-logs')
+def admin_download_all_logs():
+    """Genera y devuelve un ZIP con los logs de todos los personajes (Redis + ficheros)."""
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    # Crear ZIP en memoria
+    mem = io.BytesIO()
+    try:
+        with zipfile.ZipFile(mem, mode='w', compression=zipfile.ZIP_DEFLATED) as zf:
+            # Iterar personajes conocidos
+            for nombre in PERSONAJES.keys():
+                nombre_key = (nombre or '').strip().lower()
+                # Intentar obtener logs desde Redis
+                try:
+                    eventos = _redis_get_logs(nombre_key)
+                except Exception:
+                    eventos = []
+
+                # Si hay eventos desde Redis, incluir como JSON
+                if eventos:
+                    txt = json.dumps(eventos, ensure_ascii=False, indent=2)
+                    zf.writestr(f"{nombre_key}.json", txt)
+                    continue
+
+                # Si no, intentar leer snapshot en fichero
+                ruta_log = os.path.join(LOGS_DIR, f"{nombre_key}.json")
+                if os.path.exists(ruta_log):
+                    try:
+                        with open(ruta_log, 'r', encoding='utf-8') as f:
+                            content = f.read()
+                        zf.writestr(f"{nombre_key}.json", content)
+                    except Exception:
+                        # Si no se puede leer, crear un registro de error
+                        zf.writestr(f"{nombre_key}.json", json.dumps({"error": "no se pudo leer el log"}))
+                else:
+                    # incluir archivo vacío para indicar ausencia
+                    zf.writestr(f"{nombre_key}.json", json.dumps([]))
+
+        mem.seek(0)
+        return send_file(mem, mimetype='application/zip', as_attachment=True, download_name='logs_all.zip')
+    except Exception as e:
+        app.logger.exception(f"Error generando ZIP de logs: {e}")
+        return jsonify({"error": f"Error generando ZIP: {str(e)}"}), 500
 
 # ========== FICHA (ADMIN) ==========
 @app.route('/admin/ficha/<nombre>.json', methods=['GET'])

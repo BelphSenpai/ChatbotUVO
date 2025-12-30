@@ -13,4 +13,3 @@ flask
 gunicorn
 redis
 rq
-gunicorn
