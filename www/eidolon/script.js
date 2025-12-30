@@ -194,6 +194,28 @@ document.addEventListener('DOMContentLoaded', async () => {
       Math.floor(Math.random() * 5) + 5,
       true
     );
+    // Registrar evento de log (usuario o respuesta de Eidolon)
+    try {
+      if (isUser) {
+        registrarEvento('usuario', String(text || '(vacío)'));
+      } else {
+        registrarEvento('respuesta_eidolon', String(text || '(vacío)'));
+      }
+    } catch (e) {
+      // no bloquear la UI por fallos en logging
+    }
+  }
+
+  async function registrarEvento(tipo, contenido) {
+    try {
+      await fetch('/log-evento', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tipo, contenido })
+      });
+    } catch (e) {
+      // Silenciar errores de red
+    }
   }
 
   function animateSpeedChange(targetElement, start, end, duration = 1000) {
