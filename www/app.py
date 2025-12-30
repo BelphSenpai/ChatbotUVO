@@ -838,7 +838,19 @@ def log_evento():
         "tipo": tipo,
         "contenido": contenido
     }
+    try:
+        _redis_append_log(usuario, evento)
+        try:
+            snapshot = _redis_get_logs(usuario)
+            if snapshot:
+                _write_log_snapshot(usuario, snapshot)
+                return jsonify({"mensaje": "Evento registrado"})
+        except Exception:
+            pass
+    except Exception:
+        pass
 
+    # Fallback: escribir en fichero local como antes
     ruta_log = os.path.join(LOGS_DIR, f"{usuario}.json")
 
     if os.path.exists(ruta_log):
@@ -852,10 +864,84 @@ def log_evento():
 
     eventos.append(evento)
 
-    with open(ruta_log, 'w', encoding='utf-8') as f:
-        json.dump(eventos, f, indent=2, ensure_ascii=False)
+    try:
+        tmp = ruta_log + ".tmp"
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(eventos, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, ruta_log)
+    except Exception:
+        with open(ruta_log, 'w', encoding='utf-8') as f:
+            json.dump(eventos, f, indent=2, ensure_ascii=False)
 
     return jsonify({"mensaje": "Evento registrado"})
+def _redis_logs_key(user: str) -> str:
+    return f"logs:{(user or '').strip().lower()}"
+
+def _redis_append_log(user: str, event: dict):
+    try:
+        conn = get_redis_conn()
+        conn.rpush(_redis_logs_key(user), json.dumps(event, ensure_ascii=False))
+    except Exception:
+        pass
+
+def _redis_get_logs(user: str) -> list:
+    try:
+        conn = get_redis_conn()
+        raw = conn.lrange(_redis_logs_key(user), 0, -1) or []
+        out = []
+        for item in raw:
+            if isinstance(item, (bytes, bytearray)):
+                item = item.decode('utf-8')
+            try:
+                out.append(json.loads(item))
+            except Exception:
+                out.append({"timestamp": None, "tipo": "raw", "contenido": item})
+        return out
+    except Exception:
+        return []
+
+def _redis_delete_logs(user: str):
+    try:
+        conn = get_redis_conn()
+        conn.delete(_redis_logs_key(user))
+    except Exception:
+        pass
+
+def _write_log_snapshot(user: str, events: list):
+    ruta_log = os.path.join(LOGS_DIR, f"{user}.json")
+    try:
+        tmp = ruta_log + ".tmp"
+        with open(tmp, 'w', encoding='utf-8') as f:
+            json.dump(events, f, indent=2, ensure_ascii=False)
+        os.replace(tmp, ruta_log)
+    except Exception:
+        try:
+            with open(ruta_log, 'w', encoding='utf-8') as f:
+                json.dump(events, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
+@app.route('/admin/logs/<nombre>.json', methods=['GET'])
+def obtener_logs_personaje(nombre):
+    if session.get('rol') != 'admin':
+        return jsonify({"error": "No autorizado"}), 403
+
+    nombre = (nombre or '').strip().lower()
+
+    logs = []
+    try:
+        logs = _redis_get_logs(nombre)
+    except Exception:
+        logs = []
+    ruta_log = os.path.join(LOGS_DIR, f"{nombre}.json")
+    if not logs and os.path.exists(ruta_log):
+        try:
+            with open(ruta_log, 'r', encoding='utf-8') as f:
+                logs = json.load(f)
+        except Exception:
+            logs = []
+
+    return jsonify(logs)
 
 @app.route('/admin/logs/<nombre>.json', methods=['DELETE'])
 def borrar_log_personaje(nombre):
