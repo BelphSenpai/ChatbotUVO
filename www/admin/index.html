@@ -36,13 +36,13 @@
     <div class="modal-content">
       <h2>Editar Poderes por Personaje</h2>
 
+      <!-- Usuario actual (rellenado al abrir modal). Selector eliminado; per-personaje carga automática -->
+      <input type="hidden" id="poderes-usuario" />
       <div style="display:flex; gap:8px; margin-bottom:8px; align-items:center;">
-        <select id="lista-usuarios-poderes" style="flex:1;"></select>
-        <input id="nuevo-usuario-poderes" placeholder="Crear nuevo usuario" />
-        <button id="cargar-poderes-usuario">Cargar</button>
+        <input id="nuevo-usuario-poderes" placeholder="(Opcional) Crear nuevo usuario" style="flex:1;" />
       </div>
 
-      <textarea id="editor-poderes" style="width:100%; height:300px; font-family:monospace;"></textarea>
+      <textarea id="editor-poderes" style="width:100%; height:360px; font-family:monospace;"></textarea>
 
       <div class="modal-buttons" style="margin-top:8px;">
         <button id="guardar-poderes">Guardar</button>

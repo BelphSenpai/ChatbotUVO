@@ -68,15 +68,7 @@ document.getElementById('cerrar-poderes')?.addEventListener('click', () => {
   document.getElementById('poderes-modal').style.display = 'none';
 });
 
-document.getElementById('cargar-poderes-usuario')?.addEventListener('click', async () => {
-  const select = document.getElementById('lista-usuarios-poderes');
-  const nuevo = document.getElementById('nuevo-usuario-poderes').value.trim();
-  const usuario = nuevo || (select && select.value);
-  if (!usuario) { alert('Selecciona o escribe un usuario.'); return; }
-  await cargarPoderUsuario(usuario);
-  // refresh list
-  await cargarListaPoderes();
-});
+// 'Cargar' button removed; when opening modal via personaje button we call cargarPoderUsuario(nombre)
 
 async function cargarPoderUsuario(usuario) {
   try {
@@ -84,16 +76,22 @@ async function cargarPoderUsuario(usuario) {
     if (!res.ok) throw new Error('Error cargando');
     const data = await res.json();
     document.getElementById('editor-poderes').value = data.contenido || '';
-    // set select to user
-    const select = document.getElementById('lista-usuarios-poderes');
-    if (select) {
-      let found = false;
-      for (let i=0;i<select.options.length;i++) {
-        if (select.options[i].value === usuario) { select.selectedIndex = i; found = true; break; }
-      }
-      if (!found) {
-        const opt = document.createElement('option'); opt.value = usuario; opt.textContent = usuario; select.appendChild(opt); select.value = usuario;
-      }
+    // set hidden current user so guardar/eliminar sepan a quién referirse
+    const hidden = document.getElementById('poderes-usuario');
+    if (hidden) hidden.value = usuario;
+    // clear nuevo input
+    const nuevo = document.getElementById('nuevo-usuario-poderes');
+    if (nuevo) nuevo.value = '';
+    // update modal title to reflect current usuario
+    const titulo = document.querySelector('#poderes-modal .modal-content h2');
+    if (titulo) titulo.textContent = `Editar Poderes — ${usuario}`;
+    // focus editor and move cursor to end
+    const editor = document.getElementById('editor-poderes');
+    if (editor) {
+      editor.focus();
+      // move cursor to end
+      const val = editor.value;
+      editor.selectionStart = editor.selectionEnd = val ? val.length : 0;
     }
   } catch (err) {
     console.error('Error cargando poderes de usuario:', err);
@@ -102,9 +100,9 @@ async function cargarPoderUsuario(usuario) {
 }
 
 document.getElementById('guardar-poderes')?.addEventListener('click', async () => {
-  const select = document.getElementById('lista-usuarios-poderes');
+  const hidden = document.getElementById('poderes-usuario');
   const nuevo = document.getElementById('nuevo-usuario-poderes').value.trim();
-  const usuario = nuevo || (select && select.value);
+  const usuario = (nuevo && nuevo.length>0) ? nuevo : (hidden && hidden.value);
   if (!usuario) { alert('Selecciona o escribe un usuario.'); return; }
   const contenido = document.getElementById('editor-poderes').value || '';
   try {
@@ -114,7 +112,8 @@ document.getElementById('guardar-poderes')?.addEventListener('click', async () =
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Error');
     alert(data.mensaje || 'Guardado.');
-    await cargarListaPoderes();
+    // set hidden to this usuario and clear nuevo input
+    const hidden2 = document.getElementById('poderes-usuario'); if (hidden2) hidden2.value = usuario;
     document.getElementById('nuevo-usuario-poderes').value = '';
   } catch (err) {
     console.error('Error guardando poderes:', err);
@@ -123,8 +122,8 @@ document.getElementById('guardar-poderes')?.addEventListener('click', async () =
 });
 
 document.getElementById('eliminar-poderes')?.addEventListener('click', async () => {
-  const select = document.getElementById('lista-usuarios-poderes');
-  const usuario = select && select.value;
+  const hidden = document.getElementById('poderes-usuario');
+  const usuario = hidden && hidden.value;
   if (!usuario) { alert('Selecciona un usuario para eliminar.'); return; }
   if (!confirm(`Eliminar archivo de poderes de ${usuario}?`)) return;
   try {
@@ -133,7 +132,7 @@ document.getElementById('eliminar-poderes')?.addEventListener('click', async () 
     if (!res.ok) throw new Error(data.error || 'Error');
     alert(data.mensaje || 'Eliminado.');
     document.getElementById('editor-poderes').value = '';
-    await cargarListaPoderes();
+    const hidden2 = document.getElementById('poderes-usuario'); if (hidden2) hidden2.value = '';
   } catch (err) {
     console.error('Error eliminando archivo:', err);
     alert('No se pudo eliminar.');
