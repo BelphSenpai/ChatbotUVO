@@ -224,6 +224,21 @@ async function cargarPersonajes() {
       });
       botonesDiv.appendChild(btnFicha);
 
+      // Botón Poderes (editar poderes por personaje)
+      const btnPoderes = document.createElement("button");
+      btnPoderes.textContent = "Poderes";
+      btnPoderes.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const modal = document.getElementById('poderes-modal');
+        if (modal) modal.style.display = 'flex';
+        try {
+          await cargarPoderUsuario(personaje.nombre);
+        } catch (err) {
+          console.error('Error cargando poderes del personaje desde lista:', err);
+        }
+      });
+      botonesDiv.appendChild(btnPoderes);
+
       // Botón Eliminar (solo si no es admin)
       if (personaje.nombre !== "admin") {
         const btnEliminar = document.createElement("button");
