@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 
 import time
 from flask import Flask, request, session, redirect, send_from_directory, jsonify, render_template_string, abort, send_file
+import re
 import io
 import zipfile
 import bcrypt
@@ -783,6 +784,70 @@ def gestionar_poderes():
         return jsonify({"contenido": contenido})
     else:
         return jsonify({"contenido": ""})
+
+
+@app.route('/admin/poderes/list', methods=['GET'])
+def admin_poderes_list():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    path = os.path.join(BASE_DIR, 'poderes', 'usuarios')
+    usuarios = []
+    try:
+        if os.path.isdir(path):
+            for f in os.listdir(path):
+                if f.endswith('.txt'):
+                    usuarios.append(os.path.splitext(f)[0])
+    except Exception as e:
+        app.logger.exception(f"Error listando poderes: {e}")
+
+    return jsonify({"usuarios": usuarios})
+
+
+@app.route('/admin/poderes/<usuario>', methods=['GET', 'POST', 'DELETE'])
+def admin_poderes_usuario(usuario):
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    # simple sanitization: allow only word chars, dash and underscore
+    if not re.match(r'^[\w-]+$', usuario):
+        return jsonify({"error": "Usuario inválido"}), 400
+
+    ruta = os.path.join(BASE_DIR, 'poderes', 'usuarios', f'{usuario}.txt')
+
+    if request.method == 'GET':
+        if os.path.exists(ruta):
+            try:
+                with open(ruta, 'r', encoding='utf-8') as f:
+                    contenido = f.read()
+                return jsonify({"contenido": contenido})
+            except Exception as e:
+                app.logger.exception(f"Error leyendo {ruta}: {e}")
+                return jsonify({"error": "Error leyendo archivo"}), 500
+        else:
+            return jsonify({"contenido": ""})
+
+    if request.method == 'POST':
+        data = request.get_json() or {}
+        contenido = data.get('contenido', '')
+        try:
+            os.makedirs(os.path.dirname(ruta), exist_ok=True)
+            with open(ruta, 'w', encoding='utf-8') as f:
+                f.write(contenido or '')
+            return jsonify({"mensaje": "Guardado correctamente."})
+        except Exception as e:
+            app.logger.exception(f"Error guardando {ruta}: {e}")
+            return jsonify({"error": "Error guardando archivo"}), 500
+
+    if request.method == 'DELETE':
+        try:
+            if os.path.exists(ruta):
+                os.remove(ruta)
+                return jsonify({"mensaje": "Archivo eliminado."})
+            return jsonify({"mensaje": "No existía el archivo."})
+        except Exception as e:
+            app.logger.exception(f"Error eliminando {ruta}: {e}")
+            return jsonify({"error": "Error eliminando archivo"}), 500
 
 # Backwards compatibility: redirect old /notas to new /poderes
 @app.route('/notas')

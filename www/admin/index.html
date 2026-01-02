@@ -110,6 +110,7 @@
         <button id="ver-personajes">Ver Personajes</button>
         <button id="actualizar-contadores" title="Recargar contadores desde el servidor (descarta ediciones no guardadas)">Actualizar contadores</button>
         <button id="crear-personaje">Añadir Personaje</button>
+        <button id="gestionar-poderes">Gestionar Poderes</button>
       </div>
       <div id="lista-personajes" style="display: none;"></div>
     </section>
@@ -141,6 +142,27 @@
         <button id="cancelar-personaje">Cancelar</button>
       </div>
     </div>
+
+      <!-- Modal para editar poderes por personaje -->
+      <div id="poderes-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <h2>Editar Poderes por Personaje</h2>
+
+          <div style="display:flex; gap:8px; margin-bottom:8px; align-items:center;">
+            <select id="lista-usuarios-poderes" style="flex:1;"></select>
+            <input id="nuevo-usuario-poderes" placeholder="Crear nuevo usuario" />
+            <button id="cargar-poderes-usuario">Cargar</button>
+          </div>
+
+          <textarea id="editor-poderes" style="width:100%; height:300px; font-family:monospace;"></textarea>
+
+          <div class="modal-buttons" style="margin-top:8px;">
+            <button id="guardar-poderes">Guardar</button>
+            <button id="eliminar-poderes" style="background:#ff6b35; color:white;">Eliminar Archivo</button>
+            <button id="cerrar-poderes">Cerrar</button>
+          </div>
+        </div>
+      </div>
   </div>
 
   <!-- Modal de Log -->

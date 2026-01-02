@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const limpiarCacheBtn = document.getElementById("limpiar-cache");
   const estadoSistemaBtn = document.getElementById("ver-estado-sistema");
   const descargarLogsBtn = document.getElementById("download-logs");
+  const gestionarPoderesBtn = document.getElementById("gestionar-poderes");
 
   verBtn.addEventListener("click", () => {
     const lista = document.getElementById("lista-personajes");
@@ -38,11 +39,110 @@ document.addEventListener("DOMContentLoaded", () => {
   estadoSistemaBtn.addEventListener("click", verEstadoSistema);
   if (descargarLogsBtn) descargarLogsBtn.addEventListener("click", downloadAllLogs);
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
+  if (gestionarPoderesBtn) gestionarPoderesBtn.addEventListener("click", async () => {
+    await cargarListaPoderes();
+    document.getElementById('poderes-modal').style.display = 'flex';
+  });
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
   document.getElementById("cerrar-modal-conexiones").addEventListener("click", cerrarModalConexiones);
 
   cargarSesiones();
+});
+
+// ==== PODERES EN ADMIN ====
+async function cargarListaPoderes() {
+  try {
+    const res = await fetch('/admin/poderes/list');
+    if (!res.ok) throw new Error('No autorizado');
+    const data = await res.json();
+    const select = document.getElementById('lista-usuarios-poderes');
+    select.innerHTML = '';
+    (data.usuarios || []).forEach(u => {
+      const opt = document.createElement('option');
+      opt.value = u; opt.textContent = u;
+      select.appendChild(opt);
+    });
+  } catch (err) {
+    console.error('Error cargando lista de poderes:', err);
+    alert('No se pudo cargar la lista de usuarios de poderes.');
+  }
+}
+
+document.getElementById('cerrar-poderes')?.addEventListener('click', () => {
+  document.getElementById('poderes-modal').style.display = 'none';
+});
+
+document.getElementById('cargar-poderes-usuario')?.addEventListener('click', async () => {
+  const select = document.getElementById('lista-usuarios-poderes');
+  const nuevo = document.getElementById('nuevo-usuario-poderes').value.trim();
+  const usuario = nuevo || (select && select.value);
+  if (!usuario) { alert('Selecciona o escribe un usuario.'); return; }
+  await cargarPoderUsuario(usuario);
+  // refresh list
+  await cargarListaPoderes();
+});
+
+async function cargarPoderUsuario(usuario) {
+  try {
+    const res = await fetch(`/admin/poderes/${encodeURIComponent(usuario)}`);
+    if (!res.ok) throw new Error('Error cargando');
+    const data = await res.json();
+    document.getElementById('editor-poderes').value = data.contenido || '';
+    // set select to user
+    const select = document.getElementById('lista-usuarios-poderes');
+    if (select) {
+      let found = false;
+      for (let i=0;i<select.options.length;i++) {
+        if (select.options[i].value === usuario) { select.selectedIndex = i; found = true; break; }
+      }
+      if (!found) {
+        const opt = document.createElement('option'); opt.value = usuario; opt.textContent = usuario; select.appendChild(opt); select.value = usuario;
+      }
+    }
+  } catch (err) {
+    console.error('Error cargando poderes de usuario:', err);
+    alert('No se pudo cargar los poderes del usuario.');
+  }
+}
+
+document.getElementById('guardar-poderes')?.addEventListener('click', async () => {
+  const select = document.getElementById('lista-usuarios-poderes');
+  const nuevo = document.getElementById('nuevo-usuario-poderes').value.trim();
+  const usuario = nuevo || (select && select.value);
+  if (!usuario) { alert('Selecciona o escribe un usuario.'); return; }
+  const contenido = document.getElementById('editor-poderes').value || '';
+  try {
+    const res = await fetch(`/admin/poderes/${encodeURIComponent(usuario)}`, {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({contenido})
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Guardado.');
+    await cargarListaPoderes();
+    document.getElementById('nuevo-usuario-poderes').value = '';
+  } catch (err) {
+    console.error('Error guardando poderes:', err);
+    alert('No se pudo guardar.');
+  }
+});
+
+document.getElementById('eliminar-poderes')?.addEventListener('click', async () => {
+  const select = document.getElementById('lista-usuarios-poderes');
+  const usuario = select && select.value;
+  if (!usuario) { alert('Selecciona un usuario para eliminar.'); return; }
+  if (!confirm(`Eliminar archivo de poderes de ${usuario}?`)) return;
+  try {
+    const res = await fetch(`/admin/poderes/${encodeURIComponent(usuario)}`, { method: 'DELETE' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Eliminado.');
+    document.getElementById('editor-poderes').value = '';
+    await cargarListaPoderes();
+  } catch (err) {
+    console.error('Error eliminando archivo:', err);
+    alert('No se pudo eliminar.');
+  }
 });
 
 // ==== PERSONAJES ====
