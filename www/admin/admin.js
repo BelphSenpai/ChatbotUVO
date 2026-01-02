@@ -40,8 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (descargarLogsBtn) descargarLogsBtn.addEventListener("click", downloadAllLogs);
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
   if (gestionarPoderesBtn) gestionarPoderesBtn.addEventListener("click", async () => {
-    await cargarListaPoderes();
-    document.getElementById('poderes-modal').style.display = 'flex';
+    const modal = document.getElementById('poderes-modal');
+    if (modal) modal.style.display = 'flex';
+    try {
+      await cargarListaPoderes();
+    } catch (err) {
+      console.error('Error cargando lista de poderes al abrir modal:', err);
+      // cargarListaPoderes ya muestra alert en su catch, pero aseguramos feedback
+      if (!err) alert('No se pudo cargar la lista de usuarios de poderes.');
+    }
   });
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
