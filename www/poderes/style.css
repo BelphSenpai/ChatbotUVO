@@ -1,0 +1,68 @@
+/* === PODERES (copied from notas) === */
+body {
+    margin: 0;
+    background: #0a0f1a;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 60px;
+  }
+
+  /* Contenedor de poderes */
+  .poderes-container {
+    width: 90%;
+    max-width: 800px;
+    background: rgba(0, 255, 255, 0.04);
+    border: 1px solid #00ffff33;
+    padding: 4%;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    animation: glowFlicker 10s infinite ease-in-out;
+  }
+
+  /* Área de lectura */
+  .poderes-container textarea {
+    width: 100%;
+    min-height: 50vh;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid #00ffff55;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    resize: vertical;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.1) inset;
+  }
+
+  /* Dropdown funcional */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 0.5em;
+    z-index: 100;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+    
+  /* Responsive */
+  @media (max-width: 768px) {
+    .poderes-container {
+      padding: 6%;
+    }
+  }

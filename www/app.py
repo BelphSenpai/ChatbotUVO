@@ -760,39 +760,41 @@ def estado_workers():
         app.logger.error(f"Error consultando estado de workers: {e}")
         return jsonify({"error": str(e)}), 500
 
-# ========== NOTAS ==========
-@app.route('/notas')
-def ver_notas():
+# ========== PODERES ==========
+@app.route('/poderes')
+def ver_poderes():
     if 'usuario' not in session:
         return redirect('/')
-    path = os.path.join(BASE_DIR, 'notas')
+    path = os.path.join(BASE_DIR, 'poderes')
     return send_from_directory(path, 'index.html')
 
-@app.route('/notas/contenido', methods=['GET', 'POST'])
-def gestionar_notas():
+
+@app.route('/poderes/contenido', methods=['GET'])
+def gestionar_poderes():
     if 'usuario' not in session:
         return jsonify({"error": "No autorizado"}), 403
 
     usuario = session['usuario'].lower()
-    ruta_nota = os.path.join(BASE_DIR, 'notas', 'usuarios', f'{usuario}.txt')
+    ruta_poder = os.path.join(BASE_DIR, 'poderes', 'usuarios', f'{usuario}.txt')
 
+    if os.path.exists(ruta_poder):
+        with open(ruta_poder, 'r', encoding='utf-8') as f:
+            contenido = f.read()
+        return jsonify({"contenido": contenido})
+    else:
+        return jsonify({"contenido": ""})
+
+# Backwards compatibility: redirect old /notas to new /poderes
+@app.route('/notas')
+def notas_redirect():
+    return redirect('/poderes')
+
+@app.route('/notas/contenido', methods=['GET', 'POST'])
+def notas_contenido_redirect():
+    # Disallow modifications; point clients to the new read-only endpoint
     if request.method == 'GET':
-        if os.path.exists(ruta_nota):
-            with open(ruta_nota, 'r', encoding='utf-8') as f:
-                contenido = f.read()
-            return jsonify({"contenido": contenido})
-        else:
-            return jsonify({"contenido": ""})
-
-    if request.method == 'POST':
-        datos = request.get_json(silent=True) or {}
-        contenido = datos.get('contenido', '')
-
-        os.makedirs(os.path.dirname(ruta_nota), exist_ok=True)
-        with open(ruta_nota, 'w', encoding='utf-8') as f:
-            f.write(contenido)
-
-        return jsonify({"mensaje": "Notas guardadas correctamente."})
+        return redirect('/poderes/contenido')
+    return jsonify({"error": "Método no permitido"}), 405
 
 # ========== USOS ==========
 @app.route('/usos')

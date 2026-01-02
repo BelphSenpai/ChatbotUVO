@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notas Personales</title>
+    <title>Poderes Personales</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/notas/style.css"> <!-- Estilos específicos de notas -->
+    <link rel="stylesheet" href="/poderes/style.css"> <!-- Estilos específicos de poderes -->
     <link rel="icon" href="/static/favicon.png" type="image/png" />
 </head>
 
@@ -15,7 +15,7 @@
     <div class="nav-bar">
         <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
         <a class="nav-item" id="conexiones-link" href="/conexiones" style="display:none;">CONEXIONES</a>
-        <a class="nav-item active" id="notas-link" href="/notas">NOTAS</a>
+        <a class="nav-item active" id="poderes-link" href="/poderes">PODERES</a>
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
         <div id="admin-link-container" style="display:none;">
             <a class="nav-item" href="/admin">ADMIN</a>
@@ -70,17 +70,60 @@
                     }
                 }
 
-                // Dropdown toggle al hacer clic
                 const dropdown = document.getElementById("ia-dropdown-container");
-                <!DOCTYPE html>
-                <html lang="es">
-                <head>
-                  <meta charset="utf-8" />
-                  <meta http-equiv="refresh" content="0; url=/poderes" />
-                  <title>Redirigiendo a Poderes</title>
-                  <link rel="icon" href="/static/favicon.png" type="image/png" />
-                </head>
-                <body>
-                  Redirigiendo a <a href="/poderes">/poderes</a>...
-                </body>
-                </html>
+                const dropdownContent = document.getElementById("ia-dropdown");
+
+                if (dropdown && dropdownContent) {
+                    dropdown.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        dropdown.classList.toggle("active");
+                    });
+
+                    document.addEventListener("click", (e) => {
+                        if (!dropdown.contains(e.target)) {
+                            dropdown.classList.remove("active");
+                        }
+                    });
+
+                    document.addEventListener("keydown", (e) => {
+                        if (e.key === "Escape") {
+                            dropdown.classList.remove("active");
+                        }
+                    });
+                }
+
+            } catch (error) {
+                console.error("Error cargando sesión o usos:", error);
+            }
+        });
+    </script>
+
+    <div class="poderes-container">
+        <div class="scanline"></div>
+        <textarea id="poderes" placeholder="Lectura de poderes..." readonly></textarea>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("poderes");
+
+            async function cargarPoderes() {
+                try {
+                    const res = await fetch("/poderes/contenido");
+                    if (res.ok) {
+                        const data = await res.json();
+                        textarea.value = data.contenido || "";
+                    } else {
+                        console.error("No se pudo cargar los poderes.");
+                    }
+                } catch (error) {
+                    console.error("Error cargando poderes:", error);
+                }
+            }
+
+            cargarPoderes();
+        });
+    </script>
+</body>
+
+</html>
