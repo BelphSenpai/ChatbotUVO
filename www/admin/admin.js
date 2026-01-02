@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const limpiarCacheBtn = document.getElementById("limpiar-cache");
   const estadoSistemaBtn = document.getElementById("ver-estado-sistema");
   const descargarLogsBtn = document.getElementById("download-logs");
-  const gestionarPoderesBtn = document.getElementById("gestionar-poderes");
 
   verBtn.addEventListener("click", () => {
     const lista = document.getElementById("lista-personajes");
@@ -39,17 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   estadoSistemaBtn.addEventListener("click", verEstadoSistema);
   if (descargarLogsBtn) descargarLogsBtn.addEventListener("click", downloadAllLogs);
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
-  if (gestionarPoderesBtn) gestionarPoderesBtn.addEventListener("click", async () => {
-    const modal = document.getElementById('poderes-modal');
-    if (modal) modal.style.display = 'flex';
-    try {
-      await cargarListaPoderes();
-    } catch (err) {
-      console.error('Error cargando lista de poderes al abrir modal:', err);
-      // cargarListaPoderes ya muestra alert en su catch, pero aseguramos feedback
-      if (!err) alert('No se pudo cargar la lista de usuarios de poderes.');
-    }
-  });
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
   document.getElementById("cerrar-modal-conexiones").addEventListener("click", cerrarModalConexiones);

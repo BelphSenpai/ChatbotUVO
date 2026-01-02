@@ -191,6 +191,19 @@ body::-webkit-scrollbar-thumb {
   font-size: 13px;
 }
 
+/* Textareas should match the same palette/background as inputs */
+.modal-content textarea,
+textarea {
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid #00ffff33;
+  padding: 12px;
+  border-radius: 6px;
+  color: #00ffff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 13px;
+  resize: vertical;
+}
+
 .modal-buttons {
   display: flex;
   justify-content: space-between;
