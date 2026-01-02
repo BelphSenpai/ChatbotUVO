@@ -36,7 +36,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       # Datos estáticos del repo
@@ -61,7 +61,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
@@ -85,7 +85,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
@@ -109,7 +109,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
@@ -133,7 +133,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data
@@ -157,7 +157,7 @@ services:
       - ./data/personajes.json:/app/www/personajes.json
       - ./data/logs:/app/www/admin/logs
       - ./data/ficha/personajes:/app/www/ficha/personajes
-      - ./data/conexiones/personajes:/app/www/conexiones/personajes
+      - ./data/tramas/personajes:/app/www/tramas/personajes
       - ./data/notas/usuarios:/app/www/poderes/usuarios
       - ./data/historiales:/app/www/historiales
       - ./MinervaPrimeSE/data:/app/MinervaPrimeSE/data

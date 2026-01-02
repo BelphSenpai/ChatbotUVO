@@ -381,20 +381,20 @@ def guardar_ficha():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-# ========== CONEXIONES ==========
-@app.route('/conexiones')
-def ver_conexiones():
-    path = os.path.join(BASE_DIR, 'conexiones')
+# ========== TRAMAS (antes: CONEXIONES) ==========
+@app.route('/tramas')
+def ver_tramas():
+    path = os.path.join(BASE_DIR, 'tramas')
     return send_from_directory(path, 'index.html')
 
-@app.route('/conexiones/<path:archivo>')
-def static_conexiones(archivo):
-    path = os.path.join(BASE_DIR, 'conexiones')
+@app.route('/tramas/<path:archivo>')
+def static_tramas(archivo):
+    path = os.path.join(BASE_DIR, 'tramas')
     return send_from_directory(path, archivo)
 
-@app.route('/conexiones/personajes/<nombre>.json', methods=['GET', 'POST'])
-def manejar_conexiones(nombre):
-    ruta = os.path.join(BASE_DIR, 'conexiones', 'personajes', f'{nombre}.json')
+@app.route('/tramas/personajes/<nombre>.json', methods=['GET', 'POST'])
+def manejar_tramas(nombre):
+    ruta = os.path.join(BASE_DIR, 'tramas', 'personajes', f'{nombre}.json')
 
     if request.method == 'GET':
         if os.path.exists(ruta):

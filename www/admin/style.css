@@ -338,7 +338,7 @@ select option:hover {
   color: #ffffff;
 }
 
-/* === MODAL FICHA CON ESTILO DE CONEXIONES === */
+/* === MODAL FICHA CON ESTILO DE TRAMAS (antes: conexiones) === */
 
 #modal-ficha {
   position: fixed;
@@ -528,7 +528,7 @@ select option:hover {
   input[type="number"] {
     min-width: 40px;
   }
-  #conexiones-modal {
+  #tramas-modal {
     flex-direction: column-reverse; /* Canvas arriba, panel abajo */
     align-items: center;
   }

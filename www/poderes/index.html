@@ -14,7 +14,7 @@
 
     <div class="nav-bar">
         <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
-        <a class="nav-item" id="conexiones-link" href="/conexiones" style="display:none;">CONEXIONES</a>
+        <a class="nav-item" id="tramas-link" href="/tramas" style="display:none;">TRAMAS</a>
         <a class="nav-item active" id="poderes-link" href="/poderes">PODERES</a>
         <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
         <div id="admin-link-container" style="display:none;">
@@ -38,7 +38,7 @@
                 const rol = sessionData.rol;
 
                 if (id) {
-                    document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+                    document.getElementById("tramas-link").setAttribute("href", `/tramas`);
 
                     if (rol === "admin") {
                         document.getElementById("admin-link-container").style.display = "inline-block";

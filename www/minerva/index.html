@@ -13,7 +13,7 @@
 <body>
   <div class="nav-bar">
       <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
-      <a class="nav-item" id="conexiones-link" style="display:none;">CONEXIONES</a>
+      <a class="nav-item" id="tramas-link" style="display:none;">TRAMAS</a>
       <a class="nav-item" id="poderes-link" href="/poderes">PODERES</a>
     
       <div id="admin-link-container" style="display:none;">
@@ -37,7 +37,7 @@
           const rol = sessionData.rol;
     
           if (id) {
-            document.getElementById("conexiones-link").setAttribute("href", `/conexiones`);
+            document.getElementById("tramas-link").setAttribute("href", `/tramas`);
     
             // Mostrar Admin si es rol admin
             if (rol === "admin") {

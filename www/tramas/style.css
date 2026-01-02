@@ -1,0 +1,121 @@
+/* === ESTILOS BASE === */
+body {
+    background-color: #0a0f1a;
+    color: #00ffff;
+    font-size: 14px;
+    line-height: 1.5;
+    user-select: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    background: rgba(21, 157, 157, 0.05);
+    border: 1px solid #00ffff33;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: glowFlicker 10s infinite ease-in-out;
+    box-sizing: border-box;
+}
+
+
+#cy {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0.01);
+    box-sizing: border-box;
+    position: relative;
+    flex: 1;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+        flex-direction: column;
+    }
+
+    .terminal {
+        width: 90%;
+        height: 70vh;
+    }
+
+    #popup {
+        max-width: 90vw;
+        font-size: 12px;
+    }
+
+    #popup strong {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 11px;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #popup {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .terminal {
+      width: 90%;
+      height: 70vh;
+  }
+}
+
+@media (max-width: 1024px) {
+    .terminal {
+      width: 80%;
+      height: 75vh;
+    }
+  
+    .nav-bar {
+      font-size: 12px;
+      gap: 16px;
+      padding: 0 16px;
+    }
+  
+    #popup {
+      max-width: 85vw;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .terminal {
+      width: 90%;
+      height: 70vh;
+    }
+  
+    .nav-bar {
+      font-size: 10px;
+      gap: 8px;
+      padding: 0 10px;
+    }
+  
+    .dropdown-content a {
+      font-size: 11px;
+      padding: 4px 10px;
+    }
+  }
+  

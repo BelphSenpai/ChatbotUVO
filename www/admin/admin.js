@@ -1,6 +1,6 @@
 let personajesMostrados = false;
 let editandoNombre = null;
-let conexionesActuales = [];
+let tramasActuales = [];
 let nodosActuales = [];
 let personajeActual = "";
 
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
-  document.getElementById("cerrar-modal-conexiones").addEventListener("click", cerrarModalConexiones);
+  document.getElementById("cerrar-modal-tramas").addEventListener("click", cerrarModalTramas);
 
   cargarSesiones();
 });
@@ -79,9 +79,6 @@ async function cargarPoderUsuario(usuario) {
     // set hidden current user so guardar/eliminar sepan a quién referirse
     const hidden = document.getElementById('poderes-usuario');
     if (hidden) hidden.value = usuario;
-    // clear nuevo input
-    const nuevo = document.getElementById('nuevo-usuario-poderes');
-    if (nuevo) nuevo.value = '';
     // update modal title to reflect current usuario
     const titulo = document.querySelector('#poderes-modal .modal-content h2');
     if (titulo) titulo.textContent = `Editar Poderes — ${usuario}`;
@@ -101,9 +98,8 @@ async function cargarPoderUsuario(usuario) {
 
 document.getElementById('guardar-poderes')?.addEventListener('click', async () => {
   const hidden = document.getElementById('poderes-usuario');
-  const nuevo = document.getElementById('nuevo-usuario-poderes').value.trim();
-  const usuario = (nuevo && nuevo.length>0) ? nuevo : (hidden && hidden.value);
-  if (!usuario) { alert('Selecciona o escribe un usuario.'); return; }
+  const usuario = hidden && hidden.value;
+  if (!usuario) { alert('Selecciona un usuario.'); return; }
   const contenido = document.getElementById('editor-poderes').value || '';
   try {
     const res = await fetch(`/admin/poderes/${encodeURIComponent(usuario)}`, {
@@ -112,9 +108,8 @@ document.getElementById('guardar-poderes')?.addEventListener('click', async () =
     const data = await res.json();
     if (!res.ok) throw new Error(data.error || 'Error');
     alert(data.mensaje || 'Guardado.');
-    // set hidden to this usuario and clear nuevo input
+    // ensure hidden keeps the current usuario
     const hidden2 = document.getElementById('poderes-usuario'); if (hidden2) hidden2.value = usuario;
-    document.getElementById('nuevo-usuario-poderes').value = '';
   } catch (err) {
     console.error('Error guardando poderes:', err);
     alert('No se pudo guardar.');
@@ -184,14 +179,14 @@ async function cargarPersonajes() {
       });
       botonesDiv.appendChild(btnEditar);
 
-      // Botón Conexiones
-      const btnConexiones = document.createElement("button");
-      btnConexiones.textContent = "Conexiones";
-      btnConexiones.addEventListener("click", (e) => {
+      // Botón Tramas
+      const btnTramas = document.createElement("button");
+      btnTramas.textContent = "Tramas";
+      btnTramas.addEventListener("click", (e) => {
         e.stopPropagation();
-        abrirEditorConexiones(personaje.nombre);
+        abrirEditorTramas(personaje.nombre);
       });
-      botonesDiv.appendChild(btnConexiones);
+      botonesDiv.appendChild(btnTramas);
 
       // Botón Borrar Log
       const btnBorrarLog = document.createElement("button");
@@ -397,7 +392,7 @@ async function guardarPersonaje() {
         body: JSON.stringify({ nombre: editandoNombre })
       });
 
-      // Opcional: también deberías aquí eliminar o renombrar su log, conexiones y ficha si quieres que todo quede consistente
+      // Opcional: también deberías aquí eliminar o renombrar su log, tramas y ficha si quieres que todo quede consistente
     }
 
     // Guardar el personaje (nuevo o actualizado)
@@ -456,7 +451,7 @@ function actualizarMiniGrafo() {
     container: document.getElementById('cy-mini'),
     elements: [
       ...nodosActuales.map(n => ({ data: n.data })),
-      ...conexionesActuales.map(c => ({ data: c.data }))
+      ...tramasActuales.map(c => ({ data: c.data }))
     ],
     style: [
       {
@@ -534,23 +529,23 @@ function cerrarModalLog() {
   document.getElementById("modal-log").style.display = "none";
 }
 
-// ==== CONEXIONES ====
+// ==== TRAMAS ====
 
-async function abrirEditorConexiones(nombre) {
+async function abrirEditorTramas(nombre) {
   personajeActual = nombre;
-  document.getElementById("titulo-conexiones").textContent = `Conexiones de ${nombre}`;
+  document.getElementById("titulo-tramas").textContent = `Tramas de ${nombre}`;
 
   try {
-    let res = await fetch(`/conexiones/personajes/${nombre}.json`);
+    let res = await fetch(`/tramas/personajes/${nombre}.json`);
 
     if (res.status === 404) {
-      console.warn(`Archivo de conexiones para ${nombre} no encontrado, creando nuevo...`);
-      await fetch(`/conexiones/personajes/${nombre}.json`, {
+      console.warn(`Archivo de tramas para ${nombre} no encontrado, creando nuevo...`);
+      await fetch(`/tramas/personajes/${nombre}.json`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ elements: { nodes: [], edges: [] } })
       });
-      res = await fetch(`/conexiones/personajes/${nombre}.json`);
+      res = await fetch(`/tramas/personajes/${nombre}.json`);
     }
 
     const data = await res.json();
@@ -563,48 +558,48 @@ async function abrirEditorConexiones(nombre) {
     }
 
     nodosActuales = data.elements.nodes || [];
-    conexionesActuales = data.elements.edges || [];
+    tramasActuales = data.elements.edges || [];
 
-    renderizarConexiones();
+    renderizarTramas();
     renderizarNodos();
     renderizarSelects();
-    document.getElementById("conexiones-modal").style.display = "flex";
+    document.getElementById("tramas-modal").style.display = "flex";
 
   } catch (error) {
-    console.error("Error cargando o creando conexiones:", error);
-    alert("Error cargando conexiones de este personaje.");
+    console.error("Error cargando o creando tramas:", error);
+    alert("Error cargando tramas de este personaje.");
   }
 }
 
 
 
-function renderizarConexiones() {
-  const lista = document.getElementById("lista-conexiones");
+function renderizarTramas() {
+  const lista = document.getElementById("lista-tramas");
   lista.innerHTML = "";
 
-  conexionesActuales.forEach((conexion, index) => {
+  tramasActuales.forEach((trama, index) => {
     const div = document.createElement("div");
     div.style.display = "flex";
     div.style.alignItems = "center";
     div.style.marginBottom = "6px";
 
     const texto = document.createElement("span");
-    texto.textContent = `${conexion.data.source} ➔ ${conexion.data.target}`;
+    texto.textContent = `${trama.data.source} ➔ ${trama.data.target}`;
     texto.style.marginRight = "10px";
 
     const inputLabel = document.createElement("input");
-    inputLabel.value = conexion.data.label || "";
+    inputLabel.value = trama.data.label || "";
     inputLabel.style.flex = "1";
     inputLabel.addEventListener("input", (e) => {
-      conexion.data.label = e.target.value;
+      trama.data.label = e.target.value;
     });
 
     const btnEliminar = document.createElement("button");
     btnEliminar.textContent = "Eliminar";
     btnEliminar.style.marginLeft = "10px";
     btnEliminar.addEventListener("click", () => {
-      conexionesActuales.splice(index, 1);
-      renderizarConexiones();
+      tramasActuales.splice(index, 1);
+      renderizarTramas();
     });
 
     div.appendChild(texto);
@@ -648,8 +643,8 @@ function renderizarNodos() {
 
 function eliminarNodo(idNodo) {
   nodosActuales = nodosActuales.filter(n => n.data.id !== idNodo);
-  conexionesActuales = conexionesActuales.filter(c => c.data.source !== idNodo && c.data.target !== idNodo);
-  renderizarConexiones();
+  tramasActuales = tramasActuales.filter(c => c.data.source !== idNodo && c.data.target !== idNodo);
+  renderizarTramas();
   renderizarNodos();
   renderizarSelects();
 }
@@ -675,10 +670,10 @@ function renderizarSelects() {
   });
 }
 
-document.getElementById("añadir-conexion").addEventListener("click", () => {
+document.getElementById("añadir-trama").addEventListener("click", () => {
   const source = document.getElementById("source-nodo").value.trim();
   const target = document.getElementById("target-nodo").value.trim();
-  const label = document.getElementById("label-conexion").value.trim();
+  const label = document.getElementById("label-trama").value.trim();
 
   if (!source || !target || !label) {
     alert("Todos los campos son obligatorios.");
@@ -699,37 +694,37 @@ document.getElementById("añadir-conexion").addEventListener("click", () => {
     }
   };
 
-  conexionesActuales.push(newEdge);
-  document.getElementById("label-conexion").value = "";
-  renderizarConexiones();
+  tramasActuales.push(newEdge);
+  document.getElementById("label-trama").value = "";
+  renderizarTramas();
 });
 
-document.getElementById("guardar-conexiones").addEventListener("click", async () => {
+document.getElementById("guardar-tramas").addEventListener("click", async () => {
   try {
     const body = {
       elements: {
         nodes: nodosActuales,
-        edges: conexionesActuales
+        edges: tramasActuales
       }
     };
 
-    const res = await fetch(`/conexiones/personajes/${personajeActual}.json`, {
+    const res = await fetch(`/tramas/personajes/${personajeActual}.json`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
     });
 
     const data = await res.json();
-    alert(data.mensaje || "Conexiones guardadas correctamente.");
-    cerrarModalConexiones();
+    alert(data.mensaje || "Tramas guardadas correctamente.");
+    cerrarModalTramas();
   } catch (error) {
-    console.error("Error guardando conexiones:", error);
-    alert("Error al guardar las conexiones.");
+    console.error("Error guardando tramas:", error);
+    alert("Error al guardar las tramas.");
   }
 });
 
-function cerrarModalConexiones() {
-  document.getElementById("conexiones-modal").style.display = "none";
+function cerrarModalTramas() {
+  document.getElementById("tramas-modal").style.display = "none";
 }
 
 function capitalize(str) {
