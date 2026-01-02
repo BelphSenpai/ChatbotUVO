@@ -144,6 +144,46 @@ def _sync_file_to_redis_if_missing(user: str):
     if user in snapshot:
         _redis_set_tokens(user, snapshot[user])
 
+
+# ========== PODERES: Redis como fuente de verdad, fichero como snapshot ==========
+def _poderes_redis_key(user: str) -> str:
+    return f"poderes:{(user or '').strip().lower()}"
+
+
+def _redis_get_poderes(user: str) -> str:
+    try:
+        conn = get_redis_conn()
+        raw = conn.get(_poderes_redis_key(user))
+        if raw is None:
+            return ""
+        if isinstance(raw, (bytes, bytearray)):
+            return raw.decode('utf-8')
+        return str(raw)
+    except Exception:
+        return ""
+
+
+def _redis_set_poderes(user: str, contenido: str):
+    try:
+        conn = get_redis_conn()
+        conn.set(_poderes_redis_key(user), contenido or "")
+    except Exception:
+        pass
+
+
+def _sync_poderes_file_to_redis_if_missing(user: str):
+    """Si Redis no tiene poderes para el usuario, intenta poblar desde el snapshot de fichero."""
+    try:
+        if _redis_get_poderes(user):
+            return
+        ruta = os.path.join(BASE_DIR, 'poderes', 'usuarios', f"{user}.txt")
+        if os.path.exists(ruta):
+            with open(ruta, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+            _redis_set_poderes(user, contenido)
+    except Exception:
+        pass
+
 def is_unlimited_user(username: str) -> bool:
     u = (username or "").strip().lower()
     info = PERSONAJES.get(u, {})
@@ -776,14 +816,10 @@ def gestionar_poderes():
         return jsonify({"error": "No autorizado"}), 403
 
     usuario = session['usuario'].lower()
-    ruta_poder = os.path.join(BASE_DIR, 'poderes', 'usuarios', f'{usuario}.txt')
-
-    if os.path.exists(ruta_poder):
-        with open(ruta_poder, 'r', encoding='utf-8') as f:
-            contenido = f.read()
-        return jsonify({"contenido": contenido})
-    else:
-        return jsonify({"contenido": ""})
+    # Asegura que Redis tiene valor (desde snapshot si hace falta)
+    _sync_poderes_file_to_redis_if_missing(usuario)
+    contenido = _redis_get_poderes(usuario)
+    return jsonify({"contenido": contenido or ""})
 
 
 @app.route('/admin/poderes/list', methods=['GET'])
@@ -792,16 +828,28 @@ def admin_poderes_list():
         return abort(403)
 
     path = os.path.join(BASE_DIR, 'poderes', 'usuarios')
-    usuarios = []
+    usuarios = set()
     try:
+        # desde snapshot en disco
         if os.path.isdir(path):
             for f in os.listdir(path):
                 if f.endswith('.txt'):
-                    usuarios.append(os.path.splitext(f)[0])
+                    usuarios.add(os.path.splitext(f)[0])
+
+        # y desde Redis
+        try:
+            conn = get_redis_conn()
+            keys = conn.keys('poderes:*') or []
+            for k in keys:
+                if isinstance(k, (bytes, bytearray)):
+                    k = k.decode('utf-8')
+                usuarios.add(k.split(':', 1)[1])
+        except Exception:
+            pass
     except Exception as e:
         app.logger.exception(f"Error listando poderes: {e}")
 
-    return jsonify({"usuarios": usuarios})
+    return jsonify({"usuarios": sorted(list(usuarios))})
 
 
 @app.route('/admin/poderes/<usuario>', methods=['GET', 'POST', 'DELETE'])
@@ -816,37 +864,49 @@ def admin_poderes_usuario(usuario):
     ruta = os.path.join(BASE_DIR, 'poderes', 'usuarios', f'{usuario}.txt')
 
     if request.method == 'GET':
-        if os.path.exists(ruta):
-            try:
-                with open(ruta, 'r', encoding='utf-8') as f:
-                    contenido = f.read()
-                return jsonify({"contenido": contenido})
-            except Exception as e:
-                app.logger.exception(f"Error leyendo {ruta}: {e}")
-                return jsonify({"error": "Error leyendo archivo"}), 500
-        else:
-            return jsonify({"contenido": ""})
+        try:
+            # preferir Redis, fallback a snapshot
+            _sync_poderes_file_to_redis_if_missing(usuario)
+            contenido = _redis_get_poderes(usuario)
+            return jsonify({"contenido": contenido or ""})
+        except Exception as e:
+            app.logger.exception(f"Error leyendo poderes de {usuario}: {e}")
+            return jsonify({"error": "Error leyendo poderes"}), 500
 
     if request.method == 'POST':
         data = request.get_json() or {}
         contenido = data.get('contenido', '')
         try:
+            # Guarda en Redis
+            _redis_set_poderes(usuario, contenido or "")
+
+            # Guarda snapshot en disco (atomico)
             os.makedirs(os.path.dirname(ruta), exist_ok=True)
-            with open(ruta, 'w', encoding='utf-8') as f:
+            tmp = ruta + '.tmp'
+            with open(tmp, 'w', encoding='utf-8') as f:
                 f.write(contenido or '')
+            os.replace(tmp, ruta)
             return jsonify({"mensaje": "Guardado correctamente."})
         except Exception as e:
-            app.logger.exception(f"Error guardando {ruta}: {e}")
-            return jsonify({"error": "Error guardando archivo"}), 500
+            app.logger.exception(f"Error guardando poderes de {usuario}: {e}")
+            return jsonify({"error": "Error guardando poderes"}), 500
 
     if request.method == 'DELETE':
         try:
+            # borrar en Redis
+            try:
+                conn = get_redis_conn()
+                conn.delete(_poderes_redis_key(usuario))
+            except Exception:
+                pass
+
+            # borrar snapshot
             if os.path.exists(ruta):
                 os.remove(ruta)
                 return jsonify({"mensaje": "Archivo eliminado."})
             return jsonify({"mensaje": "No existía el archivo."})
         except Exception as e:
-            app.logger.exception(f"Error eliminando {ruta}: {e}")
+            app.logger.exception(f"Error eliminando poderes de {usuario}: {e}")
             return jsonify({"error": "Error eliminando archivo"}), 500
 
 # Backwards compatibility: redirect old /notas to new /poderes
