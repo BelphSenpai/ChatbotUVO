@@ -1,0 +1,17 @@
+{
+  "nombre_personaje": "ram-1",
+  "nombre_jugador": "Ramona Garcia",
+  "cabala": "Inquebrantables",
+  "naturaleza": "Torre",
+  "senda": "Hefesto",
+  "arquetipo": "ExCorpo",
+  "sec_1": "Vaquera",
+  "sec_2": "Mecanica",
+  "sec_3": "Familiar",
+  "sec_4": "Brava",
+  "daño": 0,
+  "rotura": 0,
+  "mutacion": 0,
+  "cyber": 0
+}
+

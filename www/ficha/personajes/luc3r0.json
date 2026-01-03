@@ -1,0 +1,17 @@
+{
+  "nombre_personaje": "LUC3R0",
+  "nombre_jugador": "Cipriano",
+  "cabala": "Sol Invicto",
+  "naturaleza": "Alfil",
+  "senda": "Arcano",
+  "arquetipo": "Erudito",
+  "sec_1": "ExCorpo",
+  "sec_2": "Religioso",
+  "sec_3": "Ingeniero",
+  "sec_4": "Golconda",
+  "daño": 0,
+  "rotura": 0,
+  "mutacion": 0,
+  "cyber": 0
+}
+
