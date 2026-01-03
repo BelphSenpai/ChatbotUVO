@@ -2,141 +2,127 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Mapa de relaciones</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="/tramas/style.css">
-  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="icon" href="/static/favicon.png" type="image/png" />
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tramas Personales</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/tramas/style.css">
+    <link rel="icon" href="/static/favicon.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="nav-bar">
-    <a class="nav-item" id="ficha-link">FICHA</a>
-    <a class="nav-item active" id="tramas-link">TRAMAS</a>
-    <a class="nav-item" id="poderes-link" href="/poderes">PODERES</a>
+    <div class="nav-bar">
+        <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
+        <a class="nav-item active" id="tramas-link" href="/tramas">TRAMAS</a>
+        <a class="nav-item" id="poderes-link" href="/poderes">PODERES</a>
+        <div id="admin-link-container" style="display:none;">
+            <a class="nav-item" href="/admin">ADMIN</a>
+        </div>
 
-    <div id="admin-link-container" style="display:none;">
-      <a class="nav-item" href="/admin">ADMIN</a>
+        <div class="nav-item dropdown" id="ia-dropdown-container" style="display:none;">
+            IAs
+            <div class="dropdown-content" id="ia-dropdown">
+                <!-- Links dinámicos a IAs -->
+            </div>
+        </div>
     </div>
 
-    <div class="nav-item dropdown" id="ia-dropdown-container" style="display:none;">
-      IAs
-      <div class="dropdown-content" id="ia-dropdown">
-        <!-- Links dinámicos a IAs -->
-      </div>
-    </div>
-  </div>
+    <script>
+        window.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const sessionRes = await fetch("/session-info");
+                const sessionData = await sessionRes.json();
+                const id = sessionData.usuario;
+                const rol = sessionData.rol;
 
-  <script>
-    window.addEventListener("DOMContentLoaded", async () => {
-      try {
-        const sessionRes = await fetch("/session-info");
-        const sessionData = await sessionRes.json();
-        const id = sessionData.usuario;
-        const rol = sessionData.rol;
+                if (id) {
+                    document.getElementById("tramas-link").setAttribute("href", `/tramas`);
 
-        if (id) {
-          document.getElementById("tramas-link").setAttribute("href", `/tramas`);
+                    if (rol === "admin") {
+                        document.getElementById("admin-link-container").style.display = "inline-block";
+                    }
 
-          // Mostrar Admin si es rol admin
-          if (rol === "admin") {
-            document.getElementById("admin-link-container").style.display = "inline-block";
-          }
+                    const usosRes = await fetch("/usos");
+                    if (usosRes.ok) {
+                        const usos = await usosRes.json();
+                        const iaDropdown = document.getElementById("ia-dropdown");
+                        const iaDropdownContainer = document.getElementById("ia-dropdown-container");
 
-          // Pedimos los usos reales
-          const usosRes = await fetch("/usos");
-          if (usosRes.ok) {
-            const usos = await usosRes.json();
-            const iaDropdown = document.getElementById("ia-dropdown");
-            const iaDropdownContainer = document.getElementById("ia-dropdown-container");
+                        const ias = ["hada", "eidolon", "fantasma", "anima"];
+                        let tieneIAsDisponibles = false;
 
-            const ias = ["hada", "eidolon", "fantasma", "anima"];
-            let tieneIAsDisponibles = false;
+                        ias.forEach(ia => {
+                            const cantidad = usos[ia];
+                            if (cantidad === -1 || (typeof cantidad === "number" && cantidad >= 0)) {
+                                const link = document.createElement("a");
+                                link.href = `/${ia}`;
+                                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
+                                iaDropdown.appendChild(link);
+                                tieneIAsDisponibles = true;
+                            }
+                        });
 
-            ias.forEach(ia => {
-              const cantidad = usos[ia];
-              if (cantidad === -1 || (typeof cantidad === "number" && cantidad >= 0)) {
-                const link = document.createElement("a");
-                link.href = `/${ia}`;
-                link.textContent = ia.charAt(0).toUpperCase() + ia.slice(1);
-                iaDropdown.appendChild(link);
-                tieneIAsDisponibles = true;
-              }
-            });
+                        if (tieneIAsDisponibles) {
+                            iaDropdownContainer.style.display = "inline-block";
+                        }
+                    }
 
-            // Mostrar el botón de IAs solo si hay al menos una IA disponible
-            if (tieneIAsDisponibles) {
-              iaDropdownContainer.style.display = "inline-block";
+                    const dropdown = document.getElementById("ia-dropdown-container");
+                    const dropdownContent = document.getElementById("ia-dropdown");
+
+                    if (dropdown && dropdownContent) {
+                        dropdown.addEventListener("click", (e) => {
+                            e.stopPropagation();
+                            dropdown.classList.toggle("active");
+                        });
+
+                        document.addEventListener("click", (e) => {
+                            if (!dropdown.contains(e.target)) {
+                                dropdown.classList.remove("active");
+                            }
+                        });
+
+                        document.addEventListener("keydown", (e) => {
+                            if (e.key === "Escape") {
+                                dropdown.classList.remove("active");
+                            }
+                        });
+                    }
+                }
+            } catch (error) {
+                console.error("Error cargando sesión o usos:", error);
             }
-          }
-        }
-      } catch (error) {
-        console.error("Error cargando sesión o usos:", error);
-      }
-    });
-  </script>
-  <div class="terminal">
-    <div class="scanline"></div>
-    <div id="cy"></div>
-  </div>
-
-  <div id="popup"></div>
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const id = new URLSearchParams(window.location.search).get("id");
-
-      if (id) {
-        const setHref = (id, selector) => {
-          const el = document.getElementById(selector);
-          if (el) el.href = `/${selector.replace("-link", "")}?id=${id}`;
-        };
-
-        setHref(id, "ficha-link");
-        setHref(id, "hada-link");
-        setHref(id, "eidolon-link");
-        setHref(id, "fantasma-link");
-        setHref(id, "anima-link");
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const dropdown = document.querySelector(".dropdown");
-      const dropdownContent = document.querySelector(".dropdown-content");
-
-      if (dropdown && dropdownContent) {
-        // Mostrar/ocultar al hacer clic
-        dropdown.addEventListener("click", (e) => {
-          e.stopPropagation(); // Evita que se cierre al hacer clic dentro
-          dropdown.classList.toggle("active");
-          dropdownContent.classList.toggle("show");
         });
+    </script>
 
-        // Cierra el menú al hacer clic fuera
-        document.addEventListener("click", (e) => {
-          if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove("active");
-            dropdownContent.classList.remove("show");
-          }
+    <div class="tramas-container">
+        <div class="scanline"></div>
+        <textarea id="tramas" placeholder="Escribe tus tramas aquí..." readonly></textarea>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const textarea = document.getElementById("tramas");
+
+            async function cargarTramas() {
+                try {
+                    const res = await fetch("/tramas/contenido");
+                    if (res.ok) {
+                        const data = await res.json();
+                        textarea.value = data.contenido || "";
+                    } else {
+                        console.error("No se pudo cargar las tramas.");
+                    }
+                } catch (error) {
+                    console.error("Error cargando tramas:", error);
+                }
+            }
+
+            cargarTramas();
         });
-
-        // Cierra con la tecla Escape
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") {
-            dropdown.classList.remove("active");
-            dropdownContent.classList.remove("show");
-          }
-        });
-      }
-    });
-  </script>
-
+    </script>
 </body>
-<script src="/tramas/script.js"></script>
 
 </html>

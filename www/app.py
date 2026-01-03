@@ -149,6 +149,9 @@ def _sync_file_to_redis_if_missing(user: str):
 def _poderes_redis_key(user: str) -> str:
     return f"poderes:{(user or '').strip().lower()}"
 
+def _tramas_redis_key(user: str) -> str:
+    return f"tramas:{(user or '').strip().lower()}"
+
 
 def _redis_get_poderes(user: str) -> str:
     try:
@@ -181,6 +184,38 @@ def _sync_poderes_file_to_redis_if_missing(user: str):
             with open(ruta, 'r', encoding='utf-8') as f:
                 contenido = f.read()
             _redis_set_poderes(user, contenido)
+    except Exception:
+        pass
+
+def _redis_get_tramas(user: str) -> str:
+    try:
+        conn = get_redis_conn()
+        raw = conn.get(_tramas_redis_key(user))
+        if raw is None:
+            return ""
+        if isinstance(raw, (bytes, bytearray)):
+            return raw.decode('utf-8')
+        return str(raw)
+    except Exception:
+        return ""
+
+def _redis_set_tramas(user: str, contenido: str):
+    try:
+        conn = get_redis_conn()
+        conn.set(_tramas_redis_key(user), contenido or "")
+    except Exception:
+        pass
+
+def _sync_tramas_file_to_redis_if_missing(user: str):
+    """Si Redis no tiene tramas para el usuario, intenta poblar desde el snapshot de fichero."""
+    try:
+        if _redis_get_tramas(user):
+            return
+        ruta = os.path.join(BASE_DIR, 'tramas', 'usuarios', f"{user}.txt")
+        if os.path.exists(ruta):
+            with open(ruta, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+            _redis_set_tramas(user, contenido)
     except Exception:
         pass
 
@@ -920,6 +955,105 @@ def notas_contenido_redirect():
     if request.method == 'GET':
         return redirect('/poderes/contenido')
     return jsonify({"error": "Método no permitido"}), 405
+
+# ========== TRAMAS (sistema de texto simple) ==========
+@app.route('/tramas/contenido', methods=['GET'])
+def gestionar_tramas():
+    if 'usuario' not in session:
+        return jsonify({"error": "No autorizado"}), 403
+
+    usuario = session['usuario'].lower()
+    # Asegura que Redis tiene valor (desde snapshot si hace falta)
+    _sync_tramas_file_to_redis_if_missing(usuario)
+    contenido = _redis_get_tramas(usuario)
+    return jsonify({"contenido": contenido or ""})
+
+@app.route('/admin/tramas/list', methods=['GET'])
+def admin_tramas_list():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    path = os.path.join(BASE_DIR, 'tramas', 'usuarios')
+    usuarios = set()
+    try:
+        # desde snapshot en disco
+        if os.path.isdir(path):
+            for f in os.listdir(path):
+                if f.endswith('.txt'):
+                    usuarios.add(os.path.splitext(f)[0])
+
+        # y desde Redis
+        try:
+            conn = get_redis_conn()
+            keys = conn.keys('tramas:*') or []
+            for k in keys:
+                if isinstance(k, (bytes, bytearray)):
+                    k = k.decode('utf-8')
+                usuarios.add(k.split(':', 1)[1])
+        except Exception:
+            pass
+    except Exception as e:
+        app.logger.exception(f"Error listando tramas: {e}")
+
+    return jsonify({"usuarios": sorted(list(usuarios))})
+
+@app.route('/admin/tramas/<usuario>', methods=['GET', 'POST', 'DELETE'])
+def admin_tramas_usuario(usuario):
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    # simple sanitization: allow only word chars, dash and underscore
+    if not re.match(r'^[\w-]+$', usuario):
+        return jsonify({"error": "Usuario inválido"}), 400
+
+    ruta = os.path.join(BASE_DIR, 'tramas', 'usuarios', f'{usuario}.txt')
+
+    if request.method == 'GET':
+        try:
+            # preferir Redis, fallback a snapshot
+            _sync_tramas_file_to_redis_if_missing(usuario)
+            contenido = _redis_get_tramas(usuario)
+            return jsonify({"contenido": contenido or ""})
+        except Exception as e:
+            app.logger.exception(f"Error leyendo tramas de {usuario}: {e}")
+            return jsonify({"error": "Error leyendo tramas"}), 500
+
+    if request.method == 'POST':
+        data = request.get_json() or {}
+        contenido = data.get('contenido', '')
+        try:
+            # Guarda en Redis
+            _redis_set_tramas(usuario, contenido or "")
+
+            # Guarda snapshot en disco (atomico)
+            os.makedirs(os.path.dirname(ruta), exist_ok=True)
+            tmp = ruta + ".tmp"
+            with open(tmp, 'w', encoding='utf-8') as f:
+                f.write(contenido or "")
+            os.replace(tmp, ruta)
+
+            return jsonify({"mensaje": "Tramas guardadas correctamente."})
+        except Exception as e:
+            app.logger.exception(f"Error guardando tramas de {usuario}: {e}")
+            return jsonify({"error": "Error guardando tramas"}), 500
+
+    if request.method == 'DELETE':
+        try:
+            # borrar de Redis
+            try:
+                conn = get_redis_conn()
+                conn.delete(_tramas_redis_key(usuario))
+            except Exception:
+                pass
+
+            # borrar snapshot
+            if os.path.exists(ruta):
+                os.remove(ruta)
+                return jsonify({"mensaje": "Archivo eliminado."})
+            return jsonify({"mensaje": "No existía el archivo."})
+        except Exception as e:
+            app.logger.exception(f"Error eliminando tramas de {usuario}: {e}")
+            return jsonify({"error": "Error eliminando archivo"}), 500
 
 # ========== USOS ==========
 @app.route('/usos')

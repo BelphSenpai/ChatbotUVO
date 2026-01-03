@@ -1,121 +1,68 @@
-/* === ESTILOS BASE === */
+/* === TRAMAS (similar a poderes) === */
 body {
-    background-color: #0a0f1a;
+    margin: 0;
+    background: #0a0f1a;
     color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
     font-size: 14px;
     line-height: 1.5;
-    user-select: none;
     overflow-x: hidden;
     overflow-y: auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     min-height: 100vh;
-    font-family: 'Share Tech Mono', monospace;
+    padding-top: 60px;
 }
 
-.terminal {
+/* Contenedor de tramas */
+.tramas-container {
     width: 90%;
-    max-width: 1200px;
-    height: 80vh;
-    background: rgba(21, 157, 157, 0.05);
+    max-width: 800px;
+    background: rgba(0, 255, 255, 0.04);
     border: 1px solid #00ffff33;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+    padding: 4%;
     border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    margin-bottom: 40px;
     animation: glowFlicker 10s infinite ease-in-out;
-    box-sizing: border-box;
 }
 
-
-#cy {
+/* Área de escritura */
+.tramas-container textarea {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 255, 255, 0.01);
-    box-sizing: border-box;
-    position: relative;
-    flex: 1;
+    min-height: 50vh;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid #00ffff55;
+    color: #00ffff;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    padding: 1em;
+    border-radius: 6px;
+    resize: vertical;
+    box-shadow: 0 0 6px rgba(0, 255, 255, 0.1) inset;
 }
 
-/* === MEDIA QUERIES === */
+/* Dropdown funcional */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding: 0.5em;
+    z-index: 100;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    body {
-        font-size: 12px;
-        flex-direction: column;
-    }
-
-    .terminal {
-        width: 90%;
-        height: 70vh;
-    }
-
-    #popup {
-        max-width: 90vw;
-        font-size: 12px;
-    }
-
-    #popup strong {
-        font-size: 13px;
+    .tramas-container {
+        padding: 6%;
     }
 }
-
-@media (max-width: 480px) {
-    body {
-        font-size: 11px;
-    }
-
-    .dropdown-content a {
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-
-    #popup {
-        padding: 8px 12px;
-        font-size: 11px;
-    }
-
-    .terminal {
-      width: 90%;
-      height: 70vh;
-  }
-}
-
-@media (max-width: 1024px) {
-    .terminal {
-      width: 80%;
-      height: 75vh;
-    }
-  
-    .nav-bar {
-      font-size: 12px;
-      gap: 16px;
-      padding: 0 16px;
-    }
-  
-    #popup {
-      max-width: 85vw;
-      font-size: 13px;
-    }
-  }
-  
-  @media (max-width: 640px) {
-    .terminal {
-      width: 90%;
-      height: 70vh;
-    }
-  
-    .nav-bar {
-      font-size: 10px;
-      gap: 8px;
-      padding: 0 10px;
-    }
-  
-    .dropdown-content a {
-      font-size: 11px;
-      padding: 4px 10px;
-    }
-  }
-  

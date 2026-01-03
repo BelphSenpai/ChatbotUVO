@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarContadoresBtn.addEventListener("click", cargarPersonajes);
 
   document.getElementById("cerrar-modal-log").addEventListener("click", cerrarModalLog);
-  document.getElementById("cerrar-modal-tramas").addEventListener("click", cerrarModalTramas);
+  // Listener de cerrar-modal-tramas movido arriba con el nuevo sistema
 
   cargarSesiones();
 });
@@ -532,42 +532,38 @@ function cerrarModalLog() {
 // ==== TRAMAS ====
 
 async function abrirEditorTramas(nombre) {
-  personajeActual = nombre;
-  document.getElementById("titulo-tramas").textContent = `Tramas de ${nombre}`;
-
+  const modal = document.getElementById('tramas-modal');
+  if (modal) modal.style.display = 'flex';
   try {
-    let res = await fetch(`/tramas/personajes/${nombre}.json`);
+    await cargarTramasUsuario(nombre);
+  } catch (err) {
+    console.error('Error cargando tramas del personaje desde lista:', err);
+  }
+}
 
-    if (res.status === 404) {
-      console.warn(`Archivo de tramas para ${nombre} no encontrado, creando nuevo...`);
-      await fetch(`/tramas/personajes/${nombre}.json`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ elements: { nodes: [], edges: [] } })
-      });
-      res = await fetch(`/tramas/personajes/${nombre}.json`);
-    }
-
+async function cargarTramasUsuario(usuario) {
+  try {
+    const res = await fetch(`/admin/tramas/${encodeURIComponent(usuario)}`);
+    if (!res.ok) throw new Error('Error cargando');
     const data = await res.json();
-    console.log("Datos cargados:", data);
-
-    // Seguridad extra: si falta 'elements', lo inicializamos
-    if (!data.elements) {
-      console.warn("Warning: archivo sin 'elements'. Inicializando vacío.");
-      data.elements = { nodes: [], edges: [] };
+    document.getElementById('editor-tramas').value = data.contenido || '';
+    // set hidden current user so guardar/eliminar sepan a quién referirse
+    const hidden = document.getElementById('tramas-usuario');
+    if (hidden) hidden.value = usuario;
+    // update modal title to reflect current usuario
+    const titulo = document.querySelector('#tramas-modal .modal-content h2');
+    if (titulo) titulo.textContent = `Editar Tramas — ${usuario}`;
+    // focus editor and move cursor to end
+    const editor = document.getElementById('editor-tramas');
+    if (editor) {
+      editor.focus();
+      // move cursor to end
+      const val = editor.value;
+      editor.selectionStart = editor.selectionEnd = val ? val.length : 0;
     }
-
-    nodosActuales = data.elements.nodes || [];
-    tramasActuales = data.elements.edges || [];
-
-    renderizarTramas();
-    renderizarNodos();
-    renderizarSelects();
-    document.getElementById("tramas-modal").style.display = "flex";
-
-  } catch (error) {
-    console.error("Error cargando o creando tramas:", error);
-    alert("Error cargando tramas de este personaje.");
+  } catch (err) {
+    console.error('Error cargando tramas de usuario:', err);
+    alert('No se pudo cargar las tramas del usuario.');
   }
 }
 
@@ -670,92 +666,55 @@ function renderizarSelects() {
   });
 }
 
-document.getElementById("añadir-trama").addEventListener("click", () => {
-  const source = document.getElementById("source-nodo").value.trim();
-  const target = document.getElementById("target-nodo").value.trim();
-  const label = document.getElementById("label-trama").value.trim();
+// Listener antiguo de añadir-trama eliminado (sistema de nodos ya no se usa)
 
-  if (!source || !target || !label) {
-    alert("Todos los campos son obligatorios.");
-    return;
-  }
-
-  if (source === target) {
-    alert("No puedes conectar un personaje consigo mismo.");
-    return;
-  }
-
-  const newEdge = {
-    data: {
-      id: `e${Date.now()}`,
-      source,
-      target,
-      label
-    }
-  };
-
-  tramasActuales.push(newEdge);
-  document.getElementById("label-trama").value = "";
-  renderizarTramas();
+document.getElementById("cerrar-tramas")?.addEventListener('click', () => {
+  document.getElementById("tramas-modal").style.display = 'none';
 });
 
-document.getElementById("guardar-tramas").addEventListener("click", async () => {
+document.getElementById('guardar-tramas')?.addEventListener('click', async () => {
+  const hidden = document.getElementById('tramas-usuario');
+  const usuario = hidden && hidden.value;
+  if (!usuario) { alert('Selecciona un usuario.'); return; }
+  const contenido = document.getElementById('editor-tramas').value || '';
   try {
-    const body = {
-      elements: {
-        nodes: nodosActuales,
-        edges: tramasActuales
-      }
-    };
-
-    const res = await fetch(`/tramas/personajes/${personajeActual}.json`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body)
+    const res = await fetch(`/admin/tramas/${encodeURIComponent(usuario)}`, {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({contenido})
     });
-
     const data = await res.json();
-    alert(data.mensaje || "Tramas guardadas correctamente.");
-    cerrarModalTramas();
-  } catch (error) {
-    console.error("Error guardando tramas:", error);
-    alert("Error al guardar las tramas.");
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Guardado.');
+    // ensure hidden keeps the current usuario
+    const hidden2 = document.getElementById('tramas-usuario'); if (hidden2) hidden2.value = usuario;
+  } catch (err) {
+    console.error('Error guardando tramas:', err);
+    alert('No se pudo guardar.');
   }
 });
 
-function cerrarModalTramas() {
-  document.getElementById("tramas-modal").style.display = "none";
-}
+document.getElementById('eliminar-tramas')?.addEventListener('click', async () => {
+  const hidden = document.getElementById('tramas-usuario');
+  const usuario = hidden && hidden.value;
+  if (!usuario) { alert('Selecciona un usuario para eliminar.'); return; }
+  if (!confirm(`Eliminar archivo de tramas de ${usuario}?`)) return;
+  try {
+    const res = await fetch(`/admin/tramas/${encodeURIComponent(usuario)}`, { method: 'DELETE' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Eliminado.');
+    document.getElementById('editor-tramas').value = '';
+    const hidden2 = document.getElementById('tramas-usuario'); if (hidden2) hidden2.value = '';
+  } catch (err) {
+    console.error('Error eliminando archivo:', err);
+    alert('No se pudo eliminar.');
+  }
+});
 
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-document.getElementById("crear-nodo").addEventListener("click", () => {
-  const id = document.getElementById("nuevo-nodo-id").value.trim();
-  const label = document.getElementById("nuevo-nodo-label").value.trim();
-
-  if (!id || !label) {
-    alert("Debes rellenar ID y Nombre del nodo.");
-    return;
-  }
-
-  if (nodosActuales.some(n => n.data.id === id)) {
-    alert("Ya existe un nodo con ese ID.");
-    return;
-  }
-
-  nodosActuales.push({
-    data: { id: id, label: label }
-  });
-
-  document.getElementById("nuevo-nodo-id").value = "";
-  document.getElementById("nuevo-nodo-label").value = "";
-
-  renderizarSelects();
-  renderizarNodos();
-  alert("Nodo creado correctamente.");
-});
+// Listener de crear-nodo eliminado (ya no existe en el HTML)
 
 async function editarPersonaje(nombre) {
   editandoNombre = nombre;

@@ -172,45 +172,22 @@
     </div>
   </div>
 
-  <!-- Modal de Tramas (antes: Conexiones) -->
-  <div id="tramas-modal" class="modal" style="display: none;">
-    <div class="modal-content-log">
-      <span id="cerrar-modal-tramas" style="cursor: pointer; float: right;">✖</span>
-      <h2 id="titulo-tramas" style="margin-top: 0;">Tramas de [Personaje]</h2>
+  <!-- Modal de Tramas (editor de texto simple) -->
+  <div id="tramas-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Editar Tramas por Personaje</h2>
 
-      <!-- 🚀 AÑADIR NUEVO NODO MANUAL -->
-      <div style="margin-bottom: 20px;">
-        <h3>Añadir nuevo nodo</h3>
-        <input type="text" id="nuevo-nodo-id" placeholder="ID del nodo" style="margin-right: 6px; margin-bottom: 6px;">
-        <input type="text" id="nuevo-nodo-label" placeholder="Nombre visible"
-          style="margin-right: 6px; margin-bottom: 6px;">
-        <button id="crear-nodo">Crear Nodo</button>
-      </div>
+      <!-- Usuario actual (rellenado al abrir modal). Carga/guardado sobre el personaje seleccionado -->
+      <input type="hidden" id="tramas-usuario" />
 
-      <!-- 🚀 AÑADIR NUEVA TRAMA -->
-      <div style="margin-bottom: 20px;">
-        <h3>Añadir nueva trama</h3>
-        <select id="source-nodo" style="margin-right: 6px;"></select>
-        <select id="target-nodo" style="margin-right: 6px;"></select>
-        <input type="text" id="label-trama" placeholder="Descripción de la trama" style="margin-right: 6px;">
-        <button id="añadir-trama">Añadir Trama</button>
-      </div>
+      <textarea id="editor-tramas" style="width:100%; height:360px; font-family:monospace;"></textarea>
 
-      <!-- 🚀 LISTADO TRAMAS -->
-      <div id="lista-tramas" style="max-height: 300px; overflow-y: auto; margin-top: 10px;"></div>
-
-      <h3 style="margin-top: 20px;">Nodos Existentes</h3>
-      <div id="lista-nodos" style="max-height: 200px; overflow-y: auto; margin-top: 10px;"></div>
-
-
-
-      <!-- 🚀 BOTÓN GUARDAR -->
-      <div style="margin-top: 20px; text-align: center;">
-        <button id="guardar-tramas">Guardar Cambios</button>
+      <div class="modal-buttons" style="margin-top:8px;">
+        <button id="guardar-tramas">Guardar</button>
+        <button id="eliminar-tramas" style="background:#ff6b35; color:white;">Eliminar Archivo</button>
+        <button id="cerrar-tramas">Cerrar</button>
       </div>
     </div>
-    <div id="cy-mini"
-      style="width: 30%; height: 500px;border: 1px solid #00ffff55; background: #111; margin-top: 20px;"></div>
   </div>
 
   <div id="modal-ficha" class="modal" style="display: none;">
