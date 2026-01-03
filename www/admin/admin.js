@@ -808,8 +808,22 @@ document.getElementById("cerrar-modal-ficha").addEventListener("click", () => {
 });
 
 document.getElementById("guardar-ficha").addEventListener("click", async () => {
-  const editor = document.getElementById("editor-ficha");
-  const jsonValido = recopilarDatosEditorFicha(editor);
+  const jsonValido = recopilarDatosEditorFicha();
+  
+  // Asegurar que rotura no exceda el máximo según naturaleza
+  const naturaleza = jsonValido.naturaleza || "";
+  let maxRotura = 3;
+  if (naturaleza === "Caballo") {
+    maxRotura = 1;
+  } else if (naturaleza === "Torre") {
+    maxRotura = 2;
+  } else if (naturaleza === "Alfil") {
+    maxRotura = 3;
+  }
+  
+  if (jsonValido.rotura > maxRotura) {
+    jsonValido.rotura = maxRotura;
+  }
 
   try {
     const res = await fetch(`/admin/ficha/${personajeActual}.json`, {
@@ -889,6 +903,9 @@ async function abrirModalFicha(nombre = null) {
 
     const editor = document.getElementById("editor-ficha");
     generarEditorFicha(datos, editor);
+    
+    // Añadir listener de naturaleza si no está añadido
+    añadirListenerNaturaleza();
 
     document.getElementById("modal-ficha").style.display = "flex";
 
@@ -901,13 +918,50 @@ async function abrirModalFicha(nombre = null) {
 
 // === NUEVO GENERADOR DE FICHA CON GUARDADO POR CAMPO ===
 function generarEditorFicha(datos, parent, prefix = '') {
-  const inputs = document.querySelectorAll("#modal-ficha input[data-id]");
+  const inputs = document.querySelectorAll("#modal-ficha input[data-id], #modal-ficha select[data-id]");
   inputs.forEach(input => {
     const key = input.dataset.id;
     if (datos.hasOwnProperty(key)) {
       input.value = datos[key];
     }
   });
+  
+  // Ajustar slots de rotura según naturaleza
+  ajustarSlotsRotura(datos.naturaleza);
+}
+
+// Función para ajustar los slots de rotura según la naturaleza
+function ajustarSlotsRotura(naturaleza) {
+  const roturaInput = document.querySelector("#modal-ficha input[data-id='rotura']");
+  if (!roturaInput) return;
+  
+  let maxSlots = 3;
+  if (naturaleza === "Caballo") {
+    maxSlots = 1;
+  } else if (naturaleza === "Torre") {
+    maxSlots = 2;
+  } else if (naturaleza === "Alfil") {
+    maxSlots = 3;
+  }
+  
+  roturaInput.max = maxSlots;
+  
+  // Si el valor actual excede el máximo, ajustarlo
+  const valorActual = parseInt(roturaInput.value) || 0;
+  if (valorActual > maxSlots) {
+    roturaInput.value = maxSlots;
+  }
+}
+
+// Listener para cuando cambie la naturaleza (se añade cuando se abre el modal)
+function añadirListenerNaturaleza() {
+  const naturalezaSelect = document.getElementById("naturaleza-select");
+  if (naturalezaSelect && !naturalezaSelect.hasAttribute("data-listener-añadido")) {
+    naturalezaSelect.addEventListener("change", (e) => {
+      ajustarSlotsRotura(e.target.value);
+    });
+    naturalezaSelect.setAttribute("data-listener-añadido", "true");
+  }
 }
 
 // === CERRAR MODAL FICHA ===
@@ -1131,7 +1185,7 @@ document.head.appendChild(style);
 
 
 function recopilarDatosEditorFicha() {
-  const inputs = document.querySelectorAll("#modal-ficha input[data-id]");
+  const inputs = document.querySelectorAll("#modal-ficha input[data-id], #modal-ficha select[data-id]");
   const resultado = {};
 
   inputs.forEach(input => {

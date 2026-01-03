@@ -15,6 +15,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (data[key]) el.innerText = data[key];
     });
 
+    // Generar slots de rotura según la naturaleza
+    const naturaleza = data.naturaleza || "";
+    const bloqueRotura = document.querySelector(`.indicador-toggle[data-id="rotura"]`);
+    if (bloqueRotura) {
+      generarSlotsRotura(bloqueRotura, naturaleza);
+    }
+
     ["daño", "rotura", "mutacion", "cyber"].forEach(seccion => {
       const bloque = document.querySelector(`.indicador-toggle[data-id="${seccion}"]`);
       if (!bloque) return;
@@ -32,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       activarHasta(puntos, nivel);
 
       puntos.forEach((punto, index) => {
-        punto.addEventListener("click", async () => {
+        punto.addEventListener("dblclick", async () => {
           const nivelActual = contarActivos(puntos);
           const nuevoNivel = (nivelActual === index + 1) ? 0 : index + 1;
 
@@ -205,3 +212,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error("Error cargando datos de personaje:", err);
   }
 });
+
+// Función para generar los slots de rotura según la naturaleza
+function generarSlotsRotura(bloque, naturaleza) {
+  // Limpiar slots existentes
+  bloque.innerHTML = "";
+  
+  let numSlots = 3; // Por defecto Alfil
+  if (naturaleza === "Caballo") {
+    numSlots = 1;
+  } else if (naturaleza === "Torre") {
+    numSlots = 2;
+  } else if (naturaleza === "Alfil") {
+    numSlots = 3;
+  }
+  
+  // Generar los slots
+  for (let i = 0; i < numSlots; i++) {
+    const item = document.createElement("div");
+    item.className = "item";
+    item.setAttribute("data-index", i);
+    bloque.appendChild(item);
+  }
+  
+  // Ajustar la clase del bloque según el número de slots
+  bloque.className = `bloque bloque-${numSlots} indicador-toggle`;
+  bloque.setAttribute("data-id", "rotura");
+}
