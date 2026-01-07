@@ -86,25 +86,32 @@ document.addEventListener("DOMContentLoaded", async () => {
               activarHasta(puntos, nuevoNivel);
               await guardarCambios(seccion, nuevoNivel);
             } else {
-              const mutacionNivel = contarActivos(document.querySelectorAll(`.indicador-toggle[data-id="mutacion"] .item`));
-              const cyberNivel = contarActivos(document.querySelectorAll(`.indicador-toggle[data-id="cyber"] .item`));
+              // Allow reducing rotura without requiring mutation/cyber points.
+              if (seccion === "rotura") {
+                activarHasta(puntos, nuevoNivel);
+                await guardarCambios(seccion, nuevoNivel);
+              } else {
+                // For daño, keep existing payment/transfer mechanic using mutacion/cyber
+                const mutacionNivel = contarActivos(document.querySelectorAll(`.indicador-toggle[data-id="mutacion"] .item`));
+                const cyberNivel = contarActivos(document.querySelectorAll(`.indicador-toggle[data-id="cyber"] .item`));
 
-              const libres = (3 - mutacionNivel) + (3 - cyberNivel);
-              const coste = nivelActual - nuevoNivel;
+                const libres = (3 - mutacionNivel) + (3 - cyberNivel);
+                const coste = nivelActual - nuevoNivel;
 
-              if (libres < coste || mutacionNivel + cyberNivel >= 5) {
-                mostrarMensajePago(true, `No hay suficiente espacio libre en mutación o cyber para pagar ${coste} punto(s).`);
-                return;
+                if (libres < coste || mutacionNivel + cyberNivel >= 5) {
+                  mostrarMensajePago(true, `No hay suficiente espacio libre en mutación o cyber para pagar ${coste} punto(s).`);
+                  return;
+                }
+
+                puntosAPagar = coste;
+                puntosCurados = 0;
+                objetivo = { puntos, nuevoNivel };
+                enModoPago = true;
+                modo = seccion;
+
+                activarSeleccionDePago(coste);
+                mostrarMensajePago(true, `Selecciona ${puntosAPagar} punto(s) en mutación o cyber para curar ${seccion}.`);
               }
-
-              puntosAPagar = coste;
-              puntosCurados = 0;
-              objetivo = { puntos, nuevoNivel };
-              enModoPago = true;
-              modo = seccion;
-
-              activarSeleccionDePago(coste);
-              mostrarMensajePago(true, `Selecciona ${puntosAPagar} punto(s) en mutación o cyber para curar ${seccion}.`);
             }
           } else if (["mutacion", "cyber"].includes(seccion)) {
             if (nuevoNivel > nivelActual) {
