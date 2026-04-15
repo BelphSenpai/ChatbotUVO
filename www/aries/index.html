@@ -4,15 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eidolon Dataslate</title>
+  <title>Aries Dataslate</title>
   <link rel="stylesheet" href="/static/style.css">
   <link rel="stylesheet" href="/static/themes.css">
   <link rel="icon" href="/static/favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link href="/eidolon/style.css" rel="stylesheet">
-  <script src="/eidolon/script.js" defer></script>
+  <link href="/aries/style.css" rel="stylesheet">
+  <script src="/aries/script.js" defer></script>
   <script src="/static/theme-manager.js"></script>
 </head>
 
@@ -56,7 +56,7 @@
             const usos = await usosRes.json();
             const iaDropdown = document.getElementById("ia-dropdown");
 
-            const ias = ["hada", "eidolon", "fantasma", "anima"];
+            const ias = ["hada", "aries", "fantasma", "anima"];
 
             ias.forEach(ia => {
               const cantidad = usos[ia];
@@ -104,14 +104,14 @@
         </div>
         <!-- Columna izquierda: terminal -->
         <div class="terminal-column">
-          <h1>EIDOLON</h1>
+          <h1>ARIES</h1>
           <div class="screen" id="terminal-screen"></div>
         </div>
         <!-- Columna derecha: imagen -->
         <div class="image-column">
           <div class="image-content">
             <!-- En lugar de <img src="sun.svg"> -->
-            <img src="/eidolon/sun.svg" alt="Seal of Eidolon" />
+            <img src="/aries/sun.svg" alt="Seal of Aries" />
 
             <div class="latin-inscription">
               <p>Mutationem exstirpa.</p>

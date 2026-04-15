@@ -39,7 +39,7 @@ def ia_command(nombre, emoji):
     return cambiar_ia
 
 # Registrar múltiples IAs
-ia_command("eidolon", "☀️")
+ia_command("aries", "☀️")
 ia_command("minerva", "🧠")
 ia_command("anima", "🔮")
 ia_command("hada", "✨")
