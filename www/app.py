@@ -120,6 +120,10 @@ def _redis_get_tokens(user: str) -> dict:
         raw = conn.hgetall(_tokens_redis_key(user)) or {}
         # hgetall devuelve bytes → int
         parsed = { (k.decode('utf-8') if isinstance(k, (bytes, bytearray)) else str(k)).lower(): int(v) for k, v in raw.items() }
+        # Migrar clave legacy "eidolon" → "aries"
+        if "eidolon" in parsed:
+            parsed["aries"] = parsed.pop("eidolon")
+            _redis_set_tokens(user, parsed)
         return parsed
     except Exception:
         return {}
