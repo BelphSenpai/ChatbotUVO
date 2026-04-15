@@ -582,10 +582,30 @@ img {
   font-family: 'Instrument Serif', serif;
   font-size: 0.8rem;
   color: var(--gold);
-  z-index: 3;
+  z-index: 1000;
   position: fixed;
   top: 0;
   /* 👈 NECESARIO */
+}
+
+.nav-bar a,
+.nav-bar .nav-item a {
+  color: var(--gold);
+  opacity: 0.8;
+}
+
+.nav-bar a:hover,
+.nav-bar .nav-item a:hover {
+  color: var(--neon-green);
+  opacity: 1;
+  text-shadow: 0 0 4px #cc1a1a88;
+}
+
+.nav-bar a.active,
+.nav-bar .nav-item a.active {
+  color: var(--neon-green);
+  text-shadow: 0 0 6px #cc1a1a;
+  border-bottom: 2px solid #cc1a1aaa;
 }
 
 

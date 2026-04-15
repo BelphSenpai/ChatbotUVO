@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     { main: '> Verificando autorización sanctum...', extra: ' [AUTORIZADO]' },
     { main: '> Iniciando sincronización cognitiva...', extra: ' [ESTABLECIDA]' },
     { main: '> Conectado a: ARIES', extra: ' [NUCLEO SOLAR ACTIVO]' },
-    { main: '> Acceso concedido al Archivo Invictus', extra: ' [NIVEL: GLADIUS]' },
-    { main: '> Que el sol guíe tus pasos, ', extra: 'USUARIO_API' }
+    { main: '> Acceso concedido al Archivo AUREO', extra: ' [NIVEL: GLADIUS]' },
+    { main: '> Ten la fuerza para protejer a los indefensos, ', extra: 'USUARIO_API' }
   ];
 
   let currentLine = 0;
