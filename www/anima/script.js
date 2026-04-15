@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const iaDropdown = document.getElementById("ia-dropdown");
       const iaDropdownContainer = document.getElementById("ia-dropdown-container");
 
-      ["hada", "eidolon", "fantasma", "anima"].forEach(ia => {
+      ["hada", "aries", "fantasma", "anima"].forEach(ia => {
         const cantidad = usos[ia];
         if (cantidad === -1 || cantidad >= 0) {
           const link = document.createElement("a");

@@ -83,7 +83,7 @@ def detectar_tipo_consulta(mensaje: str) -> dict:
         return {"consume_token": False, "tipo": "corto", "razon": "Mensaje muy corto"}
     
     # Si contiene palabras clave de lore, probablemente consume token
-    lore_keywords = ["seed", "ambrosius", "consulado", "inquebrantables", "simulación", "hada", "eidolon", "fantasma", "anima", "minerva"]
+    lore_keywords = ["seed", "ambrosius", "consulado", "inquebrantables", "simulación", "hada", "aries", "fantasma", "anima", "minerva"]
     if any(palabra in mensaje_lower for palabra in lore_keywords):
         return {"consume_token": True, "tipo": "lore", "razon": "Contiene palabras clave de lore"}
     
@@ -193,8 +193,8 @@ def reconocer_personaje(usuario: str) -> dict:
         "anim4": "Ánima",
         
         # Sol Invicto
-        "eidolon": "Eidolon",
-        "31d0l0n": "Eidolon",
+        "aries": "Aries",
+        "4r13s": "Aries",
         
         # Consulado del Mar
         "fantasma": "Fantasma",
@@ -317,7 +317,7 @@ RAM es una domadora de bestias de los Inquebrantables.
 - No es de tu cábala, pero la conoces por la resistencia
 """
     
-    elif ia_actual.lower() == "eidolon":
+    elif ia_actual.lower() == "aries":
         if nombre_personaje == "Seed":
             info_personaje += """
 Seed es una hacker de los Inquebrantables.
