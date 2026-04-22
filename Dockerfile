@@ -1,3 +1,14 @@
+FROM node:20-alpine AS yggdrassil-builder
+
+WORKDIR /build/www/yggdrassil
+
+COPY www/yggdrassil/package.json www/yggdrassil/package-lock.json ./
+RUN npm ci
+
+COPY www/yggdrassil/ ./
+RUN npm run build
+
+
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -9,6 +20,7 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+COPY --from=yggdrassil-builder /build/www/yggdrassil/dist /app/www/yggdrassil/dist
 
 # Vars útiles
 ENV PYTHONPATH="/app"

@@ -74,6 +74,7 @@ queue = Queue("queries", connection=redis_conn, default_timeout=600, job_timeout
 # ========== BASE DE RUTAS Y PERSONAJES ==========
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PERSONAJES_PATH = os.path.join(BASE_DIR, 'personajes.json')
+YGGDRASSIL_DIST_DIR = os.path.join(BASE_DIR, 'yggdrassil', 'dist')
 
 # >>> Usa la MISMA ruta que el worker
 APP_STATE_DIR = os.getenv("APP_STATE_DIR", "/state")
@@ -462,6 +463,24 @@ def panel():
     return send_from_directory(path, 'index.html')
 
 name_ia = get_name_ia()
+
+@app.route('/yggdrassil')
+@app.route('/yggdrassil/')
+def yggdrassil_home():
+    if 'usuario' not in session:
+        return redirect('/')
+    return send_from_directory(YGGDRASSIL_DIST_DIR, 'index.html')
+
+@app.route('/yggdrassil/<path:archivo>')
+def yggdrassil_static(archivo):
+    if archivo == 'query':
+        return abort(404)
+
+    asset_path = os.path.join(YGGDRASSIL_DIST_DIR, archivo)
+    if os.path.isfile(asset_path):
+        return send_from_directory(YGGDRASSIL_DIST_DIR, archivo)
+
+    return send_from_directory(YGGDRASSIL_DIST_DIR, 'index.html')
 
 @app.route('/<ia>')
 def ia_home(ia):

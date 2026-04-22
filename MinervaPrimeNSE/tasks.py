@@ -21,6 +21,7 @@ def _guardar_preguntas(data: dict):
 
 def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> dict:
     redis = Redis.from_url(os.getenv("REDIS_URL", "redis://redis:6379/0"))
+    ia_normalizada = (ia or "").strip().lower()
     
     # Importar funciones de detección
     from MinervaPrimeNSE.Minerva import detectar_tipo_consulta, analizar_respuesta_para_consumo
@@ -36,18 +37,22 @@ def job_responder(mensaje: str, ia: str, usuario: str, lock_ttl: int = 10) -> di
         # Verificar si el usuario es ilimitado ANTES de verificar tokens
         from www.app import is_unlimited_user
         es_ilimitado = is_unlimited_user(usuario)
+        es_ia_gratuita = ia_normalizada == "yggdrassil"
         print(f"👤 Usuario {usuario} - Ilimitado: {es_ilimitado}")
         
         # Si es ilimitado, procesar directamente sin verificar tokens
-        if es_ilimitado:
-            print(f"♾️ Usuario ilimitado - procesando sin restricciones")
+        if es_ilimitado or es_ia_gratuita:
+            if es_ilimitado:
+                print(f"♾️ Usuario ilimitado - procesando sin restricciones")
+            else:
+                print(f"🆓 IA gratuita ({ia_normalizada}) - procesando sin consumir tokens")
             try:
                 texto = responder_a_usuario(mensaje, ia, usuario)
                 return {
                     "respuesta": texto,
                     "consumio_token": False,
                     "tipo_consulta": tipo_consulta["tipo"],
-                    "razon": "Usuario ilimitado"
+                    "razon": "Usuario ilimitado" if es_ilimitado else "IA gratuita"
                 }
             except Exception as e:
                 import traceback
