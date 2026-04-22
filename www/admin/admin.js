@@ -68,6 +68,10 @@ document.getElementById('cerrar-poderes')?.addEventListener('click', () => {
   document.getElementById('poderes-modal').style.display = 'none';
 });
 
+document.getElementById('cerrar-notas')?.addEventListener('click', () => {
+  document.getElementById('notas-modal').style.display = 'none';
+});
+
 // 'Cargar' button removed; when opening modal via personaje button we call cargarPoderUsuario(nombre)
 
 async function cargarPoderUsuario(usuario) {
@@ -93,6 +97,31 @@ async function cargarPoderUsuario(usuario) {
   } catch (err) {
     console.error('Error cargando poderes de usuario:', err);
     alert('No se pudo cargar los poderes del usuario.');
+  }
+}
+
+async function cargarNotasUsuario(usuario) {
+  try {
+    const res = await fetch(`/admin/notas/${encodeURIComponent(usuario)}`);
+    if (!res.ok) throw new Error('Error cargando');
+    const data = await res.json();
+    document.getElementById('editor-notas').value = data.contenido || '';
+
+    const hidden = document.getElementById('notas-usuario');
+    if (hidden) hidden.value = usuario;
+
+    const titulo = document.querySelector('#notas-modal .modal-content h2');
+    if (titulo) titulo.textContent = `Editar Notas — ${usuario}`;
+
+    const editor = document.getElementById('editor-notas');
+    if (editor) {
+      editor.focus();
+      const val = editor.value;
+      editor.selectionStart = editor.selectionEnd = val ? val.length : 0;
+    }
+  } catch (err) {
+    console.error('Error cargando notas de usuario:', err);
+    alert('No se pudo cargar las notas del usuario.');
   }
 }
 
@@ -130,6 +159,43 @@ document.getElementById('eliminar-poderes')?.addEventListener('click', async () 
     const hidden2 = document.getElementById('poderes-usuario'); if (hidden2) hidden2.value = '';
   } catch (err) {
     console.error('Error eliminando archivo:', err);
+    alert('No se pudo eliminar.');
+  }
+});
+
+document.getElementById('guardar-notas')?.addEventListener('click', async () => {
+  const hidden = document.getElementById('notas-usuario');
+  const usuario = hidden && hidden.value;
+  if (!usuario) { alert('Selecciona un usuario.'); return; }
+  const contenido = document.getElementById('editor-notas').value || '';
+  try {
+    const res = await fetch(`/admin/notas/${encodeURIComponent(usuario)}`, {
+      method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({contenido})
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Guardado.');
+    const hidden2 = document.getElementById('notas-usuario'); if (hidden2) hidden2.value = usuario;
+  } catch (err) {
+    console.error('Error guardando notas:', err);
+    alert('No se pudo guardar.');
+  }
+});
+
+document.getElementById('eliminar-notas')?.addEventListener('click', async () => {
+  const hidden = document.getElementById('notas-usuario');
+  const usuario = hidden && hidden.value;
+  if (!usuario) { alert('Selecciona un usuario para eliminar.'); return; }
+  if (!confirm(`Eliminar archivo de notas de ${usuario}?`)) return;
+  try {
+    const res = await fetch(`/admin/notas/${encodeURIComponent(usuario)}`, { method: 'DELETE' });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Error');
+    alert(data.mensaje || 'Eliminado.');
+    document.getElementById('editor-notas').value = '';
+    const hidden2 = document.getElementById('notas-usuario'); if (hidden2) hidden2.value = '';
+  } catch (err) {
+    console.error('Error eliminando archivo de notas:', err);
     alert('No se pudo eliminar.');
   }
 });
@@ -220,6 +286,20 @@ async function cargarPersonajes() {
         }
       });
       botonesDiv.appendChild(btnPoderes);
+
+      const btnNotas = document.createElement("button");
+      btnNotas.textContent = "Notas";
+      btnNotas.addEventListener("click", async (e) => {
+        e.stopPropagation();
+        const modal = document.getElementById('notas-modal');
+        if (modal) modal.style.display = 'flex';
+        try {
+          await cargarNotasUsuario(personaje.nombre);
+        } catch (err) {
+          console.error('Error cargando notas del personaje desde lista:', err);
+        }
+      });
+      botonesDiv.appendChild(btnNotas);
 
       // Botón Eliminar (solo si no es admin)
       if (personaje.nombre !== "admin") {

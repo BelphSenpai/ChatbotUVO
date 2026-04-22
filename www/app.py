@@ -944,17 +944,97 @@ def admin_poderes_usuario(usuario):
             app.logger.exception(f"Error eliminando poderes de {usuario}: {e}")
             return jsonify({"error": "Error eliminando archivo"}), 500
 
-# Backwards compatibility: redirect old /notas to new /poderes
+# ========== NOTAS ==========
 @app.route('/notas')
-def notas_redirect():
-    return redirect('/poderes')
+def ver_notas():
+    if 'usuario' not in session:
+        return redirect('/')
+    path = os.path.join(BASE_DIR, 'notas')
+    return send_from_directory(path, 'index.html')
 
-@app.route('/notas/contenido', methods=['GET', 'POST'])
-def notas_contenido_redirect():
-    # Disallow modifications; point clients to the new read-only endpoint
+@app.route('/notas/contenido', methods=['GET'])
+def gestionar_notas():
+    if 'usuario' not in session:
+        return jsonify({"error": "No autorizado"}), 403
+
+    usuario = session['usuario'].lower()
+    ruta = os.path.join(BASE_DIR, 'notas', 'usuarios', f'{usuario}.txt')
+
+    try:
+        if not os.path.exists(ruta):
+            return jsonify({"contenido": ""})
+
+        with open(ruta, 'r', encoding='utf-8') as f:
+            contenido = f.read()
+
+        return jsonify({"contenido": contenido})
+    except Exception as e:
+        app.logger.exception(f"Error leyendo notas de {usuario}: {e}")
+        return jsonify({"error": "Error leyendo notas"}), 500
+
+@app.route('/admin/notas/list', methods=['GET'])
+def admin_notas_list():
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    path = os.path.join(BASE_DIR, 'notas', 'usuarios')
+    usuarios = set()
+    try:
+        if os.path.isdir(path):
+            for f in os.listdir(path):
+                if f.endswith('.txt'):
+                    usuarios.add(os.path.splitext(f)[0])
+    except Exception as e:
+        app.logger.exception(f"Error listando notas: {e}")
+
+    return jsonify({"usuarios": sorted(list(usuarios))})
+
+@app.route('/admin/notas/<usuario>', methods=['GET', 'POST', 'DELETE'])
+def admin_notas_usuario(usuario):
+    if session.get('rol') != 'admin':
+        return abort(403)
+
+    # simple sanitization: allow only word chars, dash and underscore
+    if not re.match(r'^[\w-]+$', usuario):
+        return jsonify({"error": "Usuario inválido"}), 400
+
+    ruta = os.path.join(BASE_DIR, 'notas', 'usuarios', f'{usuario}.txt')
+
     if request.method == 'GET':
-        return redirect('/poderes/contenido')
-    return jsonify({"error": "Método no permitido"}), 405
+        try:
+            if not os.path.exists(ruta):
+                return jsonify({"contenido": ""})
+
+            with open(ruta, 'r', encoding='utf-8') as f:
+                contenido = f.read()
+            return jsonify({"contenido": contenido})
+        except Exception as e:
+            app.logger.exception(f"Error leyendo notas de {usuario}: {e}")
+            return jsonify({"error": "Error leyendo notas"}), 500
+
+    if request.method == 'POST':
+        data = request.get_json() or {}
+        contenido = data.get('contenido', '')
+        try:
+            os.makedirs(os.path.dirname(ruta), exist_ok=True)
+            tmp = ruta + '.tmp'
+            with open(tmp, 'w', encoding='utf-8') as f:
+                f.write(contenido or '')
+            os.replace(tmp, ruta)
+            return jsonify({"mensaje": "Notas guardadas correctamente."})
+        except Exception as e:
+            app.logger.exception(f"Error guardando notas de {usuario}: {e}")
+            return jsonify({"error": "Error guardando notas"}), 500
+
+    if request.method == 'DELETE':
+        try:
+            if os.path.exists(ruta):
+                os.remove(ruta)
+                return jsonify({"mensaje": "Archivo eliminado."})
+            return jsonify({"mensaje": "No existía el archivo."})
+        except Exception as e:
+            app.logger.exception(f"Error eliminando notas de {usuario}: {e}")
+            return jsonify({"error": "Error eliminando archivo"}), 500
 
 # ========== TRAMAS (sistema de texto simple) ==========
 @app.route('/tramas/contenido', methods=['GET'])

@@ -18,6 +18,7 @@
     <a class="nav-item" id="ficha-link" href="/ficha">FICHA</a>
     <a class="nav-item" id="tramas-link" href="/tramas" style="display:none;">TRAMAS</a>
     <a class="nav-item" id="poderes-link" href="/poderes">PODERES</a>
+    <a class="nav-item" id="notas-link" href="/notas">NOTAS</a>
   
     <div id="admin-link-container" style="display:none;">
       <a class="nav-item active" href="/admin">ADMIN</a>
@@ -45,6 +46,23 @@
         <button id="guardar-poderes">Guardar</button>
         <button id="eliminar-poderes" style="background:#ff6b35; color:white;">Eliminar Archivo</button>
         <button id="cerrar-poderes">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para editar notas por personaje -->
+  <div id="notas-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h2>Editar Notas por Personaje</h2>
+
+      <input type="hidden" id="notas-usuario" />
+
+      <textarea id="editor-notas" style="width:100%; height:360px; font-family:monospace;"></textarea>
+
+      <div class="modal-buttons" style="margin-top:8px;">
+        <button id="guardar-notas">Guardar</button>
+        <button id="eliminar-notas" style="background:#ff6b35; color:white;">Eliminar Archivo</button>
+        <button id="cerrar-notas">Cerrar</button>
       </div>
     </div>
   </div>
