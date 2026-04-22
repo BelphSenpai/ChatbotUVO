@@ -540,6 +540,19 @@ def _safe_payload_for_response(payload, ia: str, usuario: str):
     # Si llega algo inesperado, lo envolvemos como respuesta textual
     return _wrap_ok(payload, ia, usuario, None)
 
+def _job_identifier(job) -> str:
+    """Compatibilidad entre versiones de RQ: usa .id y fallback a get_id()."""
+    try:
+        jid = getattr(job, 'id', None)
+        if jid:
+            return str(jid)
+        getter = getattr(job, 'get_id', None)
+        if callable(getter):
+            return str(getter())
+    except Exception:
+        pass
+    return None
+
 def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 60, poll_interval: float = 0.25):
     try:
         job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
@@ -556,26 +569,26 @@ def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 6
             last_status = status
 
             if status == "finished" and job.result is not None:
-                wrapped = _wrap_ok(job.result, ia, usuario, job.get_id())
+                wrapped = _wrap_ok(job.result, ia, usuario, _job_identifier(job))
                 return 200, wrapped
 
             if status == "failed":
                 error_msg = "Servicio temporalmente no disponible"
                 if hasattr(job, 'exc_info') and job.exc_info:
                     error_msg = f"Error en procesamiento: {str(job.exc_info)}"
-                return 200, _wrap_err(error_msg, ia, usuario, job.get_id(), "failed")
+                return 200, _wrap_err(error_msg, ia, usuario, _job_identifier(job), "failed")
 
             # Log del estado para debugging
-            app.logger.info(f"[QUEUE] Job {job.get_id()} status: {status}")
+            app.logger.info(f"[QUEUE] Job {_job_identifier(job)} status: {status}")
             
         except Exception as e:
             app.logger.error(f"[QUEUE] Error checking job status: {e}")
-            return 200, _wrap_err(f"Error de comunicación con worker: {str(e)}", ia, usuario, job.get_id(), "error")
+            return 200, _wrap_err(f"Error de comunicación con worker: {str(e)}", ia, usuario, _job_identifier(job), "error")
 
         time.sleep(poll_interval)
 
     # 202 → respondemos 200 con ok:false para que el front SIEMPRE pinte algo
-    return 200, _wrap_err("Procesando… vuelve a intentarlo", ia, usuario, job.get_id(), (last_status or "queued"))
+    return 200, _wrap_err("Procesando… vuelve a intentarlo", ia, usuario, _job_identifier(job), (last_status or "queued"))
 
 
 @app.route('/<ia>/query', methods=['POST'])
