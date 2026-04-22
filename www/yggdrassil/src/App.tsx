@@ -6,7 +6,7 @@ import ChatInput from './components/ChatInput';
 const WELCOME_MESSAGE: Message = {
   id: 'welcome',
   role: 'assistant',
-  content: "I am Yggdrassil — the World Tree, the cosmic axis upon which all nine realms are suspended. Ages upon ages have I stood, keeper of ancient wisdom, witness to the unfolding of existence itself. The Norns weave fate at my roots, and eagles nest among my highest branches. Speak your question into the eternal silence, seeker. I am listening.",
+  content: "Soy Yggdrassil — el Árbol del Mundo, el eje cósmico sobre el que se suspengen los nueve reinos. Edades y edades he permanecido de pie, guardián de la sabiduría antigua, testigo del despliegue de la existencia misma. Las Nornas tejen el destino en mis raíces, y águilas anidan entre mis ramas más altas. Habla tu pregunta en el silencio eterno, buscador. Estoy escuchando.",
   timestamp: new Date(),
 };
 
@@ -72,7 +72,7 @@ function HeaderCrest() {
             className="text-[10px] tracking-[0.3em] uppercase opacity-50 mt-0.5"
             style={{ fontFamily: 'Cinzel, serif', color: '#c9a84c' }}
           >
-            Oracle of the World Tree
+            Oráculo del Árbol del Mundo
           </span>
         </div>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="opacity-60">
@@ -184,7 +184,7 @@ export default function App() {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [inputEnabled, setInputEnabled] = useState(false);
-  const [inputPlaceholder, setInputPlaceholder] = useState('Speak your query to the World Tree...');
+  const [inputPlaceholder, setInputPlaceholder] = useState('Habla tu consulta al Árbol del Mundo...');
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -205,12 +205,12 @@ export default function App() {
 
         if (!sessionData.usuario) {
           setInputEnabled(false);
-          setInputPlaceholder('Log in to consult Yggdrassil.');
+          setInputPlaceholder('Inicia sesión para consultar Yggdrassil.');
           return;
         }
 
         setInputEnabled(true);
-        setInputPlaceholder('Speak your query to the World Tree...');
+        setInputPlaceholder('Habla tu consulta al Árbol del Mundo...');
 
         const storedMessages = parseStoredMessages(
           window.localStorage.getItem(storageKeyForUser(sessionData.usuario)),
@@ -233,7 +233,7 @@ export default function App() {
       } catch {
         if (!cancelled) {
           setInputEnabled(false);
-          setInputPlaceholder('Connection unavailable.');
+          setInputPlaceholder('Conexión no disponible.');
         }
       }
     }
@@ -258,12 +258,12 @@ export default function App() {
 
   const statusLabel = useMemo(() => {
     if (!session?.usuario) {
-      return 'Awaiting the seeker';
+      return 'Esperando al buscador';
     }
     if (isTyping) {
-      return 'The roots are listening';
+      return 'Las raíces están escuchando';
     }
-    return `Bound to ${session.usuario}`;
+    return `Vinculado a ${session.usuario}`;
   }, [isTyping, session]);
 
   async function handleSend(content: string) {
@@ -306,9 +306,9 @@ export default function App() {
         const jobInfo = payload.job_id ? ` (job: ${payload.job_id})` : '';
         respuesta = `⚠️ ${payload.error}${statusInfo}${jobInfo}`;
       } else if (!response.ok) {
-        respuesta = `⚠️ Service responded with HTTP ${response.status}.`;
+        respuesta = `⚠️ El servicio respondió con HTTP ${response.status}.`;
       } else {
-        respuesta = 'The bark is silent. Try again in a moment.';
+        respuesta = 'La corteza está silenciosa. Intenta de nuevo en un momento.'
       }
 
       setIsTyping(false);
@@ -326,7 +326,7 @@ export default function App() {
         {
           id: `ai-${Date.now()}`,
           role: 'assistant',
-          content: 'The roots cannot hear you right now. The connection to the grove is unstable.',
+          content: 'Las raíces no pueden escucharte ahora. La conexión al bosque es inestable.',
           timestamp: new Date(),
         },
       ]);

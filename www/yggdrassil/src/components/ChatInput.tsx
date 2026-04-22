@@ -100,7 +100,7 @@ export default function ChatInput({ onSend, disabled, placeholder }: ChatInputPr
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               onInput={handleInput}
-              placeholder={placeholder ?? 'Speak your query to the World Tree...'}
+              placeholder={placeholder ?? 'Habla tu consulta al Árbol del Mundo...'}
               rows={1}
               disabled={disabled}
               className="w-full resize-none bg-transparent outline-none px-5 py-3.5 pr-12 text-sm leading-relaxed placeholder-opacity-40"
@@ -157,7 +157,7 @@ export default function ChatInput({ onSend, disabled, placeholder }: ChatInputPr
         className="text-center pb-2 text-xs opacity-25"
         style={{ fontFamily: 'Inter, sans-serif', color: '#c9a84c' }}
       >
-        Press Enter to send · Shift+Enter for new line
+        Presiona Enter para enviar · Shift+Enter para nueva línea
       </div>
     </div>
   );

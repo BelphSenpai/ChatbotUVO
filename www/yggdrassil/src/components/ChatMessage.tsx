@@ -111,7 +111,7 @@ export default function ChatMessage({ message, isLatest }: ChatMessageProps) {
             style={{ fontFamily: 'Cinzel, serif', color: 'rgba(120,160,100,0.7)' }}
           >
             <RuneSymbol />
-            Seeker
+            Buscador
           </span>
         </div>
 
@@ -160,7 +160,7 @@ export function TypingIndicator() {
           }}
         >
           <span className="text-xs opacity-50 mr-1" style={{ fontFamily: 'Cinzel, serif', color: '#c9a84c' }}>
-            Consulting the roots
+            Consultando las raíces
           </span>
           {[0, 1, 2].map(i => (
             <span
