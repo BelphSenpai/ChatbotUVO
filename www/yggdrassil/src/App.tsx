@@ -302,10 +302,25 @@ export default function App() {
         }),
       });
 
-      const payload = await response.json();
-      const respuesta = typeof payload?.respuesta === 'string' && payload.respuesta.trim()
-        ? payload.respuesta
-        : 'The bark is silent. Try again in a moment.';
+      let payload: any = null;
+      try {
+        payload = await response.json();
+      } catch {
+        payload = null;
+      }
+
+      let respuesta = '';
+      if (payload && typeof payload.respuesta === 'string' && payload.respuesta.trim()) {
+        respuesta = payload.respuesta.trim();
+      } else if (payload && typeof payload.error === 'string' && payload.error.trim()) {
+        const statusInfo = payload.status ? ` [${payload.status}]` : '';
+        const jobInfo = payload.job_id ? ` (job: ${payload.job_id})` : '';
+        respuesta = `⚠️ ${payload.error}${statusInfo}${jobInfo}`;
+      } else if (!response.ok) {
+        respuesta = `⚠️ Service responded with HTTP ${response.status}.`;
+      } else {
+        respuesta = 'The bark is silent. Try again in a moment.';
+      }
 
       setIsTyping(false);
       const assistantMsg: Message = {

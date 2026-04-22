@@ -521,9 +521,12 @@ def _wrap_ok(payload: dict, ia: str, usuario: str, job_id: str):
     return wrapped
 
 def _wrap_err(msg: str, ia: str, usuario: str, job_id: str = None, status: str = None):
+    safe_msg = msg or "Servicio temporalmente no disponible"
     return {
         "ok": False,
-        "error": msg,
+        "error": safe_msg,
+        "respuesta": f"⚠️ {safe_msg}",
+        "answer": f"⚠️ {safe_msg}",
         "ia": ia,
         "id": usuario,
         "job_id": job_id,
@@ -535,7 +538,7 @@ def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 6
         job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
     except Exception as e:
         app.logger.exception(f"[QUEUE] Error enqueueing job ia={ia} user={usuario}: {e}")
-        return 503, _wrap_err("Servicio de colas no disponible", ia, usuario, status="enqueue_error")
+        return 200, _wrap_err("Servicio de colas no disponible", ia, usuario, status="enqueue_error")
 
     deadline = time.time() + wait_timeout
     last_status = None
@@ -580,19 +583,22 @@ def ia_query_ruta(ia):
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
     if not queue:
-        return jsonify({"error": "Servicio de colas no disponible"}), 503
-
-    # autocuramos ilimitado antes de encolar
-    if is_unlimited_user(usuario):
-        ensure_unlimited_seed(usuario)
+        return jsonify(_wrap_err("Servicio de colas no disponible", ia, usuario, status="queue_missing")), 200
 
     try:
+        # autocuramos ilimitado antes de encolar, sin romper el request si falla
+        if is_unlimited_user(usuario):
+            try:
+                ensure_unlimited_seed(usuario)
+            except Exception as seed_error:
+                app.logger.exception(f"[QUERY] ensure_unlimited_seed failed user={usuario}: {seed_error}")
+
         status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
         app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
         return jsonify(payload), status_code
     except Exception as e:
         app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
-        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 500
+        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 200
 
 @app.route('/query', methods=['POST'])
 def ia_query():
@@ -606,19 +612,22 @@ def ia_query():
     if (session.get('usuario') or '').lower() != usuario:
         return jsonify({"respuesta": "⚠️ Acceso denegado: sesión inválida."}), 403
     if not queue:
-        return jsonify({"error": "Servicio de colas no disponible"}), 503
-
-    # autocuramos ilimitado antes de encolar
-    if is_unlimited_user(usuario):
-        ensure_unlimited_seed(usuario)
+        return jsonify(_wrap_err("Servicio de colas no disponible", ia, usuario, status="queue_missing")), 200
 
     try:
+        # autocuramos ilimitado antes de encolar, sin romper el request si falla
+        if is_unlimited_user(usuario):
+            try:
+                ensure_unlimited_seed(usuario)
+            except Exception as seed_error:
+                app.logger.exception(f"[QUERY] ensure_unlimited_seed failed user={usuario}: {seed_error}")
+
         status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
         app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
         return jsonify(payload), status_code
     except Exception as e:
         app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
-        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 500
+        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 200
 
 @app.route('/jobs/<job_id>', methods=['GET'])
 def job_status(job_id):
