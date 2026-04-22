@@ -129,17 +129,6 @@ function Navbar({
         <a className="opacity-60 transition-opacity hover:opacity-100" href="/poderes" style={{ color: '#d4c49a' }}>
           Poderes
         </a>
-        <a
-          className="border-b pb-1 opacity-100"
-          href="/yggdrassil"
-          style={{
-            color: '#c9a84c',
-            borderColor: 'rgba(201,168,76,0.8)',
-            textShadow: '0 0 10px rgba(201,168,76,0.35)',
-          }}
-        >
-          Yggdrassil
-        </a>
         {isAdmin ? (
           <a className="opacity-60 transition-opacity hover:opacity-100" href="/admin" style={{ color: '#d4c49a' }}>
             Admin
@@ -236,7 +225,7 @@ export default function App() {
         }
 
         const usos = (await usosResponse.json()) as Record<string, number>;
-        const visibleIAs = ['hada', 'aries', 'fantasma', 'anima'].filter(ia => {
+        const visibleIAs = ['yggdrassil', 'hada', 'aries', 'fantasma', 'anima'].filter(ia => {
           const cantidad = usos[ia];
           return cantidad === -1 || typeof cantidad === 'number' && cantidad >= 0;
         });
