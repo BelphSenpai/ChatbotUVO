@@ -241,7 +241,7 @@ def ensure_unlimited_seed(user: str):
             return False, data
         cur = data.get(u) or {}
         # normaliza TODAS las claves presentes, y si faltan crea las conocidas
-        ias = set(cur.keys()) | {"anima", "aries", "hada", "fantasma", "minerva"}
+        ias = set(cur.keys()) | {"anima", "aries", "hada", "fantasma", "minerva", "yggdrassil"}
         for ia in ias:
             if cur.get(ia) != -1:
                 cur[ia] = -1
@@ -340,7 +340,8 @@ def do_login():
                             "aries": DEFAULT_QUOTA,
                             "hada": DEFAULT_QUOTA,
                             "fantasma": DEFAULT_QUOTA,
-                            "minerva": 0
+                            "minerva": 0,
+                            "yggdrassil": DEFAULT_QUOTA
                         }
                         changed = True
                     return changed, data
@@ -530,7 +531,11 @@ def _wrap_err(msg: str, ia: str, usuario: str, job_id: str = None, status: str =
     }
 
 def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 60, poll_interval: float = 0.25):
-    job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
+    try:
+        job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
+    except Exception as e:
+        app.logger.exception(f"[QUEUE] Error enqueueing job ia={ia} user={usuario}: {e}")
+        return 503, _wrap_err("Servicio de colas no disponible", ia, usuario, status="enqueue_error")
 
     deadline = time.time() + wait_timeout
     last_status = None
@@ -581,9 +586,13 @@ def ia_query_ruta(ia):
     if is_unlimited_user(usuario):
         ensure_unlimited_seed(usuario)
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
-    app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
-    return jsonify(payload), status_code
+    try:
+        status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
+        app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
+        return jsonify(payload), status_code
+    except Exception as e:
+        app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
+        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 500
 
 @app.route('/query', methods=['POST'])
 def ia_query():
@@ -603,9 +612,13 @@ def ia_query():
     if is_unlimited_user(usuario):
         ensure_unlimited_seed(usuario)
 
-    status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
-    app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
-    return jsonify(payload), status_code
+    try:
+        status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
+        app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
+        return jsonify(payload), status_code
+    except Exception as e:
+        app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
+        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 500
 
 @app.route('/jobs/<job_id>', methods=['GET'])
 def job_status(job_id):
@@ -660,7 +673,7 @@ def admin_personajes():
         lista = []
         for nombre in PERSONAJES.keys():
             user_preguntas = data.get(nombre, {
-                "anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0
+                "anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0
             })
             lista.append({"nombre": nombre, "preguntas": user_preguntas})
         return jsonify(lista)
@@ -691,7 +704,7 @@ def admin_personajes():
             def upsert_pregs(data):
                 changed = False
                 if nombre_lower not in data:
-                    data[nombre_lower] = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+                    data[nombre_lower] = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
                     changed = True
                 return changed, data
             _with_preguntas_locked(upsert_pregs)
@@ -730,7 +743,7 @@ def obtener_personaje(nombre):
 
     data = _with_preguntas_locked(lambda d: (False, d))
     datos_personaje = PERSONAJES[nombre].copy()
-    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0})
+    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0})
     return jsonify(datos_personaje)
 
 @app.route('/admin/resetear-preguntas', methods=['POST'])
@@ -748,10 +761,10 @@ def resetear_preguntas():
 
     if is_unlimited_user(nombre_lower):
         ensure_unlimited_seed(nombre_lower)
-        _redis_set_tokens(nombre_lower, {"anima": -1, "aries": -1, "hada": -1, "fantasma": -1, "minerva": -1})
+        _redis_set_tokens(nombre_lower, {"anima": -1, "aries": -1, "hada": -1, "fantasma": -1, "minerva": -1, "yggdrassil": -1})
     else:
         def reset_user(data):
-            newmap = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0}
+            newmap = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
             data[nombre_lower] = newmap
             _redis_set_tokens(nombre_lower, newmap)
             return True, data
@@ -774,7 +787,7 @@ def guardar_preguntas_admin():
             if is_unlimited_user(nombre_lower):
                 # para ilimitados, fuerzo -1
                 cur = data.get(nombre_lower, {})
-                for ia in set(cur.keys()) | set(preguntas.keys()) | {"anima", "aries", "hada", "fantasma", "minerva"}:
+                for ia in set(cur.keys()) | set(preguntas.keys()) | {"anima", "aries", "hada", "fantasma", "minerva", "yggdrassil"}:
                     if cur.get(ia) != -1:
                         cur[ia] = -1
                         changed = True
@@ -1093,6 +1106,20 @@ def usos_actuales():
     _sync_file_to_redis_if_missing(usuario)
     usos = _redis_get_tokens(usuario)
 
+    # Normaliza para que el front siempre reciba todas las IAs conocidas
+    known_defaults = {
+        "anima": 0,
+        "aries": 0,
+        "hada": 0,
+        "fantasma": 0,
+        "minerva": 0,
+        "yggdrassil": 0,
+    }
+    usos = {
+        **known_defaults,
+        **{k.lower(): v for k, v in usos.items()},
+    }
+
     # LOG útil para depurar qué se está sirviendo y desde dónde
     app.logger.info(f"[USOS] path={PREGUNTAS_PATH} user={usuario} payload={usos}")
 
@@ -1100,7 +1127,7 @@ def usos_actuales():
     # NORMALIZED_INFINITY = 999999
     # usos = {k: (NORMALIZED_INFINITY if v == -1 else v) for k, v in usos.items()}
 
-    return jsonify({k.lower(): v for k, v in usos.items()})
+    return jsonify(usos)
 
 # ========== LOGS ==========
 LOGS_DIR = os.path.join(BASE_DIR, 'admin', 'logs')

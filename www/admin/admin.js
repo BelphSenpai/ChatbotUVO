@@ -247,7 +247,7 @@ async function cargarPersonajes() {
       preguntasDiv.style.alignItems = "center";
       preguntasDiv.style.marginTop = "6px";
 
-      ["anima", "aries", "hada", "fantasma"].forEach(ia => {
+      ["anima", "aries", "hada", "fantasma", "yggdrassil"].forEach(ia => {
         const container = document.createElement("div");
         container.style.display = "flex";
         container.style.flexDirection = "column";
