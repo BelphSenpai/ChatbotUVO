@@ -533,6 +533,13 @@ def _wrap_err(msg: str, ia: str, usuario: str, job_id: str = None, status: str =
         "status": status
     }
 
+def _safe_payload_for_response(payload, ia: str, usuario: str):
+    """Garantiza payload serializable y con forma compatible para el front."""
+    if isinstance(payload, dict):
+        return payload
+    # Si llega algo inesperado, lo envolvemos como respuesta textual
+    return _wrap_ok(payload, ia, usuario, None)
+
 def _enqueue_and_wait(mensaje: str, ia: str, usuario: str, wait_timeout: int = 60, poll_interval: float = 0.25):
     try:
         job = queue.enqueue(job_responder, mensaje, ia, usuario, job_timeout=600, result_ttl=1200)
@@ -594,11 +601,21 @@ def ia_query_ruta(ia):
                 app.logger.exception(f"[QUERY] ensure_unlimited_seed failed user={usuario}: {seed_error}")
 
         status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
-        app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
+        payload = _safe_payload_for_response(payload, ia, usuario)
+
+        respuesta_txt = payload.get('respuesta')
+        if not isinstance(respuesta_txt, str):
+            respuesta_txt = str(respuesta_txt) if respuesta_txt is not None else ''
+            payload['respuesta'] = respuesta_txt
+
+        app.logger.info(
+            f"[QUERY] ia={ia} user={usuario} ok={bool(payload.get('ok'))} "
+            f"has_respuesta={bool(respuesta_txt)} len={len(respuesta_txt)} status={payload.get('status')}"
+        )
         return jsonify(payload), status_code
     except Exception as e:
         app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
-        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 200
+        return jsonify(_wrap_err(f"Error interno al procesar la consulta: {e}", ia, usuario, status=f"handler_error:{type(e).__name__}")), 200
 
 @app.route('/query', methods=['POST'])
 def ia_query():
@@ -623,11 +640,21 @@ def ia_query():
                 app.logger.exception(f"[QUERY] ensure_unlimited_seed failed user={usuario}: {seed_error}")
 
         status_code, payload = _enqueue_and_wait(mensaje_original, ia, usuario, wait_timeout=60, poll_interval=0.25)
-        app.logger.info(f"[QUERY] ia={ia} user={usuario} ok={payload.get('ok')} has_respuesta={bool(payload.get('respuesta'))} len={len((payload.get('respuesta') or ''))}")
+        payload = _safe_payload_for_response(payload, ia, usuario)
+
+        respuesta_txt = payload.get('respuesta')
+        if not isinstance(respuesta_txt, str):
+            respuesta_txt = str(respuesta_txt) if respuesta_txt is not None else ''
+            payload['respuesta'] = respuesta_txt
+
+        app.logger.info(
+            f"[QUERY] ia={ia} user={usuario} ok={bool(payload.get('ok'))} "
+            f"has_respuesta={bool(respuesta_txt)} len={len(respuesta_txt)} status={payload.get('status')}"
+        )
         return jsonify(payload), status_code
     except Exception as e:
         app.logger.exception(f"[QUERY] Unhandled error ia={ia} user={usuario}: {e}")
-        return jsonify(_wrap_err("Error interno al procesar la consulta", ia, usuario, status="handler_error")), 200
+        return jsonify(_wrap_err(f"Error interno al procesar la consulta: {e}", ia, usuario, status=f"handler_error:{type(e).__name__}")), 200
 
 @app.route('/jobs/<job_id>', methods=['GET'])
 def job_status(job_id):
