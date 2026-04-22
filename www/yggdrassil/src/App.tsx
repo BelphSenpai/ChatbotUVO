@@ -192,6 +192,7 @@ export default function App() {
   const [isTyping, setIsTyping] = useState(false);
   const [session, setSession] = useState<SessionInfo | null>(null);
   const [availableIAs, setAvailableIAs] = useState<string[]>([]);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
   const [inputEnabled, setInputEnabled] = useState(false);
   const [inputPlaceholder, setInputPlaceholder] = useState('Speak your query to the World Tree...');
