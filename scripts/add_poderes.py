@@ -107,24 +107,36 @@ if __name__ == '__main__':
     # ALFILES - LOGOS
     print("Añadiendo LOGOS a todos los Alfiles...")
     personajes_alfiles = obtener_personajes_por_naturaleza('Alfil')
-    texto_logos = """En tu naturaleza Arcana se encuentra el invocar tu paradigma:
-LOGOS- Cuando convocas el poder de tu palabra y quemas un punto de rotura todos tus aliados entraran en tu burbuja de realidad alterada que los beneficiara."""
+    texto_logos = """Poderes de Alfil:
+Tienen la habilidad \"Logos\":
+Gastando 1 punto de rotura, pueden imponer su paradigma al entorno inmediato, creando una burbuja de realidad alterada que beneficia a sus aliados.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_alfiles, texto_logos)
     print(f"✓ Añadido a {añadidos} Alfiles\n")
     
     # CABALLOS - LIMINAL
     print("Añadiendo LIMINAL a todos los Caballos...")
     personajes_caballos = obtener_personajes_por_naturaleza('Caballo')
-    texto_liminal = """En tu naturaleza mundana se encuentra el pasar bajo el radar de Entidad y Tifón.
-LIMINAL - Sin coste alguno, un grupo de 3 caballos podeis ocultar una Torre que no este en forma monstruosa y con 2 caballos podeis esconder a un Alfil."""
+    texto_liminal = """Poderes de Caballo:
+Tienen la habilidad \"Liminal\":
+Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, haciendolos pasar desapercibidos.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_caballos, texto_liminal)
     print(f"✓ Añadido a {añadidos} Caballos\n")
     
     # TORRES - PHYLAX
     print("Añadiendo PHYLAX a todas las Torres...")
     personajes_torres = obtener_personajes_por_naturaleza('Torre')
-    texto_phylax = """En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura."""
+    texto_phylax = """Poderes de Torre:
+Tienen la habilidad \"Phylax\":
+Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_torres, texto_phylax)
     print(f"✓ Añadido a {añadidos} Torres\n")
     
@@ -137,31 +149,43 @@ PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o
     # PODERES POR CÁBALA
     print("\n=== Añadiendo Poderes por Cábala ===\n")
     
-    # SOL INVICTO - RESISTIR CORRUPCIÓN
-    print("Añadiendo RESISTIR CORRUPCIÓN a Sol Invicto...")
-    personajes_sol_invicto = obtener_personajes_por_cabala('Sol invicto')
-    texto_resistir_corrupcion = """RESISTIR CORRUPCIÓN: Los miembros del sol invicto tienen una resistencia natural a la mutación, cuando tifón intenta poseerte, tiene una dificultad extra."""
-    añadidos = añadir_poder_a_personajes(personajes_sol_invicto, texto_resistir_corrupcion)
-    print(f"✓ Añadido a {añadidos} miembros de Sol Invicto\n")
+    # LEGIS AUREA
+    print("Añadiendo poder de cábala a Legis Aurea...")
+    personajes_legis = obtener_personajes_por_cabala('Legis Aurea')
+    texto_legis = """Senda de Cabala: Helios
+Poder de Cabala: Los miembros de Legio Aurea pueden llevar sus Catafractos mas alla del limite, permitiendoles equiparar su poder al de una torre por un breve periodo de tiempo. Tras esa hazaña el Catafracto debe pasar por severo mantenimiento antes de poder ser usado de nuevo."""
+    añadidos = añadir_poder_a_personajes(personajes_legis, texto_legis)
+    print(f"✓ Añadido a {añadidos} miembros de Legis Aurea\n")
+
+    # EXONAUTAS
+    print("Añadiendo poder de cábala a Exonautas...")
+    personajes_exonautas = obtener_personajes_por_cabala('Exonautas')
+    texto_exonautas = """Senda de Cabala: Helios
+Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutación, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
+    añadidos = añadir_poder_a_personajes(personajes_exonautas, texto_exonautas)
+    print(f"✓ Añadido a {añadidos} miembros de Exonautas\n")
     
-    # CONSULADO DEL MAR - CYBERESISTENCIA
-    print("Añadiendo CYBERESISTENCIA a Consulado del Mar...")
+    # CONSULADO DEL MAR
+    print("Añadiendo poder de cábala a Consulado del Mar...")
     personajes_consulado = obtener_personajes_por_cabala('Consulado del Mar')
-    texto_cyberresistencia = """CYBERESISTENCIA: Los miembros del Consulado del mar tienen una resistencia natural a la Cyberinfeccion, cuando nexus intenta poseerte, tiene una dificultad extra."""
-    añadidos = añadir_poder_a_personajes(personajes_consulado, texto_cyberresistencia)
+    texto_consulado = """Senda de Cabala: Helios
+Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutación, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
+    añadidos = añadir_poder_a_personajes(personajes_consulado, texto_consulado)
     print(f"✓ Añadido a {añadidos} miembros del Consulado del Mar\n")
     
-    # INQUEBRANTABLES - LIMPIAR CYBERINFECCION
-    print("Añadiendo LIMPIAR CYBERINFECCION a Inquebrantables...")
+    # INQUEBRANTABLES
+    print("Añadiendo poder de cábala a Inquebrantables...")
     personajes_inquebrantables = obtener_personajes_por_cabala('Inquebrantables')
-    texto_limpiar_cyber = """LIMPIAR CYBERINFECCION: Como miembros de los inquebrantables podeis realizar un protocolo para reducir o augmentar la cyberinfeccion a otro."""
+    texto_limpiar_cyber = """Senda de Cabala: Helios
+Poder de Cabala: Los Inquebrantables pueden realizar un [Protocolo] para aumentar o reducir la cyberpsicosis a voluntad, tanto al reducirlo como aumentarlo, el ejecutable pasa por tratar con alguno de los seres mas alla de la red, que pueden aislar o hacer ceder a la cyberpsicosis a su objetivo."""
     añadidos = añadir_poder_a_personajes(personajes_inquebrantables, texto_limpiar_cyber)
     print(f"✓ Añadido a {añadidos} miembros de Inquebrantables\n")
     
-    # TRECE - LIMPIAR CORRUPCIÓN
-    print("Añadiendo LIMPIAR CORRUPCIÓN a Trece...")
+    # TRECE
+    print("Añadiendo poder de cábala a Trece...")
     personajes_trece = obtener_personajes_por_cabala('Trece')
-    texto_limpiar_corrupcion = """LIMPIAR CORRUPCIÓN: Como miembros de las Trece podeis realizar un ritual para reducir o augmentar la corrupción a otro."""
+    texto_limpiar_corrupcion = """Senda de Cabala: Helios
+Poder de Cabala: Los miembros del aquelarre de las trece pueden realizar un ritual para aumentar o reducir la corrupción a voluntad, tanto al reducirlo como aumentarlo, el ritual pasa por tratar con alguno de los viejos gigantes, que pueden entregar o consumir esa corrupción a su portador. Con los años, las trece han encontrado tres gigantes dispuestos, complacientes y abiertos al pacto, con predisposición a destruir al resto de gigantes, cada uno con sus motivos propios."""
     añadidos = añadir_poder_a_personajes(personajes_trece, texto_limpiar_corrupcion)
     print(f"✓ Añadido a {añadidos} miembros de Trece\n")
     
