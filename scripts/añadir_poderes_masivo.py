@@ -136,24 +136,36 @@ if __name__ == '__main__':
     # PODERES PARA ALFILES
     print("Añadiendo LOGOS a todos los Alfiles...")
     personajes_alfiles = obtener_personajes_por_naturaleza('Alfil')
-    texto_logos = """En tu naturaleza Arcana se encuentra el invocar tu paradigma:
-LOGOS- Cuando convocas el poder de tu palabra y quemas un punto de rotura todos tus aliados entraran en tu burbuja de realidad alterada que los beneficiara."""
+    texto_logos = """Poderes de Alfil:
+Tienen la habilidad \"Logos\":
+Gastando 1 punto de rotura, pueden imponer su paradigma al entorno inmediato, creando una burbuja de realidad alterada que beneficia a sus aliados.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_alfiles, texto_logos)
     print(f"✓ Añadido a {añadidos} Alfiles\n")
     
     # PODERES PARA CABALLOS
     print("Añadiendo LIMINAL a todos los Caballos...")
     personajes_caballos = obtener_personajes_por_naturaleza('Caballo')
-    texto_liminal = """En tu naturaleza mundana se encuentra el pasar bajo el radar de Entidad y Tifón.
-LIMINAL - Sin coste alguno, un grupo de 3 caballos podeis ocultar una Torre que no este en forma monstruosa y con 2 caballos podeis esconder a un Alfil."""
+    texto_liminal = """Poderes de Caballo:
+Tienen la habilidad \"Liminal\":
+Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, haciendolos pasar desapercibidos.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_caballos, texto_liminal)
     print(f"✓ Añadido a {añadidos} Caballos\n")
     
     # PODERES PARA TORRES
     print("Añadiendo PHYLAX a todas las Torres...")
     personajes_torres = obtener_personajes_por_naturaleza('Torre')
-    texto_phylax = """En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura."""
+    texto_phylax = """Poderes de Torre:
+Tienen la habilidad \"Phylax\":
+Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura."""
     añadidos = añadir_poder_a_personajes(personajes_torres, texto_phylax)
     print(f"✓ Añadido a {añadidos} Torres\n")
     

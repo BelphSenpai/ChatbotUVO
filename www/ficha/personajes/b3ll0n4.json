@@ -1,0 +1,16 @@
+{
+  "nombre_personaje": "Bellona",
+  "nombre_jugador": "Bellona",
+  "cabala": "Legis Aurea",
+  "naturaleza": "Caballo",
+  "senda": "Cimopolea",
+  "arquetipo": "Vigilante",
+  "sec_1": "Luchadora",
+  "sec_2": "Protectora",
+  "sec_3": "Antigua Torre de Hidra",
+  "sec_4": "Legis Aurea",
+  "daño": 0,
+  "rotura": 0,
+  "mutacion": 0,
+  "cyber": 0
+}
