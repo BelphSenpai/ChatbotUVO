@@ -15,7 +15,24 @@ interface Particle {
 export default function TreeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
+  const dustParticlesRef = useRef<Particle[]>([]);
   const animFrameRef = useRef<number>(0);
+
+  const getParticleTarget = (width: number) => {
+    if (width >= 1600) return 180;
+    if (width >= 1200) return 150;
+    if (width >= 900) return 120;
+    if (width >= 600) return 95;
+    return 75;
+  };
+
+  const getDustParticleTarget = (width: number) => {
+    if (width >= 1600) return 260;
+    if (width >= 1200) return 210;
+    if (width >= 900) return 170;
+    if (width >= 600) return 130;
+    return 95;
+  };
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -46,10 +63,33 @@ export default function TreeBackground() {
       };
     };
 
-    for (let i = 0; i < 60; i++) {
+    const spawnDustParticle = (): Particle => {
+      return {
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 1.1 + 0.25,
+        speedY: -(Math.random() * 0.25 + 0.05),
+        speedX: (Math.random() - 0.5) * 0.16,
+        opacity: 0,
+        life: 0,
+        maxLife: Math.random() * 520 + 280,
+        hue: Math.random() > 0.5 ? 48 : 140,
+      };
+    };
+
+    const initialParticleCount = getParticleTarget(canvas.width);
+
+    for (let i = 0; i < initialParticleCount; i++) {
       const p = spawnParticle();
       p.life = Math.random() * p.maxLife;
       particlesRef.current.push(p);
+    }
+
+    const initialDustCount = getDustParticleTarget(canvas.width);
+    for (let i = 0; i < initialDustCount; i++) {
+      const p = spawnDustParticle();
+      p.life = Math.random() * p.maxLife;
+      dustParticlesRef.current.push(p);
     }
 
     const drawTree = () => {
@@ -173,9 +213,16 @@ export default function TreeBackground() {
 
       // Update and draw particles
       particlesRef.current = particlesRef.current.filter(p => p.life < p.maxLife);
+      dustParticlesRef.current = dustParticlesRef.current.filter(p => p.life < p.maxLife);
 
-      while (particlesRef.current.length < 70) {
+      const targetParticleCount = getParticleTarget(canvas.width);
+      while (particlesRef.current.length < targetParticleCount) {
         particlesRef.current.push(spawnParticle());
+      }
+
+      const targetDustParticleCount = getDustParticleTarget(canvas.width);
+      while (dustParticlesRef.current.length < targetDustParticleCount) {
+        dustParticlesRef.current.push(spawnDustParticle());
       }
 
       particlesRef.current.forEach(p => {
@@ -195,17 +242,45 @@ export default function TreeBackground() {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
 
         if (p.hue === 48) {
-          ctx.fillStyle = `rgba(200, 170, 80, ${p.opacity * 0.8})`;
+          ctx.fillStyle = `rgba(220, 190, 95, ${p.opacity * 0.92})`;
           if (p.size > 1.8) {
-            ctx.shadowBlur = 8;
-            ctx.shadowColor = 'rgba(200, 170, 80, 0.6)';
+            ctx.shadowBlur = 11;
+            ctx.shadowColor = 'rgba(220, 190, 95, 0.75)';
           }
         } else {
-          ctx.fillStyle = `rgba(100, 200, 120, ${p.opacity * 0.5})`;
+          ctx.fillStyle = `rgba(130, 235, 150, ${p.opacity * 0.7})`;
           if (p.size > 1.8) {
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = 'rgba(100, 200, 120, 0.5)';
+            ctx.shadowBlur = 9;
+            ctx.shadowColor = 'rgba(130, 235, 150, 0.65)';
           }
+        }
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      });
+
+      dustParticlesRef.current.forEach(p => {
+        p.life++;
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.speedX += (Math.random() - 0.5) * 0.01;
+
+        const progress = p.life / p.maxLife;
+        p.opacity = progress < 0.2
+          ? progress / 0.2
+          : progress > 0.85
+            ? (1 - progress) / 0.15
+            : 1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        if (p.hue === 48) {
+          ctx.fillStyle = `rgba(230, 205, 130, ${p.opacity * 0.36})`;
+          ctx.shadowBlur = 4;
+          ctx.shadowColor = 'rgba(230, 205, 130, 0.3)';
+        } else {
+          ctx.fillStyle = `rgba(150, 230, 170, ${p.opacity * 0.28})`;
+          ctx.shadowBlur = 3;
+          ctx.shadowColor = 'rgba(150, 230, 170, 0.24)';
         }
         ctx.fill();
         ctx.shadowBlur = 0;
