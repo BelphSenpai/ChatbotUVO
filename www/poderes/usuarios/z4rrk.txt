@@ -1,25 +1,16 @@
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
+Poderes de torre:
+Tienen la habilidad "Phylax":
+Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
 
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura.
 
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
-
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
-
-LIMPIAR CORRUPCIÓN: Como miembros de las Trece podeis realizar un ritual para reducir o augmentar la corrupción a otro.
-
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
-
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
-
-LIMPIAR CORRUPCIÓN: Como miembros de las Trece podeis realizar un ritual para reducir o augmentar la corrupción a otro.
+Senda de Cabala: Helios
+Poder de Cabala: Los miembros del aquelarre de las trece pueden realizar un ritual para aumentar o reducir la corrupcion a voluntad, tanto al reducirlo como aumentarlo, el ritual pasa por tratar con alguno de los viejos gigantes, que pueden entregar o consumir esa corrupcion a su portador. Con los años, las trece han encontrado tres gigantes dispuestos, complacientes y abiertos al pacto, con predisposicion a destruir al resto de gigantes, cada uno con sus motivos propios.
 
 Senda de Kairos:
 
 Puedes: Percibir el flujo del tiempo, retroceder escasos segundos.
 Ejemplo: Gasto 1 punto de rotura para haberme anticipado a esto y tener una pistola.
-Cuando te quedas sin rotura: Actuaras con Lagunas de memoria.
-Como recuperar rotura: Debes escuchar con suma atención un recuerdo importante de otra persona.
+Cuando te quedas sin rotura: Actuaras con lagunas de memoria.
+Como recuperar rotura: Debes escuchar con suma atencion un recuerdo importante de otra persona.

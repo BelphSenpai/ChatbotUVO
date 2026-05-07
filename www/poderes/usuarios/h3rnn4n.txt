@@ -8,9 +8,9 @@ Consumen a un miembro de su cabala para recuperar toda su rotura.
 Senda de Cabala: Helios
 Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutacion, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse.
 
-Senda de Nemesis:
+Senda de Cimopolea:
 
-Puedes: Percibes la entropia que lo degrada y dirige todo, puedes usarla.
-Ejemplo: Gasto un punto de rotura para ver el punto debil en su armadura.
-Cuando te quedas sin rotura: Actuaras con Rabia.
-Como recuperar rotura: Escucharas la historia de algo importante, sea un objeto, una persona, un sitio, perdido para siempre.
+Puedes: Controlar las fuerzas energeticas, las percibes, acumulas y liberas.
+Ejemplos: Gasto 1 punto de rotura para anular la puerta magnetica de seguridad.
+Cuando te quedas sin rotura: Interpretaras con nerviosismo
+Como recuperar rotura: Realizar una escena sobre imitar y comprender los movimientos de otra persona.

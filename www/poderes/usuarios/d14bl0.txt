@@ -1,25 +1,16 @@
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
+Poderes de caballo:
+Tienen la habilidad "Liminal":
+Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, haciendolos pasar desapercibidos.
 
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura.
 
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
-
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
-
-RESISTIR CORRUPCIÓN: Los miembros del sol invicto tienen una resistencia natural a la mutación, cuando tifón intenta poseerte, tiene una dificultad extra.
-
-En tu naturaleza monstruosa se encuentra el poder de resistir daños que matarian a otros:
-PHYLAX - Liberando tu forma monstruosa puedes reducir todo el daño hecho a ti o a un aliado cercano a 0 mediante el gasto de un punto de rotura.
-
-FORMA MONSTRUOSA - Puedes ocultar tu naturaleza monstruosa temporalmente, pero para usar tu poder necesitas liberarla y cuando no te quedan puntos de rotura esta se manifiesta sola. Mientras estes en forma monstruosa cualquier agravio hacia ti se convierte en frenesi, Puedes matar aliados sin querer, de un solo golpe si son caballos, de 3 si son torres. No puedes matar alfiles accidentalmente.
-
-RESISTIR CORRUPCIÓN: Los miembros del sol invicto tienen una resistencia natural a la mutación, cuando tifón intenta poseerte, tiene una dificultad extra.
+Senda de Cabala: Helios
+Poder de Cabala: Los miembros de Legio Aurea pueden llevar sus Catafractos mas alla del limite, permitiendoles equiparar su poder al de una torre por un breve periodo de tiempo. Tras esa hazaña el Catafracto debe pasar por severo mantenimiento antes de poder ser usado de nuevo.
 
 Senda de Helios:
 
 Puedes: La fe en tus convicciones de imbuye a ti y a lo que te rodea.
-Ejemplo: Gasto 1 punto de rotura para nutrir de fé mi espada.
+Ejemplo: Gasto 1 punto de rotura para nutrir de fe mi espada.
 Cuando te quedas sin rotura: Actuaras con tristeza.
 Como recuperar rotura: Realizaras una oracion, bendicion o ritual a otra persona en honor a tu compromiso y conviccion.
