@@ -225,7 +225,7 @@ export default function App() {
         }
 
         const usos = (await usosResponse.json()) as Record<string, number>;
-        const visibleIAs = ['yggdrassil', 'hada', 'aries', 'fantasma', 'anima'].filter(ia => {
+        const visibleIAs = ['yggdrassil', 'hada', 'ares', 'fantasma', 'anima'].filter(ia => {
           const cantidad = usos[ia];
           return cantidad === -1 || typeof cantidad === 'number' && cantidad >= 0;
         });

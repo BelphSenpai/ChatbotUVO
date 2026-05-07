@@ -53,7 +53,7 @@
               const usos = await usosRes.json();
               const iaDropdown = document.getElementById("ia-dropdown");
     
-              const ias = ["yggdrassil", "hada", "aries", "fantasma", "anima"];
+              const ias = ["yggdrassil", "hada", "ares", "fantasma", "anima"];
     
               ias.forEach(ia => {
                 const cantidad = usos[ia];
@@ -113,7 +113,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
   const path = window.location.pathname;
-  const ia = path.split('/')[1]; // 'hada', 'aries', etc.
+  const ia = path.split('/')[1]; // 'hada', 'ares', etc.
 
   // === Sesión ===
   let usuario = "invitado";
