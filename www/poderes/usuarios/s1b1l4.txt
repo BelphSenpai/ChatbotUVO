@@ -1,19 +1,16 @@
-En tu naturaleza Arcana se encuentra el invocar tu paradigma:
-LOGOS- Cuando convocas el poder de tu palabra y quemas un punto de rotura todos tus aliados entraran en tu burbuja de realidad alterada que los beneficiara.
+Poderes de alfil:
+Tienen la habilidad "Logos":
+Gastando 1 punto de rotura, pueden imponer su paradigma al entorno inmediato, creando una burbuja de realidad alterada que beneficia a sus aliados.
 
-En tu naturaleza Arcana se encuentra el invocar tu paradigma:
-LOGOS- Cuando convocas el poder de tu palabra y quemas un punto de rotura todos tus aliados entraran en tu burbuja de realidad alterada que los beneficiara.
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura.
 
-LIMPIAR CORRUPCIÓN: Como miembros de las Trece podeis realizar un ritual para reducir o augmentar la corrupción a otro.
-
-En tu naturaleza Arcana se encuentra el invocar tu paradigma:
-LOGOS- Cuando convocas el poder de tu palabra y quemas un punto de rotura todos tus aliados entraran en tu burbuja de realidad alterada que los beneficiara.
-
-LIMPIAR CORRUPCIÓN: Como miembros de las Trece podeis realizar un ritual para reducir o augmentar la corrupción a otro.
+Senda de Cabala: Helios
+Poder de Cabala: Los miembros del aquelarre de las trece pueden realizar un ritual para aumentar o reducir la corrupcion a voluntad, tanto al reducirlo como aumentarlo, el ritual pasa por tratar con alguno de los viejos gigantes, que pueden entregar o consumir esa corrupcion a su portador. Con los años, las trece han encontrado tres gigantes dispuestos, complacientes y abiertos al pacto, con predisposicion a destruir al resto de gigantes, cada uno con sus motivos propios.
 
 Senda Arcana:
 
 Puedes: Modificar la realidad a tu antojo, siendo solo opuesto por la realidad.
 Ejemplo: Te desintegro para convertirte en componentes y energia magica.
 Cuando te quedas sin rotura: Te mueres, o algo peor.
-Como recuperar rotura: Puedes recuperar rotura consumiendo un miembro de tu cábala.
+Como recuperar rotura: Puedes recuperar rotura consumiendo un miembro de tu cabala.

@@ -8,9 +8,9 @@ Consumen a un miembro de su cabala para recuperar toda su rotura.
 Senda de Cabala: Helios
 Poder de Cabala: Los miembros de Legio Aurea pueden llevar sus Catafractos mas alla del limite, permitiendoles equiparar su poder al de una torre por un breve periodo de tiempo. Tras esa hazaña el Catafracto debe pasar por severo mantenimiento antes de poder ser usado de nuevo.
 
-Senda de Tanathos:
+Senda de Cimopolea:
 
-Puedes: Puedes pactar con espiritus a traves de tu pacto previo.
-Ejemplo: Gasto 1 punto de rotura para convocar un espiritu que me ayude.
-Cuando te quedas sin rotura: Actuaras como el espiritu que te acompaña
-Como recuperar rotura: Tu espiritu realizara un chiminaje, un trato, con alguien, a cambio de devolverte.
+Puedes: Controlar las fuerzas energeticas, las percibes, acumulas y liberas.
+Ejemplos: Gasto 1 punto de rotura para anular la puerta magnetica de seguridad.
+Cuando te quedas sin rotura: Interpretaras con nerviosismo
+Como recuperar rotura: Realizar una escena sobre imitar y comprender los movimientos de otra persona.

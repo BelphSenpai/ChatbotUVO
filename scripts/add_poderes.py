@@ -107,7 +107,7 @@ if __name__ == '__main__':
     # ALFILES - LOGOS
     print("Añadiendo LOGOS a todos los Alfiles...")
     personajes_alfiles = obtener_personajes_por_naturaleza('Alfil')
-    texto_logos = """Poderes de Alfil:
+    texto_logos = """Poderes de alfil:
 Tienen la habilidad \"Logos\":
 Gastando 1 punto de rotura, pueden imponer su paradigma al entorno inmediato, creando una burbuja de realidad alterada que beneficia a sus aliados.
 
@@ -119,7 +119,7 @@ Consumen a un miembro de su cabala para recuperar toda su rotura."""
     # CABALLOS - LIMINAL
     print("Añadiendo LIMINAL a todos los Caballos...")
     personajes_caballos = obtener_personajes_por_naturaleza('Caballo')
-    texto_liminal = """Poderes de Caballo:
+    texto_liminal = """Poderes de caballo:
 Tienen la habilidad \"Liminal\":
 Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, haciendolos pasar desapercibidos.
 
@@ -131,7 +131,7 @@ Consumen a un miembro de su cabala para recuperar toda su rotura."""
     # TORRES - PHYLAX
     print("Añadiendo PHYLAX a todas las Torres...")
     personajes_torres = obtener_personajes_por_naturaleza('Torre')
-    texto_phylax = """Poderes de Torre:
+    texto_phylax = """Poderes de torre:
 Tienen la habilidad \"Phylax\":
 Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
 
@@ -161,7 +161,7 @@ Poder de Cabala: Los miembros de Legio Aurea pueden llevar sus Catafractos mas a
     print("Añadiendo poder de cábala a Exonautas...")
     personajes_exonautas = obtener_personajes_por_cabala('Exonautas')
     texto_exonautas = """Senda de Cabala: Helios
-Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutación, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
+Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutacion, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
     añadidos = añadir_poder_a_personajes(personajes_exonautas, texto_exonautas)
     print(f"✓ Añadido a {añadidos} miembros de Exonautas\n")
     
@@ -169,7 +169,7 @@ Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a 
     print("Añadiendo poder de cábala a Consulado del Mar...")
     personajes_consulado = obtener_personajes_por_cabala('Consulado del Mar')
     texto_consulado = """Senda de Cabala: Helios
-Poder de Cabala: Los miembros de los Exonautas tienen una resistencia natural a la mutación, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
+Poder de Cabala: Los miembros del Consulado del Mar tienen una resistencia natural a la mutacion, por eso, cuando ceden demasiado a esta, tienen la oportunidad de enfrentarse una ultima vez a ella con riesgo de perecer o sobreponerse."""
     añadidos = añadir_poder_a_personajes(personajes_consulado, texto_consulado)
     print(f"✓ Añadido a {añadidos} miembros del Consulado del Mar\n")
     
@@ -185,7 +185,7 @@ Poder de Cabala: Los Inquebrantables pueden realizar un [Protocolo] para aumenta
     print("Añadiendo poder de cábala a Trece...")
     personajes_trece = obtener_personajes_por_cabala('Trece')
     texto_limpiar_corrupcion = """Senda de Cabala: Helios
-Poder de Cabala: Los miembros del aquelarre de las trece pueden realizar un ritual para aumentar o reducir la corrupción a voluntad, tanto al reducirlo como aumentarlo, el ritual pasa por tratar con alguno de los viejos gigantes, que pueden entregar o consumir esa corrupción a su portador. Con los años, las trece han encontrado tres gigantes dispuestos, complacientes y abiertos al pacto, con predisposición a destruir al resto de gigantes, cada uno con sus motivos propios."""
+Poder de Cabala: Los miembros del aquelarre de las trece pueden realizar un ritual para aumentar o reducir la corrupcion a voluntad, tanto al reducirlo como aumentarlo, el ritual pasa por tratar con alguno de los viejos gigantes, que pueden entregar o consumir esa corrupcion a su portador. Con los años, las trece han encontrado tres gigantes dispuestos, complacientes y abiertos al pacto, con predisposicion a destruir al resto de gigantes, cada uno con sus motivos propios."""
     añadidos = añadir_poder_a_personajes(personajes_trece, texto_limpiar_corrupcion)
     print(f"✓ Añadido a {añadidos} miembros de Trece\n")
     

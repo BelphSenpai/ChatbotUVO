@@ -136,7 +136,7 @@ if __name__ == '__main__':
     # PODERES PARA ALFILES
     print("Añadiendo LOGOS a todos los Alfiles...")
     personajes_alfiles = obtener_personajes_por_naturaleza('Alfil')
-    texto_logos = """Poderes de Alfil:
+    texto_logos = """Poderes de alfil:
 Tienen la habilidad \"Logos\":
 Gastando 1 punto de rotura, pueden imponer su paradigma al entorno inmediato, creando una burbuja de realidad alterada que beneficia a sus aliados.
 
@@ -148,7 +148,7 @@ Consumen a un miembro de su cabala para recuperar toda su rotura."""
     # PODERES PARA CABALLOS
     print("Añadiendo LIMINAL a todos los Caballos...")
     personajes_caballos = obtener_personajes_por_naturaleza('Caballo')
-    texto_liminal = """Poderes de Caballo:
+    texto_liminal = """Poderes de caballo:
 Tienen la habilidad \"Liminal\":
 Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, haciendolos pasar desapercibidos.
 
@@ -160,7 +160,7 @@ Consumen a un miembro de su cabala para recuperar toda su rotura."""
     # PODERES PARA TORRES
     print("Añadiendo PHYLAX a todas las Torres...")
     personajes_torres = obtener_personajes_por_naturaleza('Torre')
-    texto_phylax = """Poderes de Torre:
+    texto_phylax = """Poderes de torre:
 Tienen la habilidad \"Phylax\":
 Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
 

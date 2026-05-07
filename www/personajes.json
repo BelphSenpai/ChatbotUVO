@@ -3,136 +3,128 @@
     "clave": "$2b$12$/g6Je2ToKL/KIEdJODEwC.YcgVEbgUbRjrdZ1Zg4bUqDq.c0EjgnS",
     "rol": "admin"
   },
-  "Test": {
-    "clave": "$2b$12$RafXmp0NPqEHMtpA1KVX.O/Io5Np8fC38z2fPxrkv.7a//U.4Cvjm",
+  "0rf30": {
+    "clave": "$2b$12$c2/zFWxdLqFF0kM7K4GBYObstHKhfCPaIaa27sve6YZDt0j8HQpLy",
     "rol": "jugador"
   },
-  "S33D": {
-    "clave": "$2b$12$v4vzmoG/Ihg3ksVUAKB6f.e7UWMdz7oHa7PjlonxfakJxcZSjEBLK",
+  "3l1a5": {
+    "clave": "$2b$12$zXEQCxr0wBSEVQ0HWQ.97.2LoXJIALYwouC48OOVd7gE7ps/oxVxO",
     "rol": "jugador"
   },
-  "RAM-1": {
-    "clave": "$2b$12$rtLBVXy4q.kw0HmWIXd0suKPy54IcVA0jOG1ibDG9KXGVEhrzdQhO",
-    "rol": "jugador"
-  },
-  "L30N4": {
-    "clave": "$2b$12$BHeh8nkBGaWY.t/sNcdtu.IEL.jluLPm8n.vvB/LcNywzIvdobRLu",
-    "rol": "jugador"
-  },
-  "CH3SHIR3": {
-    "clave": "$2b$12$cneohESPDcTPz4pZoon/b.vg5lyD93FR.x2MtFDE0bAi3U9hqCnZ.",
-    "rol": "jugador"
-  },
-  "M7RDD1N": {
-    "clave": "$2b$12$JP8ZmHQvg66XwJVsgPnj5e9nJ.nvteeEgIP6/fTUbBXJcJCS80A7q",
-    "rol": "jugador"
-  },
-  "M0R14RT7": {
-    "clave": "$2b$12$hrLe3.sNvUFzX9GUQhqmSe.4PbR1Ehi9Z.QrUYmokwAzWvqSlaKC.",
-    "rol": "jugador"
-  },
-  "MM": {
-    "clave": "$2b$12$hpvSbfA8JJBquVvM9zOhceTNr2fWNC1pEV6osY4wxQBavblDzrsnm",
-    "rol": "jugador"
-  },
-  "3P1ST3M3": {
-    "clave": "$2b$12$SJc7cHINQl3Sgp0nnkjOWOK4JNk00xu/6beOEy39KYr1yJo9ppj1a",
-    "rol": "jugador"
-  },
-  "D14BL0": {
-    "clave": "$2b$12$oYlHvRQB8ee/ga39kLyqd.296b07qBp5zA69CVlSJj9ZSri/bHpY6",
-    "rol": "jugador"
-  },
-  "LUC3R0": {
-    "clave": "$2b$12$LxkxNF8hJb4/nz.egw0LOOJteM1ZaToBIVke3wtEJvSYZmp6einuq",
-    "rol": "jugador"
-  },
-  "4N4T0L4": {
-    "clave": "$2b$12$lu4axewfT5RUurq/hiMmjOmtqPZiZRAfb0BK9KWdfHOM.pVL1i5A2",
-    "rol": "jugador"
-  },
-  "R3QU13M": {
-    "clave": "$2b$12$1ULsiSCrV1rvWhXjXkquyeUWpOpYWK3YR377Gtb2zRifliVRHj7kW",
-    "rol": "jugador"
-  },
-  "54R13L": {
-    "clave": "$2b$12$wleaTWmjzpio5C.WPbt98.qQvqHK8ts3YRBx.NF939gbTPw7.oZg6",
-    "rol": "jugador"
-  },
-  "V3X4": {
-    "clave": "$2b$12$BSRFJvXPDHjMaDiYo68UA.LqXQCvw8croyFHnD6J9yPH8fxTeWN1C",
-    "rol": "jugador"
-  },
-  "4L3X": {
-    "clave": "$2b$12$ymHUbEZMvxHrMbCRsCov/.woLth65mgMMRGEGXzeOeX4irSaqorUO",
-    "rol": "jugador"
-  },
-  "S1B1L4": {
-    "clave": "$2b$12$3/St2fuPXRsntmm4OGbzPOM8flO9eyeCOf4HL/3D3sqfxW4DTBi3a",
-    "rol": "jugador"
-  },
-  "3L1A5": {
-    "clave": "$2b$12$gSnjTlR/TU6RA3kUaSEaTecy/U4jyCRjtHJXTHwwcEKFe5.X8VKRi",
-    "rol": "jugador"
-  },
-  "L0C0": {
-    "clave": "$2b$12$j25wei9JdWdfK.MYmYUcUumYcu3dUNBx35z5VXSnzinWa72skCrua",
-    "rol": "jugador"
-  },
-  "D4N43": {
-    "clave": "$2b$12$rmkheplA/UaiIBn/R7oI9e7TEmqwrsiS7ca4j9pphDJaZrJH64V2a",
-    "rol": "jugador"
-  },
-  "B4N74": {
-    "clave": "$2b$12$J8smnWIcAuwHXrOaSRI4WOU5RPhreKNBpnhqllM2UHKXiF0/gx.qi",
-    "rol": "jugador"
-  },
-  "s0mn14": {
-    "clave": "$2b$12$oahfaKNyEGBPGOSrpFJuiOKeU7Tr2tl8XZwuenavzF0FF10iOi5kq",
-    "rol": "jugador"
-  },
-  "r4v3": {
-    "clave": "$2b$12$oahfaKNyEGBPGOSrpFJuiOKeU7Tr2tl8XZwuenavzF0FF10iOi5kq",
-    "rol": "jugador"
-  },
-  "K4b00m": {
-    "clave": "$2b$12$oahfaKNyEGBPGOSrpFJuiOKeU7Tr2tl8XZwuenavzF0FF10iOi5kq",
-    "rol": "jugador"
-  },
-  "V10let4": {
-    "clave": "$2b$12$xzawS7oRn9l.2Qd95FeQy.ciKZ.Wv.6QtnbZ/.V9KOiv.cBkkb2dS",
-    "rol": "jugador"
-  },
-  "C0nst": {
-    "clave": "$2b$12$stm1KK3xNpTQnZGZG3vBPOGlIQu9QBEhO1JRv6uAme6T7Tcr1oXyW",
-    "rol": "jugador"
-  },
-  "R0n1n": {
-    "clave": "$2b$12$nGWhj15xF9eXqqdZWoRWX.iwm/axjOBfNCp.38RCh6daXgVIlXduG",
-    "rol": "jugador"
-  },
-  "P4n4c34": {
-    "clave": "$2b$12$fWLrRcGe9ZsQl7Zihurwnus42gdU/TgKsFURWaS3fYNQqXMVcVF6i",
+  "3p1st3m3": {
+    "clave": "$2b$12$mt3Qw3KZ2oeS7lQ.EdTxAe0P8SikVU4SRZB/zqXGZmo4R/y/M99tW",
     "rol": "jugador"
   },
   "3x0n4uta": {
-    "clave": "$2b$12$pVW0TC0hpxdYAlPxpeJKlebFAGnthjdBMhaZJIATKff8s.eNP3Wi2",
+    "clave": "$2b$12$U2bV2ixs0a2gin6P1TkfFuABzE5X1Vc0duh/yPnhS7WYf6M1fWCES",
     "rol": "jugador"
   },
-  "Z4rrk": {
-    "clave": "$2b$12$VdaBoN3OGBccprJ/ajM5g.sD6h/XF8gyixn52yqEMDr0smhrvN5rK",
+  "4n4tol4": {
+    "clave": "$2b$12$sn9FdFnF7X6k0Z3KSekKIeIHQoJbsycKP9RMyaiJOoqzdzEm35Jg2",
+    "rol": "jugador"
+  },
+  "54r13l": {
+    "clave": "$2b$12$lu.XSxSIIixMWNlLoG0mL.nSdFojlMKkiZr348XSO84mkXIDlVTJG",
     "rol": "jugador"
   },
   "7uk1": {
-    "clave": "$2b$12$VdaBoN3OGBccprJ/ajM5g.sD6h/XF8gyixn52yqEMDr0smhrvN5rK",
-    "rol": "jugador"
-  },
-  "0rf30": {
-    "clave": "$2b$12$VdaBoN3OGBccprJ/ajM5g.sD6h/XF8gyixn52yqEMDr0smhrvN5rK",
+    "clave": "$2b$12$meFRv6KFVn/nfIJAsycABu5rTXctxKfbpsVwY5L.c.KHh.NXRveWe",
     "rol": "jugador"
   },
   "8ruc": {
-    "clave": "$2b$12$VdaBoN3OGBccprJ/ajM5g.sD6h/XF8gyixn52yqEMDr0smhrvN5rK",
+    "clave": "$2b$12$F0VpK/SFgsvH/KvX5AqrR.5/LdKhfQZulp.r3noEFVCvmqOyPnoa6",
+    "rol": "jugador"
+  },
+  "b3ll0n4": {
+    "clave": "$2b$12$/I9yesFQD7UbZ4nPGreJLO0r8NVmbxzLBkATQkRQu/MW5yHYlZBfq",
+    "rol": "jugador"
+  },
+  "b4n74": {
+    "clave": "$2b$12$Yy63bX0yhJ4KzGPhKZUeiOYZrX2MeqAil5Usw1YiBgrQN5CJAqWtW",
+    "rol": "jugador"
+  },
+  "c0nst": {
+    "clave": "$2b$12$Oq9XdNHjYQp/xbvt2SUOC.zyGUJs/zmxh7XIVmK.PJat0fxLDLWFq",
+    "rol": "jugador"
+  },
+  "ch3shir3": {
+    "clave": "$2b$12$WS.Bl5oxnZbruPVlDT1YEe63xKHwu3S2G5o9R7rFjCccGgdsPPqem",
+    "rol": "jugador"
+  },
+  "d14bl0": {
+    "clave": "$2b$12$YMDp7soE0LiK7KLxdeHBU.OFFsIlKBlyldNAQQIwKDW.v0DmUGDM.",
+    "rol": "jugador"
+  },
+  "d4n43": {
+    "clave": "$2b$12$SQ4yupoJ4ef8b9WCGO1Ve.FFZhKDS3kbBKmlv87aJ4wkGYffPdN6.",
+    "rol": "jugador"
+  },
+  "h3rnn4n": {
+    "clave": "$2b$12$YN858sQSroz6gh4uo4w7r.MswF9bGs6vDr42GBtSe5OGNZAjZ7l.W",
+    "rol": "jugador"
+  },
+  "k4b00m": {
+    "clave": "$2b$12$Ccggw1ucdWvq1f4sgO3fKu7Gy0qCLKAVCgP5L1aHfSHwgBWakondG",
+    "rol": "jugador"
+  },
+  "l0c0": {
+    "clave": "$2b$12$IsTRl.B5o2tkM1N2fb4mOOjRzvJ3eulsdejMBZyhP3jOve1afeJfO",
+    "rol": "jugador"
+  },
+  "l30n4": {
+    "clave": "$2b$12$De/t1WzOGojsie0rpdiwp.y1FvUpe9zRyhSgus4XWn3kV0agNq4JG",
+    "rol": "jugador"
+  },
+  "luc3r0": {
+    "clave": "$2b$12$uIWPLJrBSRDa01HzCke4G.nj24m410X1pCbTtE//1dE7IGO//hM6e",
+    "rol": "jugador"
+  },
+  "m0r14rt7": {
+    "clave": "$2b$12$vwvzXKuO/YdydmW1MJQTU.Lzz9GrrAUucl0UsiEpORsNiWQHSU3cW",
+    "rol": "jugador"
+  },
+  "m7rdd1n": {
+    "clave": "$2b$12$xvR2nGcfwv1j8H3T/hEO2.sME/V47geZOEiYQkqyOhl3pt.dyHOHG",
+    "rol": "jugador"
+  },
+  "mm": {
+    "clave": "$2b$12$Db09YsTfBLeER6GQYf9Kq.vHctP4Z5ARUVFb1IANIskUhmeq7vy4a",
+    "rol": "jugador"
+  },
+  "p4n4c34": {
+    "clave": "$2b$12$KodT1rQV0xiNELNFT.mm3.QSZgfU2DWLGVX0M40MNyVPYUo9rrnSW",
+    "rol": "jugador"
+  },
+  "r0n1n": {
+    "clave": "$2b$12$nizIVdnZGHNatvMyDh9Hfe0/4G4v6l2WkLQ4v1QL9ioxzArhjJxIi",
+    "rol": "jugador"
+  },
+  "r3qu13m": {
+    "clave": "$2b$12$/mxAP95H1ebPlHkNyS5/a.icnUuR4Nb/.XGo.o0nbRdrFJwz9V4Om",
+    "rol": "jugador"
+  },
+  "ram-1": {
+    "clave": "$2b$12$6BTtJk9V7SRtgnMMWYiewed5tHVJEsV8qIjltyMKJxjaWGm1cwCsW",
+    "rol": "jugador"
+  },
+  "s0mn14": {
+    "clave": "$2b$12$HjSk0CHRu/AEjFEKT2l0ReuO41C3BnHB8aEjObUyKoHefNb8V6PMu",
+    "rol": "jugador"
+  },
+  "s1b1l4": {
+    "clave": "$2b$12$VUn/4lXfUPb10GHnhPSiyeq9AKXilXT.LKxF3BIeEqC250dimbb/2",
+    "rol": "jugador"
+  },
+  "s33d": {
+    "clave": "$2b$12$erAb8ExAOUQrmc/HuiGI4ug1/7POK2Qgo/WVOUsHryqdpKfaxzQpa",
+    "rol": "jugador"
+  },
+  "v3x4": {
+    "clave": "$2b$12$Qm1QzhFZAJCBd5M9AxGCZ.xpiJiMNgcO1ggEf3HiIZAUrWw1XI4kW",
+    "rol": "jugador"
+  },
+  "z4rrk": {
+    "clave": "$2b$12$HDxAinaH8xuJN5MXQatfWefE9ZI/GpH9VxRNCdCdiyQVDxL18CFky",
     "rol": "jugador"
   }
 }
