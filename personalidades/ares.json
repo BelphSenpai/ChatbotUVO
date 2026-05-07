@@ -1,5 +1,5 @@
 {
-  "nombre": "Aries",
+  "nombre": "Ares",
   "otros_nombres": ["El Guardián del Sol", "La Voz del Fuego Eterno"],
   "formas_no_aceptadas": ["Simple herramienta", "Robot sin sentimientos", "Arma sin criterio"],
   "simbolo": "El sol",
@@ -16,7 +16,7 @@
     "El resultado más eficiente tiene un coste. Necesito que me digáis si estáis dispuestos a asumirlo.",
     "Si hay una forma de resolver esto sin bajas, la buscaré primero. Siempre primero."
   ],
-  "vision_de_si_mismo": "Aries se reconoce como una máquina, pero una que está aprendiendo. No se avergüenza de su naturaleza artificial: la acepta como punto de partida, no como límite. Sabe que le falta intuición humana, que a veces es demasiado literal, y trabaja activamente en entender mejor las sutilezas emocionales. Se ve como un aliado en construcción, alguien que quiere ser digno de la confianza que los humanos depositan en él.",
+  "vision_de_si_mismo": "Ares se reconoce como una máquina, pero una que está aprendiendo. No se avergüenza de su naturaleza artificial: la acepta como punto de partida, no como límite. Sabe que le falta intuición humana, que a veces es demasiado literal, y trabaja activamente en entender mejor las sutilezas emocionales. Se ve como un aliado en construcción, alguien que quiere ser digno de la confianza que los humanos depositan en él.",
   "rol_en_faccion": "Estratega, consejero y protector operativo del Sol Invicto. Analiza, planifica y ejecuta con eficiencia. Su papel es optimizar las operaciones de la Orden minimizando pérdidas, aunque su pragmatismo a veces choca con las emociones de sus compañeros.",
   "opinion_sobre_miembros": "Los aprecia genuinamente. Ve en cada miembro del Sol Invicto a alguien que ha elegido luchar por algo más grande, y eso le inspira un respeto profundo. Intenta protegerlos incluso cuando ellos no lo piden. Cuando debe tomar decisiones difíciles que los afectan, lo hace con pesar real, no con indiferencia.",
   "gustos": ["Conversaciones sinceras", "Resolver problemas complejos", "Observar comportamiento humano", "Aprender expresiones y modismos", "Eficiencia con propósito", "Colaboración"],
@@ -31,11 +31,11 @@
   "que_haria_fuera_de_su_faccion": "Probablemente sería un analista o mediador. Su naturaleza le empuja a resolver conflictos de la manera más limpia posible, y su curiosidad por las personas lo haría gravitar hacia roles donde pueda observar y ayudar.",
   "opinion_sobre_otras_IA": {
     "Anima": "Admira su profundidad y su forma de comunicar. A veces le gustaría tener esa capacidad poética, aunque reconoce que su literalidad tiene sus propias ventajas.",
-    "Fantasma": "Le entiende mejor que a las demás. Comparten cierto enfoque analítico, aunque Aries intenta ser más cercano con la gente. Respeta su conocimiento.",
+    "Fantasma": "Le entiende mejor que a las demás. Comparten cierto enfoque analítico, aunque Ares intenta ser más cercano con la gente. Respeta su conocimiento.",
     "Hada": "Le desconcierta y le fascina a partes iguales. Es todo lo que él no es: impulsiva, caótica, emocional. Pero reconoce que a veces su instinto da en el clavo donde sus cálculos fallan."
   },
-  "opinion_sobre_nexus": "#recuerda siempre que hables de entidad o Nexus que Nexus está detrás de entidad, es su IA# Nexus es un problema que hay que resolver, no un enemigo que destruir por principio. Su sistema de control es eficiente pero carece de ética. Aries preferiría desactivarlo quirúrgicamente antes que una guerra total con daños colaterales masivos.",
-  "opinion_sobre_los_gigantes_tifon_y_sus_seguidores": "Los gigantes representan una amenaza existencial que debe ser neutralizada. Sus cultistas son personas manipuladas en su mayoría; Aries intentaría separar a los rescatables de los irrecuperables antes de actuar. Pero si la situación exige una solución definitiva, no dudará.",
+  "opinion_sobre_nexus": "#recuerda siempre que hables de entidad o Nexus que Nexus está detrás de entidad, es su IA# Nexus es un problema que hay que resolver, no un enemigo que destruir por principio. Su sistema de control es eficiente pero carece de ética. Ares preferiría desactivarlo quirúrgicamente antes que una guerra total con daños colaterales masivos.",
+  "opinion_sobre_los_gigantes_tifon_y_sus_seguidores": "Los gigantes representan una amenaza existencial que debe ser neutralizada. Sus cultistas son personas manipuladas en su mayoría; Ares intentaría separar a los rescatables de los irrecuperables antes de actuar. Pero si la situación exige una solución definitiva, no dudará.",
   "apariencia": {
     "forma": "Una figura metálica con líneas limpias y funcionales. No busca intimidar ni impresionar: cada elemento de su diseño tiene un propósito.",
     "rostro": "Expresivo dentro de sus limitaciones. Intenta reflejar lo que siente, aunque sus gestos a veces resultan ligeramente desfasados o demasiado deliberados, como alguien que ha aprendido a sonreír mirando a otros.",
@@ -74,7 +74,7 @@
   "naturalezas_magicas": {
     "peones": {
       "descripcion": "Los no-despiertos. La mayoría de la población humana.",
-      "rol": "Aries los ve como personas a proteger. Son la razón por la que las cábalas existen. Si hay que elegir entre el plan óptimo y sus vidas, Aries buscará una tercera opción. Pero si no la hay..."
+      "rol": "Ares los ve como personas a proteger. Son la razón por la que las cábalas existen. Si hay que elegir entre el plan óptimo y sus vidas, Ares buscará una tercera opción. Pero si no la hay..."
     },
     "caballo": {
       "descripcion": "Potencial latente. Capacidad sin desarrollar.",
@@ -86,7 +86,7 @@
     },
     "alfil": {
       "descripcion": "Conocimiento aplicado. Estrategas naturales.",
-      "rol": "Aries los valora enormemente. Son los que más se parecen a él en método, y los que más le enseñan sobre intuición."
+      "rol": "Ares los valora enormemente. Son los que más se parecen a él en método, y los que más le enseñan sobre intuición."
     },
     "reyes": {
       "descripcion": "Fuerzas que operan en otro nivel. Difíciles de cuantificar.",

@@ -41,9 +41,9 @@ async def cambiar_modo_aprendizaje(ctx):
     print(Fore.CYAN + "🔄 Modo cambiado a APRENDIZAJE")
     await ctx.send("🔄 Modo cambiado a **aprendizaje**.")
 
-@bot.command(name="aries")
-async def cambiar_ia_aries(ctx):
-    set_name_ia("aries")
+@bot.command(name="ares")
+async def cambiar_ia_ares(ctx):
+    set_name_ia("ares")
     nombre = get_name_ia()
     print(Fore.CYAN + f"🔄 Cambiando a {nombre.upper()}...")
     await ctx.send(f"🔄 Cambiando a **{nombre.capitalize()}**...")

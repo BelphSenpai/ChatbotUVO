@@ -4,7 +4,7 @@ import time
 
 inicio = time.time()
 
-ias = ["anima", "aries", "fantasma", "minerva", "hada"]
+ias = ["anima", "ares", "fantasma", "minerva", "hada"]
 
 SCRIPT_PATH = os.path.join("MinervaPrimeSE", "chunk_generator.py")
 BASE_DIR = "MinervaPrimeSE"
