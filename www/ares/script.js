@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     console.warn('No se pudo obtener usuario:', err);
   }
   
-  const CONVERSATION_KEY = `conversacion_aries_${usuario}`;
+  const CONVERSATION_KEY = `conversacion_ares_${usuario}`;
+  const LEGACY_CONVERSATION_KEY = `conversacion_${['ar', 'ies'].join('')}_${usuario}`;
   
   function guardarConversacion() {
     const mensajes = Array.from(terminalOutput.querySelectorAll('.user-msg, .bot-msg')).map(el => {
@@ -41,8 +42,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   
   function cargarConversacion() {
-    const guardado = localStorage.getItem(CONVERSATION_KEY);
+    const guardadoActual = localStorage.getItem(CONVERSATION_KEY);
+    const guardadoLegacy = localStorage.getItem(LEGACY_CONVERSATION_KEY);
+    const guardado = guardadoActual ?? guardadoLegacy;
     if (guardado) {
+      if (!guardadoActual && guardadoLegacy) {
+        localStorage.setItem(CONVERSATION_KEY, guardadoLegacy);
+        localStorage.removeItem(LEGACY_CONVERSATION_KEY);
+      }
       try {
         const mensajes = JSON.parse(guardado);
         mensajes.forEach(msg => {
@@ -60,6 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   function limpiarConversacion() {
     localStorage.removeItem(CONVERSATION_KEY);
+    localStorage.removeItem(LEGACY_CONVERSATION_KEY);
     terminalOutput.innerHTML = '';
   }
 
@@ -67,7 +75,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     { main: '> Estableciendo enlace neuronal...', extra: null },
     { main: '> Verificando autorización sanctum...', extra: ' [AUTORIZADO]' },
     { main: '> Iniciando sincronización cognitiva...', extra: ' [ESTABLECIDA]' },
-    { main: '> Conectado a: ARIES', extra: ' [NUCLEO SOLAR ACTIVO]' },
+    { main: '> Conectado a: ARES', extra: ' [NUCLEO SOLAR ACTIVO]' },
     { main: '> Acceso concedido al Archivo AUREO', extra: ' [NIVEL: GLADIUS]' },
     { main: '> Ten la fuerza para protejer a los indefensos, ', extra: 'USUARIO_API' }
   ];
@@ -194,12 +202,12 @@ document.addEventListener('DOMContentLoaded', async () => {
       Math.floor(Math.random() * 5) + 5,
       true
     );
-    // Registrar evento de log (usuario o respuesta de Aries)
+    // Registrar evento de log (usuario o respuesta de Ares)
     try {
       if (isUser) {
         registrarEvento('usuario', String(text || '(vacío)'));
       } else {
-        registrarEvento('respuesta_aries', String(text || '(vacío)'));
+        registrarEvento('respuesta_ares', String(text || '(vacío)'));
       }
     } catch (e) {
       // no bloquear la UI por fallos en logging
@@ -266,7 +274,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const sessionInfo = await fetch('/session-info').then(res => res.json());
         const usuario = typeof sessionInfo.usuario === 'string' ? sessionInfo.usuario : '';
 
-        const res = await fetch('/aries/query', {
+        const res = await fetch('/ares/query', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ mensaje, id: usuario })

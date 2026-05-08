@@ -115,15 +115,23 @@ def _with_preguntas_locked(mutator=None, timeout=10):
 def _tokens_redis_key(user: str) -> str:
     return f"tokens:{(user or '').strip().lower()}"
 
+
+def _legacy_token_keys() -> tuple[str, ...]:
+    return ("eidolon", "".join(["ar", "ies"]))
+
 def _redis_get_tokens(user: str) -> dict:
     try:
         conn = get_redis_conn()
         raw = conn.hgetall(_tokens_redis_key(user)) or {}
         # hgetall devuelve bytes → int
         parsed = { (k.decode('utf-8') if isinstance(k, (bytes, bytearray)) else str(k)).lower(): int(v) for k, v in raw.items() }
-        # Migrar clave legacy "eidolon" → "aries"
-        if "eidolon" in parsed:
-            parsed["aries"] = parsed.pop("eidolon")
+        changed = False
+        for legacy_key in _legacy_token_keys():
+            if legacy_key in parsed:
+                parsed.setdefault("ares", parsed[legacy_key])
+                del parsed[legacy_key]
+                changed = True
+        if changed:
             _redis_set_tokens(user, parsed)
         return parsed
     except Exception:
@@ -138,6 +146,7 @@ def _redis_set_tokens(user: str, mapping: dict):
         clean = { str(k).lower(): int(v) for k, v in mapping.items() }
         if clean:
             conn.hset(_tokens_redis_key(user), mapping=clean)
+            conn.hdel(_tokens_redis_key(user), *_legacy_token_keys())
     except Exception:
         pass
 
@@ -241,7 +250,7 @@ def ensure_unlimited_seed(user: str):
             return False, data
         cur = data.get(u) or {}
         # normaliza TODAS las claves presentes, y si faltan crea las conocidas
-        ias = set(cur.keys()) | {"anima", "aries", "hada", "fantasma", "minerva", "yggdrassil"}
+        ias = set(cur.keys()) | {"anima", "ares", "hada", "fantasma", "minerva", "yggdrassil"}
         for ia in ias:
             if cur.get(ia) != -1:
                 cur[ia] = -1
@@ -337,7 +346,7 @@ def do_login():
                     if user not in data:
                         data[user] = {
                             "anima": DEFAULT_QUOTA,
-                            "aries": DEFAULT_QUOTA,
+                            "ares": DEFAULT_QUOTA,
                             "hada": DEFAULT_QUOTA,
                             "fantasma": DEFAULT_QUOTA,
                             "minerva": 0,
@@ -722,7 +731,7 @@ def admin_personajes():
         lista = []
         for nombre in PERSONAJES.keys():
             user_preguntas = data.get(nombre, {
-                "anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0
+                "anima": 0, "ares": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0
             })
             lista.append({"nombre": nombre, "preguntas": user_preguntas})
         return jsonify(lista)
@@ -753,7 +762,7 @@ def admin_personajes():
             def upsert_pregs(data):
                 changed = False
                 if nombre_lower not in data:
-                    data[nombre_lower] = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
+                    data[nombre_lower] = {"anima": DEFAULT_QUOTA, "ares": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
                     changed = True
                 return changed, data
             _with_preguntas_locked(upsert_pregs)
@@ -792,7 +801,7 @@ def obtener_personaje(nombre):
 
     data = _with_preguntas_locked(lambda d: (False, d))
     datos_personaje = PERSONAJES[nombre].copy()
-    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "aries": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0})
+    datos_personaje['preguntas'] = data.get(nombre, {"anima": 0, "ares": 0, "hada": 0, "fantasma": 0, "minerva": 0, "yggdrassil": 0})
     return jsonify(datos_personaje)
 
 @app.route('/admin/resetear-preguntas', methods=['POST'])
@@ -810,10 +819,10 @@ def resetear_preguntas():
 
     if is_unlimited_user(nombre_lower):
         ensure_unlimited_seed(nombre_lower)
-        _redis_set_tokens(nombre_lower, {"anima": -1, "aries": -1, "hada": -1, "fantasma": -1, "minerva": -1, "yggdrassil": -1})
+        _redis_set_tokens(nombre_lower, {"anima": -1, "ares": -1, "hada": -1, "fantasma": -1, "minerva": -1, "yggdrassil": -1})
     else:
         def reset_user(data):
-            newmap = {"anima": DEFAULT_QUOTA, "aries": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
+            newmap = {"anima": DEFAULT_QUOTA, "ares": DEFAULT_QUOTA, "hada": DEFAULT_QUOTA, "fantasma": DEFAULT_QUOTA, "minerva": 0, "yggdrassil": DEFAULT_QUOTA}
             data[nombre_lower] = newmap
             _redis_set_tokens(nombre_lower, newmap)
             return True, data
@@ -836,7 +845,7 @@ def guardar_preguntas_admin():
             if is_unlimited_user(nombre_lower):
                 # para ilimitados, fuerzo -1
                 cur = data.get(nombre_lower, {})
-                for ia in set(cur.keys()) | set(preguntas.keys()) | {"anima", "aries", "hada", "fantasma", "minerva", "yggdrassil"}:
+                for ia in set(cur.keys()) | set(preguntas.keys()) | {"anima", "ares", "hada", "fantasma", "minerva", "yggdrassil"}:
                     if cur.get(ia) != -1:
                         cur[ia] = -1
                         changed = True
@@ -1158,7 +1167,7 @@ def usos_actuales():
     # Normaliza para que el front siempre reciba todas las IAs conocidas
     known_defaults = {
         "anima": 0,
-        "aries": 0,
+        "ares": 0,
         "hada": 0,
         "fantasma": 0,
         "minerva": 0,
