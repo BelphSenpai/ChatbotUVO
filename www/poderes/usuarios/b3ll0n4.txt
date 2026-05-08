@@ -5,6 +5,13 @@ Gastando 0 puntos de rotura, pueden camuflar a otros dentro del mundo exterior, 
 Cuando estan a rotura 0 pueden invocar: Devorar.
 Consumen a un miembro de su cabala para recuperar toda su rotura.
 
+Poderes de torre:
+Tienen la habilidad "Phylax":
+Gastando 1 punto de rotura, pueden bloquear o absorber el daño dirigido a ellos o a otro, ya sea un rasguño o un golpe letal.
+
+Cuando estan a rotura 0 pueden invocar: Devorar.
+Consumen a un miembro de su cabala para recuperar toda su rotura.
+
 Senda de Cabala: Helios
 Poder de Cabala: Los miembros de Legio Aurea pueden llevar sus Catafractos mas alla del limite, permitiendoles equiparar su poder al de una torre por un breve periodo de tiempo. Tras esa hazaña el Catafracto debe pasar por severo mantenimiento antes de poder ser usado de nuevo.
 
